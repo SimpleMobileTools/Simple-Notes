@@ -1,6 +1,9 @@
 package notes.simplemobiletools.com;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -47,12 +50,25 @@ public class MainActivity extends AppCompatActivity {
     private void saveText() {
         final String text = notesView.getText().toString().trim();
         prefs.edit().putString(Constants.TEXT, text).apply();
+
         Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show();
         hideKeyboard();
+        updateWidget();
     }
 
     private void hideKeyboard() {
         final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(notesView.getWindowToken(), 0);
+    }
+
+    private void updateWidget() {
+        final Context context = getApplicationContext();
+        final AppWidgetManager widgetManager = AppWidgetManager.getInstance(context);
+        int[] ids = widgetManager.getAppWidgetIds(new ComponentName(context, MyWidgetProvider.class));
+
+        final Intent intent = new Intent(this, MyWidgetProvider.class);
+        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
+        sendBroadcast(intent);
     }
 }
