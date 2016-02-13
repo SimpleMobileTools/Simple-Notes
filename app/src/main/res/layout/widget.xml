@@ -5,10 +5,12 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/notesView"
+        android:id="@+id/notes_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@null"
         android:gravity="top"
+        android:padding="@dimen/activity_margin"
         android:textSize="18sp"/>
+
 </RelativeLayout>

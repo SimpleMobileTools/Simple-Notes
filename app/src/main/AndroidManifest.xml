@@ -19,6 +19,15 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".MyWidgetConfigure"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyWidgetConfigTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+
         <receiver
             android:name=".MyWidgetProvider"
             android:icon="@mipmap/ic_launcher"

@@ -14,18 +14,21 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
     private SharedPreferences prefs;
-    private EditText notesView;
+    @Bind(R.id.notes_view) EditText notesView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         prefs = getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE);
         final String text = prefs.getString(Constants.TEXT, "");
-        notesView = (EditText) findViewById(R.id.notesView);
         notesView.setText(text);
     }
 
