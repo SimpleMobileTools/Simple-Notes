@@ -17,7 +17,7 @@
         android:background="@null"
         android:gravity="top"
         android:padding="@dimen/activity_margin"
-        android:text="hello world"
+        android:text="@string/widget_config"
         android:textSize="18sp"/>
 
     <Button
