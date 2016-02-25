@@ -1,4 +1,4 @@
-package notes.simplemobiletools.com;
+package com.simplemobiletools.notes;
 
 public class Constants {
     public static final String PREFS = "prefs";

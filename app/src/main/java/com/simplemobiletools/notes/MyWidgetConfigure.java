@@ -1,4 +1,4 @@
-package notes.simplemobiletools.com;
+package com.simplemobiletools.notes;
 
 import android.appwidget.AppWidgetManager;
 import android.content.Context;

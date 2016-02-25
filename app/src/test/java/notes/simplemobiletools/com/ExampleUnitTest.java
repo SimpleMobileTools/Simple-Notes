@@ -1,4 +1,4 @@
-package notes.simplemobiletools.com;
+package com.simplemobiletools.notes;
 
 import org.junit.Test;
 
