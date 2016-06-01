@@ -13,17 +13,17 @@ import android.widget.RemoteViews;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import yuku.ambilwarna.AmbilWarnaDialog;
 
 public class MyWidgetConfigure extends AppCompatActivity {
-    @Bind(R.id.config_bg_color) View bgColorPicker;
-    @Bind(R.id.config_bg_seekbar) SeekBar bgSeekBar;
-    @Bind(R.id.config_text_color) View textColorPicker;
-    @Bind(R.id.notes_view) TextView notesView;
-    @Bind(R.id.config_save) Button saveBtn;
+    @BindView(R.id.config_bg_color) View bgColorPicker;
+    @BindView(R.id.config_bg_seekbar) SeekBar bgSeekBar;
+    @BindView(R.id.config_text_color) View textColorPicker;
+    @BindView(R.id.notes_view) TextView notesView;
+    @BindView(R.id.config_save) Button saveBtn;
 
     private int widgetId;
     private int bgColor;

@@ -14,12 +14,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     private SharedPreferences prefs;
-    @Bind(R.id.notes_view) EditText notesView;
+    @BindView(R.id.notes_view) EditText notesView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
