@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.simplemobiletools.notes.MainActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name="com.simplemobiletools.notes.MyWidgetConfigure"
+            android:name=".MyWidgetConfigure"
             android:screenOrientation="portrait"
             android:theme="@style/MyWidgetConfigTheme">
             <intent-filter>
@@ -28,8 +28,13 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/about"
+            android:screenOrientation="portrait"/>
+
         <receiver
-            android:name="com.simplemobiletools.notes.MyWidgetProvider"
+            android:name=".MyWidgetProvider"
             android:icon="@mipmap/ic_launcher"
             android:label="Simple Notes">
             <intent-filter>

@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.save:
                 saveText();
                 return true;
+            case R.id.about:
+                final Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
+                startActivity(intent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
