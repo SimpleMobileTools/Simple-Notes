@@ -13,7 +13,6 @@
     <string name="copyright">Copyright © Simple Mobile Tools %1$d</string>
 
     <!--License-->
-    <string name="license_note">License</string>
     <string name="notice">This app uses the following third party libraries to make my life easier. Thank you.</string>
     <string name="third_party_licences">Third party licences</string>
     <string name="butterknife_title">Butter Knife (view injector)</string>
