@@ -35,7 +35,7 @@
         android:layout_below="@+id/about_email"
         android:paddingBottom="@dimen/activity_margin"
         android:paddingTop="@dimen/activity_margin"
-        android:text="@string/open_source_licences"
+        android:text="@string/third_party_licences_underlined"
         android:textColor="@color/colorPrimary"/>
 
     <TextView

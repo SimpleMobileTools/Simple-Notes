@@ -35,7 +35,7 @@
 
         <activity
             android:name=".LicenseActivity"
-            android:label="@string/license"
+            android:label="@string/third_party_licences"
             android:screenOrientation="portrait"/>
 
         <receiver
