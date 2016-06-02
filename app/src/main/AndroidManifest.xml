@@ -33,10 +33,15 @@
             android:label="@string/about"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".LicenseActivity"
+            android:label="@string/license"
+            android:screenOrientation="portrait"/>
+
         <receiver
             android:name=".MyWidgetProvider"
             android:icon="@mipmap/ic_launcher"
-            android:label="Simple Notes">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
