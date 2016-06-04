@@ -1,7 +1,7 @@
 # Simple Notes
 <img alt="Logo" src="app/src/main/res/mipmap-xxxhdpi/launcher.png" width="80">
 
-A textfield for adding quick notes with a widget.
+A textfield for adding quick notes with a customizable widget.
 
 Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you've been looking for!
 You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
