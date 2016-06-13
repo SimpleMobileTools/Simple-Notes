@@ -2,6 +2,7 @@
     <string name="app_name">Simple Notes</string>
     <string name="widget_config">Thank you for using Simple Notes.\nFor more simple apps please visit SimpleMobileTools.com.\n</string>
     <string name="save">Save</string>
+    <string name="text_saved">Text Saved</string>
 
     <!-- About -->
     <string name="about">About</string>

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         final String text = notesView.getText().toString().trim();
         prefs.edit().putString(Constants.TEXT, text).apply();
 
-        Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getResources().getString(R.string.text_saved), Toast.LENGTH_SHORT).show();
         hideKeyboard();
         updateWidget();
     }
