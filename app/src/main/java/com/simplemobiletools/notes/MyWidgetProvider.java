@@ -9,39 +9,41 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.widget.RemoteViews;
 
+import com.simplemobiletools.notes.activities.MainActivity;
+
 public class MyWidgetProvider extends AppWidgetProvider {
-    private static SharedPreferences prefs;
-    private RemoteViews remoteViews;
+    private static SharedPreferences mPrefs;
+    private static RemoteViews mRemoteViews;
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         initVariables(context);
         final int defaultColor = context.getResources().getColor(R.color.dark_grey);
-        final int newBgColor = prefs.getInt(Constants.WIDGET_BG_COLOR, defaultColor);
-        final int newTextColor = prefs.getInt(Constants.WIDGET_TEXT_COLOR, Color.WHITE);
-        remoteViews.setInt(R.id.notes_view, "setBackgroundColor", newBgColor);
-        remoteViews.setInt(R.id.notes_view, "setTextColor", newTextColor);
+        final int newBgColor = mPrefs.getInt(Constants.WIDGET_BG_COLOR, defaultColor);
+        final int newTextColor = mPrefs.getInt(Constants.WIDGET_TEXT_COLOR, Color.WHITE);
+        mRemoteViews.setInt(R.id.notes_view, "setBackgroundColor", newBgColor);
+        mRemoteViews.setInt(R.id.notes_view, "setTextColor", newTextColor);
 
         for (int widgetId : appWidgetIds) {
-            updateWidget(appWidgetManager, widgetId, remoteViews);
+            updateWidget(appWidgetManager, widgetId, mRemoteViews);
         }
         super.onUpdate(context, appWidgetManager, appWidgetIds);
     }
 
     private void initVariables(Context context) {
-        prefs = context.getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE);
-        remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
+        mPrefs = context.getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE);
+        mRemoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
         setupAppOpenIntent(R.id.notes_holder, context);
     }
 
     private void setupAppOpenIntent(int id, Context context) {
         final Intent intent = new Intent(context, MainActivity.class);
         final PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-        remoteViews.setOnClickPendingIntent(id, pendingIntent);
+        mRemoteViews.setOnClickPendingIntent(id, pendingIntent);
     }
 
     private void updateWidget(AppWidgetManager widgetManager, int widgetId, RemoteViews remoteViews) {
-        final String text = prefs.getString(Constants.TEXT, "");
+        final String text = mPrefs.getString(Constants.TEXT, "");
         remoteViews.setTextViewText(R.id.notes_view, text);
         widgetManager.updateAppWidget(widgetId, remoteViews);
     }

@@ -1,4 +1,4 @@
-package com.simplemobiletools.notes;
+package com.simplemobiletools.notes.activities;
 
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
@@ -13,23 +13,27 @@ import android.widget.RemoteViews;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.simplemobiletools.notes.Constants;
+import com.simplemobiletools.notes.MyWidgetProvider;
+import com.simplemobiletools.notes.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import yuku.ambilwarna.AmbilWarnaDialog;
 
-public class MyWidgetConfigure extends AppCompatActivity {
-    @BindView(R.id.config_bg_color) View bgColorPicker;
-    @BindView(R.id.config_bg_seekbar) SeekBar bgSeekBar;
-    @BindView(R.id.config_text_color) View textColorPicker;
-    @BindView(R.id.notes_view) TextView notesView;
-    @BindView(R.id.config_save) Button saveBtn;
+public class WidgetConfigureActivity extends AppCompatActivity {
+    @BindView(R.id.config_bg_color) View mBgColorPicker;
+    @BindView(R.id.config_bg_seekbar) SeekBar mBgSeekBar;
+    @BindView(R.id.config_text_color) View mTextColorPicker;
+    @BindView(R.id.notes_view) TextView mNotesView;
+    @BindView(R.id.config_save) Button mSaveBtn;
 
-    private int widgetId;
-    private int bgColor;
-    private int bgColorWithoutTransparency;
-    private float bgAlpha;
-    private int textColor;
+    private float mBgAlpha;
+    private int mWidgetId;
+    private int mBgColor;
+    private int mBgColorWithoutTransparency;
+    private int mTextColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,28 +46,28 @@ public class MyWidgetConfigure extends AppCompatActivity {
         final Intent intent = getIntent();
         final Bundle extras = intent.getExtras();
         if (extras != null)
-            widgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+            mWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
 
-        if (widgetId == AppWidgetManager.INVALID_APPWIDGET_ID)
+        if (mWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID)
             finish();
     }
 
     private void initVariables() {
         final SharedPreferences prefs = getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE);
-        bgColor = prefs.getInt(Constants.WIDGET_BG_COLOR, 1);
-        if (bgColor == 1) {
-            bgColor = Color.BLACK;
-            bgAlpha = .2f;
+        mBgColor = prefs.getInt(Constants.WIDGET_BG_COLOR, 1);
+        if (mBgColor == 1) {
+            mBgColor = Color.BLACK;
+            mBgAlpha = .2f;
         } else {
-            bgAlpha = Color.alpha(bgColor) / (float) 255;
+            mBgAlpha = Color.alpha(mBgColor) / (float) 255;
         }
 
-        bgColorWithoutTransparency = Color.rgb(Color.red(bgColor), Color.green(bgColor), Color.blue(bgColor));
-        bgSeekBar.setOnSeekBarChangeListener(bgSeekbarChangeListener);
-        bgSeekBar.setProgress((int) (bgAlpha * 100));
+        mBgColorWithoutTransparency = Color.rgb(Color.red(mBgColor), Color.green(mBgColor), Color.blue(mBgColor));
+        mBgSeekBar.setOnSeekBarChangeListener(bgSeekbarChangeListener);
+        mBgSeekBar.setProgress((int) (mBgAlpha * 100));
         updateBackgroundColor();
 
-        textColor = prefs.getInt(Constants.WIDGET_TEXT_COLOR, getResources().getColor(R.color.colorPrimary));
+        mTextColor = prefs.getInt(Constants.WIDGET_TEXT_COLOR, getResources().getColor(R.color.colorPrimary));
         updateTextColor();
     }
 
@@ -71,53 +75,53 @@ public class MyWidgetConfigure extends AppCompatActivity {
     public void saveConfig() {
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
         final RemoteViews views = new RemoteViews(getPackageName(), R.layout.activity_main);
-        views.setInt(R.id.notes_view, "setBackgroundColor", bgColor);
-        appWidgetManager.updateAppWidget(widgetId, views);
+        views.setInt(R.id.notes_view, "setBackgroundColor", mBgColor);
+        appWidgetManager.updateAppWidget(mWidgetId, views);
 
         storeWidgetBackground();
         requestWidgetUpdate();
 
         final Intent resultValue = new Intent();
-        resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
+        resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mWidgetId);
         setResult(RESULT_OK, resultValue);
         finish();
     }
 
     private void storeWidgetBackground() {
         final SharedPreferences prefs = getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE);
-        prefs.edit().putInt(Constants.WIDGET_BG_COLOR, bgColor).apply();
-        prefs.edit().putInt(Constants.WIDGET_TEXT_COLOR, textColor).apply();
+        prefs.edit().putInt(Constants.WIDGET_BG_COLOR, mBgColor).apply();
+        prefs.edit().putInt(Constants.WIDGET_TEXT_COLOR, mTextColor).apply();
     }
 
     private void requestWidgetUpdate() {
         final Intent intent = new Intent(AppWidgetManager.ACTION_APPWIDGET_UPDATE, null, this, MyWidgetProvider.class);
-        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, new int[]{widgetId});
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, new int[]{mWidgetId});
         sendBroadcast(intent);
     }
 
     private void updateBackgroundColor() {
-        bgColor = adjustAlpha(bgColorWithoutTransparency, bgAlpha);
-        notesView.setBackgroundColor(bgColor);
-        bgColorPicker.setBackgroundColor(bgColor);
-        saveBtn.setBackgroundColor(bgColor);
+        mBgColor = adjustAlpha(mBgColorWithoutTransparency, mBgAlpha);
+        mNotesView.setBackgroundColor(mBgColor);
+        mBgColorPicker.setBackgroundColor(mBgColor);
+        mSaveBtn.setBackgroundColor(mBgColor);
     }
 
     private void updateTextColor() {
-        textColorPicker.setBackgroundColor(textColor);
-        saveBtn.setTextColor(textColor);
-        notesView.setTextColor(textColor);
+        mTextColorPicker.setBackgroundColor(mTextColor);
+        mSaveBtn.setTextColor(mTextColor);
+        mNotesView.setTextColor(mTextColor);
     }
 
     @OnClick(R.id.config_bg_color)
     public void pickBackgroundColor() {
-        AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, bgColorWithoutTransparency, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+        AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, mBgColorWithoutTransparency, new AmbilWarnaDialog.OnAmbilWarnaListener() {
             @Override
             public void onCancel(AmbilWarnaDialog dialog) {
             }
 
             @Override
             public void onOk(AmbilWarnaDialog dialog, int color) {
-                bgColorWithoutTransparency = color;
+                mBgColorWithoutTransparency = color;
                 updateBackgroundColor();
             }
         });
@@ -127,14 +131,14 @@ public class MyWidgetConfigure extends AppCompatActivity {
 
     @OnClick(R.id.config_text_color)
     public void pickTextColor() {
-        AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, textColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+        AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, mTextColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
             @Override
             public void onCancel(AmbilWarnaDialog dialog) {
             }
 
             @Override
             public void onOk(AmbilWarnaDialog dialog, int color) {
-                textColor = color;
+                mTextColor = color;
                 updateTextColor();
             }
         });
@@ -145,7 +149,7 @@ public class MyWidgetConfigure extends AppCompatActivity {
     private SeekBar.OnSeekBarChangeListener bgSeekbarChangeListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            bgAlpha = (float) progress / (float) 100;
+            mBgAlpha = (float) progress / (float) 100;
             updateBackgroundColor();
         }
 

@@ -1,4 +1,4 @@
-package com.simplemobiletools.notes;
+package com.simplemobiletools.notes.activities;
 
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
@@ -8,18 +8,22 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.simplemobiletools.notes.Constants;
+import com.simplemobiletools.notes.MyWidgetProvider;
+import com.simplemobiletools.notes.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    private SharedPreferences prefs;
-    @BindView(R.id.notes_view) EditText notesView;
+    @BindView(R.id.notes_view) EditText mNotesView;
+
+    private SharedPreferences mPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +31,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        prefs = getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE);
-        final String text = prefs.getString(Constants.TEXT, "");
-        notesView.setText(text);
+        mPrefs = getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE);
+        final String text = mPrefs.getString(Constants.TEXT, "");
+        mNotesView.setText(text);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
 
@@ -55,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveText() {
-        final String text = notesView.getText().toString().trim();
-        prefs.edit().putString(Constants.TEXT, text).apply();
+        final String text = mNotesView.getText().toString().trim();
+        mPrefs.edit().putString(Constants.TEXT, text).apply();
 
         Toast.makeText(this, getResources().getString(R.string.text_saved), Toast.LENGTH_SHORT).show();
         hideKeyboard();
@@ -65,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void hideKeyboard() {
         final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(notesView.getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(mNotesView.getWindowToken(), 0);
     }
 
     private void updateWidget() {
