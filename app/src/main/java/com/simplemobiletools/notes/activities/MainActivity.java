@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import com.simplemobiletools.notes.Constants;
 import com.simplemobiletools.notes.MyWidgetProvider;
 import com.simplemobiletools.notes.R;
+import com.simplemobiletools.notes.Utils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.save:
                 saveText();
                 return true;
+            case R.id.share:
+                shareText();
+                return true;
             case R.id.about:
                 final Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(intent);
@@ -64,6 +69,23 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, getResources().getString(R.string.text_saved), Toast.LENGTH_SHORT).show();
         hideKeyboard();
         updateWidget();
+    }
+
+    private void shareText() {
+        final String text = mNotesView.getText().toString().trim();
+        if (text.isEmpty()) {
+            Utils.showToast(this, R.string.cannot_share_empty_text);
+            return;
+        }
+
+        final Resources res = getResources();
+        final String shareTitle = res.getString(R.string.share_via);
+        final Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_SUBJECT, res.getString(R.string.simple_note));
+        sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+        sendIntent.setType("text/plain");
+        startActivity(Intent.createChooser(sendIntent, shareTitle));
     }
 
     private void hideKeyboard() {

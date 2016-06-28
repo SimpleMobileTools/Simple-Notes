@@ -2,7 +2,11 @@
     <string name="app_name">Simple Notes</string>
     <string name="widget_config">Thank you for using Simple Notes.\nFor more simple apps please visit SimpleMobileTools.com.\n</string>
     <string name="save">Save</string>
+    <string name="share">Share</string>
+    <string name="share_via">Share via</string>
+    <string name="cannot_share_empty_text">Cannot share empty text</string>
     <string name="text_saved">Text Saved</string>
+    <string name="simple_note">Simple Note</string>
 
     <!-- About -->
     <string name="about">About</string>
