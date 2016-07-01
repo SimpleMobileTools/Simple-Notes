@@ -17,8 +17,7 @@
         android:background="@null"
         android:gravity="top"
         android:padding="@dimen/activity_margin"
-        android:text="@string/widget_config"
-        android:textSize="18sp"/>
+        android:text="@string/widget_config"/>
 
     <Button
         android:id="@+id/config_bg_color"

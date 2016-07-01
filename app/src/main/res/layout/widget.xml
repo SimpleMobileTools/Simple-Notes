@@ -12,6 +12,6 @@
         android:background="@null"
         android:gravity="top"
         android:padding="@dimen/activity_margin"
-        android:textSize="18sp"/>
+        android:textSize="@dimen/normal_text_size"/>
 
 </RelativeLayout>
