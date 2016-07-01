@@ -31,7 +31,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
     }
 
     private void initVariables(Context context) {
-        mPrefs = context.getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE);
+        mPrefs = context.getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE);
         mRemoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
         setupAppOpenIntent(R.id.notes_holder, context);
     }

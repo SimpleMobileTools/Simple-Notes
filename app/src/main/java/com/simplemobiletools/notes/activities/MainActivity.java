@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.simplemobiletools.notes.Config;
 import com.simplemobiletools.notes.Constants;
 import com.simplemobiletools.notes.MyWidgetProvider;
 import com.simplemobiletools.notes.R;
@@ -33,9 +34,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mPrefs = getSharedPreferences(Constants.PREFS, Context.MODE_PRIVATE);
+        mPrefs = getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE);
         final String text = mPrefs.getString(Constants.TEXT, "");
         mNotesView.setText(text);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Config.newInstance(getApplicationContext()).setIsFirstRun(false);
     }
 
     @Override
