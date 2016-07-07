@@ -2,7 +2,9 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
                     android:configure="com.simplemobiletools.notes.activities.WidgetConfigureActivity"
                     android:initialLayout="@layout/widget"
-                    android:minHeight="30dp"
-                    android:minWidth="30dp"
+                    android:minHeight="110dp"
+                    android:minResizeHeight="40dp"
+                    android:minResizeWidth="40dp"
+                    android:minWidth="110dp"
                     android:previewImage="@mipmap/widget_preview"
                     android:resizeMode="horizontal|vertical"/>
