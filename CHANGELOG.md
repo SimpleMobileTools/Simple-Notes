@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 1.7 *(2016-07-07)*
+----------------------------
+
+ * Use the proper widget preview image
+ * Change the default widget size to 2x2
+
 Version 1.6 *(2016-07-05)*
 ----------------------------
 
