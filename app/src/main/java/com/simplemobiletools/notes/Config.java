@@ -21,4 +21,12 @@ public class Config {
     public void setIsFirstRun(boolean firstRun) {
         mPrefs.edit().putBoolean(Constants.IS_FIRST_RUN, firstRun).apply();
     }
+
+    public boolean getIsAutosaveEnabled() {
+        return mPrefs.getBoolean(Constants.AUTOSAVE, false);
+    }
+
+    public void setIsAutosaveEnabled(boolean enabled) {
+        mPrefs.edit().putBoolean(Constants.AUTOSAVE, enabled).apply();
+    }
 }

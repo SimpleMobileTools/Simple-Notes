@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.simplemobiletools.notes.Config;
 import com.simplemobiletools.notes.Constants;
@@ -40,6 +39,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        invalidateOptionsMenu();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (Config.newInstance(getApplicationContext()).getIsAutosaveEnabled()) {
+            saveText(false);
+        }
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         Config.newInstance(getApplicationContext()).setIsFirstRun(false);
@@ -48,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        if (Config.newInstance(getApplicationContext()).getIsAutosaveEnabled())
+            menu.findItem(R.id.save).setVisible(false);
+
         return true;
     }
 
@@ -55,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.save:
-                saveText();
+                saveText(true);
                 return true;
             case R.id.share:
                 shareText();
@@ -69,11 +85,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void saveText() {
+    private void saveText(boolean showToast) {
         final String text = mNotesView.getText().toString().trim();
         mPrefs.edit().putString(Constants.TEXT, text).apply();
 
-        Toast.makeText(this, getResources().getString(R.string.text_saved), Toast.LENGTH_SHORT).show();
+        if (showToast) {
+            Utils.showToast(getApplicationContext(), R.string.text_saved);
+        }
+
         hideKeyboard();
         updateWidget();
     }
@@ -81,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     private void shareText() {
         final String text = mNotesView.getText().toString().trim();
         if (text.isEmpty()) {
-            Utils.showToast(this, R.string.cannot_share_empty_text);
+            Utils.showToast(getApplicationContext(), R.string.cannot_share_empty_text);
             return;
         }
 

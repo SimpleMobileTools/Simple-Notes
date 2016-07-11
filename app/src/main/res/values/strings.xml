@@ -8,6 +8,10 @@
     <string name="text_saved">Text Saved</string>
     <string name="simple_note">Simple Note</string>
 
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="autosave">Autosave</string>
+
     <!-- About -->
     <string name="about">About</string>
     <string name="website">More simple apps and source code at:\nhttp://simplemobiletools.com</string>
