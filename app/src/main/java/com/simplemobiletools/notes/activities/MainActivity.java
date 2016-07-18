@@ -76,9 +76,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.share:
                 shareText();
                 return true;
+            case R.id.settings:
+                startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+                return true;
             case R.id.about:
-                final Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
