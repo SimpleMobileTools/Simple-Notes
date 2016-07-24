@@ -10,6 +10,7 @@
 
     <!-- Settings -->
     <string name="settings">Inställningar</string>
+    <string name="dark_theme">Mörkt tema</string>
     <string name="autosave">Spara automatiskt</string>
 
     <!-- About -->
