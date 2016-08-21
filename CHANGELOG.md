@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 1.11 *(2016-08-21)*
+----------------------------
+
+ * Fix scrolling of the note
+ * Add an Invite friends button
+ * Offer the user autosaving when leaving with unsaved changes
+
 Version 1.10 *(2016-07-26)*
 ----------------------------
 
