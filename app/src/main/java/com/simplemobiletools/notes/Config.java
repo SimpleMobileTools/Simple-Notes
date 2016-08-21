@@ -37,4 +37,12 @@ public class Config {
     public void setIsAutosaveEnabled(boolean enabled) {
         mPrefs.edit().putBoolean(Constants.AUTOSAVE, enabled).apply();
     }
+
+    public boolean getShouldPromptAutosave() {
+        return mPrefs.getBoolean(Constants.PROMPT_AUTOSAVE, true);
+    }
+
+    public void setShouldPromptAutosave(boolean prompt) {
+        mPrefs.edit().putBoolean(Constants.PROMPT_AUTOSAVE, prompt).apply();
+    }
 }

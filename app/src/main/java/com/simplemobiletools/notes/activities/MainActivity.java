@@ -3,10 +3,12 @@ package com.simplemobiletools.notes.activities;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
@@ -33,8 +35,7 @@ public class MainActivity extends SimpleActivity {
         ButterKnife.bind(this);
 
         mPrefs = getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE);
-        final String text = mPrefs.getString(Constants.TEXT, "");
-        mNotesView.setText(text);
+        mNotesView.setText(getSavedNote());
     }
 
     @Override
@@ -48,6 +49,16 @@ public class MainActivity extends SimpleActivity {
         super.onPause();
         if (Config.newInstance(getApplicationContext()).getIsAutosaveEnabled()) {
             saveText(false);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mConfig.getShouldPromptAutosave() && !getCurrentNote().equals(getSavedNote())) {
+            mConfig.setShouldPromptAutosave(false);
+            displayAutosavePrompt();
+        } else {
+            super.onBackPressed();
         }
     }
 
@@ -86,8 +97,23 @@ public class MainActivity extends SimpleActivity {
         }
     }
 
+    private void displayAutosavePrompt() {
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        alertDialog.setTitle(getString(R.string.unsaved_changes));
+        alertDialog.setMessage(getString(R.string.autosave_prompt_msg));
+
+        alertDialog.setNegativeButton(R.string.cancel, null);
+        alertDialog.setPositiveButton(R.string.enable_autosave, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        alertDialog.create().show();
+    }
+
     private void saveText(boolean showToast) {
-        final String text = mNotesView.getText().toString().trim();
+        final String text = getCurrentNote();
         mPrefs.edit().putString(Constants.TEXT, text).apply();
 
         if (showToast) {
@@ -99,7 +125,7 @@ public class MainActivity extends SimpleActivity {
     }
 
     private void shareText() {
-        final String text = mNotesView.getText().toString().trim();
+        final String text = getCurrentNote();
         if (text.isEmpty()) {
             Utils.showToast(getApplicationContext(), R.string.cannot_share_empty_text);
             return;
@@ -113,6 +139,14 @@ public class MainActivity extends SimpleActivity {
         sendIntent.putExtra(Intent.EXTRA_TEXT, text);
         sendIntent.setType("text/plain");
         startActivity(Intent.createChooser(sendIntent, shareTitle));
+    }
+
+    private String getCurrentNote() {
+        return mNotesView.getText().toString().trim();
+    }
+
+    private String getSavedNote() {
+        return mPrefs.getString(Constants.TEXT, "");
     }
 
     private void hideKeyboard() {

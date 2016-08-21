@@ -26,6 +26,7 @@ public class SettingsActivity extends SimpleActivity {
 
         setupDarkTheme();
         setupAutosave();
+        mConfig.setShouldPromptAutosave(false);
     }
 
     private void setupDarkTheme() {

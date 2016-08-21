@@ -7,6 +7,10 @@
     <string name="cannot_share_empty_text">空のテキストは共有できません</string>
     <string name="text_saved">テキストを保存しました</string>
     <string name="simple_note">シンプル メモ</string>
+    <string name="enable_autosave">Enable autosave</string>
+    <string name="cancel">Cancel</string>
+    <string name="unsaved_changes">Unsaved changes</string>
+    <string name="autosave_prompt_msg">Changes made to the note have not be saved. Do you want to enable autosave?</string>
 
     <!-- Settings -->
     <string name="settings">設定</string>
