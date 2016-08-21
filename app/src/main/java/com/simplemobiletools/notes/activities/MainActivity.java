@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.simplemobiletools.notes.Config;
 import com.simplemobiletools.notes.Constants;
 import com.simplemobiletools.notes.MyWidgetProvider;
 import com.simplemobiletools.notes.R;
@@ -47,7 +46,7 @@ public class MainActivity extends SimpleActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if (Config.newInstance(getApplicationContext()).getIsAutosaveEnabled()) {
+        if (mConfig.getIsAutosaveEnabled()) {
             saveText(false);
         }
     }
@@ -65,13 +64,13 @@ public class MainActivity extends SimpleActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Config.newInstance(getApplicationContext()).setIsFirstRun(false);
+        mConfig.setIsFirstRun(false);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-        if (Config.newInstance(getApplicationContext()).getIsAutosaveEnabled())
+        if (mConfig.getIsAutosaveEnabled())
             menu.findItem(R.id.save).setVisible(false);
 
         return true;
@@ -106,7 +105,8 @@ public class MainActivity extends SimpleActivity {
         alertDialog.setPositiveButton(R.string.enable_autosave, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                mConfig.setIsAutosaveEnabled(true);
+                supportInvalidateOptionsMenu();
             }
         });
         alertDialog.create().show();

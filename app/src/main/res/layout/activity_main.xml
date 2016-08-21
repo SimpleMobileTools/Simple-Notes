@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:gravity="top"
-        android:padding="@dimen/activity_margin"/>
+        android:padding="@dimen/activity_margin"
+        android:textSize="@dimen/normal_text_size"/>
 
 </ScrollView>
