@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 1.12 *(2016-08-29)*
+----------------------------
+
+ * Rename the app launcher to Notes
+ * Update the launcher icon
+
 Version 1.11 *(2016-08-21)*
 ----------------------------
 
