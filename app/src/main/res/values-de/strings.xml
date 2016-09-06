@@ -31,7 +31,7 @@
     <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
 
     <!--License-->
-    <string name="notice">Diese App nutzt die folgenden Drittanbieterlizenze, die mein Leben einfacher machen. Danke.</string>
+    <string name="notice">Diese App nutzt die folgenden Drittanbieterbibliotheken, die mein Leben einfacher machen. Danke.</string>
     <string name="third_party_licences">Drittanbieterlizenzen</string>
     <string name="butterknife_title"><u>Butter Knife (view injector)</u></string>
     <string name="ambilwarna_title"><u>AmbilWarna (color picker)</u></string>
