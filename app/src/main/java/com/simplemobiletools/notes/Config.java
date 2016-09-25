@@ -47,7 +47,7 @@ public class Config {
     }
 
     public int getFontSize() {
-        return mPrefs.getInt(Constants.FONT_SIZE, Constants.FONT_SIZE_NORMAL);
+        return mPrefs.getInt(Constants.FONT_SIZE, Constants.FONT_SIZE_MEDIUM);
     }
 
     public void setFontSize(int size) {

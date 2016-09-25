@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
@@ -41,6 +42,7 @@ public class MainActivity extends SimpleActivity {
     protected void onResume() {
         super.onResume();
         invalidateOptionsMenu();
+        mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(getApplicationContext()));
     }
 
     @Override

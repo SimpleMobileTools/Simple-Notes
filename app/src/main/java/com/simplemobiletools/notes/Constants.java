@@ -15,7 +15,6 @@ public class Constants {
 
     // font sizes
     public static final int FONT_SIZE_SMALL = 0;
-    public static final int FONT_SIZE_NORMAL = 1;
+    public static final int FONT_SIZE_MEDIUM = 1;
     public static final int FONT_SIZE_LARGE = 2;
-
 }
