@@ -17,6 +17,10 @@
     <string name="settings">Settings</string>
     <string name="dark_theme">Dark theme</string>
     <string name="autosave">Autosave</string>
+    <string name="note_font_size">Note font size</string>
+    <string name="small">Small</string>
+    <string name="normal">Normal</string>
+    <string name="large">Large</string>
 
     <!-- About -->
     <string name="about">About</string>

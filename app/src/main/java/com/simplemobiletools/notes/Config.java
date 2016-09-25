@@ -10,7 +10,7 @@ public class Config {
         return new Config(context);
     }
 
-    public Config(Context context) {
+    private Config(Context context) {
         mPrefs = context.getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE);
     }
 
@@ -44,5 +44,13 @@ public class Config {
 
     public void setShouldPromptAutosave(boolean prompt) {
         mPrefs.edit().putBoolean(Constants.PROMPT_AUTOSAVE, prompt).apply();
+    }
+
+    public int getFontSize() {
+        return mPrefs.getInt(Constants.FONT_SIZE, Constants.FONT_SIZE_NORMAL);
+    }
+
+    public void setFontSize(int size) {
+        mPrefs.edit().putInt(Constants.FONT_SIZE, size).apply();
     }
 }
