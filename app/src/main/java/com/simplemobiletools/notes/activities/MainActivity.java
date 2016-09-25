@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
@@ -19,9 +20,11 @@ import com.simplemobiletools.notes.Utils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends SimpleActivity {
-    @BindView(R.id.notes_view) EditText mNotesView;
+    @BindView(R.id.notes_view)
+    EditText mNotesView;
 
     private SharedPreferences mPrefs;
 
@@ -93,6 +96,11 @@ public class MainActivity extends SimpleActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @OnClick(R.id.notes_fab)
+    public void newNoteClicked(View view) {
+
     }
 
     private void displayAutosavePrompt() {
