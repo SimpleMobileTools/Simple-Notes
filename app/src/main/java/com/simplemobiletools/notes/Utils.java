@@ -1,6 +1,9 @@
 package com.simplemobiletools.notes;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.widget.Toast;
 
@@ -22,5 +25,15 @@ public class Utils {
                 break;
         }
         return textSize;
+    }
+
+    public static void updateWidget(Context context) {
+        final AppWidgetManager widgetManager = AppWidgetManager.getInstance(context);
+        int[] ids = widgetManager.getAppWidgetIds(new ComponentName(context, MyWidgetProvider.class));
+
+        final Intent intent = new Intent(context, MyWidgetProvider.class);
+        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
+        context.sendBroadcast(intent);
     }
 }

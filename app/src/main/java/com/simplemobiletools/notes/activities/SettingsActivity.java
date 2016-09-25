@@ -7,6 +7,7 @@ import android.support.v7.widget.SwitchCompat;
 
 import com.simplemobiletools.notes.Config;
 import com.simplemobiletools.notes.R;
+import com.simplemobiletools.notes.Utils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -59,8 +60,9 @@ public class SettingsActivity extends SimpleActivity {
     }
 
     @OnItemSelected(R.id.settings_font_size)
-    public void handleMaxPhotoResolution() {
+    public void handleFontSize() {
         mConfig.setFontSize(mFontSizeSpinner.getSelectedItemPosition());
+        Utils.updateWidget(getApplicationContext());
     }
 
     private void restartActivity() {

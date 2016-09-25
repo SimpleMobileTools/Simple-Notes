@@ -23,6 +23,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
         final int newTextColor = mPrefs.getInt(Constants.WIDGET_TEXT_COLOR, Color.WHITE);
         mRemoteViews.setInt(R.id.notes_view, "setBackgroundColor", newBgColor);
         mRemoteViews.setInt(R.id.notes_view, "setTextColor", newTextColor);
+        mRemoteViews.setFloat(R.id.notes_view, "setTextSize", Utils.getTextSize(context) / context.getResources().getDisplayMetrics().density);
 
         for (int widgetId : appWidgetIds) {
             updateWidget(appWidgetManager, widgetId, mRemoteViews);

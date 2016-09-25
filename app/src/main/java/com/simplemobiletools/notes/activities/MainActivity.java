@@ -1,7 +1,5 @@
 package com.simplemobiletools.notes.activities;
 
-import android.appwidget.AppWidgetManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,7 +14,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.simplemobiletools.notes.Constants;
-import com.simplemobiletools.notes.MyWidgetProvider;
 import com.simplemobiletools.notes.R;
 import com.simplemobiletools.notes.Utils;
 
@@ -123,7 +120,7 @@ public class MainActivity extends SimpleActivity {
         }
 
         hideKeyboard();
-        updateWidget();
+        Utils.updateWidget(getApplicationContext());
     }
 
     private void shareText() {
@@ -154,16 +151,5 @@ public class MainActivity extends SimpleActivity {
     private void hideKeyboard() {
         final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(mNotesView.getWindowToken(), 0);
-    }
-
-    private void updateWidget() {
-        final Context context = getApplicationContext();
-        final AppWidgetManager widgetManager = AppWidgetManager.getInstance(context);
-        int[] ids = widgetManager.getAppWidgetIds(new ComponentName(context, MyWidgetProvider.class));
-
-        final Intent intent = new Intent(this, MyWidgetProvider.class);
-        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
-        sendBroadcast(intent);
     }
 }

@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RemoteViews;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import com.simplemobiletools.notes.Constants;
 import com.simplemobiletools.notes.MyWidgetProvider;
 import com.simplemobiletools.notes.R;
+import com.simplemobiletools.notes.Utils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,6 +52,12 @@ public class WidgetConfigureActivity extends AppCompatActivity {
 
         if (mWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID)
             finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(getApplicationContext()));
     }
 
     private void initVariables() {
