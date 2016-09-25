@@ -11,15 +11,15 @@ public class Note {
         mText = text;
     }
 
-    public int getmId() {
+    public int getId() {
         return mId;
     }
 
-    public String getmName() {
+    public String getName() {
         return mName;
     }
 
-    public String getmText() {
+    public String getText() {
         return mText;
     }
 }
