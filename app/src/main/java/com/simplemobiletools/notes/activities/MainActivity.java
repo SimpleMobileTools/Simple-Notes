@@ -19,8 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends SimpleActivity {
-    @BindView(R.id.notes_view)
-    EditText mNotesView;
+    @BindView(R.id.notes_view) EditText mNotesView;
 
     private SharedPreferences mPrefs;
 

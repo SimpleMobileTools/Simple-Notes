@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.simplemobiletools.notes"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.simplemobiletools.notes">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/launcher"
         android:label="@string/app_launcher_name"
