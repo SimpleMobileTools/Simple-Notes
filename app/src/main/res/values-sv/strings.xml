@@ -6,17 +6,12 @@
     <string name="share">Dela</string>
     <string name="share_via">Dela via</string>
     <string name="cannot_share_empty_text">Det går inte att dela utan text</string>
-    <string name="text_saved">Text sparad</string>
+    <string name="note_saved">Text sparad</string>
     <string name="simple_note">Simple Note</string>
-    <string name="enable_autosave">Enable autosave</string>
-    <string name="cancel">Cancel</string>
-    <string name="unsaved_changes">Unsaved changes</string>
-    <string name="autosave_prompt_msg">Changes made to the note have not been saved. Do you want to enable autosave?</string>
 
     <!-- Settings -->
     <string name="settings">Inställningar</string>
     <string name="dark_theme">Mörkt tema</string>
-    <string name="autosave">Spara automatiskt</string>
     <string name="note_font_size">Note font size</string>
     <string name="small">Small</string>
     <string name="normal">Normal</string>

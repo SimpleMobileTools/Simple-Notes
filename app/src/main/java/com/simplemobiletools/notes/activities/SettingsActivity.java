@@ -16,7 +16,6 @@ import butterknife.OnItemSelected;
 
 public class SettingsActivity extends SimpleActivity {
     @BindView(R.id.settings_dark_theme) SwitchCompat mDarkThemeSwitch;
-    @BindView(R.id.settings_autosave) SwitchCompat mAutosaveSwitch;
     @BindView(R.id.settings_font_size) AppCompatSpinner mFontSizeSpinner;
 
     private static Config mConfig;
@@ -29,17 +28,11 @@ public class SettingsActivity extends SimpleActivity {
         ButterKnife.bind(this);
 
         setupDarkTheme();
-        setupAutosave();
         setupFontSize();
-        mConfig.setShouldPromptAutosave(false);
     }
 
     private void setupDarkTheme() {
         mDarkThemeSwitch.setChecked(mConfig.getIsDarkTheme());
-    }
-
-    private void setupAutosave() {
-        mAutosaveSwitch.setChecked(mConfig.getIsAutosaveEnabled());
     }
 
     private void setupFontSize() {
@@ -51,12 +44,6 @@ public class SettingsActivity extends SimpleActivity {
         mDarkThemeSwitch.setChecked(!mDarkThemeSwitch.isChecked());
         mConfig.setIsDarkTheme(mDarkThemeSwitch.isChecked());
         restartActivity();
-    }
-
-    @OnClick(R.id.settings_autosave_holder)
-    public void handleAutosave() {
-        mAutosaveSwitch.setChecked(!mAutosaveSwitch.isChecked());
-        mConfig.setIsAutosaveEnabled(mAutosaveSwitch.isChecked());
     }
 
     @OnItemSelected(R.id.settings_font_size)

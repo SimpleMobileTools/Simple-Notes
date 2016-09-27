@@ -1,12 +1,10 @@
 package com.simplemobiletools.notes.activities;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,19 +46,7 @@ public class MainActivity extends SimpleActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if (mConfig.getIsAutosaveEnabled()) {
-            saveText(false);
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (mConfig.getShouldPromptAutosave() && !getCurrentNote().equals(getSavedNote())) {
-            mConfig.setShouldPromptAutosave(false);
-            displayAutosavePrompt();
-        } else {
-            super.onBackPressed();
-        }
+        saveText();
     }
 
     @Override
@@ -72,18 +58,12 @@ public class MainActivity extends SimpleActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-        if (mConfig.getIsAutosaveEnabled())
-            menu.findItem(R.id.save).setVisible(false);
-
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.save:
-                saveText(true);
-                return true;
             case R.id.share:
                 shareText();
                 return true;
@@ -103,30 +83,14 @@ public class MainActivity extends SimpleActivity {
 
     }
 
-    private void displayAutosavePrompt() {
-        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        alertDialog.setTitle(getString(R.string.unsaved_changes));
-        alertDialog.setMessage(getString(R.string.autosave_prompt_msg));
-
-        alertDialog.setNegativeButton(R.string.cancel, null);
-        alertDialog.setPositiveButton(R.string.enable_autosave, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                mConfig.setIsAutosaveEnabled(true);
-                supportInvalidateOptionsMenu();
-            }
-        });
-        alertDialog.create().show();
-    }
-
-    private void saveText(boolean showToast) {
-        final String text = getCurrentNote();
-        mPrefs.edit().putString(Constants.TEXT, text).apply();
-
-        if (showToast) {
-            Utils.showToast(getApplicationContext(), R.string.text_saved);
+    private void saveText() {
+        final String newText = getCurrentNote();
+        final String oldText = mPrefs.getString(Constants.TEXT, "");
+        if (!newText.equals(oldText)) {
+            Utils.showToast(getApplicationContext(), R.string.note_saved);
         }
 
+        mPrefs.edit().putString(Constants.TEXT, newText).apply();
         hideKeyboard();
         Utils.updateWidget(getApplicationContext());
     }

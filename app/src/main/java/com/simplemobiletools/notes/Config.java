@@ -30,22 +30,6 @@ public class Config {
         mPrefs.edit().putBoolean(Constants.IS_DARK_THEME, isDarkTheme).apply();
     }
 
-    public boolean getIsAutosaveEnabled() {
-        return mPrefs.getBoolean(Constants.AUTOSAVE, false);
-    }
-
-    public void setIsAutosaveEnabled(boolean enabled) {
-        mPrefs.edit().putBoolean(Constants.AUTOSAVE, enabled).apply();
-    }
-
-    public boolean getShouldPromptAutosave() {
-        return mPrefs.getBoolean(Constants.PROMPT_AUTOSAVE, true);
-    }
-
-    public void setShouldPromptAutosave(boolean prompt) {
-        mPrefs.edit().putBoolean(Constants.PROMPT_AUTOSAVE, prompt).apply();
-    }
-
     public int getFontSize() {
         return mPrefs.getInt(Constants.FONT_SIZE, Constants.FONT_SIZE_MEDIUM);
     }
