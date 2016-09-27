@@ -23,6 +23,9 @@ public class Utils {
             case Constants.FONT_SIZE_LARGE:
                 textSize = res.getDimension(R.dimen.large_text_size);
                 break;
+            case Constants.FONT_SIZE_EXTRA_LARGE:
+                textSize = res.getDimension(R.dimen.extra_large_text_size);
+                break;
         }
         return textSize;
     }

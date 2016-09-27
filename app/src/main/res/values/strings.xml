@@ -16,6 +16,7 @@
     <string name="small">Small</string>
     <string name="normal">Normal</string>
     <string name="large">Large</string>
+    <string name="extra_large">Extra Large</string>
 
     <!-- About -->
     <string name="about">About</string>

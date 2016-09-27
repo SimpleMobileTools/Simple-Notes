@@ -4,5 +4,6 @@
         <item>@string/small</item>
         <item>@string/normal</item>
         <item>@string/large</item>
+        <item>@string/extra_large</item>
     </string-array>
 </resources>
