@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 1.14 *(2016-09-27)*
+----------------------------
+
+ * Allow changing the font size
+ * Permanently enable autosave
+
 Version 1.13 *(2016-09-07)*
 ----------------------------
 
