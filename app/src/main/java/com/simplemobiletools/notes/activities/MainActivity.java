@@ -19,6 +19,8 @@ import com.simplemobiletools.notes.Utils;
 import com.simplemobiletools.notes.databases.DBHelper;
 import com.simplemobiletools.notes.models.Note;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -28,7 +30,7 @@ public class MainActivity extends SimpleActivity {
 
     private DBHelper mDb;
     private Note mCurrentNote;
-    private int mNotesCnt;
+    private List<Note> mNotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,7 @@ public class MainActivity extends SimpleActivity {
         invalidateOptionsMenu();
         mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(getApplicationContext()));
 
-        mNotesCnt = mDb.getNotes().size();
+        mNotes = mDb.getNotes();
         invalidateOptionsMenu();
     }
 
@@ -67,10 +69,10 @@ public class MainActivity extends SimpleActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         final MenuItem openNote = menu.findItem(R.id.open_note);
-        openNote.setVisible(mNotesCnt > 1);
+        openNote.setVisible(mNotes.size() > 1);
 
         final MenuItem deleteNote = menu.findItem(R.id.delete_note);
-        deleteNote.setVisible(mNotesCnt > 1);
+        deleteNote.setVisible(mNotes.size() > 1);
 
         return true;
     }
