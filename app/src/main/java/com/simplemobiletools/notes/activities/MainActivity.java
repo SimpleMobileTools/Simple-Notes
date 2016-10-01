@@ -65,11 +65,11 @@ public class MainActivity extends SimpleActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        final MenuItem openNote = menu.findItem(R.id.open_note);
+        openNote.setVisible(mNotesCnt > 1);
 
-        if (mNotesCnt <= 1) {
-            final MenuItem item = menu.findItem(R.id.open_note);
-            item.setVisible(false);
-        }
+        final MenuItem deleteNote = menu.findItem(R.id.delete_note);
+        deleteNote.setVisible(mNotesCnt > 1);
 
         return true;
     }
@@ -77,6 +77,9 @@ public class MainActivity extends SimpleActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.delete_note:
+                deleteNote();
+                return true;
             case R.id.open_note:
                 displayOpenNoteDialog();
                 return true;
@@ -122,6 +125,10 @@ public class MainActivity extends SimpleActivity {
                 }
             }
         });
+    }
+
+    private void deleteNote() {
+
     }
 
     private void displayOpenNoteDialog() {

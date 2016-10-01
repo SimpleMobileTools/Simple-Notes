@@ -14,6 +14,7 @@
     <string name="no_title">Please name your note</string>
     <string name="title_taken">A note with that title already exists</string>
     <string name="open_note">Open note</string>
+    <string name="delete_note">Delete note</string>
 
     <!-- Settings -->
     <string name="settings">Inställningar</string>
