@@ -67,6 +67,9 @@ public class MainActivity extends SimpleActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.open_note:
+                displayOpenNoteDialog();
+                return true;
             case R.id.share:
                 shareText();
                 return true;
@@ -109,6 +112,10 @@ public class MainActivity extends SimpleActivity {
                 }
             }
         });
+    }
+
+    private void displayOpenNoteDialog() {
+
     }
 
     private void saveText() {

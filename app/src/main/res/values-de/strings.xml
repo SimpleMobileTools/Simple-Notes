@@ -13,6 +13,7 @@
     <string name="cancel">Cancel</string>
     <string name="no_title">Please name your note</string>
     <string name="title_taken">A note with that title already exists</string>
+    <string name="open_note">Open note</string>
 
     <!-- Settings -->
     <string name="settings">Einstellungen</string>
@@ -35,7 +36,7 @@
     <string name="follow_us">Folge uns:</string>
     <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
 
-    <!--License-->
+    <!-- License -->
     <string name="notice">Diese App nutzt die folgenden Drittanbieterbibliotheken, die mein Leben einfacher machen. Danke.</string>
     <string name="third_party_licences">Drittanbieterlizenzen</string>
     <string name="butterknife_title"><u>Butter Knife (view injector)</u></string>
