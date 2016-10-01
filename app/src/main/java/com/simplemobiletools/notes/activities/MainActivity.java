@@ -104,6 +104,7 @@ public class MainActivity extends SimpleActivity {
                 } else if (mDb.doesTitleExist(title)) {
                     Utils.showToast(getApplicationContext(), R.string.title_taken);
                 } else {
+                    mDb.insertNote(new Note(0, title, ""));
                     alertDialog.dismiss();
                 }
             }
