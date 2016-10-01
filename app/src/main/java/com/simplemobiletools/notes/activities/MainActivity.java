@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
@@ -81,7 +83,29 @@ public class MainActivity extends SimpleActivity {
 
     @OnClick(R.id.notes_fab)
     public void fabClicked(View view) {
+        final View newNoteView = getLayoutInflater().inflate(R.layout.new_note, null);
 
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getResources().getString(R.string.new_note));
+        builder.setView(newNoteView);
+        builder.setPositiveButton(R.string.ok, null);
+        builder.setNegativeButton(R.string.cancel, null);
+
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        alertDialog.show();
+        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final EditText titleET = (EditText) newNoteView.findViewById(R.id.note_name);
+                final String title = titleET.getText().toString().trim();
+                if (title.isEmpty()) {
+                    Utils.showToast(getApplicationContext(), R.string.no_title);
+                } else {
+                    alertDialog.dismiss();
+                }
+            }
+        });
     }
 
     private void saveText() {

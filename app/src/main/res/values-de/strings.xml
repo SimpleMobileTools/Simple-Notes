@@ -8,6 +8,11 @@
     <string name="cannot_share_empty_text">Leerer Text kann nicht geteilt werden</string>
     <string name="note_saved">Text gespeichert</string>
     <string name="simple_note">Einfache Notiz</string>
+    <string name="new_note">Add a new note</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_title">Please name your note</string>
+    <string name="title_taken">A note with that title already exists</string>
 
     <!-- Settings -->
     <string name="settings">Einstellungen</string>

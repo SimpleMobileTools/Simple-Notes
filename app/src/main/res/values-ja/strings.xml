@@ -4,10 +4,15 @@
     <string name="widget_config">シンプルメモのご利用ありがとうございます。\n他のシンプルアプリは SimpleMobileTools.com をご覧ください。\n</string>
     <string name="save">保存</string>
     <string name="share">共有</string>
-    <string name="share_via">共有...</string>
+    <string name="share_via">共有&#8230;</string>
     <string name="cannot_share_empty_text">空のテキストは共有できません</string>
     <string name="note_saved">テキストを保存しました</string>
     <string name="simple_note">シンプル メモ</string>
+    <string name="new_note">Add a new note</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_title">Please name your note</string>
+    <string name="title_taken">A note with that title already exists</string>
 
     <!-- Settings -->
     <string name="settings">設定</string>
