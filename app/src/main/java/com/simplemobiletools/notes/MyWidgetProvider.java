@@ -10,8 +10,10 @@ import android.graphics.Color;
 import android.widget.RemoteViews;
 
 import com.simplemobiletools.notes.activities.MainActivity;
+import com.simplemobiletools.notes.databases.DBHelper;
 
 public class MyWidgetProvider extends AppWidgetProvider {
+    private DBHelper mDb;
     private static SharedPreferences mPrefs;
     private static RemoteViews mRemoteViews;
 
@@ -33,6 +35,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
 
     private void initVariables(Context context) {
         mPrefs = context.getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE);
+        mDb = DBHelper.newInstance(context);
         mRemoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
         setupAppOpenIntent(R.id.notes_holder, context);
     }
@@ -44,7 +47,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
     }
 
     private void updateWidget(AppWidgetManager widgetManager, int widgetId, RemoteViews remoteViews) {
-        final String text = mPrefs.getString(Constants.TEXT, "");
+        final String text = mDb.getGeneralNote().getValue();
         remoteViews.setTextViewText(R.id.notes_view, text);
         widgetManager.updateAppWidget(widgetId, remoteViews);
     }
