@@ -17,6 +17,7 @@
     <string name="delete_note">Delete note</string>
     <string name="delete_note_prompt_title">Delete note</string>
     <string name="delete_note_prompt_message">Are you sure you want to delete note \"%1$s\"?</string>
+    <string name="pick_a_note">Pick a note</string>
 
     <!-- Settings -->
     <string name="settings">Inställningar</string>

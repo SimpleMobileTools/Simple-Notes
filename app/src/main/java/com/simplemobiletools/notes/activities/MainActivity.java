@@ -150,7 +150,22 @@ public class MainActivity extends SimpleActivity {
     }
 
     private void displayOpenNoteDialog() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getResources().getString(R.string.pick_a_note));
 
+        final int cnt = mNotes.size();
+        String[] notes = new String[cnt];
+        for (int i = 0; i < cnt; i++) {
+            notes[i] = mNotes.get(i).getTitle();
+        }
+
+        builder.setItems(notes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.show();
     }
 
     private void saveText() {

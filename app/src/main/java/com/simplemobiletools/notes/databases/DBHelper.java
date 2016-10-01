@@ -94,7 +94,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public List<Note> getNotes() {
         final List<Note> notes = new ArrayList<>();
         final String cols[] = {COL_ID, COL_TITLE, COL_VALUE};
-        final Cursor cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, null);
+        final Cursor cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, COL_TITLE);
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 do {
