@@ -2,7 +2,6 @@ package com.simplemobiletools.notes.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -11,9 +10,10 @@ import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.simplemobiletools.notes.Constants;
 import com.simplemobiletools.notes.R;
 import com.simplemobiletools.notes.Utils;
+import com.simplemobiletools.notes.databases.DBHelper;
+import com.simplemobiletools.notes.models.Note;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +21,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends SimpleActivity {
     @BindView(R.id.notes_view) EditText mNotesView;
 
-    private SharedPreferences mPrefs;
+    private DBHelper mDb;
+    private Note mCurrentNote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +30,9 @@ public class MainActivity extends SimpleActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mPrefs = getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE);
-        mNotesView.setText(getSavedNote());
+        mDb = DBHelper.newInstance(getApplicationContext());
+        mCurrentNote = mDb.getGeneralNote();
+        mNotesView.setText(mCurrentNote.getValue());
     }
 
     @Override
@@ -77,12 +79,13 @@ public class MainActivity extends SimpleActivity {
 
     private void saveText() {
         final String newText = getCurrentNote();
-        final String oldText = mPrefs.getString(Constants.TEXT, "");
+        final String oldText = mCurrentNote.getValue();
         if (!newText.equals(oldText)) {
             Utils.showToast(getApplicationContext(), R.string.note_saved);
+            mCurrentNote.setValue(newText);
+            mDb.updateNote(mCurrentNote);
         }
 
-        mPrefs.edit().putString(Constants.TEXT, newText).apply();
         hideKeyboard();
         Utils.updateWidget(getApplicationContext());
     }
@@ -106,10 +109,6 @@ public class MainActivity extends SimpleActivity {
 
     private String getCurrentNote() {
         return mNotesView.getText().toString().trim();
-    }
-
-    private String getSavedNote() {
-        return mPrefs.getString(Constants.TEXT, "");
     }
 
     private void hideKeyboard() {
