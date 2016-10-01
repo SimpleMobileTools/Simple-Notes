@@ -1,6 +1,7 @@
 package com.simplemobiletools.notes.activities;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -78,7 +79,7 @@ public class MainActivity extends SimpleActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.delete_note:
-                deleteNote();
+                displayDeleteNotePrompt();
                 return true;
             case R.id.open_note:
                 displayOpenNoteDialog();
@@ -125,6 +126,21 @@ public class MainActivity extends SimpleActivity {
                 }
             }
         });
+    }
+
+    private void displayDeleteNotePrompt() {
+        final Resources res = getResources();
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(res.getString(R.string.delete_note_prompt_title));
+        builder.setMessage(String.format(res.getString(R.string.delete_note_prompt_message), mCurrentNote.getTitle()));
+        builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                deleteNote();
+            }
+        });
+        builder.setNegativeButton(R.string.cancel, null);
+        builder.show();
     }
 
     private void deleteNote() {
