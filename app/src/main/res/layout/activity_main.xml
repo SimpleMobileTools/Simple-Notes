@@ -6,22 +6,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/notes_scrollview"
+    <RelativeLayout
+        android:id="@+id/notes_holder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/notes_view"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/current_note_label"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:gravity="top"
-            android:inputType="textCapSentences|textMultiLine"
-            android:padding="@dimen/activity_margin"/>
-    </ScrollView>
+            android:layout_margin="@dimen/activity_margin"
+            android:alpha=".6"
+            android:text="@string/current_note"/>
+
+        <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/notes_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/current_note_label"
+            android:fillViewport="true">
+
+            <EditText
+                android:id="@+id/notes_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="top"
+                android:inputType="textCapSentences|textMultiLine"
+                android:paddingBottom="@dimen/activity_margin"
+                android:paddingLeft="@dimen/activity_margin"
+                android:paddingRight="@dimen/activity_margin"/>
+        </ScrollView>
+    </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/notes_fab"
