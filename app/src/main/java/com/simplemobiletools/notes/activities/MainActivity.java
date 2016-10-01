@@ -27,6 +27,7 @@ public class MainActivity extends SimpleActivity {
 
     private DBHelper mDb;
     private Note mCurrentNote;
+    private int mNotesCnt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,9 @@ public class MainActivity extends SimpleActivity {
         super.onResume();
         invalidateOptionsMenu();
         mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(getApplicationContext()));
+
+        mNotesCnt = mDb.getNotes().size();
+        invalidateOptionsMenu();
     }
 
     @Override
@@ -61,6 +65,12 @@ public class MainActivity extends SimpleActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+
+        if (mNotesCnt <= 1) {
+            final MenuItem item = menu.findItem(R.id.open_note);
+            item.setVisible(false);
+        }
+
         return true;
     }
 

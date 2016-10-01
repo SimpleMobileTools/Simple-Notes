@@ -10,6 +10,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.simplemobiletools.notes.Constants;
 import com.simplemobiletools.notes.models.Note;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "notes.db";
     private static final int DB_VERSION = 1;
@@ -78,7 +81,7 @@ public class DBHelper extends SQLiteOpenHelper {
         final String cols[] = {COL_ID};
         final String selection = COL_TITLE + " = ?";
         final String selectionArgs[] = {title};
-        Cursor cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null);
+        final Cursor cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null);
 
         if (cursor == null)
             return false;
@@ -86,6 +89,26 @@ public class DBHelper extends SQLiteOpenHelper {
         final int cnt = cursor.getCount();
         cursor.close();
         return cnt == 1;
+    }
+
+    public List<Note> getNotes() {
+        final List<Note> notes = new ArrayList<>();
+        final String cols[] = {COL_ID, COL_TITLE, COL_VALUE};
+        final Cursor cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    final int id = cursor.getInt(cursor.getColumnIndex(COL_ID));
+                    final String title = cursor.getString(cursor.getColumnIndex(COL_TITLE));
+                    final String value = cursor.getString(cursor.getColumnIndex(COL_VALUE));
+                    final Note note = new Note(id, title, value);
+                    notes.add(note);
+                } while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+
+        return notes;
     }
 
     public void updateNote(Note note) {
@@ -105,10 +128,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()) {
             final int id = cursor.getInt(cursor.getColumnIndex(COL_ID));
-            final String name = cursor.getString(cursor.getColumnIndex(COL_TITLE));
-            final String text = cursor.getString(cursor.getColumnIndex(COL_VALUE));
+            final String title = cursor.getString(cursor.getColumnIndex(COL_TITLE));
+            final String value = cursor.getString(cursor.getColumnIndex(COL_VALUE));
             cursor.close();
-            return new Note(id, name, text);
+            return new Note(id, title, value);
         }
 
         cursor.close();
