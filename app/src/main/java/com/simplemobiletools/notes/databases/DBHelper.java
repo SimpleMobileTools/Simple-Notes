@@ -74,6 +74,20 @@ public class DBHelper extends SQLiteOpenHelper {
         return values;
     }
 
+    public boolean doesTitleExist(String title) {
+        final String cols[] = {COL_ID};
+        final String selection = COL_TITLE + " = ?";
+        final String selectionArgs[] = {title};
+        Cursor cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null);
+
+        if (cursor == null)
+            return false;
+
+        final int cnt = cursor.getCount();
+        cursor.close();
+        return cnt == 1;
+    }
+
     public void updateNote(Note note) {
         final ContentValues values = fillContentValues(note);
         final String selection = COL_ID + " = ?";

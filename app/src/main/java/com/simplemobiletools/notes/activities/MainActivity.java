@@ -101,6 +101,8 @@ public class MainActivity extends SimpleActivity {
                 final String title = titleET.getText().toString().trim();
                 if (title.isEmpty()) {
                     Utils.showToast(getApplicationContext(), R.string.no_title);
+                } else if (mDb.doesTitleExist(title)) {
+                    Utils.showToast(getApplicationContext(), R.string.title_taken);
                 } else {
                     alertDialog.dismiss();
                 }
