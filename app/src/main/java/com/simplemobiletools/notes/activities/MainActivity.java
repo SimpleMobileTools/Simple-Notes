@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
@@ -17,6 +18,7 @@ import com.simplemobiletools.notes.models.Note;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends SimpleActivity {
     @BindView(R.id.notes_view) EditText mNotesView;
@@ -75,6 +77,11 @@ public class MainActivity extends SimpleActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @OnClick(R.id.notes_fab)
+    public void fabClicked(View view) {
+
     }
 
     private void saveText() {
