@@ -42,10 +42,9 @@ public class MainActivity extends SimpleActivity {
         ButterKnife.bind(this);
 
         mDb = DBHelper.newInstance(getApplicationContext());
-        mCurrentNote = mDb.getGeneralNote();
-        mNotesView.setText(mCurrentNote.getValue());
-        mCurrNoteTitle.setText(mCurrentNote.getTitle());
-    }
+        mNotes = mDb.getNotes();
+        updateCurrentNote(0);
+}
 
     @Override
     protected void onResume() {
@@ -53,11 +52,7 @@ public class MainActivity extends SimpleActivity {
         invalidateOptionsMenu();
         mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(getApplicationContext()));
 
-        mNotes = mDb.getNotes();
         invalidateOptionsMenu();
-
-        mCurrNoteLabel.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
-        mCurrNoteTitle.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
     }
 
     @Override
@@ -105,6 +100,15 @@ public class MainActivity extends SimpleActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void updateCurrentNote(int index) {
+        mCurrentNote = mNotes.get(index);
+        mNotesView.setText(mCurrentNote.getValue());
+        mCurrNoteTitle.setText(mCurrentNote.getTitle());
+
+        mCurrNoteLabel.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
+        mCurrNoteTitle.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
     }
 
     @OnClick(R.id.notes_fab)
@@ -169,7 +173,7 @@ public class MainActivity extends SimpleActivity {
         builder.setItems(notes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                updateCurrentNote(which);
             }
         });
         builder.show();
