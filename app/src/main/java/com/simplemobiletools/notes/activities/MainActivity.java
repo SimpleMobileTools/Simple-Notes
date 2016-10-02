@@ -55,6 +55,9 @@ public class MainActivity extends SimpleActivity {
 
         mNotes = mDb.getNotes();
         invalidateOptionsMenu();
+
+        mCurrNoteLabel.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
+        mCurrNoteTitle.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
     }
 
     @Override

@@ -15,7 +15,6 @@
             android:id="@+id/current_note_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_margin"
             android:layout_marginLeft="@dimen/activity_margin"
             android:layout_marginTop="@dimen/activity_margin"
             android:alpha=".6"
@@ -25,7 +24,6 @@
             android:id="@+id/current_note_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/activity_margin"
             android:layout_marginLeft="@dimen/normal_padding"
             android:layout_marginRight="@dimen/activity_margin"
             android:layout_marginTop="@dimen/activity_margin"
@@ -33,7 +31,6 @@
             android:alpha=".6"/>
 
         <ScrollView
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/notes_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -49,7 +46,8 @@
                 android:inputType="textCapSentences|textMultiLine"
                 android:paddingBottom="@dimen/activity_margin"
                 android:paddingLeft="@dimen/activity_margin"
-                android:paddingRight="@dimen/activity_margin"/>
+                android:paddingRight="@dimen/activity_margin"
+                android:paddingTop="@dimen/activity_margin"/>
         </ScrollView>
     </RelativeLayout>
 
