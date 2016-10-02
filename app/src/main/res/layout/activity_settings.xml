@@ -15,7 +15,7 @@
             android:id="@+id/settings_dark_theme_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/settings_padding"
+            android:layout_marginTop="@dimen/normal_padding"
             android:background="?attr/selectableItemBackground"
             android:padding="@dimen/activity_margin">
 
@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:paddingLeft="@dimen/settings_padding"
+                android:paddingLeft="@dimen/normal_padding"
                 android:text="@string/dark_theme"/>
 
             <android.support.v7.widget.SwitchCompat
@@ -41,10 +41,10 @@
             android:id="@+id/settings_font_size_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/settings_padding"
+            android:layout_marginTop="@dimen/normal_padding"
             android:paddingBottom="@dimen/activity_margin"
             android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/settings_padding"
+            android:paddingRight="@dimen/normal_padding"
             android:paddingTop="@dimen/activity_margin">
 
             <TextView
@@ -52,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:paddingLeft="@dimen/settings_padding"
+                android:paddingLeft="@dimen/normal_padding"
                 android:text="@string/note_font_size"/>
 
             <android.support.v7.widget.AppCompatSpinner

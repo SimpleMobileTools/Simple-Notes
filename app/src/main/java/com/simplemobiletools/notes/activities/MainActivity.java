@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.simplemobiletools.notes.R;
 import com.simplemobiletools.notes.Utils;
@@ -27,6 +28,8 @@ import butterknife.OnClick;
 
 public class MainActivity extends SimpleActivity {
     @BindView(R.id.notes_view) EditText mNotesView;
+    @BindView(R.id.current_note_label) TextView mCurrNoteLabel;
+    @BindView(R.id.current_note_title) TextView mCurrNoteTitle;
 
     private DBHelper mDb;
     private Note mCurrentNote;
@@ -41,6 +44,7 @@ public class MainActivity extends SimpleActivity {
         mDb = DBHelper.newInstance(getApplicationContext());
         mCurrentNote = mDb.getGeneralNote();
         mNotesView.setText(mCurrentNote.getValue());
+        mCurrNoteTitle.setText(mCurrentNote.getTitle());
     }
 
     @Override

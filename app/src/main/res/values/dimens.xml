@@ -2,7 +2,7 @@
     <dimen name="activity_margin">16dp</dimen>
     <dimen name="social_padding">8dp</dimen>
     <dimen name="social_logo">40dp</dimen>
-    <dimen name="settings_padding">8dp</dimen>
+    <dimen name="normal_padding">8dp</dimen>
 
     <dimen name="small_text_size">12sp</dimen>
     <dimen name="normal_text_size">14sp</dimen>
