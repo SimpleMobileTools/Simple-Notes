@@ -43,7 +43,7 @@ public class MainActivity extends SimpleActivity {
 
         mDb = DBHelper.newInstance(getApplicationContext());
         mNotes = mDb.getNotes();
-        updateCurrentNote(0);
+        updateCurrentNote(mConfig.getCurrentNoteIndex());
 }
 
     @Override
@@ -103,6 +103,7 @@ public class MainActivity extends SimpleActivity {
     }
 
     private void updateCurrentNote(int index) {
+        mConfig.setCurrentNoteIndex(index);
         mCurrentNote = mNotes.get(index);
         mNotesView.setText(mCurrentNote.getValue());
         mCurrNoteTitle.setText(mCurrentNote.getTitle());
