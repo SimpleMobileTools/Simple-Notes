@@ -11,6 +11,9 @@ import android.widget.RemoteViews;
 
 import com.simplemobiletools.notes.activities.MainActivity;
 import com.simplemobiletools.notes.databases.DBHelper;
+import com.simplemobiletools.notes.models.Note;
+
+import java.util.List;
 
 public class MyWidgetProvider extends AppWidgetProvider {
     private DBHelper mDb;
@@ -47,7 +50,9 @@ public class MyWidgetProvider extends AppWidgetProvider {
     }
 
     private void updateWidget(AppWidgetManager widgetManager, int widgetId, RemoteViews remoteViews) {
-        final String text = mDb.getGeneralNote().getValue();
+        final List<Note> notes = mDb.getNotes();
+        final int currNoteIndex = mPrefs.getInt(Constants.CURRENT_NOTE_INDEX, 0);
+        final String text = notes.get(currNoteIndex).getValue();
         remoteViews.setTextViewText(R.id.notes_view, text);
         widgetManager.updateAppWidget(widgetId, remoteViews);
     }

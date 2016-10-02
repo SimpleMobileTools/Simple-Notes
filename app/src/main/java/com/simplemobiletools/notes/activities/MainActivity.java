@@ -108,6 +108,7 @@ public class MainActivity extends SimpleActivity {
 
         mCurrNoteLabel.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
         mCurrNoteTitle.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
+        Utils.updateWidget(getApplicationContext());
     }
 
     @OnClick(R.id.notes_fab)
