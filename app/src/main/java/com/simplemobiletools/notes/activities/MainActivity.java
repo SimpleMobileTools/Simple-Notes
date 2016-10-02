@@ -51,8 +51,6 @@ public class MainActivity extends SimpleActivity {
         super.onResume();
         invalidateOptionsMenu();
         mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(getApplicationContext()));
-
-        invalidateOptionsMenu();
     }
 
     @Override
@@ -143,6 +141,7 @@ public class MainActivity extends SimpleActivity {
                     final int newNoteIndex = getNewNoteIndex(newNote);
                     updateSelectedNote(newNoteIndex);
                     alertDialog.dismiss();
+                    invalidateOptionsMenu();
                 }
             }
         });
@@ -182,6 +181,7 @@ public class MainActivity extends SimpleActivity {
         mDb.deleteNote(mCurrentNote.getId());
         mNotes = mDb.getNotes();
         updateSelectedNote(0);
+        invalidateOptionsMenu();
     }
 
     private void displayOpenNoteDialog() {
