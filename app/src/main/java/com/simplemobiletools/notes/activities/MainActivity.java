@@ -157,6 +157,8 @@ public class MainActivity extends SimpleActivity {
     }
 
     private void deleteNote() {
+        if (mNotes.size() <= 1)
+            return;
 
     }
 
