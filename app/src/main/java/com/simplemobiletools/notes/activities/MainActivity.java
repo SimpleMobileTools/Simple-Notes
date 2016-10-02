@@ -43,7 +43,7 @@ public class MainActivity extends SimpleActivity {
 
         mDb = DBHelper.newInstance(getApplicationContext());
         mNotes = mDb.getNotes();
-        updateCurrentNote(mConfig.getCurrentNoteIndex());
+        updateSelectedNote(mConfig.getCurrentNoteIndex());
 }
 
     @Override
@@ -102,7 +102,7 @@ public class MainActivity extends SimpleActivity {
         }
     }
 
-    private void updateCurrentNote(int index) {
+    private void updateSelectedNote(int index) {
         mConfig.setCurrentNoteIndex(index);
         mCurrentNote = mNotes.get(index);
         mNotesView.setText(mCurrentNote.getValue());
@@ -135,11 +135,29 @@ public class MainActivity extends SimpleActivity {
                 } else if (mDb.doesTitleExist(title)) {
                     Utils.showToast(getApplicationContext(), R.string.title_taken);
                 } else {
-                    mDb.insertNote(new Note(0, title, ""));
+                    final Note newNote = new Note(0, title, "");
+                    final int id = mDb.insertNote(newNote);
+                    newNote.setId(id);
+                    mNotes = mDb.getNotes();
+
+                    final int newNoteIndex = getNewNoteIndex(newNote);
+                    updateSelectedNote(newNoteIndex);
                     alertDialog.dismiss();
                 }
             }
         });
+    }
+
+    private int getNewNoteIndex(Note note) {
+        final int cnt = mNotes.size();
+        int index = 0;
+        for (int i = 0; i < cnt; i++) {
+            if (mNotes.get(i).equals(note)) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 
     private void displayDeleteNotePrompt() {
@@ -161,6 +179,9 @@ public class MainActivity extends SimpleActivity {
         if (mNotes.size() <= 1)
             return;
 
+        mDb.deleteNote(mCurrentNote.getId());
+        mNotes = mDb.getNotes();
+        updateSelectedNote(0);
     }
 
     private void displayOpenNoteDialog() {
@@ -176,7 +197,7 @@ public class MainActivity extends SimpleActivity {
         builder.setItems(notes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                updateCurrentNote(which);
+                updateSelectedNote(which);
             }
         });
         builder.show();

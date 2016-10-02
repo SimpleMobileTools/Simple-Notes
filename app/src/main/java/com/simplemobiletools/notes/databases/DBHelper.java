@@ -65,9 +65,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values);
     }
 
-    public void insertNote(Note note) {
+    public int insertNote(Note note) {
         final ContentValues values = fillContentValues(note);
-        mDb.insert(TABLE_NAME, null, values);
+        return (int) mDb.insert(TABLE_NAME, null, values);
     }
 
     private ContentValues fillContentValues(Note note) {
@@ -75,6 +75,10 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(COL_TITLE, note.getTitle());
         values.put(COL_VALUE, note.getValue());
         return values;
+    }
+
+    public void deleteNote(int id) {
+        mDb.delete(TABLE_NAME, COL_ID + " = " + id, null);
     }
 
     public boolean doesTitleExist(String title) {
