@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 1.17 *(2016-10-23)*
+----------------------------
+
+ * Fix the note not being saved in some scenarios
+
 Version 1.16 *(2016-10-02)*
 ----------------------------
 
