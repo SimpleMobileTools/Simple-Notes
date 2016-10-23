@@ -101,6 +101,7 @@ public class MainActivity extends SimpleActivity {
     }
 
     private void updateSelectedNote(int index) {
+        saveText();
         mConfig.setCurrentNoteIndex(index);
         mCurrentNote = mNotes.get(index);
         mNotesView.setText(mCurrentNote.getValue());
@@ -134,6 +135,7 @@ public class MainActivity extends SimpleActivity {
                 } else if (mDb.doesTitleExist(title)) {
                     Utils.showToast(getApplicationContext(), R.string.title_taken);
                 } else {
+                    saveText();
                     final Note newNote = new Note(0, title, "");
                     final int id = mDb.insertNote(newNote);
                     newNote.setId(id);
@@ -205,6 +207,9 @@ public class MainActivity extends SimpleActivity {
     }
 
     private void saveText() {
+        if (mCurrentNote == null)
+            return;
+
         final String newText = getCurrentNote();
         final String oldText = mCurrentNote.getValue();
         if (!newText.equals(oldText)) {
