@@ -45,4 +45,12 @@ public class Config {
     public void setCurrentNoteIndex(int index) {
         mPrefs.edit().putInt(Constants.CURRENT_NOTE_INDEX, index).apply();
     }
+
+    public int getWidgetNoteIndex() {
+        return mPrefs.getInt(Constants.WIDGET_NOTE_ID, 0);
+    }
+
+    public void setWidgetNoteIndex(int id) {
+        mPrefs.edit().putInt(Constants.WIDGET_NOTE_ID, id).apply();
+    }
 }

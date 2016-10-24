@@ -20,6 +20,7 @@
     <string name="pick_a_note">Pick a note</string>
     <string name="current_note">Current note:</string>
     <string name="change_widget_note">Change widget\'s note</string>
+    <string name="pick_a_note_for_widget">Pick a note for the widget</string>
 
     <!-- Settings -->
     <string name="settings">設定</string>

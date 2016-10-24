@@ -19,6 +19,7 @@ import com.simplemobiletools.notes.R;
 import com.simplemobiletools.notes.Utils;
 import com.simplemobiletools.notes.databases.DBHelper;
 import com.simplemobiletools.notes.models.Note;
+import com.simplemobiletools.notes.views.dialogs.WidgetNoteDialog;
 
 import java.util.List;
 
@@ -107,7 +108,7 @@ public class MainActivity extends SimpleActivity {
     }
 
     private void showWidgetNotePicker() {
-
+        new WidgetNoteDialog(this);
     }
 
     private void updateSelectedNote(int index) {
