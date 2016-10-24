@@ -8,26 +8,26 @@
     <string name="cannot_share_empty_text">Leerer Text kann nicht geteilt werden</string>
     <string name="note_saved">Text gespeichert</string>
     <string name="simple_note">Einfache Notiz</string>
-    <string name="new_note">Add a new note</string>
+    <string name="new_note">Neue Notiz hinzufügen</string>
     <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
-    <string name="no_title">Please name your note</string>
-    <string name="title_taken">A note with that title already exists</string>
-    <string name="open_note">Open note</string>
-    <string name="delete_note">Delete note</string>
-    <string name="delete_note_prompt_title">Delete note</string>
-    <string name="delete_note_prompt_message">Are you sure you want to delete note \"%1$s\"?</string>
-    <string name="pick_a_note">Pick a note</string>
-    <string name="current_note">Current note:</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="no_title">Bitte benenne deine Notiz</string>
+    <string name="title_taken">Es existiert bereits eine Notiz mit diesem Namen</string>
+    <string name="open_note">Notiz öffnen</string>
+    <string name="delete_note">Notiz löschen</string>
+    <string name="delete_note_prompt_title">Notiz löschen</string>
+    <string name="delete_note_prompt_message">Bist du sicher, dass du Notiz \"%1$s\" löschen willst?</string>
+    <string name="pick_a_note">Notiz auswählen</string>
+    <string name="current_note">Aktuelle Notiz:</string>
 
     <!-- Settings -->
     <string name="settings">Einstellungen</string>
     <string name="dark_theme">Dunkles Thema</string>
-    <string name="note_font_size">Note font size</string>
-    <string name="small">Small</string>
+    <string name="note_font_size">Schriftgröße</string>
+    <string name="small">Klein</string>
     <string name="normal">Normal</string>
-    <string name="large">Large</string>
-    <string name="extra_large">Extra Large</string>
+    <string name="large">Groß</string>
+    <string name="extra_large">Sehr groß</string>
 
     <!-- About -->
     <string name="about">Über</string>
