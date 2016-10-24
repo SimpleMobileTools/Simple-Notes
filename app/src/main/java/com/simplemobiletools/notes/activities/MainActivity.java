@@ -153,28 +153,12 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
                     saveText();
                     final Note newNote = new Note(0, title, "");
                     final int id = mDb.insertNote(newNote);
-                    newNote.setId(id);
-                    mNotes = mDb.getNotes();
-
-                    final int newNoteIndex = getNewNoteIndex(newNote);
-                    updateSelectedNote(newNoteIndex);
+                    updateSelectedNote(id);
                     alertDialog.dismiss();
                     invalidateOptionsMenu();
                 }
             }
         });
-    }
-
-    private int getNewNoteIndex(Note note) {
-        final int cnt = mNotes.size();
-        int index = 0;
-        for (int i = 0; i < cnt; i++) {
-            if (mNotes.get(i).equals(note)) {
-                index = i;
-                break;
-            }
-        }
-        return index;
     }
 
     private void displayDeleteNotePrompt() {
