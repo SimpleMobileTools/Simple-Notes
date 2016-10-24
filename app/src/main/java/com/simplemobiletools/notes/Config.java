@@ -39,7 +39,7 @@ public class Config {
     }
 
     public int getCurrentNoteId() {
-        return mPrefs.getInt(Constants.CURRENT_NOTE_ID, 0);
+        return mPrefs.getInt(Constants.CURRENT_NOTE_ID, 1);
     }
 
     public void setCurrentNoteId(int id) {

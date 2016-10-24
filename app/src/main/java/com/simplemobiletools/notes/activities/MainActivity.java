@@ -115,12 +115,12 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
     private void updateSelectedNote(int id) {
         saveText();
         mCurrentNote = mDb.getNote(id);
-        if (mCurrentNote == null)
-            return;
-
-        mConfig.setCurrentNoteId(id);
-        mNotesView.setText(mCurrentNote.getValue());
-        mCurrNoteTitle.setText(mCurrentNote.getTitle());
+        mNotes = mDb.getNotes();
+        if (mCurrentNote != null) {
+            mConfig.setCurrentNoteId(id);
+            mNotesView.setText(mCurrentNote.getValue());
+            mCurrNoteTitle.setText(mCurrentNote.getTitle());
+        }
 
         mCurrNoteLabel.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
         mCurrNoteTitle.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
