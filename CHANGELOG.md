@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 1.18 *(2016-10-24)*
+----------------------------
+
+ * Allow displaying different note  in the app and on the widget
+
 Version 1.17 *(2016-10-23)*
 ----------------------------
 
