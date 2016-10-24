@@ -74,6 +74,9 @@ public class MainActivity extends SimpleActivity {
         final MenuItem deleteNote = menu.findItem(R.id.delete_note);
         deleteNote.setVisible(mNotes.size() > 1);
 
+        final MenuItem changeNote = menu.findItem(R.id.change_widget_note);
+        changeNote.setVisible(mNotes.size() > 1);
+
         return true;
     }
 
@@ -89,6 +92,9 @@ public class MainActivity extends SimpleActivity {
             case R.id.share:
                 shareText();
                 return true;
+            case R.id.change_widget_note:
+                showWidgetNotePicker();
+                return true;
             case R.id.settings:
                 startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
                 return true;
@@ -98,6 +104,10 @@ public class MainActivity extends SimpleActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void showWidgetNotePicker() {
+
     }
 
     private void updateSelectedNote(int index) {

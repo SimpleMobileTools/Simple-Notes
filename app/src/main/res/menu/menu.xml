@@ -16,6 +16,10 @@
         android:title="@string/share"
         app:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/change_widget_note"
+        android:title="@string/change_widget_note"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/settings"
         android:title="@string/settings"
         app:showAsAction="never"/>

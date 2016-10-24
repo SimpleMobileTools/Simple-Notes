@@ -19,6 +19,7 @@
     <string name="delete_note_prompt_message">Pretende mesmo eliminar a nota \"%1$s\"?</string>
     <string name="pick_a_note">Selecione uma nota</string>
     <string name="current_note">Nota atual:</string>
+    <string name="change_widget_note">Change widget\'s note</string>
 
     <!-- Settings -->
     <string name="settings">Definições</string>
