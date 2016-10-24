@@ -9,12 +9,11 @@ import com.simplemobiletools.notes.Config
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
 
-class WidgetNoteDialog(val activity: Activity) : AlertDialog.Builder(activity), RadioGroup.OnCheckedChangeListener {
+class OpenNoteDialog(val activity: Activity) : AlertDialog.Builder(activity), RadioGroup.OnCheckedChangeListener {
     val dialog: AlertDialog?
-    var mConfig: Config
 
     init {
-        mConfig = Config.newInstance(context)
+        val config = Config.newInstance(context)
         val view = activity.layoutInflater.inflate(R.layout.dialog_radio_group, null) as RadioGroup
         view.setOnCheckedChangeListener(this)
 
@@ -24,14 +23,14 @@ class WidgetNoteDialog(val activity: Activity) : AlertDialog.Builder(activity), 
             val radioButton = activity.layoutInflater.inflate(R.layout.radio_button, null) as RadioButton
             radioButton.apply {
                 text = it.title
-                isChecked = it.id == mConfig.widgetNoteId
+                isChecked = it.id == config.currentNoteId
                 id = it.id
             }
             view.addView(radioButton, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
         }
 
         dialog = AlertDialog.Builder(activity)
-                .setTitle(activity.resources.getString(R.string.pick_a_note_for_widget))
+                .setTitle(activity.resources.getString(R.string.pick_a_note))
                 .setView(view)
                 .create()
 
@@ -39,7 +38,11 @@ class WidgetNoteDialog(val activity: Activity) : AlertDialog.Builder(activity), 
     }
 
     override fun onCheckedChanged(group: RadioGroup, checkedId: Int) {
-        mConfig.widgetNoteId = checkedId
+        (activity as OpenNoteListener).noteSelected(checkedId)
         dialog?.dismiss()
+    }
+
+    interface OpenNoteListener {
+        fun noteSelected(id: Int)
     }
 }

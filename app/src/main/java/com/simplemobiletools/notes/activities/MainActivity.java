@@ -19,6 +19,7 @@ import com.simplemobiletools.notes.R;
 import com.simplemobiletools.notes.Utils;
 import com.simplemobiletools.notes.databases.DBHelper;
 import com.simplemobiletools.notes.models.Note;
+import com.simplemobiletools.notes.views.dialogs.OpenNoteDialog;
 import com.simplemobiletools.notes.views.dialogs.WidgetNoteDialog;
 
 import java.util.List;
@@ -27,7 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends SimpleActivity {
+public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenNoteListener {
     @BindView(R.id.notes_view) EditText mNotesView;
     @BindView(R.id.current_note_label) TextView mCurrNoteLabel;
     @BindView(R.id.current_note_title) TextView mCurrNoteTitle;
@@ -44,7 +45,7 @@ public class MainActivity extends SimpleActivity {
 
         mDb = DBHelper.newInstance(getApplicationContext());
         mNotes = mDb.getNotes();
-        updateSelectedNote(mConfig.getCurrentNoteIndex());
+        updateSelectedNote(mConfig.getCurrentNoteId());
 }
 
     @Override
@@ -111,10 +112,13 @@ public class MainActivity extends SimpleActivity {
         new WidgetNoteDialog(this);
     }
 
-    private void updateSelectedNote(int index) {
+    private void updateSelectedNote(int id) {
         saveText();
-        mConfig.setCurrentNoteIndex(index);
-        mCurrentNote = mNotes.get(index);
+        mCurrentNote = mDb.getNote(id);
+        if (mCurrentNote == null)
+            return;
+
+        mConfig.setCurrentNoteId(id);
         mNotesView.setText(mCurrentNote.getValue());
         mCurrNoteTitle.setText(mCurrentNote.getTitle());
 
@@ -199,22 +203,7 @@ public class MainActivity extends SimpleActivity {
     }
 
     private void displayOpenNoteDialog() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getResources().getString(R.string.pick_a_note));
-
-        final int cnt = mNotes.size();
-        String[] notes = new String[cnt];
-        for (int i = 0; i < cnt; i++) {
-            notes[i] = mNotes.get(i).getTitle();
-        }
-
-        builder.setItems(notes, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                updateSelectedNote(which);
-            }
-        });
-        builder.show();
+        new OpenNoteDialog(this);
     }
 
     private void saveText() {
@@ -257,5 +246,10 @@ public class MainActivity extends SimpleActivity {
     private void hideKeyboard() {
         final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(mNotesView.getWindowToken(), 0);
+    }
+
+    @Override
+    public void noteSelected(int id) {
+        updateSelectedNote(id);
     }
 }

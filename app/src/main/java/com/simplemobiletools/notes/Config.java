@@ -38,19 +38,19 @@ public class Config {
         mPrefs.edit().putInt(Constants.FONT_SIZE, size).apply();
     }
 
-    public int getCurrentNoteIndex() {
-        return mPrefs.getInt(Constants.CURRENT_NOTE_INDEX, 0);
+    public int getCurrentNoteId() {
+        return mPrefs.getInt(Constants.CURRENT_NOTE_ID, 0);
     }
 
-    public void setCurrentNoteIndex(int index) {
-        mPrefs.edit().putInt(Constants.CURRENT_NOTE_INDEX, index).apply();
+    public void setCurrentNoteId(int id) {
+        mPrefs.edit().putInt(Constants.CURRENT_NOTE_ID, id).apply();
     }
 
-    public int getWidgetNoteIndex() {
+    public int getWidgetNoteId() {
         return mPrefs.getInt(Constants.WIDGET_NOTE_ID, 1);
     }
 
-    public void setWidgetNoteIndex(int id) {
+    public void setWidgetNoteId(int id) {
         mPrefs.edit().putInt(Constants.WIDGET_NOTE_ID, id).apply();
     }
 }
