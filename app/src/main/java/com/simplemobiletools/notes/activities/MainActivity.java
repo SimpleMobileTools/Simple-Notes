@@ -182,7 +182,10 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
 
         mDb.deleteNote(mCurrentNote.getId());
         mNotes = mDb.getNotes();
-        updateSelectedNote(mNotes.get(0).getId());
+
+        final int firstNoteId = mNotes.get(0).getId();
+        updateSelectedNote(firstNoteId);
+        mConfig.setWidgetNoteId(firstNoteId);
         invalidateOptionsMenu();
     }
 
