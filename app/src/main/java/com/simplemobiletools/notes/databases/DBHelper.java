@@ -115,6 +115,23 @@ public class DBHelper extends SQLiteOpenHelper {
         return notes;
     }
 
+    public Note getNote(int id) {
+        final String cols[] = {COL_TITLE, COL_VALUE};
+        final String selection = COL_ID + " = ?";
+        final String selectionArgs[] = {String.valueOf(id)};
+        final Cursor cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null);
+        Note note = null;
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                final String title = cursor.getString(cursor.getColumnIndex(COL_TITLE));
+                final String value = cursor.getString(cursor.getColumnIndex(COL_VALUE));
+                note = new Note(id, title, value);
+            }
+            cursor.close();
+        }
+        return note;
+    }
+
     public void updateNote(Note note) {
         final ContentValues values = fillContentValues(note);
         final String selection = COL_ID + " = ?";

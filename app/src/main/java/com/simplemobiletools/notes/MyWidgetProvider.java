@@ -13,7 +13,7 @@ import com.simplemobiletools.notes.activities.MainActivity;
 import com.simplemobiletools.notes.databases.DBHelper;
 import com.simplemobiletools.notes.models.Note;
 
-import java.util.List;
+import static com.simplemobiletools.notes.R.layout.widget;
 
 public class MyWidgetProvider extends AppWidgetProvider {
     private DBHelper mDb;
@@ -39,7 +39,7 @@ public class MyWidgetProvider extends AppWidgetProvider {
     private void initVariables(Context context) {
         mPrefs = context.getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE);
         mDb = DBHelper.newInstance(context);
-        mRemoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
+        mRemoteViews = new RemoteViews(context.getPackageName(), widget);
         setupAppOpenIntent(R.id.notes_holder, context);
     }
 
@@ -50,10 +50,9 @@ public class MyWidgetProvider extends AppWidgetProvider {
     }
 
     private void updateWidget(AppWidgetManager widgetManager, int widgetId, RemoteViews remoteViews) {
-        final List<Note> notes = mDb.getNotes();
-        final int currNoteIndex = mPrefs.getInt(Constants.CURRENT_NOTE_INDEX, 0);
-        final String text = notes.get(currNoteIndex).getValue();
-        remoteViews.setTextViewText(R.id.notes_view, text);
+        final int widgetNoteId = mPrefs.getInt(Constants.WIDGET_NOTE_ID, 1);
+        final Note note = mDb.getNote(widgetNoteId);
+        remoteViews.setTextViewText(R.id.notes_view, note != null ? note.getValue() : "");
         widgetManager.updateAppWidget(widgetId, remoteViews);
     }
 }

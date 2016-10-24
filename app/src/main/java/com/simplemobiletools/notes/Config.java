@@ -47,7 +47,7 @@ public class Config {
     }
 
     public int getWidgetNoteIndex() {
-        return mPrefs.getInt(Constants.WIDGET_NOTE_ID, 0);
+        return mPrefs.getInt(Constants.WIDGET_NOTE_ID, 1);
     }
 
     public void setWidgetNoteIndex(int id) {
