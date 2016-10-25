@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Simple Notes</string>
+    <string name="app_name">Schlichte Notizen</string>
     <string name="app_launcher_name">Notizen</string>
     <string name="widget_config">Vielen dank, dass du Simple Notes benutzt.\nWeitere einfache Apps findest du auf SimpleMobileTools.com.\n</string>
     <string name="save">Speichern</string>
@@ -19,8 +19,8 @@
     <string name="delete_note_prompt_message">Bist du sicher, dass du Notiz \"%1$s\" löschen willst?</string>
     <string name="pick_a_note">Notiz auswählen</string>
     <string name="current_note">Aktuelle Notiz:</string>
-    <string name="change_widget_note">Change widget\'s note</string>
-    <string name="pick_a_note_for_widget">Pick a note for the widget</string>
+    <string name="change_widget_note">Wechsel Notiz des Widgets</string>
+    <string name="pick_a_note_for_widget">Wähle Notiz für das Widget</string>
 
     <!-- Settings -->
     <string name="settings">Einstellungen</string>
@@ -46,6 +46,6 @@
     <!-- License -->
     <string name="notice">Diese App nutzt die folgenden Drittanbieterbibliotheken, die mein Leben einfacher machen. Danke.</string>
     <string name="third_party_licences">Drittanbieterlizenzen</string>
-    <string name="butterknife_title"><u>Butter Knife (view injector)</u></string>
-    <string name="ambilwarna_title"><u>AmbilWarna (color picker)</u></string>
+    <string name="butterknife_title"><u>Butter Knife (View Injector)</u></string>
+    <string name="ambilwarna_title"><u>AmbilWarna (Color Picker)</u></string>
 </resources>
