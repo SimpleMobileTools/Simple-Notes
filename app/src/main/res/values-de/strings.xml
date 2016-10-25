@@ -24,7 +24,7 @@
 
     <!-- Settings -->
     <string name="settings">Einstellungen</string>
-    <string name="dark_theme">Dunkles Thema</string>
+    <string name="dark_theme">Dunkles Design</string>
     <string name="note_font_size">Schriftgröße</string>
     <string name="small">Klein</string>
     <string name="normal">Normal</string>
