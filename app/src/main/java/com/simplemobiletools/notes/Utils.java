@@ -13,7 +13,7 @@ public class Utils {
     }
 
     public static float getTextSize(Context context) {
-        final int fontSize = Config.newInstance(context).getFontSize();
+        final int fontSize = Config.Companion.newInstance(context).getFontSize();
         final Resources res = context.getResources();
         float textSize = res.getDimension(R.dimen.medium_text_size);
         switch (fontSize) {

@@ -18,13 +18,11 @@ public class SettingsActivity extends SimpleActivity {
     @BindView(R.id.settings_dark_theme) SwitchCompat mDarkThemeSwitch;
     @BindView(R.id.settings_font_size) AppCompatSpinner mFontSizeSpinner;
 
-    private static Config mConfig;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        mConfig = Config.newInstance(getApplicationContext());
+        mConfig = Config.Companion.newInstance(getApplicationContext());
         ButterKnife.bind(this);
 
         setupDarkTheme();
@@ -32,7 +30,7 @@ public class SettingsActivity extends SimpleActivity {
     }
 
     private void setupDarkTheme() {
-        mDarkThemeSwitch.setChecked(mConfig.getIsDarkTheme());
+        mDarkThemeSwitch.setChecked(mConfig.isDarkTheme());
     }
 
     private void setupFontSize() {
@@ -42,7 +40,7 @@ public class SettingsActivity extends SimpleActivity {
     @OnClick(R.id.settings_dark_theme_holder)
     public void handleDarkTheme() {
         mDarkThemeSwitch.setChecked(!mDarkThemeSwitch.isChecked());
-        mConfig.setIsDarkTheme(mDarkThemeSwitch.isChecked());
+        mConfig.setDarkTheme(mDarkThemeSwitch.isChecked());
         restartActivity();
     }
 

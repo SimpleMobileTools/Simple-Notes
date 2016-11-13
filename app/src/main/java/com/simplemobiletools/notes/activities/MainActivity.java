@@ -64,7 +64,7 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mConfig.setIsFirstRun(false);
+        mConfig.setFirstRun(false);
     }
 
     @Override
