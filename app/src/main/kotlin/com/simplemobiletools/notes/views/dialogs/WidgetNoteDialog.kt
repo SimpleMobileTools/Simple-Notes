@@ -9,16 +9,16 @@ import com.simplemobiletools.notes.Config
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
 
-class WidgetNoteDialog(val activity: Activity) : AlertDialog.Builder(activity), RadioGroup.OnCheckedChangeListener {
+class WidgetNoteDialog(val activity: Activity) : RadioGroup.OnCheckedChangeListener {
     val dialog: AlertDialog?
     var mConfig: Config
 
     init {
-        mConfig = Config.newInstance(context)
+        mConfig = Config.newInstance(activity)
         val view = activity.layoutInflater.inflate(R.layout.dialog_radio_group, null) as RadioGroup
         view.setOnCheckedChangeListener(this)
 
-        val db = DBHelper.newInstance(context)
+        val db = DBHelper.newInstance(activity)
         val notes = db.notes
         notes.forEach {
             val radioButton = activity.layoutInflater.inflate(R.layout.radio_button, null) as RadioButton

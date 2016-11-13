@@ -9,16 +9,15 @@ import com.simplemobiletools.notes.Config
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
 
-class OpenNoteDialog(val activity: Activity) : AlertDialog.Builder(activity), RadioGroup.OnCheckedChangeListener {
+class OpenNoteDialog(val activity: Activity) : RadioGroup.OnCheckedChangeListener {
     val dialog: AlertDialog?
 
     init {
-        val config = Config.newInstance(context)
+        val config = Config.newInstance(activity)
         val view = activity.layoutInflater.inflate(R.layout.dialog_radio_group, null) as RadioGroup
         view.setOnCheckedChangeListener(this)
 
-        val db = DBHelper.newInstance(context)
-        val notes = db.notes
+        val notes = DBHelper.newInstance(activity).notes
         notes.forEach {
             val radioButton = activity.layoutInflater.inflate(R.layout.radio_button, null) as RadioButton
             radioButton.apply {
@@ -34,7 +33,7 @@ class OpenNoteDialog(val activity: Activity) : AlertDialog.Builder(activity), Ra
                 .setView(view)
                 .create()
 
-        dialog?.show()
+        dialog!!.show()
     }
 
     override fun onCheckedChanged(group: RadioGroup, checkedId: Int) {
