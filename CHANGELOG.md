@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 1.19 *(2016-11-14)*
+----------------------------
+
+ * Translation updates
+ * Misc small improvements
+
 Version 1.18 *(2016-10-24)*
 ----------------------------
 
