@@ -1,4 +1,4 @@
-package com.simplemobiletools.notes.views.dialogs
+package com.simplemobiletools.notes.dialogs
 
 import android.app.Activity
 import android.app.AlertDialog

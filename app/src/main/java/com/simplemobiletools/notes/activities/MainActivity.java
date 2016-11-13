@@ -19,8 +19,8 @@ import com.simplemobiletools.notes.R;
 import com.simplemobiletools.notes.Utils;
 import com.simplemobiletools.notes.databases.DBHelper;
 import com.simplemobiletools.notes.models.Note;
-import com.simplemobiletools.notes.views.dialogs.OpenNoteDialog;
-import com.simplemobiletools.notes.views.dialogs.WidgetNoteDialog;
+import com.simplemobiletools.notes.dialogs.OpenNoteDialog;
+import com.simplemobiletools.notes.dialogs.WidgetNoteDialog;
 
 import java.util.List;
 
