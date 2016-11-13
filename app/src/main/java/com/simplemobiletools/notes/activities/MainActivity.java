@@ -45,7 +45,7 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
 
         mDb = DBHelper.newInstance(getApplicationContext());
         mNotes = mDb.getNotes();
-        updateSelectedNote(mConfig.getCurrentNoteId());
+        updateSelectedNote(getConfig().getCurrentNoteId());
 }
 
     @Override
@@ -64,7 +64,7 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mConfig.setFirstRun(false);
+        getConfig().setFirstRun(false);
     }
 
     @Override
@@ -117,7 +117,7 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
         mCurrentNote = mDb.getNote(id);
         mNotes = mDb.getNotes();
         if (mCurrentNote != null) {
-            mConfig.setCurrentNoteId(id);
+            getConfig().setCurrentNoteId(id);
             mNotesView.setText(mCurrentNote.getValue());
             mCurrNoteTitle.setText(mCurrentNote.getTitle());
         }
@@ -185,7 +185,7 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
 
         final int firstNoteId = mNotes.get(0).getId();
         updateSelectedNote(firstNoteId);
-        mConfig.setWidgetNoteId(firstNoteId);
+        getConfig().setWidgetNoteId(firstNoteId);
         invalidateOptionsMenu();
     }
 

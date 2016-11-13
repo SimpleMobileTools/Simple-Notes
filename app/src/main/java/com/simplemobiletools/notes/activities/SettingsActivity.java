@@ -22,7 +22,7 @@ public class SettingsActivity extends SimpleActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        mConfig = Config.Companion.newInstance(getApplicationContext());
+        setConfig(Config.Companion.newInstance(getApplicationContext()));
         ButterKnife.bind(this);
 
         setupDarkTheme();
@@ -30,23 +30,23 @@ public class SettingsActivity extends SimpleActivity {
     }
 
     private void setupDarkTheme() {
-        mDarkThemeSwitch.setChecked(mConfig.isDarkTheme());
+        mDarkThemeSwitch.setChecked(getConfig().isDarkTheme());
     }
 
     private void setupFontSize() {
-        mFontSizeSpinner.setSelection(mConfig.getFontSize());
+        mFontSizeSpinner.setSelection(getConfig().getFontSize());
     }
 
     @OnClick(R.id.settings_dark_theme_holder)
     public void handleDarkTheme() {
         mDarkThemeSwitch.setChecked(!mDarkThemeSwitch.isChecked());
-        mConfig.setDarkTheme(mDarkThemeSwitch.isChecked());
+        getConfig().setDarkTheme(mDarkThemeSwitch.isChecked());
         restartActivity();
     }
 
     @OnItemSelected(R.id.settings_font_size)
     public void handleFontSize() {
-        mConfig.setFontSize(mFontSizeSpinner.getSelectedItemPosition());
+        getConfig().setFontSize(mFontSizeSpinner.getSelectedItemPosition());
         Utils.INSTANCE.updateWidget(getApplicationContext());
     }
 
