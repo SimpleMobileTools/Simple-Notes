@@ -52,7 +52,7 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
     protected void onResume() {
         super.onResume();
         invalidateOptionsMenu();
-        mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(getApplicationContext()));
+        mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.INSTANCE.getTextSize(getApplicationContext()));
     }
 
     @Override
@@ -124,7 +124,7 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
 
         mCurrNoteLabel.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
         mCurrNoteTitle.setVisibility(mNotes.size() <= 1 ? View.GONE : View.VISIBLE);
-        Utils.updateWidget(getApplicationContext());
+        Utils.INSTANCE.updateWidget(getApplicationContext());
     }
 
     @OnClick(R.id.notes_fab)
@@ -146,9 +146,9 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
                 final EditText titleET = (EditText) newNoteView.findViewById(R.id.note_name);
                 final String title = titleET.getText().toString().trim();
                 if (title.isEmpty()) {
-                    Utils.showToast(getApplicationContext(), R.string.no_title);
+                    Utils.INSTANCE.showToast(getApplicationContext(), R.string.no_title);
                 } else if (mDb.doesTitleExist(title)) {
-                    Utils.showToast(getApplicationContext(), R.string.title_taken);
+                    Utils.INSTANCE.showToast(getApplicationContext(), R.string.title_taken);
                 } else {
                     saveText();
                     final Note newNote = new Note(0, title, "");
@@ -200,19 +200,19 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
         final String newText = getCurrentNote();
         final String oldText = mCurrentNote.getValue();
         if (!newText.equals(oldText)) {
-            Utils.showToast(getApplicationContext(), R.string.note_saved);
+            Utils.INSTANCE.showToast(getApplicationContext(), R.string.note_saved);
             mCurrentNote.setValue(newText);
             mDb.updateNote(mCurrentNote);
         }
 
         hideKeyboard();
-        Utils.updateWidget(getApplicationContext());
+        Utils.INSTANCE.updateWidget(getApplicationContext());
     }
 
     private void shareText() {
         final String text = getCurrentNote();
         if (text.isEmpty()) {
-            Utils.showToast(getApplicationContext(), R.string.cannot_share_empty_text);
+            Utils.INSTANCE.showToast(getApplicationContext(), R.string.cannot_share_empty_text);
             return;
         }
 

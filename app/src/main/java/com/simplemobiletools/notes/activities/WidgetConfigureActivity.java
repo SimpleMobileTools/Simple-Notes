@@ -57,7 +57,7 @@ public class WidgetConfigureActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(getApplicationContext()));
+        mNotesView.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.INSTANCE.getTextSize(getApplicationContext()));
     }
 
     private void initVariables() {

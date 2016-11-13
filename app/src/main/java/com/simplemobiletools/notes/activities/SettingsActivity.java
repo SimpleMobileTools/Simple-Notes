@@ -47,7 +47,7 @@ public class SettingsActivity extends SimpleActivity {
     @OnItemSelected(R.id.settings_font_size)
     public void handleFontSize() {
         mConfig.setFontSize(mFontSizeSpinner.getSelectedItemPosition());
-        Utils.updateWidget(getApplicationContext());
+        Utils.INSTANCE.updateWidget(getApplicationContext());
     }
 
     private void restartActivity() {
