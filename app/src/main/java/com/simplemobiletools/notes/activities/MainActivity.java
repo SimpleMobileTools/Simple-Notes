@@ -43,7 +43,7 @@ public class MainActivity extends SimpleActivity implements OpenNoteDialog.OpenN
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mDb = DBHelper.newInstance(getApplicationContext());
+        mDb = DBHelper.Companion.newInstance(getApplicationContext());
         mNotes = mDb.getNotes();
         updateSelectedNote(getConfig().getCurrentNoteId());
 }

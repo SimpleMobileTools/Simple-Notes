@@ -19,7 +19,7 @@ class WidgetNoteDialog(val activity: Activity) : RadioGroup.OnCheckedChangeListe
         view.setOnCheckedChangeListener(this)
 
         val db = DBHelper.newInstance(activity)
-        val notes = db.notes
+        val notes = db.getNotes()
         notes.forEach {
             val radioButton = activity.layoutInflater.inflate(R.layout.radio_button, null) as RadioButton
             radioButton.apply {

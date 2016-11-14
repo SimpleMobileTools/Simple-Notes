@@ -17,7 +17,7 @@ class OpenNoteDialog(val activity: Activity) : RadioGroup.OnCheckedChangeListene
         val view = activity.layoutInflater.inflate(R.layout.dialog_radio_group, null) as RadioGroup
         view.setOnCheckedChangeListener(this)
 
-        val notes = DBHelper.newInstance(activity).notes
+        val notes = DBHelper.newInstance(activity).getNotes()
         notes.forEach {
             val radioButton = activity.layoutInflater.inflate(R.layout.radio_button, null) as RadioButton
             radioButton.apply {
