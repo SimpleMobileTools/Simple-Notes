@@ -16,6 +16,8 @@ import com.simplemobiletools.notes.Utils
 import com.simplemobiletools.notes.databases.DBHelper
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.WidgetNoteDialog
+import com.simplemobiletools.notes.extensions.toast
+import com.simplemobiletools.notes.extensions.value
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -127,11 +129,11 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
                 show()
                 getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                     val titleET = newNoteView.findViewById(R.id.note_name) as EditText
-                    val title = titleET.text.toString().trim { it <= ' ' }
+                    val title = titleET.value
                     if (title.isEmpty()) {
-                        Utils.showToast(applicationContext, R.string.no_title)
+                        toast(R.string.no_title)
                     } else if (mDb.doesTitleExist(title)) {
-                        Utils.showToast(applicationContext, R.string.title_taken)
+                        toast(R.string.title_taken)
                     } else {
                         saveText()
                         val newNote = Note(0, title, "")
@@ -177,10 +179,10 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
         if (mCurrentNote == null)
             return
 
-        val newText = getCurrentNoteValue()
+        val newText = notes_view.value
         val oldText = mCurrentNote!!.value
         if (newText != oldText) {
-            Utils.showToast(applicationContext, R.string.note_saved)
+            toast(R.string.note_saved)
             mCurrentNote!!.value = newText
             mDb.updateNote(mCurrentNote!!)
         }
@@ -190,9 +192,9 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
     }
 
     private fun shareText() {
-        val text = getCurrentNoteValue()
+        val text = notes_view.value
         if (text.isEmpty()) {
-            Utils.showToast(applicationContext, R.string.cannot_share_empty_text)
+            toast(R.string.cannot_share_empty_text)
             return
         }
 
@@ -207,16 +209,10 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
         }
     }
 
-    private fun getCurrentNoteValue(): String {
-        return notes_view.text.toString().trim()
-    }
-
     private fun hideKeyboard() {
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(notes_view.windowToken, 0)
     }
 
-    override fun noteSelected(id: Int) {
-        updateSelectedNote(id)
-    }
+    override fun noteSelected(id: Int) = updateSelectedNote(id)
 }
