@@ -11,7 +11,6 @@ class LicenseActivity : SimpleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_license)
-        license_butterknife_title.setOnClickListener { openUrl(R.string.butterknife_url) }
         license_ambilwarna_title.setOnClickListener { openUrl(R.string.ambilwarna_url) }
     }
 

@@ -11,8 +11,6 @@ import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import butterknife.ButterKnife
-import butterknife.OnClick
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.Utils
 import com.simplemobiletools.notes.databases.DBHelper
@@ -30,11 +28,11 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        ButterKnife.bind(this)
 
         mDb = DBHelper.newInstance(applicationContext)
         mNotes = mDb.getNotes()
         updateSelectedNote(config.currentNoteId)
+        notes_fab.setOnClickListener { displayNewNoteDialog() }
     }
 
     override fun onResume() {
@@ -116,8 +114,7 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
         Utils.updateWidget(applicationContext)
     }
 
-    @OnClick(R.id.notes_fab)
-    fun fabClicked(view: View) {
+    fun displayNewNoteDialog() {
         val newNoteView = layoutInflater.inflate(R.layout.new_note, null)
 
         AlertDialog.Builder(this).apply {

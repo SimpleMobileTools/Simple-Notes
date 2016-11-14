@@ -46,7 +46,6 @@
     <!-- License -->
     <string name="notice">このアプリは、私の暮らしにゆとりを持たせるために、次のサードパーティのライブラリーを使用しています。 ありがとうございます。</string>
     <string name="third_party_licences">サードパーティー ライセンス</string>
-    <string name="butterknife_title"><u>Butter Knife (ビュー インジェクター)</u></string>
     <string name="ambilwarna_title"><u>AmbilWarna (カラー ピッカー)</u></string>
 
 </resources>
