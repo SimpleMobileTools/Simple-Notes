@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.simplemobiletools.notes.PREFS_KEY
 import com.simplemobiletools.notes.TEXT
+import com.simplemobiletools.notes.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import java.util.*
 
@@ -15,13 +16,14 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     companion object {
         private val DB_NAME = "notes.db"
-        private val DB_VERSION = 1
+        private val DB_VERSION = 2
         private val TABLE_NAME = "notes"
         private val NOTE = "General note"
 
         private val COL_ID = "id"
         private val COL_TITLE = "title"
         private val COL_VALUE = "value"
+        private val COL_TYPE = "type"
 
         fun newInstance(context: Context) = DBHelper(context)
     }
@@ -31,18 +33,18 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY, $COL_TITLE TEXT UNIQUE, $COL_VALUE TEXT)")
+        db.execSQL("CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY, $COL_TITLE TEXT UNIQUE, $COL_VALUE TEXT, $COL_TYPE INTEGER DEFAULT 0)")
         insertFirstNote(db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-
+        db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
     }
 
     private fun insertFirstNote(db: SQLiteDatabase) {
         val prefs = mContext.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         val text = prefs.getString(TEXT, "")
-        val note = Note(1, NOTE, text)
+        val note = Note(1, NOTE, text, TYPE_NOTE)
         insertNote(note, db)
     }
 
@@ -60,6 +62,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         return ContentValues().apply {
             put(COL_TITLE, note.title)
             put(COL_VALUE, note.value)
+            put(COL_TYPE, 0)
         }
     }
 
@@ -79,7 +82,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun getNotes(): List<Note> {
         val notes = ArrayList<Note>()
-        val cols = arrayOf(COL_ID, COL_TITLE, COL_VALUE)
+        val cols = arrayOf(COL_ID, COL_TITLE, COL_VALUE, COL_TYPE)
         var cursor: Cursor? = null
         try {
             cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, "$COL_TITLE COLLATE NOCASE ASC")
@@ -88,7 +91,8 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
                     val id = cursor.getInt(cursor.getColumnIndex(COL_ID))
                     val title = cursor.getString(cursor.getColumnIndex(COL_TITLE))
                     val value = cursor.getString(cursor.getColumnIndex(COL_VALUE))
-                    val note = Note(id, title, value)
+                    val type = cursor.getInt(cursor.getColumnIndex(COL_TYPE))
+                    val note = Note(id, title, value, type)
                     notes.add(note)
                 } while (cursor.moveToNext())
             }
@@ -100,7 +104,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     fun getNote(id: Int): Note? {
-        val cols = arrayOf(COL_TITLE, COL_VALUE)
+        val cols = arrayOf(COL_TITLE, COL_VALUE, COL_TYPE)
         val selection = "$COL_ID = ?"
         val selectionArgs = arrayOf(id.toString())
         var note: Note? = null
@@ -110,7 +114,8 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
             if (cursor != null && cursor.moveToFirst()) {
                 val title = cursor.getString(cursor.getColumnIndex(COL_TITLE))
                 val value = cursor.getString(cursor.getColumnIndex(COL_VALUE))
-                note = Note(id, title, value)
+                val type = cursor.getInt(cursor.getColumnIndex(COL_TYPE))
+                note = Note(id, title, value, type)
             }
         } finally {
             cursor?.close()

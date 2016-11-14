@@ -15,6 +15,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import com.simplemobiletools.notes.MyWidgetProvider
 import com.simplemobiletools.notes.R
+import com.simplemobiletools.notes.TYPE_NOTE
 import com.simplemobiletools.notes.Utils
 import com.simplemobiletools.notes.databases.DBHelper
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
@@ -139,7 +140,7 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
                         toast(R.string.title_taken)
                     } else {
                         saveText()
-                        val newNote = Note(0, title, "")
+                        val newNote = Note(0, title, "", TYPE_NOTE)
                         val id = mDb.insertNote(newNote)
                         updateSelectedNote(id)
                         dismiss()

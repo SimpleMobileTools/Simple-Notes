@@ -17,3 +17,7 @@ val FONT_SIZE_SMALL = 0
 val FONT_SIZE_MEDIUM = 1
 val FONT_SIZE_LARGE = 2
 val FONT_SIZE_EXTRA_LARGE = 3
+
+// note types
+val TYPE_NOTE = 0
+val TYPE_CHECKLIST = 1
