@@ -1,5 +1,7 @@
 package com.simplemobiletools.notes.activities
 
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +13,7 @@ import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import com.simplemobiletools.notes.MyWidgetProvider
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.Utils
 import com.simplemobiletools.notes.databases.DBHelper
@@ -113,7 +116,7 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
 
         current_note_label.visibility = if (mNotes.size <= 1) View.GONE else View.VISIBLE
         current_note_title.visibility = if (mNotes.size <= 1) View.GONE else View.VISIBLE
-        Utils.updateWidget(applicationContext)
+        updateWidget(applicationContext)
     }
 
     fun displayNewNoteDialog() {
@@ -188,7 +191,7 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
         }
 
         hideKeyboard()
-        Utils.updateWidget(applicationContext)
+        updateWidget(applicationContext)
     }
 
     private fun shareText() {
@@ -215,4 +218,14 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
     }
 
     override fun noteSelected(id: Int) = updateSelectedNote(id)
+
+    fun updateWidget(context: Context) {
+        val widgetManager = AppWidgetManager.getInstance(context)
+        val ids = widgetManager.getAppWidgetIds(ComponentName(context, MyWidgetProvider::class.java))
+
+        val intent = Intent(context, MyWidgetProvider::class.java)
+        intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+        context.sendBroadcast(intent)
+    }
 }
