@@ -10,10 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.TypedValue
 import android.widget.RemoteViews
 import android.widget.SeekBar
-import com.simplemobiletools.notes.Constants
-import com.simplemobiletools.notes.MyWidgetProvider
-import com.simplemobiletools.notes.R
-import com.simplemobiletools.notes.Utils
+import com.simplemobiletools.notes.*
 import kotlinx.android.synthetic.main.widget_config.*
 import yuku.ambilwarna.AmbilWarnaDialog
 
@@ -48,8 +45,8 @@ class WidgetConfigureActivity : AppCompatActivity() {
     }
 
     private fun initVariables() {
-        val prefs = getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE)
-        mBgColor = prefs.getInt(Constants.WIDGET_BG_COLOR, 1)
+        val prefs = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
+        mBgColor = prefs.getInt(WIDGET_BG_COLOR, 1)
         if (mBgColor == 1) {
             mBgColor = Color.BLACK
             mBgAlpha = .2f
@@ -64,7 +61,7 @@ class WidgetConfigureActivity : AppCompatActivity() {
         }
         updateBackgroundColor()
 
-        mTextColor = prefs.getInt(Constants.WIDGET_TEXT_COLOR, resources.getColor(R.color.colorPrimary))
+        mTextColor = prefs.getInt(WIDGET_TEXT_COLOR, resources.getColor(R.color.colorPrimary))
         updateTextColor()
     }
 
@@ -84,8 +81,8 @@ class WidgetConfigureActivity : AppCompatActivity() {
     }
 
     private fun storeWidgetBackground() {
-        getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE).apply {
-            edit().putInt(Constants.WIDGET_BG_COLOR, mBgColor).putInt(Constants.WIDGET_TEXT_COLOR, mTextColor).apply()
+        getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE).apply {
+            edit().putInt(WIDGET_BG_COLOR, mBgColor).putInt(WIDGET_TEXT_COLOR, mTextColor).apply()
         }
     }
 

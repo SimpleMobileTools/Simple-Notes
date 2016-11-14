@@ -23,8 +23,8 @@ class MyWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         initVariables(context)
         val defaultColor = context.resources.getColor(R.color.dark_grey)
-        val newBgColor = mPrefs.getInt(Constants.WIDGET_BG_COLOR, defaultColor)
-        val newTextColor = mPrefs.getInt(Constants.WIDGET_TEXT_COLOR, Color.WHITE)
+        val newBgColor = mPrefs.getInt(WIDGET_BG_COLOR, defaultColor)
+        val newTextColor = mPrefs.getInt(WIDGET_TEXT_COLOR, Color.WHITE)
         mRemoteViews.apply {
             setInt(R.id.notes_view, "setBackgroundColor", newBgColor)
             setInt(R.id.notes_view, "setTextColor", newTextColor)
@@ -38,7 +38,7 @@ class MyWidgetProvider : AppWidgetProvider() {
     }
 
     private fun initVariables(context: Context) {
-        mPrefs = context.getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE)
+        mPrefs = context.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         mDb = DBHelper.newInstance(context)
         mRemoteViews = RemoteViews(context.packageName, widget)
         setupAppOpenIntent(R.id.notes_holder, context)
@@ -51,7 +51,7 @@ class MyWidgetProvider : AppWidgetProvider() {
     }
 
     private fun updateWidget(widgetManager: AppWidgetManager, widgetId: Int, remoteViews: RemoteViews) {
-        val widgetNoteId = mPrefs.getInt(Constants.WIDGET_NOTE_ID, 1)
+        val widgetNoteId = mPrefs.getInt(WIDGET_NOTE_ID, 1)
         val note = mDb.getNote(widgetNoteId)
         remoteViews.setTextViewText(R.id.notes_view, if (note != null) note.value else "")
         widgetManager.updateAppWidget(widgetId, remoteViews)

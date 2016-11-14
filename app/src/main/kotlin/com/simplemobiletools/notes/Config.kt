@@ -11,26 +11,26 @@ class Config(context: Context) {
     }
 
     init {
-        mPrefs = context.getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE)
+        mPrefs = context.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
     }
 
     var isFirstRun: Boolean
-        get() = mPrefs.getBoolean(Constants.IS_FIRST_RUN, true)
-        set(firstRun) = mPrefs.edit().putBoolean(Constants.IS_FIRST_RUN, firstRun).apply()
+        get() = mPrefs.getBoolean(IS_FIRST_RUN, true)
+        set(firstRun) = mPrefs.edit().putBoolean(IS_FIRST_RUN, firstRun).apply()
 
     var isDarkTheme: Boolean
-        get() = mPrefs.getBoolean(Constants.IS_DARK_THEME, false)
-        set(isDarkTheme) = mPrefs.edit().putBoolean(Constants.IS_DARK_THEME, isDarkTheme).apply()
+        get() = mPrefs.getBoolean(IS_DARK_THEME, false)
+        set(isDarkTheme) = mPrefs.edit().putBoolean(IS_DARK_THEME, isDarkTheme).apply()
 
     var fontSize: Int
-        get() = mPrefs.getInt(Constants.FONT_SIZE, Constants.FONT_SIZE_MEDIUM)
-        set(size) = mPrefs.edit().putInt(Constants.FONT_SIZE, size).apply()
+        get() = mPrefs.getInt(FONT_SIZE, FONT_SIZE_MEDIUM)
+        set(size) = mPrefs.edit().putInt(FONT_SIZE, size).apply()
 
     var currentNoteId: Int
-        get() = mPrefs.getInt(Constants.CURRENT_NOTE_ID, 1)
-        set(id) = mPrefs.edit().putInt(Constants.CURRENT_NOTE_ID, id).apply()
+        get() = mPrefs.getInt(CURRENT_NOTE_ID, 1)
+        set(id) = mPrefs.edit().putInt(CURRENT_NOTE_ID, id).apply()
 
     var widgetNoteId: Int
-        get() = mPrefs.getInt(Constants.WIDGET_NOTE_ID, 1)
-        set(id) = mPrefs.edit().putInt(Constants.WIDGET_NOTE_ID, id).apply()
+        get() = mPrefs.getInt(WIDGET_NOTE_ID, 1)
+        set(id) = mPrefs.edit().putInt(WIDGET_NOTE_ID, id).apply()
 }

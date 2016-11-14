@@ -5,7 +5,8 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.simplemobiletools.notes.Constants
+import com.simplemobiletools.notes.PREFS_KEY
+import com.simplemobiletools.notes.TEXT
 import com.simplemobiletools.notes.models.Note
 import java.util.*
 
@@ -39,8 +40,8 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     private fun insertFirstNote(db: SQLiteDatabase) {
-        val prefs = mContext.getSharedPreferences(Constants.PREFS_KEY, Context.MODE_PRIVATE)
-        val text = prefs.getString(Constants.TEXT, "")
+        val prefs = mContext.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
+        val text = prefs.getString(TEXT, "")
         val note = Note(1, NOTE, text)
         insertNote(note, db)
     }

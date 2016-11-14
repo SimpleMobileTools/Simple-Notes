@@ -14,13 +14,12 @@ object Utils {
     fun getTextSize(context: Context): Float {
         val fontSize = Config.newInstance(context).fontSize
         val res = context.resources
-        var textSize = res.getDimension(R.dimen.medium_text_size)
-        when (fontSize) {
-            Constants.FONT_SIZE_SMALL -> textSize = res.getDimension(R.dimen.small_text_size)
-            Constants.FONT_SIZE_LARGE -> textSize = res.getDimension(R.dimen.large_text_size)
-            Constants.FONT_SIZE_EXTRA_LARGE -> textSize = res.getDimension(R.dimen.extra_large_text_size)
+        return when (fontSize) {
+            FONT_SIZE_SMALL -> res.getDimension(R.dimen.small_text_size)
+            FONT_SIZE_LARGE -> res.getDimension(R.dimen.large_text_size)
+            FONT_SIZE_EXTRA_LARGE -> res.getDimension(R.dimen.extra_large_text_size)
+            else -> res.getDimension(R.dimen.medium_text_size)
         }
-        return textSize
     }
 
     fun updateWidget(context: Context) {
