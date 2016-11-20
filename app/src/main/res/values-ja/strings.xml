@@ -46,6 +46,8 @@
     <!-- License -->
     <string name="notice">このアプリは、私の暮らしにゆとりを持たせるために、次のサードパーティのライブラリーを使用しています。 ありがとうございます。</string>
     <string name="third_party_licences">サードパーティー ライセンス</string>
+    <string name="kotlin_title"><u>Kotlin (プログラミング言語)</u></string>
     <string name="ambilwarna_title"><u>AmbilWarna (カラー ピッカー)</u></string>
+    <string name="stetho_title"><u>Stetho (debugging databases)</u></string>
 
 </resources>

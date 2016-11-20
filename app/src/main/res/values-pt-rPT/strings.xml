@@ -46,6 +46,8 @@
     <!-- License -->
     <string name="notice">Esta aplicação usa as seguintes bibliotecas de terceiros para facilitar a minha vida. Obrigado.</string>
     <string name="third_party_licences">Licenças de terceiros</string>
+    <string name="kotlin_title"><u>Kotlin (linguagem de programação)</u></string>
     <string name="ambilwarna_title"><u>AmbilWarna (seletor de cores)</u></string>
+    <string name="stetho_title"><u>Stetho (debugging databases)</u></string>
 
 </resources>
