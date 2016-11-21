@@ -11,6 +11,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.simplemobiletools.filepicker.extensions.toast
+import com.simplemobiletools.filepicker.extensions.value
 import com.simplemobiletools.notes.MyWidgetProvider
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.TYPE_NOTE
@@ -19,8 +21,6 @@ import com.simplemobiletools.notes.databases.DBHelper
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.WidgetNoteDialog
-import com.simplemobiletools.notes.extensions.toast
-import com.simplemobiletools.notes.extensions.value
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 

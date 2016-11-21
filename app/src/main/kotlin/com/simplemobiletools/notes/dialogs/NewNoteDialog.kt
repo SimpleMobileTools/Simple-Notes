@@ -3,10 +3,10 @@ package com.simplemobiletools.notes.dialogs
 import android.app.Activity
 import android.app.AlertDialog
 import android.view.WindowManager
+import com.simplemobiletools.filepicker.extensions.toast
+import com.simplemobiletools.filepicker.extensions.value
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
-import com.simplemobiletools.notes.extensions.toast
-import com.simplemobiletools.notes.extensions.value
 import kotlinx.android.synthetic.main.new_note.view.*
 
 class NewNoteDialog(val activity: Activity, val db: DBHelper, callback: (title: String) -> Unit) {
