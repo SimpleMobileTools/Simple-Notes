@@ -8,14 +8,16 @@ import android.widget.RadioGroup
 import com.simplemobiletools.notes.Config
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
+import kotlinx.android.synthetic.main.dialog_radio_group.view.*
 
 class OpenNoteDialog(val activity: Activity) : RadioGroup.OnCheckedChangeListener {
     val dialog: AlertDialog?
 
     init {
         val config = Config.newInstance(activity)
-        val view = activity.layoutInflater.inflate(R.layout.dialog_radio_group, null) as RadioGroup
-        view.setOnCheckedChangeListener(this)
+        val view = activity.layoutInflater.inflate(R.layout.dialog_radio_group, null)
+        val radioGroup = view.dialog_radio_group
+        radioGroup.setOnCheckedChangeListener(this)
 
         val notes = DBHelper.newInstance(activity).getNotes()
         notes.forEach {
@@ -25,7 +27,7 @@ class OpenNoteDialog(val activity: Activity) : RadioGroup.OnCheckedChangeListene
                 isChecked = it.id == config.currentNoteId
                 id = it.id
             }
-            view.addView(radioButton, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
+            radioGroup.addView(radioButton, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
         }
 
         dialog = AlertDialog.Builder(activity)
