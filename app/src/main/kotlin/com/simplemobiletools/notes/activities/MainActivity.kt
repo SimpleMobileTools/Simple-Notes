@@ -10,14 +10,13 @@ import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
-import android.widget.EditText
 import com.simplemobiletools.notes.MyWidgetProvider
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.TYPE_NOTE
 import com.simplemobiletools.notes.Utils
 import com.simplemobiletools.notes.databases.DBHelper
+import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.WidgetNoteDialog
 import com.simplemobiletools.notes.extensions.toast
@@ -130,34 +129,13 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
     }
 
     fun displayNewNoteDialog() {
-        val newNoteView = layoutInflater.inflate(R.layout.new_note, null)
-
-        AlertDialog.Builder(this).apply {
-            setTitle(resources.getString(R.string.new_note))
-            setView(newNoteView)
-            setPositiveButton(R.string.ok, null)
-            setNegativeButton(R.string.cancel, null)
-            create().apply {
-                window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-                show()
-                getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                    val titleET = newNoteView.findViewById(R.id.note_name) as EditText
-                    val title = titleET.value
-                    if (title.isEmpty()) {
-                        toast(R.string.no_title)
-                    } else if (mDb.doesTitleExist(title)) {
-                        toast(R.string.title_taken)
-                    } else {
-                        saveText()
-                        val newNote = Note(0, title, "", TYPE_NOTE)
-                        val id = mDb.insertNote(newNote)
-                        updateSelectedNote(id)
-                        dismiss()
-                        mNotes = mDb.getNotes()
-                        invalidateOptionsMenu()
-                    }
-                }
-            }
+        NewNoteDialog(this, mDb) {
+            saveText()
+            val newNote = Note(0, it, "", TYPE_NOTE)
+            val id = mDb.insertNote(newNote)
+            updateSelectedNote(id)
+            mNotes = mDb.getNotes()
+            invalidateOptionsMenu()
         }
     }
 
