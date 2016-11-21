@@ -8,6 +8,7 @@
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/delete_note"
+        android:icon="@mipmap/delete"
         android:title="@string/delete_note"
         app:showAsAction="never"/>
     <item
