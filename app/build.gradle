@@ -36,7 +36,7 @@ dependencies {
     compile 'com.github.yukuku:ambilwarna:2.0.1'
     compile 'com.android.support:design:23.4.0'
     compile 'com.facebook.stetho:stetho:1.4.1'
-    compile 'com.simplemobiletools:filepicker:1.5.1@aar'
+    compile 'com.simplemobiletools:filepicker:1.5.2@aar'
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
