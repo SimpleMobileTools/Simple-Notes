@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 1.21 *(2016-11-21)*
+----------------------------
+
+ * Add the option to rename notes
+ * Show a confirmation dialog before deleting a note
+ * Hide the "Add note" button when the keyboard is shown
+ * Misc bugfixes
+
 Version 1.20 *(2016-11-14)*
 ----------------------------
 
