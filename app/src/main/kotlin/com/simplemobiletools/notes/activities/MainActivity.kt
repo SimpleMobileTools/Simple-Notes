@@ -66,16 +66,18 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
-        val openNote = menu.findItem(R.id.open_note)
-        openNote.isVisible = mNotes.size > 1
-
-        val deleteNote = menu.findItem(R.id.delete_note)
-        deleteNote.isVisible = mNotes.size > 1
-
-        val changeNote = menu.findItem(R.id.change_widget_note)
-        changeNote.isVisible = mNotes.size > 1
-
         return true
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        val shouldBeVisible = mNotes.size > 1
+        menu.apply {
+            findItem(R.id.open_note).isVisible = shouldBeVisible
+            findItem(R.id.delete_note).isVisible = shouldBeVisible
+            findItem(R.id.change_widget_note).isVisible = shouldBeVisible
+        }
+
+        return super.onPrepareOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -151,6 +153,7 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
                         val id = mDb.insertNote(newNote)
                         updateSelectedNote(id)
                         dismiss()
+                        mNotes = mDb.getNotes()
                         invalidateOptionsMenu()
                     }
                 }
@@ -231,9 +234,10 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
         val widgetManager = AppWidgetManager.getInstance(context)
         val ids = widgetManager.getAppWidgetIds(ComponentName(context, MyWidgetProvider::class.java))
 
-        val intent = Intent(context, MyWidgetProvider::class.java)
-        intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
-        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
-        context.sendBroadcast(intent)
+        Intent(context, MyWidgetProvider::class.java).apply {
+            action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+            putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+            context.sendBroadcast(this)
+        }
     }
 }
