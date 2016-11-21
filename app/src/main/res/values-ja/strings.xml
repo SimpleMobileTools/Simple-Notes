@@ -49,5 +49,6 @@
     <string name="kotlin_title"><u>Kotlin (プログラミング言語)</u></string>
     <string name="ambilwarna_title"><u>AmbilWarna (カラー ピッカー)</u></string>
     <string name="stetho_title"><u>Stetho (debugging databases)</u></string>
+    <string name="filepicker_title"><u>Simple File Picker (filepicker dialog)</u></string>
 
 </resources>
