@@ -5,12 +5,12 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
 import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.simplemobiletools.filepicker.dialogs.ConfirmationDialog
 import com.simplemobiletools.filepicker.extensions.toast
 import com.simplemobiletools.filepicker.extensions.value
 import com.simplemobiletools.notes.MyWidgetProvider
@@ -140,13 +140,9 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
     }
 
     private fun displayDeleteNotePrompt() {
-        val res = resources
-        AlertDialog.Builder(this).apply {
-            setTitle(res.getString(R.string.delete_note_prompt_title))
-            setMessage(String.format(res.getString(R.string.delete_note_prompt_message), mCurrentNote!!.title))
-            setPositiveButton(R.string.ok) { dialog, which -> deleteNote() }
-            setNegativeButton(R.string.cancel, null)
-            show()
+        val message = String.format(getString(R.string.delete_note_prompt_message), mCurrentNote!!.title)
+        ConfirmationDialog(this, message) {
+            deleteNote()
         }
     }
 
