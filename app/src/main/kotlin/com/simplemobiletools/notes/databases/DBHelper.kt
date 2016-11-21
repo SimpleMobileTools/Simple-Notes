@@ -38,7 +38,8 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
+        if (newVersion == 2)
+            db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
     }
 
     private fun insertFirstNote(db: SQLiteDatabase) {
