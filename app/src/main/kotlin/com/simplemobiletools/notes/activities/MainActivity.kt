@@ -38,8 +38,15 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
         mDb = DBHelper.newInstance(applicationContext)
         mNotes = mDb.getNotes()
         updateSelectedNote(config.currentNoteId)
+
         notes_fab.setOnClickListener { displayNewNoteDialog() }
+        notes_fab.viewTreeObserver.addOnGlobalLayoutListener {
+            val heightDiff = notes_coordinator.rootView.height - notes_coordinator.height
+            notes_fab.visibility = if (heightDiff > dpToPx(this, 200f)) View.INVISIBLE else View.VISIBLE
+        }
     }
+
+    fun dpToPx(context: Context, valueInDp: Float) = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, valueInDp, context.resources.displayMetrics)
 
     override fun onResume() {
         super.onResume()
