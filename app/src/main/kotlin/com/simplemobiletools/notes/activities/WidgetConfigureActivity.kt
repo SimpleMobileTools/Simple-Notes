@@ -11,6 +11,7 @@ import android.util.TypedValue
 import android.widget.RemoteViews
 import android.widget.SeekBar
 import com.simplemobiletools.notes.*
+import com.simplemobiletools.notes.extensions.getTextSize
 import kotlinx.android.synthetic.main.widget_config.*
 import yuku.ambilwarna.AmbilWarnaDialog
 
@@ -41,7 +42,7 @@ class WidgetConfigureActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        notes_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(applicationContext))
+        notes_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, applicationContext.getTextSize())
     }
 
     private fun initVariables() {

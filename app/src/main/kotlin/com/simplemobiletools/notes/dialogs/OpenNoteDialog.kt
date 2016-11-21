@@ -10,7 +10,7 @@ import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
 import kotlinx.android.synthetic.main.dialog_radio_group.view.*
 
-class OpenNoteDialog(val activity: Activity) : RadioGroup.OnCheckedChangeListener {
+class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> Unit) : RadioGroup.OnCheckedChangeListener {
     val dialog: AlertDialog?
 
     init {
@@ -39,11 +39,7 @@ class OpenNoteDialog(val activity: Activity) : RadioGroup.OnCheckedChangeListene
     }
 
     override fun onCheckedChanged(group: RadioGroup, checkedId: Int) {
-        (activity as OpenNoteListener).noteSelected(checkedId)
+        callback.invoke(checkedId)
         dialog?.dismiss()
-    }
-
-    interface OpenNoteListener {
-        fun noteSelected(id: Int)
     }
 }

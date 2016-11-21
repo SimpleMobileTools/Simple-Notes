@@ -16,15 +16,15 @@ import com.simplemobiletools.filepicker.extensions.value
 import com.simplemobiletools.notes.MyWidgetProvider
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.TYPE_NOTE
-import com.simplemobiletools.notes.Utils
 import com.simplemobiletools.notes.databases.DBHelper
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.WidgetNoteDialog
+import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
+class MainActivity : SimpleActivity() {
     private var mCurrentNote: Note? = null
 
     lateinit var mDb: DBHelper
@@ -50,7 +50,7 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
     override fun onResume() {
         super.onResume()
         invalidateOptionsMenu()
-        notes_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utils.getTextSize(applicationContext))
+        notes_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, applicationContext.getTextSize())
     }
 
     override fun onPause() {
@@ -160,7 +160,9 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
     }
 
     private fun displayOpenNoteDialog() {
-        OpenNoteDialog(this)
+        OpenNoteDialog(this) {
+            updateSelectedNote(it)
+        }
     }
 
     private fun saveText() {
@@ -201,8 +203,6 @@ class MainActivity : SimpleActivity(), OpenNoteDialog.OpenNoteListener {
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(notes_view.windowToken, 0)
     }
-
-    override fun noteSelected(id: Int) = updateSelectedNote(id)
 
     fun updateWidget(context: Context) {
         val widgetManager = AppWidgetManager.getInstance(context)

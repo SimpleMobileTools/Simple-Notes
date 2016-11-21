@@ -11,6 +11,7 @@ import android.widget.RemoteViews
 import com.simplemobiletools.notes.R.layout.widget
 import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.databases.DBHelper
+import com.simplemobiletools.notes.extensions.getTextSize
 
 class MyWidgetProvider : AppWidgetProvider() {
     lateinit var mDb: DBHelper
@@ -28,7 +29,7 @@ class MyWidgetProvider : AppWidgetProvider() {
         mRemoteViews.apply {
             setInt(R.id.notes_view, "setBackgroundColor", newBgColor)
             setInt(R.id.notes_view, "setTextColor", newTextColor)
-            setFloat(R.id.notes_view, "setTextSize", Utils.getTextSize(context) / context.resources.displayMetrics.density)
+            setFloat(R.id.notes_view, "setTextSize", context.getTextSize() / context.resources.displayMetrics.density)
         }
 
         for (widgetId in appWidgetIds) {
