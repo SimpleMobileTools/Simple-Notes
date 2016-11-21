@@ -21,6 +21,8 @@
     <string name="current_note">Nota atual:</string>
     <string name="change_widget_note">Alterar nota do widget</string>
     <string name="pick_a_note_for_widget">Escolha uma nota para o widget</string>
+    <string name="rename">Rename</string>
+    <string name="rename_note">Rename note</string>
 
     <!-- Settings -->
     <string name="settings">Definições</string>

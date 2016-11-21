@@ -21,6 +21,8 @@
     <string name="current_note">Aktuelle Notiz:</string>
     <string name="change_widget_note">Wechsel Notiz des Widgets</string>
     <string name="pick_a_note_for_widget">Wähle Notiz für das Widget</string>
+    <string name="rename">Rename</string>
+    <string name="rename_note">Rename note</string>
 
     <!-- Settings -->
     <string name="settings">Einstellungen</string>

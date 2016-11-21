@@ -19,6 +19,7 @@ import com.simplemobiletools.notes.TYPE_NOTE
 import com.simplemobiletools.notes.databases.DBHelper
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
+import com.simplemobiletools.notes.dialogs.RenameNoteDialog
 import com.simplemobiletools.notes.dialogs.WidgetNoteDialog
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.models.Note
@@ -71,6 +72,7 @@ class MainActivity : SimpleActivity() {
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         val shouldBeVisible = mNotes.size > 1
         menu.apply {
+            findItem(R.id.rename_note).isVisible = shouldBeVisible
             findItem(R.id.open_note).isVisible = shouldBeVisible
             findItem(R.id.delete_note).isVisible = shouldBeVisible
             findItem(R.id.change_widget_note).isVisible = shouldBeVisible
@@ -81,12 +83,12 @@ class MainActivity : SimpleActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.delete_note -> {
-                displayDeleteNotePrompt()
-                true
-            }
             R.id.open_note -> {
                 displayOpenNoteDialog()
+                true
+            }
+            R.id.rename_note -> {
+                displayRenameDialog()
                 true
             }
             R.id.share -> {
@@ -95,6 +97,10 @@ class MainActivity : SimpleActivity() {
             }
             R.id.change_widget_note -> {
                 showWidgetNotePicker()
+                true
+            }
+            R.id.delete_note -> {
+                displayDeleteNotePrompt()
                 true
             }
             R.id.settings -> {
@@ -111,6 +117,13 @@ class MainActivity : SimpleActivity() {
 
     private fun showWidgetNotePicker() {
         WidgetNoteDialog(this)
+    }
+
+    private fun displayRenameDialog() {
+        RenameNoteDialog(this, mDb, mCurrentNote!!) {
+            mCurrentNote = it
+            current_note_title.text = it.title
+        }
     }
 
     private fun updateSelectedNote(id: Int) {

@@ -7,15 +7,20 @@
         android:title="@string/share"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/delete_note"
-        android:icon="@mipmap/delete"
-        android:title="@string/delete_note"
-        app:showAsAction="never"/>
+        android:id="@+id/rename_note"
+        android:icon="@mipmap/rename"
+        android:title="@string/rename"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/share"
         android:icon="@mipmap/share"
         android:title="@string/share"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/delete_note"
+        android:icon="@mipmap/delete"
+        android:title="@string/delete_note"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/change_widget_note"
         android:title="@string/change_widget_note"

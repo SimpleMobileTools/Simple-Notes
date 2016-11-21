@@ -126,7 +126,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun updateNote(note: Note) {
         val values = fillContentValues(note)
-        val selection = COL_ID + " = ?"
+        val selection = "$COL_ID = ?"
         val selectionArgs = arrayOf(note.id.toString())
         mDb.update(TABLE_NAME, values, selection, selectionArgs)
     }
