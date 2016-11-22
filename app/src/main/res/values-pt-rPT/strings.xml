@@ -21,9 +21,9 @@
     <string name="current_note">Nota atual:</string>
     <string name="change_widget_note">Alterar nota do widget</string>
     <string name="pick_a_note_for_widget">Escolha uma nota para o widget</string>
-    <string name="rename">Rename</string>
-    <string name="rename_note">Rename note</string>
-    <string name="general_note">General note</string>
+    <string name="rename">Renomear</string>
+    <string name="rename_note">Renomear nota</string>
+    <string name="general_note">Nota genérica</string>
 
     <!-- Settings -->
     <string name="settings">Definições</string>
@@ -53,5 +53,4 @@
     <string name="ambilwarna_title"><u>AmbilWarna (seletor de cores)</u></string>
     <string name="stetho_title"><u>Stetho (depuração a bases de dados)</u></string>
     <string name="filepicker_title"><u>Simple File Picker (diálogo de seleção de ficheiros)</u></string>
-
 </resources>
