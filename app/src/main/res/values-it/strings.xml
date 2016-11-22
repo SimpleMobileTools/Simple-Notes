@@ -23,6 +23,7 @@
     <string name="pick_a_note_for_widget">Pick a note for the widget</string>
     <string name="rename">Rename</string>
     <string name="rename_note">Rename note</string>
+    <string name="general_note">General note</string>
 
     <!-- Settings -->
     <string name="settings">Impostazioni</string>

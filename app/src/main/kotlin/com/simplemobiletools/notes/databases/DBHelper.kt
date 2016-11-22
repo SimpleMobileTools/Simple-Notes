@@ -6,6 +6,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.simplemobiletools.notes.PREFS_KEY
+import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.TEXT
 import com.simplemobiletools.notes.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
@@ -18,7 +19,6 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         private val DB_NAME = "notes.db"
         private val DB_VERSION = 2
         private val TABLE_NAME = "notes"
-        private val NOTE = "General note"
 
         private val COL_ID = "id"
         private val COL_TITLE = "title"
@@ -43,9 +43,10 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     private fun insertFirstNote(db: SQLiteDatabase) {
+        val generalNote = mContext.resources.getString(R.string.general_note)
         val prefs = mContext.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         val text = prefs.getString(TEXT, "")
-        val note = Note(1, NOTE, text, TYPE_NOTE)
+        val note = Note(1, generalNote, text, TYPE_NOTE)
         insertNote(note, db)
     }
 
@@ -68,12 +69,12 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     fun deleteNote(id: Int) {
-        mDb.delete(TABLE_NAME, COL_ID + " = " + id, null)
+        mDb.delete(TABLE_NAME, "$COL_ID = $id", null)
     }
 
     fun doesTitleExist(title: String): Boolean {
         val cols = arrayOf(COL_ID)
-        val selection = COL_TITLE + " = ?"
+        val selection = "$COL_TITLE = ?"
         val selectionArgs = arrayOf(title)
         val cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null) ?: return false
         val cnt = cursor.count

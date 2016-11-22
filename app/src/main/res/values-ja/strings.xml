@@ -23,6 +23,7 @@
     <string name="pick_a_note_for_widget">ウィジェットのメモを選択</string>
     <string name="rename">Rename</string>
     <string name="rename_note">Rename note</string>
+    <string name="general_note">General note</string>
 
     <!-- Settings -->
     <string name="settings">設定</string>
