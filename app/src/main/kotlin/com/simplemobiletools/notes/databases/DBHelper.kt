@@ -9,6 +9,8 @@ import com.simplemobiletools.notes.PREFS_KEY
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.TEXT
 import com.simplemobiletools.notes.TYPE_NOTE
+import com.simplemobiletools.notes.extensions.getIntValue
+import com.simplemobiletools.notes.extensions.getStringValue
 import com.simplemobiletools.notes.models.Note
 import java.util.*
 
@@ -90,10 +92,10 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
             cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, "$COL_TITLE COLLATE NOCASE ASC")
             if (cursor != null && cursor.moveToFirst()) {
                 do {
-                    val id = cursor.getInt(cursor.getColumnIndex(COL_ID))
-                    val title = cursor.getString(cursor.getColumnIndex(COL_TITLE))
-                    val value = cursor.getString(cursor.getColumnIndex(COL_VALUE))
-                    val type = cursor.getInt(cursor.getColumnIndex(COL_TYPE))
+                    val id = cursor.getIntValue(COL_ID)
+                    val title = cursor.getStringValue(COL_TITLE)
+                    val value = cursor.getStringValue(COL_VALUE)
+                    val type = cursor.getIntValue(COL_TYPE)
                     val note = Note(id, title, value, type)
                     notes.add(note)
                 } while (cursor.moveToNext())
@@ -114,9 +116,9 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         try {
             cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null)
             if (cursor != null && cursor.moveToFirst()) {
-                val title = cursor.getString(cursor.getColumnIndex(COL_TITLE))
-                val value = cursor.getString(cursor.getColumnIndex(COL_VALUE))
-                val type = cursor.getInt(cursor.getColumnIndex(COL_TYPE))
+                val title = cursor.getStringValue(COL_TITLE)
+                val value = cursor.getStringValue(COL_VALUE)
+                val type = cursor.getIntValue(COL_TYPE)
                 note = Note(id, title, value, type)
             }
         } finally {
