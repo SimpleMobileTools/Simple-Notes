@@ -8,21 +8,21 @@
     <string name="cannot_share_empty_text">No se puede compartir una nota vacía</string>
     <string name="note_saved">Nota guardada</string>
     <string name="simple_note">Nota simple</string>
-    <string name="new_note">Añadir una nueva nota</string>
-    <string name="ok">Ok</string>
+    <string name="new_note">Añadir una nota nueva</string>
+    <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
     <string name="no_title">Por favor, asigne un nombre a la nota</string>
     <string name="title_taken">Ya existe una nota con ese nombre</string>
     <string name="open_note">Abrir una nota</string>
-    <string name="delete_note">Eliminar la nota</string>
-    <string name="delete_note_prompt_title">Eliminar la nota</string>
+    <string name="delete_note">Eliminar nota</string>
+    <string name="delete_note_prompt_title">Eliminar nota</string>
     <string name="delete_note_prompt_message">Está seguro de querer eliminar la nota \"%1$s\"?</string>
     <string name="pick_a_note">Seleccione una nota</string>
     <string name="current_note">Nota actual:</string>
     <string name="change_widget_note">Cambiar la nota del widget</string>
     <string name="pick_a_note_for_widget">Seleccione una nota para el widget</string>
-    <string name="rename">Rename</string>
-    <string name="rename_note">Rename note</string>
+    <string name="rename">Renombrar</string>
+    <string name="rename_note">Renombrar nota</string>
 
     <!-- Settings -->
     <string name="settings">Opciones</string>
@@ -39,7 +39,7 @@
     <string name="email_label">Envíe sus comentarios y sugerencias a:</string>
     <string name="third_party_licences_underlined"><u>Licencias de terceros</u></string>
     <string name="invite_friends_underlined"><u>Invitar a amigos</u></string>
-    <string name="share_text">Hola, ven y échale un vistazo a %1$s en %2$s</string>
+    <string name="share_text">Hola, venga y échele un vistazo a %1$s en %2$s</string>
     <string name="invite_via">Invitar vía</string>
     <string name="rate_us_underlined"><u>Evalúenos en Google Play Store</u></string>
     <string name="follow_us">Síganos:</string>
