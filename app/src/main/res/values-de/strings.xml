@@ -21,13 +21,13 @@
     <string name="current_note">Aktuelle Notiz:</string>
     <string name="change_widget_note">Wechsel Notiz des Widgets</string>
     <string name="pick_a_note_for_widget">Wähle Notiz für das Widget</string>
-    <string name="rename">Rename</string>
-    <string name="rename_note">Rename note</string>
-    <string name="general_note">General note</string>
+    <string name="rename">Umbennen</string>
+    <string name="rename_note">Notiz umbennen</string>
+    <string name="general_note">Hauptnotiz</string>
 
     <!-- Settings -->
     <string name="settings">Einstellungen</string>
-    <string name="dark_theme">Dunkles Design</string>
+    <string name="dark_theme">Dunkles Thema</string>
     <string name="note_font_size">Schriftgröße</string>
     <string name="small">Klein</string>
     <string name="normal">Normal</string>
@@ -51,7 +51,7 @@
     <string name="third_party_licences">Drittanbieterlizenzen</string>
     <string name="kotlin_title"><u>Kotlin (Programmiersprache)</u></string>
     <string name="ambilwarna_title"><u>AmbilWarna (Color Picker)</u></string>
-    <string name="stetho_title"><u>Stetho (debugging databases)</u></string>
-    <string name="filepicker_title"><u>Simple File Picker (filepicker dialog)</u></string>
+    <string name="stetho_title"><u>Stetho (Debugging für Datenbanken)</u></string>
+    <string name="filepicker_title"><u>Simple File Picker (Dateiauswahldialog)</u></string>
 
 </resources>
