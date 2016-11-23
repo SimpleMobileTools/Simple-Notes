@@ -50,7 +50,7 @@
     <string name="notice">Diese App nutzt die folgenden Drittanbieterbibliotheken, die mein Leben einfacher machen. Danke.</string>
     <string name="third_party_licences">Drittanbieterlizenzen</string>
     <string name="kotlin_title"><u>Kotlin (Programmiersprache)</u></string>
-    <string name="ambilwarna_title"><u>AmbilWarna (Color Picker)</u></string>
+    <string name="ambilwarna_title"><u>AmbilWarna (Farbauswahltool)</u></string>
     <string name="stetho_title"><u>Stetho (Debugging für Datenbanken)</u></string>
     <string name="filepicker_title"><u>Simple File Picker (Dateiauswahldialog)</u></string>
 
