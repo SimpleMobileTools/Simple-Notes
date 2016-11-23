@@ -8,27 +8,27 @@
     <string name="cannot_share_empty_text">No se puede compartir una nota vacía</string>
     <string name="note_saved">Nota guardada</string>
     <string name="simple_note">Nota simple</string>
-    <string name="new_note">Añadir una nota nueva</string>
+    <string name="new_note">Añadir una nueva nota</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
     <string name="no_title">Por favor, asigne un nombre a la nota</string>
     <string name="title_taken">Ya existe una nota con ese nombre</string>
-    <string name="open_note">Abrir una nota</string>
+    <string name="open_note">Abrir nota</string>
     <string name="delete_note">Eliminar nota</string>
     <string name="delete_note_prompt_title">Eliminar nota</string>
-    <string name="delete_note_prompt_message">Está seguro de querer eliminar la nota \"%1$s\"?</string>
+    <string name="delete_note_prompt_message">¿Está seguro de querer eliminar la nota \"%1$s\"?</string>
     <string name="pick_a_note">Seleccione una nota</string>
     <string name="current_note">Nota actual:</string>
-    <string name="change_widget_note">Cambiar la nota del widget</string>
+    <string name="change_widget_note">Cambiar nota del widget</string>
     <string name="pick_a_note_for_widget">Seleccione una nota para el widget</string>
     <string name="rename">Renombrar</string>
     <string name="rename_note">Renombrar nota</string>
-    <string name="general_note">General note</string>
+    <string name="general_note">Nota principal</string>
 
     <!-- Settings -->
     <string name="settings">Opciones</string>
     <string name="dark_theme">Tema oscuro</string>
-    <string name="note_font_size">Tamaño de fuente de las notas</string>
+    <string name="note_font_size">Tamaño de fuente</string>
     <string name="small">Pequeña</string>
     <string name="normal">Normal</string>
     <string name="large">Grande</string>
