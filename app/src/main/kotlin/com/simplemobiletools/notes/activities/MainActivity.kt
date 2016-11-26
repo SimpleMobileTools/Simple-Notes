@@ -24,6 +24,7 @@ import com.simplemobiletools.notes.dialogs.WidgetNoteDialog
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_note.*
 
 class MainActivity : SimpleActivity() {
     private var mCurrentNote: Note? = null
