@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.dialog_radio_group.view.*
 
 class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> Unit) : RadioGroup.OnCheckedChangeListener {
     val dialog: AlertDialog?
+    var wasInit = false
 
     init {
         val config = Config.newInstance(activity)
@@ -36,10 +37,13 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
                 .create()
 
         dialog!!.show()
+        wasInit = true
     }
 
     override fun onCheckedChanged(group: RadioGroup, checkedId: Int) {
-        callback.invoke(checkedId)
-        dialog?.dismiss()
+        if (wasInit) {
+            callback.invoke(checkedId)
+            dialog?.dismiss()
+        }
     }
 }

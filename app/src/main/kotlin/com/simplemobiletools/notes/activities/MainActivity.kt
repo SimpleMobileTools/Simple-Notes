@@ -44,14 +44,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     fun initViewPager() {
         mNotes = mDb.getNotes()
         mCurrentNote = mNotes[0]
-        var itemIndex = 0
-        for (i in 0..mNotes.count() - 1) {
-            if (mNotes[i].id == config.currentNoteId) {
-                mCurrentNote = mNotes[i]
-                itemIndex = i
-                break
-            }
-        }
+        val itemIndex = getNoteIndexWithId(config.currentNoteId)
 
         mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes)
         view_pager.apply {
@@ -127,11 +120,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun updateSelectedNote(id: Int) {
         config.currentNoteId = id
-
-        for (i in 0..mNotes.count() - 1) {
-            view_pager.currentItem = i
-            mCurrentNote = mNotes[i]
-        }
+        val index = getNoteIndexWithId(id)
+        view_pager.currentItem = index
+        mCurrentNote = mNotes[index]
     }
 
     fun displayNewNoteDialog() {
@@ -170,6 +161,16 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         OpenNoteDialog(this) {
             updateSelectedNote(it)
         }
+    }
+
+    private fun getNoteIndexWithId(id: Int): Int {
+        for (i in 0..mNotes.count() - 1) {
+            if (mNotes[i].id == id) {
+                mCurrentNote = mNotes[i]
+                return i
+            }
+        }
+        return 0
     }
 
     private fun shareText() {
