@@ -33,19 +33,24 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         setContentView(R.layout.activity_main)
 
         mDb = DBHelper.newInstance(applicationContext)
-        mNotes = mDb.getNotes()
-        mCurrentNote = mNotes[0]
-
-        mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes)
-        view_pager.apply {
-            adapter = mAdapter
-            addOnPageChangeListener(this@MainActivity)
-        }
+        initViewPager()
 
         notes_fab.setOnClickListener { displayNewNoteDialog() }
         notes_fab.viewTreeObserver.addOnGlobalLayoutListener {
             val heightDiff = notes_coordinator.rootView.height - notes_coordinator.height
             notes_fab.visibility = if (heightDiff > dpToPx(200f)) View.INVISIBLE else View.VISIBLE
+        }
+    }
+
+    fun initViewPager() {
+        mNotes = mDb.getNotes().sortedBy(Note::title)
+        mCurrentNote = mNotes[0]
+
+        mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes)
+        view_pager.apply {
+            adapter = mAdapter
+            currentItem = 0
+            addOnPageChangeListener(this@MainActivity)
         }
     }
 
@@ -118,6 +123,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         RenameNoteDialog(this, mDb, mCurrentNote) {
             mCurrentNote = it
             current_note_title.text = it.title
+            initViewPager()
         }
     }
 
@@ -132,6 +138,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             updateSelectedNote(id)
             mNotes = mDb.getNotes()
             invalidateOptionsMenu()
+            initViewPager()
         }
     }
 
@@ -153,6 +160,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         updateSelectedNote(firstNoteId)
         config.widgetNoteId = firstNoteId
         invalidateOptionsMenu()
+        initViewPager()
     }
 
     private fun displayOpenNoteDialog() {
