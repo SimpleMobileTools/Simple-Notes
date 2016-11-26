@@ -31,4 +31,6 @@ class NotesPagerAdapter(fm: FragmentManager, private val notes: List<Note>) : Fr
         fragments.put(position, fragment)
         return fragment
     }
+
+    override fun getPageTitle(position: Int) = notes[position].title
 }

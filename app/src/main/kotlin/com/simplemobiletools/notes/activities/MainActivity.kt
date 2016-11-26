@@ -3,6 +3,8 @@ package com.simplemobiletools.notes.activities
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import android.util.TypedValue
+import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -17,6 +19,7 @@ import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.RenameNoteDialog
 import com.simplemobiletools.notes.extensions.dpToPx
+import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_note.*
@@ -33,6 +36,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
         mDb = DBHelper.newInstance(applicationContext)
         initViewPager()
+
+        pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
+        pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
 
         notes_fab.setOnClickListener { displayNewNoteDialog() }
         notes_fab.viewTreeObserver.addOnGlobalLayoutListener {
@@ -57,6 +63,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     override fun onResume() {
         super.onResume()
         invalidateOptionsMenu()
+        pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
+        pager_title_strip.setGravity(Gravity.CENTER_VERTICAL)
+        pager_title_strip.setNonPrimaryAlpha(0.4f)
     }
 
     override fun onDestroy() {
@@ -76,6 +85,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             findItem(R.id.open_note).isVisible = shouldBeVisible
             findItem(R.id.delete_note).isVisible = shouldBeVisible
         }
+
+        pager_title_strip.visibility = if (shouldBeVisible) View.VISIBLE else View.GONE
 
         return super.onPrepareOptionsMenu(menu)
     }
@@ -113,7 +124,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun displayRenameDialog() {
         RenameNoteDialog(this, mDb, mCurrentNote) {
             mCurrentNote = it
-            current_note_title.text = it.title
             initViewPager()
         }
     }

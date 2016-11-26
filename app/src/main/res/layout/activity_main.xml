@@ -9,7 +9,16 @@
     <com.simplemobiletools.notes.views.MyViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.PagerTitleStrip
+            android:id="@+id/pager_title_strip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:paddingLeft="@dimen/activity_margin"
+            android:paddingRight="@dimen/activity_margin"/>
+    </com.simplemobiletools.notes.views.MyViewPager>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/notes_fab"

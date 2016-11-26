@@ -28,8 +28,6 @@ class NoteFragment : Fragment() {
         note = mDb.getNote(noteId) ?: return view
 
         view.notes_view.setText(note.value)
-        view.current_note_title.text = note.title
-        view.notes_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
         return view
     }
 
@@ -41,6 +39,11 @@ class NoteFragment : Fragment() {
             mDb.updateNote(note)
             context.updateWidget()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        view.notes_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
     }
 
     override fun onPause() {

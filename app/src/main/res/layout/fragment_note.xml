@@ -3,22 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/note_Fragment_holder"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_margin">
-
-    <TextView
-        android:id="@+id/current_note_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_margin"
-        android:layout_marginRight="@dimen/activity_margin"
-        android:alpha=".6"/>
+    android:layout_height="match_parent">
 
     <ScrollView
         android:id="@+id/notes_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/current_note_title"
         android:fillViewport="true">
 
         <EditText
