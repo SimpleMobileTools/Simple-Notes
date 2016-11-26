@@ -45,11 +45,19 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     fun initViewPager() {
         mNotes = mDb.getNotes().sortedBy(Note::title)
         mCurrentNote = mNotes[0]
+        var itemIndex = 0
+        for (i in 0..mNotes.count() - 1) {
+            if (mNotes[i].id == config.currentNoteId) {
+                mCurrentNote = mNotes[i]
+                itemIndex = i
+                break
+            }
+        }
 
         mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes)
         view_pager.apply {
             adapter = mAdapter
-            currentItem = 0
+            currentItem = itemIndex
             addOnPageChangeListener(this@MainActivity)
         }
     }
@@ -129,14 +137,19 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun updateSelectedNote(id: Int) {
         config.currentNoteId = id
+
+        for (i in 0..mNotes.count() - 1) {
+            view_pager.currentItem = i
+            mCurrentNote = mNotes[i]
+        }
     }
 
     fun displayNewNoteDialog() {
         NewNoteDialog(this, mDb) {
             val newNote = Note(0, it, "", TYPE_NOTE)
             val id = mDb.insertNote(newNote)
-            updateSelectedNote(id)
             mNotes = mDb.getNotes()
+            updateSelectedNote(id)
             invalidateOptionsMenu()
             initViewPager()
         }
