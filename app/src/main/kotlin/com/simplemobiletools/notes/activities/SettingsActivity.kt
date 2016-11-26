@@ -11,7 +11,6 @@ import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_settings.*
 
-
 class SettingsActivity : SimpleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +52,8 @@ class SettingsActivity : SimpleActivity() {
         val adapter = getSpinnerAdapter(notes)
         settings_widget_note.adapter = adapter
 
-        settings_widget_note.setSelection(config.fontSize)
+        val noteIndex = getNoteIndexWithId(config.widgetNoteId, notes)
+        settings_widget_note.setSelection(noteIndex)
         settings_widget_note.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val note = notes[settings_widget_note.selectedItemPosition]
@@ -64,6 +64,15 @@ class SettingsActivity : SimpleActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
+    }
+
+    private fun getNoteIndexWithId(id: Int, notes: List<Note>): Int {
+        for (i in 0..notes.count() - 1) {
+            if (notes[i].id == id) {
+                return i
+            }
+        }
+        return 0
     }
 
     private fun getSpinnerAdapter(notes: List<Note>): ArrayAdapter<String> {
