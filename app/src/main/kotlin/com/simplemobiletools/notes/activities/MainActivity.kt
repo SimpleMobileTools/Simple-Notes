@@ -82,7 +82,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             findItem(R.id.rename_note).isVisible = shouldBeVisible
             findItem(R.id.open_note).isVisible = shouldBeVisible
             findItem(R.id.delete_note).isVisible = shouldBeVisible
-            findItem(R.id.change_widget_note).isVisible = shouldBeVisible
         }
 
         return super.onPrepareOptionsMenu(menu)
