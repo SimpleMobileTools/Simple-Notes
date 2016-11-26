@@ -63,5 +63,31 @@
                 android:entries="@array/font_sizes"/>
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/settings_widget_note_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/activity_margin"
+            android:paddingRight="@dimen/normal_padding"
+            android:paddingTop="@dimen/activity_margin">
+
+            <TextView
+                android:id="@+id/settings_widget_note_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/normal_padding"
+                android:text="@string/widget_note"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/settings_widget_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>

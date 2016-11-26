@@ -5,6 +5,8 @@ import android.support.v4.app.TaskStackBuilder
 import android.view.View
 import android.widget.AdapterView
 import com.simplemobiletools.notes.R
+import com.simplemobiletools.notes.databases.DBHelper
+import com.simplemobiletools.notes.extensions.updateWidget
 import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : SimpleActivity() {
@@ -14,6 +16,7 @@ class SettingsActivity : SimpleActivity() {
 
         setupDarkTheme()
         setupFontSize()
+        setupWidgetNote()
     }
 
     private fun setupDarkTheme() {
@@ -30,6 +33,26 @@ class SettingsActivity : SimpleActivity() {
         settings_font_size.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 config.fontSize = settings_font_size.selectedItemPosition
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
+    }
+
+    private fun setupWidgetNote() {
+        val notes = DBHelper.newInstance(this).getNotes()
+        if (notes.size <= 1) {
+            settings_widget_note_holder.visibility = View.GONE
+            return
+        }
+
+        settings_widget_note.setSelection(config.fontSize)
+        settings_widget_note.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val note = notes[settings_widget_note.selectedItemPosition]
+                config.widgetNoteId = note.id
+                updateWidget()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {

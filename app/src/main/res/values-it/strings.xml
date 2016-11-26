@@ -17,8 +17,6 @@
     <string name="delete_note_prompt_title">Delete note</string>
     <string name="delete_note_prompt_message">Are you sure you want to delete note \"%1$s\"?</string>
     <string name="pick_a_note">Pick a note</string>
-    <string name="change_widget_note">Change widget\'s note</string>
-    <string name="pick_a_note_for_widget">Pick a note for the widget</string>
     <string name="rename">Rename</string>
     <string name="rename_note">Rename note</string>
     <string name="general_note">General note</string>
@@ -27,6 +25,7 @@
     <string name="settings">Impostazioni</string>
     <string name="dark_theme">Tema scuro</string>
     <string name="note_font_size">Note font size</string>
+    <string name="widget_note">Note used in widget</string>
     <string name="small">Small</string>
     <string name="normal">Normal</string>
     <string name="large">Large</string>

@@ -16,7 +16,6 @@ import com.simplemobiletools.notes.databases.DBHelper
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.RenameNoteDialog
-import com.simplemobiletools.notes.dialogs.WidgetNoteDialog
 import com.simplemobiletools.notes.extensions.dpToPx
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
@@ -43,7 +42,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     fun initViewPager() {
-        mNotes = mDb.getNotes().sortedBy(Note::title)
+        mNotes = mDb.getNotes()
         mCurrentNote = mNotes[0]
         var itemIndex = 0
         for (i in 0..mNotes.count() - 1) {
@@ -103,10 +102,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                 shareText()
                 true
             }
-            R.id.change_widget_note -> {
-                showWidgetNotePicker()
-                true
-            }
             R.id.delete_note -> {
                 displayDeleteNotePrompt()
                 true
@@ -121,10 +116,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun showWidgetNotePicker() {
-        WidgetNoteDialog(this)
     }
 
     private fun displayRenameDialog() {

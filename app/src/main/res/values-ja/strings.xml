@@ -17,8 +17,6 @@
     <string name="delete_note_prompt_title">メモを削除</string>
     <string name="delete_note_prompt_message">メモ \"%1$s\" を削除してもよろしいですか?</string>
     <string name="pick_a_note">メモを選択</string>
-    <string name="change_widget_note">ウィジェットのメモを変更</string>
-    <string name="pick_a_note_for_widget">ウィジェットのメモを選択</string>
     <string name="rename">Rename</string>
     <string name="rename_note">Rename note</string>
     <string name="general_note">General note</string>
@@ -27,6 +25,7 @@
     <string name="settings">設定</string>
     <string name="dark_theme">ダークテーマ</string>
     <string name="note_font_size">メモのフォントサイズ</string>
+    <string name="widget_note">Note used in widget</string>
     <string name="small">小</string>
     <string name="normal">通常</string>
     <string name="large">大</string>

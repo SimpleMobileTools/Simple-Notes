@@ -17,8 +17,6 @@
     <string name="delete_note_prompt_title">Apagar nota</string>
     <string name="delete_note_prompt_message">Deseja mesmo apagar a nota \"%1$s\"?</string>
     <string name="pick_a_note">Selecione uma nota</string>
-    <string name="change_widget_note">Alterar nota do widget</string>
-    <string name="pick_a_note_for_widget">Escolha uma nota para o widget</string>
     <string name="rename">Renomear</string>
     <string name="rename_note">Renomear nota</string>
     <string name="general_note">Nota genérica</string>
@@ -27,6 +25,7 @@
     <string name="settings">Definições</string>
     <string name="dark_theme">Tema escuro</string>
     <string name="note_font_size">Tamanho do texto da nota</string>
+    <string name="widget_note">Note used in widget</string>
     <string name="small">Pequeno</string>
     <string name="normal">Normal</string>
     <string name="large">Grande</string>
