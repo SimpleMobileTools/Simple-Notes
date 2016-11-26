@@ -2,6 +2,7 @@ package com.simplemobiletools.notes.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v4.view.ViewPager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -21,7 +22,7 @@ import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_note.*
 
-class MainActivity : SimpleActivity() {
+class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     lateinit var mCurrentNote: Note
     lateinit var mAdapter: NotesPagerAdapter
     lateinit var mDb: DBHelper
@@ -38,6 +39,7 @@ class MainActivity : SimpleActivity() {
         mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes)
         view_pager.apply {
             adapter = mAdapter
+            addOnPageChangeListener(this@MainActivity)
         }
 
         notes_fab.setOnClickListener { displayNewNoteDialog() }
@@ -50,11 +52,6 @@ class MainActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
         invalidateOptionsMenu()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        mAdapter.saveNote(mCurrentNote.id)
     }
 
     override fun onDestroy() {
@@ -125,11 +122,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun updateSelectedNote(id: Int) {
-        mNotes = mDb.getNotes()
         config.currentNoteId = id
-        notes_view.setText(mCurrentNote.value)
-        current_note_title.text = mCurrentNote.title
-        current_note_title.visibility = if (mNotes.size <= 1) View.GONE else View.VISIBLE
     }
 
     fun displayNewNoteDialog() {
@@ -184,5 +177,16 @@ class MainActivity : SimpleActivity() {
             type = "text/plain"
             startActivity(Intent.createChooser(this, shareTitle))
         }
+    }
+
+    override fun onPageScrollStateChanged(state: Int) {
+    }
+
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+    }
+
+    override fun onPageSelected(position: Int) {
+        mCurrentNote = mNotes[position]
+        config.currentNoteId = mCurrentNote.id
     }
 }

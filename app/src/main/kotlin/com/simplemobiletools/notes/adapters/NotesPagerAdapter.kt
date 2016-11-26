@@ -31,8 +31,4 @@ class NotesPagerAdapter(fm: FragmentManager, private val notes: List<Note>) : Fr
         fragments.put(position, fragment)
         return fragment
     }
-
-    fun saveNote(pos: Int) {
-        fragments.get(pos)?.saveText()
-    }
 }
