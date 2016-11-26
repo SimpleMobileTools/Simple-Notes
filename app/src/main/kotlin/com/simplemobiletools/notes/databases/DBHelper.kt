@@ -19,13 +19,14 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     companion object {
         private val DB_NAME = "notes.db"
-        private val DB_VERSION = 2
+        private val DB_VERSION = 3
         private val TABLE_NAME = "notes"
 
         private val COL_ID = "id"
         private val COL_TITLE = "title"
         private val COL_VALUE = "value"
         private val COL_TYPE = "type"
+        private val COL_PATH = "path"
 
         fun newInstance(context: Context) = DBHelper(context)
     }
@@ -35,13 +36,15 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY, $COL_TITLE TEXT UNIQUE, $COL_VALUE TEXT, $COL_TYPE INTEGER DEFAULT 0)")
+        db.execSQL("CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY, $COL_TITLE TEXT UNIQUE, $COL_VALUE TEXT, $COL_TYPE INTEGER DEFAULT 0, $COL_PATH TEXT)")
         insertFirstNote(db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         if (newVersion == 2)
             db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
+         else if (newVersion == 3)
+            db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_PATH TEXT")
     }
 
     private fun insertFirstNote(db: SQLiteDatabase) {
