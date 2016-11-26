@@ -6,7 +6,6 @@
     <string name="share">共有</string>
     <string name="share_via">共有&#8230;</string>
     <string name="cannot_share_empty_text">空のテキストは共有できません</string>
-    <string name="note_saved">テキストを保存しました</string>
     <string name="simple_note">シンプル メモ</string>
     <string name="new_note">新しいメモを追加</string>
     <string name="ok">OK</string>
@@ -18,7 +17,6 @@
     <string name="delete_note_prompt_title">メモを削除</string>
     <string name="delete_note_prompt_message">メモ \"%1$s\" を削除してもよろしいですか?</string>
     <string name="pick_a_note">メモを選択</string>
-    <string name="current_note">現在のメモ:</string>
     <string name="change_widget_note">ウィジェットのメモを変更</string>
     <string name="pick_a_note_for_widget">ウィジェットのメモを選択</string>
     <string name="rename">Rename</string>

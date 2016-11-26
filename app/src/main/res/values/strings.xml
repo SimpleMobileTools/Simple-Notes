@@ -6,7 +6,6 @@
     <string name="share">Share</string>
     <string name="share_via">Share via</string>
     <string name="cannot_share_empty_text">Cannot share empty text</string>
-    <string name="note_saved">Note saved</string>
     <string name="simple_note">Simple Note</string>
     <string name="new_note">Add a new note</string>
     <string name="ok">OK</string>
@@ -18,7 +17,6 @@
     <string name="delete_note_prompt_title">Delete note</string>
     <string name="delete_note_prompt_message">Are you sure you want to delete note \"%1$s\"?</string>
     <string name="pick_a_note">Pick a note</string>
-    <string name="current_note">Current note:</string>
     <string name="change_widget_note">Change widget\'s note</string>
     <string name="pick_a_note_for_widget">Pick a note for the widget</string>
     <string name="rename">Rename</string>

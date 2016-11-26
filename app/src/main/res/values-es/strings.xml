@@ -6,7 +6,6 @@
     <string name="share">Compartir</string>
     <string name="share_via">Compartir vía</string>
     <string name="cannot_share_empty_text">No se puede compartir una nota vacía</string>
-    <string name="note_saved">Nota guardada</string>
     <string name="simple_note">Nota simple</string>
     <string name="new_note">Añadir una nueva nota</string>
     <string name="ok">OK</string>
@@ -18,7 +17,6 @@
     <string name="delete_note_prompt_title">Eliminar nota</string>
     <string name="delete_note_prompt_message">¿Está seguro de querer eliminar la nota \"%1$s\"?</string>
     <string name="pick_a_note">Seleccione una nota</string>
-    <string name="current_note">Nota actual:</string>
     <string name="change_widget_note">Cambiar nota del widget</string>
     <string name="pick_a_note_for_widget">Seleccione una nota para el widget</string>
     <string name="rename">Renombrar</string>

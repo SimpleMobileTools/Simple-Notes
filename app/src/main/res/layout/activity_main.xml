@@ -6,7 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/fragment_note"/>
+    <com.simplemobiletools.notes.views.MyViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/activity_margin"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/notes_fab"

@@ -6,7 +6,6 @@
     <string name="share">Teilen</string>
     <string name="share_via">Teilen via</string>
     <string name="cannot_share_empty_text">Leerer Text kann nicht geteilt werden</string>
-    <string name="note_saved">Text gespeichert</string>
     <string name="simple_note">Einfache Notiz</string>
     <string name="new_note">Neue Notiz hinzufügen</string>
     <string name="ok">OK</string>
@@ -18,7 +17,6 @@
     <string name="delete_note_prompt_title">Notiz löschen</string>
     <string name="delete_note_prompt_message">Bist du sicher, dass du Notiz \"%1$s\" löschen willst?</string>
     <string name="pick_a_note">Notiz auswählen</string>
-    <string name="current_note">Aktuelle Notiz:</string>
     <string name="change_widget_note">Wechsel Notiz des Widgets</string>
     <string name="pick_a_note_for_widget">Wähle Notiz für das Widget</string>
     <string name="rename">Umbennen</string>

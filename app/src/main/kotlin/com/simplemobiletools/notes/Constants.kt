@@ -1,6 +1,7 @@
 package com.simplemobiletools.notes
 
 val TEXT = "text"
+val NOTE_ID = "note_id"
 
 // shared preferences
 val PREFS_KEY = "Notes"
