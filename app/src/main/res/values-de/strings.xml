@@ -30,6 +30,10 @@
     <string name="normal">Normal</string>
     <string name="large">Groß</string>
     <string name="extra_large">Sehr groß</string>
+    <string name="gravity">Gravity</string>
+    <string name="left">Left</string>
+    <string name="center">Center</string>
+    <string name="right">Right</string>
 
     <!-- About -->
     <string name="about">Über</string>

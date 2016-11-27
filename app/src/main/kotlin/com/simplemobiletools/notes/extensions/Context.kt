@@ -5,6 +5,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.util.TypedValue
+import android.view.Gravity
 import com.simplemobiletools.notes.*
 
 fun Context.getTextSize() =
@@ -15,6 +16,12 @@ fun Context.getTextSize() =
             else -> resources.getDimension(R.dimen.medium_text_size)
         }
 
+fun Context.getTextGravity() =
+        when (Config.newInstance(this).gravity) {
+            GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
+            GRAVITY_RIGHT -> Gravity.RIGHT
+            else -> Gravity.LEFT
+        }
 
 fun Context.updateWidget() {
     val widgetManager = AppWidgetManager.getInstance(this)

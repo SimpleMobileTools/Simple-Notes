@@ -30,6 +30,10 @@
     <string name="normal">通常</string>
     <string name="large">大</string>
     <string name="extra_large">特大</string>
+    <string name="gravity">Gravity</string>
+    <string name="left">Left</string>
+    <string name="center">Center</string>
+    <string name="right">Right</string>
 
     <!-- About -->
     <string name="about">アプリについて</string>

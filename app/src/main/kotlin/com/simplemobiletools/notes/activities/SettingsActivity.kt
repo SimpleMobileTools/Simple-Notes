@@ -19,6 +19,7 @@ class SettingsActivity : SimpleActivity() {
         setupDarkTheme()
         setupFontSize()
         setupWidgetNote()
+        setupGravity()
     }
 
     private fun setupDarkTheme() {
@@ -59,6 +60,18 @@ class SettingsActivity : SimpleActivity() {
                 val note = notes[settings_widget_note.selectedItemPosition]
                 config.widgetNoteId = note.id
                 updateWidget()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
+    }
+
+    private fun setupGravity() {
+        settings_gravity.setSelection(config.gravity)
+        settings_gravity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                config.gravity = settings_gravity.selectedItemPosition
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {

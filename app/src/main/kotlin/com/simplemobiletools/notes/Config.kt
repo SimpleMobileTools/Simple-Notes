@@ -26,6 +26,10 @@ class Config(context: Context) {
         get() = mPrefs.getInt(FONT_SIZE, FONT_SIZE_MEDIUM)
         set(size) = mPrefs.edit().putInt(FONT_SIZE, size).apply()
 
+    var gravity: Int
+        get() = mPrefs.getInt(GRAVITY, GRAVITY_LEFT)
+        set(size) = mPrefs.edit().putInt(GRAVITY, size).apply()
+
     var currentNoteId: Int
         get() = mPrefs.getInt(CURRENT_NOTE_ID, 1)
         set(id) = mPrefs.edit().putInt(CURRENT_NOTE_ID, id).apply()

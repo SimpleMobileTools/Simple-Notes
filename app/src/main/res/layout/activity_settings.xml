@@ -65,6 +65,33 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/settings_gravity_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_padding"
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/activity_margin"
+            android:paddingRight="@dimen/normal_padding"
+            android:paddingTop="@dimen/activity_margin">
+
+            <TextView
+                android:id="@+id/settings_gravity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/normal_padding"
+                android:text="@string/gravity"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/settings_gravity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:entries="@array/gravity"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/settings_widget_note_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

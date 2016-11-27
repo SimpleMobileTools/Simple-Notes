@@ -10,8 +10,14 @@ val IS_DARK_THEME = "is_dark_theme"
 val CURRENT_NOTE_ID = "current_note_id"
 val WIDGET_NOTE_ID = "widget_note_id"
 val FONT_SIZE = "font_size"
+val GRAVITY = "gravity"
 val WIDGET_BG_COLOR = "widget_bg_color"
 val WIDGET_TEXT_COLOR = "widget_text_color"
+
+// gravity
+val GRAVITY_LEFT = 0
+val GRAVITY_CENTER = 1
+val GRAVITY_RIGHT = 2
 
 // font sizes
 val FONT_SIZE_SMALL = 0

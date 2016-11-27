@@ -10,6 +10,7 @@ import com.simplemobiletools.filepicker.extensions.value
 import com.simplemobiletools.notes.NOTE_ID
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
+import com.simplemobiletools.notes.extensions.getTextGravity
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.models.Note
@@ -44,6 +45,7 @@ class NoteFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         view.notes_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
+        view.notes_view.gravity = context.getTextGravity()
     }
 
     override fun onPause() {

@@ -54,7 +54,7 @@ class MyWidgetProvider : AppWidgetProvider() {
     private fun updateWidget(widgetManager: AppWidgetManager, widgetId: Int, remoteViews: RemoteViews) {
         val widgetNoteId = mPrefs.getInt(WIDGET_NOTE_ID, 1)
         val note = mDb.getNote(widgetNoteId)
-        remoteViews.setTextViewText(R.id.notes_view, if (note != null) note.value else "")
+        remoteViews.setTextViewText(R.id.notes_view, note?.value ?: "")
         widgetManager.updateAppWidget(widgetId, remoteViews)
     }
 }

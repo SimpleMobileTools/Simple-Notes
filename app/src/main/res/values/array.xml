@@ -6,4 +6,10 @@
         <item>@string/large</item>
         <item>@string/extra_large</item>
     </string-array>
+
+    <string-array name="gravity" translatable="false">
+        <item>@string/left</item>
+        <item>@string/center</item>
+        <item>@string/right</item>
+    </string-array>
 </resources>

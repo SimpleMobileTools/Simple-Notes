@@ -24,12 +24,16 @@
     <!-- Settings -->
     <string name="settings">Settings</string>
     <string name="dark_theme">Dark theme</string>
-    <string name="note_font_size">Note font size</string>
     <string name="widget_note">Note used in widget</string>
+    <string name="note_font_size">Note font size</string>
     <string name="small">Small</string>
     <string name="normal">Normal</string>
     <string name="large">Large</string>
     <string name="extra_large">Extra Large</string>
+    <string name="gravity">Gravity</string>
+    <string name="left">Left</string>
+    <string name="center">Center</string>
+    <string name="right">Right</string>
 
     <!-- About -->
     <string name="about">About</string>
