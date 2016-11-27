@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 1.22 *(2016-11-27)*
+----------------------------
+
+ * Move notes into a viewpager for easy swiping
+ * Move the widget note picker to Settings
+ * Allow changing the note gravity
+ * Couple other smaller fixes
+
 Version 1.21 *(2016-11-21)*
 ----------------------------
 
