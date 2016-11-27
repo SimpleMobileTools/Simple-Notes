@@ -6,11 +6,30 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/notes_view"
+        android:id="@+id/notes_view_left"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@null"
-        android:gravity="start"
-        android:padding="@dimen/activity_margin"/>
+        android:gravity="left"
+        android:padding="@dimen/activity_margin"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/notes_view_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/activity_margin"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/notes_view_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="right"
+        android:padding="@dimen/activity_margin"
+        android:visibility="gone"/>
 
 </RelativeLayout>

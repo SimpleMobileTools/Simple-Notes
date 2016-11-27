@@ -7,6 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
+import android.view.View
 import android.widget.RemoteViews
 import com.simplemobiletools.notes.R.layout.widget
 import com.simplemobiletools.notes.activities.MainActivity
@@ -15,6 +16,7 @@ import com.simplemobiletools.notes.extensions.getTextSize
 
 class MyWidgetProvider : AppWidgetProvider() {
     lateinit var mDb: DBHelper
+    var textIds = arrayOf(R.id.notes_view_left, R.id.notes_view_center, R.id.notes_view_right)
 
     companion object {
         lateinit var mPrefs: SharedPreferences
@@ -26,16 +28,30 @@ class MyWidgetProvider : AppWidgetProvider() {
         val defaultColor = context.resources.getColor(R.color.dark_grey)
         val newBgColor = mPrefs.getInt(WIDGET_BG_COLOR, defaultColor)
         val newTextColor = mPrefs.getInt(WIDGET_TEXT_COLOR, Color.WHITE)
-        mRemoteViews.apply {
-            setInt(R.id.notes_view, "setBackgroundColor", newBgColor)
-            setInt(R.id.notes_view, "setTextColor", newTextColor)
-            setFloat(R.id.notes_view, "setTextSize", context.getTextSize() / context.resources.displayMetrics.density)
+
+        for (id in textIds) {
+            mRemoteViews.apply {
+                setInt(id, "setBackgroundColor", newBgColor)
+                setInt(id, "setTextColor", newTextColor)
+                setFloat(id, "setTextSize", context.getTextSize() / context.resources.displayMetrics.density)
+                setViewVisibility(id, View.GONE)
+            }
         }
+
+        mRemoteViews.setViewVisibility(getProperTextView(context), View.VISIBLE)
 
         for (widgetId in appWidgetIds) {
             updateWidget(appWidgetManager, widgetId, mRemoteViews)
         }
         super.onUpdate(context, appWidgetManager, appWidgetIds)
+    }
+
+    private fun getProperTextView(context: Context): Int {
+        return when (Config.newInstance(context).gravity) {
+            GRAVITY_CENTER -> R.id.notes_view_center
+            GRAVITY_RIGHT -> R.id.notes_view_right
+            else -> R.id.notes_view_left
+        }
     }
 
     private fun initVariables(context: Context) {
@@ -54,7 +70,8 @@ class MyWidgetProvider : AppWidgetProvider() {
     private fun updateWidget(widgetManager: AppWidgetManager, widgetId: Int, remoteViews: RemoteViews) {
         val widgetNoteId = mPrefs.getInt(WIDGET_NOTE_ID, 1)
         val note = mDb.getNote(widgetNoteId)
-        remoteViews.setTextViewText(R.id.notes_view, note?.value ?: "")
+        for (id in textIds)
+            remoteViews.setTextViewText(id, note?.value ?: "")
         widgetManager.updateAppWidget(widgetId, remoteViews)
     }
 }

@@ -72,6 +72,7 @@ class SettingsActivity : SimpleActivity() {
         settings_gravity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 config.gravity = settings_gravity.selectedItemPosition
+                updateWidget()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
