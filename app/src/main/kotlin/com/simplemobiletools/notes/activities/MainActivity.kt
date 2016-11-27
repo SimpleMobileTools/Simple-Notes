@@ -140,9 +140,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             val newNote = Note(0, it, "", TYPE_NOTE)
             val id = mDb.insertNote(newNote)
             mNotes = mDb.getNotes()
-            updateSelectedNote(id)
             invalidateOptionsMenu()
             initViewPager()
+            updateSelectedNote(id)
         }
     }
 
