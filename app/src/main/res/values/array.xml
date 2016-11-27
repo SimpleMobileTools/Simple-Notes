@@ -7,7 +7,7 @@
         <item>@string/extra_large</item>
     </string-array>
 
-    <string-array name="gravity" translatable="false">
+    <string-array name="gravities" translatable="false">
         <item>@string/left</item>
         <item>@string/center</item>
         <item>@string/right</item>

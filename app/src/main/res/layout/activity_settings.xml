@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:entries="@array/gravity"/>
+                android:entries="@array/gravities"/>
 
         </RelativeLayout>
 
