@@ -1,11 +1,13 @@
 package com.simplemobiletools.notes.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import com.simplemobiletools.filepicker.extensions.value
 import com.simplemobiletools.notes.NOTE_ID
 import com.simplemobiletools.notes.R
@@ -15,6 +17,7 @@ import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.fragment_note.view.*
+
 
 class NoteFragment : Fragment() {
     var noteId = 0
@@ -40,6 +43,12 @@ class NoteFragment : Fragment() {
             mDb.updateNote(note)
             context.updateWidget()
         }
+    }
+
+    fun showKeyboard() {
+        view.notes_view.requestFocus()
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(view.notes_view, InputMethodManager.SHOW_IMPLICIT)
     }
 
     override fun onResume() {

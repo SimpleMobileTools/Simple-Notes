@@ -143,6 +143,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             invalidateOptionsMenu()
             initViewPager()
             updateSelectedNote(id)
+            mAdapter.showKeyboard(getNoteIndexWithId(id))
         }
     }
 
