@@ -56,15 +56,15 @@
     <string name="filepicker_title"><u>Simple File Picker (filepicker dialog)</u></string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <string name="app_short_description">A simple textfield for adding quick notes, without ads.</string>
+    <string name="app_short_description">Un simple campo de texto para añadir breves y rápidas notas, sin anuncios.</string>
     <string name="app_long_description">
-        Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
+        ¿Necesita tomar nota de algo para comprar, una dirección o una idea? ¡Entonces ésta es la aplicación que estaba buscando! Sin complicadas configuraciones, tan solo escriba lo que quiera. Viene con guardado automático, por tanto usted no descartará ningún cambio por error. Soporta la creación de múltiples notas independientes.
 
 
-        You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
+        Puede acceder rápidamente a la nota desde el widget personalizable y ajustable, el cual abre la aplicación con un simple toque.
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
+        No contiene anuncios ni permisos innecesarios. Es completamente OpenSource y además provee un tema oscuro.
 
-        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+        Esta aplicación es tan solo una pequeña parte de una serie de aplicaciones. Puede encontrar el resto en http://www.simplemobiletools.com
     </string>
 </resources>
