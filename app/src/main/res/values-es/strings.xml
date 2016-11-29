@@ -25,15 +25,15 @@
     <string name="settings">Opciones</string>
     <string name="dark_theme">Tema oscuro</string>
     <string name="note_font_size">Tamaño de fuente</string>
-    <string name="widget_note">Note used in widget</string>
+    <string name="widget_note">Nota del widget</string>
     <string name="small">Pequeña</string>
     <string name="normal">Normal</string>
     <string name="large">Grande</string>
     <string name="extra_large">Enorme</string>
-    <string name="gravity">Gravity</string>
-    <string name="left">Left</string>
-    <string name="center">Center</string>
-    <string name="right">Right</string>
+    <string name="gravity">Alineación del texto</string>
+    <string name="left">Izquierda</string>
+    <string name="center">Centrado</string>
+    <string name="right">Derecha</string>
 
     <!-- About -->
     <string name="about">Acerca de Simple Notes</string>
