@@ -1,4 +1,4 @@
-<resources>
+﻿<resources>
     <string name="app_name">シンプル メモ</string>
     <string name="app_launcher_name">メモ</string>
     <string name="widget_config">シンプルメモのご利用ありがとうございます。\n他のシンプルアプリは SimpleMobileTools.com をご覧ください。\n</string>
@@ -17,23 +17,23 @@
     <string name="delete_note_prompt_title">メモを削除</string>
     <string name="delete_note_prompt_message">メモ \"%1$s\" を削除してもよろしいですか?</string>
     <string name="pick_a_note">メモを選択</string>
-    <string name="rename">Rename</string>
-    <string name="rename_note">Rename note</string>
-    <string name="general_note">General note</string>
+    <string name="rename">名前を変更</string>
+    <string name="rename_note">メモの名前を変更</string>
+    <string name="general_note">全般メモ</string>
 
     <!-- Settings -->
     <string name="settings">設定</string>
     <string name="dark_theme">ダークテーマ</string>
     <string name="note_font_size">メモのフォントサイズ</string>
-    <string name="widget_note">Note used in widget</string>
+    <string name="widget_note">ウィジェットで使用するメモ</string>
     <string name="small">小</string>
     <string name="normal">通常</string>
     <string name="large">大</string>
     <string name="extra_large">特大</string>
-    <string name="gravity">Gravity</string>
-    <string name="left">Left</string>
-    <string name="center">Center</string>
-    <string name="right">Right</string>
+    <string name="gravity">重力</string>
+    <string name="left">左</string>
+    <string name="center">中央</string>
+    <string name="right">右</string>
 
     <!-- About -->
     <string name="about">アプリについて</string>
@@ -42,7 +42,7 @@
     <string name="third_party_licences_underlined"><u>サードパーティー ライセンス</u></string>
     <string name="invite_friends_underlined"><u>友達を招待</u></string>
     <string name="share_text">%2$s で %1$s をチェックしてみてください</string>
-    <string name="invite_via">...で招待</string>
+    <string name="invite_via">招待...</string>
     <string name="rate_us_underlined"><u>Play ストアで評価してください</u></string>
     <string name="follow_us">フォローしてください:</string>
     <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
@@ -52,19 +52,19 @@
     <string name="third_party_licences">サードパーティー ライセンス</string>
     <string name="kotlin_title"><u>Kotlin (プログラミング言語)</u></string>
     <string name="ambilwarna_title"><u>AmbilWarna (カラー ピッカー)</u></string>
-    <string name="stetho_title"><u>Stetho (debugging databases)</u></string>
-    <string name="filepicker_title"><u>Simple File Picker (filepicker dialog)</u></string>
+    <string name="stetho_title"><u>Stetho (デバッグ データベース)</u></string>
+    <string name="filepicker_title"><u>Simple File Picker (ファイルピッカー ダイアログ)</u></string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <string name="app_short_description">A simple textfield for adding quick notes, without ads.</string>
+    <string name="app_short_description">簡単なメモを追加するためのシンプルなテキストフィールド。広告はありません。</string>
     <string name="app_long_description">
-        Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
+        何か買うもの、住所、またはスタートアップのアイデアをすばやくメモする必要がありますか？ それなら、これがあなたが探していたアプリです！ 複雑なセットアップ手順は必要ありません。 思いついたものを入力するだけです。 自動保存機能が付いているので、誤って変更内容を破棄することはありません。 複数の独立したメモの作成をサポートしています。
 
 
-        You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
+        カスタマイズ可能でサイズ変更可能なウィジェットを使用すると、すぐにノートにアクセスできます。クリックするとアプリが開きます。
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
+        広告や不要なアクセス許可は含まれていません。 完全にオープンソースで、ダークテーマも提供しています。
 
-        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+        このアプリは、大きな一連のアプリの一つです。 他のアプリは http://www.simplemobiletools.com で見つけることができます
     </string>
 </resources>
