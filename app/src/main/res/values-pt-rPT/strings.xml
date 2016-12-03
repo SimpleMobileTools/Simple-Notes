@@ -25,15 +25,15 @@
     <string name="settings">Definições</string>
     <string name="dark_theme">Tema escuro</string>
     <string name="note_font_size">Tamanho do texto da nota</string>
-    <string name="widget_note">Note used in widget</string>
+    <string name="widget_note">Nota utilizada no widget</string>
     <string name="small">Pequeno</string>
     <string name="normal">Normal</string>
     <string name="large">Grande</string>
     <string name="extra_large">Muito grande</string>
-    <string name="gravity">Gravity</string>
-    <string name="left">Left</string>
-    <string name="center">Center</string>
-    <string name="right">Right</string>
+    <string name="gravity">Gravidade</string>
+    <string name="left">Esquerda</string>
+    <string name="center">Centro</string>
+    <string name="right">Direita</string>
 
     <!-- About -->
     <string name="about">Acerca</string>
