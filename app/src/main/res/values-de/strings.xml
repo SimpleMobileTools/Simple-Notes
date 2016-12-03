@@ -18,7 +18,7 @@
     <string name="delete_note_prompt_message">Bist du sicher, dass du Notiz \"%1$s\" löschen willst?</string>
     <string name="pick_a_note">Notiz auswählen</string>
     <string name="rename">Umbennen</string>
-    <string name="rename_note">Notiz umbennen</string>
+    <string name="rename_note">Notiz umbenennen</string>
     <string name="general_note">Hauptnotiz</string>
 
     <!-- Settings -->
