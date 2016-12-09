@@ -41,9 +41,10 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        if (newVersion == 2)
+        if (oldVersion < 2)
             db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
-         else if (newVersion == 3)
+
+        if (oldVersion < 3)
             db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_PATH TEXT")
     }
 
