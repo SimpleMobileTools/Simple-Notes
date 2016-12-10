@@ -4,7 +4,7 @@
     <item
         android:id="@+id/open_note"
         android:icon="@mipmap/open_note"
-        android:title="@string/share"
+        android:title="@string/open_note"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/rename_note"
