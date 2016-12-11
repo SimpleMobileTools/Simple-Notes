@@ -39,12 +39,13 @@
     <string name="about">Információ</string>
     <string name="website">További egyszerű alkalmazások és a forráskód itt:\nhttp://simplemobiletools.com</string>
     <string name="email_label">Visszajelzés és javaslatok:</string>
-
+    <string name="more_apps_underlined"><u>More apps</u></string>
     <string name="third_party_licences_underlined"><u>Harmadik fél licenszek</u></string>
     <string name="invite_friends_underlined"><u>Barátok meghívása</u></string>
     <string name="share_text">Szia, ezt nézd meg! %1$s itt: %2$s</string>
     <string name="invite_via">Meghívó küldése itt</string>
     <string name="rate_us_underlined"><u>Értékelés a Play Store-ban</u></string>
+    <string name="donate_underlined"><u>Donate</u></string>
     <string name="follow_us">Követés:</string>
     <string name="copyright">%1$s verzió\nSzerzői jogok: © Simple Mobile Tools %2$d</string>
 
