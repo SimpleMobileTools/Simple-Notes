@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 1.23 *(2016-12-11)*
+----------------------------
+
+ * Adding Hungarian translation
+ * Updated About page
+
 Version 1.22 *(2016-11-27)*
 ----------------------------
 
