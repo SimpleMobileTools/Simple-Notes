@@ -56,6 +56,7 @@
     <string name="filepicker_title"><u>Simple File Picker (diálogo de seleção de ficheiros)</u></string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Um campo de texto para adicionar as suas notas.</string>
     <string name="app_long_description">
         Necessita de escrever uma nota sobre algo? Então esta aplicação é para si! Sem complicações, basta escrever o seu texto na nota. Guarda automaticamente as notas, para que não as perca inesperadamente. Possui suporte a diversas notas independentes.
@@ -67,4 +68,11 @@
 
         Esta aplicação é apenas parte de um conjunto mais vasto de aplicações. Saiba mais em http://www.simplemobiletools.com
     </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/library/src/main/res
+        https://github.com/SimpleMobileTools/Simple-File-Picker/tree/master/library/src/main/res
+        https://github.com/SimpleMobileTools/Simple-File-Properties/tree/master/library/src/main/res
+    -->
 </resources>

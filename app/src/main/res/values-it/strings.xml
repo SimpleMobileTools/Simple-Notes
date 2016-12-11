@@ -56,6 +56,7 @@
     <string name="filepicker_title"><u>Simple File Picker (filepicker dialog)</u></string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">A simple textfield for adding quick notes, without ads.</string>
     <string name="app_long_description">
         Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
@@ -67,4 +68,11 @@
 
         This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
     </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/library/src/main/res
+        https://github.com/SimpleMobileTools/Simple-File-Picker/tree/master/library/src/main/res
+        https://github.com/SimpleMobileTools/Simple-File-Properties/tree/master/library/src/main/res
+    -->
 </resources>

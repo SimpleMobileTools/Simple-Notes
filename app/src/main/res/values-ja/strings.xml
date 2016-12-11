@@ -56,6 +56,7 @@
     <string name="filepicker_title"><u>Simple File Picker (ファイルピッカー ダイアログ)</u></string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">簡単なメモを追加するためのシンプルなテキストフィールド。広告はありません。</string>
     <string name="app_long_description">
         何か買うもの、住所、またはスタートアップのアイデアをすばやくメモする必要がありますか？ それなら、これがあなたが探していたアプリです！ 複雑なセットアップ手順は必要ありません。 思いついたものを入力するだけです。 自動保存機能が付いているので、誤って変更内容を破棄することはありません。 複数の独立したメモの作成をサポートしています。
@@ -67,4 +68,11 @@
 
         このアプリは、大きな一連のアプリの一つです。 他のアプリは http://www.simplemobiletools.com で見つけることができます
     </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/library/src/main/res
+        https://github.com/SimpleMobileTools/Simple-File-Picker/tree/master/library/src/main/res
+        https://github.com/SimpleMobileTools/Simple-File-Properties/tree/master/library/src/main/res
+    -->
 </resources>
