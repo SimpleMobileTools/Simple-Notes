@@ -86,37 +86,19 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.open_note -> {
-                displayOpenNoteDialog()
-                true
-            }
-            R.id.new_note -> {
-                displayNewNoteDialog()
-                true
-            }
-            R.id.rename_note -> {
-                displayRenameDialog()
-                true
-            }
-            R.id.share -> {
-                shareText()
-                true
-            }
-            R.id.delete_note -> {
-                displayDeleteNotePrompt()
-                true
-            }
-            R.id.settings -> {
+        when (item.itemId) {
+            R.id.open_note   -> displayOpenNoteDialog()
+            R.id.new_note    -> displayNewNoteDialog()
+            R.id.rename_note -> displayRenameDialog()
+            R.id.share       -> shareText()
+            R.id.delete_note -> displayDeleteNotePrompt()
+            R.id.settings ->
                 startActivity(Intent(applicationContext, SettingsActivity::class.java))
-                true
-            }
-            R.id.about -> {
+            R.id.about ->
                 startActivity(Intent(applicationContext, AboutActivity::class.java))
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
+            else -> return super.onOptionsItemSelected(item)
         }
+        return true
     }
 
     private fun displayRenameDialog() {
