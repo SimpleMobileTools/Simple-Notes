@@ -39,12 +39,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
         pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
         pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
-
-        notes_fab.setOnClickListener { displayNewNoteDialog() }
-        notes_fab.viewTreeObserver.addOnGlobalLayoutListener {
-            val heightDiff = notes_coordinator.rootView.height - notes_coordinator.height
-            notes_fab.visibility = if (heightDiff > dpToPx(200f)) View.INVISIBLE else View.VISIBLE
-        }
     }
 
     fun initViewPager() {
@@ -95,6 +89,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         return when (item.itemId) {
             R.id.open_note -> {
                 displayOpenNoteDialog()
+                true
+            }
+            R.id.new_note -> {
+                displayNewNoteDialog()
                 true
             }
             R.id.rename_note -> {
