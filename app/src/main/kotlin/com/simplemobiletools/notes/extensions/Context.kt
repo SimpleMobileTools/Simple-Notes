@@ -4,7 +4,6 @@ import android.appwidget.AppWidgetManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.util.TypedValue
 import android.view.Gravity
 import com.simplemobiletools.notes.*
 
@@ -33,5 +32,3 @@ fun Context.updateWidget() {
         sendBroadcast(this)
     }
 }
-
-fun Context.dpToPx(valueInDp: Float) = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, valueInDp, resources.displayMetrics)

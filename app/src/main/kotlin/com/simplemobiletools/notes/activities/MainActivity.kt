@@ -18,7 +18,6 @@ import com.simplemobiletools.notes.databases.DBHelper
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.RenameNoteDialog
-import com.simplemobiletools.notes.extensions.dpToPx
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
@@ -87,15 +86,13 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.open_note   -> displayOpenNoteDialog()
-            R.id.new_note    -> displayNewNoteDialog()
+            R.id.open_note -> displayOpenNoteDialog()
+            R.id.new_note -> displayNewNoteDialog()
             R.id.rename_note -> displayRenameDialog()
-            R.id.share       -> shareText()
+            R.id.share -> shareText()
             R.id.delete_note -> displayDeleteNotePrompt()
-            R.id.settings ->
-                startActivity(Intent(applicationContext, SettingsActivity::class.java))
-            R.id.about ->
-                startActivity(Intent(applicationContext, AboutActivity::class.java))
+            R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
+            R.id.about -> startActivity(Intent(applicationContext, AboutActivity::class.java))
             else -> return super.onOptionsItemSelected(item)
         }
         return true
