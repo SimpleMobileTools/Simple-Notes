@@ -7,6 +7,11 @@
         android:title="@string/open_note"
         app:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/new_note"
+        android:icon="@mipmap/plus"
+        android:title="@string/new_note"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/rename_note"
         android:icon="@mipmap/rename"
         android:title="@string/rename"

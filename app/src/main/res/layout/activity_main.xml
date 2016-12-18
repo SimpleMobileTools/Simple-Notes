@@ -1,32 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<com.simplemobiletools.notes.views.MyViewPager
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/notes_coordinator"
+    android:id="@+id/view_pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.simplemobiletools.notes.views.MyViewPager
-        android:id="@+id/view_pager"
+    <android.support.v4.view.PagerTitleStrip
+        android:id="@+id/pager_title_strip"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <android.support.v4.view.PagerTitleStrip
-            android:id="@+id/pager_title_strip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"/>
-    </com.simplemobiletools.notes.views.MyViewPager>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/notes_fab"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/activity_margin"
-        android:src="@mipmap/plus"
-        app:backgroundTint="@color/colorPrimary"/>
-
-</android.support.design.widget.CoordinatorLayout>
+        android:layout_gravity="top"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin"/>
+</com.simplemobiletools.notes.views.MyViewPager>
