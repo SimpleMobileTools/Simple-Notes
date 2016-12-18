@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 1.24 *(2016-12-18)*
+----------------------------
+
+ * Moved the New note into the actionbar
+
 Version 1.23 *(2016-12-11)*
 ----------------------------
 
