@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Simple Notes</string>
+    <string name="app_launcher_name">Notes</string>
+    <string name="widget_config">Merci d\'utiliser Simple Notes.\nPour plus d\'applications simples merci de visiter SimpleMobileTools.com.\n</string>
+    <string name="save">Sauvegarder</string>
+    <string name="share">Partager</string>
+    <string name="share_via">Partager via</string>
+    <string name="cannot_share_empty_text">Impossible de partager un texte vide</string>
+    <string name="simple_note">Simple Note</string>
+    <string name="new_note">Ajouter une nouvelle note</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annuler</string>
+    <string name="no_title">Veuillez nommer votre note</string>
+    <string name="title_taken">Une note avec le même titre existe déjà</string>
+    <string name="open_note">Ouvrir la note</string>
+    <string name="delete_note">Supprimer la note</string>
+    <string name="delete_note_prompt_title">Supprimer la note</string>
+    <string name="delete_note_prompt_message">Etes-vous sûr de vouloir supprimer la note \"%1$s\"?</string>
+    <string name="pick_a_note">Choisir une note</string>
+    <string name="rename">Renommer</string>
+    <string name="rename_note">Renomme la note</string>
+    <string name="general_note">Note générale</string>
+
+    <!-- Settings -->
+    <string name="settings">Paramètres</string>
+    <string name="dark_theme">Thème sombre</string>
+    <string name="widget_note">Note utilisée dans le widget</string>
+    <string name="note_font_size">Taille de la police de la note</string>
+    <string name="small">Petite</string>
+    <string name="normal">Normale</string>
+    <string name="large">Large</string>
+    <string name="extra_large">Extra Large</string>
+    <string name="gravity">Gravité</string>
+    <string name="left">Gauche</string>
+    <string name="center">Centre</string>
+    <string name="right">Droite</string>
+
+    <!-- About -->
+    <string name="about">A propos</string>
+    <string name="website">Plus d\'applications simples et code source à :\nhttp://simplemobiletools.com</string>
+    <string name="email_label">Envoyez vos impresions ou suggestions à :</string>
+    <string name="more_apps_underlined"><u>Plus d\'applications</u></string>
+    <string name="third_party_licences_underlined"><u>Licences tierces</u></string>
+    <string name="invite_friends_underlined"><u>Inviter des amis</u></string>
+    <string name="share_text">Hey, viens voir %1$s à %2$s</string>
+    <string name="invite_via">Inviter via</string>
+    <string name="rate_us_underlined"><u>Notez nous dans le Play Store</u></string>
+    <string name="donate_underlined"><u>Faire un don</u></string>
+    <string name="follow_us">Nous suivre:</string>
+    <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
+
+    <!-- License -->
+    <string name="notice">Cette application utilise les librairies tierces suivants pour me faciliter la vie. Merci.</string>
+    <string name="third_party_licences">Licence tierces</string>
+    <string name="kotlin_title"><u>Kotlin (langage de programmation)</u></string>
+    <string name="ambilwarna_title"><u>AmbilWarna (sélecteur de couleur)</u></string>
+    <string name="stetho_title"><u>Stetho (débogage de base de données)</u></string>
+    <string name="filepicker_title"><u>Simple File Picker (dialogue de sélecteur de fichier)</u></string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Un champ texte simple pour ajouter des notes rapides, sans publicités.</string>
+    <string name="app_long_description">
+        Besoin de noter rapidement quelquechose à acheter, une adresse, ou une idée de startup ? Alors ceci est l\'application que vous cherchiez ! Pas d\'étapes compliquées de configuration nécéssaires, saisissez juste ce pourquoi vous êtes venu. Fournit une sauvegarde automatique, ainsi vous ne rejetterez pas vos changements par erreur. Supporte la création de multiples notes indépendantes.
+
+
+        Vous pouvez accéder à la note en peu de temps en utilisant le widget personnalisable et redimensionnable, qui ouvre l\'application au clic.
+
+        Ne contient pas de publicités ou d\'autorisations inutiles. Complèetement opensource, fournit un thème sombre également.
+
+        Cette application est juste une pièce d\'une plus grande série d'applications. Vous pouvez trouver le reste de celles-ci à http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/library/src/main/res
+        https://github.com/SimpleMobileTools/Simple-File-Picker/tree/master/library/src/main/res
+        https://github.com/SimpleMobileTools/Simple-File-Properties/tree/master/library/src/main/res
+    -->
+</resources>
