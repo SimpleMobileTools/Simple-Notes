@@ -2,7 +2,6 @@ package com.simplemobiletools.notes.activities
 
 import android.app.Activity
 import android.appwidget.AppWidgetManager
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -10,12 +9,10 @@ import android.support.v7.app.AppCompatActivity
 import android.util.TypedValue
 import android.widget.RemoteViews
 import android.widget.SeekBar
-import com.simplemobiletools.notes.*
+import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.getTextSize
+import com.simplemobiletools.notes.helpers.Config
 import com.simplemobiletools.notes.helpers.MyWidgetProvider
-import com.simplemobiletools.notes.helpers.PREFS_KEY
-import com.simplemobiletools.notes.helpers.WIDGET_BG_COLOR
-import com.simplemobiletools.notes.helpers.WIDGET_TEXT_COLOR
 import kotlinx.android.synthetic.main.widget_config.*
 import yuku.ambilwarna.AmbilWarnaDialog
 
@@ -50,8 +47,8 @@ class WidgetConfigureActivity : AppCompatActivity() {
     }
 
     private fun initVariables() {
-        val prefs = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
-        mBgColor = prefs.getInt(WIDGET_BG_COLOR, 1)
+        val config = Config.newInstance(this)
+        mBgColor = config.widgetBgColor
         if (mBgColor == 1) {
             mBgColor = Color.BLACK
             mBgAlpha = .2f
@@ -66,7 +63,7 @@ class WidgetConfigureActivity : AppCompatActivity() {
         }
         updateBackgroundColor()
 
-        mTextColor = prefs.getInt(WIDGET_TEXT_COLOR, resources.getColor(R.color.color_primary))
+        mTextColor = config.widgetTextColor
         updateTextColor()
     }
 
@@ -86,8 +83,9 @@ class WidgetConfigureActivity : AppCompatActivity() {
     }
 
     private fun storeWidgetBackground() {
-        getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE).apply {
-            edit().putInt(WIDGET_BG_COLOR, mBgColor).putInt(WIDGET_TEXT_COLOR, mTextColor).apply()
+        Config.newInstance(this).apply {
+            widgetBgColor = mBgColor
+            widgetTextColor = mTextColor
         }
     }
 
@@ -112,7 +110,7 @@ class WidgetConfigureActivity : AppCompatActivity() {
     }
 
     fun pickBackgroundColor() {
-        val dialog = AmbilWarnaDialog(this, mBgColorWithoutTransparency, object : AmbilWarnaDialog.OnAmbilWarnaListener {
+        AmbilWarnaDialog(this, mBgColorWithoutTransparency, object : AmbilWarnaDialog.OnAmbilWarnaListener {
             override fun onCancel(dialog: AmbilWarnaDialog) {
             }
 
@@ -120,13 +118,11 @@ class WidgetConfigureActivity : AppCompatActivity() {
                 mBgColorWithoutTransparency = color
                 updateBackgroundColor()
             }
-        })
-
-        dialog.show()
+        }).show()
     }
 
     fun pickTextColor() {
-        val dialog = AmbilWarnaDialog(this, mTextColor, object : AmbilWarnaDialog.OnAmbilWarnaListener {
+        AmbilWarnaDialog(this, mTextColor, object : AmbilWarnaDialog.OnAmbilWarnaListener {
             override fun onCancel(dialog: AmbilWarnaDialog) {
             }
 
@@ -134,9 +130,7 @@ class WidgetConfigureActivity : AppCompatActivity() {
                 mTextColor = color
                 updateTextColor()
             }
-        })
-
-        dialog.show()
+        }).show()
     }
 
     private val bgSeekbarChangeListener = object : SeekBar.OnSeekBarChangeListener {

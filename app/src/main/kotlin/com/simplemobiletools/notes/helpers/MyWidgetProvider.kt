@@ -5,14 +5,11 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import android.graphics.Color
 import android.view.View
 import android.widget.RemoteViews
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.R.layout.widget
 import com.simplemobiletools.notes.activities.MainActivity
-import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.extensions.getTextSize
 
 class MyWidgetProvider : AppWidgetProvider() {
@@ -20,20 +17,19 @@ class MyWidgetProvider : AppWidgetProvider() {
     var textIds = arrayOf(R.id.notes_view_left, R.id.notes_view_center, R.id.notes_view_right)
 
     companion object {
-        lateinit var mPrefs: SharedPreferences
         lateinit var mRemoteViews: RemoteViews
     }
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         initVariables(context)
-        val defaultColor = Color.BLACK
-        val newBgColor = mPrefs.getInt(WIDGET_BG_COLOR, defaultColor)
-        val newTextColor = mPrefs.getInt(WIDGET_TEXT_COLOR, Color.WHITE)
+        val config = Config.newInstance(context)
+        val widgetBgColor = config.widgetBgColor
+        val widgetTextColor = config.widgetTextColor
 
         for (id in textIds) {
             mRemoteViews.apply {
-                setInt(id, "setBackgroundColor", newBgColor)
-                setInt(id, "setTextColor", newTextColor)
+                setInt(id, "setBackgroundColor", widgetBgColor)
+                setInt(id, "setTextColor", widgetTextColor)
                 setFloat(id, "setTextSize", context.getTextSize() / context.resources.displayMetrics.density)
                 setViewVisibility(id, View.GONE)
             }
@@ -42,7 +38,7 @@ class MyWidgetProvider : AppWidgetProvider() {
         mRemoteViews.setViewVisibility(getProperTextView(context), View.VISIBLE)
 
         for (widgetId in appWidgetIds) {
-            updateWidget(appWidgetManager, widgetId, mRemoteViews)
+            updateWidget(appWidgetManager, widgetId, mRemoteViews, context)
         }
         super.onUpdate(context, appWidgetManager, appWidgetIds)
     }
@@ -56,7 +52,6 @@ class MyWidgetProvider : AppWidgetProvider() {
     }
 
     private fun initVariables(context: Context) {
-        mPrefs = context.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
         mDb = DBHelper.newInstance(context)
         mRemoteViews = RemoteViews(context.packageName, widget)
         setupAppOpenIntent(R.id.notes_holder, context)
@@ -68,9 +63,8 @@ class MyWidgetProvider : AppWidgetProvider() {
         mRemoteViews.setOnClickPendingIntent(id, pendingIntent)
     }
 
-    private fun updateWidget(widgetManager: AppWidgetManager, widgetId: Int, remoteViews: RemoteViews) {
-        val widgetNoteId = mPrefs.getInt(WIDGET_NOTE_ID, 1)
-        val note = mDb.getNote(widgetNoteId)
+    private fun updateWidget(widgetManager: AppWidgetManager, widgetId: Int, remoteViews: RemoteViews, context: Context) {
+        val note = mDb.getNote(Config.newInstance(context).widgetNoteId)
         for (id in textIds)
             remoteViews.setTextViewText(id, note?.value ?: "")
         widgetManager.updateAppWidget(widgetId, remoteViews)

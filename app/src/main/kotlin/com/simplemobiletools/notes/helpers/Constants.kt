@@ -3,13 +3,10 @@ package com.simplemobiletools.notes.helpers
 val NOTE_ID = "note_id"
 
 // shared preferences
-val PREFS_KEY = "Notes"
 val CURRENT_NOTE_ID = "current_note_id"
 val WIDGET_NOTE_ID = "widget_note_id"
 val FONT_SIZE = "font_size"
 val GRAVITY = "gravity"
-val WIDGET_BG_COLOR = "widget_bg_color"
-val WIDGET_TEXT_COLOR = "widget_text_color"
 
 // gravity
 val GRAVITY_LEFT = 0
