@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import com.simplemobiletools.filepicker.extensions.value
+import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.NOTE_ID
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
@@ -17,7 +17,6 @@ import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.fragment_note.view.*
-
 
 class NoteFragment : Fragment() {
     var noteId = 0

@@ -6,7 +6,7 @@
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_launcher_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -45,7 +45,7 @@
 
         <receiver
             android:name=".MyWidgetProvider"
-            android:icon="@mipmap/widget_preview">
+            android:icon="@drawable/img_widget_preview">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>

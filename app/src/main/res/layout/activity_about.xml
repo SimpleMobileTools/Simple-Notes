@@ -99,7 +99,7 @@
             android:layout_width="@dimen/social_logo"
             android:layout_height="@dimen/social_logo"
             android:layout_below="@+id/about_follow_us"
-            android:src="@mipmap/facebook"/>
+            android:src="@drawable/ic_facebook"/>
 
         <ImageView
             android:id="@+id/about_gplus"
@@ -110,7 +110,7 @@
             android:layout_marginRight="@dimen/social_padding"
             android:layout_toEndOf="@+id/about_facebook"
             android:layout_toRightOf="@+id/about_facebook"
-            android:src="@mipmap/gplus"/>
+            android:src="@drawable/ic_gplus"/>
 
         <TextView
             android:id="@+id/about_copyright"

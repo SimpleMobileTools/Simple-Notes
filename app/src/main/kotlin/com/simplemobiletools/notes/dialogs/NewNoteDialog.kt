@@ -3,8 +3,8 @@ package com.simplemobiletools.notes.dialogs
 import android.app.Activity
 import android.app.AlertDialog
 import android.view.WindowManager
-import com.simplemobiletools.filepicker.extensions.toast
-import com.simplemobiletools.filepicker.extensions.value
+import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
 import kotlinx.android.synthetic.main.new_note.view.*

@@ -8,9 +8,9 @@ import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.simplemobiletools.filepicker.dialogs.ConfirmationDialog
-import com.simplemobiletools.filepicker.extensions.toast
-import com.simplemobiletools.filepicker.extensions.value
+import com.simplemobiletools.commons.dialogs.ConfirmationDialog
+import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.TYPE_NOTE
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
