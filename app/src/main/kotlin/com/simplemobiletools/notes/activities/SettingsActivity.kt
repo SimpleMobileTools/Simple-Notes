@@ -15,9 +15,16 @@ class SettingsActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
+        setupCustomizeColors()
         setupFontSize()
         setupWidgetNote()
         setupGravity()
+    }
+
+    private fun setupCustomizeColors() {
+        settings_customize_colors_holder.setOnClickListener {
+            startCustomizationActivity()
+        }
     }
 
     private fun setupFontSize() {

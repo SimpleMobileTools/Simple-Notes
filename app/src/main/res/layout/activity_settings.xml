@@ -12,30 +12,21 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/settings_dark_theme_holder"
+            android:id="@+id/settings_customize_colors_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
             android:padding="@dimen/activity_margin">
 
-            <TextView
-                android:id="@+id/settings_dark_theme_label"
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/settings_customize_colors_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:paddingLeft="@dimen/medium_margin"
                 android:paddingStart="@dimen/medium_margin"
-                android:text="@string/dark_theme"/>
-
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/settings_dark_theme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:background="@null"
-                android:clickable="false"/>
+                android:text="@string/customize_colors"/>
 
         </RelativeLayout>
 
@@ -44,12 +35,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
-            android:paddingBottom="@dimen/activity_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/medium_margin"
-            android:paddingTop="@dimen/activity_margin">
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/activity_margin">
 
-            <TextView
+            <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_font_size_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,7 +47,7 @@
                 android:paddingStart="@dimen/medium_margin"
                 android:text="@string/note_font_size"/>
 
-            <android.support.v7.widget.AppCompatSpinner
+            <com.simplemobiletools.commons.views.MyAppCompatSpinner
                 android:id="@+id/settings_font_size"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,12 +62,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
-            android:paddingBottom="@dimen/activity_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/medium_margin"
-            android:paddingTop="@dimen/activity_margin">
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/activity_margin">
 
-            <TextView
+            <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_gravity_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,7 +74,7 @@
                 android:paddingStart="@dimen/medium_margin"
                 android:text="@string/gravity"/>
 
-            <android.support.v7.widget.AppCompatSpinner
+            <com.simplemobiletools.commons.views.MyAppCompatSpinner
                 android:id="@+id/settings_gravity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,12 +89,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
-            android:paddingBottom="@dimen/activity_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/medium_margin"
-            android:paddingTop="@dimen/activity_margin">
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/activity_margin">
 
-            <TextView
+            <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_widget_note_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -116,7 +101,7 @@
                 android:paddingStart="@dimen/medium_margin"
                 android:text="@string/widget_note"/>
 
-            <android.support.v7.widget.AppCompatSpinner
+            <com.simplemobiletools.commons.views.MyAppCompatSpinner
                 android:id="@+id/settings_widget_note"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
