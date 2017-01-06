@@ -5,8 +5,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.simplemobiletools.notes.R
-import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.extensions.updateWidget
+import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_settings.*
 
@@ -79,7 +79,7 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun getSpinnerAdapter(notes: List<Note>): ArrayAdapter<String> {
-        val titles = notes.map { it.title }
+        val titles = notes.map(Note::title)
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, titles)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         return adapter

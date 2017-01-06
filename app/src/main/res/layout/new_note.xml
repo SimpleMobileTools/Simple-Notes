@@ -9,11 +9,10 @@
     android:paddingRight="@dimen/activity_margin"
     android:paddingTop="@dimen/activity_margin">
 
-    <EditText
+    <com.simplemobiletools.commons.views.MyEditText
         android:id="@+id/note_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_margin"
-        android:inputType="textCapSentences" />
-
+        android:inputType="textCapSentences"/>
 </LinearLayout>

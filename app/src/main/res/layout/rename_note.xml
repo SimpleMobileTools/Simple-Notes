@@ -7,12 +7,11 @@
     android:orientation="vertical"
     android:padding="@dimen/activity_margin">
 
-    <EditText
+    <com.simplemobiletools.commons.views.MyEditText
         android:id="@+id/note_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_margin"
         android:inputType="textCapSentences"
         android:singleLine="true"/>
-
 </LinearLayout>
