@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.simplemobiletools.notes.R
-import com.simplemobiletools.notes.databases.DBHelper
+import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_settings.*

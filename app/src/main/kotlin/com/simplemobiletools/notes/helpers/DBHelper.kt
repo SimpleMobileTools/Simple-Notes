@@ -1,4 +1,4 @@
-package com.simplemobiletools.notes.databases
+package com.simplemobiletools.notes.helpers
 
 import android.content.ContentValues
 import android.content.Context
@@ -8,11 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.simplemobiletools.commons.extensions.getIntValue
 import com.simplemobiletools.commons.extensions.getStringValue
 import com.simplemobiletools.notes.R
-import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import java.util.*
 
-class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHelper(mContext, DBHelper.DB_NAME, null, DBHelper.DB_VERSION) {
+class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHelper(mContext, DB_NAME, null, DB_VERSION) {
     private val mDb: SQLiteDatabase = writableDatabase
 
     companion object {
@@ -30,16 +29,16 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY, $COL_TITLE TEXT UNIQUE, $COL_VALUE TEXT, $COL_TYPE INTEGER DEFAULT 0, $COL_PATH TEXT)")
+        db.execSQL("CREATE TABLE ${TABLE_NAME} (${COL_ID} INTEGER PRIMARY KEY, ${COL_TITLE} TEXT UNIQUE, ${COL_VALUE} TEXT, ${COL_TYPE} INTEGER DEFAULT 0, ${COL_PATH} TEXT)")
         insertFirstNote(db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         if (oldVersion < 2)
-            db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
+            db.execSQL("ALTER TABLE ${TABLE_NAME} ADD COLUMN ${COL_TYPE} INTEGER DEFAULT 0")
 
         if (oldVersion < 3)
-            db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_PATH TEXT")
+            db.execSQL("ALTER TABLE ${TABLE_NAME} ADD COLUMN ${COL_PATH} TEXT")
     }
 
     private fun insertFirstNote(db: SQLiteDatabase) {
@@ -67,12 +66,12 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     fun deleteNote(id: Int) {
-        mDb.delete(TABLE_NAME, "$COL_ID = $id", null)
+        mDb.delete(TABLE_NAME, "${COL_ID} = $id", null)
     }
 
     fun doesTitleExist(title: String): Boolean {
         val cols = arrayOf(COL_ID)
-        val selection = "$COL_TITLE = ?"
+        val selection = "${COL_TITLE} = ?"
         val selectionArgs = arrayOf(title)
         var cursor: Cursor? = null
         try {
@@ -88,7 +87,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         val cols = arrayOf(COL_ID, COL_TITLE, COL_VALUE, COL_TYPE)
         var cursor: Cursor? = null
         try {
-            cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, "$COL_TITLE COLLATE NOCASE ASC")
+            cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, "${COL_TITLE} COLLATE NOCASE ASC")
             if (cursor?.moveToFirst() == true) {
                 do {
                     val id = cursor.getIntValue(COL_ID)
@@ -108,7 +107,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun getNote(id: Int): Note? {
         val cols = arrayOf(COL_TITLE, COL_VALUE, COL_TYPE)
-        val selection = "$COL_ID = ?"
+        val selection = "${COL_ID} = ?"
         val selectionArgs = arrayOf(id.toString())
         var note: Note? = null
         var cursor: Cursor? = null
@@ -128,7 +127,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun updateNote(note: Note) {
         val values = fillContentValues(note)
-        val selection = "$COL_ID = ?"
+        val selection = "${COL_ID} = ?"
         val selectionArgs = arrayOf(note.id.toString())
         mDb.update(TABLE_NAME, values, selection, selectionArgs)
     }

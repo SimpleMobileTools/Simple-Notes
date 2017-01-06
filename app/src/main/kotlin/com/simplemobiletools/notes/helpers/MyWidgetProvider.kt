@@ -12,7 +12,7 @@ import android.widget.RemoteViews
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.R.layout.widget
 import com.simplemobiletools.notes.activities.MainActivity
-import com.simplemobiletools.notes.databases.DBHelper
+import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.extensions.getTextSize
 
 class MyWidgetProvider : AppWidgetProvider() {

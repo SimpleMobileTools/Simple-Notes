@@ -18,7 +18,7 @@ import com.simplemobiletools.commons.helpers.LICENSE_STETHO
 import com.simplemobiletools.notes.BuildConfig
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
-import com.simplemobiletools.notes.databases.DBHelper
+import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.RenameNoteDialog

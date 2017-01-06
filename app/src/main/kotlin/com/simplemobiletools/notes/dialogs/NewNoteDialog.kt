@@ -6,7 +6,7 @@ import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.R
-import com.simplemobiletools.notes.databases.DBHelper
+import com.simplemobiletools.notes.helpers.DBHelper
 import kotlinx.android.synthetic.main.new_note.view.*
 
 class NewNoteDialog(val activity: Activity, val db: DBHelper, callback: (title: String) -> Unit) {
