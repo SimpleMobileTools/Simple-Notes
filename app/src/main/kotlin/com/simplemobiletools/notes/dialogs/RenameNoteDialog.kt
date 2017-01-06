@@ -1,9 +1,9 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.app.Activity
-import android.app.AlertDialog
+import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
-import android.view.WindowManager
+import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.R
@@ -18,13 +18,10 @@ class RenameNoteDialog(val activity: Activity, val db: DBHelper, val note: Note,
         view.note_name.setText(note.title)
 
         AlertDialog.Builder(activity)
-                .setTitle(activity.resources.getString(R.string.rename_note))
-                .setView(view)
                 .setPositiveButton(R.string.ok, null)
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
-            window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-            show()
+            activity.setupDialogStuff(view, this, R.string.rename_note)
             getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener({
                 val title = view.note_name.value
                 if (title.isEmpty()) {

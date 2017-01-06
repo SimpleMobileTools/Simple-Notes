@@ -1,13 +1,14 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.app.Activity
-import android.app.AlertDialog
+import android.support.v7.app.AlertDialog
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import com.simplemobiletools.notes.helpers.Config
+import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
+import com.simplemobiletools.notes.helpers.Config
 import kotlinx.android.synthetic.main.dialog_radio_group.view.*
 
 class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> Unit) : RadioGroup.OnCheckedChangeListener {
@@ -32,11 +33,10 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
         }
 
         dialog = AlertDialog.Builder(activity)
-                .setTitle(activity.resources.getString(R.string.pick_a_note))
-                .setView(view)
-                .create()
+                .create().apply {
+            activity.setupDialogStuff(view, this, R.string.pick_a_note)
+        }
 
-        dialog!!.show()
         wasInit = true
     }
 
