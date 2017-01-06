@@ -2,7 +2,6 @@ package com.simplemobiletools.notes.helpers
 
 import android.content.Context
 import com.simplemobiletools.commons.helpers.BaseConfig
-import com.simplemobiletools.notes.*
 
 class Config(context: Context) : BaseConfig(context) {
     companion object {

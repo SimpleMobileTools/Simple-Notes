@@ -1,6 +1,5 @@
 package com.simplemobiletools.notes.helpers
 
-val TEXT = "text"
 val NOTE_ID = "note_id"
 
 // shared preferences
