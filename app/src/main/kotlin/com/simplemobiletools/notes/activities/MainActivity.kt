@@ -11,6 +11,10 @@ import android.view.View
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
+import com.simplemobiletools.commons.helpers.LICENSE_AMBILWARNA
+import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
+import com.simplemobiletools.commons.helpers.LICENSE_STETHO
+import com.simplemobiletools.notes.BuildConfig
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.TYPE_NOTE
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
@@ -92,7 +96,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             R.id.share -> shareText()
             R.id.delete_note -> displayDeleteNotePrompt()
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
-            R.id.about -> startActivity(Intent(applicationContext, AboutActivity::class.java))
+            R.id.about -> launchAbout()
             else -> return super.onOptionsItemSelected(item)
         }
         return true
@@ -122,6 +126,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             updateSelectedNote(id)
             mAdapter.showKeyboard(getNoteIndexWithId(id))
         }
+    }
+
+    private fun launchAbout() {
+        startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_AMBILWARNA or LICENSE_STETHO, BuildConfig.VERSION_NAME)
     }
 
     private fun displayDeleteNotePrompt() {
