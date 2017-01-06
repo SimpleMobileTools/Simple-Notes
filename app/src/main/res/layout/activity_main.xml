@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.simplemobiletools.notes.views.MyViewPager
+<com.simplemobiletools.commons.views.MyViewPager
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/view_pager"
     android:layout_width="match_parent"
@@ -12,4 +12,4 @@
         android:layout_gravity="top"
         android:paddingLeft="@dimen/activity_margin"
         android:paddingRight="@dimen/activity_margin"/>
-</com.simplemobiletools.notes.views.MyViewPager>
+</com.simplemobiletools.commons.views.MyViewPager>

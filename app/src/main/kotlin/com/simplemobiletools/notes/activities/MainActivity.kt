@@ -13,16 +13,17 @@ import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.commons.helpers.LICENSE_AMBILWARNA
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
+import com.simplemobiletools.commons.helpers.LICENSE_RTL
 import com.simplemobiletools.commons.helpers.LICENSE_STETHO
 import com.simplemobiletools.notes.BuildConfig
 import com.simplemobiletools.notes.R
-import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.databases.DBHelper
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.RenameNoteDialog
 import com.simplemobiletools.notes.extensions.getTextSize
+import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_note.*
@@ -129,7 +130,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun launchAbout() {
-        startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_AMBILWARNA or LICENSE_STETHO, BuildConfig.VERSION_NAME)
+        startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_AMBILWARNA or LICENSE_STETHO or LICENSE_RTL, BuildConfig.VERSION_NAME)
     }
 
     private fun displayDeleteNotePrompt() {
