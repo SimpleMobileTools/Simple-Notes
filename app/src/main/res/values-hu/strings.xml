@@ -1,15 +1,9 @@
 <resources>
-    <string name="app_name">Egyszerű Jegyzetfüzet</string>
     <string name="app_launcher_name">Jegyzetek</string>
     <string name="widget_config">Köszönjük, hogy az Egyszerű Jegyzetfüzetet használod.\nTovábbi egyszerű alkalmazásokért látogass a SimpleMobileTools.com-ra.\n</string>
-    <string name="save">Mentés</string>
-    <string name="share">Megosztás</string>
-    <string name="share_via">Megosztás itt:</string>
     <string name="cannot_share_empty_text">Nem létező szöveget nem lehet megosztani</string>
     <string name="simple_note">Egyszerű Jegyzet</string>
     <string name="new_note">Új jegyzet hozzáadása</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Mégsem</string>
     <string name="no_title">Adj címet a jegyzetednek</string>
     <string name="title_taken">Egy jegyzet ugyanilyen címmel már létezik</string>
     <string name="open_note">Jegyzet megnyitása</string>
@@ -17,13 +11,10 @@
     <string name="delete_note_prompt_title">Jegyzet törlése</string>
     <string name="delete_note_prompt_message">Biztos, hogy törlöd a(z) \"%1$s\" című jegyzetet?</string>
     <string name="pick_a_note">Válassz egy jegyzetet</string>
-    <string name="rename">Átnevezés</string>
     <string name="rename_note">Jegyzet átnevezése</string>
     <string name="general_note">Alapértelmezett jegyzet</string>
 
     <!-- Settings -->
-    <string name="settings">Beállítások</string>
-    <string name="dark_theme">Sötét téma</string>
     <string name="widget_note">A widget-ben használt jegyzet</string>
     <string name="note_font_size">Betűméret</string>
     <string name="small">Kis</string>
@@ -34,32 +25,6 @@
     <string name="left">Balra</string>
     <string name="center">Középre</string>
     <string name="right">Jobbra</string>
-
-    <!-- About -->
-    <string name="about">Információ</string>
-    <string name="website">További egyszerű alkalmazások és a forráskód itt:\nhttp://simplemobiletools.com</string>
-    <string name="email_label">Visszajelzés és javaslatok:</string>
-    <string name="more_apps_underlined"><u>More apps</u></string>
-    <string name="third_party_licences_underlined"><u>Harmadik fél licenszek</u></string>
-    <string name="invite_friends_underlined"><u>Barátok meghívása</u></string>
-    <string name="share_text">Szia, ezt nézd meg! %1$s itt: %2$s</string>
-    <string name="invite_via">Meghívó küldése itt</string>
-    <string name="rate_us_underlined"><u>Értékelés a Play Store-ban</u></string>
-    <string name="donate_underlined"><u>Donate</u></string>
-    <string name="follow_us">Követés:</string>
-    <string name="copyright">%1$s verzió\nSzerzői jogok: © Simple Mobile Tools %2$d</string>
-
-    <!-- License -->
-    <string name="notice">Ez az alkalmazás az alábbi könyvtárakat használja, hogy a munkám egyszerűbb legyen. Köszönöm szépen.</string>
-    <string name="third_party_licences">Harmadik fél licenszek</string>
-    <string name="kotlin_title"><u>Kotlin (programozási nyelv)</u></string>
-    
-    <string name="ambilwarna_title"><u>AmbilWarna (színválasztó)</u></string>
-
-    <string name="stetho_title"><u>Stetho (adatbázisok hibakeresésére)</u></string>
-
-    <string name="filepicker_title"><u>Simple File Picker (fájlválasztó párbeszédablak)</u></string>
-
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
@@ -78,7 +43,5 @@
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/library/src/main/res
-        https://github.com/SimpleMobileTools/Simple-File-Picker/tree/master/library/src/main/res
-        https://github.com/SimpleMobileTools/Simple-File-Properties/tree/master/library/src/main/res
     -->
 </resources>

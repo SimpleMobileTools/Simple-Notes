@@ -10,11 +10,7 @@ import com.simplemobiletools.notes.fragments.NoteFragment
 import com.simplemobiletools.notes.models.Note
 
 class NotesPagerAdapter(fm: FragmentManager, private val notes: List<Note>) : FragmentStatePagerAdapter(fm) {
-    var fragments: SparseArray<NoteFragment>
-
-    init {
-        fragments = SparseArray(5)
-    }
+    var fragments: SparseArray<NoteFragment> = SparseArray(5)
 
     override fun getCount() = notes.size
 

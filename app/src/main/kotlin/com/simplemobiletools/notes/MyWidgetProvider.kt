@@ -25,7 +25,7 @@ class MyWidgetProvider : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         initVariables(context)
-        val defaultColor = context.resources.getColor(R.color.dark_grey)
+        val defaultColor = Color.BLACK
         val newBgColor = mPrefs.getInt(WIDGET_BG_COLOR, defaultColor)
         val newTextColor = mPrefs.getInt(WIDGET_TEXT_COLOR, Color.WHITE)
 

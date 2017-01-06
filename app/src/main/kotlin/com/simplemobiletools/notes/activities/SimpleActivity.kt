@@ -12,7 +12,6 @@ open class SimpleActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         config = Config.newInstance(applicationContext)
-        setTheme(if (config.isDarkTheme) R.style.AppTheme_Dark else R.style.AppTheme)
         super.onCreate(savedInstanceState)
     }
 

@@ -1,15 +1,9 @@
 <resources>
-    <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
     <string name="widget_config">Grazie per avere scelto Simple Notes.\nPer altre semplici app visita SimpleMobileTools.com.\n</string>
-    <string name="save">Salva</string>
-    <string name="share">Condividi</string>
-    <string name="share_via">Condividi via</string>
     <string name="cannot_share_empty_text">Impossibile condividere un testo vuoto</string>
     <string name="simple_note">Simple Note</string>
     <string name="new_note">Add a new note</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Cancel</string>
     <string name="no_title">Please name your note</string>
     <string name="title_taken">A note with that title already exists</string>
     <string name="open_note">Open note</string>
@@ -17,13 +11,10 @@
     <string name="delete_note_prompt_title">Delete note</string>
     <string name="delete_note_prompt_message">Are you sure you want to delete note \"%1$s\"?</string>
     <string name="pick_a_note">Pick a note</string>
-    <string name="rename">Rename</string>
     <string name="rename_note">Rename note</string>
     <string name="general_note">General note</string>
 
     <!-- Settings -->
-    <string name="settings">Impostazioni</string>
-    <string name="dark_theme">Tema scuro</string>
     <string name="note_font_size">Note font size</string>
     <string name="widget_note">Note used in widget</string>
     <string name="small">Small</string>
@@ -34,28 +25,6 @@
     <string name="left">Left</string>
     <string name="center">Center</string>
     <string name="right">Right</string>
-
-    <!-- About -->
-    <string name="about">Informazioni</string>
-    <string name="website">Altre semplici app e codici sorgenti in:\nhttp://simplemobiletools.com</string>
-    <string name="email_label">Invia la tua opinione o i tuoi suggerimenti a:</string>
-    <string name="more_apps_underlined"><u>More apps</u></string>
-    <string name="third_party_licences_underlined"><u>Licenze di terze parti</u></string>
-    <string name="invite_friends_underlined"><u>Invite friends</u></string>
-    <string name="share_text">Hey, come check out %1$s at %2$s</string>
-    <string name="invite_via">Invite via</string>
-    <string name="rate_us_underlined"><u>Dacci un voto sul Play Store</u></string>
-    <string name="donate_underlined"><u>Donate</u></string>
-    <string name="follow_us">Seguici:</string>
-    <string name="copyright">v %1$s\nCopyright © Simple Mobile Tools %2$d</string>
-
-    <!-- License -->
-    <string name="notice">Questa app usa le seguenti librerie di terze parti per semplificarmi la vita. Grazie.</string>
-    <string name="third_party_licences">Licenze di terze parti</string>
-    <string name="kotlin_title"><u>Kotlin (programming language)</u></string>
-    <string name="ambilwarna_title"><u>AmbilWarna (color picker)</u></string>
-    <string name="stetho_title"><u>Stetho (debugging databases)</u></string>
-    <string name="filepicker_title"><u>Simple File Picker (filepicker dialog)</u></string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
@@ -74,7 +43,5 @@
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/library/src/main/res
-        https://github.com/SimpleMobileTools/Simple-File-Picker/tree/master/library/src/main/res
-        https://github.com/SimpleMobileTools/Simple-File-Properties/tree/master/library/src/main/res
     -->
 </resources>
