@@ -1,7 +1,6 @@
 package com.simplemobiletools.notes.activities
 
 import android.os.Bundle
-import android.support.v4.app.TaskStackBuilder
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -16,19 +15,9 @@ class SettingsActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
-        setupDarkTheme()
         setupFontSize()
         setupWidgetNote()
         setupGravity()
-    }
-
-    private fun setupDarkTheme() {
-        settings_dark_theme.isChecked = config.isDarkTheme
-        settings_dark_theme_holder.setOnClickListener {
-            settings_dark_theme.toggle()
-            config.isDarkTheme = settings_dark_theme.isChecked
-            restartActivity()
-        }
     }
 
     private fun setupFontSize() {
@@ -94,9 +83,5 @@ class SettingsActivity : SimpleActivity() {
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, titles)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         return adapter
-    }
-
-    private fun restartActivity() {
-        TaskStackBuilder.create(applicationContext).addNextIntentWithParentStack(intent).startActivities()
     }
 }
