@@ -5,7 +5,7 @@ import android.app.AlertDialog
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
-import com.simplemobiletools.notes.Config
+import com.simplemobiletools.notes.helpers.Config
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.databases.DBHelper
 import kotlinx.android.synthetic.main.dialog_radio_group.view.*

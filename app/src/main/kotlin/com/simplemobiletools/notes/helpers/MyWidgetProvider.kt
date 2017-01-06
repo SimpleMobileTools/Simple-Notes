@@ -1,4 +1,4 @@
-package com.simplemobiletools.notes
+package com.simplemobiletools.notes.helpers
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -9,6 +9,7 @@ import android.content.SharedPreferences
 import android.graphics.Color
 import android.view.View
 import android.widget.RemoteViews
+import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.R.layout.widget
 import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.databases.DBHelper

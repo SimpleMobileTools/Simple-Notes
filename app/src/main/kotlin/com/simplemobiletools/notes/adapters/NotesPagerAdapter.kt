@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.util.SparseArray
-import com.simplemobiletools.notes.NOTE_ID
+import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.fragments.NoteFragment
 import com.simplemobiletools.notes.models.Note
 

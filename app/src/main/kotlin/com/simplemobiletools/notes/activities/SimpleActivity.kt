@@ -2,7 +2,7 @@ package com.simplemobiletools.notes.activities
 
 import android.os.Bundle
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
-import com.simplemobiletools.notes.Config
+import com.simplemobiletools.notes.helpers.Config
 
 open class SimpleActivity : BaseSimpleActivity() {
     lateinit var config: Config

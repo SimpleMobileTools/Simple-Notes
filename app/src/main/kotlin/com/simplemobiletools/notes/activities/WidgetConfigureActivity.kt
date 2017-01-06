@@ -12,6 +12,10 @@ import android.widget.RemoteViews
 import android.widget.SeekBar
 import com.simplemobiletools.notes.*
 import com.simplemobiletools.notes.extensions.getTextSize
+import com.simplemobiletools.notes.helpers.MyWidgetProvider
+import com.simplemobiletools.notes.helpers.PREFS_KEY
+import com.simplemobiletools.notes.helpers.WIDGET_BG_COLOR
+import com.simplemobiletools.notes.helpers.WIDGET_TEXT_COLOR
 import kotlinx.android.synthetic.main.widget_config.*
 import yuku.ambilwarna.AmbilWarnaDialog
 

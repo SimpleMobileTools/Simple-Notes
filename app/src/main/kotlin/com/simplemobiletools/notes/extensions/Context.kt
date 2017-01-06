@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.Gravity
 import com.simplemobiletools.notes.*
+import com.simplemobiletools.notes.helpers.*
 
 fun Context.getTextSize() =
         when (Config.newInstance(this).fontSize) {

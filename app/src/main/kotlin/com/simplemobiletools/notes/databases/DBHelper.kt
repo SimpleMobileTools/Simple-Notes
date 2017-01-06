@@ -5,10 +5,10 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.simplemobiletools.notes.PREFS_KEY
+import com.simplemobiletools.notes.helpers.PREFS_KEY
 import com.simplemobiletools.notes.R
-import com.simplemobiletools.notes.TEXT
-import com.simplemobiletools.notes.TYPE_NOTE
+import com.simplemobiletools.notes.helpers.TEXT
+import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.extensions.getIntValue
 import com.simplemobiletools.notes.extensions.getStringValue
 import com.simplemobiletools.notes.models.Note
