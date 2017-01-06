@@ -5,17 +5,15 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.simplemobiletools.notes.helpers.PREFS_KEY
 import com.simplemobiletools.notes.R
-import com.simplemobiletools.notes.helpers.TEXT
-import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.extensions.getIntValue
 import com.simplemobiletools.notes.extensions.getStringValue
+import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import java.util.*
 
 class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHelper(mContext, DBHelper.DB_NAME, null, DBHelper.DB_VERSION) {
-    private val mDb: SQLiteDatabase
+    private val mDb: SQLiteDatabase = writableDatabase
 
     companion object {
         private val DB_NAME = "notes.db"
@@ -29,10 +27,6 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         private val COL_PATH = "path"
 
         fun newInstance(context: Context) = DBHelper(context)
-    }
-
-    init {
-        mDb = writableDatabase
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -50,9 +44,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     private fun insertFirstNote(db: SQLiteDatabase) {
         val generalNote = mContext.resources.getString(R.string.general_note)
-        val prefs = mContext.getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
-        val text = prefs.getString(TEXT, "")
-        val note = Note(1, generalNote, text, TYPE_NOTE)
+        val note = Note(1, generalNote, "", TYPE_NOTE)
         insertNote(note, db)
     }
 
@@ -82,10 +74,13 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         val cols = arrayOf(COL_ID)
         val selection = "$COL_TITLE = ?"
         val selectionArgs = arrayOf(title)
-        val cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null) ?: return false
-        val cnt = cursor.count
-        cursor.close()
-        return cnt == 1
+        var cursor: Cursor? = null
+        try {
+            cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null)
+            return cursor.count == 1
+        } finally {
+            cursor?.close()
+        }
     }
 
     fun getNotes(): List<Note> {
@@ -94,7 +89,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         var cursor: Cursor? = null
         try {
             cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, "$COL_TITLE COLLATE NOCASE ASC")
-            if (cursor != null && cursor.moveToFirst()) {
+            if (cursor?.moveToFirst() == true) {
                 do {
                     val id = cursor.getIntValue(COL_ID)
                     val title = cursor.getStringValue(COL_TITLE)
@@ -119,7 +114,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         var cursor: Cursor? = null
         try {
             cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null)
-            if (cursor != null && cursor.moveToFirst()) {
+            if (cursor?.moveToFirst() == true) {
                 val title = cursor.getStringValue(COL_TITLE)
                 val value = cursor.getStringValue(COL_VALUE)
                 val type = cursor.getIntValue(COL_TYPE)

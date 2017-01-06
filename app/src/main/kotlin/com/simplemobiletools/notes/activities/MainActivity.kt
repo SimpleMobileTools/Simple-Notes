@@ -61,9 +61,11 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     override fun onResume() {
         super.onResume()
         invalidateOptionsMenu()
-        pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
-        pager_title_strip.setGravity(Gravity.CENTER_VERTICAL)
-        pager_title_strip.setNonPrimaryAlpha(0.4f)
+        pager_title_strip.apply {
+            setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
+            setGravity(Gravity.CENTER_VERTICAL)
+            setNonPrimaryAlpha(0.4f)
+        }
     }
 
     override fun onDestroy() {

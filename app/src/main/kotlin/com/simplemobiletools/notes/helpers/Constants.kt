@@ -5,8 +5,6 @@ val NOTE_ID = "note_id"
 
 // shared preferences
 val PREFS_KEY = "Notes"
-val IS_FIRST_RUN = "is_first_run"
-val IS_DARK_THEME = "is_dark_theme"
 val CURRENT_NOTE_ID = "current_note_id"
 val WIDGET_NOTE_ID = "widget_note_id"
 val FONT_SIZE = "font_size"
