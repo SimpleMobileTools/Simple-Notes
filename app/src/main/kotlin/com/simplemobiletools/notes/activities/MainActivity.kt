@@ -69,6 +69,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
             setGravity(Gravity.CENTER_VERTICAL)
             setNonPrimaryAlpha(0.4f)
+            setTextColor(config.textColor)
         }
         updateTextColors(view_pager)
     }
