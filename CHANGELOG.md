@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 2.0.0 *(2017-01-06)*
+----------------------------
+
+ * Added some color customization options
+
 Version 1.24 *(2016-12-18)*
 ----------------------------
 
