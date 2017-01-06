@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.commons.helpers.LICENSE_AMBILWARNA
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
@@ -18,11 +19,11 @@ import com.simplemobiletools.commons.helpers.LICENSE_STETHO
 import com.simplemobiletools.notes.BuildConfig
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
-import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.RenameNoteDialog
 import com.simplemobiletools.notes.extensions.getTextSize
+import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
@@ -66,6 +67,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             setGravity(Gravity.CENTER_VERTICAL)
             setNonPrimaryAlpha(0.4f)
         }
+        updateTextColors(view_pager)
     }
 
     override fun onDestroy() {

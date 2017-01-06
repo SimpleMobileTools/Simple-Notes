@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.helpers.DBHelper
@@ -14,11 +15,16 @@ class SettingsActivity : SimpleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         setupCustomizeColors()
         setupFontSize()
         setupWidgetNote()
         setupGravity()
+        updateTextColors(settings_scrollview)
     }
 
     private fun setupCustomizeColors() {

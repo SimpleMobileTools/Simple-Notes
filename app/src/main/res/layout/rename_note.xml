@@ -13,5 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_margin"
         android:inputType="textCapSentences"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        android:textCursorDrawable="@null"/>
 </LinearLayout>
