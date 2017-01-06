@@ -26,6 +26,11 @@
     <string name="center">中央</string>
     <string name="right">右</string>
 
+    <!-- Release notes -->
+    <string name="release_25">
+        Added more color customization options\n
+        Your settings have been cleared, please reset them</string>
+
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">簡単なメモを追加するためのシンプルなテキストフィールド。広告はありません。</string>

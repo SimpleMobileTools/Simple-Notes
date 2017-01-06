@@ -26,6 +26,11 @@
     <string name="center">Középre</string>
     <string name="right">Jobbra</string>
 
+    <!-- Release notes -->
+    <string name="release_25">
+        Added more color customization options\n
+        Your settings have been cleared, please reset them</string>
+
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Egyszerű szövegmező gyors jegyzetírásra, reklámok nélkül.</string>

@@ -9,6 +9,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
+import com.simplemobiletools.commons.extensions.checkWhatsNew
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.extensions.value
@@ -16,6 +17,7 @@ import com.simplemobiletools.commons.helpers.LICENSE_AMBILWARNA
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.commons.helpers.LICENSE_RTL
 import com.simplemobiletools.commons.helpers.LICENSE_STETHO
+import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.notes.BuildConfig
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
@@ -44,6 +46,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
         pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
         pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
+        checkWhatsNewDialog()
     }
 
     fun initViewPager() {
@@ -201,5 +204,12 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     override fun onPageSelected(position: Int) {
         mCurrentNote = mNotes[position]
         config.currentNoteId = mCurrentNote.id
+    }
+
+    private fun checkWhatsNewDialog() {
+        arrayListOf<Release>().apply {
+            add(Release(25, R.string.release_25))
+            checkWhatsNew(this, BuildConfig.VERSION_CODE)
+        }
     }
 }
