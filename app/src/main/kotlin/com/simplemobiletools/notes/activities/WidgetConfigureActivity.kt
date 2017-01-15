@@ -11,8 +11,8 @@ import android.widget.RemoteViews
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.notes.R
+import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
-import com.simplemobiletools.notes.helpers.Config
 import com.simplemobiletools.notes.helpers.MyWidgetProvider
 import kotlinx.android.synthetic.main.widget_config.*
 
@@ -47,7 +47,6 @@ class WidgetConfigureActivity : AppCompatActivity() {
     }
 
     private fun initVariables() {
-        val config = Config.newInstance(this)
         mBgColor = config.widgetBgColor
         if (mBgColor == 1) {
             mBgColor = Color.BLACK
@@ -83,7 +82,7 @@ class WidgetConfigureActivity : AppCompatActivity() {
     }
 
     private fun storeWidgetBackground() {
-        Config.newInstance(this).apply {
+        config.apply {
             widgetBgColor = mBgColor
             widgetTextColor = mTextColor
         }

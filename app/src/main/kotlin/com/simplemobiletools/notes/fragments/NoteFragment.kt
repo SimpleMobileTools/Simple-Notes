@@ -10,10 +10,10 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.R
+import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextGravity
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.extensions.updateWidget
-import com.simplemobiletools.notes.helpers.Config
 import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
@@ -52,7 +52,7 @@ class NoteFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        val config = Config.newInstance(context)
+        val config = context.config
         view.notes_view.apply {
             setText(note.value)
             setColors(config.textColor, config.primaryColor, config.backgroundColor)

@@ -23,6 +23,7 @@ import com.simplemobiletools.notes.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.RenameNoteDialog
+import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.TYPE_NOTE

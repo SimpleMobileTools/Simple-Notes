@@ -5,11 +5,11 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.view.Gravity
-import com.simplemobiletools.notes.*
+import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.helpers.*
 
 fun Context.getTextSize() =
-        when (Config.newInstance(this).fontSize) {
+        when (config.fontSize) {
             FONT_SIZE_SMALL -> resources.getDimension(R.dimen.smaller_text_size)
             FONT_SIZE_LARGE -> resources.getDimension(R.dimen.big_text_size)
             FONT_SIZE_EXTRA_LARGE -> resources.getDimension(R.dimen.extra_big_text_size)
@@ -17,7 +17,7 @@ fun Context.getTextSize() =
         }
 
 fun Context.getTextGravity() =
-        when (Config.newInstance(this).gravity) {
+        when (config.gravity) {
             GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
             GRAVITY_RIGHT -> Gravity.RIGHT
             else -> Gravity.LEFT
@@ -33,3 +33,5 @@ fun Context.updateWidget() {
         sendBroadcast(this)
     }
 }
+
+val Context.config: Config get() = Config.newInstance(this)

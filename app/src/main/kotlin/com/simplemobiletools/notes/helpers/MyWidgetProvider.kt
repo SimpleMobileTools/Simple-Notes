@@ -10,6 +10,7 @@ import android.widget.RemoteViews
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.R.layout.widget
 import com.simplemobiletools.notes.activities.MainActivity
+import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
 
 class MyWidgetProvider : AppWidgetProvider() {
@@ -22,7 +23,7 @@ class MyWidgetProvider : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         initVariables(context)
-        val config = Config.newInstance(context)
+        val config = context.config
         val widgetBgColor = config.widgetBgColor
         val widgetTextColor = config.widgetTextColor
 
@@ -44,7 +45,7 @@ class MyWidgetProvider : AppWidgetProvider() {
     }
 
     private fun getProperTextView(context: Context): Int {
-        return when (Config.newInstance(context).gravity) {
+        return when (context.config.gravity) {
             GRAVITY_CENTER -> R.id.notes_view_center
             GRAVITY_RIGHT -> R.id.notes_view_right
             else -> R.id.notes_view_left
@@ -64,7 +65,7 @@ class MyWidgetProvider : AppWidgetProvider() {
     }
 
     private fun updateWidget(widgetManager: AppWidgetManager, widgetId: Int, remoteViews: RemoteViews, context: Context) {
-        val note = mDb.getNote(Config.newInstance(context).widgetNoteId)
+        val note = mDb.getNote(context.config.widgetNoteId)
         for (id in textIds)
             remoteViews.setTextViewText(id, note?.value ?: "")
         widgetManager.updateAppWidget(widgetId, remoteViews)

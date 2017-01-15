@@ -7,8 +7,8 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.R
+import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.helpers.DBHelper
-import com.simplemobiletools.notes.helpers.Config
 import kotlinx.android.synthetic.main.dialog_radio_group.view.*
 
 class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> Unit) : RadioGroup.OnCheckedChangeListener {
@@ -16,7 +16,6 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
     var wasInit = false
 
     init {
-        val config = Config.newInstance(activity)
         val view = activity.layoutInflater.inflate(R.layout.dialog_radio_group, null)
         val radioGroup = view.dialog_radio_group
         radioGroup.setOnCheckedChangeListener(this)
@@ -26,7 +25,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
             val radioButton = activity.layoutInflater.inflate(R.layout.radio_button, null) as RadioButton
             radioButton.apply {
                 text = it.title
-                isChecked = it.id == config.currentNoteId
+                isChecked = it.id == activity.config.currentNoteId
                 id = it.id
             }
             radioGroup.addView(radioButton, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
