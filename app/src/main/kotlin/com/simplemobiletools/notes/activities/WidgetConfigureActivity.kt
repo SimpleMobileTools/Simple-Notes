@@ -9,12 +9,12 @@ import android.support.v7.app.AppCompatActivity
 import android.util.TypedValue
 import android.widget.RemoteViews
 import android.widget.SeekBar
+import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.Config
 import com.simplemobiletools.notes.helpers.MyWidgetProvider
 import kotlinx.android.synthetic.main.widget_config.*
-import yuku.ambilwarna.AmbilWarnaDialog
 
 class WidgetConfigureActivity : AppCompatActivity() {
     private var mBgAlpha = 0f
@@ -110,27 +110,17 @@ class WidgetConfigureActivity : AppCompatActivity() {
     }
 
     fun pickBackgroundColor() {
-        AmbilWarnaDialog(this, mBgColorWithoutTransparency, object : AmbilWarnaDialog.OnAmbilWarnaListener {
-            override fun onCancel(dialog: AmbilWarnaDialog) {
-            }
-
-            override fun onOk(dialog: AmbilWarnaDialog, color: Int) {
-                mBgColorWithoutTransparency = color
-                updateBackgroundColor()
-            }
-        }).show()
+        ColorPickerDialog(this, mBgColorWithoutTransparency) {
+            mBgColorWithoutTransparency = it
+            updateBackgroundColor()
+        }
     }
 
     fun pickTextColor() {
-        AmbilWarnaDialog(this, mTextColor, object : AmbilWarnaDialog.OnAmbilWarnaListener {
-            override fun onCancel(dialog: AmbilWarnaDialog) {
-            }
-
-            override fun onOk(dialog: AmbilWarnaDialog, color: Int) {
-                mTextColor = color
-                updateTextColor()
-            }
-        }).show()
+        ColorPickerDialog(this, mTextColor) {
+            mTextColor = it
+            updateTextColor()
+        }
     }
 
     private val bgSeekbarChangeListener = object : SeekBar.OnSeekBarChangeListener {
