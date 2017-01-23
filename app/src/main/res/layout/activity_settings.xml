@@ -40,11 +40,13 @@
 
             <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_font_size_label"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/settings_font_size"
+                android:layout_toStartOf="@+id/settings_font_size"
                 android:paddingLeft="@dimen/medium_margin"
-                android:paddingStart="@dimen/medium_margin"
+                android:paddingRight="@dimen/medium_margin"
                 android:text="@string/note_font_size"/>
 
             <com.simplemobiletools.commons.views.MyAppCompatSpinner
@@ -67,11 +69,13 @@
 
             <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_gravity_label"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/settings_gravity"
+                android:layout_toStartOf="@+id/settings_gravity"
                 android:paddingLeft="@dimen/medium_margin"
-                android:paddingStart="@dimen/medium_margin"
+                android:paddingRight="@dimen/medium_margin"
                 android:text="@string/gravity"/>
 
             <com.simplemobiletools.commons.views.MyAppCompatSpinner
@@ -94,11 +98,13 @@
 
             <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_widget_note_label"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/settings_widget_note"
+                android:layout_toStartOf="@+id/settings_widget_note"
                 android:paddingLeft="@dimen/medium_margin"
-                android:paddingStart="@dimen/medium_margin"
+                android:paddingRight="@dimen/medium_margin"
                 android:text="@string/widget_note"/>
 
             <com.simplemobiletools.commons.views.MyAppCompatSpinner
