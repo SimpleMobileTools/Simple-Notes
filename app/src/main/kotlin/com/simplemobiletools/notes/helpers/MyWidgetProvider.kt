@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.RemoteViews
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.R.layout.widget
-import com.simplemobiletools.notes.activities.MainActivity
+import com.simplemobiletools.notes.activities.SplashActivity
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
 
@@ -59,7 +59,7 @@ class MyWidgetProvider : AppWidgetProvider() {
     }
 
     private fun setupAppOpenIntent(id: Int, context: Context) {
-        val intent = Intent(context, MainActivity::class.java)
+        val intent = Intent(context, SplashActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
         mRemoteViews.setOnClickPendingIntent(id, pendingIntent)
     }
