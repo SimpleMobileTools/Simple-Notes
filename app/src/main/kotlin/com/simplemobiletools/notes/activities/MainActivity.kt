@@ -210,6 +210,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun checkWhatsNewDialog() {
         arrayListOf<Release>().apply {
             add(Release(25, R.string.release_25))
+            add(Release(28, R.string.release_28))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }
