@@ -3,6 +3,10 @@ package com.simplemobiletools.notes.fragments
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
+import android.text.method.LinkMovementMethod
+import android.text.util.Linkify
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +22,7 @@ import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.fragment_note.view.*
 
+
 class NoteFragment : Fragment() {
     var noteId = 0
     lateinit var view: ViewGroup
@@ -29,6 +34,26 @@ class NoteFragment : Fragment() {
         noteId = arguments.getInt(NOTE_ID)
         mDb = DBHelper.newInstance(context)
         note = mDb.getNote(noteId) ?: return view
+
+        if (context.config.clickableLinks) {
+            view.notes_view.apply {
+                linksClickable = true
+                autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES
+                movementMethod = LinkMovementMethod.getInstance()
+                addTextChangedListener(object : TextWatcher {
+                    override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                    }
+
+                    override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    }
+
+                    override fun afterTextChanged(s: Editable) {
+                        Linkify.addLinks(this@apply, autoLinkMask)
+                    }
+                })
+            }
+        }
+
         return view
     }
 
