@@ -17,6 +17,7 @@
 
     <!-- Settings -->
     <string name="widget_note">A widget-ben használt jegyzet</string>
+    <string name="links_and_emails_clickable">Make links and emails clickable</string>
     <string name="note_font_size">Betűméret</string>
     <string name="small">Kis</string>
     <string name="normal">Átlagos</string>

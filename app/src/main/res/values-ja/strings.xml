@@ -17,6 +17,7 @@
 
     <!-- Settings -->
     <string name="note_font_size">メモのフォントサイズ</string>
+    <string name="links_and_emails_clickable">Make links and emails clickable</string>
     <string name="widget_note">ウィジェットで使用するメモ</string>
     <string name="small">小</string>
     <string name="normal">通常</string>

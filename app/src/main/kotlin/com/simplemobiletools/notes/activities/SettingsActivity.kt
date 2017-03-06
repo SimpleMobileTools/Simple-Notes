@@ -22,6 +22,7 @@ class SettingsActivity : SimpleActivity() {
         super.onResume()
 
         setupCustomizeColors()
+        setupClickableLinks()
         setupFontSize()
         setupWidgetNote()
         setupGravity()
@@ -31,6 +32,14 @@ class SettingsActivity : SimpleActivity() {
     private fun setupCustomizeColors() {
         settings_customize_colors_holder.setOnClickListener {
             startCustomizationActivity()
+        }
+    }
+
+    private fun setupClickableLinks() {
+        settings_clickable_links.isChecked = config.clickableLinks
+        settings_clickable_links_holder.setOnClickListener {
+            settings_clickable_links.toggle()
+            config.clickableLinks = settings_clickable_links.isChecked
         }
     }
 

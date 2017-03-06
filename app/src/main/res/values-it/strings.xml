@@ -17,6 +17,7 @@
 
     <!-- Settings -->
     <string name="note_font_size">Note font size</string>
+    <string name="links_and_emails_clickable">Make links and emails clickable</string>
     <string name="widget_note">Note used in widget</string>
     <string name="small">Small</string>
     <string name="normal">Normal</string>
