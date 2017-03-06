@@ -62,7 +62,7 @@ class NoteFragment : Fragment() {
         val oldText = note.value
         if (newText != oldText) {
             note.value = newText
-            mDb.updateNote(note)
+            mDb.updateNoteValue(note)
             context.updateWidget()
         }
     }

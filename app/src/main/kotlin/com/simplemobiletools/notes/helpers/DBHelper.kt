@@ -125,10 +125,19 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         return note
     }
 
-    fun updateNote(note: Note) {
-        val values = fillContentValues(note)
+    fun updateNoteValue(note: Note) {
+        val values = ContentValues().apply { put(COL_VALUE, note.value) }
+        updateNote(note.id, values)
+    }
+
+    fun updateNoteTitle(note: Note) {
+        val values = ContentValues().apply { put(COL_TITLE, note.title) }
+        updateNote(note.id, values)
+    }
+
+    fun updateNote(id: Int, values: ContentValues) {
         val selection = "$COL_ID = ?"
-        val selectionArgs = arrayOf(note.id.toString())
+        val selectionArgs = arrayOf(id.toString())
         mDb.update(TABLE_NAME, values, selection, selectionArgs)
     }
 }

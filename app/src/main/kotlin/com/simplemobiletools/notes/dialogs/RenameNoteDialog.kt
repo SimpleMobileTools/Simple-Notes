@@ -32,7 +32,7 @@ class RenameNoteDialog(val activity: Activity, val db: DBHelper, val note: Note,
                     activity.toast(R.string.title_taken)
                 } else {
                     note.title = title
-                    db.updateNote(note)
+                    db.updateNoteTitle(note)
                     dismiss()
                     callback.invoke(note)
                 }
