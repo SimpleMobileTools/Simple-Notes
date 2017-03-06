@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>
     <string name="widget_config">Gracias por usar Simple Notes.\nPara más aplicaciones simples, por favor visite SimpleMobileTools.com.\n</string>
     <string name="cannot_share_empty_text">No se puede compartir una nota vacía</string>

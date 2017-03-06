@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">Egyszerű Jegyzetek</string>
     <string name="app_launcher_name">Jegyzetek</string>
     <string name="widget_config">Köszönjük, hogy az Egyszerű Jegyzetfüzetet használod.\nTovábbi egyszerű alkalmazásokért látogass a SimpleMobileTools.com-ra.\n</string>
     <string name="cannot_share_empty_text">Nem létező szöveget nem lehet megosztani</string>
