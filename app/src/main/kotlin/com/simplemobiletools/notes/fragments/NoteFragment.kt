@@ -22,7 +22,6 @@ import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.fragment_note.view.*
 
-
 class NoteFragment : Fragment() {
     var noteId = 0
     lateinit var view: ViewGroup
@@ -57,8 +56,10 @@ class NoteFragment : Fragment() {
         return view
     }
 
+    fun getCurrentNoteText() = view.notes_view.text.toString()
+
     fun saveText() {
-        val newText = view.notes_view.text.toString()
+        val newText = getCurrentNoteText()
         val oldText = note.value
         if (newText != oldText) {
             note.value = newText

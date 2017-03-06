@@ -12,7 +12,6 @@ import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.extensions.checkWhatsNew
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.updateTextColors
-import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.commons.helpers.LICENSE_RTL
 import com.simplemobiletools.commons.helpers.LICENSE_STETHO
@@ -29,7 +28,6 @@ import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_note.*
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     lateinit var mCurrentNote: Note
@@ -179,7 +177,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun shareText() {
-        val text = notes_view.value
+        val text = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteText(view_pager.currentItem)
         if (text.isEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
