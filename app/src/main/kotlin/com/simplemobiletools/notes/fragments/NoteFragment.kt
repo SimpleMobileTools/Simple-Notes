@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextGravity
@@ -34,7 +33,7 @@ class NoteFragment : Fragment() {
     }
 
     fun saveText() {
-        val newText = view.notes_view.value
+        val newText = view.notes_view.text.toString()
         val oldText = note.value
         if (newText != oldText) {
             note.value = newText
