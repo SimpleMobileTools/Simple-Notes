@@ -29,6 +29,7 @@
     <string name="right">Droite</string>
 
     <!-- Release notes -->
+    <string name="release_29">Added an option to make emails and links clickable</string>
     <string name="release_28">Allow picking colors by hex codes</string>
     <string name="release_25">
         Added more color customization options\n

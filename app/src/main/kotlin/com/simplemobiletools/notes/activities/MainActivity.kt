@@ -209,6 +209,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         arrayListOf<Release>().apply {
             add(Release(25, R.string.release_25))
             add(Release(28, R.string.release_28))
+            add(Release(29, R.string.release_29))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }
