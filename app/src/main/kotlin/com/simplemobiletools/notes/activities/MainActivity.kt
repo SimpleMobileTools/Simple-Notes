@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.extensions.checkWhatsNew
+import com.simplemobiletools.commons.extensions.storeStoragePaths
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
@@ -45,9 +46,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
         pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
         checkWhatsNewDialog()
+        storeStoragePaths()
     }
 
-    fun initViewPager() {
+    private fun initViewPager() {
         mNotes = mDb.getNotes()
         mCurrentNote = mNotes[0]
         val itemIndex = getNoteIndexWithId(config.currentNoteId)
@@ -101,6 +103,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             R.id.new_note -> displayNewNoteDialog()
             R.id.rename_note -> displayRenameDialog()
             R.id.share -> shareText()
+            R.id.open_file -> openFile()
+            R.id.save_as_file -> saveAsFile()
             R.id.delete_note -> displayDeleteNotePrompt()
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
@@ -123,7 +127,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         mCurrentNote = mNotes[index]
     }
 
-    fun displayNewNoteDialog() {
+    private fun displayNewNoteDialog() {
         NewNoteDialog(this, mDb) {
             val newNote = Note(0, it, "", TYPE_NOTE)
             val id = mDb.insertNote(newNote)
@@ -137,6 +141,14 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun launchAbout() {
         startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_STETHO or LICENSE_RTL, BuildConfig.VERSION_NAME)
+    }
+
+    private fun openFile() {
+
+    }
+
+    private fun saveAsFile() {
+
     }
 
     private fun displayDeleteNotePrompt() {

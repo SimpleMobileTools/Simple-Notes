@@ -14,6 +14,8 @@
     <string name="pick_a_note">Válassz egy jegyzetet</string>
     <string name="rename_note">Jegyzet átnevezése</string>
     <string name="general_note">Alapértelmezett jegyzet</string>
+    <string name="open_file">Open file</string>
+    <string name="save_as_file">Save as file</string>
 
     <!-- Settings -->
     <string name="widget_note">A widget-ben használt jegyzet</string>
@@ -29,7 +31,11 @@
     <string name="right">Jobbra</string>
 
     <!-- Release notes -->
-    <string name="release_29">Added an option to make emails and links clickable</string>
+    <string name="release_29">
+        Added an option to make emails and links clickable\n
+        Allow importing text from files\n
+        Allow saving notes to files
+    </string>
     <string name="release_28">Allow picking colors by hex codes</string>
     <string name="release_25">
         Added more color customization options\n

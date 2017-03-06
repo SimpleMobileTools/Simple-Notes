@@ -22,6 +22,14 @@
         android:title="@string/share"
         app:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/open_file"
+        android:title="@string/open_file"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/save_as_file"
+        android:title="@string/save_as_file"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/delete_note"
         android:icon="@drawable/ic_delete"
         android:title="@string/delete_note"
