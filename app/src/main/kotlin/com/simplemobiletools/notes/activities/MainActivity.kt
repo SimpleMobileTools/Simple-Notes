@@ -161,7 +161,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun openFile() {
         FilePickerDialog(this) {
-            if (File(it).length() > 10) {
+            if (File(it).length() > 10 * 1000 * 1000) {
                 toast(R.string.file_too_large)
             } else {
                 val filename = it.getFilenameFromPath()
