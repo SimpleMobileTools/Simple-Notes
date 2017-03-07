@@ -34,6 +34,7 @@ import java.io.File
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     val STORAGE_OPEN_FILE = 1
+    val STORAGE_SAVE_AS_FILE = 2
 
     lateinit var mCurrentNote: Note
     lateinit var mAdapter: NotesPagerAdapter
@@ -108,7 +109,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             R.id.rename_note -> displayRenameDialog()
             R.id.share -> shareText()
             R.id.open_file -> tryOpenFile()
-            R.id.save_as_file -> saveAsFile()
+            R.id.save_as_file -> trySaveAsFile()
             R.id.delete_note -> displayDeleteNotePrompt()
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
@@ -173,6 +174,14 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                     addNewNote(note)
                 }
             }
+        }
+    }
+
+    private fun trySaveAsFile() {
+        if (hasWriteStoragePermission()) {
+            saveAsFile()
+        } else {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_SAVE_AS_FILE)
         }
     }
 
@@ -241,6 +250,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             if (requestCode == STORAGE_OPEN_FILE) {
                 openFile()
+            } else if (requestCode == STORAGE_SAVE_AS_FILE) {
+                saveAsFile()
             }
         }
     }
