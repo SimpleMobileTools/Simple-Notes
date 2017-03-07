@@ -71,7 +71,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun doesTitleExist(title: String): Boolean {
         val cols = arrayOf(COL_ID)
-        val selection = "$COL_TITLE = ?"
+        val selection = "$COL_TITLE = ? COLLATE NOCASE"
         val selectionArgs = arrayOf(title)
         var cursor: Cursor? = null
         try {
