@@ -161,10 +161,14 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun openFile() {
         FilePickerDialog(this) {
-            val filename = it.getFilenameFromPath()
-            val content = File(it).readText()
-            val note = Note(0, filename, content, TYPE_NOTE)
-            addNewNote(note)
+            if (File(it).length() > 10) {
+                toast(R.string.file_too_large)
+            } else {
+                val filename = it.getFilenameFromPath()
+                val content = File(it).readText()
+                val note = Note(0, filename, content, TYPE_NOTE)
+                addNewNote(note)
+            }
         }
     }
 

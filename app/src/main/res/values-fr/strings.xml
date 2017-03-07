@@ -16,6 +16,7 @@
     <string name="general_note">Note générale</string>
     <string name="open_file">Open file</string>
     <string name="save_as_file">Save as file</string>
+    <string name="file_too_large">File too large, the limit is 10MB</string>
 
     <!-- Settings -->
     <string name="widget_note">Note utilisée dans le widget</string>
