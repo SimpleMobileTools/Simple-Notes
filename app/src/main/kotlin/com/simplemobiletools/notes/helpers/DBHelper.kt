@@ -90,12 +90,16 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
             cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, "$COL_TITLE COLLATE NOCASE ASC")
             if (cursor?.moveToFirst() == true) {
                 do {
-                    val id = cursor.getIntValue(COL_ID)
-                    val title = cursor.getStringValue(COL_TITLE)
-                    val value = cursor.getStringValue(COL_VALUE)
-                    val type = cursor.getIntValue(COL_TYPE)
-                    val note = Note(id, title, value, type)
-                    notes.add(note)
+                    try {
+                        val id = cursor.getIntValue(COL_ID)
+                        val title = cursor.getStringValue(COL_TITLE)
+                        val value = cursor.getStringValue(COL_VALUE)
+                        val type = cursor.getIntValue(COL_TYPE)
+                        val note = Note(id, title, value, type)
+                        notes.add(note)
+                    } catch (e: Exception) {
+                        continue
+                    }
                 } while (cursor.moveToNext())
             }
         } finally {
