@@ -1,7 +1,10 @@
 package com.simplemobiletools.notes.activities
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
 import android.support.v4.view.ViewPager
 import android.util.TypedValue
 import android.view.Gravity
@@ -9,10 +12,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.simplemobiletools.commons.dialogs.ConfirmationDialog
-import com.simplemobiletools.commons.extensions.checkWhatsNew
-import com.simplemobiletools.commons.extensions.storeStoragePaths
-import com.simplemobiletools.commons.extensions.toast
-import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.commons.dialogs.FilePickerDialog
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.commons.helpers.LICENSE_RTL
 import com.simplemobiletools.commons.helpers.LICENSE_STETHO
@@ -31,6 +32,8 @@ import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
+    val STORAGE_OPEN_FILE = 1
+
     lateinit var mCurrentNote: Note
     lateinit var mAdapter: NotesPagerAdapter
     lateinit var mDb: DBHelper
@@ -103,7 +106,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             R.id.new_note -> displayNewNoteDialog()
             R.id.rename_note -> displayRenameDialog()
             R.id.share -> shareText()
-            R.id.open_file -> openFile()
+            R.id.open_file -> tryOpenFile()
             R.id.save_as_file -> saveAsFile()
             R.id.delete_note -> displayDeleteNotePrompt()
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
@@ -143,8 +146,18 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_STETHO or LICENSE_RTL, BuildConfig.VERSION_NAME)
     }
 
-    private fun openFile() {
+    private fun tryOpenFile() {
+        if (hasReadStoragePermission()) {
+            openFile()
+        } else {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), STORAGE_OPEN_FILE)
+        }
+    }
 
+    private fun openFile() {
+        FilePickerDialog(this) {
+
+        }
     }
 
     private fun saveAsFile() {
@@ -203,6 +216,16 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             putExtra(Intent.EXTRA_TEXT, text)
             type = "text/plain"
             startActivity(Intent.createChooser(this, shareTitle))
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (requestCode == STORAGE_OPEN_FILE) {
+                openFile()
+            }
         }
     }
 
