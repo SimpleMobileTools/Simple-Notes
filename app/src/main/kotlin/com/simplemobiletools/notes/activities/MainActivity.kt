@@ -32,6 +32,7 @@ import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
+import java.nio.charset.Charset
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     val STORAGE_OPEN_FILE = 1
@@ -188,9 +189,36 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun saveAsFile() {
         SaveAsDialog(this, mCurrentNote.title) {
+            val file = File(it)
+            if (file.isDirectory) {
+                toast(R.string.directory_exists)
+                return@SaveAsDialog
+            }
 
+            val text = getCurrentNoteText()
+            if (needsStupidWritePermissions(it)) {
+                if (isShowingPermDialog(file))
+                    return@SaveAsDialog
+
+                var document = getFileDocument(it, config.treeUri) ?: return@SaveAsDialog
+                if (!file.exists()) {
+                    document = document.createFile("", file.name)
+                }
+                contentResolver.openOutputStream(document.uri).apply {
+                    write(text.toByteArray(Charset.forName("UTF-8")))
+                    flush()
+                    close()
+                }
+            } else {
+                file.printWriter().use { out ->
+                    out.write(text)
+                }
+            }
+            toast(R.string.file_saved)
         }
     }
+
+    private fun getCurrentNoteText() = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteText(view_pager.currentItem)
 
     private fun displayDeleteNotePrompt() {
         val message = String.format(getString(R.string.delete_note_prompt_message), mCurrentNote.title)
@@ -230,7 +258,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun shareText() {
-        val text = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteText(view_pager.currentItem)
+        val text = getCurrentNoteText()
         if (text.isEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
