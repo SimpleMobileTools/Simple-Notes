@@ -24,6 +24,7 @@ import com.simplemobiletools.notes.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.dialogs.NewNoteDialog
 import com.simplemobiletools.notes.dialogs.OpenNoteDialog
 import com.simplemobiletools.notes.dialogs.RenameNoteDialog
+import com.simplemobiletools.notes.dialogs.SaveAsDialog
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.DBHelper
@@ -186,7 +187,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun saveAsFile() {
+        SaveAsDialog(this, mCurrentNote.title) {
 
+        }
     }
 
     private fun displayDeleteNotePrompt() {
