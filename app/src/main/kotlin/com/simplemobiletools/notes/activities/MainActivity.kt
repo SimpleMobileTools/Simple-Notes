@@ -30,6 +30,7 @@ import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     val STORAGE_OPEN_FILE = 1
@@ -133,13 +134,17 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun displayNewNoteDialog() {
         NewNoteDialog(this, mDb) {
             val newNote = Note(0, it, "", TYPE_NOTE)
-            val id = mDb.insertNote(newNote)
-            mNotes = mDb.getNotes()
-            invalidateOptionsMenu()
-            initViewPager()
-            updateSelectedNote(id)
-            mAdapter.showKeyboard(getNoteIndexWithId(id))
+            addNewNote(newNote)
         }
+    }
+
+    private fun addNewNote(note: Note) {
+        val id = mDb.insertNote(note)
+        mNotes = mDb.getNotes()
+        invalidateOptionsMenu()
+        initViewPager()
+        updateSelectedNote(id)
+        mAdapter.showKeyboard(getNoteIndexWithId(id))
     }
 
     private fun launchAbout() {
@@ -156,7 +161,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun openFile() {
         FilePickerDialog(this) {
-
+            val filename = it.getFilenameFromPath()
+            val content = File(it).readText()
+            val note = Note(0, filename, content, TYPE_NOTE)
+            addNewNote(note)
         }
     }
 
