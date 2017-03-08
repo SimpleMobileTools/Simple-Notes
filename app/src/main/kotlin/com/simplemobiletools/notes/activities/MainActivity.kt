@@ -21,10 +21,7 @@ import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.notes.BuildConfig
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
-import com.simplemobiletools.notes.dialogs.NewNoteDialog
-import com.simplemobiletools.notes.dialogs.OpenNoteDialog
-import com.simplemobiletools.notes.dialogs.RenameNoteDialog
-import com.simplemobiletools.notes.dialogs.SaveAsDialog
+import com.simplemobiletools.notes.dialogs.*
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.DBHelper
@@ -167,19 +164,13 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             val file = File(it)
             if (file.isImageVideoGif()) {
                 toast(R.string.invalid_file_format)
-                return@FilePickerDialog
-            }
-
-            if (file.length() > 10 * 1000 * 1000) {
+            } else if (file.length() > 10 * 1000 * 1000) {
                 toast(R.string.file_too_large)
+            } else if (mDb.doesTitleExist(it.getFilenameFromPath())) {
+                toast(R.string.title_taken)
             } else {
-                val filename = it.getFilenameFromPath()
-                if (mDb.doesTitleExist(filename)) {
-                    toast(R.string.title_taken)
-                } else {
-                    val content = file.readText()
-                    val note = Note(0, filename, content, TYPE_NOTE, it)
-                    addNewNote(note)
+                OpenFileDialog(this, it) {
+                    addNewNote(it)
                 }
             }
         }
