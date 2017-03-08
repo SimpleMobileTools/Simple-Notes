@@ -1,4 +1,3 @@
 package com.simplemobiletools.notes.models
 
-data class Note(var id: Int, var title: String, var value: String, val type: Int)
-
+data class Note(var id: Int, var title: String, var value: String, val type: Int, val path: String = "")

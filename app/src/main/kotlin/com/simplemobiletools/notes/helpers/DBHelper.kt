@@ -38,7 +38,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
             db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
 
         if (oldVersion < 3)
-            db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_PATH TEXT")
+            db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_PATH TEXT DEFAULT ''")
     }
 
     private fun insertFirstNote(db: SQLiteDatabase) {
@@ -61,6 +61,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         return ContentValues().apply {
             put(COL_TITLE, note.title)
             put(COL_VALUE, note.value)
+            put(COL_PATH, note.path)
             put(COL_TYPE, 0)
         }
     }
@@ -84,7 +85,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun getNotes(): List<Note> {
         val notes = ArrayList<Note>()
-        val cols = arrayOf(COL_ID, COL_TITLE, COL_VALUE, COL_TYPE)
+        val cols = arrayOf(COL_ID, COL_TITLE, COL_VALUE, COL_TYPE, COL_PATH)
         var cursor: Cursor? = null
         try {
             cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, "$COL_TITLE COLLATE NOCASE ASC")
@@ -95,7 +96,8 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
                         val title = cursor.getStringValue(COL_TITLE)
                         val value = cursor.getStringValue(COL_VALUE)
                         val type = cursor.getIntValue(COL_TYPE)
-                        val note = Note(id, title, value, type)
+                        val path = cursor.getStringValue(COL_PATH) ?: ""
+                        val note = Note(id, title, value, type, path)
                         notes.add(note)
                     } catch (e: Exception) {
                         continue
@@ -110,7 +112,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     fun getNote(id: Int): Note? {
-        val cols = arrayOf(COL_TITLE, COL_VALUE, COL_TYPE)
+        val cols = arrayOf(COL_TITLE, COL_VALUE, COL_TYPE, COL_PATH)
         val selection = "$COL_ID = ?"
         val selectionArgs = arrayOf(id.toString())
         var note: Note? = null
@@ -121,7 +123,8 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
                 val title = cursor.getStringValue(COL_TITLE)
                 val value = cursor.getStringValue(COL_VALUE)
                 val type = cursor.getIntValue(COL_TYPE)
-                note = Note(id, title, value, type)
+                val path = cursor.getStringValue(COL_PATH) ?: ""
+                note = Note(id, title, value, type, path)
             }
         } finally {
             cursor?.close()
