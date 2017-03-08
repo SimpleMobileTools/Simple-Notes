@@ -178,7 +178,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                     toast(R.string.title_taken)
                 } else {
                     val content = file.readText()
-                    val note = Note(0, filename, content, TYPE_NOTE)
+                    val note = Note(0, filename, content, TYPE_NOTE, it)
                     addNewNote(note)
                 }
             }
