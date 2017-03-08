@@ -17,6 +17,10 @@
     <string name="open_file">Open file</string>
     <string name="save_as_file">Save as file</string>
     <string name="file_too_large">File too large, the limit is 10MB</string>
+    <string name="only_import_file_content">Only import the file content</string>
+    <string name="update_file_at_note">Update the file at updating the note</string>
+    <string name="delete_note_only">This will delete the note only.</string>
+    <string name="delete_file_itself">Delete the file itself too</string>
 
     <!-- Settings -->
     <string name="note_font_size">Note font size</string>
