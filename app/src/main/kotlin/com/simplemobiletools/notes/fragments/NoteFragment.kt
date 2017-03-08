@@ -22,6 +22,7 @@ import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.fragment_note.view.*
+import java.io.File
 
 class NoteFragment : Fragment() {
     var noteId = 0
@@ -84,7 +85,11 @@ class NoteFragment : Fragment() {
     fun getCurrentNoteViewText() = view.notes_view.text.toString()
 
     private fun getNoteStoredValue(): String {
-        return note.value
+        return if (note.path.isNotEmpty()) {
+            File(note.path).readText()
+        } else {
+            note.value
+        }
     }
 
     override fun onResume() {
