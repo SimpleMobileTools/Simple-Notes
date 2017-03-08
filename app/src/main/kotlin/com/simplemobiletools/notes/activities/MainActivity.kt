@@ -216,10 +216,15 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                     out.write(content)
                 }
             }
-            toast(R.string.file_saved)
+            noteSavedSuccessfully()
         } catch (e: Exception) {
             toast(R.string.unknown_error_occurred)
         }
+    }
+
+    fun noteSavedSuccessfully() {
+        val message = String.format(getString(R.string.note_saved_successfully), mCurrentNote.title)
+        toast(message)
     }
 
     private fun getCurrentNoteText() = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteText(view_pager.currentItem)

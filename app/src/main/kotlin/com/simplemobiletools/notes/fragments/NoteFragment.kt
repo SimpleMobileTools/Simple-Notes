@@ -77,6 +77,7 @@ class NoteFragment : Fragment() {
     private fun saveNoteValue(note: Note) {
         if (note.path.isEmpty()) {
             mDb.updateNoteValue(note)
+            (activity as MainActivity).noteSavedSuccessfully()
         } else {
             (activity as MainActivity).saveNoteValueToFile(note.path, getCurrentNoteViewText())
         }
