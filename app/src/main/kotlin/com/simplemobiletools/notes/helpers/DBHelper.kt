@@ -9,6 +9,7 @@ import com.simplemobiletools.commons.extensions.getIntValue
 import com.simplemobiletools.commons.extensions.getStringValue
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.models.Note
+import java.io.File
 import java.util.*
 
 class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHelper(mContext, DB_NAME, null, DB_VERSION) {
@@ -97,6 +98,11 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
                         val value = cursor.getStringValue(COL_VALUE)
                         val type = cursor.getIntValue(COL_TYPE)
                         val path = cursor.getStringValue(COL_PATH) ?: ""
+                        if (path.isNotEmpty() && !File(path).exists()) {
+                            deleteNote(id)
+                            continue
+                        }
+
                         val note = Note(id, title, value, type, path)
                         notes.add(note)
                     } catch (e: Exception) {
@@ -139,6 +145,11 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun updateNoteTitle(note: Note) {
         val values = ContentValues().apply { put(COL_TITLE, note.title) }
+        updateNote(note.id, values)
+    }
+
+    fun updateNotePath(note: Note) {
+        val values = ContentValues().apply { put(COL_PATH, note.path) }
         updateNote(note.id, values)
     }
 
