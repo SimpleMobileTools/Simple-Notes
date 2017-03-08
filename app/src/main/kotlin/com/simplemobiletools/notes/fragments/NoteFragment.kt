@@ -56,16 +56,14 @@ class NoteFragment : Fragment() {
         return view
     }
 
-    fun getCurrentNoteText() = view.notes_view.text.toString()
-
     fun saveText() {
-        val newText = getCurrentNoteText()
-        val oldText = note.value
+        val newText = getCurrentNoteViewText()
+        val oldText = getNoteStoredValue()
         if (newText != oldText) {
             note.value = newText
-            mDb.updateNoteValue(note)
-            context.updateWidget()
+            saveNoteValue(note)
         }
+        context.updateWidget()
     }
 
     fun showKeyboard() {
@@ -74,12 +72,26 @@ class NoteFragment : Fragment() {
         imm.showSoftInput(view.notes_view, InputMethodManager.SHOW_IMPLICIT)
     }
 
+    private fun saveNoteValue(note: Note) {
+        if (note.path.isEmpty()) {
+            mDb.updateNoteValue(note)
+        } else {
+
+        }
+    }
+
+    fun getCurrentNoteViewText() = view.notes_view.text.toString()
+
+    private fun getNoteStoredValue(): String {
+        return note.value
+    }
+
     override fun onResume() {
         super.onResume()
 
         val config = context.config
         view.notes_view.apply {
-            setText(note.value)
+            setText(getNoteStoredValue())
             setColors(config.textColor, config.primaryColor, config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
             gravity = context.getTextGravity()
