@@ -186,32 +186,39 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun saveAsFile() {
         SaveAsDialog(this, mCurrentNote.title) {
-            val file = File(it)
+            saveNoteValueToFile(it, getCurrentNoteText())
+        }
+    }
+
+    fun saveNoteValueToFile(path: String, content: String) {
+        try {
+            val file = File(path)
             if (file.isDirectory) {
                 toast(R.string.directory_exists)
-                return@SaveAsDialog
+                return
             }
 
-            val text = getCurrentNoteText()
-            if (needsStupidWritePermissions(it)) {
+            if (needsStupidWritePermissions(path)) {
                 if (isShowingPermDialog(file))
-                    return@SaveAsDialog
+                    return
 
-                var document = getFileDocument(it, config.treeUri) ?: return@SaveAsDialog
+                var document = getFileDocument(path, config.treeUri) ?: return
                 if (!file.exists()) {
                     document = document.createFile("", file.name)
                 }
                 contentResolver.openOutputStream(document.uri).apply {
-                    write(text.toByteArray(Charset.forName("UTF-8")))
+                    write(content.toByteArray(Charset.forName("UTF-8")))
                     flush()
                     close()
                 }
             } else {
                 file.printWriter().use { out ->
-                    out.write(text)
+                    out.write(content)
                 }
             }
             toast(R.string.file_saved)
+        } catch (e: Exception) {
+            toast(R.string.unknown_error_occurred)
         }
     }
 

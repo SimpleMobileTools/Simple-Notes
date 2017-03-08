@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import com.simplemobiletools.notes.R
+import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextGravity
 import com.simplemobiletools.notes.extensions.getTextSize
@@ -76,7 +77,7 @@ class NoteFragment : Fragment() {
         if (note.path.isEmpty()) {
             mDb.updateNoteValue(note)
         } else {
-
+            (activity as MainActivity).saveNoteValueToFile(note.path, getCurrentNoteViewText())
         }
     }
 
