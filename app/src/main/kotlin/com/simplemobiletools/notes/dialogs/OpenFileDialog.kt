@@ -8,6 +8,7 @@ import com.simplemobiletools.commons.extensions.getFilenameFromPath
 import com.simplemobiletools.commons.extensions.humanizePath
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.R
+import com.simplemobiletools.notes.R.id.open_file_update_file
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.dialog_open_file.view.*
@@ -25,10 +26,12 @@ class OpenFileDialog(val activity: Activity, val path: String, val callback: (no
                 .create().apply {
             activity.setupDialogStuff(view, this, R.string.open_file)
             getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener({
-                val file = File(path)
+                val updateFileOnEdit = view.open_file_type.checkedRadioButtonId == open_file_update_file
+                val storePath = if (updateFileOnEdit) path else ""
+                val storeContent = if (updateFileOnEdit) "" else File(path).readText()
+
                 val filename = path.getFilenameFromPath()
-                val content = file.readText()
-                val note = Note(0, filename, content, TYPE_NOTE, path)
+                val note = Note(0, filename, storeContent, TYPE_NOTE, storePath)
                 callback.invoke(note)
                 dismiss()
             })
