@@ -155,10 +155,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun tryOpenFile() {
-        if (hasReadStoragePermission()) {
+        if (hasWriteStoragePermission()) {
             openFile()
         } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), STORAGE_OPEN_FILE)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_OPEN_FILE)
         }
     }
 
