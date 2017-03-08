@@ -8,6 +8,10 @@ class Config(context: Context) : BaseConfig(context) {
         fun newInstance(context: Context) = Config(context)
     }
 
+    var displaySuccess: Boolean
+        get() = prefs.getBoolean(DISPLAY_SUCCESS, true)
+        set(displaySuccess) = prefs.edit().putBoolean(DISPLAY_SUCCESS, displaySuccess).apply()
+
     var clickableLinks: Boolean
         get() = prefs.getBoolean(CLICKABLE_LINKS, false)
         set(clickableLinks) = prefs.edit().putBoolean(CLICKABLE_LINKS, clickableLinks).apply()

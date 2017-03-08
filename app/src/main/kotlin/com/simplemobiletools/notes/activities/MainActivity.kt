@@ -223,11 +223,13 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     fun noteSavedSuccessfully() {
-        val message = String.format(getString(R.string.note_saved_successfully), mCurrentNote.title)
-        toast(message)
+        if (config.displaySuccess) {
+            val message = String.format(getString(R.string.note_saved_successfully), mCurrentNote.title)
+            toast(message)
+        }
     }
 
-    private fun getCurrentNoteText() = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteText(view_pager.currentItem)
+    private fun getCurrentNoteText() = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteViewText(view_pager.currentItem)
 
     private fun displayDeleteNotePrompt() {
         val message = String.format(getString(R.string.delete_note_prompt_message), mCurrentNote.title)

@@ -4,6 +4,7 @@ val NOTE_ID = "note_id"
 
 // shared preferences
 val CURRENT_NOTE_ID = "current_note_id"
+val DISPLAY_SUCCESS = "display_success"
 val CLICKABLE_LINKS = "clickable_links"
 val WIDGET_NOTE_ID = "widget_note_id"
 val FONT_SIZE = "font_size"

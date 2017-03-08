@@ -30,7 +30,7 @@ class NotesPagerAdapter(fm: FragmentManager, private val notes: List<Note>) : Fr
 
     override fun getPageTitle(position: Int) = notes[position].title
 
-    fun getCurrentNoteText(position: Int) = fragments[position].getCurrentNoteViewText()
+    fun getCurrentNoteViewText(position: Int) = fragments[position].getCurrentNoteViewText()
 
     fun showKeyboard(position: Int) = fragments[position]?.showKeyboard()
 }

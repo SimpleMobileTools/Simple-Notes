@@ -22,6 +22,7 @@ class SettingsActivity : SimpleActivity() {
         super.onResume()
 
         setupCustomizeColors()
+        setupDisplaySuccess()
         setupClickableLinks()
         setupFontSize()
         setupWidgetNote()
@@ -32,6 +33,14 @@ class SettingsActivity : SimpleActivity() {
     private fun setupCustomizeColors() {
         settings_customize_colors_holder.setOnClickListener {
             startCustomizationActivity()
+        }
+    }
+
+    private fun setupDisplaySuccess() {
+        settings_display_success.isChecked = config.displaySuccess
+        settings_display_success_holder.setOnClickListener {
+            settings_display_success.toggle()
+            config.displaySuccess = settings_display_success.isChecked
         }
     }
 
