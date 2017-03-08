@@ -102,6 +102,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        saveCurrentNote()
         when (item.itemId) {
             R.id.open_note -> displayOpenNoteDialog()
             R.id.new_note -> displayNewNoteDialog()
@@ -230,6 +231,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun getCurrentNoteText() = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteViewText(view_pager.currentItem)
+
+    private fun saveCurrentNote() = (view_pager.adapter as NotesPagerAdapter).saveCurrentNote(view_pager.currentItem)
 
     private fun displayDeleteNotePrompt() {
         val message = String.format(getString(R.string.delete_note_prompt_message), mCurrentNote.title)

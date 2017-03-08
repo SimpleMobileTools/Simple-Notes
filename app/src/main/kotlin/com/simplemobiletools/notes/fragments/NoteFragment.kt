@@ -59,6 +59,9 @@ class NoteFragment : Fragment() {
     }
 
     fun saveText() {
+        if (note.path.isNotEmpty() && !File(note.path).exists())
+            return
+
         val newText = getCurrentNoteViewText()
         val oldText = getNoteStoredValue()
         if (newText != oldText) {

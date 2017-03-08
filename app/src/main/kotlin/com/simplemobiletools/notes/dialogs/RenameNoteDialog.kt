@@ -1,18 +1,19 @@
 package com.simplemobiletools.notes.dialogs
 
-import android.app.Activity
 import android.content.DialogInterface.BUTTON_POSITIVE
+import android.provider.DocumentsContract
 import android.support.v7.app.AlertDialog
 import android.view.WindowManager
-import com.simplemobiletools.commons.extensions.setupDialogStuff
-import com.simplemobiletools.commons.extensions.toast
-import com.simplemobiletools.commons.extensions.value
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.R
+import com.simplemobiletools.notes.activities.SimpleActivity
+import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.new_note.view.*
+import java.io.File
 
-class RenameNoteDialog(val activity: Activity, val db: DBHelper, val note: Note, callback: (note: Note) -> Unit) {
+class RenameNoteDialog(val activity: SimpleActivity, val db: DBHelper, val note: Note, callback: (note: Note) -> Unit) {
 
     init {
         val view = activity.layoutInflater.inflate(R.layout.rename_note, null)
@@ -32,6 +33,37 @@ class RenameNoteDialog(val activity: Activity, val db: DBHelper, val note: Note,
                     activity.toast(R.string.title_taken)
                 } else {
                     note.title = title
+                    val path = note.path
+                    if (path.isNotEmpty()) {
+                        if (title.isEmpty()) {
+                            context.toast(R.string.filename_cannot_be_empty)
+                            return@setOnClickListener
+                        }
+
+                        val file = File(path)
+                        val newFile = File(file.parent, title)
+                        if (!newFile.name.isAValidFilename()) {
+                            context.toast(R.string.invalid_name)
+                            return@setOnClickListener
+                        }
+
+                        if (context.needsStupidWritePermissions(newFile.absolutePath)) {
+                            if (activity.isShowingPermDialog(file))
+                                return@setOnClickListener
+
+                            var document = context.getFastDocument(file)
+                            if (document?.isFile == false) {
+                                document = context.getFileDocument(file.absolutePath, context.config.treeUri)
+                            }
+
+                            DocumentsContract.renameDocument(context.contentResolver, document!!.uri, newFile.name)
+                        } else if (!file.renameTo(newFile)) {
+                            activity.toast(R.string.rename_file_error)
+                            return@setOnClickListener
+                        }
+                        note.path = newFile.absolutePath
+                        db.updateNotePath(note)
+                    }
                     db.updateNoteTitle(note)
                     dismiss()
                     callback.invoke(note)
