@@ -7,17 +7,18 @@ import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity
+import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.dialog_save_as.view.*
 import java.io.File
 
-class SaveAsDialog(val activity: SimpleActivity, val noteTitle: String, val callback: (savePath: String) -> Unit) {
+class SaveAsDialog(val activity: SimpleActivity, val note: Note, val callback: (savePath: String) -> Unit) {
 
     init {
-        var realPath = activity.internalStoragePath
+        var realPath = File(note.path).parent
         val view = LayoutInflater.from(activity).inflate(R.layout.dialog_save_as, null).apply {
             file_path.text = activity.humanizePath(realPath)
 
-            file_name.setText(noteTitle)
+            file_name.setText(note.title)
             file_path.setOnClickListener {
                 FilePickerDialog(activity, realPath, false, false, true) {
                     file_path.text = activity.humanizePath(it)

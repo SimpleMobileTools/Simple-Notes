@@ -4,11 +4,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.helpers.DBHelper
+import com.simplemobiletools.notes.helpers.FONT_SIZE_LARGE
+import com.simplemobiletools.notes.helpers.FONT_SIZE_NORMAL
+import com.simplemobiletools.notes.helpers.FONT_SIZE_SMALL
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_settings.*
 
@@ -53,16 +58,27 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupFontSize() {
-        settings_font_size.setSelection(config.fontSize)
-        settings_font_size.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                config.fontSize = settings_font_size.selectedItemPosition
-            }
+        settings_font_size.text = getFontSizeText()
+        settings_font_size_holder.setOnClickListener {
+            val items = arrayOf(
+                    RadioItem(0, R.string.small),
+                    RadioItem(1, R.string.normal),
+                    RadioItem(2, R.string.large),
+                    RadioItem(3, R.string.extra_large))
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
+            RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
+                config.fontSize = it
+                settings_font_size.text = getFontSizeText()
             }
         }
     }
+
+    private fun getFontSizeText() = getString(when (config.fontSize) {
+        FONT_SIZE_SMALL -> R.string.small
+        FONT_SIZE_NORMAL -> R.string.normal
+        FONT_SIZE_LARGE -> R.string.large
+        else -> R.string.extra_large
+    })
 
     private fun setupWidgetNote() {
         val notes = DBHelper.newInstance(this).getNotes()

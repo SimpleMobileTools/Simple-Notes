@@ -17,7 +17,7 @@ class Config(context: Context) : BaseConfig(context) {
         set(clickableLinks) = prefs.edit().putBoolean(CLICKABLE_LINKS, clickableLinks).apply()
 
     var fontSize: Int
-        get() = prefs.getInt(FONT_SIZE, FONT_SIZE_MEDIUM)
+        get() = prefs.getInt(FONT_SIZE, FONT_SIZE_NORMAL)
         set(size) = prefs.edit().putInt(FONT_SIZE, size).apply()
 
     var gravity: Int

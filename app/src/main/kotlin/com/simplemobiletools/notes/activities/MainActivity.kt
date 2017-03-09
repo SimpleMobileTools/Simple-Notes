@@ -185,7 +185,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun saveAsFile() {
-        SaveAsDialog(this, mCurrentNote.title) {
+        SaveAsDialog(this, mCurrentNote) {
             saveNoteValueToFile(it, getCurrentNoteText())
         }
     }
