@@ -243,6 +243,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         if (mNotes.size <= 1)
             return
 
+        val path = mCurrentNote.path
         mDb.deleteNote(mCurrentNote.id)
         mNotes = mDb.getNotes()
 
@@ -251,6 +252,17 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         config.widgetNoteId = firstNoteId
         invalidateOptionsMenu()
         initViewPager()
+
+        if (deleteFile) {
+            val file = File(path)
+            if (!file.delete() && !tryFastDocumentDelete(file)) {
+                val document = getFileDocument(path, config.treeUri) ?: return
+
+                if (!document.isFile || !document.delete()) {
+                    toast(R.string.unknown_error_occurred)
+                }
+            }
+        }
     }
 
     private fun displayOpenNoteDialog() {
