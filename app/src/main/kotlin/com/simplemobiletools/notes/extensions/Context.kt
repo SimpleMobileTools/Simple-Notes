@@ -4,7 +4,6 @@ import android.appwidget.AppWidgetManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.view.Gravity
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.helpers.*
 import com.simplemobiletools.notes.models.Note
@@ -16,13 +15,6 @@ fun Context.getTextSize() =
             FONT_SIZE_LARGE -> resources.getDimension(R.dimen.big_text_size)
             FONT_SIZE_EXTRA_LARGE -> resources.getDimension(R.dimen.extra_big_text_size)
             else -> resources.getDimension(R.dimen.bigger_text_size)
-        }
-
-fun Context.getTextGravity() =
-        when (config.gravity) {
-            GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
-            GRAVITY_RIGHT -> Gravity.RIGHT
-            else -> Gravity.LEFT
         }
 
 fun Context.updateWidget() {

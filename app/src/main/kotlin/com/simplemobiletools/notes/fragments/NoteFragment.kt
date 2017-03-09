@@ -8,14 +8,20 @@ import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
 import android.text.util.Linkify
 import android.util.TypedValue
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
-import com.simplemobiletools.notes.extensions.*
+import com.simplemobiletools.notes.extensions.config
+import com.simplemobiletools.notes.extensions.getNoteStoredValue
+import com.simplemobiletools.notes.extensions.getTextSize
+import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.helpers.DBHelper
+import com.simplemobiletools.notes.helpers.GRAVITY_CENTER
+import com.simplemobiletools.notes.helpers.GRAVITY_RIGHT
 import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.fragment_note.view.*
@@ -94,6 +100,12 @@ class NoteFragment : Fragment() {
 
     fun getCurrentNoteViewText() = view.notes_view.text.toString()
 
+    private fun getTextGravity() = when (context.config.gravity) {
+        GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
+        GRAVITY_RIGHT -> Gravity.RIGHT
+        else -> Gravity.LEFT
+    }
+
     override fun onResume() {
         super.onResume()
 
@@ -102,7 +114,7 @@ class NoteFragment : Fragment() {
             setText(context.getNoteStoredValue(note))
             setColors(config.textColor, config.primaryColor, config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
-            gravity = context.getTextGravity()
+            gravity = getTextGravity()
         }
     }
 
