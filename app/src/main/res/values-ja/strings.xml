@@ -24,7 +24,7 @@
     <string name="delete_note_only">This will delete the note only.</string>
     <string name="delete_file_itself">Delete the file itself too</string>
     <string name="note_saved_successfully">Note \"%1$s\" saved successfully</string>
-    <string name="display_success_message">Display save success message</string>
+    <string name="display_success_message">Display save success messages</string>
 
     <!-- Settings -->
     <string name="note_font_size">メモのフォントサイズ</string>
