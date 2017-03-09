@@ -3,46 +3,43 @@ package com.simplemobiletools.notes.dialogs
 import android.app.Activity
 import android.support.v7.app.AlertDialog
 import android.view.ViewGroup
-import android.widget.RadioButton
+import android.widget.LinearLayout
 import android.widget.RadioGroup
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.helpers.DBHelper
-import kotlinx.android.synthetic.main.dialog_radio_group.view.*
+import kotlinx.android.synthetic.main.open_note_item.view.*
 
-class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> Unit) : RadioGroup.OnCheckedChangeListener {
-    val dialog: AlertDialog?
-    var wasInit = false
+class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> Unit) {
+    lateinit var dialog: AlertDialog
 
     init {
-        val view = activity.layoutInflater.inflate(R.layout.dialog_radio_group, null)
-        val radioGroup = view.dialog_radio_group
-        radioGroup.setOnCheckedChangeListener(this)
+        val view = LinearLayout(activity).apply {
+            orientation = LinearLayout.VERTICAL
+            layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        }
 
         val notes = DBHelper.newInstance(activity).getNotes()
         notes.forEach {
-            val radioButton = activity.layoutInflater.inflate(R.layout.radio_button, null) as RadioButton
-            radioButton.apply {
-                text = it.title
-                isChecked = it.id == activity.config.currentNoteId
-                id = it.id
+            activity.layoutInflater.inflate(R.layout.open_note_item, null).apply {
+                open_note_item_radio_button.apply {
+                    text = it.title
+                    isChecked = it.id == activity.config.currentNoteId
+                    id = it.id
+
+                    setOnClickListener {
+                        callback.invoke(id)
+                        dialog.dismiss()
+                    }
+                }
+                view.addView(this, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
             }
-            radioGroup.addView(radioButton, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
         }
 
         dialog = AlertDialog.Builder(activity)
                 .create().apply {
             activity.setupDialogStuff(view, this, R.string.pick_a_note)
-        }
-
-        wasInit = true
-    }
-
-    override fun onCheckedChanged(group: RadioGroup, checkedId: Int) {
-        if (wasInit) {
-            callback.invoke(checkedId)
-            dialog?.dismiss()
         }
     }
 }
