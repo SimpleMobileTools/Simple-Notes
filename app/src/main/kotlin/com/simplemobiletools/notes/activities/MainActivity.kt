@@ -217,15 +217,15 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                     out.write(content)
                 }
             }
-            noteSavedSuccessfully()
+            noteSavedSuccessfully(path.getFilenameFromPath())
         } catch (e: Exception) {
             toast(R.string.unknown_error_occurred)
         }
     }
 
-    fun noteSavedSuccessfully() {
+    fun noteSavedSuccessfully(title: String) {
         if (config.displaySuccess) {
-            val message = String.format(getString(R.string.note_saved_successfully), mCurrentNote.title)
+            val message = String.format(getString(R.string.note_saved_successfully), title)
             toast(message)
         }
     }

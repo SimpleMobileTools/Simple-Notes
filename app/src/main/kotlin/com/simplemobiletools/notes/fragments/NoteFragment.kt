@@ -26,8 +26,8 @@ import java.io.File
 
 class NoteFragment : Fragment() {
     var noteId = 0
-    lateinit var view: ViewGroup
     lateinit var note: Note
+    lateinit var view: ViewGroup
     lateinit var mDb: DBHelper
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -58,6 +58,12 @@ class NoteFragment : Fragment() {
         return view
     }
 
+    override fun setMenuVisibility(menuVisible: Boolean) {
+        super.setMenuVisibility(menuVisible)
+        if (noteId != 0)
+            saveText()
+    }
+
     fun saveText() {
         if (note.path.isNotEmpty() && !File(note.path).exists())
             return
@@ -67,8 +73,8 @@ class NoteFragment : Fragment() {
         if (newText != oldText) {
             note.value = newText
             saveNoteValue(note)
+            context.updateWidget()
         }
-        context.updateWidget()
     }
 
     fun showKeyboard() {
@@ -80,7 +86,7 @@ class NoteFragment : Fragment() {
     private fun saveNoteValue(note: Note) {
         if (note.path.isEmpty()) {
             mDb.updateNoteValue(note)
-            (activity as MainActivity).noteSavedSuccessfully()
+            (activity as MainActivity).noteSavedSuccessfully(note.title)
         } else {
             (activity as MainActivity).saveNoteValueToFile(note.path, getCurrentNoteViewText())
         }
