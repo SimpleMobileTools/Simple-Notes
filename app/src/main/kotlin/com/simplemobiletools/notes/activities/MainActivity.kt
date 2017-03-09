@@ -11,7 +11,6 @@ import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.simplemobiletools.commons.dialogs.ConfirmationDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
@@ -235,13 +234,12 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun saveCurrentNote() = (view_pager.adapter as NotesPagerAdapter).saveCurrentNote(view_pager.currentItem)
 
     private fun displayDeleteNotePrompt() {
-        val message = String.format(getString(R.string.delete_note_prompt_message), mCurrentNote.title)
-        ConfirmationDialog(this, message) {
-            deleteNote()
+        DeleteNoteDialog(this, mCurrentNote) {
+            deleteNote(it)
         }
     }
 
-    private fun deleteNote() {
+    private fun deleteNote(deleteFile: Boolean) {
         if (mNotes.size <= 1)
             return
 
