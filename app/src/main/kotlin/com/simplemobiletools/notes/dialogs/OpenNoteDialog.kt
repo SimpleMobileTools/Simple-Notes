@@ -1,11 +1,15 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.app.Activity
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.support.v7.app.AlertDialog
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.RadioGroup
+import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.setupDialogStuff
+import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.helpers.DBHelper
@@ -20,17 +24,26 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
             layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         }
 
+        val textColor = activity.config.textColor
         val notes = DBHelper.newInstance(activity).getNotes()
         notes.forEach {
             activity.layoutInflater.inflate(R.layout.open_note_item, null).apply {
+                val note = it
                 open_note_item_radio_button.apply {
-                    text = it.title
-                    isChecked = it.id == activity.config.currentNoteId
-                    id = it.id
+                    text = note.title
+                    isChecked = note.id == activity.config.currentNoteId
+                    id = note.id
 
                     setOnClickListener {
                         callback.invoke(id)
                         dialog.dismiss()
+                    }
+                }
+                open_note_item_icon.apply {
+                    beVisibleIf(note.path.isNotEmpty())
+                    colorFilter = PorterDuffColorFilter(textColor, PorterDuff.Mode.SRC_IN)
+                    setOnClickListener {
+                        activity.toast(note.path)
                     }
                 }
                 view.addView(this, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))

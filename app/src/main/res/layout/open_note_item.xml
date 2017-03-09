@@ -9,6 +9,18 @@
     <com.simplemobiletools.commons.views.MyCompatRadioButton
         android:id="@+id/open_note_item_radio_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/open_note_item_icon"/>
+
+    <ImageView
+        android:id="@+id/open_note_item_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:layout_marginRight="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:src="@drawable/ic_attach_file"/>
 
 </RelativeLayout>
