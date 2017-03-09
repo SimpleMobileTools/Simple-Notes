@@ -208,7 +208,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                     document = document.createFile("", file.name)
                 }
                 contentResolver.openOutputStream(document.uri).apply {
-                    write(content.toByteArray(Charset.forName("UTF-8")))
+                    write(content.toByteArray(Charset.forName("UTF-8")), 0, content.length)
                     flush()
                     close()
                 }
