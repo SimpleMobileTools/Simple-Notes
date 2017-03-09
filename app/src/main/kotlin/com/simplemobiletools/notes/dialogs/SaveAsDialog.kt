@@ -17,17 +17,7 @@ class SaveAsDialog(val activity: SimpleActivity, val noteTitle: String, val call
         val view = LayoutInflater.from(activity).inflate(R.layout.dialog_save_as, null).apply {
             file_path.text = activity.humanizePath(realPath)
 
-            val fullName = noteTitle
-            val dotAt = fullName.lastIndexOf(".")
-            var name = fullName
-
-            if (dotAt > 0) {
-                name = fullName.substring(0, dotAt)
-                val extension = fullName.substring(dotAt + 1)
-                file_extension.setText(extension)
-            }
-
-            file_name.setText(name)
+            file_name.setText(noteTitle)
             file_path.setOnClickListener {
                 FilePickerDialog(activity, realPath, false, false, true) {
                     file_path.text = activity.humanizePath(it)
@@ -44,18 +34,13 @@ class SaveAsDialog(val activity: SimpleActivity, val noteTitle: String, val call
             activity.setupDialogStuff(view, this, R.string.save_as)
             getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener({
                 val filename = view.file_name.value
-                val extension = view.file_extension.value
 
                 if (filename.isEmpty()) {
                     context.toast(R.string.filename_cannot_be_empty)
                     return@setOnClickListener
                 }
 
-                var fullFileName = filename
-                if (extension.trim().isNotEmpty())
-                    fullFileName += ".$extension"
-
-                val newFile = File(realPath, fullFileName)
+                val newFile = File(realPath, filename)
                 if (!newFile.name.isAValidFilename()) {
                     context.toast(R.string.filename_invalid_characters)
                     return@setOnClickListener
