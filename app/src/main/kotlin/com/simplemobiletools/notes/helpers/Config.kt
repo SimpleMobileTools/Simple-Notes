@@ -9,7 +9,7 @@ class Config(context: Context) : BaseConfig(context) {
     }
 
     var displaySuccess: Boolean
-        get() = prefs.getBoolean(DISPLAY_SUCCESS, true)
+        get() = prefs.getBoolean(DISPLAY_SUCCESS, false)
         set(displaySuccess) = prefs.edit().putBoolean(DISPLAY_SUCCESS, displaySuccess).apply()
 
     var clickableLinks: Boolean
