@@ -66,6 +66,7 @@ class SettingsActivity : SimpleActivity() {
             RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
                 config.fontSize = it
                 settings_font_size.text = getFontSizeText()
+                updateWidget()
             }
         }
     }

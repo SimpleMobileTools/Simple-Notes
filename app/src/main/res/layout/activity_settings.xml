@@ -125,7 +125,7 @@
                 android:layout_toStartOf="@+id/settings_gravity"
                 android:paddingLeft="@dimen/medium_margin"
                 android:paddingRight="@dimen/medium_margin"
-                android:text="@string/note_font_size"/>
+                android:text="@string/gravity"/>
 
             <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_gravity"

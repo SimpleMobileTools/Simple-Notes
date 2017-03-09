@@ -7,6 +7,8 @@ import android.content.Intent
 import android.view.Gravity
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.helpers.*
+import com.simplemobiletools.notes.models.Note
+import java.io.File
 
 fun Context.getTextSize() =
         when (config.fontSize) {
@@ -35,3 +37,11 @@ fun Context.updateWidget() {
 }
 
 val Context.config: Config get() = Config.newInstance(this)
+
+fun Context.getNoteStoredValue(note: Note): String {
+    return if (note.path.isNotEmpty()) {
+        File(note.path).readText()
+    } else {
+        note.value
+    }
+}

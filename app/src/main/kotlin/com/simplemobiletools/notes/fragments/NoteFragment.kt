@@ -14,10 +14,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
-import com.simplemobiletools.notes.extensions.config
-import com.simplemobiletools.notes.extensions.getTextGravity
-import com.simplemobiletools.notes.extensions.getTextSize
-import com.simplemobiletools.notes.extensions.updateWidget
+import com.simplemobiletools.notes.extensions.*
 import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
@@ -68,8 +65,11 @@ class NoteFragment : Fragment() {
         if (note.path.isNotEmpty() && !File(note.path).exists())
             return
 
+        if (context == null || activity == null)
+            return
+
         val newText = getCurrentNoteViewText()
-        val oldText = getNoteStoredValue()
+        val oldText = context.getNoteStoredValue(note)
         if (newText != oldText) {
             note.value = newText
             saveNoteValue(note)
@@ -94,20 +94,12 @@ class NoteFragment : Fragment() {
 
     fun getCurrentNoteViewText() = view.notes_view.text.toString()
 
-    private fun getNoteStoredValue(): String {
-        return if (note.path.isNotEmpty()) {
-            File(note.path).readText()
-        } else {
-            note.value
-        }
-    }
-
     override fun onResume() {
         super.onResume()
 
         val config = context.config
         view.notes_view.apply {
-            setText(getNoteStoredValue())
+            setText(context.getNoteStoredValue(note))
             setColors(config.textColor, config.primaryColor, config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
             gravity = context.getTextGravity()
