@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="gravities" translatable="false">
-        <item>@string/left</item>
-        <item>@string/center</item>
-        <item>@string/right</item>
-    </string-array>
-</resources>

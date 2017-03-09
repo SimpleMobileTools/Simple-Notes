@@ -10,10 +10,7 @@ import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.updateWidget
-import com.simplemobiletools.notes.helpers.DBHelper
-import com.simplemobiletools.notes.helpers.FONT_SIZE_LARGE
-import com.simplemobiletools.notes.helpers.FONT_SIZE_NORMAL
-import com.simplemobiletools.notes.helpers.FONT_SIZE_SMALL
+import com.simplemobiletools.notes.helpers.*
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_settings.*
 
@@ -30,8 +27,8 @@ class SettingsActivity : SimpleActivity() {
         setupDisplaySuccess()
         setupClickableLinks()
         setupFontSize()
-        setupWidgetNote()
         setupGravity()
+        setupWidgetNote()
         updateTextColors(settings_scrollview)
     }
 
@@ -80,6 +77,28 @@ class SettingsActivity : SimpleActivity() {
         else -> R.string.extra_large
     })
 
+    private fun setupGravity() {
+        settings_gravity.text = getGravityText()
+        settings_gravity_holder.setOnClickListener {
+            val items = arrayOf(
+                    RadioItem(0, R.string.left),
+                    RadioItem(1, R.string.center),
+                    RadioItem(2, R.string.right))
+
+            RadioGroupDialog(this@SettingsActivity, items, config.gravity) {
+                config.gravity = it
+                settings_gravity.text = getGravityText()
+                updateWidget()
+            }
+        }
+    }
+
+    private fun getGravityText() = getString(when (config.gravity) {
+        GRAVITY_LEFT -> R.string.left
+        GRAVITY_CENTER -> R.string.center
+        else -> R.string.right
+    })
+
     private fun setupWidgetNote() {
         val notes = DBHelper.newInstance(this).getNotes()
         if (notes.size <= 1) {
@@ -96,19 +115,6 @@ class SettingsActivity : SimpleActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val note = notes[settings_widget_note.selectedItemPosition]
                 config.widgetNoteId = note.id
-                updateWidget()
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-            }
-        }
-    }
-
-    private fun setupGravity() {
-        settings_gravity.setSelection(config.gravity)
-        settings_gravity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                config.gravity = settings_gravity.selectedItemPosition
                 updateWidget()
             }
 
