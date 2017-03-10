@@ -1,5 +1,6 @@
 package com.simplemobiletools.notes.dialogs
 
+import android.os.Environment
 import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.WindowManager
@@ -14,7 +15,7 @@ import java.io.File
 class SaveAsDialog(val activity: SimpleActivity, val note: Note, val callback: (savePath: String) -> Unit) {
 
     init {
-        var realPath = File(note.path).parent
+        var realPath = File(note.path).parent ?: Environment.getExternalStorageDirectory().toString()
         val view = LayoutInflater.from(activity).inflate(R.layout.dialog_save_as, null).apply {
             file_path.text = activity.humanizePath(realPath)
 
