@@ -1,9 +1,8 @@
 package com.simplemobiletools.notes.activities
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.models.RadioItem
@@ -15,9 +14,12 @@ import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : SimpleActivity() {
+    lateinit var res: Resources
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+        res = resources
     }
 
     override fun onResume() {
@@ -57,11 +59,11 @@ class SettingsActivity : SimpleActivity() {
     private fun setupFontSize() {
         settings_font_size.text = getFontSizeText()
         settings_font_size_holder.setOnClickListener {
-            val items = arrayOf(
-                    RadioItem(0, R.string.small),
-                    RadioItem(1, R.string.normal),
-                    RadioItem(2, R.string.large),
-                    RadioItem(3, R.string.extra_large))
+            val items = arrayListOf(
+                    RadioItem(0, res.getString(R.string.small)),
+                    RadioItem(1, res.getString(R.string.normal)),
+                    RadioItem(2, res.getString(R.string.large)),
+                    RadioItem(3, res.getString(R.string.extra_large)))
 
             RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
                 config.fontSize = it
@@ -81,10 +83,10 @@ class SettingsActivity : SimpleActivity() {
     private fun setupGravity() {
         settings_gravity.text = getGravityText()
         settings_gravity_holder.setOnClickListener {
-            val items = arrayOf(
-                    RadioItem(0, R.string.left),
-                    RadioItem(1, R.string.center),
-                    RadioItem(2, R.string.right))
+            val items = arrayListOf(
+                    RadioItem(0, res.getString(R.string.left)),
+                    RadioItem(1, res.getString(R.string.center)),
+                    RadioItem(2, res.getString(R.string.right)))
 
             RadioGroupDialog(this@SettingsActivity, items, config.gravity) {
                 config.gravity = it
@@ -107,36 +109,19 @@ class SettingsActivity : SimpleActivity() {
             return
         }
 
-        val adapter = getSpinnerAdapter(notes)
-        settings_widget_note.adapter = adapter
+        settings_widget_note.text = getCurrentWidgetNoteTitle(config.widgetNoteId, notes)
+        settings_widget_note_holder.setOnClickListener {
+            val items = notes.map { RadioItem(it.id, it.title) } as ArrayList
 
-        val noteIndex = getNoteIndexWithId(config.widgetNoteId, notes)
-        settings_widget_note.setSelection(noteIndex)
-        settings_widget_note.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                val note = notes[settings_widget_note.selectedItemPosition]
-                config.widgetNoteId = note.id
+            RadioGroupDialog(this@SettingsActivity, items, config.widgetNoteId) {
+                config.widgetNoteId = it
+                settings_widget_note.text = getCurrentWidgetNoteTitle(it, notes)
                 updateWidget()
             }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-            }
         }
     }
 
-    private fun getNoteIndexWithId(id: Int, notes: List<Note>): Int {
-        for (i in 0..notes.count() - 1) {
-            if (notes[i].id == id) {
-                return i
-            }
-        }
-        return 0
-    }
-
-    private fun getSpinnerAdapter(notes: List<Note>): ArrayAdapter<String> {
-        val titles = notes.map(Note::title)
-        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, titles)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        return adapter
+    private fun getCurrentWidgetNoteTitle(currentNoteId: Int, notes: List<Note>): String {
+        return notes.firstOrNull { it.id == currentNoteId }?.title ?: ""
     }
 }
