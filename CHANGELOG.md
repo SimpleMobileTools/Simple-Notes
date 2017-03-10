@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 2.1.0 *(2017-03-10)*
+----------------------------
+
+ * Added an option to make emails and links clickable
+ * Allow importing text from files
+ * Allow saving notes to files
+ * Many smaller improvements and bugfixes
+
 Version 2.0.3 *(2017-01-23)*
 ----------------------------
 
