@@ -60,10 +60,10 @@ class SettingsActivity : SimpleActivity() {
         settings_font_size.text = getFontSizeText()
         settings_font_size_holder.setOnClickListener {
             val items = arrayListOf(
-                    RadioItem(0, res.getString(R.string.small)),
-                    RadioItem(1, res.getString(R.string.normal)),
-                    RadioItem(2, res.getString(R.string.large)),
-                    RadioItem(3, res.getString(R.string.extra_large)))
+                    RadioItem(FONT_SIZE_SMALL, res.getString(R.string.small)),
+                    RadioItem(FONT_SIZE_NORMAL, res.getString(R.string.normal)),
+                    RadioItem(FONT_SIZE_LARGE, res.getString(R.string.large)),
+                    RadioItem(FONT_SIZE_EXTRA_LARGE, res.getString(R.string.extra_large)))
 
             RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
                 config.fontSize = it
@@ -84,9 +84,9 @@ class SettingsActivity : SimpleActivity() {
         settings_gravity.text = getGravityText()
         settings_gravity_holder.setOnClickListener {
             val items = arrayListOf(
-                    RadioItem(0, res.getString(R.string.left)),
-                    RadioItem(1, res.getString(R.string.center)),
-                    RadioItem(2, res.getString(R.string.right)))
+                    RadioItem(GRAVITY_LEFT, res.getString(R.string.left)),
+                    RadioItem(GRAVITY_CENTER, res.getString(R.string.center)),
+                    RadioItem(GRAVITY_RIGHT, res.getString(R.string.right)))
 
             RadioGroupDialog(this@SettingsActivity, items, config.gravity) {
                 config.gravity = it
