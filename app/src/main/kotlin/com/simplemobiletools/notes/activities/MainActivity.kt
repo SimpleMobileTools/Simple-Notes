@@ -194,22 +194,21 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         try {
             val file = File(path)
             if (file.isDirectory) {
-                toast(R.string.directory_exists)
+                toast(R.string.name_taken)
                 return
             }
 
             if (needsStupidWritePermissions(path)) {
-                if (isShowingPermDialog(file))
-                    return
-
-                var document = getFileDocument(path, config.treeUri) ?: return
-                if (!file.exists()) {
-                    document = document.createFile("", file.name)
-                }
-                contentResolver.openOutputStream(document.uri).apply {
-                    write(content.toByteArray(Charset.forName("UTF-8")), 0, content.length)
-                    flush()
-                    close()
+                handleSAFDialog(file) {
+                    var document = getFileDocument(path, config.treeUri) ?: return@handleSAFDialog
+                    if (!file.exists()) {
+                        document = document.createFile("", file.name)
+                    }
+                    contentResolver.openOutputStream(document.uri).apply {
+                        write(content.toByteArray(Charset.forName("UTF-8")), 0, content.length)
+                        flush()
+                        close()
+                    }
                 }
             } else {
                 file.printWriter().use { out ->
@@ -254,11 +253,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         initViewPager()
 
         if (deleteFile) {
-            val file = File(path)
-            if (!file.delete() && !tryFastDocumentDelete(file)) {
-                val document = getFileDocument(path, config.treeUri) ?: return
-
-                if (!document.isFile || !document.delete()) {
+            deleteFile(File(path)) {
+                if (!it) {
                     toast(R.string.unknown_error_occurred)
                 }
             }

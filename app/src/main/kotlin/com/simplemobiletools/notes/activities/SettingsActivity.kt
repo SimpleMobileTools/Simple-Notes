@@ -66,7 +66,7 @@ class SettingsActivity : SimpleActivity() {
                     RadioItem(FONT_SIZE_EXTRA_LARGE, res.getString(R.string.extra_large)))
 
             RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
-                config.fontSize = it
+                config.fontSize = it as Int
                 settings_font_size.text = getFontSizeText()
                 updateWidget()
             }
@@ -89,7 +89,7 @@ class SettingsActivity : SimpleActivity() {
                     RadioItem(GRAVITY_RIGHT, res.getString(R.string.right)))
 
             RadioGroupDialog(this@SettingsActivity, items, config.gravity) {
-                config.gravity = it
+                config.gravity = it as Int
                 settings_gravity.text = getGravityText()
                 updateWidget()
             }
@@ -114,7 +114,7 @@ class SettingsActivity : SimpleActivity() {
             val items = notes.map { RadioItem(it.id, it.title) } as ArrayList
 
             RadioGroupDialog(this@SettingsActivity, items, config.widgetNoteId) {
-                config.widgetNoteId = it
+                config.widgetNoteId = it as Int
                 settings_widget_note.text = getCurrentWidgetNoteTitle(it, notes)
                 updateWidget()
             }

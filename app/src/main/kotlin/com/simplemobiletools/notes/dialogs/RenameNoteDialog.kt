@@ -1,13 +1,11 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.content.DialogInterface.BUTTON_POSITIVE
-import android.provider.DocumentsContract
 import android.support.v7.app.AlertDialog
 import android.view.WindowManager
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity
-import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.new_note.view.*
@@ -47,22 +45,15 @@ class RenameNoteDialog(val activity: SimpleActivity, val db: DBHelper, val note:
                             return@setOnClickListener
                         }
 
-                        if (context.needsStupidWritePermissions(newFile.absolutePath)) {
-                            if (activity.isShowingPermDialog(file))
-                                return@setOnClickListener
-
-                            var document = context.getFastDocument(file)
-                            if (document?.isFile == false) {
-                                document = context.getFileDocument(file.absolutePath, context.config.treeUri)
+                        activity.renameFile(file, newFile) {
+                            if (it) {
+                                note.path = newFile.absolutePath
+                                db.updateNotePath(note)
+                            } else {
+                                activity.toast(R.string.rename_file_error)
+                                return@renameFile
                             }
-
-                            DocumentsContract.renameDocument(context.contentResolver, document!!.uri, newFile.name)
-                        } else if (!file.renameTo(newFile)) {
-                            activity.toast(R.string.rename_file_error)
-                            return@setOnClickListener
                         }
-                        note.path = newFile.absolutePath
-                        db.updateNotePath(note)
                     }
                     db.updateNoteTitle(note)
                     dismiss()
