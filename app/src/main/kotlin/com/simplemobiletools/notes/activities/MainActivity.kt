@@ -24,6 +24,7 @@ import com.simplemobiletools.notes.dialogs.*
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.DBHelper
+import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
@@ -55,7 +56,11 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun initViewPager() {
         mNotes = mDb.getNotes()
         mCurrentNote = mNotes[0]
-        val itemIndex = getNoteIndexWithId(config.currentNoteId)
+        var wantedNoteId = intent.getIntExtra(OPEN_NOTE_ID, -1)
+        if (wantedNoteId == -1)
+            wantedNoteId = config.currentNoteId
+
+        val itemIndex = getNoteIndexWithId(wantedNoteId)
 
         mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes)
         view_pager.apply {

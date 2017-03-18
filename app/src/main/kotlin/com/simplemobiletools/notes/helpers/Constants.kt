@@ -1,6 +1,7 @@
 package com.simplemobiletools.notes.helpers
 
 val NOTE_ID = "note_id"
+val OPEN_NOTE_ID = "open_note_id"
 
 // shared preferences
 val CURRENT_NOTE_ID = "current_note_id"

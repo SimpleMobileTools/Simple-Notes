@@ -60,9 +60,12 @@ class MyWidgetProvider : AppWidgetProvider() {
     }
 
     private fun setupAppOpenIntent(id: Int, context: Context) {
-        val intent = Intent(context, SplashActivity::class.java)
-        val pendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
-        mRemoteViews.setOnClickPendingIntent(id, pendingIntent)
+        val widgetId = context.config.widgetNoteId
+        Intent(context, SplashActivity::class.java).apply {
+            putExtra(OPEN_NOTE_ID, widgetId)
+            val pendingIntent = PendingIntent.getActivity(context, widgetId, this, 0)
+            mRemoteViews.setOnClickPendingIntent(id, pendingIntent)
+        }
     }
 
     private fun updateWidget(widgetManager: AppWidgetManager, widgetId: Int, remoteViews: RemoteViews, context: Context) {
