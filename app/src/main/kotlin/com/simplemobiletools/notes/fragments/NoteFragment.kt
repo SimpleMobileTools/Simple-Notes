@@ -94,7 +94,7 @@ class NoteFragment : Fragment() {
             mDb.updateNoteValue(note)
             (activity as MainActivity).noteSavedSuccessfully(note.title)
         } else {
-            (activity as MainActivity).saveNoteValueToFile(note.path, getCurrentNoteViewText())
+            (activity as MainActivity).exportNoteValueToFile(note.path, getCurrentNoteViewText())
         }
     }
 

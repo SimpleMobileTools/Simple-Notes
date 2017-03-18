@@ -9,14 +9,14 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity
 import com.simplemobiletools.notes.models.Note
-import kotlinx.android.synthetic.main.dialog_save_as.view.*
+import kotlinx.android.synthetic.main.dialog_export_as.view.*
 import java.io.File
 
-class SaveAsDialog(val activity: SimpleActivity, val note: Note, val callback: (savePath: String) -> Unit) {
+class ExportAsDialog(val activity: SimpleActivity, val note: Note, val callback: (exportPath: String) -> Unit) {
 
     init {
         var realPath = File(note.path).parent ?: Environment.getExternalStorageDirectory().toString()
-        val view = LayoutInflater.from(activity).inflate(R.layout.dialog_save_as, null).apply {
+        val view = LayoutInflater.from(activity).inflate(R.layout.dialog_export_as, null).apply {
             file_path.text = activity.humanizePath(realPath)
 
             file_name.setText(note.title)
@@ -33,7 +33,7 @@ class SaveAsDialog(val activity: SimpleActivity, val note: Note, val callback: (
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
             window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-            activity.setupDialogStuff(view, this, R.string.save_as)
+            activity.setupDialogStuff(view, this, R.string.export_as_file)
             getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener({
                 val filename = view.file_name.value
 

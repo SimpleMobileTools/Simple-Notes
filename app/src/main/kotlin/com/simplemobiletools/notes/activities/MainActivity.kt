@@ -33,7 +33,7 @@ import java.nio.charset.Charset
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     val STORAGE_OPEN_FILE = 1
-    val STORAGE_SAVE_AS_FILE = 2
+    val STORAGE_EXPORT_AS_FILE = 2
 
     lateinit var mCurrentNote: Note
     lateinit var mAdapter: NotesPagerAdapter
@@ -113,7 +113,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             R.id.rename_note -> displayRenameDialog()
             R.id.share -> shareText()
             R.id.open_file -> tryOpenFile()
-            R.id.save_as_file -> trySaveAsFile()
+            R.id.export_as_file -> tryExportAsFile()
             R.id.delete_note -> displayDeleteNotePrompt()
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
@@ -181,21 +181,21 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
-    private fun trySaveAsFile() {
+    private fun tryExportAsFile() {
         if (hasWriteStoragePermission()) {
-            saveAsFile()
+            exportAsFile()
         } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_SAVE_AS_FILE)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_EXPORT_AS_FILE)
         }
     }
 
-    private fun saveAsFile() {
-        SaveAsDialog(this, mCurrentNote) {
-            saveNoteValueToFile(it, getCurrentNoteText())
+    private fun exportAsFile() {
+        ExportAsDialog(this, mCurrentNote) {
+            exportNoteValueToFile(it, getCurrentNoteText())
         }
     }
 
-    fun saveNoteValueToFile(path: String, content: String) {
+    fun exportNoteValueToFile(path: String, content: String) {
         try {
             val file = File(path)
             if (file.isDirectory) {
@@ -306,8 +306,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             if (requestCode == STORAGE_OPEN_FILE) {
                 openFile()
-            } else if (requestCode == STORAGE_SAVE_AS_FILE) {
-                saveAsFile()
+            } else if (requestCode == STORAGE_EXPORT_AS_FILE) {
+                exportAsFile()
             }
         }
     }
