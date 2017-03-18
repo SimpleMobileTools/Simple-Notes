@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 2.1.1 *(2017-03-18)*
+----------------------------
+
+ * Open the widgets' note on widget click
+ * Couple SD card file saving fixes
+
 Version 2.1.0 *(2017-03-10)*
 ----------------------------
 
