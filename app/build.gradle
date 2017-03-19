@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    compile 'com.simplemobiletools:commons:2.13.4'
+    compile 'com.simplemobiletools:commons:2.13.7'
     compile 'com.facebook.stetho:stetho:1.4.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
