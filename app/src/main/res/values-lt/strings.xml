@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Simple Notes</string>
+    <string name="app_launcher_name">Notes</string>
+    <string name="widget_config">Thank you for using Simple Notes.\nFor more simple apps please visit SimpleMobileTools.com.\n</string>
+    <string name="cannot_share_empty_text">Cannot share empty text</string>
+    <string name="simple_note">Simple Note</string>
+    <string name="new_note">Add a new note</string>
+    <string name="no_title">Please name your note</string>
+    <string name="title_taken">A note with that title already exists</string>
+    <string name="open_note">Open note</string>
+    <string name="delete_note">Delete note</string>
+    <string name="delete_note_prompt_title">Delete note</string>
+    <string name="delete_note_prompt_message">Are you sure you want to delete note \"%1$s\"?</string>
+    <string name="pick_a_note">Pick a note</string>
+    <string name="rename_note">Rename note</string>
+    <string name="general_note">General note</string>
+
+    <!-- File notes -->
+    <string name="open_file">Open file</string>
+    <string name="export_as_file">Export as file</string>
+    <string name="file_too_large">File too large, the limit is 10MB</string>
+    <string name="only_import_file_content">Only import the file content</string>
+    <string name="update_file_at_note">Update the file itself at updating the note</string>
+    <string name="delete_file_itself">Also delete file \"%1$s\"</string>
+    <string name="note_saved_successfully">Note \"%1$s\" saved successfully</string>
+    <string name="display_success_message">Display save success messages</string>
+
+    <!-- Settings -->
+    <string name="widget_note">Note used in widget</string>
+    <string name="links_and_emails_clickable">Make links and emails clickable</string>
+    <string name="note_font_size">Note font size</string>
+    <string name="small">Small</string>
+    <string name="normal">Normal</string>
+    <string name="large">Large</string>
+    <string name="extra_large">Extra Large</string>
+    <string name="gravity">Gravity</string>
+    <string name="left">Left</string>
+    <string name="center">Center</string>
+    <string name="right">Right</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">A simple textfield for adding quick notes, without ads.</string>
+    <string name="app_long_description">
+        Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
+
+
+        You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
+
+        Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
+
+        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/library/src/main/res
+    -->
+</resources>
