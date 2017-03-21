@@ -17,7 +17,7 @@
     <string name="open_file">Abrir ficheiro</string>
 
     <!-- File notes -->
-    <string name="export_as_file">Export as file</string>
+    <string name="export_as_file">Exportar como ficheiro</string>
     <string name="file_too_large">Ficheiro muito grande, o limite são 10 MB</string>
     <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro</string>
     <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota</string>
