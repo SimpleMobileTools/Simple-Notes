@@ -16,7 +16,7 @@
     <string name="general_note">Note générale</string>
 
     <!-- File notes -->
-    <string name="open_file">Ouvrir le fichiere</string>
+    <string name="open_file">Ouvrir le fichier</string>
     <string name="export_as_file">Exporter dans un fichier</string>
     <string name="file_too_large">Taille du fichier trop importante, la limite est de 10MB</string>
     <string name="only_import_file_content">Importer seulement le contenu du fichier</string>
