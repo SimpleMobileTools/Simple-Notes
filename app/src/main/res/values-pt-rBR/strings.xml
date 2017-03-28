@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>
-    <string name="widget_config">Obrigado por usar o Simple Notes.\nPara mais aplicações Simple, aceda a SimpleMobileTools.com.\n</string>
-    <string name="cannot_share_empty_text">Não pode partilhar texto em branco</string>
+    <string name="widget_config">Obrigado por usar o Simple Notes.\nPara mais aplicativos Simple, acesse SimpleMobileTools.com.\n</string>
+    <string name="cannot_share_empty_text">Não pode compartilhar texto em branco</string>
     <string name="simple_note">Nota simples</string>
     <string name="new_note">Adicionar uma nota</string>
-    <string name="no_title">Por favor dê um nome à sua nota</string>
+    <string name="no_title">Por favor, dê um nome à sua nota</string>
     <string name="title_taken">Já existe uma nota com este título</string>
     <string name="open_note">Abrir nota</string>
     <string name="delete_note">Apagar nota</string>
@@ -13,15 +13,15 @@
     <string name="delete_note_prompt_message">Deseja mesmo apagar a nota \"%1$s\"?</string>
     <string name="pick_a_note">Selecione uma nota</string>
     <string name="rename_note">Renomear nota</string>
-    <string name="general_note">Nota genérica</string>
-    <string name="open_file">Abrir ficheiro</string>
+    <string name="general_note">Nota geral</string>
+    <string name="open_file">Abrir arquivo</string>
 
     <!-- File notes -->
-    <string name="export_as_file">Exportar como ficheiro</string>
-    <string name="file_too_large">Ficheiro muito grande, o limite são 10 MB</string>
-    <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro</string>
-    <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota</string>
-    <string name="delete_file_itself">Apagar também o ficheiro \"%1$s\"</string>
+    <string name="export_as_file">Exportar como arquivo</string>
+    <string name="file_too_large">Arquivo muito grande, o limite é 10 MB</string>
+    <string name="only_import_file_content">Importar apenas o conteúdo do arquivo</string>
+    <string name="update_file_at_note">Atualizar o arquivo ao atualizar a nota</string>
+    <string name="delete_file_itself">Apagar também o arquivo \"%1$s\"</string>
     <string name="note_saved_successfully">Nota \"%1$s\" guardada com sucesso</string>
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
 
@@ -42,14 +42,14 @@
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Um campo de texto para adicionar as suas notas.</string>
     <string name="app_long_description">
-        Necessita de escrever uma nota sobre algo? Então esta aplicação é para si! Sem complicações, basta escrever o seu texto na nota. Guarda automaticamente as notas, para que não as perca inesperadamente. Possui suporte a diversas notas independentes.
+        Precisa escrever uma nota sobre algo? Então este aplicativo é para você! Sem complicações, basta escrever o seu texto na nota. As notas são salvas automaticamente, para que não as perca inesperadamente. Possui suporte a diversas notas independentes.
 
 
-        Pode abrir a aplicação e aceder à sua nota através de um toque no widget.
+        Pode abrir o aplicativo e acessar sua nota através de um toque no widget.
 
         Não contém anúncios nem permissões desnecessárias. Disponibiliza um tema escuro e é totalmente \'open source\'.
 
-        Esta aplicação é apenas parte de um conjunto mais vasto de aplicações. Saiba mais em http://www.simplemobiletools.com
+        Este aplicativo é apenas parte de um conjunto mais vasto de aplicações. Saiba mais em http://www.simplemobiletools.com
     </string>
 
     <!--
