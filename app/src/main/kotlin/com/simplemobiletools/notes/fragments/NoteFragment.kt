@@ -3,8 +3,6 @@ package com.simplemobiletools.notes.fragments
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.text.Editable
-import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
 import android.text.util.Linkify
 import android.util.TypedValue
@@ -44,17 +42,6 @@ class NoteFragment : Fragment() {
                 linksClickable = true
                 autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES
                 movementMethod = LinkMovementMethod.getInstance()
-                addTextChangedListener(object : TextWatcher {
-                    override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                    }
-
-                    override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                    }
-
-                    override fun afterTextChanged(s: Editable) {
-                        Linkify.addLinks(this@apply, autoLinkMask)
-                    }
-                })
             }
         }
 
