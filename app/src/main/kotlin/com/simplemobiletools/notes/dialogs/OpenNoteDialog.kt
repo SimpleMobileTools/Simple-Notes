@@ -5,7 +5,6 @@ import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.support.v7.app.AlertDialog
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.RadioGroup
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.setupDialogStuff
@@ -13,17 +12,14 @@ import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.helpers.DBHelper
+import kotlinx.android.synthetic.main.dialog_open_note.view.*
 import kotlinx.android.synthetic.main.open_note_item.view.*
 
 class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> Unit) {
     lateinit var dialog: AlertDialog
 
     init {
-        val view = LinearLayout(activity).apply {
-            orientation = LinearLayout.VERTICAL
-            layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        }
-
+        val view = activity.layoutInflater.inflate(R.layout.dialog_open_note, null)
         val textColor = activity.config.textColor
         val notes = DBHelper.newInstance(activity).getNotes()
         notes.forEach {
@@ -46,7 +42,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
                         activity.toast(note.path)
                     }
                 }
-                view.addView(this, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
+                view.dialog_open_note_linear.addView(this, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
             }
         }
 
