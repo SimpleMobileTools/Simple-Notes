@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 2.1.2 *(2017-04-01)*
+----------------------------
+
+ * Allow scrolling the notes list if theres too many
+
 Version 2.1.1 *(2017-03-18)*
 ----------------------------
 
