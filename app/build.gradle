@@ -10,7 +10,7 @@ android {
         applicationId "com.simplemobiletools.notes"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 31
+        versionCode 32
         versionName "2.1.2"
     }
 
