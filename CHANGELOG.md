@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 2.2.0 *(2017-04-07)*
+----------------------------
+
+ * Added color themes
+ * Made the dialog at importing file content clearer
+
 Version 2.1.2 *(2017-04-01)*
 ----------------------------
 
