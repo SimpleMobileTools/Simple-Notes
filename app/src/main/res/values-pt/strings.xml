@@ -19,8 +19,8 @@
     <!-- File notes -->
     <string name="export_as_file">Exportar como ficheiro</string>
     <string name="file_too_large">Ficheiro muito grande, o limite são 10 MB</string>
-    <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro</string>
-    <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota</string>
+    <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
+    <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
     <string name="delete_file_itself">Apagar também o ficheiro \"%1$s\"</string>
     <string name="note_saved_successfully">Nota \"%1$s\" guardada com sucesso</string>
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
