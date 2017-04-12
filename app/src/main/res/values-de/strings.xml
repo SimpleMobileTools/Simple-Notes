@@ -2,7 +2,7 @@
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notizen</string>
     <string name="widget_config">Vielen dank, dass du Simple Notes benutzt.\nWeitere einfache Apps findest du auf SimpleMobileTools.com.\n</string>
-    <string name="cannot_share_empty_text">Leerer Text kann nicht geteilt werden</string>
+    <string name="cannot_share_empty_text">Eine leere Notiz kann nicht geteilt werden</string>
     <string name="simple_note">Einfache Notiz</string>
     <string name="new_note">Neue Notiz hinzufügen</string>
     <string name="no_title">Bitte benenne deine Notiz</string>
@@ -16,18 +16,18 @@
     <string name="general_note">Hauptnotiz</string>
 
     <!-- File notes -->
-    <string name="open_file">Open file</string>
-    <string name="export_as_file">Export as file</string>
-    <string name="file_too_large">File too large, the limit is 10MB</string>
-    <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%1$s\"</string>
-    <string name="note_saved_successfully">Note \"%1$s\" saved successfully</string>
-    <string name="display_success_message">Display save success messages</string>
+    <string name="open_file">Datei öffnen</string>
+    <string name="export_as_file">Als Datei exportieren</string>
+    <string name="file_too_large">Datei ist zu groß. Die maximale Größe beträgt 10 MB</string>
+    <string name="only_import_file_content">Importiere nur den Dateiinhalt.\n(Änderungen an der Datei haben keine Auswirkungen auf die Notiz)</string>
+    <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
+    <string name="delete_file_itself">Lösche Datei \"%1$s\"</string>
+    <string name="note_saved_successfully">Notiz \"%1$s\" erfolgreich gespeichert</string>
+    <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
 
     <!-- Settings -->
-    <string name="widget_note">Widget Notiz</string>
-    <string name="links_and_emails_clickable">Make links and emails clickable</string>
+    <string name="widget_note">Widget-Notiz</string>
+    <string name="links_and_emails_clickable">Links und E-Mail Adressen anklickbar</string>
     <string name="note_font_size">Schriftgröße</string>
     <string name="small">Klein</string>
     <string name="normal">Normal</string>
