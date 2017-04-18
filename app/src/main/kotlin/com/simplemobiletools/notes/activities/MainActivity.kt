@@ -82,11 +82,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         updateTextColors(view_pager)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        config.isFirstRun = false
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return true
@@ -205,7 +200,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
             if (needsStupidWritePermissions(path)) {
                 handleSAFDialog(file) {
-                    var document = getFileDocument(path, config.treeUri) ?: return@handleSAFDialog
+                    var document = getFileDocument(path) ?: return@handleSAFDialog
                     if (!file.exists()) {
                         document = document.createFile("", file.name)
                     }
