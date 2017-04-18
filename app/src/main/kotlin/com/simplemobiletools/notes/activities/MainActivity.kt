@@ -7,10 +7,7 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.view.ViewPager
 import android.util.TypedValue
-import android.view.Gravity
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
@@ -144,7 +141,12 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         invalidateOptionsMenu()
         initViewPager()
         updateSelectedNote(id)
-        mAdapter.showKeyboard(getNoteIndexWithId(id))
+        view_pager.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                mAdapter.showKeyboard(getNoteIndexWithId(id))
+                view_pager.viewTreeObserver.removeOnGlobalLayoutListener(this)
+            }
+        })
     }
 
     private fun launchAbout() {
