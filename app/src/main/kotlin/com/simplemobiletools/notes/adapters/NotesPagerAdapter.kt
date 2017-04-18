@@ -32,7 +32,7 @@ class NotesPagerAdapter(fm: FragmentManager, private val notes: List<Note>) : Fr
 
     fun getCurrentNoteViewText(position: Int) = fragments[position].getCurrentNoteViewText()
 
-    fun saveCurrentNote(position: Int) = fragments[position].saveText()
+    fun saveCurrentNote(position: Int) = fragments[position]?.saveText()
 
     fun showKeyboard(position: Int) = fragments[position]?.showKeyboard()
 }
