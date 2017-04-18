@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 2.2.1 *(2017-04-18)*
+----------------------------
+
+ * Fixed some ui glitches and note not being saved in some cases
+
 Version 2.2.0 *(2017-04-07)*
 ----------------------------
 
