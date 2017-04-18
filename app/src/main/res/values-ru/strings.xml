@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Simple Notes</string>
+    <string name="app_launcher_name">Заметки</string>
+    <string name="widget_config">Благодарим вас за использование Simple Notes.\nБольше простых приложений вы можете найти на SimpleMobileTools.com.\n</string>
+    <string name="cannot_share_empty_text">Нельзя поделиться пустым текстом</string>
+    <string name="simple_note">Simple Note</string>
+    <string name="new_note">Добавить новую заметку</string>
+    <string name="no_title">Пожалуйста, назовите заметку</string>
+    <string name="title_taken">Заметка с таким названием уже существует</string>
+    <string name="open_note">Открыть заметку</string>
+    <string name="delete_note">Удалить заметку</string>
+    <string name="delete_note_prompt_title">Удалить заметку</string>
+    <string name="delete_note_prompt_message">Вы действительно хотите удалить заметку \"%1$s\"?</string>
+    <string name="pick_a_note">Выберите заметку</string>
+    <string name="rename_note">Переименовать заметку</string>
+    <string name="general_note">Общая заметка</string>
+
+    <!-- File notes -->
+    <string name="open_file">Открыть файл</string>
+    <string name="export_as_file">Экспортировать в файл</string>
+    <string name="file_too_large">Файл слишком велик, лимит 10МБ</string>
+    <string name="only_import_file_content">Только импортировать содержимое файла\n(изменение файла не изменит заметку)</string>
+    <string name="update_file_at_note">Обновлять содержимое файла при обновлении заметки\n(заметка удалится, если удалить файл или изменить путь к нему)</string>
+    <string name="delete_file_itself">Также удалить файл \"%1$s\"</string>
+    <string name="note_saved_successfully">Заметка \"%1$s\" сохранена успешно</string>
+    <string name="display_success_message">Уведомлять, что файл успешно сохранен</string>
+
+    <!-- Settings -->
+    <string name="widget_note">Заметка, отображаемая в виджете</string>
+    <string name="links_and_emails_clickable">Сделать ссылки и адреса электронной почты активными</string>
+    <string name="note_font_size">Размер текста заметки</string>
+    <string name="small">Мелкий</string>
+    <string name="normal">Нормальный</string>
+    <string name="large">Крупный</string>
+    <string name="extra_large">Очень крупный</string>
+    <string name="gravity">Выравнивание</string>
+    <string name="left">По левому краю</string>
+    <string name="center">По центру</string>
+    <string name="right">По правому краю</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Просто текстовое поле для заметок, без рекламы</string>
+    <string name="app_long_description">
+        Нужно записать, что купить, адрес или идею стартапа? Тогда это то приложение, что вы искали! Не нужно долго настраивать, просто введите то, что хотели. Есть автосохранение, поэтому вы никогда не отмените правки по ошибке. Поддерживается создание нескольких независимых друг от друга заметок.
+
+
+        Вы можете получить доступ к заметке мгновенно, используя настраиваемый и изменяемый по размеру виджет, который откроет приложение по клику.
+
+        Без рекламы и излишних прав доступа. Полностью открытое ПО, а также со встроенной темной темой.
+
+        Это только одно приложение из множества других в серии. Вы можете найти остальные на http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/library/src/main/res
+    -->
+</resources>
