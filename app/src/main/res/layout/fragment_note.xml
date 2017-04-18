@@ -18,7 +18,6 @@
             android:background="@null"
             android:gravity="top"
             android:inputType="textCapSentences|textMultiLine"
-            android:padding="@dimen/activity_margin"
-            android:textCursorDrawable="@null"/>
+            android:padding="@dimen/activity_margin" />
     </ScrollView>
 </RelativeLayout>
