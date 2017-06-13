@@ -19,6 +19,7 @@
             android:gravity="top"
             android:inputType="textCapSentences|textMultiLine"
             android:padding="@dimen/activity_margin"
+            android:freezesText="true"
             android:textCursorDrawable="@null"/>
     </ScrollView>
 </RelativeLayout>
