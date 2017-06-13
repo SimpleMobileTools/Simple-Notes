@@ -240,7 +240,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
-    private fun deleteNote(deleteFile: Boolean) {
+    fun deleteNote(deleteFile: Boolean) {
         if (mNotes.size <= 1)
             return
 

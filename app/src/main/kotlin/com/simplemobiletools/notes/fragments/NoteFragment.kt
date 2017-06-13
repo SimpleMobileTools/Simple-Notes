@@ -98,7 +98,14 @@ class NoteFragment : Fragment() {
 
         val config = context.config
         view.notes_view.apply {
-            setText(context.getNoteStoredValue(note))
+            val fileContents = context.getNoteStoredValue(note)
+
+            if (fileContents == null) {
+                (activity as MainActivity).deleteNote(false)
+                return
+            }
+
+            setText(fileContents)
             setColors(config.textColor, config.primaryColor, config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
             gravity = getTextGravity()
