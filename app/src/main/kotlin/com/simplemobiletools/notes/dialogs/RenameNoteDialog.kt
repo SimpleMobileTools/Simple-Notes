@@ -34,14 +34,14 @@ class RenameNoteDialog(val activity: SimpleActivity, val db: DBHelper, val note:
                     val path = note.path
                     if (path.isNotEmpty()) {
                         if (title.isEmpty()) {
-                            context.toast(R.string.filename_cannot_be_empty)
+                            activity.toast(R.string.filename_cannot_be_empty)
                             return@setOnClickListener
                         }
 
                         val file = File(path)
                         val newFile = File(file.parent, title)
                         if (!newFile.name.isAValidFilename()) {
-                            context.toast(R.string.invalid_name)
+                            activity.toast(R.string.invalid_name)
                             return@setOnClickListener
                         }
 
@@ -57,7 +57,7 @@ class RenameNoteDialog(val activity: SimpleActivity, val db: DBHelper, val note:
                     }
                     db.updateNoteTitle(note)
                     dismiss()
-                    callback.invoke(note)
+                    callback(note)
                 }
             })
         }

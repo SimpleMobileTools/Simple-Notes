@@ -28,7 +28,7 @@ class NewNoteDialog(val activity: Activity, val db: DBHelper, callback: (title: 
                 } else if (db.doesTitleExist(title)) {
                     activity.toast(R.string.title_taken)
                 } else {
-                    callback.invoke(title)
+                    callback(title)
                     dismiss()
                 }
             }

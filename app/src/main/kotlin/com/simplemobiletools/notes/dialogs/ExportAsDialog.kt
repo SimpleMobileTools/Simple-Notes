@@ -38,17 +38,17 @@ class ExportAsDialog(val activity: SimpleActivity, val note: Note, val callback:
                 val filename = view.file_name.value
 
                 if (filename.isEmpty()) {
-                    context.toast(R.string.filename_cannot_be_empty)
+                    activity.toast(R.string.filename_cannot_be_empty)
                     return@setOnClickListener
                 }
 
                 val newFile = File(realPath, filename)
                 if (!newFile.name.isAValidFilename()) {
-                    context.toast(R.string.filename_invalid_characters)
+                    activity.toast(R.string.filename_invalid_characters)
                     return@setOnClickListener
                 }
 
-                callback.invoke(newFile.absolutePath)
+                callback(newFile.absolutePath)
                 dismiss()
             })
         }

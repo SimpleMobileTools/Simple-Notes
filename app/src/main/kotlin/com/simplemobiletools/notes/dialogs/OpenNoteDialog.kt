@@ -31,7 +31,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
                     id = note.id
 
                     setOnClickListener {
-                        callback.invoke(id)
+                        callback(id)
                         dialog.dismiss()
                     }
                 }

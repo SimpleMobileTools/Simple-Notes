@@ -59,7 +59,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
         val itemIndex = getNoteIndexWithId(wantedNoteId)
 
-        mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, applicationContext)
+        mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
         view_pager.apply {
             adapter = mAdapter
             currentItem = itemIndex
