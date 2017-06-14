@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 2.2.2 *(2017-06-14)*
+----------------------------
+
+ * Handle removal of imported file gracefully (by trubitsyn)
+ * Fix a glitch at saving note on rotate (by trubitsyn)
+ * Move the cursor initially to the end of note
+
 Version 2.2.1 *(2017-04-18)*
 ----------------------------
 
