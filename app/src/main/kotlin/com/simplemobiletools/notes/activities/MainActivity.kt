@@ -6,6 +6,8 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.view.ViewPager
+import android.text.method.ArrowKeyMovementMethod
+import android.text.method.LinkMovementMethod
 import android.util.TypedValue
 import android.view.*
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
@@ -14,6 +16,7 @@ import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.commons.helpers.LICENSE_RTL
 import com.simplemobiletools.commons.helpers.LICENSE_STETHO
 import com.simplemobiletools.commons.models.Release
+import com.simplemobiletools.commons.views.MyEditText
 import com.simplemobiletools.notes.BuildConfig
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
@@ -25,6 +28,7 @@ import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_note.*
 import java.io.File
 import java.nio.charset.Charset
 
@@ -36,6 +40,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     lateinit var mAdapter: NotesPagerAdapter
     lateinit var mDb: DBHelper
     lateinit var mNotes: List<Note>
+    var noteViewWithTextSelected: MyEditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -113,6 +118,28 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
         return true
     }
+
+    // https://code.google.com/p/android/issues/detail?id=191430 quickfix
+    override fun onActionModeStarted(mode: ActionMode?) {
+        super.onActionModeStarted(mode)
+        with(currentNotesView()) {
+            if (config.clickableLinks || movementMethod == LinkMovementMethod.getInstance()) {
+                movementMethod = ArrowKeyMovementMethod.getInstance()
+                noteViewWithTextSelected = this
+            }
+        }
+    }
+
+    override fun onActionModeFinished(mode: ActionMode?) {
+        super.onActionModeFinished(mode)
+        if (config.clickableLinks) {
+            noteViewWithTextSelected?.let {
+                it.movementMethod = LinkMovementMethod.getInstance()
+            }
+        }
+    }
+
+    private fun currentNotesView() = mAdapter.getItem(view_pager.currentItem).notes_view
 
     private fun displayRenameDialog() {
         RenameNoteDialog(this, mDb, mCurrentNote) {
