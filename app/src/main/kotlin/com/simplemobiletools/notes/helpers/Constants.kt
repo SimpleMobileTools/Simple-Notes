@@ -25,3 +25,6 @@ val FONT_SIZE_EXTRA_LARGE = 3
 // note types
 val TYPE_NOTE = 0
 val TYPE_CHECKLIST = 1
+
+// mime types
+val MIME_TEXT_PLAIN = "text/plain"
