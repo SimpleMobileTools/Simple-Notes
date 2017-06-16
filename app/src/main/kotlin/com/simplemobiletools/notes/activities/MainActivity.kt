@@ -214,7 +214,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun exportAsFile() {
         ExportAsDialog(this, mCurrentNote) {
-            exportNoteValueToFile(it, getCurrentNoteText())
+            if (getCurrentNoteText()?.isNotEmpty() == true)
+                exportNoteValueToFile(it, getCurrentNoteText()!!)
         }
     }
 
@@ -307,7 +308,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun shareText() {
         val text = getCurrentNoteText()
-        if (text.isEmpty()) {
+        if (text == null || text.isEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
         }

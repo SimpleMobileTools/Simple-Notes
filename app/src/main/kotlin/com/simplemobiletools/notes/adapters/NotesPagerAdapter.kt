@@ -34,7 +34,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     override fun getPageTitle(position: Int) = notes[position].title
 
-    fun getCurrentNoteViewText(position: Int) = fragments[position].getCurrentNoteViewText()
+    fun getCurrentNoteViewText(position: Int) = fragments[position]?.getCurrentNoteViewText()
 
     fun saveCurrentNote(position: Int) = fragments[position]?.saveText()
 
