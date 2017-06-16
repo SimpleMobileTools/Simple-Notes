@@ -40,6 +40,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     lateinit var mAdapter: NotesPagerAdapter
     lateinit var mDb: DBHelper
     lateinit var mNotes: List<Note>
+
     var noteViewWithTextSelected: MyEditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -122,7 +123,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     // https://code.google.com/p/android/issues/detail?id=191430 quickfix
     override fun onActionModeStarted(mode: ActionMode?) {
         super.onActionModeStarted(mode)
-        with(currentNotesView()) {
+        currentNotesView().apply {
             if (config.clickableLinks || movementMethod == LinkMovementMethod.getInstance()) {
                 movementMethod = ArrowKeyMovementMethod.getInstance()
                 noteViewWithTextSelected = this
@@ -133,9 +134,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     override fun onActionModeFinished(mode: ActionMode?) {
         super.onActionModeFinished(mode)
         if (config.clickableLinks) {
-            noteViewWithTextSelected?.let {
-                it.movementMethod = LinkMovementMethod.getInstance()
-            }
+            noteViewWithTextSelected?.movementMethod = LinkMovementMethod.getInstance()
         }
     }
 
