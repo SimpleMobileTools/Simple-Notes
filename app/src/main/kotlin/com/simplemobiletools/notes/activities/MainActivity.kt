@@ -56,7 +56,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         checkWhatsNewDialog()
         storeStoragePaths()
 
-        intent?.apply {
+        intent.apply {
             if (action == Intent.ACTION_SEND && type == MIME_TEXT_PLAIN) {
                 getStringExtra(Intent.EXTRA_TEXT)?.let {
                     displayNewNoteDialog(it)
