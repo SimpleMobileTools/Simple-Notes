@@ -14,6 +14,8 @@
     <string name="pick_a_note">Choisir une note</string>
     <string name="rename_note">Renomme la note</string>
     <string name="general_note">Note générale</string>
+    <string name="create_new_note">Create a new note</string>
+    <string name="add_to_note">Add to note</string>
 
     <!-- File notes -->
     <string name="open_file">Ouvrir le fichier</string>
