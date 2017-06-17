@@ -24,6 +24,7 @@ import com.simplemobiletools.notes.dialogs.*
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.DBHelper
+import com.simplemobiletools.notes.helpers.MIME_TEXT_PLAIN
 import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
@@ -54,6 +55,15 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
         checkWhatsNewDialog()
         storeStoragePaths()
+
+        intent?.apply {
+            if (action == Intent.ACTION_SEND && type == MIME_TEXT_PLAIN) {
+                getStringExtra(Intent.EXTRA_TEXT)?.let {
+                    displayNewNoteDialog(it)
+                    intent.removeExtra(Intent.EXTRA_TEXT)
+                }
+            }
+        }
     }
 
     private fun initViewPager() {
@@ -154,9 +164,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         mCurrentNote = mNotes[index]
     }
 
-    private fun displayNewNoteDialog() {
+    private fun displayNewNoteDialog(value: String = "") {
         NewNoteDialog(this, mDb) {
-            val newNote = Note(0, it, "", TYPE_NOTE)
+            val newNote = Note(0, it, value, TYPE_NOTE)
             addNewNote(newNote)
         }
     }
