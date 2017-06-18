@@ -31,6 +31,7 @@ class SettingsActivity : SimpleActivity() {
         setupFontSize()
         setupGravity()
         setupWidgetNote()
+        setupCursorPlacement()
         updateTextColors(settings_scrollview)
     }
 
@@ -118,6 +119,14 @@ class SettingsActivity : SimpleActivity() {
                 settings_widget_note.text = getCurrentWidgetNoteTitle(it, notes)
                 updateWidget()
             }
+        }
+    }
+
+    private fun setupCursorPlacement() {
+        settings_cursor_placement.isChecked = config.placeCursorToEnd
+        settings_cursor_placement_holder.setOnClickListener {
+            settings_cursor_placement.toggle()
+            config.placeCursorToEnd = settings_cursor_placement.isChecked
         }
     }
 
