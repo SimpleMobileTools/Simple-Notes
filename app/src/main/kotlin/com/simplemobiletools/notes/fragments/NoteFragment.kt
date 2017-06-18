@@ -54,6 +54,8 @@ class NoteFragment : Fragment() {
             saveText()
     }
 
+    fun getNotesView() = view.notes_view
+
     fun saveText() {
         if (note.path.isNotEmpty() && !File(note.path).exists())
             return

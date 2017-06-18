@@ -15,6 +15,8 @@
     <string name="rename_note">Renomear nota</string>
     <string name="general_note">Nota geral</string>
     <string name="open_file">Abrir arquivo</string>
+    <string name="create_new_note">Create a new note</string>
+    <string name="add_to_note">Add to note</string>
 
     <!-- File notes -->
     <string name="export_as_file">Exportar como arquivo</string>

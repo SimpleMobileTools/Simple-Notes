@@ -14,6 +14,8 @@
     <string name="pick_a_note">メモを選択</string>
     <string name="rename_note">メモの名前を変更</string>
     <string name="general_note">全般メモ</string>
+    <string name="create_new_note">Create a new note</string>
+    <string name="add_to_note">Add to note</string>
 
     <!-- File notes -->
     <string name="open_file">Open file</string>

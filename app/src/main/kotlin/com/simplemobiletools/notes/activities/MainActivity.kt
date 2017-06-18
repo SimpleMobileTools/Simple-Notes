@@ -11,10 +11,12 @@ import android.text.method.LinkMovementMethod
 import android.util.TypedValue
 import android.view.*
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
+import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.commons.helpers.LICENSE_RTL
 import com.simplemobiletools.commons.helpers.LICENSE_STETHO
+import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.commons.views.MyEditText
 import com.simplemobiletools.notes.BuildConfig
@@ -59,11 +61,28 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         intent.apply {
             if (action == Intent.ACTION_SEND && type == MIME_TEXT_PLAIN) {
                 getStringExtra(Intent.EXTRA_TEXT)?.let {
-                    displayNewNoteDialog(it)
+                    handleText(it)
                     intent.removeExtra(Intent.EXTRA_TEXT)
                 }
             }
         }
+    }
+
+    private fun handleText(text: String) {
+        val notes = DBHelper.newInstance(this@MainActivity).getNotes()
+        val list = arrayListOf<RadioItem>().apply {
+            add(RadioItem(0, getString(R.string.create_new_note)))
+            notes.forEachIndexed { index, note -> add(RadioItem(index + 1, note.title)) }
+        }
+
+        RadioGroupDialog(this@MainActivity, list, -1, R.string.add_to_note, {
+            if (it as Int == 0) {
+                displayNewNoteDialog(text)
+            } else {
+                updateSelectedNote(notes[it - 1].id)
+                addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
+            }
+        }).create()
     }
 
     private fun initViewPager() {
@@ -268,6 +287,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun getCurrentNoteText() = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteViewText(view_pager.currentItem)
+
+    private fun addTextToCurrentNote(text: String) = (view_pager.adapter as NotesPagerAdapter).appendText(view_pager.currentItem, text)
 
     private fun saveCurrentNote() = (view_pager.adapter as NotesPagerAdapter).saveCurrentNote(view_pager.currentItem)
 
