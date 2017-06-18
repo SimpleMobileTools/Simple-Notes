@@ -36,11 +36,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     fun getCurrentNoteViewText(position: Int) = fragments[position]?.getCurrentNoteViewText()
 
-    fun appendText(position: Int, text: String) {
-        val fragment = fragments[position]
-        val finalText = fragment?.getCurrentNoteViewText() + text
-        fragment?.getNotesView()?.setText(finalText)
-    }
+    fun appendText(position: Int, text: String) = fragments[position]?.getNotesView()?.append(text)
 
     fun saveCurrentNote(position: Int) = fragments[position]?.saveText()
 

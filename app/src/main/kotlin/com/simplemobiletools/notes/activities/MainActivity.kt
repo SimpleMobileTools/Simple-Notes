@@ -69,20 +69,22 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun handleText(text: String) {
-        val notes = DBHelper.newInstance(this@MainActivity).getNotes()
+        val notes = mDb.getNotes()
         val list = arrayListOf<RadioItem>().apply {
             add(RadioItem(0, getString(R.string.create_new_note)))
-            notes.forEachIndexed { index, note -> add(RadioItem(index + 1, note.title)) }
+            notes.forEachIndexed { index, note ->
+                add(RadioItem(index + 1, note.title))
+            }
         }
 
-        RadioGroupDialog(this@MainActivity, list, -1, R.string.add_to_note, {
+        RadioGroupDialog(this, list, -1, R.string.add_to_note) {
             if (it as Int == 0) {
                 displayNewNoteDialog(text)
             } else {
                 updateSelectedNote(notes[it - 1].id)
                 addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
             }
-        }).create()
+        }
     }
 
     private fun initViewPager() {
