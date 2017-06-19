@@ -30,6 +30,7 @@
     <!-- Settings -->
     <string name="widget_note">Заметка, отображаемая в виджете</string>
     <string name="links_and_emails_clickable">Сделать ссылки и адреса электронной почты активными</string>
+    <string name="place_cursor_end">Помещать курсор в конец заметки</string>
     <string name="note_font_size">Размер текста заметки</string>
     <string name="small">Мелкий</string>
     <string name="normal">Нормальный</string>

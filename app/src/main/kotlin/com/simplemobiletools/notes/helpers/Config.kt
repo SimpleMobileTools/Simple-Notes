@@ -31,4 +31,8 @@ class Config(context: Context) : BaseConfig(context) {
     var widgetNoteId: Int
         get() = prefs.getInt(WIDGET_NOTE_ID, 1)
         set(id) = prefs.edit().putInt(WIDGET_NOTE_ID, id).apply()
+
+    var placeCursorToEnd: Boolean
+        get() = prefs.getBoolean(CURSOR_PLACEMENT, true)
+        set(placement) = prefs.edit().putBoolean(CURSOR_PLACEMENT, placement).apply()
 }

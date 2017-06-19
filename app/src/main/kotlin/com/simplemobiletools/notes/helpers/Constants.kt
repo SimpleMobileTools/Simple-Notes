@@ -10,6 +10,7 @@ val CLICKABLE_LINKS = "clickable_links"
 val WIDGET_NOTE_ID = "widget_note_id"
 val FONT_SIZE = "font_size"
 val GRAVITY = "gravity"
+val CURSOR_PLACEMENT = "cursor_placement"
 
 // gravity
 val GRAVITY_LEFT = 0

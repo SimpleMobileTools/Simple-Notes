@@ -30,6 +30,7 @@
     <!-- Settings -->
     <string name="widget_note">Widget-Notiz</string>
     <string name="links_and_emails_clickable">Links und E-Mail Adressen anklickbar</string>
+    <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="note_font_size">Schriftgröße</string>
     <string name="small">Klein</string>
     <string name="normal">Normal</string>
