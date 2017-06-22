@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 2.2.3 *(2017-06-22)*
+----------------------------
+
+ * Allow appending incoming shared text to existing notes (by trubitsyn)
+ * Add a setting for moving the cursor to the end of note
+ * Added rounded launcher icons for Android 7
+
 Version 2.2.2 *(2017-06-14)*
 ----------------------------
 
