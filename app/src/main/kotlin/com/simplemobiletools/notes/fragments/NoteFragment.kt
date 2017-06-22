@@ -111,10 +111,7 @@ class NoteFragment : Fragment() {
             setColors(config.textColor, config.primaryColor, config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
             gravity = getTextGravity()
-
-            if (config.placeCursorToEnd) {
-                setSelection(text.length)
-            }
+            setSelection(if (config.placeCursorToEnd) text.length else 0)
         }
     }
 
