@@ -87,7 +87,7 @@ class NoteFragment : Fragment() {
         }
     }
 
-    fun getCurrentNoteViewText() = view.notes_view.text.toString()
+    fun getCurrentNoteViewText() = view.notes_view?.text.toString()
 
     private fun getTextGravity() = when (context.config.gravity) {
         GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
