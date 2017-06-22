@@ -10,8 +10,8 @@ android {
         applicationId "com.simplemobiletools.notes"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 35
-        versionName "2.2.2"
+        versionCode 36
+        versionName "2.2.3"
     }
 
     signingConfigs {
