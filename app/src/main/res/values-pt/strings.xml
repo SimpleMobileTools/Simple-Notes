@@ -28,14 +28,9 @@
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
 
     <!-- Settings -->
-    <string name="note_font_size">Tamanho do texto da nota</string>
     <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="widget_note">Nota utilizada no widget</string>
-    <string name="small">Pequeno</string>
-    <string name="normal">Normal</string>
-    <string name="large">Grande</string>
-    <string name="extra_large">Muito grande</string>
     <string name="gravity">Gravidade</string>
     <string name="left">Esquerda</string>
     <string name="center">Centro</string>

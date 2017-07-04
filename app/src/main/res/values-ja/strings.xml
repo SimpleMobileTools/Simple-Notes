@@ -28,14 +28,9 @@
     <string name="display_success_message">Display save success messages</string>
 
     <!-- Settings -->
-    <string name="note_font_size">メモのフォントサイズ</string>
     <string name="links_and_emails_clickable">Make links and emails clickable</string>
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="widget_note">ウィジェットで使用するメモ</string>
-    <string name="small">小</string>
-    <string name="normal">通常</string>
-    <string name="large">大</string>
-    <string name="extra_large">特大</string>
     <string name="gravity">重力</string>
     <string name="left">左</string>
     <string name="center">中央</string>

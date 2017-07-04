@@ -62,7 +62,7 @@ class SettingsActivity : SimpleActivity() {
         settings_font_size_holder.setOnClickListener {
             val items = arrayListOf(
                     RadioItem(FONT_SIZE_SMALL, res.getString(R.string.small)),
-                    RadioItem(FONT_SIZE_NORMAL, res.getString(R.string.normal)),
+                    RadioItem(FONT_SIZE_MEDIUM, res.getString(R.string.medium)),
                     RadioItem(FONT_SIZE_LARGE, res.getString(R.string.large)),
                     RadioItem(FONT_SIZE_EXTRA_LARGE, res.getString(R.string.extra_large)))
 
@@ -76,7 +76,7 @@ class SettingsActivity : SimpleActivity() {
 
     private fun getFontSizeText() = getString(when (config.fontSize) {
         FONT_SIZE_SMALL -> R.string.small
-        FONT_SIZE_NORMAL -> R.string.normal
+        FONT_SIZE_MEDIUM -> R.string.medium
         FONT_SIZE_LARGE -> R.string.large
         else -> R.string.extra_large
     })

@@ -31,11 +31,6 @@
     <string name="widget_note">Заметка, отображаемая в виджете</string>
     <string name="links_and_emails_clickable">Сделать ссылки и адреса электронной почты активными</string>
     <string name="place_cursor_end">Помещать курсор в конец заметки</string>
-    <string name="note_font_size">Размер текста заметки</string>
-    <string name="small">Мелкий</string>
-    <string name="normal">Нормальный</string>
-    <string name="large">Крупный</string>
-    <string name="extra_large">Очень крупный</string>
     <string name="gravity">Выравнивание</string>
     <string name="left">По левому краю</string>
     <string name="center">По центру</string>

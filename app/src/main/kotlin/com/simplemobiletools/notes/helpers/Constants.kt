@@ -19,7 +19,7 @@ val GRAVITY_RIGHT = 2
 
 // font sizes
 val FONT_SIZE_SMALL = 0
-val FONT_SIZE_NORMAL = 1
+val FONT_SIZE_MEDIUM = 1
 val FONT_SIZE_LARGE = 2
 val FONT_SIZE_EXTRA_LARGE = 3
 

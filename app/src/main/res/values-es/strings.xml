@@ -28,14 +28,9 @@
     <string name="display_success_message">Display save success messages</string>
 
     <!-- Settings -->
-    <string name="note_font_size">Tamaño de fuente</string>
     <string name="links_and_emails_clickable">Make links and emails clickable</string>
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="widget_note">Nota del widget</string>
-    <string name="small">Pequeña</string>
-    <string name="normal">Normal</string>
-    <string name="large">Grande</string>
-    <string name="extra_large">Enorme</string>
     <string name="gravity">Alineación del texto</string>
     <string name="left">Izquierda</string>
     <string name="center">Centrado</string>
