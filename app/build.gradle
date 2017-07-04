@@ -28,13 +28,15 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+        debug.java.srcDirs += 'src/debug/kotlin'
     }
 }
 
 dependencies {
     compile 'com.simplemobiletools:commons:2.21.11'
-    compile 'com.facebook.stetho:stetho:1.4.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    debugCompile 'com.facebook.stetho:stetho:1.4.1'
 }
 
 buildscript {
