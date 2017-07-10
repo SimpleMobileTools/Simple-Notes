@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 2.2.4 *(2017-07-10)*
+----------------------------
+
+ * Properly mark clickable links with the primary color
+
 Version 2.2.3 *(2017-06-22)*
 ----------------------------
 
