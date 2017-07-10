@@ -36,11 +36,11 @@ import java.io.File
 import java.nio.charset.Charset
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
-    val STORAGE_OPEN_FILE = 1
-    val STORAGE_EXPORT_AS_FILE = 2
+    private val STORAGE_OPEN_FILE = 1
+    private val STORAGE_EXPORT_AS_FILE = 2
+    private var mAdapter: NotesPagerAdapter? = null
 
     lateinit var mCurrentNote: Note
-    lateinit var mAdapter: NotesPagerAdapter
     lateinit var mDb: DBHelper
     lateinit var mNotes: List<Note>
 
@@ -154,7 +154,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     // https://code.google.com/p/android/issues/detail?id=191430 quickfix
     override fun onActionModeStarted(mode: ActionMode?) {
         super.onActionModeStarted(mode)
-        currentNotesView().apply {
+        currentNotesView()?.apply {
             if (config.clickableLinks || movementMethod == LinkMovementMethod.getInstance()) {
                 movementMethod = ArrowKeyMovementMethod.getInstance()
                 noteViewWithTextSelected = this
@@ -169,7 +169,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
-    private fun currentNotesView() = mAdapter.getItem(view_pager.currentItem).notes_view
+    private fun currentNotesView() = mAdapter?.getItem(view_pager.currentItem)?.notes_view
 
     private fun displayRenameDialog() {
         RenameNoteDialog(this, mDb, mCurrentNote) {
@@ -200,7 +200,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         updateSelectedNote(id)
         view_pager.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
-                mAdapter.showKeyboard(getNoteIndexWithId(id))
+                mAdapter?.showKeyboard(getNoteIndexWithId(id))
                 view_pager.viewTreeObserver.removeOnGlobalLayoutListener(this)
             }
         })
