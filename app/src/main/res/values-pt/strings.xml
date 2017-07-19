@@ -15,8 +15,8 @@
     <string name="rename_note">Renomear nota</string>
     <string name="general_note">Nota genérica</string>
     <string name="open_file">Abrir ficheiro</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
+    <string name="create_new_note">Criar uma nota</string>
+    <string name="add_to_note">Adicionar a uma nota</string>
 
     <!-- File notes -->
     <string name="export_as_file">Exportar como ficheiro</string>
@@ -29,7 +29,7 @@
 
     <!-- Settings -->
     <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
+    <string name="place_cursor_end">Colocar cursor no fim da nota</string>
     <string name="widget_note">Nota utilizada no widget</string>
     <string name="gravity">Gravidade</string>
     <string name="left">Esquerda</string>
