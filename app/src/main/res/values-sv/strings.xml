@@ -1,53 +1,53 @@
 <resources>
     <string name="app_name">Simple Notes</string>
-    <string name="app_launcher_name">Notes</string>
+    <string name="app_launcher_name">Anteckningar</string>
     <string name="widget_config">Tack för att du använder Simple Notes.\nFör fler enkla appar, gå till simplemobiletools.com.\n</string>
     <string name="cannot_share_empty_text">Det går inte att dela utan text</string>
-    <string name="simple_note">Simple Note</string>
-    <string name="new_note">Add a new note</string>
-    <string name="no_title">Please name your note</string>
-    <string name="title_taken">A note with that title already exists</string>
-    <string name="open_note">Open note</string>
-    <string name="delete_note">Delete note</string>
-    <string name="delete_note_prompt_title">Delete note</string>
-    <string name="delete_note_prompt_message">Are you sure you want to delete note \"%1$s\"?</string>
-    <string name="pick_a_note">Pick a note</string>
-    <string name="rename_note">Rename note</string>
-    <string name="general_note">General note</string>
-    <string name="open_file">Open file</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
+    <string name="simple_note">Enkel anteckning</string>
+    <string name="new_note">Lägg till en ny anteckning</string>
+    <string name="no_title">Namnge din anteckning</string>
+    <string name="title_taken">En anteckning med den titeln finns redan</string>
+    <string name="open_note">Öppna anteckning</string>
+    <string name="delete_note">Ta bort anteckning</string>
+    <string name="delete_note_prompt_title">Ta bort anteckning</string>
+    <string name="delete_note_prompt_message">Är du säker på att du vill ta bort anteckningen \"%1$s\"?</string>
+    <string name="pick_a_note">Välj en anteckning</string>
+    <string name="rename_note">Byt namn på anteckning</string>
+    <string name="general_note">Allmän anteckning</string>
+    <string name="open_file">Öppna fil</string>
+    <string name="create_new_note">Skapa en ny anteckning</string>
+    <string name="add_to_note">Lägg till i anteckning</string>
 
     <!-- File notes -->
-    <string name="export_as_file">Export as file</string>
-    <string name="file_too_large">File too large, the limit is 10MB</string>
-    <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%1$s\"</string>
-    <string name="note_saved_successfully">Note \"%1$s\" saved successfully</string>
-    <string name="display_success_message">Display save success messages</string>
+    <string name="export_as_file">Exportera som fil</string>
+    <string name="file_too_large">Filen är för stor, gränsen är 10 MB</string>
+    <string name="only_import_file_content">Importera bara innehållet i filen\n(anteckningen påverkas inte om filen ändras)</string>
+    <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
+    <string name="delete_file_itself">Ta även bort filen \"%1$s\"</string>
+    <string name="note_saved_successfully">Anteckningen \"%1$s\" har sparats</string>
+    <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
 
     <!-- Settings -->
-    <string name="links_and_emails_clickable">Make links and emails clickable</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
-    <string name="widget_note">Note used in widget</string>
-    <string name="gravity">Gravity</string>
-    <string name="left">Left</string>
-    <string name="center">Center</string>
-    <string name="right">Right</string>
+    <string name="links_and_emails_clickable">Gör länkar och e-postadresser klickbara</string>
+    <string name="place_cursor_end">Placera markören vid slutet av anteckningen</string>
+    <string name="widget_note">Anteckningen används i widgeten</string>
+    <string name="gravity">Justering</string>
+    <string name="left">Vänster</string>
+    <string name="center">Centrerad</string>
+    <string name="right">Höger</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">A simple textfield for adding quick notes, without ads.</string>
+    <string name="app_short_description">Ett enkelt textfält för att lägga till snabba anteckningar, utan reklam.</string>
     <string name="app_long_description">
-        Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
+        Behöver du snabbt anteckna något att köpa, en adress eller en företagsidé? Då är det här appen som du har letat efter! Ingen komplicerad konfiguration behövs. Anteckningen sparas automatiskt så att dina ändringar inte tas bort av misstag. Har stöd för att skapa flera oberoende anteckningar.
 
 
-        You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
+        Du kan komma åt anteckningen på nolltid genom att använda den anpassningsbara och justerbara widgeten, som öppnar appen när du klickar på den.
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides a Dark theme too.
+        Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och har även ett Mörkt tema.
 
-        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+        Denna app är bara en del av en större serie appar. Du hittar resten av dem på http://www.simplemobiletools.com
     </string>
 
     <!--
