@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Simple Notes</string>
+    <string name="app_launcher_name">Simple Notes</string>
+    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Simple Notes.\nPo więcej prostych aplikacji, takich jak ta, udaj się na SimpleMobileTools.com.\n</string>
+    <string name="cannot_share_empty_text">Nie mogę udostępnić pustej notatki</string>
+    <string name="simple_note">Simple Note</string>
+    <string name="new_note">Dodaj nową notatkę</string>
+    <string name="no_title">Nazwij swoją notatkę</string>
+    <string name="title_taken">Notatka o tej nazwie już istnieje</string>
+    <string name="open_note">Otwórz notatkę</string>
+    <string name="delete_note">Usuń notatkę</string>
+    <string name="delete_note_prompt_title">Usuń notatkę</string>
+    <string name="delete_note_prompt_message">Czy na pewno chcesz usunąć notatkę \"%1$s\"?</string>
+    <string name="pick_a_note">Wybierz notatkę</string>
+    <string name="rename_note">Zmień nazwę notatki</string>
+    <string name="general_note">Notatka ogólna</string>
+    <string name="create_new_note">Utwórz nową notatkę</string>
+    <string name="add_to_note">Dodaj do notatki</string>
+
+    <!-- File notes -->
+    <string name="open_file">Otwórz plik</string>
+    <string name="export_as_file">Wyeksportuj jako plik</string>
+    <string name="file_too_large">Plik jest za duży (może mieć co najwyżej 10 MB)</string>
+    <string name="only_import_file_content">Zaimportuj tylko zawartość pliku\n(zmiana pliku nie będzie miała wpływu na notatkę)</string>
+    <string name="update_file_at_note">Zaktualizuj plik po zaktualizowaniu notatki\n(notatka zostanie usunięta jeśli plik zostanie usunięty lub zmieni się jego lokalizacja)</string>
+    <string name="delete_file_itself">Usuń także plik \"%1$s\"</string>
+    <string name="note_saved_successfully">Notatka \"%1$s\" została zapisana</string>
+    <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisaniu notatki</string>
+
+    <!-- Settings -->
+    <string name="widget_note">Notatka używana w widżecie</string>
+    <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy.</string>
+    <string name="place_cursor_end">Umieszczaj kursor na końcu notatki</string>
+    <string name="gravity">Wyrównanie tekstu w notatkach</string>
+    <string name="left">Do lewej strony</string>
+    <string name="center">Do środka</string>
+    <string name="right">Do prawej strony</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Prosty notatnik bez reklam.</string>
+    <string name="app_long_description">
+        Potrzebujesz szybko zanotować co masz kupić, gdzie masz pojść, lub co zrobić? Zatem jest to aplikacja, której szukasz. Nie ma tu żadnych skomplikowanych kroków ani ustawień, po prostu pisz, co musisz zapamiętać. Autozapis nie pozwoli na umknięcie niczego. Dla zabieganych jest opcja pisania kilka notatek na raz.
+
+        Widżet dodatkowo ułatwia sprawę. Klikasz go i już możesz pisać.
+
+         Aplikacja nie zawiera żadnych żadnych reklam i nie potrzebuje masy uprawnień. Jest w pełni otwartoźródłowa. Posiada ciemny motyw dla osób z wrażliwymi oczami.
+
+        Niniejsza aplikacja jest tylko częścią naszej kolekcji prostych narzędzi. Ta, jak i pozostałe, dostępne są na stronie http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/library/src/main/res
+    -->
+</resources>
