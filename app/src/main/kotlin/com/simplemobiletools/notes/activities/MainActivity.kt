@@ -36,8 +36,11 @@ import java.io.File
 import java.nio.charset.Charset
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
+    private val STORAGE_OPEN_FILE_ACTION = 0
     private val STORAGE_OPEN_FILE = 1
     private val STORAGE_EXPORT_AS_FILE = 2
+
+    private var openFilePath = ""
     private var mAdapter: NotesPagerAdapter? = null
 
     lateinit var mCurrentNote: Note
@@ -65,6 +68,12 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                     intent.removeExtra(Intent.EXTRA_TEXT)
                 }
             }
+
+            if (action == Intent.ACTION_VIEW) {
+                handleFile(data.path)
+                intent.removeCategory(Intent.CATEGORY_DEFAULT)
+                intent.action = null
+            }
         }
     }
 
@@ -84,6 +93,22 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                 updateSelectedNote(notes[it - 1].id)
                 addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
             }
+        }
+    }
+
+    private fun handleFile(path: String) {
+        val id = mDb.getNoteId(path)
+
+        if (mDb.isValidId(id)) {
+            updateSelectedNote(id)
+            return
+        }
+
+        if (hasWriteStoragePermission()) {
+            importFileWithSync(path)
+        } else {
+            this.openFilePath = path
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_OPEN_FILE_ACTION)
         }
     }
 
@@ -220,19 +245,35 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun openFile() {
         FilePickerDialog(this) {
-            val file = File(it)
-            if (file.isImageVideoGif()) {
-                toast(R.string.invalid_file_format)
-            } else if (file.length() > 10 * 1000 * 1000) {
-                toast(R.string.file_too_large)
-            } else if (mDb.doesTitleExist(it.getFilenameFromPath())) {
-                toast(R.string.title_taken)
-            } else {
-                OpenFileDialog(this, it) {
+            openFile(it, true, {
+                OpenFileDialog(this, it.path) {
                     addNewNote(it)
                 }
-            }
+            })
         }
+    }
+
+    private fun openFile(path: String, checkTitle: Boolean, onChecksPassed: (file: File) -> Unit) {
+        val file = File(path)
+        if (file.isImageVideoGif()) {
+            toast(R.string.invalid_file_format)
+        } else if (file.length() > 10 * 1000 * 1000) {
+            toast(R.string.file_too_large)
+        } else if (checkTitle && mDb.doesTitleExist(path.getFilenameFromPath())) {
+            toast(R.string.title_taken)
+        } else {
+            onChecksPassed(file)
+        }
+    }
+
+    private fun importFileWithSync(path: String) {
+        openFile(path, false, {
+            var title = path.getFilenameFromPath()
+            if (mDb.doesTitleExist(title)) title += " (file)"
+
+            val note = Note(0, title, "", TYPE_NOTE, path)
+            addNewNote(note)
+        })
     }
 
     private fun tryExportAsFile() {
@@ -365,6 +406,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                 openFile()
             } else if (requestCode == STORAGE_EXPORT_AS_FILE) {
                 exportAsFile()
+            } else if (requestCode == STORAGE_OPEN_FILE_ACTION) {
+                importFileWithSync(openFilePath)
             }
         }
     }
