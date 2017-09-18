@@ -138,6 +138,22 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         return note
     }
 
+    fun getNoteId(path: String): Int {
+        val cols = arrayOf(COL_ID)
+        val selection = "$COL_PATH = ?"
+        val selectionArgs = arrayOf(path)
+        var cursor: Cursor? = null
+        try {
+            cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null)
+            if (cursor?.moveToFirst() == true) {
+                return cursor.getIntValue(COL_ID)
+            }
+        } finally {
+            cursor?.close()
+        }
+        return 0
+    }
+
     fun updateNoteValue(note: Note) {
         val values = ContentValues().apply { put(COL_VALUE, note.value) }
         updateNote(note.id, values)
@@ -158,4 +174,6 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         val selectionArgs = arrayOf(id.toString())
         mDb.update(TABLE_NAME, values, selection, selectionArgs)
     }
+
+    fun isValidId(id: Int) = id > 0
 }
