@@ -26,7 +26,7 @@ import kotlinx.android.synthetic.main.fragment_note.view.*
 import java.io.File
 
 class NoteFragment : Fragment() {
-    var noteId = 0
+    private var noteId = 0
     lateinit var note: Note
     lateinit var view: ViewGroup
     lateinit var mDb: DBHelper

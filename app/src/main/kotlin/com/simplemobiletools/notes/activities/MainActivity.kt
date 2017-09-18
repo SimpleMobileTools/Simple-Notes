@@ -36,9 +36,9 @@ import java.io.File
 import java.nio.charset.Charset
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
-    private val STORAGE_OPEN_FILE_ACTION = 0
     private val STORAGE_OPEN_FILE = 1
-    private val STORAGE_EXPORT_AS_FILE = 2
+    private val STORAGE_OPEN_FILE_ACTION = 2
+    private val STORAGE_EXPORT_AS_FILE = 3
 
     private var openFilePath = ""
     private var mAdapter: NotesPagerAdapter? = null
@@ -267,13 +267,14 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun importFileWithSync(path: String) {
-        openFile(path, false, {
+        openFile(path, false) {
             var title = path.getFilenameFromPath()
-            if (mDb.doesTitleExist(title)) title += " (file)"
+            if (mDb.doesTitleExist(title))
+                title += " (file)"
 
             val note = Note(0, title, "", TYPE_NOTE, path)
             addNewNote(note)
-        })
+        }
     }
 
     private fun tryExportAsFile() {
@@ -286,8 +287,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun exportAsFile() {
         ExportAsDialog(this, mCurrentNote) {
-            if (getCurrentNoteText()?.isNotEmpty() == true)
+            if (getCurrentNoteText()?.isNotEmpty() == true) {
                 exportNoteValueToFile(it, getCurrentNoteText()!!)
+            }
         }
     }
 
@@ -371,7 +373,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun getNoteIndexWithId(id: Int): Int {
-        for (i in 0..mNotes.count() - 1) {
+        for (i in 0 until mNotes.count()) {
             if (mNotes[i].id == id) {
                 mCurrentNote = mNotes[i]
                 return i
@@ -402,12 +404,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            if (requestCode == STORAGE_OPEN_FILE) {
-                openFile()
-            } else if (requestCode == STORAGE_EXPORT_AS_FILE) {
-                exportAsFile()
-            } else if (requestCode == STORAGE_OPEN_FILE_ACTION) {
-                importFileWithSync(openFilePath)
+            when (requestCode) {
+                STORAGE_OPEN_FILE -> openFile()
+                STORAGE_EXPORT_AS_FILE -> exportAsFile()
+                STORAGE_OPEN_FILE_ACTION -> importFileWithSync(openFilePath)
             }
         }
     }
