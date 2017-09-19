@@ -30,6 +30,7 @@
     <!-- Settings -->
     <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>
     <string name="place_cursor_end">Place cursor to the end of note</string>
+    <string name="monospaced_font">Use monospaced font</string>
     <string name="widget_note">Nota utilizada no widget</string>
     <string name="gravity">Gravidade</string>
     <string name="left">Esquerda</string>

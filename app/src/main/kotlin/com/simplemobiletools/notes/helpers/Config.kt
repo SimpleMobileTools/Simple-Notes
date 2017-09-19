@@ -16,6 +16,10 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getBoolean(CLICKABLE_LINKS, false)
         set(clickableLinks) = prefs.edit().putBoolean(CLICKABLE_LINKS, clickableLinks).apply()
 
+    var monospacedFont: Boolean
+        get() = prefs.getBoolean(MONOSPACED_FONT, false)
+        set(monospacedFont) = prefs.edit().putBoolean(MONOSPACED_FONT, monospacedFont).apply()
+
     var fontSize: Int
         get() = prefs.getInt(FONT_SIZE, FONT_SIZE_MEDIUM)
         set(size) = prefs.edit().putInt(FONT_SIZE, size).apply()

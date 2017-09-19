@@ -28,6 +28,7 @@ class SettingsActivity : SimpleActivity() {
         setupCustomizeColors()
         setupDisplaySuccess()
         setupClickableLinks()
+        setupMonospacedFont()
         setupFontSize()
         setupGravity()
         setupWidgetNote()
@@ -54,6 +55,14 @@ class SettingsActivity : SimpleActivity() {
         settings_clickable_links_holder.setOnClickListener {
             settings_clickable_links.toggle()
             config.clickableLinks = settings_clickable_links.isChecked
+        }
+    }
+
+    private fun setupMonospacedFont() {
+        settings_monospaced_font.isChecked = config.monospacedFont
+        settings_monospaced_font_holder.setOnClickListener {
+            settings_monospaced_font.toggle()
+            config.monospacedFont = settings_monospaced_font.isChecked
         }
     }
 

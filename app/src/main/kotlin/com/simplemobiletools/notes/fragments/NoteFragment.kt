@@ -1,6 +1,7 @@
 package com.simplemobiletools.notes.fragments
 
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.method.LinkMovementMethod
@@ -100,6 +101,8 @@ class NoteFragment : Fragment() {
 
         val config = context.config
         view.notes_view.apply {
+            typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
+
             val fileContents = context.getNoteStoredValue(note)
 
             if (fileContents == null) {
