@@ -30,6 +30,7 @@
     <!-- Settings -->
     <string name="links_and_emails_clickable">Gör länkar och e-postadresser klickbara</string>
     <string name="place_cursor_end">Placera markören vid slutet av anteckningen</string>
+    <string name="monospaced_font">Use monospaced font</string>
     <string name="widget_note">Anteckningen används i widgeten</string>
     <string name="gravity">Justering</string>
     <string name="left">Vänster</string>

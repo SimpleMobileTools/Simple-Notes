@@ -31,6 +31,7 @@
     <string name="widget_note">Note used in widget</string>
     <string name="links_and_emails_clickable">Make links and emails clickable</string>
     <string name="place_cursor_end">Place cursor to the end of note</string>
+    <string name="monospaced_font">Use monospaced font</string>
     <string name="gravity">Gravity</string>
     <string name="left">Left</string>
     <string name="center">Center</string>
