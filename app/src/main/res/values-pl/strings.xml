@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Simple Notes</string>
-    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Simple Notes.\nPo więcej prostych aplikacji, takich jak ta, udaj się na SimpleMobileTools.com.\n</string>
+    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Simple Notes.\nPo więcej prostych aplikacji, takich jak ta, udaj się na SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nie mogę udostępnić pustej notatki</string>
     <string name="simple_note">Simple Note</string>
     <string name="new_note">Dodaj nową notatkę</string>

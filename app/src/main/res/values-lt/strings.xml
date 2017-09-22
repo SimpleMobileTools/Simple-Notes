@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
-    <string name="widget_config">Aèiû, jog naudojate Simple Notes.\nDaugiau paprastø programø rasite SimpleMobileTools.com.\n</string>
+    <string name="widget_config">Aèiû, jog naudojate Simple Notes.\nDaugiau paprastø programø rasite SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Negalima dalintis tuðèiu tekstu</string>
     <string name="simple_note">Simple Note</string>
     <string name="new_note">Pridëti naujà áraðà</string>

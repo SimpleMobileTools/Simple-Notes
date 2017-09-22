@@ -14,7 +14,7 @@
     <item
         android:id="@+id/rename_note"
         android:icon="@drawable/ic_rename"
-        android:title="@string/rename"
+        android:title="@string/rename_note"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/share"

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Jednoduché poznámky</string>
+    <string name="app_launcher_name">Poznámky</string>
+    <string name="widget_config">Ďakujeme za používanie Jednoduchých poznámok.\nPre viac jednoduchých apiek prosím navštívte SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">Nedá sa zdieľať prázdny text</string>
+    <string name="simple_note">Jednoduchá poznámka</string>
+    <string name="new_note">Pridať novú poznámku</string>
+    <string name="no_title">Prosím pomenujte poznámku</string>
+    <string name="title_taken">Poznámka s týmto názvom už existuje</string>
+    <string name="open_note">Otvoriť poznámku</string>
+    <string name="delete_note">Odstrániť poznámku</string>
+    <string name="delete_note_prompt_message">Ste si istý, že chcete odstrániť poznámku \"%s\"?</string>
+    <string name="pick_a_note">Zvoľte si poznámku</string>
+    <string name="rename_note">Premenovať poznámku</string>
+    <string name="general_note">Všeobecná poznámka</string>
+    <string name="create_new_note">Vytvoriť novú poznámku</string>
+    <string name="add_to_note">Pridať k poznámke</string>
+
+    <!-- File notes -->
+    <string name="open_file">Otvoriť súbor</string>
+    <string name="export_as_file">Exportovať ako súbor</string>
+    <string name="file_too_large">Súbor je príliš veľký, maximálny limit je 10MB</string>
+    <string name="only_import_file_content">Iba importovať obsah súboru\n(úprava súboru nebude mať vplyv na poznámku)</string>
+    <string name="update_file_at_note">Aktualizovať samotný súbor po úprave poznámky\n(ak bude daný súbor presunutý, alebo vymazaný, bude vymazaná aj poznámka)</string>
+    <string name="delete_file_itself">Odstrániť aj súbor \"%s\"</string>
+    <string name="note_saved_successfully">Poznámka \"%s\" bola úspešne uložená</string>
+    <string name="display_success_message">Zobraziť správu o úspešnom uložení poznámky</string>
+
+    <!-- Settings -->
+    <string name="widget_note">Poznámka použitá vo widgete</string>
+    <string name="links_and_emails_clickable">Spraviť odkazy a emaily klikateľnými</string>
+    <string name="place_cursor_end">Umiestniť kurzor na koniec poznámky</string>
+    <string name="monospaced_font">Použiť písmo Monospace</string>
+    <string name="gravity">Zarovnanie</string>
+    <string name="left">Vľavo</string>
+    <string name="center">Uprostred</string>
+    <string name="right">Vpravo</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Jednoduché textové pole pre pridávanie rýchlych poznámok, bez reklám.</string>
+    <string name="app_long_description">
+        Potrebujete si rýchlo poznačiť niečo na nákup, adresu, alebo nápad na startup? Ak áno, táto apka je pre vás ako stvorená! Nieje potrebné žiadne zdĺhavé nastavovanie, iba zapíšte, čo chcete. Poznámky sa ukladajú automaticky, čiže ich ani náhodou nestratíte. Poskytuje možnosť vytvorenia viacerých nezávislých poznámok.
+
+        Ku poznámkam viete rýchlo pristupovať cez upraviteľný widget, ktorý kliknutím otvorí apku.
+
+        Neobsahuje žiadne reklamy a nepotrebné oprávnenia. Je opensource, poskytuje možnosť zmeny farieb.
+
+        Táto aplikácia je iba jednou zo skupiny aplikácií. Ostatné viete nájsť na http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>

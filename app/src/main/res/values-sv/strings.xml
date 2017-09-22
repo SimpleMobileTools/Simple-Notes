@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Anteckningar</string>
-    <string name="widget_config">Tack för att du använder Simple Notes.\nFör fler enkla appar, gå till simplemobiletools.com.\n</string>
+    <string name="widget_config">Tack för att du använder Simple Notes.\nFör fler enkla appar, gå till simplemobiletools.com.</string>
     <string name="cannot_share_empty_text">Det går inte att dela utan text</string>
     <string name="simple_note">Enkel anteckning</string>
     <string name="new_note">Lägg till en ny anteckning</string>
