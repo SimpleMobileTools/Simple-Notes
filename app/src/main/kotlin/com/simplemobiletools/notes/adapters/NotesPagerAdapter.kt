@@ -7,8 +7,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.util.SparseArray
 import android.view.ViewGroup
-import com.simplemobiletools.commons.extensions.toast
-import com.simplemobiletools.notes.R
+import com.simplemobiletools.commons.extensions.showErrorToast
 import com.simplemobiletools.notes.fragments.NoteFragment
 import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
@@ -46,7 +45,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
         try {
             super.finishUpdate(container)
         } catch (e: Exception) {
-            activity.toast(R.string.unknown_error_occurred)
+            activity.showErrorToast(e)
         }
     }
 }

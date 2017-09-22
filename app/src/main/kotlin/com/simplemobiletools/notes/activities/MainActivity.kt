@@ -320,7 +320,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             }
             noteSavedSuccessfully(path.getFilenameFromPath())
         } catch (e: Exception) {
-            toast(R.string.unknown_error_occurred)
+            showErrorToast(e)
         }
     }
 
