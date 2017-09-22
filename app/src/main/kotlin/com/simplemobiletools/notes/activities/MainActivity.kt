@@ -194,7 +194,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
-    private fun currentNotesView() = mAdapter?.getItem(view_pager.currentItem)?.notes_view
+    private fun currentNotesView() = if (view_pager == null) null else mAdapter?.getItem(view_pager.currentItem)?.notes_view
 
     private fun displayRenameDialog() {
         RenameNoteDialog(this, mDb, mCurrentNote) {
