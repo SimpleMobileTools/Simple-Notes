@@ -9,8 +9,7 @@
     <string name="title_taken">Áraðas tokiu pavadinimu jau egzistuoja</string>
     <string name="open_note">Atverti áraðà</string>
     <string name="delete_note">Iðtrinti áraðà</string>
-    <string name="delete_note_prompt_title">Iðtrinti áraðà</string>
-    <string name="delete_note_prompt_message">Ar tikrai norite iðtrinti áraðà \"%1$s\"?</string>
+    <string name="delete_note_prompt_message">Ar tikrai norite iðtrinti áraðà \"%s\"?</string>
     <string name="pick_a_note">Pasirinkti áraðà</string>
     <string name="rename_note">Pervadinti áraðà</string>
     <string name="general_note">Pagrindinis áraðas</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">Failas per didelis, didþiausias leistinas dydis yra 10MB</string>
     <string name="only_import_file_content">Ákelti tik áraðo turiná\n(Talpinant áraðà jis nebus paveiktas)</string>
     <string name="update_file_at_note">Atnaujinti failà kai atnaujinamas áraðas\n(Áraðas iðtrinamas, jei iðtrinamas failas ar pakeièiama talpinimo vieta)</string>
-    <string name="delete_file_itself">Taip pat iðtrinti failà \"%1$s\"</string>
-    <string name="note_saved_successfully">Áraðas \"%1$s\" sëkmingai iðsaugotas</string>
+    <string name="delete_file_itself">Taip pat iðtrinti failà \"%s\"</string>
+    <string name="note_saved_successfully">Áraðas \"%s\" sëkmingai iðsaugotas</string>
     <string name="display_success_message">Rodyti sëkmingo iðsaugojimo praneðimus</string>
 
     <!-- Settings -->

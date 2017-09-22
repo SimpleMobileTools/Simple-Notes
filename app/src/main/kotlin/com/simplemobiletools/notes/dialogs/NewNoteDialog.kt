@@ -23,13 +23,13 @@ class NewNoteDialog(val activity: Activity, val db: DBHelper, callback: (title: 
             activity.setupDialogStuff(view, this, R.string.new_note)
             getButton(BUTTON_POSITIVE).setOnClickListener {
                 val title = view.note_name.value
-                if (title.isEmpty()) {
-                    activity.toast(R.string.no_title)
-                } else if (db.doesTitleExist(title)) {
-                    activity.toast(R.string.title_taken)
-                } else {
-                    callback(title)
-                    dismiss()
+                when {
+                    title.isEmpty() -> activity.toast(R.string.no_title)
+                    db.doesTitleExist(title) -> activity.toast(R.string.title_taken)
+                    else -> {
+                        callback(title)
+                        dismiss()
+                    }
                 }
             }
         }

@@ -9,8 +9,7 @@
     <string name="title_taken">Заметка с таким названием уже существует</string>
     <string name="open_note">Открыть заметку</string>
     <string name="delete_note">Удалить заметку</string>
-    <string name="delete_note_prompt_title">Удалить заметку</string>
-    <string name="delete_note_prompt_message">Вы действительно хотите удалить заметку \"%1$s\"?</string>
+    <string name="delete_note_prompt_message">Вы действительно хотите удалить заметку \"%s\"?</string>
     <string name="pick_a_note">Выберите заметку</string>
     <string name="rename_note">Переименовать заметку</string>
     <string name="general_note">Общая заметка</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">Файл слишком велик, лимит 10МБ</string>
     <string name="only_import_file_content">Только импортировать содержимое файла\n(изменение файла не изменит заметку)</string>
     <string name="update_file_at_note">Обновлять содержимое файла при обновлении заметки\n(заметка удалится, если удалить файл или изменить путь к нему)</string>
-    <string name="delete_file_itself">Также удалить файл \"%1$s\"</string>
-    <string name="note_saved_successfully">Заметка \"%1$s\" сохранена успешно</string>
+    <string name="delete_file_itself">Также удалить файл \"%s\"</string>
+    <string name="note_saved_successfully">Заметка \"%s\" сохранена успешно</string>
     <string name="display_success_message">Уведомлять, что файл успешно сохранен</string>
 
     <!-- Settings -->
@@ -42,7 +41,6 @@
     <string name="app_short_description">Просто текстовое поле для заметок, без рекламы</string>
     <string name="app_long_description">
         Нужно записать, что купить, адрес или идею стартапа? Тогда это то приложение, что вы искали! Не нужно долго настраивать, просто введите то, что хотели. Есть автосохранение, поэтому вы никогда не отмените правки по ошибке. Поддерживается создание нескольких независимых друг от друга заметок.
-
 
         Вы можете получить доступ к заметке мгновенно, используя настраиваемый и изменяемый по размеру виджет, который откроет приложение по клику.
 

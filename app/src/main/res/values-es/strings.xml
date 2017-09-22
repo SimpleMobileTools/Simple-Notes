@@ -9,8 +9,7 @@
     <string name="title_taken">Ya existe una nota con ese nombre</string>
     <string name="open_note">Abrir nota</string>
     <string name="delete_note">Eliminar nota</string>
-    <string name="delete_note_prompt_title">Eliminar nota</string>
-    <string name="delete_note_prompt_message">¿Está seguro de querer eliminar la nota \"%1$s\"?</string>
+    <string name="delete_note_prompt_message">¿Está seguro de querer eliminar la nota \"%s\"?</string>
     <string name="pick_a_note">Seleccione una nota</string>
     <string name="rename_note">Renombrar nota</string>
     <string name="general_note">Nota principal</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">File too large, the limit is 10MB</string>
     <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
     <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%1$s\"</string>
-    <string name="note_saved_successfully">Note \"%1$s\" saved successfully</string>
+    <string name="delete_file_itself">Also delete file \"%s\"</string>
+    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
     <string name="display_success_message">Display save success messages</string>
 
     <!-- Settings -->
@@ -42,7 +41,6 @@
     <string name="app_short_description">Un simple campo de texto para añadir breves y rápidas notas, sin anuncios.</string>
     <string name="app_long_description">
         ¿Necesita tomar nota de algo para comprar, una dirección o una idea? ¡Entonces ésta es la aplicación que estaba buscando! Sin complicadas configuraciones, tan solo escriba lo que quiera. Viene con guardado automático, por tanto usted no descartará ningún cambio por error. Soporta la creación de múltiples notas independientes.
-
 
         Puede acceder rápidamente a la nota desde el widget personalizable y ajustable, el cual abre la aplicación con un simple toque.
 

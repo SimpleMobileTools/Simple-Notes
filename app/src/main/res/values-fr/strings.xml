@@ -9,8 +9,7 @@
     <string name="title_taken">Une note avec le même titre existe déjà</string>
     <string name="open_note">Ouvrir la note</string>
     <string name="delete_note">Supprimer la note</string>
-    <string name="delete_note_prompt_title">Supprimer la note</string>
-    <string name="delete_note_prompt_message">Etes-vous sûr de vouloir supprimer la note \"%1$s\"?</string>
+    <string name="delete_note_prompt_message">Etes-vous sûr de vouloir supprimer la note \"%s\"?</string>
     <string name="pick_a_note">Choisir une note</string>
     <string name="rename_note">Renomme la note</string>
     <string name="general_note">Note générale</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">Taille du fichier trop importante, la limite est de 10MB</string>
     <string name="only_import_file_content">Importer seulement le contenu du fichier\n(changer le fichier n\'affectera pas la note)</string>
     <string name="update_file_at_note">Metttre à jour le fichier lui-même lors de la mise à jour de la note\n(la note est supprimée si le fichier est supprimé, ou que le chemin change)</string>
-    <string name="delete_file_itself">Supprimer également le fichier \"%1$s\"</string>
-    <string name="note_saved_successfully">Note \"%1$s\" sauvegardée avec succès</string>
+    <string name="delete_file_itself">Supprimer également le fichier \"%s\"</string>
+    <string name="note_saved_successfully">Note \"%s\" sauvegardée avec succès</string>
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
 
     <!-- Settings -->
@@ -42,7 +41,6 @@
     <string name="app_short_description">Un champ texte simple pour ajouter des notes rapides, sans publicités.</string>
     <string name="app_long_description">
         Besoin de noter rapidement quelquechose à acheter, une adresse, ou une idée de startup ? Alors ceci est l\'application que vous cherchiez ! Pas d\'étapes compliquées de configuration nécéssaires, saisissez juste ce pourquoi vous êtes venu. Fournit une sauvegarde automatique, ainsi vous ne rejetterez pas vos changements par erreur. Supporte la création de multiples notes indépendantes.
-
 
         Vous pouvez accéder à la note en peu de temps en utilisant le widget personnalisable et redimensionnable, qui ouvre l\'application au clic.
 

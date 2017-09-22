@@ -9,8 +9,7 @@
     <string name="title_taken">そのタイトルのメモはすでに存在します</string>
     <string name="open_note">メモを開く</string>
     <string name="delete_note">メモを削除</string>
-    <string name="delete_note_prompt_title">メモを削除</string>
-    <string name="delete_note_prompt_message">メモ \"%1$s\" を削除してもよろしいですか?</string>
+    <string name="delete_note_prompt_message">メモ \"%s\" を削除してもよろしいですか?</string>
     <string name="pick_a_note">メモを選択</string>
     <string name="rename_note">メモの名前を変更</string>
     <string name="general_note">全般メモ</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">File too large, the limit is 10MB</string>
     <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
     <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%1$s\"</string>
-    <string name="note_saved_successfully">Note \"%1$s\" saved successfully</string>
+    <string name="delete_file_itself">Also delete file \"%s\"</string>
+    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
     <string name="display_success_message">Display save success messages</string>
 
     <!-- Settings -->
@@ -42,7 +41,6 @@
     <string name="app_short_description">簡単なメモを追加するためのシンプルなテキストフィールド。広告はありません。</string>
     <string name="app_long_description">
         何か買うもの、住所、またはスタートアップのアイデアをすばやくメモする必要がありますか？ それなら、これがあなたが探していたアプリです！ 複雑なセットアップ手順は必要ありません。 思いついたものを入力するだけです。 自動保存機能が付いているので、誤って変更内容を破棄することはありません。 複数の独立したメモの作成をサポートしています。
-
 
         カスタマイズ可能でサイズ変更可能なウィジェットを使用すると、すぐにノートにアクセスできます。クリックするとアプリが開きます。
 

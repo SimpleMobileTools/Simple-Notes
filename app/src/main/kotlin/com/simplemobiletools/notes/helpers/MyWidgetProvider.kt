@@ -45,12 +45,10 @@ class MyWidgetProvider : AppWidgetProvider() {
         super.onUpdate(context, appWidgetManager, appWidgetIds)
     }
 
-    private fun getProperTextView(context: Context): Int {
-        return when (context.config.gravity) {
-            GRAVITY_CENTER -> R.id.notes_view_center
-            GRAVITY_RIGHT -> R.id.notes_view_right
-            else -> R.id.notes_view_left
-        }
+    private fun getProperTextView(context: Context) = when (context.config.gravity) {
+        GRAVITY_CENTER -> R.id.notes_view_center
+        GRAVITY_RIGHT -> R.id.notes_view_right
+        else -> R.id.notes_view_left
     }
 
     private fun initVariables(context: Context) {

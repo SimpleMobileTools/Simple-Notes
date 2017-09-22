@@ -9,8 +9,7 @@
     <string name="title_taken">Já existe uma nota com este título</string>
     <string name="open_note">Abrir nota</string>
     <string name="delete_note">Apagar nota</string>
-    <string name="delete_note_prompt_title">Apagar nota</string>
-    <string name="delete_note_prompt_message">Deseja mesmo apagar a nota \"%1$s\"?</string>
+    <string name="delete_note_prompt_message">Deseja mesmo apagar a nota \"%s\"?</string>
     <string name="pick_a_note">Selecione uma nota</string>
     <string name="rename_note">Renomear nota</string>
     <string name="general_note">Nota genérica</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">Ficheiro muito grande, o limite são 10 MB</string>
     <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro\n(se alterar o ficheiro, a nota fica intacta)</string>
     <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota\n(a nota será removida se apagar o ficheiro ou se mudar a sua localização)</string>
-    <string name="delete_file_itself">Apagar também o ficheiro \"%1$s\"</string>
-    <string name="note_saved_successfully">Nota \"%1$s\" guardada com sucesso</string>
+    <string name="delete_file_itself">Apagar também o ficheiro \"%s\"</string>
+    <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
 
     <!-- Settings -->
@@ -42,7 +41,6 @@
     <string name="app_short_description">Um campo de texto para adicionar as suas notas.</string>
     <string name="app_long_description">
         Necessita de escrever uma nota sobre algo? Então esta aplicação é para si! Sem complicações, basta escrever o seu texto na nota. Guarda automaticamente as notas, para que não as perca inesperadamente. Possui suporte a diversas notas independentes.
-
 
         Pode abrir a aplicação e aceder à sua nota através de um toque no widget.
 

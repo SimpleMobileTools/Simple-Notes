@@ -9,8 +9,7 @@
     <string name="title_taken">Notatka o tej nazwie już istnieje</string>
     <string name="open_note">Otwórz notatkę</string>
     <string name="delete_note">Usuń notatkę</string>
-    <string name="delete_note_prompt_title">Usuń notatkę</string>
-    <string name="delete_note_prompt_message">Czy na pewno chcesz usunąć notatkę \"%1$s\"?</string>
+    <string name="delete_note_prompt_message">Czy na pewno chcesz usunąć notatkę \"%s\"?</string>
     <string name="pick_a_note">Wybierz notatkę</string>
     <string name="rename_note">Zmień nazwę notatki</string>
     <string name="general_note">Notatka ogólna</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">Plik jest za duży (może mieć co najwyżej 10 MB)</string>
     <string name="only_import_file_content">Zaimportuj tylko zawartość pliku\n(zmiana pliku nie będzie miała wpływu na notatkę)</string>
     <string name="update_file_at_note">Zaktualizuj plik po zaktualizowaniu notatki\n(notatka zostanie usunięta jeśli plik zostanie usunięty lub zmieni się jego lokalizacja)</string>
-    <string name="delete_file_itself">Usuń także plik \"%1$s\"</string>
-    <string name="note_saved_successfully">Notatka \"%1$s\" została zapisana</string>
+    <string name="delete_file_itself">Usuń także plik \"%s\"</string>
+    <string name="note_saved_successfully">Notatka \"%s\" została zapisana</string>
     <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisaniu notatki</string>
 
     <!-- Settings -->

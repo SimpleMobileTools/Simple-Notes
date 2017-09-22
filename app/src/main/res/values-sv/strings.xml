@@ -9,8 +9,7 @@
     <string name="title_taken">En anteckning med den titeln finns redan</string>
     <string name="open_note">Öppna anteckning</string>
     <string name="delete_note">Ta bort anteckning</string>
-    <string name="delete_note_prompt_title">Ta bort anteckning</string>
-    <string name="delete_note_prompt_message">Är du säker på att du vill ta bort anteckningen \"%1$s\"?</string>
+    <string name="delete_note_prompt_message">Är du säker på att du vill ta bort anteckningen \"%s\"?</string>
     <string name="pick_a_note">Välj en anteckning</string>
     <string name="rename_note">Byt namn på anteckning</string>
     <string name="general_note">Allmän anteckning</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">Filen är för stor, gränsen är 10 MB</string>
     <string name="only_import_file_content">Importera bara innehållet i filen\n(anteckningen påverkas inte om filen ändras)</string>
     <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
-    <string name="delete_file_itself">Ta även bort filen \"%1$s\"</string>
-    <string name="note_saved_successfully">Anteckningen \"%1$s\" har sparats</string>
+    <string name="delete_file_itself">Ta även bort filen \"%s\"</string>
+    <string name="note_saved_successfully">Anteckningen \"%s\" har sparats</string>
     <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
 
     <!-- Settings -->
@@ -42,7 +41,6 @@
     <string name="app_short_description">Ett enkelt textfält för att lägga till snabba anteckningar, utan reklam.</string>
     <string name="app_long_description">
         Behöver du snabbt anteckna något att köpa, en adress eller en företagsidé? Då är det här appen som du har letat efter! Ingen komplicerad konfiguration behövs. Anteckningen sparas automatiskt så att dina ändringar inte tas bort av misstag. Har stöd för att skapa flera oberoende anteckningar.
-
 
         Du kan komma åt anteckningen på nolltid genom att använda den anpassningsbara och justerbara widgeten, som öppnar appen när du klickar på den.
 

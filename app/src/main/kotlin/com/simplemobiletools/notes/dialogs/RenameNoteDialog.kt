@@ -25,39 +25,39 @@ class RenameNoteDialog(val activity: SimpleActivity, val db: DBHelper, val note:
             activity.setupDialogStuff(view, this, R.string.rename_note)
             getButton(BUTTON_POSITIVE).setOnClickListener({
                 val title = view.note_name.value
-                if (title.isEmpty()) {
-                    activity.toast(R.string.no_title)
-                } else if (db.doesTitleExist(title)) {
-                    activity.toast(R.string.title_taken)
-                } else {
-                    note.title = title
-                    val path = note.path
-                    if (path.isNotEmpty()) {
-                        if (title.isEmpty()) {
-                            activity.toast(R.string.filename_cannot_be_empty)
-                            return@setOnClickListener
-                        }
+                when {
+                    title.isEmpty() -> activity.toast(R.string.no_title)
+                    db.doesTitleExist(title) -> activity.toast(R.string.title_taken)
+                    else -> {
+                        note.title = title
+                        val path = note.path
+                        if (path.isNotEmpty()) {
+                            if (title.isEmpty()) {
+                                activity.toast(R.string.filename_cannot_be_empty)
+                                return@setOnClickListener
+                            }
 
-                        val file = File(path)
-                        val newFile = File(file.parent, title)
-                        if (!newFile.name.isAValidFilename()) {
-                            activity.toast(R.string.invalid_name)
-                            return@setOnClickListener
-                        }
+                            val file = File(path)
+                            val newFile = File(file.parent, title)
+                            if (!newFile.name.isAValidFilename()) {
+                                activity.toast(R.string.invalid_name)
+                                return@setOnClickListener
+                            }
 
-                        activity.renameFile(file, newFile) {
-                            if (it) {
-                                note.path = newFile.absolutePath
-                                db.updateNotePath(note)
-                            } else {
-                                activity.toast(R.string.rename_file_error)
-                                return@renameFile
+                            activity.renameFile(file, newFile) {
+                                if (it) {
+                                    note.path = newFile.absolutePath
+                                    db.updateNotePath(note)
+                                } else {
+                                    activity.toast(R.string.rename_file_error)
+                                    return@renameFile
+                                }
                             }
                         }
+                        db.updateNoteTitle(note)
+                        dismiss()
+                        callback(note)
                     }
-                    db.updateNoteTitle(note)
-                    dismiss()
-                    callback(note)
                 }
             })
         }

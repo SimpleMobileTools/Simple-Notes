@@ -9,8 +9,7 @@
     <string name="title_taken">Es existiert bereits eine Notiz mit diesem Namen</string>
     <string name="open_note">Notiz öffnen</string>
     <string name="delete_note">Notiz löschen</string>
-    <string name="delete_note_prompt_title">Notiz löschen</string>
-    <string name="delete_note_prompt_message">Bist du sicher, dass du Notiz \"%1$s\" löschen willst?</string>
+    <string name="delete_note_prompt_message">Bist du sicher, dass du Notiz \"%s\" löschen willst?</string>
     <string name="pick_a_note">Notiz auswählen</string>
     <string name="rename_note">Notiz umbenennen</string>
     <string name="general_note">Hauptnotiz</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">Datei ist zu groß. Die maximale Größe beträgt 10 MB</string>
     <string name="only_import_file_content">Importiere nur den Dateiinhalt.\n(Änderungen an der Datei haben keine Auswirkungen auf die Notiz)</string>
     <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
-    <string name="delete_file_itself">Lösche Datei \"%1$s\"</string>
-    <string name="note_saved_successfully">Notiz \"%1$s\" erfolgreich gespeichert</string>
+    <string name="delete_file_itself">Lösche Datei \"%s\"</string>
+    <string name="note_saved_successfully">Notiz \"%s\" erfolgreich gespeichert</string>
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
 
     <!-- Settings -->

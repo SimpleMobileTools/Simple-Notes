@@ -9,8 +9,7 @@
     <string name="title_taken">Ilyen nevű jegyzet már van</string>
     <string name="open_note">Jegyzet megnyitása</string>
     <string name="delete_note">Jegyzet törlése</string>
-    <string name="delete_note_prompt_title">Jegyzet törlése</string>
-    <string name="delete_note_prompt_message">Biztosan törlöd a \"%1$s\" jegyzetet?</string>
+    <string name="delete_note_prompt_message">Biztosan törlöd a \"%s\" jegyzetet?</string>
     <string name="pick_a_note">Jegyzetválasztás</string>
     <string name="rename_note">Jegyzet átnevezése</string>
     <string name="general_note">Alapértelmezett jegyzet</string>
@@ -23,8 +22,8 @@
     <string name="file_too_large">A fájl túl nagy, legfeljebb 10MB lehet</string>
     <string name="only_import_file_content">Csak a fájl tartalmának importálása\n(a fájl változásai nem látszanak a jegyzetben)</string>
     <string name="update_file_at_note">A jegyzetbe íráskor a fájlba is írás\n(a jegyzet törlődik ha a fájl törlődik, vagy változik az elérési útvonala)</string>
-    <string name="delete_file_itself">\"%1$s\" fájl is törlődjön</string>
-    <string name="note_saved_successfully">\"%1$s\" nevű jegyzet elmentve</string>
+    <string name="delete_file_itself">\"%s\" fájl is törlődjön</string>
+    <string name="note_saved_successfully">\"%s\" nevű jegyzet elmentve</string>
     <string name="display_success_message">Sikeres mentés üzenetek megjelenítése</string>
 
     <!-- Settings -->
@@ -42,7 +41,6 @@
     <string name="app_short_description">Egyszerű szövegmező gyors jegyzetírásra, reklámok nélkül.</string>
     <string name="app_long_description">
         Gyorsan le kell jegyezned valami tennivalót, egy címet, vagy egy ötletet egy új startup-ra? Akkor ez a Neked való alkalmazás! Semmi bonyonyolult beállítást nem igényel, csak írd le, ami eszedbe jut. Automatikusan ment, hogy biztosan ne felejtsd el a leírtakat elmenteni. Több, egymástól független jegyzetet is kezelhetsz. 
-        
 
         Láthatod és gyorsan elérheted a jegyzetedet egy személyre szabható és átméretezhető widget-tel, ami megnyomásra megnyitja az alkalmazást.
 

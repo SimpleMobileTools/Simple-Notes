@@ -139,7 +139,6 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun getCurrentWidgetNoteTitle(currentNoteId: Int, notes: List<Note>): String {
-        return notes.firstOrNull { it.id == currentNoteId }?.title ?: ""
-    }
+    private fun getCurrentWidgetNoteTitle(currentNoteId: Int, notes: List<Note>) =
+            notes.firstOrNull { it.id == currentNoteId }?.title ?: ""
 }
