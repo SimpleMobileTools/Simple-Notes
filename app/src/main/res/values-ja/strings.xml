@@ -31,7 +31,7 @@
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="monospaced_font">Use monospaced font</string>
     <string name="widget_note">ウィジェットで使用するメモ</string>
-    <string name="gravity">重力</string>
+    <string name="alignment">重力</string>
     <string name="left">左</string>
     <string name="center">中央</string>
     <string name="right">右</string>

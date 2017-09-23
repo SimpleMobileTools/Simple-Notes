@@ -31,7 +31,7 @@
     <string name="links_and_emails_clickable">Hivatkozások és e-mail címek felismerése</string>
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="monospaced_font">Use monospaced font</string>
-    <string name="gravity">Igazítottság</string>
+    <string name="alignment">Igazítottság</string>
     <string name="left">Bal</string>
     <string name="center">Közép</string>
     <string name="right">Jobb</string>

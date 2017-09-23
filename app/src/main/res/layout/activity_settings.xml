@@ -171,7 +171,7 @@
                 android:layout_toStartOf="@+id/settings_gravity"
                 android:paddingLeft="@dimen/medium_margin"
                 android:paddingRight="@dimen/medium_margin"
-                android:text="@string/gravity"/>
+                android:text="@string/alignment"/>
 
             <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_gravity"

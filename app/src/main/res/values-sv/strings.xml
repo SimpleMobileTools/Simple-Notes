@@ -31,7 +31,7 @@
     <string name="place_cursor_end">Placera markören vid slutet av anteckningen</string>
     <string name="monospaced_font">Use monospaced font</string>
     <string name="widget_note">Anteckningen används i widgeten</string>
-    <string name="gravity">Justering</string>
+    <string name="alignment">Justering</string>
     <string name="left">Vänster</string>
     <string name="center">Centrerad</string>
     <string name="right">Höger</string>

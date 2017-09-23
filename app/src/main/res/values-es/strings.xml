@@ -31,7 +31,7 @@
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="monospaced_font">Use monospaced font</string>
     <string name="widget_note">Nota del widget</string>
-    <string name="gravity">Alineación del texto</string>
+    <string name="alignment">Alineación del texto</string>
     <string name="left">Izquierda</string>
     <string name="center">Centrado</string>
     <string name="right">Derecha</string>

@@ -31,7 +31,7 @@
     <string name="links_and_emails_clickable">Сделать ссылки и адреса электронной почты активными</string>
     <string name="place_cursor_end">Помещать курсор в конец заметки</string>
     <string name="monospaced_font">Использовать моноширинный шрифт</string>
-    <string name="gravity">Выравнивание</string>
+    <string name="alignment">Выравнивание</string>
     <string name="left">По левому краю</string>
     <string name="center">По центру</string>
     <string name="right">По правому краю</string>

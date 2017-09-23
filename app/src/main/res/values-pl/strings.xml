@@ -31,7 +31,7 @@
     <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy.</string>
     <string name="place_cursor_end">Umieszczaj kursor na końcu notatki</string>
     <string name="monospaced_font">Use monospaced font</string>
-    <string name="gravity">Wyrównanie tekstu w notatkach</string>
+    <string name="alignment">Wyrównanie tekstu w notatkach</string>
     <string name="left">Do lewej strony</string>
     <string name="center">Do środka</string>
     <string name="right">Do prawej strony</string>
