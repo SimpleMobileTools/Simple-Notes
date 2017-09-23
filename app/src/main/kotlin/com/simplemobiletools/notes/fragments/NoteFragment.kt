@@ -1,6 +1,5 @@
 package com.simplemobiletools.notes.fragments
 
-import android.content.Context
 import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -11,7 +10,6 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.extensions.config
@@ -73,10 +71,8 @@ class NoteFragment : Fragment() {
         }
     }
 
-    fun showKeyboard() {
+    fun focusEditText() {
         view.notes_view.requestFocus()
-        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.showSoftInput(view.notes_view, InputMethodManager.SHOW_IMPLICIT)
     }
 
     private fun saveNoteValue(note: Note) {

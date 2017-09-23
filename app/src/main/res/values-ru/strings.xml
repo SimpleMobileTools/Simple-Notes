@@ -24,17 +24,18 @@
     <string name="update_file_at_note">Обновлять содержимое файла при обновлении заметки\n(заметка удалится, если удалить файл или изменить путь к нему)</string>
     <string name="delete_file_itself">Также удалить файл \"%s\"</string>
     <string name="note_saved_successfully">Заметка \"%s\" сохранена успешно</string>
-    <string name="display_success_message">Уведомлять, что файл успешно сохранен</string>
 
     <!-- Settings -->
-    <string name="widget_note">Заметка, отображаемая в виджете</string>
+    <string name="display_success_message">Уведомлять, что файл успешно сохранен</string>
     <string name="links_and_emails_clickable">Сделать ссылки и адреса электронной почты активными</string>
     <string name="place_cursor_end">Помещать курсор в конец заметки</string>
     <string name="monospaced_font">Использовать моноширинный шрифт</string>
+    <string name="show_keyboard">Show keyboard on startup</string>
     <string name="alignment">Выравнивание</string>
     <string name="left">По левому краю</string>
     <string name="center">По центру</string>
     <string name="right">По правому краю</string>
+    <string name="widget_note">Заметка, отображаемая в виджете</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

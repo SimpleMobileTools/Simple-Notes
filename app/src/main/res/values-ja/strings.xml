@@ -24,17 +24,18 @@
     <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
     <string name="delete_file_itself">Also delete file \"%s\"</string>
     <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
-    <string name="display_success_message">Display save success messages</string>
 
     <!-- Settings -->
+    <string name="display_success_message">Display save success messages</string>
     <string name="links_and_emails_clickable">Make links and emails clickable</string>
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="monospaced_font">Use monospaced font</string>
-    <string name="widget_note">ウィジェットで使用するメモ</string>
+    <string name="show_keyboard">Show keyboard on startup</string>
     <string name="alignment">重力</string>
     <string name="left">左</string>
     <string name="center">中央</string>
     <string name="right">右</string>
+    <string name="widget_note">ウィジェットで使用するメモ</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

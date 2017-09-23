@@ -24,17 +24,18 @@
     <string name="update_file_at_note">Zaktualizuj plik po zaktualizowaniu notatki\n(notatka zostanie usunięta jeśli plik zostanie usunięty lub zmieni się jego lokalizacja)</string>
     <string name="delete_file_itself">Usuń także plik \"%s\"</string>
     <string name="note_saved_successfully">Notatka \"%s\" została zapisana</string>
-    <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisaniu notatki</string>
 
     <!-- Settings -->
-    <string name="widget_note">Notatka używana w widżecie</string>
+    <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisaniu notatki</string>
     <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy.</string>
     <string name="place_cursor_end">Umieszczaj kursor na końcu notatki</string>
     <string name="monospaced_font">Use monospaced font</string>
+    <string name="show_keyboard">Show keyboard on startup</string>
     <string name="alignment">Wyrównanie tekstu w notatkach</string>
     <string name="left">Do lewej strony</string>
     <string name="center">Do środka</string>
     <string name="right">Do prawej strony</string>
+    <string name="widget_note">Notatka używana w widżecie</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

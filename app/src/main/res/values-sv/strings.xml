@@ -24,17 +24,18 @@
     <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
     <string name="delete_file_itself">Ta även bort filen \"%s\"</string>
     <string name="note_saved_successfully">Anteckningen \"%s\" har sparats</string>
-    <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
 
     <!-- Settings -->
+    <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
     <string name="links_and_emails_clickable">Gör länkar och e-postadresser klickbara</string>
     <string name="place_cursor_end">Placera markören vid slutet av anteckningen</string>
     <string name="monospaced_font">Use monospaced font</string>
-    <string name="widget_note">Anteckningen används i widgeten</string>
+    <string name="show_keyboard">Show keyboard on startup</string>
     <string name="alignment">Justering</string>
     <string name="left">Vänster</string>
     <string name="center">Centrerad</string>
     <string name="right">Höger</string>
+    <string name="widget_note">Anteckningen används i widgeten</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

@@ -24,17 +24,18 @@
     <string name="update_file_at_note">Metttre à jour le fichier lui-même lors de la mise à jour de la note\n(la note est supprimée si le fichier est supprimé, ou que le chemin change)</string>
     <string name="delete_file_itself">Supprimer également le fichier \"%s\"</string>
     <string name="note_saved_successfully">Note \"%s\" sauvegardée avec succès</string>
-    <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
 
     <!-- Settings -->
-    <string name="widget_note">Note utilisée dans le widget</string>
+    <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
     <string name="links_and_emails_clickable">Rendre les liens et les emails cliquables</string>
     <string name="place_cursor_end">Placer le curseur à la fin de la note</string>
     <string name="monospaced_font">Use monospaced font</string>
+    <string name="show_keyboard">Show keyboard on startup</string>
     <string name="alignment">Alignment</string>
     <string name="left">Gauche</string>
     <string name="center">Centre</string>
     <string name="right">Droite</string>
+    <string name="widget_note">Note utilisée dans le widget</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

@@ -127,6 +127,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             currentItem = itemIndex
             addOnPageChangeListener(this@MainActivity)
         }
+
+        if (!config.showKeyboard)
+            hideKeyboard()
     }
 
     override fun onResume() {
@@ -154,8 +157,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             findItem(R.id.delete_note).isVisible = shouldBeVisible
         }
 
-        pager_title_strip.visibility = if (shouldBeVisible) View.VISIBLE else View.GONE
-
+        pager_title_strip.beVisibleIf(shouldBeVisible)
         return super.onPrepareOptionsMenu(menu)
     }
 
@@ -225,7 +227,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         updateSelectedNote(id)
         view_pager.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
-                mAdapter?.showKeyboard(getNoteIndexWithId(id))
+                mAdapter?.focusEditText(getNoteIndexWithId(id))
                 view_pager.viewTreeObserver.removeOnGlobalLayoutListener(this)
             }
         })

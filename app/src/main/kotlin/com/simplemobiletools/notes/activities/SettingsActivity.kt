@@ -29,6 +29,7 @@ class SettingsActivity : SimpleActivity() {
         setupDisplaySuccess()
         setupClickableLinks()
         setupMonospacedFont()
+        setupShowKeyboard()
         setupFontSize()
         setupGravity()
         setupWidgetNote()
@@ -63,6 +64,14 @@ class SettingsActivity : SimpleActivity() {
         settings_monospaced_font_holder.setOnClickListener {
             settings_monospaced_font.toggle()
             config.monospacedFont = settings_monospaced_font.isChecked
+        }
+    }
+
+    private fun setupShowKeyboard() {
+        settings_show_keyboard.isChecked = config.showKeyboard
+        settings_show_keyboard_holder.setOnClickListener {
+            settings_show_keyboard.toggle()
+            config.showKeyboard = settings_show_keyboard.isChecked
         }
     }
 

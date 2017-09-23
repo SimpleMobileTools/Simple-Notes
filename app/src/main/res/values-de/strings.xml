@@ -24,17 +24,18 @@
     <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
     <string name="delete_file_itself">Lösche Datei \"%s\"</string>
     <string name="note_saved_successfully">Notiz \"%s\" erfolgreich gespeichert</string>
-    <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
 
     <!-- Settings -->
-    <string name="widget_note">Widget-Notiz</string>
+    <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
     <string name="links_and_emails_clickable">Links und E-Mail Adressen anklickbar</string>
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="monospaced_font">Use monospaced font</string>
+    <string name="show_keyboard">Show keyboard on startup</string>
     <string name="alignment">Ausrichtung</string>
     <string name="left">Linksbündig</string>
     <string name="center">Zentriert</string>
     <string name="right">Rechtsbündig</string>
+    <string name="widget_note">Widget-Notiz</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

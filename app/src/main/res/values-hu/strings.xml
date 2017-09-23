@@ -24,17 +24,18 @@
     <string name="update_file_at_note">A jegyzetbe íráskor a fájlba is írás\n(a jegyzet törlődik ha a fájl törlődik, vagy változik az elérési útvonala)</string>
     <string name="delete_file_itself">\"%s\" fájl is törlődjön</string>
     <string name="note_saved_successfully">\"%s\" nevű jegyzet elmentve</string>
-    <string name="display_success_message">Sikeres mentés üzenetek megjelenítése</string>
 
     <!-- Settings -->
-    <string name="widget_note">Widgetben használt jegyzet</string>
+    <string name="display_success_message">Sikeres mentés üzenetek megjelenítése</string>
     <string name="links_and_emails_clickable">Hivatkozások és e-mail címek felismerése</string>
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="monospaced_font">Use monospaced font</string>
+    <string name="show_keyboard">Show keyboard on startup</string>
     <string name="alignment">Igazítottság</string>
     <string name="left">Bal</string>
     <string name="center">Közép</string>
     <string name="right">Jobb</string>
+    <string name="widget_note">Widgetben használt jegyzet</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

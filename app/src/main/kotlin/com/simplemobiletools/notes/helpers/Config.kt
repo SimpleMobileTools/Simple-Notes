@@ -20,6 +20,10 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getBoolean(MONOSPACED_FONT, false)
         set(monospacedFont) = prefs.edit().putBoolean(MONOSPACED_FONT, monospacedFont).apply()
 
+    var showKeyboard: Boolean
+        get() = prefs.getBoolean(SHOW_KEYBOARD, true)
+        set(showKeyboard) = prefs.edit().putBoolean(SHOW_KEYBOARD, showKeyboard).apply()
+
     var fontSize: Int
         get() = prefs.getInt(FONT_SIZE, FONT_SIZE_MEDIUM)
         set(size) = prefs.edit().putInt(FONT_SIZE, size).apply()

@@ -24,17 +24,18 @@
     <string name="update_file_at_note">Atnaujinti failà kai atnaujinamas áraðas\n(Áraðas iðtrinamas, jei iðtrinamas failas ar pakeièiama talpinimo vieta)</string>
     <string name="delete_file_itself">Taip pat iðtrinti failà \"%s\"</string>
     <string name="note_saved_successfully">Áraðas \"%s\" sëkmingai iðsaugotas</string>
-    <string name="display_success_message">Rodyti sëkmingo iðsaugojimo praneðimus</string>
 
     <!-- Settings -->
-    <string name="widget_note">Áraðas panaudotas ðaukinyje</string>
+    <string name="display_success_message">Rodyti sëkmingo iðsaugojimo praneðimus</string>
     <string name="links_and_emails_clickable">Paspaudþiamos nuorodos ir elektroninio paðto adresai</string>
     <string name="place_cursor_end">Perkelti þymeklá á áraðo pabaigà</string>
     <string name="monospaced_font">Use monospaced font</string>
+    <string name="show_keyboard">Show keyboard on startup</string>
     <string name="alignment">Átrauka</string>
     <string name="left">Kairëje</string>
     <string name="center">Centre</string>
     <string name="right">Deðinëje</string>
+    <string name="widget_note">Áraðas panaudotas ðaukinyje</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

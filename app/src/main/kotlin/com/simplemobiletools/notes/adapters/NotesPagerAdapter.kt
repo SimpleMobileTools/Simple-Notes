@@ -39,7 +39,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     fun saveCurrentNote(position: Int) = fragments[position]?.saveText()
 
-    fun showKeyboard(position: Int) = fragments[position]?.showKeyboard()
+    fun focusEditText(position: Int) = fragments[position]?.focusEditText()
 
     override fun finishUpdate(container: ViewGroup?) {
         try {
