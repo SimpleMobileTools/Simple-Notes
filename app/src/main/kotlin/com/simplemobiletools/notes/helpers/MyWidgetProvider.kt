@@ -7,6 +7,9 @@ import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.widget.RemoteViews
+import com.simplemobiletools.commons.extensions.setBackgroundColor
+import com.simplemobiletools.commons.extensions.setText
+import com.simplemobiletools.commons.extensions.setTextSize
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.R.layout.widget
 import com.simplemobiletools.notes.activities.SplashActivity
@@ -30,9 +33,9 @@ class MyWidgetProvider : AppWidgetProvider() {
 
         for (id in textIds) {
             mRemoteViews.apply {
-                setInt(id, "setBackgroundColor", widgetBgColor)
-                setInt(id, "setTextColor", widgetTextColor)
-                setFloat(id, "setTextSize", context.getTextSize() / context.resources.displayMetrics.density)
+                setBackgroundColor(id, widgetBgColor)
+                setTextColor(id, widgetTextColor)
+                setTextSize(id, context.getTextSize() / context.resources.displayMetrics.density)
                 setViewVisibility(id, View.GONE)
             }
         }
@@ -70,7 +73,7 @@ class MyWidgetProvider : AppWidgetProvider() {
         val note = mDb.getNote(context.config.widgetNoteId)
         for (id in textIds) {
             if (note != null)
-                remoteViews.setTextViewText(id, context.getNoteStoredValue(note))
+                remoteViews.setText(id, context.getNoteStoredValue(note)!!)
         }
         widgetManager.updateAppWidget(widgetId, remoteViews)
     }
