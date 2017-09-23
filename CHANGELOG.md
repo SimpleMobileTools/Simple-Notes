@@ -1,6 +1,16 @@
 Changelog
 ==========
 
+Version 2.3.0 *(2017-09-23)*
+----------------------------
+
+ * Added a toggle for Monospace font (by trubitsyn)
+ * Make the app act as a text file opener at third party intents (by trubitsyn)
+ * Added a toggle for showing keyboard at startup
+ * Do not move the cursor when moving between apps
+ * Properly handle deleting widget notes
+ * Many translation updates and minor issue fixes
+
 Version 2.2.4 *(2017-07-10)*
 ----------------------------
 
