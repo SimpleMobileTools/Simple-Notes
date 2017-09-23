@@ -25,6 +25,7 @@ import com.simplemobiletools.notes.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.dialogs.*
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
+import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.MIME_TEXT_PLAIN
 import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
@@ -349,13 +350,17 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         if (mNotes.size <= 1)
             return
 
+        val deletedNoteId = mCurrentNote.id
         val path = mCurrentNote.path
         mDb.deleteNote(mCurrentNote.id)
         mNotes = mDb.getNotes()
 
         val firstNoteId = mNotes[0].id
         updateSelectedNote(firstNoteId)
-        config.widgetNoteId = firstNoteId
+        if (config.widgetNoteId == deletedNoteId) {
+            config.widgetNoteId = mCurrentNote.id
+            updateWidget()
+        }
         invalidateOptionsMenu()
         initViewPager()
 
