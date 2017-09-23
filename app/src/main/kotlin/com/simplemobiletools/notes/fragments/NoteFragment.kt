@@ -106,11 +106,13 @@ class NoteFragment : Fragment() {
                 return
             }
 
-            setText(fileContents)
             setColors(config.textColor, config.primaryColor, config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
             gravity = getTextGravity()
-            setSelection(if (config.placeCursorToEnd) text.length else 0)
+            if (text.toString() != fileContents) {
+                setText(fileContents)
+                setSelection(if (config.placeCursorToEnd) text.length else 0)
+            }
         }
     }
 
