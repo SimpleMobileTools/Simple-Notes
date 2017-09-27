@@ -29,8 +29,8 @@
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
     <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>
     <string name="place_cursor_end">Colocar cursor no fim da nota</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
+    <string name="monospaced_font">Usar letra mono-espaçada</string>
+    <string name="show_keyboard">Mostrar teclado ao inciar</string>
     <string name="alignment">Gravidade</string>
     <string name="left">Esquerda</string>
     <string name="center">Centro</string>
