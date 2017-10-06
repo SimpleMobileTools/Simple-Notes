@@ -28,9 +28,9 @@
     <!-- Settings -->
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
     <string name="links_and_emails_clickable">Links und E-Mail Adressen anklickbar</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
+    <string name="place_cursor_end">Platziere Cursor an das Ende der Notiz</string>
+    <string name="monospaced_font">Benutze monospace Schrift</string>
+    <string name="show_keyboard">Zeige Tastatur beim Start</string>
     <string name="alignment">Ausrichtung</string>
     <string name="left">Linksbündig</string>
     <string name="center">Zentriert</string>
