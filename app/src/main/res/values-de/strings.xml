@@ -39,7 +39,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Ein einfaches Textfeld für Notizen. Komplett ohne Werbung</string>
+    <string name="app_short_description">Ein einfaches Textfeld für Notizen. Komplett ohne Werbung.</string>
     <string name="app_long_description">
         Du musst dir schnell aufschreiben, was du kaufen wolltest oder eine Adresse oder Startup Idee? Dann ist diese App genau das Richtige für dich! Keine komplizierte Einrichtung, du kannst direkt beginnen zu tippen. Inklusive Autosave, damit du keine ungespeicherten Änderungen verlierst. Unterstützt die Erstellung von mehreren unabhängigen Notizen.
 
