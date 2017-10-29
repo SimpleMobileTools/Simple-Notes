@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notizen</string>
-    <string name="widget_config">Vielen dank, dass du Simple Notes benutzt.\nWeitere einfache Apps findest du auf SimpleMobileTools.com.</string>
+    <string name="widget_config">Vielen Dank, dass du Simple Notes benutzt.\nWeitere einfache Apps findest du auf SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Eine leere Notiz kann nicht geteilt werden</string>
     <string name="simple_note">Einfache Notiz</string>
     <string name="new_note">Neue Notiz hinzufügen</string>
@@ -41,7 +41,7 @@
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Ein einfaches Textfeld für Notizen. Komplett ohne Werbung</string>
     <string name="app_long_description">
-        Du musst dir schnell aufschreiben, was du kaufen wolltest oder eine Adresse oder Startup Idee? Dann ist diese App genau das Richtige für dich! Keine komplizierte Einrichtung, du kannst direkt anfangen zu tippen. Inklusive Autosave, damit du keine ungespeicherten Änderungen verlierst. Unterstützt die Erstellung von mehreren unabhängigen Notizen.
+        Du musst dir schnell aufschreiben, was du kaufen wolltest oder eine Adresse oder Startup Idee? Dann ist diese App genau das Richtige für dich! Keine komplizierte Einrichtung, du kannst direkt beginnen zu tippen. Inklusive Autosave, damit du keine ungespeicherten Änderungen verlierst. Unterstützt die Erstellung von mehreren unabhängigen Notizen.
 
         Du kannst auf eine Notiz in Windeseile durch die anpassbaren Widgets zurückgreifen, welche die App mit einem Klick öffnen.
 
