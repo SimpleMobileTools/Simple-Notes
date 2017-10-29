@@ -13,8 +13,8 @@
     <string name="pick_a_note">Notiz auswählen</string>
     <string name="rename_note">Notiz umbenennen</string>
     <string name="general_note">Hauptnotiz</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
+    <string name="create_new_note">Neue Notiz erstellen</string>
+    <string name="add_to_note">Zu Notiz hinzufügen</string>
 
     <!-- File notes -->
     <string name="open_file">Datei öffnen</string>
@@ -28,8 +28,8 @@
     <!-- Settings -->
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
     <string name="links_and_emails_clickable">Links und E-Mail Adressen anklickbar</string>
-    <string name="place_cursor_end">Platziere Cursor an das Ende der Notiz</string>
-    <string name="monospaced_font">Benutze monospace Schrift</string>
+    <string name="place_cursor_end">Platziere Cursor am Ende der Notiz</string>
+    <string name="monospaced_font">Benutze Monospace Schrift</string>
     <string name="show_keyboard">Zeige Tastatur beim Start</string>
     <string name="alignment">Ausrichtung</string>
     <string name="left">Linksbündig</string>
@@ -41,13 +41,13 @@
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Ein einfaches Textfeld für Notizen. Komplett ohne Werbung</string>
     <string name="app_long_description">
-        Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
+        Du musst dir schnell aufschreiben, was du kaufen wolltest oder eine Adresse oder Startup Idee? Dann ist diese App genau das Richtige für dich! Keine komplizierte Einrichtung, du kannst direkt anfangen zu tippen. Inklusive Autosave, damit du keine ungespeicherten Änderungen verlierst. Unterstützt die Erstellung von mehreren unabhängigen Notizen.
 
-        You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
+        Du kannst auf eine Notiz in Windeseile durch die anpassbaren Widgets zurückgreifen, welche die App mit einem Klick öffnen.
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+        Beinhaltet keine Werbung und benötigt keine unnötigen Berechtigungen. Die App ist komplett Open Source und bietet nach Wunsch anpassbare Farben.
 
-        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+        Diese App ist nur eine von vielen unserer Apps. Du kannst alle anderen hier finden: http://www.simplemobiletools.com
     </string>
 
     <!--
