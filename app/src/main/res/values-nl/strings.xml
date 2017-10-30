@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Eenvoudige Notities</string>
+    <string name="app_launcher_name">Notities</string>
+    <string name="widget_config">Kijk op SimpleMobileTools.com voor meer eenvoudige apps.</string>
+    <string name="cannot_share_empty_text">Kan geen lege notitie delen</string>
+    <string name="simple_note">Eenvoudige Notitie</string>
+    <string name="new_note">Nieuwe notitie</string>
+    <string name="no_title">Geef de notitie een naam</string>
+    <string name="title_taken">Notitie met deze naam bestaat reeds</string>
+    <string name="open_note">Notitie openen</string>
+    <string name="delete_note">Notitie verwijderen</string>
+    <string name="delete_note_prompt_message">De notitie \"%s\" verwijderen?</string>
+    <string name="pick_a_note">Kies een notitie</string>
+    <string name="rename_note">Naam wijzigen</string>
+    <string name="general_note">Algemeen</string>
+    <string name="create_new_note">Nieuwe notitie maken</string>
+    <string name="add_to_note">Aan notitie toevoegen</string>
+
+    <!-- File notes -->
+    <string name="open_file">Bestand openen</string>
+    <string name="export_as_file">Als bestand exporteren</string>
+    <string name="file_too_large">Bestand is te groot: limiet is 10MB</string>
+    <string name="only_import_file_content">Alleen de bestandsinhoud importeren\n(veranderingen aan het bestand zullen de notitie niet beïnvloeden)</string>
+    <string name="update_file_at_note">Bestand aanpassen bij wijzigingen in de notitie\n(de notitie wordt gewist als het bestand wordt verplaatst of verwijderd)</string>
+    <string name="delete_file_itself">Bestand \"%s\" ook verwijderen</string>
+    <string name="note_saved_successfully">Notitie \"%s\" opgeslagen</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">Bevestigingen weergeven</string>
+    <string name="links_and_emails_clickable">Links en e-mailadressen aanklikbaar maken</string>
+    <string name="place_cursor_end">Cursor onderaan notitie plaatsen</string>
+    <string name="monospaced_font">Lettertype met vaste breedte gebruiken</string>
+    <string name="show_keyboard">Toetsenbord bij start tonen</string>
+    <string name="alignment">Uitlijning</string>
+    <string name="left">Links</string>
+    <string name="center">Midden</string>
+    <string name="right">Rechts</string>
+    <string name="widget_note">Notitie in widget</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Eenvoudig notitieblok met aan te passen widget en zonder advertenties.</string>
+    <string name="app_long_description">
+        Maak snel een notitie van bijvoorbeeld een aankoop, adres of idee. Geen gecompliceerde instellingen, gewoon typen. Notities worden automatisch opgeslagen, dus veranderingen gaan niet per ongeluk verloren. Ondersteunt het aanmaken van meerdere notities die als verschuifbare tabs worden weergegeven.
+
+        Bevat een aan te passen widget die met één klik de notitie opent.
+
+        Bevat geen advertenties of onnodige permissies. Volledig open-source. Kleuren van de app kunnen worden aangepast.
+
+        Deze app is onderdeel van een grotere verzameling. Vind de andere apps op http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
