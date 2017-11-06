@@ -16,10 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
+            android:freezesText="true"
             android:gravity="top"
             android:inputType="textCapSentences|textMultiLine"
             android:padding="@dimen/activity_margin"
-            android:freezesText="true"
             android:textCursorDrawable="@null"/>
+
     </ScrollView>
 </RelativeLayout>
