@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 2.4.0 *(2017-11-10)*
+----------------------------
+
+ * Added a toggle for switching to English language
+ * Allow scrolling widgets vertically
+ * Added an Extension field at exporting files
+
 Version 2.3.0 *(2017-09-23)*
 ----------------------------
 
