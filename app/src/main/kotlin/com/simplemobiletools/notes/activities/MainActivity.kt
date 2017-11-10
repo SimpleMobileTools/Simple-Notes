@@ -43,6 +43,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     lateinit var mNotes: List<Note>
 
     var noteViewWithTextSelected: MyEditText? = null
+    private var wasInit = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +71,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                 intent.action = null
             }
         }
+
+        wasInit = true
     }
 
     private fun handleText(text: String) {
@@ -176,10 +179,12 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     // https://code.google.com/p/android/issues/detail?id=191430 quickfix
     override fun onActionModeStarted(mode: ActionMode?) {
         super.onActionModeStarted(mode)
-        currentNotesView()?.apply {
-            if (config.clickableLinks || movementMethod == LinkMovementMethod.getInstance()) {
-                movementMethod = ArrowKeyMovementMethod.getInstance()
-                noteViewWithTextSelected = this
+        if (wasInit) {
+            currentNotesView()?.apply {
+                if (config.clickableLinks || movementMethod == LinkMovementMethod.getInstance()) {
+                    movementMethod = ArrowKeyMovementMethod.getInstance()
+                    noteViewWithTextSelected = this
+                }
             }
         }
     }
