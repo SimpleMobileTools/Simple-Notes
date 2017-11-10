@@ -10,6 +10,8 @@ import android.util.TypedValue
 import android.widget.RemoteViews
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
+import com.simplemobiletools.commons.extensions.adjustAlpha
+import com.simplemobiletools.commons.extensions.setBackgroundColor
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.getTextSize
@@ -66,9 +68,9 @@ class WidgetConfigureActivity : AppCompatActivity() {
         updateTextColor()
     }
 
-    fun saveConfig() {
+    private fun saveConfig() {
         val views = RemoteViews(packageName, R.layout.activity_main)
-        views.setInt(R.id.notes_view, "setBackgroundColor", mBgColor)
+        views.setBackgroundColor(R.id.notes_view, mBgColor)
         AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
 
         storeWidgetBackground()
@@ -96,7 +98,7 @@ class WidgetConfigureActivity : AppCompatActivity() {
     }
 
     private fun updateBackgroundColor() {
-        mBgColor = adjustAlpha(mBgColorWithoutTransparency, mBgAlpha)
+        mBgColor = mBgColorWithoutTransparency.adjustAlpha(mBgAlpha)
         notes_view.setBackgroundColor(mBgColor)
         config_bg_color.setBackgroundColor(mBgColor)
         config_save.setBackgroundColor(mBgColor)
@@ -108,14 +110,14 @@ class WidgetConfigureActivity : AppCompatActivity() {
         notes_view.setTextColor(mTextColor)
     }
 
-    fun pickBackgroundColor() {
+    private fun pickBackgroundColor() {
         ColorPickerDialog(this, mBgColorWithoutTransparency) {
             mBgColorWithoutTransparency = it
             updateBackgroundColor()
         }
     }
 
-    fun pickTextColor() {
+    private fun pickTextColor() {
         ColorPickerDialog(this, mTextColor) {
             mTextColor = it
             updateTextColor()
@@ -135,13 +137,5 @@ class WidgetConfigureActivity : AppCompatActivity() {
         override fun onStopTrackingTouch(seekBar: SeekBar) {
 
         }
-    }
-
-    private fun adjustAlpha(color: Int, factor: Float): Int {
-        val alpha = Math.round(Color.alpha(color) * factor)
-        val red = Color.red(color)
-        val green = Color.green(color)
-        val blue = Color.blue(color)
-        return Color.argb(alpha, red, green, blue)
     }
 }
