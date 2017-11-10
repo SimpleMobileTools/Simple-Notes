@@ -94,6 +94,11 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         updateTextColors(view_pager)
     }
 
+    override fun onPause() {
+        super.onPause()
+        storeStateVariables()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         updateMenuTextSize(resources, menu)
