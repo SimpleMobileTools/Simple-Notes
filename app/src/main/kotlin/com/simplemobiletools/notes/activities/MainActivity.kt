@@ -1,10 +1,7 @@
 package com.simplemobiletools.notes.activities
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
 import android.support.v4.view.ViewPager
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
@@ -16,6 +13,7 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
 import com.simplemobiletools.commons.helpers.LICENSE_RTL
 import com.simplemobiletools.commons.helpers.LICENSE_STETHO
+import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.commons.views.MyEditText
@@ -24,6 +22,7 @@ import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.dialogs.*
 import com.simplemobiletools.notes.extensions.config
+import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.helpers.DBHelper
@@ -37,11 +36,6 @@ import java.io.File
 import java.nio.charset.Charset
 
 class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
-    private val STORAGE_OPEN_FILE = 1
-    private val STORAGE_OPEN_FILE_ACTION = 2
-    private val STORAGE_EXPORT_AS_FILE = 3
-
-    private var openFilePath = ""
     private var mAdapter: NotesPagerAdapter? = null
 
     lateinit var mCurrentNote: Note
@@ -54,7 +48,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mDb = DBHelper.newInstance(applicationContext)
+        mDb = applicationContext.dbHelper
         initViewPager()
 
         pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
@@ -105,11 +99,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             return
         }
 
-        if (hasWriteStoragePermission()) {
-            importFileWithSync(path)
-        } else {
-            this.openFilePath = path
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_OPEN_FILE_ACTION)
+        handlePermission(PERMISSION_WRITE_STORAGE) {
+            if (it) {
+                importFileWithSync(path)
+            }
         }
     }
 
@@ -147,6 +140,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
+        updateMenuTextSize(resources, menu)
         return true
     }
 
@@ -239,10 +233,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun tryOpenFile() {
-        if (hasWriteStoragePermission()) {
-            openFile()
-        } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_OPEN_FILE)
+        handlePermission(PERMISSION_WRITE_STORAGE) {
+            if (it) {
+                openFile()
+            }
         }
     }
 
@@ -281,10 +275,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun tryExportAsFile() {
-        if (hasWriteStoragePermission()) {
-            exportAsFile()
-        } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_EXPORT_AS_FILE)
+        handlePermission(PERMISSION_WRITE_STORAGE) {
+            if (it) {
+                exportAsFile()
+            }
         }
     }
 
@@ -404,18 +398,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             putExtra(Intent.EXTRA_TEXT, text)
             type = "text/plain"
             startActivity(Intent.createChooser(this, shareTitle))
-        }
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
-        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            when (requestCode) {
-                STORAGE_OPEN_FILE -> openFile()
-                STORAGE_EXPORT_AS_FILE -> exportAsFile()
-                STORAGE_OPEN_FILE_ACTION -> importFileWithSync(openFilePath)
-            }
         }
     }
 

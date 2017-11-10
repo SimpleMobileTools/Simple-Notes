@@ -41,7 +41,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     fun focusEditText(position: Int) = fragments[position]?.focusEditText()
 
-    override fun finishUpdate(container: ViewGroup?) {
+    override fun finishUpdate(container: ViewGroup) {
         try {
             super.finishUpdate(container)
         } catch (e: Exception) {

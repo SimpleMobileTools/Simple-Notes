@@ -11,7 +11,7 @@ import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
-import com.simplemobiletools.notes.helpers.DBHelper
+import com.simplemobiletools.notes.extensions.dbHelper
 import kotlinx.android.synthetic.main.dialog_open_note.view.*
 import kotlinx.android.synthetic.main.open_note_item.view.*
 
@@ -21,7 +21,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
     init {
         val view = activity.layoutInflater.inflate(R.layout.dialog_open_note, null)
         val textColor = activity.config.textColor
-        val notes = DBHelper.newInstance(activity).getNotes()
+        val notes = activity.dbHelper.getNotes()
         notes.forEach {
             activity.layoutInflater.inflate(R.layout.open_note_item, null).apply {
                 val note = it

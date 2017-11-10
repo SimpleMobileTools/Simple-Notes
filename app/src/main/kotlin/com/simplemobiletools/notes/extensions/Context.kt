@@ -29,7 +29,9 @@ fun Context.updateWidget() {
     }
 }
 
-val Context.config: Config get() = Config.newInstance(this)
+val Context.config: Config get() = Config.newInstance(applicationContext)
+
+val Context.dbHelper: DBHelper get() = DBHelper.newInstance(applicationContext)
 
 fun Context.getNoteStoredValue(note: Note): String? {
     return if (note.path.isNotEmpty()) {

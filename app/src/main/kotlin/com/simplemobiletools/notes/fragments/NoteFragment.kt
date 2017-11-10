@@ -12,10 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
-import com.simplemobiletools.notes.extensions.config
-import com.simplemobiletools.notes.extensions.getNoteStoredValue
-import com.simplemobiletools.notes.extensions.getTextSize
-import com.simplemobiletools.notes.extensions.updateWidget
+import com.simplemobiletools.notes.extensions.*
 import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.GRAVITY_CENTER
 import com.simplemobiletools.notes.helpers.GRAVITY_RIGHT
@@ -32,11 +29,11 @@ class NoteFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_note, container, false) as ViewGroup
-        noteId = arguments.getInt(NOTE_ID)
-        mDb = DBHelper.newInstance(context)
+        noteId = arguments!!.getInt(NOTE_ID)
+        mDb = context!!.dbHelper
         note = mDb.getNote(noteId) ?: return view
 
-        if (context.config.clickableLinks) {
+        if (context!!.config.clickableLinks) {
             view.notes_view.apply {
                 linksClickable = true
                 autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES
@@ -49,8 +46,9 @@ class NoteFragment : Fragment() {
 
     override fun setMenuVisibility(menuVisible: Boolean) {
         super.setMenuVisibility(menuVisible)
-        if (noteId != 0)
+        if (noteId != 0) {
             saveText()
+        }
     }
 
     fun getNotesView() = view.notes_view
@@ -63,11 +61,11 @@ class NoteFragment : Fragment() {
             return
 
         val newText = getCurrentNoteViewText()
-        val oldText = context.getNoteStoredValue(note)
+        val oldText = context!!.getNoteStoredValue(note)
         if (newText != oldText) {
             note.value = newText
             saveNoteValue(note)
-            context.updateWidget()
+            context!!.updateWidget()
         }
     }
 
@@ -86,7 +84,7 @@ class NoteFragment : Fragment() {
 
     fun getCurrentNoteViewText() = view.notes_view?.text.toString()
 
-    private fun getTextGravity() = when (context.config.gravity) {
+    private fun getTextGravity() = when (context!!.config.gravity) {
         GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
         GRAVITY_RIGHT -> Gravity.RIGHT
         else -> Gravity.LEFT
@@ -95,7 +93,7 @@ class NoteFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        val config = context.config
+        val config = context!!.config
         view.notes_view.apply {
             typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
 

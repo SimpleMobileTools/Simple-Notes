@@ -3,13 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
 
     defaultConfig {
         applicationId "com.simplemobiletools.notes"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 38
         versionName "2.3.0"
     }
@@ -40,13 +40,13 @@ android {
 }
 
 dependencies {
-    compile 'com.simplemobiletools:commons:2.28.4'
-    compile 'com.facebook.stetho:stetho:1.4.1'
+    compile 'com.simplemobiletools:commons:2.38.5'
+    compile 'com.facebook.stetho:stetho:1.5.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
 buildscript {
-    ext.kotlin_version = '1.1.50'
+    ext.kotlin_version = '1.1.51'
     repositories {
         mavenCentral()
     }

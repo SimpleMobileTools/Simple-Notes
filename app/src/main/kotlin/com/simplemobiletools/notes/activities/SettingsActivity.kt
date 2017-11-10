@@ -8,6 +8,7 @@ import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
+import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.helpers.*
 import com.simplemobiletools.notes.models.Note
@@ -122,7 +123,7 @@ class SettingsActivity : SimpleActivity() {
     })
 
     private fun setupWidgetNote() {
-        val notes = DBHelper.newInstance(this).getNotes()
+        val notes = dbHelper.getNotes()
         if (notes.size <= 1) {
             settings_widget_note_holder.visibility = View.GONE
             return

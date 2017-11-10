@@ -14,6 +14,7 @@ import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.R.layout.widget
 import com.simplemobiletools.notes.activities.SplashActivity
 import com.simplemobiletools.notes.extensions.config
+import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.getNoteStoredValue
 import com.simplemobiletools.notes.extensions.getTextSize
 
@@ -55,7 +56,7 @@ class MyWidgetProvider : AppWidgetProvider() {
     }
 
     private fun initVariables(context: Context) {
-        mDb = DBHelper.newInstance(context)
+        mDb = context.dbHelper
         mRemoteViews = RemoteViews(context.packageName, widget)
         setupAppOpenIntent(R.id.notes_holder, context)
     }
