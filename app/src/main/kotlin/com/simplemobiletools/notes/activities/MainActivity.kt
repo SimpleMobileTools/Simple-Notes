@@ -75,60 +75,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         wasInit = true
     }
 
-    private fun handleText(text: String) {
-        val notes = mDb.getNotes()
-        val list = arrayListOf<RadioItem>().apply {
-            add(RadioItem(0, getString(R.string.create_new_note)))
-            notes.forEachIndexed { index, note ->
-                add(RadioItem(index + 1, note.title))
-            }
-        }
-
-        RadioGroupDialog(this, list, -1, R.string.add_to_note) {
-            if (it as Int == 0) {
-                displayNewNoteDialog(text)
-            } else {
-                updateSelectedNote(notes[it - 1].id)
-                addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
-            }
-        }
-    }
-
-    private fun handleFile(path: String) {
-        val id = mDb.getNoteId(path)
-
-        if (mDb.isValidId(id)) {
-            updateSelectedNote(id)
-            return
-        }
-
-        handlePermission(PERMISSION_WRITE_STORAGE) {
-            if (it) {
-                importFileWithSync(path)
-            }
-        }
-    }
-
-    private fun initViewPager() {
-        mNotes = mDb.getNotes()
-        mCurrentNote = mNotes[0]
-        var wantedNoteId = intent.getIntExtra(OPEN_NOTE_ID, -1)
-        if (wantedNoteId == -1)
-            wantedNoteId = config.currentNoteId
-
-        val itemIndex = getNoteIndexWithId(wantedNoteId)
-
-        mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
-        view_pager.apply {
-            adapter = mAdapter
-            currentItem = itemIndex
-            addOnPageChangeListener(this@MainActivity)
-        }
-
-        if (!config.showKeyboard)
-            hideKeyboard()
-    }
-
     override fun onResume() {
         super.onResume()
         invalidateOptionsMenu()
@@ -194,6 +140,60 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         if (config.clickableLinks) {
             noteViewWithTextSelected?.movementMethod = LinkMovementMethod.getInstance()
         }
+    }
+
+    private fun handleText(text: String) {
+        val notes = mDb.getNotes()
+        val list = arrayListOf<RadioItem>().apply {
+            add(RadioItem(0, getString(R.string.create_new_note)))
+            notes.forEachIndexed { index, note ->
+                add(RadioItem(index + 1, note.title))
+            }
+        }
+
+        RadioGroupDialog(this, list, -1, R.string.add_to_note) {
+            if (it as Int == 0) {
+                displayNewNoteDialog(text)
+            } else {
+                updateSelectedNote(notes[it - 1].id)
+                addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
+            }
+        }
+    }
+
+    private fun handleFile(path: String) {
+        val id = mDb.getNoteId(path)
+
+        if (mDb.isValidId(id)) {
+            updateSelectedNote(id)
+            return
+        }
+
+        handlePermission(PERMISSION_WRITE_STORAGE) {
+            if (it) {
+                importFileWithSync(path)
+            }
+        }
+    }
+
+    private fun initViewPager() {
+        mNotes = mDb.getNotes()
+        mCurrentNote = mNotes[0]
+        var wantedNoteId = intent.getIntExtra(OPEN_NOTE_ID, -1)
+        if (wantedNoteId == -1)
+            wantedNoteId = config.currentNoteId
+
+        val itemIndex = getNoteIndexWithId(wantedNoteId)
+
+        mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
+        view_pager.apply {
+            adapter = mAdapter
+            currentItem = itemIndex
+            addOnPageChangeListener(this@MainActivity)
+        }
+
+        if (!config.showKeyboard)
+            hideKeyboard()
     }
 
     private fun currentNotesView() = if (view_pager == null) null else mAdapter?.getItem(view_pager.currentItem)?.notes_view
