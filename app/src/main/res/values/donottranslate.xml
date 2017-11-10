@@ -2,6 +2,10 @@
 <resources>
 
     <!-- Release notes -->
+    <string name="release_39">
+        Added a new option to use english language on non-english devices\n
+        Allow scrolling widgets vertically
+    </string>
     <string name="release_29">
         Added an option to make emails and links clickable\n
         Allow importing text from files\n

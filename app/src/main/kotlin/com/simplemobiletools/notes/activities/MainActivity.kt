@@ -444,6 +444,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             add(Release(25, R.string.release_25))
             add(Release(28, R.string.release_28))
             add(Release(29, R.string.release_29))
+            add(Release(39, R.string.release_39))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }
