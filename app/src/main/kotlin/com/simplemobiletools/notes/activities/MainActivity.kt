@@ -44,6 +44,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     var noteViewWithTextSelected: MyEditText? = null
     private var wasInit = false
+    private var storedUseEnglish = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,11 +73,17 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             }
         }
 
+        storeStateVariables()
         wasInit = true
     }
 
     override fun onResume() {
         super.onResume()
+        if (storedUseEnglish != config.useEnglish) {
+            restartActivity()
+            return
+        }
+
         invalidateOptionsMenu()
         pager_title_strip.apply {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
@@ -140,6 +147,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         if (config.clickableLinks) {
             noteViewWithTextSelected?.movementMethod = LinkMovementMethod.getInstance()
         }
+    }
+
+    private fun storeStateVariables() {
+        storedUseEnglish = config.useEnglish
     }
 
     private fun handleText(text: String) {
