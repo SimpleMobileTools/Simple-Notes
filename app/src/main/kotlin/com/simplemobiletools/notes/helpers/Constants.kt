@@ -13,6 +13,7 @@ val SHOW_KEYBOARD = "show_keyboard"
 val FONT_SIZE = "font_size"
 val GRAVITY = "gravity"
 val CURSOR_PLACEMENT = "cursor_placement"
+val LAST_USED_EXTENSION = "last_used_extension"
 
 // gravity
 val GRAVITY_LEFT = 0

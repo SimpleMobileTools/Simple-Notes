@@ -43,4 +43,8 @@ class Config(context: Context) : BaseConfig(context) {
     var placeCursorToEnd: Boolean
         get() = prefs.getBoolean(CURSOR_PLACEMENT, true)
         set(placement) = prefs.edit().putBoolean(CURSOR_PLACEMENT, placement).apply()
+
+    var lastUsedExtension: String
+        get() = prefs.getString(LAST_USED_EXTENSION, "txt")
+        set(lastUsedExtension) = prefs.edit().putString(LAST_USED_EXTENSION, lastUsedExtension).apply()
 }

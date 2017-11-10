@@ -8,6 +8,7 @@ import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity
+import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.dialog_export_as.view.*
 import java.io.File
@@ -20,6 +21,7 @@ class ExportAsDialog(val activity: SimpleActivity, val note: Note, val callback:
             file_path.text = activity.humanizePath(realPath)
 
             file_name.setText(note.title)
+            file_extension.setText(activity.config.lastUsedExtension)
             file_path.setOnClickListener {
                 FilePickerDialog(activity, realPath, false, false, true) {
                     file_path.text = activity.humanizePath(it)
@@ -36,18 +38,21 @@ class ExportAsDialog(val activity: SimpleActivity, val note: Note, val callback:
             activity.setupDialogStuff(view, this, R.string.export_as_file)
             getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener({
                 val filename = view.file_name.value
+                val extension = view.file_extension.value
 
                 if (filename.isEmpty()) {
                     activity.toast(R.string.filename_cannot_be_empty)
                     return@setOnClickListener
                 }
 
-                val newFile = File(realPath, filename)
+                val fullFilename = if (extension.isEmpty()) filename else "$filename.$extension"
+                val newFile = File(realPath, fullFilename)
                 if (!newFile.name.isAValidFilename()) {
                     activity.toast(R.string.filename_invalid_characters)
                     return@setOnClickListener
                 }
 
+                activity.config.lastUsedExtension = extension
                 callback(newFile.absolutePath)
                 dismiss()
             })
