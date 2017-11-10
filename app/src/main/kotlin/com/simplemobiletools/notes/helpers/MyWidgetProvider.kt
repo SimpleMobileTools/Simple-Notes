@@ -6,17 +6,13 @@ import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.view.View
+import android.net.Uri
 import android.widget.RemoteViews
 import com.simplemobiletools.commons.extensions.setBackgroundColor
-import com.simplemobiletools.commons.extensions.setText
-import com.simplemobiletools.commons.extensions.setTextSize
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SplashActivity
 import com.simplemobiletools.notes.extensions.config
-import com.simplemobiletools.notes.extensions.dbHelper
-import com.simplemobiletools.notes.extensions.getNoteStoredValue
-import com.simplemobiletools.notes.extensions.getTextSize
+import com.simplemobiletools.notes.services.WidgetService
 
 class MyWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
@@ -24,41 +20,28 @@ class MyWidgetProvider : AppWidgetProvider() {
     }
 
     private fun performUpdate(context: Context) {
-        val config = context.config
-        val widgetBgColor = config.widgetBgColor
-        val widgetTextColor = config.widgetTextColor
-
-        val textIds = arrayOf(R.id.notes_view_left, R.id.notes_view_center, R.id.notes_view_right)
         val appWidgetManager = AppWidgetManager.getInstance(context)
         appWidgetManager.getAppWidgetIds(getComponentName(context)).forEach {
             val views = RemoteViews(context.packageName, R.layout.widget)
-            setupAppOpenIntent(context, views, R.id.notes_holder)
+            views.setBackgroundColor(R.id.notes_widget_holder, context.config.widgetBgColor)
+            setupAppOpenIntent(context, views, R.id.notes_widget_holder)
 
-            val note = context.dbHelper.getNote(context.config.widgetNoteId)
-            for (id in textIds) {
-                if (note != null) {
-                    views.apply {
-                        setText(id, context.getNoteStoredValue(note)!!)
-                        setBackgroundColor(id, widgetBgColor)
-                        setTextColor(id, widgetTextColor)
-                        setTextSize(id, context.getTextSize() / context.resources.displayMetrics.density)
-                        setViewVisibility(id, View.GONE)
-                    }
-                }
+            Intent(context, WidgetService::class.java).apply {
+                data = Uri.parse(this.toUri(Intent.URI_INTENT_SCHEME))
+                views.setRemoteAdapter(R.id.notes_widget_listview, this)
             }
 
-            views.setViewVisibility(getProperTextView(context), View.VISIBLE)
+            val widgetId = context.config.widgetNoteId
+            val startActivityIntent = Intent(context, SplashActivity::class.java)
+            val startActivityPendingIntent = PendingIntent.getActivity(context, widgetId, startActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+            views.setPendingIntentTemplate(R.id.notes_widget_listview, startActivityPendingIntent)
+
             appWidgetManager.updateAppWidget(it, views)
+            appWidgetManager.notifyAppWidgetViewDataChanged(it, R.id.notes_widget_listview)
         }
     }
 
     private fun getComponentName(context: Context) = ComponentName(context, MyWidgetProvider::class.java)
-
-    private fun getProperTextView(context: Context) = when (context.config.gravity) {
-        GRAVITY_CENTER -> R.id.notes_view_center
-        GRAVITY_RIGHT -> R.id.notes_view_right
-        else -> R.id.notes_view_left
-    }
 
     private fun setupAppOpenIntent(context: Context, views: RemoteViews, id: Int) {
         val widgetId = context.config.widgetNoteId

@@ -1,35 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/notes_holder"
+    android:id="@+id/notes_widget_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/notes_view_left"
+    <ListView
+        android:id="@+id/notes_widget_listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@null"
-        android:gravity="left"
-        android:padding="@dimen/activity_margin"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/notes_view_center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@null"
-        android:gravity="center_horizontal"
-        android:padding="@dimen/activity_margin"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/notes_view_right"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@null"
-        android:gravity="right"
-        android:padding="@dimen/activity_margin"
-        android:visibility="gone"/>
+        android:layout_height="wrap_content"
+        android:divider="@null"/>
 
 </RelativeLayout>
