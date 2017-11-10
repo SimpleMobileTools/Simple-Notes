@@ -330,17 +330,22 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                         flush()
                         close()
                     }
+                    noteExportedSuccessfully(path.getFilenameFromPath())
                 }
             } else {
                 file.printWriter().use { out ->
                     out.write(content)
                 }
+                noteExportedSuccessfully(path.getFilenameFromPath())
             }
-            val message = String.format(getString(R.string.note_exported_successfully), path.getFilenameFromPath())
-            toast(message)
         } catch (e: Exception) {
             showErrorToast(e)
         }
+    }
+
+    private fun noteExportedSuccessfully(title: String) {
+        val message = String.format(getString(R.string.note_exported_successfully), title)
+        toast(message)
     }
 
     fun noteSavedSuccessfully(title: String) {
