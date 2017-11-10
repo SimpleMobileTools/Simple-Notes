@@ -21,11 +21,13 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
+            buildConfigField "boolean", "USE_LEAK_CANARY", "true"
         }
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+            buildConfigField "boolean", "USE_LEAK_CANARY", "false"
         }
     }
 
@@ -39,10 +41,17 @@ android {
     }
 }
 
+ext {
+    leakCanaryVersion = '1.5.4'
+}
+
 dependencies {
     compile 'com.simplemobiletools:commons:2.38.5'
     compile 'com.facebook.stetho:stetho:1.5.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    debugCompile "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion"
 }
 
 buildscript {
