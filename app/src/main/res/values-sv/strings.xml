@@ -24,6 +24,7 @@
     <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
     <string name="delete_file_itself">Ta även bort filen \"%s\"</string>
     <string name="note_saved_successfully">Anteckningen \"%s\" har sparats</string>
+    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
 
     <!-- Settings -->
     <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>

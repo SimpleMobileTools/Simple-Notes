@@ -24,6 +24,7 @@
     <string name="update_file_at_note">Aktualizovať samotný súbor po úprave poznámky\n(ak bude daný súbor presunutý, alebo vymazaný, bude vymazaná aj poznámka)</string>
     <string name="delete_file_itself">Odstrániť aj súbor \"%s\"</string>
     <string name="note_saved_successfully">Poznámka \"%s\" bola úspešne uložená</string>
+    <string name="note_exported_successfully">Poznámka \"%s\" bola úspešne exportovaná</string>
 
     <!-- Settings -->
     <string name="display_success_message">Zobraziť správu o úspešnom uložení poznámky</string>

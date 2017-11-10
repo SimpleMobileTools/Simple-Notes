@@ -42,7 +42,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     lateinit var mDb: DBHelper
     lateinit var mNotes: List<Note>
 
-    var noteViewWithTextSelected: MyEditText? = null
+    private var noteViewWithTextSelected: MyEditText? = null
     private var wasInit = false
     private var storedUseEnglish = false
 
@@ -331,7 +331,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                     out.write(content)
                 }
             }
-            noteSavedSuccessfully(path.getFilenameFromPath())
+            val message = String.format(getString(R.string.note_exported_successfully), path.getFilenameFromPath())
+            toast(message)
         } catch (e: Exception) {
             showErrorToast(e)
         }

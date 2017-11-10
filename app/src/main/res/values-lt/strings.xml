@@ -24,6 +24,7 @@
     <string name="update_file_at_note">Atnaujinti failà kai atnaujinamas áraðas\n(Áraðas iðtrinamas, jei iðtrinamas failas ar pakeièiama talpinimo vieta)</string>
     <string name="delete_file_itself">Taip pat iðtrinti failà \"%s\"</string>
     <string name="note_saved_successfully">Áraðas \"%s\" sëkmingai iðsaugotas</string>
+    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
 
     <!-- Settings -->
     <string name="display_success_message">Rodyti sëkmingo iðsaugojimo praneðimus</string>

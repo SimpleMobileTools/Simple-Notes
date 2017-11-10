@@ -24,6 +24,7 @@
     <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
     <string name="delete_file_itself">Lösche Datei \"%s\"</string>
     <string name="note_saved_successfully">Notiz \"%s\" erfolgreich gespeichert</string>
+    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
 
     <!-- Settings -->
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>

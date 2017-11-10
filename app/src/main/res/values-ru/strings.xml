@@ -24,6 +24,7 @@
     <string name="update_file_at_note">Обновлять содержимое файла при обновлении заметки\n(заметка удалится, если удалить файл или изменить путь к нему)</string>
     <string name="delete_file_itself">Также удалить файл \"%s\"</string>
     <string name="note_saved_successfully">Заметка \"%s\" сохранена успешно</string>
+    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
 
     <!-- Settings -->
     <string name="display_success_message">Уведомлять, что файл успешно сохранен</string>
