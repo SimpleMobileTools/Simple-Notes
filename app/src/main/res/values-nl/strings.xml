@@ -20,10 +20,11 @@
     <string name="open_file">Bestand openen</string>
     <string name="export_as_file">Als bestand exporteren</string>
     <string name="file_too_large">Bestand is te groot: limiet is 10MB</string>
-    <string name="only_import_file_content">Alleen de bestandsinhoud importeren\n(veranderingen aan het bestand zullen de notitie niet beïnvloeden)</string>
+    <string name="only_import_file_content">Alleen de bestandsinhoud importeren\n(veranderingen aan het bestand zullen de notitie niet beÃ¯nvloeden)</string>
     <string name="update_file_at_note">Bestand aanpassen bij wijzigingen in de notitie\n(de notitie wordt gewist als het bestand wordt verplaatst of verwijderd)</string>
     <string name="delete_file_itself">Bestand \"%s\" ook verwijderen</string>
     <string name="note_saved_successfully">Notitie \"%s\" opgeslagen</string>
+    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
 
     <!-- Settings -->
     <string name="display_success_message">Bevestigingen weergeven</string>
@@ -43,7 +44,7 @@
     <string name="app_long_description">
         Maak snel een notitie van bijvoorbeeld een aankoop, adres of idee. Geen gecompliceerde instellingen, gewoon typen. Notities worden automatisch opgeslagen, dus veranderingen gaan niet per ongeluk verloren. Ondersteunt het aanmaken van meerdere notities die als verschuifbare tabs worden weergegeven.
 
-        Bevat een aan te passen widget die met één klik de notitie opent.
+        Bevat een aan te passen widget die met Ã©Ã©n klik de notitie opent.
 
         Bevat geen advertenties of onnodige permissies. Volledig open-source. Kleuren van de app kunnen worden aangepast.
 
