@@ -9,11 +9,11 @@ import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.helpers.DBHelper
-import kotlinx.android.synthetic.main.new_note.view.*
+import kotlinx.android.synthetic.main.dialog_new_note.view.*
 
 class NewNoteDialog(val activity: Activity, val db: DBHelper, callback: (title: String) -> Unit) {
     init {
-        val view = activity.layoutInflater.inflate(R.layout.new_note, null)
+        val view = activity.layoutInflater.inflate(R.layout.dialog_new_note, null)
 
         AlertDialog.Builder(activity)
                 .setPositiveButton(R.string.ok, null)

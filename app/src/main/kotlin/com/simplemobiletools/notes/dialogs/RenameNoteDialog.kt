@@ -8,13 +8,13 @@ import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity
 import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.models.Note
-import kotlinx.android.synthetic.main.new_note.view.*
+import kotlinx.android.synthetic.main.dialog_new_note.view.*
 import java.io.File
 
 class RenameNoteDialog(val activity: SimpleActivity, val db: DBHelper, val note: Note, callback: (note: Note) -> Unit) {
 
     init {
-        val view = activity.layoutInflater.inflate(R.layout.rename_note, null)
+        val view = activity.layoutInflater.inflate(R.layout.dialog_rename_note, null)
         view.note_name.setText(note.title)
 
         AlertDialog.Builder(activity)
