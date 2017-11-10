@@ -35,10 +35,10 @@ val Context.dbHelper: DBHelper get() = DBHelper.newInstance(applicationContext)
 
 fun Context.getNoteStoredValue(note: Note): String? {
     return if (note.path.isNotEmpty()) {
-        try {
-            return File(note.path).readText()
+        return try {
+            File(note.path).readText()
         } catch (e: FileNotFoundException) {
-            return null
+            null
         }
     } else {
         note.value
