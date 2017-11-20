@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 2.5.0 *(2017-11-20)*
+----------------------------
+
+ * Added adaptive icons
+ * Fixed a crash related to rotating the device
+
 Version 2.4.0 *(2017-11-10)*
 ----------------------------
 
