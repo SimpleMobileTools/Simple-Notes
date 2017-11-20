@@ -135,14 +135,11 @@ class NoteFragment : Fragment() {
     }
 
     private fun removeTextWatcher() {
-        //Avoid memory leak
         view.notes_view.removeTextChangedListener(textWatcher)
     }
 
     private fun setWordCounter(text: Editable) {
-        //Replace new lines with space
         val wordArray = text.toString().replace("\n", " ").split(" ")
-        //Count only items which are not empty
         notes_counter.text = wordArray.count { it.isNotEmpty() }.toString()
     }
 
