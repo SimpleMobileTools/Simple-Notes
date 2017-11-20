@@ -32,7 +32,7 @@
     <string name="place_cursor_end">Umiestniť kurzor na koniec poznámky</string>
     <string name="monospaced_font">Použiť písmo Monospace</string>
     <string name="show_keyboard">Zobraziť klávesnicu po spustení</string>
-    <string name="show_wordcount">Show word counter</string>
+    <string name="show_word_count">Show word counter</string>
     <string name="alignment">Zarovnanie</string>
     <string name="left">Vľavo</string>
     <string name="center">Uprostred</string>

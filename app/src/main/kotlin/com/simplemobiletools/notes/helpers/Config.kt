@@ -25,8 +25,8 @@ class Config(context: Context) : BaseConfig(context) {
         set(showKeyboard) = prefs.edit().putBoolean(SHOW_KEYBOARD, showKeyboard).apply()
 
     var showWordCount: Boolean
-        get() = prefs.getBoolean(SHOW_WORDCOUNT, false)
-        set(showWordCount) = prefs.edit().putBoolean(SHOW_WORDCOUNT, showWordCount).apply()
+        get() = prefs.getBoolean(SHOW_WORD_COUNT, false)
+        set(showWordCount) = prefs.edit().putBoolean(SHOW_WORD_COUNT, showWordCount).apply()
 
     var fontSize: Int
         get() = prefs.getInt(FONT_SIZE, FONT_SIZE_MEDIUM)

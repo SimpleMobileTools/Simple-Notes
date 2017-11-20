@@ -178,7 +178,7 @@
                 android:clickable="false"
                 android:paddingLeft="@dimen/medium_margin"
                 android:paddingStart="@dimen/medium_margin"
-                android:text="@string/show_wordcount"/>
+                android:text="@string/show_word_count"/>
 
         </RelativeLayout>
 

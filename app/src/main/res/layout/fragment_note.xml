@@ -13,7 +13,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:id="@+id/notes_relativelayout"
+            android:id="@+id/notes_relative_layout"
             android:layout_height="wrap_content">
 
         <com.simplemobiletools.commons.views.MyEditText
