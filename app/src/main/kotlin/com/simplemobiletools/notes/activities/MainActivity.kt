@@ -13,10 +13,7 @@ import android.view.MenuItem
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.LICENSE_KOTLIN
-import com.simplemobiletools.commons.helpers.LICENSE_RTL
-import com.simplemobiletools.commons.helpers.LICENSE_STETHO
-import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
+import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.commons.views.MyEditText
@@ -253,7 +250,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun launchAbout() {
-        startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_STETHO or LICENSE_RTL, BuildConfig.VERSION_NAME)
+        startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_STETHO or LICENSE_RTL or LICENSE_LEAK_CANARY, BuildConfig.VERSION_NAME)
     }
 
     private fun tryOpenFile() {
