@@ -20,6 +20,7 @@ import com.simplemobiletools.notes.helpers.GRAVITY_CENTER
 import com.simplemobiletools.notes.helpers.GRAVITY_RIGHT
 import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
+import kotlinx.android.synthetic.main.fragment_note.*
 import kotlinx.android.synthetic.main.fragment_note.view.*
 import java.io.File
 
