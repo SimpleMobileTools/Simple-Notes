@@ -33,6 +33,8 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     override fun getPageTitle(position: Int) = notes[position].title
 
+    fun getCurrentNotesView(position: Int) = fragments[position]?.getNotesView()
+
     fun getCurrentNoteViewText(position: Int) = fragments[position]?.getCurrentNoteViewText()
 
     fun appendText(position: Int, text: String) = fragments[position]?.getNotesView()?.append(text)
@@ -47,5 +49,10 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
         } catch (e: Exception) {
             activity.showErrorToast(e)
         }
+    }
+
+    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+        super.destroyItem(container, position, `object`)
+        fragments.removeAt(position)
     }
 }

@@ -32,6 +32,7 @@ class NoteFragment : Fragment() {
         noteId = arguments!!.getInt(NOTE_ID)
         mDb = context!!.dbHelper
         note = mDb.getNote(noteId) ?: return view
+        retainInstance = true
 
         if (context!!.config.clickableLinks) {
             view.notes_view.apply {

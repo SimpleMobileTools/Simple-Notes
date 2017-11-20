@@ -6,7 +6,10 @@ import android.support.v4.view.ViewPager
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
 import android.util.TypedValue
-import android.view.*
+import android.view.ActionMode
+import android.view.Gravity
+import android.view.Menu
+import android.view.MenuItem
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
@@ -31,7 +34,6 @@ import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_note.*
 import java.io.File
 import java.nio.charset.Charset
 
@@ -212,7 +214,11 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             hideKeyboard()
     }
 
-    private fun currentNotesView() = if (view_pager == null) null else mAdapter?.getItem(view_pager.currentItem)?.notes_view
+    private fun currentNotesView() = if (view_pager == null) {
+        null
+    } else {
+        mAdapter?.getCurrentNotesView(view_pager.currentItem)
+    }
 
     private fun displayRenameDialog() {
         RenameNoteDialog(this, mDb, mCurrentNote) {
@@ -241,12 +247,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         invalidateOptionsMenu()
         initViewPager()
         updateSelectedNote(id)
-        view_pager.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-            override fun onGlobalLayout() {
-                mAdapter?.focusEditText(getNoteIndexWithId(id))
-                view_pager.viewTreeObserver.removeOnGlobalLayoutListener(this)
-            }
-        })
+        view_pager.onGlobalLayout {
+            mAdapter?.focusEditText(getNoteIndexWithId(id))
+        }
     }
 
     private fun launchAbout() {
