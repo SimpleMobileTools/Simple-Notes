@@ -32,6 +32,7 @@
     <string name="place_cursor_end">Помещать курсор в конец заметки</string>
     <string name="monospaced_font">Использовать моноширинный шрифт</string>
     <string name="show_keyboard">Показывать клавиатуру при запуске</string>
+    <string name="show_word_count">Show word count</string>
     <string name="alignment">Выравнивание</string>
     <string name="left">По левому краю</string>
     <string name="center">По центру</string>

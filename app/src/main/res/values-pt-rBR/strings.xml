@@ -32,6 +32,7 @@
     <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="monospaced_font">Use monospaced font</string>
     <string name="show_keyboard">Show keyboard on startup</string>
+    <string name="show_word_count">Show word count</string>
     <string name="alignment">Gravidade</string>
     <string name="left">Esquerda</string>
     <string name="center">Centro</string>

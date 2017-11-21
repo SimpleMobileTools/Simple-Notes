@@ -32,6 +32,7 @@
     <string name="place_cursor_end">Placera markören vid slutet av anteckningen</string>
     <string name="monospaced_font">Use monospaced font</string>
     <string name="show_keyboard">Show keyboard on startup</string>
+    <string name="show_word_count">Show word count</string>
     <string name="alignment">Justering</string>
     <string name="left">Vänster</string>
     <string name="center">Centrerad</string>

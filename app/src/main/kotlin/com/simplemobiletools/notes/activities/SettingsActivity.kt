@@ -35,6 +35,7 @@ class SettingsActivity : SimpleActivity() {
         setupClickableLinks()
         setupMonospacedFont()
         setupShowKeyboard()
+        setupShowWordCount()
         setupFontSize()
         setupGravity()
         setupWidgetNote()
@@ -87,6 +88,14 @@ class SettingsActivity : SimpleActivity() {
         settings_show_keyboard_holder.setOnClickListener {
             settings_show_keyboard.toggle()
             config.showKeyboard = settings_show_keyboard.isChecked
+        }
+    }
+
+    private fun setupShowWordCount() {
+        settings_show_word_count.isChecked = config.showWordCount
+        settings_show_word_count_holder.setOnClickListener {
+            settings_show_word_count.toggle()
+            config.showWordCount = settings_show_word_count.isChecked
         }
     }
 

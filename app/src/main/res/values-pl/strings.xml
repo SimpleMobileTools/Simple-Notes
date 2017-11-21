@@ -32,6 +32,7 @@
     <string name="place_cursor_end">Umieszczaj kursor na końcu notatki</string>
     <string name="monospaced_font">Używaj czcionki monospace</string>
     <string name="show_keyboard">Pokazuj klawiaturę na starcie</string>
+    <string name="show_word_count">Show word count</string>
     <string name="alignment">Wyrównanie tekstu w notatkach</string>
     <string name="left">Do lewej strony</string>
     <string name="center">Do środka</string>

@@ -3,6 +3,8 @@ package com.simplemobiletools.notes.fragments
 import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
 import android.text.util.Linkify
 import android.util.TypedValue
@@ -18,6 +20,7 @@ import com.simplemobiletools.notes.helpers.GRAVITY_CENTER
 import com.simplemobiletools.notes.helpers.GRAVITY_RIGHT
 import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
+import kotlinx.android.synthetic.main.fragment_note.*
 import kotlinx.android.synthetic.main.fragment_note.view.*
 import java.io.File
 
@@ -95,6 +98,7 @@ class NoteFragment : Fragment() {
         super.onResume()
 
         val config = context!!.config
+
         view.notes_view.apply {
             typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
 
@@ -113,10 +117,42 @@ class NoteFragment : Fragment() {
                 setSelection(if (config.placeCursorToEnd) text.length else 0)
             }
         }
+
+        if (config.showWordCount) {
+            view.notes_view.addTextChangedListener(textWatcher)
+            view.notes_counter.visibility = View.VISIBLE
+            setWordCounter(view.notes_view.text)
+        }
+        else {
+            view.notes_counter.visibility = View.GONE
+        }
     }
 
     override fun onPause() {
         super.onPause()
         saveText()
+
+        removeTextWatcher()
+    }
+
+    private fun removeTextWatcher() {
+        view.notes_view.removeTextChangedListener(textWatcher)
+    }
+
+    private fun setWordCounter(text: Editable) {
+        val wordArray = text.toString().replace("\n", " ").split(" ")
+        notes_counter.text = wordArray.count { it.isNotEmpty() }.toString()
+    }
+
+    private var textWatcher: TextWatcher = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        }
+
+        override fun afterTextChanged(editable: Editable) {
+            setWordCounter(editable)
+        }
     }
 }
