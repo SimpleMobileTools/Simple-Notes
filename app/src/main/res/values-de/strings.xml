@@ -32,7 +32,7 @@
     <string name="place_cursor_end">Platziere Cursor am Ende der Notiz</string>
     <string name="monospaced_font">Benutze Monospace Schrift</string>
     <string name="show_keyboard">Zeige Tastatur beim Start</string>
-    <string name="show_word_count">Zeige Wort Zähler</string>
+    <string name="show_word_count">Zeige Wortanzahl</string>
     <string name="alignment">Ausrichtung</string>
     <string name="left">Linksbündig</string>
     <string name="center">Zentriert</string>
