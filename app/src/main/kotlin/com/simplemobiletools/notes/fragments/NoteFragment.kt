@@ -12,6 +12,8 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.simplemobiletools.commons.extensions.beGone
+import com.simplemobiletools.commons.extensions.beVisible
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.extensions.*
@@ -120,28 +122,23 @@ class NoteFragment : Fragment() {
 
         if (config.showWordCount) {
             view.notes_view.addTextChangedListener(textWatcher)
-            view.notes_counter.visibility = View.VISIBLE
+            view.notes_counter.beVisible()
+            view.notes_counter.setTextColor(config.textColor)
             setWordCounter(view.notes_view.text)
-        }
-        else {
-            view.notes_counter.visibility = View.GONE
+        } else {
+            view.notes_counter.beGone()
         }
     }
 
     override fun onPause() {
         super.onPause()
         saveText()
-
-        removeTextWatcher()
-    }
-
-    private fun removeTextWatcher() {
         view.notes_view.removeTextChangedListener(textWatcher)
     }
 
     private fun setWordCounter(text: Editable) {
-        val wordArray = text.toString().replace("\n", " ").split(" ")
-        notes_counter.text = wordArray.count { it.isNotEmpty() }.toString()
+        val words = text.toString().replace("\n", " ").split(" ")
+        notes_counter.text = words.count { it.isNotEmpty() }.toString()
     }
 
     private var textWatcher: TextWatcher = object : TextWatcher {

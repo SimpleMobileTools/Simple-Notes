@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/note_Fragment_holder"
     android:layout_width="match_parent"
@@ -12,33 +13,32 @@
         android:fillViewport="true">
 
         <RelativeLayout
-            android:layout_width="match_parent"
             android:id="@+id/notes_relative_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-        <com.simplemobiletools.commons.views.MyEditText
-            android:id="@+id/notes_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:freezesText="true"
-            android:gravity="top"
-            android:inputType="textCapSentences|textMultiLine"
-            android:padding="@dimen/activity_margin"
-            android:textCursorDrawable="@null"/>
+            <com.simplemobiletools.commons.views.MyEditText
+                android:id="@+id/notes_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:freezesText="true"
+                android:gravity="top"
+                android:inputType="textCapSentences|textMultiLine"
+                android:padding="@dimen/activity_margin"
+                android:textCursorDrawable="@null"/>
 
-            <TextView
+            <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/notes_counter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="italic"
-                tools:text="123"
-                android:padding="5dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true" />
+                android:layout_alignParentRight="true"
+                android:padding="@dimen/small_margin"
+                android:textStyle="italic"
+                tools:text="123"/>
 
         </RelativeLayout>
-
     </ScrollView>
 </RelativeLayout>
