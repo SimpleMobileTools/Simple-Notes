@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 2.5.1 *(2017-11-22)*
+----------------------------
+
+ * Adding a word counter (by chrjsorg)
+ * Fixed some crashes at having 5+ notes
+
 Version 2.5.0 *(2017-11-20)*
 ----------------------------
 
