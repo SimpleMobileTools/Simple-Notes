@@ -2,10 +2,8 @@ package com.simplemobiletools.notes.adapters
 
 import android.app.Activity
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
-import android.util.SparseArray
 import android.view.ViewGroup
 import com.simplemobiletools.commons.extensions.showErrorToast
 import com.simplemobiletools.notes.fragments.NoteFragment
@@ -13,17 +11,17 @@ import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
 
 class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity: Activity) : FragmentStatePagerAdapter(fm) {
-    var fragments: SparseArray<NoteFragment> = SparseArray(5)
+    private var fragments: HashMap<Int, NoteFragment> = LinkedHashMap()
 
     override fun getCount() = notes.size
 
-    override fun getItem(position: Int): Fragment {
+    override fun getItem(position: Int): NoteFragment {
         val bundle = Bundle()
         val id = notes[position].id
         bundle.putInt(NOTE_ID, id)
 
-        if (fragments.get(position) != null)
-            return fragments[position]
+        if (fragments.containsKey(position))
+            return fragments[position]!!
 
         val fragment = NoteFragment()
         fragment.arguments = bundle
@@ -53,6 +51,6 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         super.destroyItem(container, position, `object`)
-        fragments.removeAt(position)
+        fragments.remove(position)
     }
 }
