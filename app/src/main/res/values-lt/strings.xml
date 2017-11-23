@@ -1,55 +1,55 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
-    <string name="widget_config">Aèiû, jog naudojate Simple Notes.\nDaugiau paprastø programø rasite SimpleMobileTools.com.</string>
-    <string name="cannot_share_empty_text">Negalima dalintis tuðèiu tekstu</string>
+    <string name="widget_config">Ačiū, jog naudojate Simple Notes.\nDaugiau paprastų programų rasite SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">Negalima dalintis tuščiu įrašu</string>
     <string name="simple_note">Simple Note</string>
-    <string name="new_note">Pridëti naujà áraðà</string>
-    <string name="no_title">Áraðo pavadinimas</string>
-    <string name="title_taken">Áraðas tokiu pavadinimu jau egzistuoja</string>
-    <string name="open_note">Atverti áraðà</string>
-    <string name="delete_note">Iðtrinti áraðà</string>
-    <string name="delete_note_prompt_message">Ar tikrai norite iðtrinti áraðà \"%s\"?</string>
-    <string name="pick_a_note">Pasirinkti áraðà</string>
-    <string name="rename_note">Pervadinti áraðà</string>
-    <string name="general_note">Pagrindinis áraðas</string>
-    <string name="create_new_note">Kurti naujà áraðà</string>
-    <string name="add_to_note">Pridëti á áraðà</string>
+    <string name="new_note">Pridėti naujà įrašą</string>
+    <string name="no_title">Įrašo pavadinimas</string>
+    <string name="title_taken">Įrašas tokiu pavadinimu jau egzistuoja</string>
+    <string name="open_note">Atverti įrašą</string>
+    <string name="delete_note">Ištrinti įrašą</string>
+    <string name="delete_note_prompt_message">Ar tikrai norite ištrinti įrašą \"%s\"?</string>
+    <string name="pick_a_note">Pasirinkti įrašą</string>
+    <string name="rename_note">Pervadinti įrašą</string>
+    <string name="general_note">Pagrindinis įrašas</string>
+    <string name="create_new_note">Kurti naują įrašą</string>
+    <string name="add_to_note">Papildyti įrašą</string>
 
     <!-- File notes -->
-    <string name="open_file">Atverti failà</string>
-    <string name="export_as_file">Kurti kopijà</string>
-    <string name="file_too_large">Failas per didelis, didþiausias leistinas dydis yra 10MB</string>
-    <string name="only_import_file_content">Ákelti tik áraðo turiná\n(Talpinant áraðà jis nebus paveiktas)</string>
-    <string name="update_file_at_note">Atnaujinti failà kai atnaujinamas áraðas\n(Áraðas iðtrinamas, jei iðtrinamas failas ar pakeièiama talpinimo vieta)</string>
-    <string name="delete_file_itself">Taip pat iðtrinti failà \"%s\"</string>
-    <string name="note_saved_successfully">Áraðas \"%s\" sëkmingai iðsaugotas</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
+    <string name="open_file">Atverti failą</string>
+    <string name="export_as_file">Kurti kopiją</string>
+    <string name="file_too_large">Failas per didelis, didžiausias leistinas dydis yra 10MB</string>
+    <string name="only_import_file_content">Įkelti tik įrašo turinį\n(Įrašant įrašą jis nebus redaguojamas)</string>
+    <string name="update_file_at_note">Atnaujinti failą kai atnaujinamas įrašas\n(Įrašas ištrinamas, jei ištrinamas failas ar pakeičiama įrašymo vieta)</string>
+    <string name="delete_file_itself">Taip pat ištrinti failą \"%s\"</string>
+    <string name="note_saved_successfully">Įrašas \"%s\" sėkmingai išsaugotas</string>
+    <string name="note_exported_successfully">Sėkmingai sukurta įrašo \"%s\ kopija" </string>
 
     <!-- Settings -->
-    <string name="display_success_message">Rodyti sëkmingo iðsaugojimo praneðimus</string>
-    <string name="links_and_emails_clickable">Paspaudþiamos nuorodos ir elektroninio paðto adresai</string>
-    <string name="place_cursor_end">Perkelti þymeklá á áraðo pabaigà</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
-    <string name="show_word_count">Show word count</string>
-    <string name="alignment">Átrauka</string>
-    <string name="left">Kairëje</string>
+    <string name="display_success_message">Rodyti sėkmingo išsaugojimo pranešimus</string>
+    <string name="links_and_emails_clickable">Veiksnios nuorodos ir elektroninio pašto adresai</string>
+    <string name="place_cursor_end">Perkelti žymeklį į įrašo pabaigą</string>
+    <string name="monospaced_font">Pakeisti šrifto stilių</string>
+    <string name="show_keyboard">Rodyti klaviatūrą paleidžiant</string>
+    <string name="show_word_count">Rodyti žodžių skaičių</string>
+    <string name="alignment">Įtrauka</string>
+    <string name="left">Kairėje</string>
     <string name="center">Centre</string>
-    <string name="right">Deðinëje</string>
-    <string name="widget_note">Áraðas panaudotas ðaukinyje</string>
+    <string name="right">Dešinėje</string>
+    <string name="widget_note">Įraðas panaudotas šaukinyje</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">PAprasta programa kurti áraðams, be reklamø.</string>
+    <string name="app_short_description">Paprasta programa kurti įrašams, be reklamų.</string>
     <string name="app_long_description">
-        Norite greitai uþsiraðyti mintá, kà reikia nupirkti, adresà ar verslo pradþios idëjà? Tada tai bûtent ði programa, kurios ieðkote! Nëra sudëtingø nustatymø þingsniø, tiesiog raðykite kà norite. Áraðø automatinis iðsaugojimas uþtikrina, jog neprarasite jø per klaidà. Galimas keliø nesusijusiø áraðø kûrimas.
+        Norite greitai pažymėti mintį, pirkinių sąrąšą, adresą ar verslo pradžios idėją? Ši programa būtent tai, ko ieškote! Nėra sudėtingų nustatymų, rašykite ką norite. Įrašų automatinis išsaugojimas užtikrina, jog neprarasite jų per klaidą. Galimas kelių nesusijusių įrašų kūrimas.
 
-        Bet kada galite pasiekti áraðà naudodami ðaukiná, kuris iðsyk atveria programà.
+        Bet kada galite pasiekti įrašą naudojant šaukinį, kuris išsyk atveria programą.
 
-        Neturi reklamø ar nereikalingø leidimø. Visiðkai atviro kodo, turi tamsià temà.
+        Neturi reklamų ar nereikalingų leidimų. Visiškai atviro kodo, turi tamsią temą.
 
-        Tai tik viena ið daugelio programø. Kitas galite rasti èia http://www.simplemobiletools.com
+        Tai tik viena iš daugelio programų. Kitas galite rasti čia http://www.simplemobiletools.com
     </string>
 
     <!--
