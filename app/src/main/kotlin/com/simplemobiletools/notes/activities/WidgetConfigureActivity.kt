@@ -5,7 +5,6 @@ import android.appwidget.AppWidgetManager
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.TypedValue
 import android.widget.RemoteViews
 import android.widget.SeekBar
@@ -18,7 +17,7 @@ import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.MyWidgetProvider
 import kotlinx.android.synthetic.main.widget_config.*
 
-class WidgetConfigureActivity : AppCompatActivity() {
+class WidgetConfigureActivity : SimpleActivity() {
     private var mBgAlpha = 0f
     private var mWidgetId = 0
     private var mBgColor = 0
@@ -26,6 +25,7 @@ class WidgetConfigureActivity : AppCompatActivity() {
     private var mTextColor = 0
 
     public override fun onCreate(savedInstanceState: Bundle?) {
+        useDynamicTheme = false
         super.onCreate(savedInstanceState)
         setResult(RESULT_CANCELED)
         setContentView(R.layout.widget_config)
