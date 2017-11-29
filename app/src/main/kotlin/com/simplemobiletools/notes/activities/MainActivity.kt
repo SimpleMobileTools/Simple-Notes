@@ -100,7 +100,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
-        updateMenuTextSize(resources, menu)
         return true
     }
 
