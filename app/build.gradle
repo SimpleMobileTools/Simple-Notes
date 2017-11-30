@@ -47,7 +47,7 @@ ext {
 }
 
 dependencies {
-    implementation 'com.simplemobiletools:commons:3.0.3'
+    implementation 'com.simplemobiletools:commons:3.0.9'
     implementation 'com.facebook.stetho:stetho:1.5.0'
 
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
