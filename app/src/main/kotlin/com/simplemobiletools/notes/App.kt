@@ -17,8 +17,6 @@ class App : Application() {
         }
 
         checkUseEnglish()
-
-        if (BuildConfig.DEBUG)
-            Stetho.initializeWithDefaults(this)
+        Stetho.initializeWithDefaults(this)
     }
 }
