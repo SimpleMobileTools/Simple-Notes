@@ -25,7 +25,6 @@ import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.extensions.updateWidget
-import com.simplemobiletools.notes.helpers.DBHelper
 import com.simplemobiletools.notes.helpers.MIME_TEXT_PLAIN
 import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
@@ -38,7 +37,6 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private var mAdapter: NotesPagerAdapter? = null
 
     lateinit var mCurrentNote: Note
-    lateinit var mDb: DBHelper
     lateinit var mNotes: List<Note>
 
     private var noteViewWithTextSelected: MyEditText? = null
@@ -48,14 +46,13 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        appLaunched()
 
-        mDb = applicationContext.dbHelper
         initViewPager()
 
         pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
         pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
         checkWhatsNewDialog()
-        storeStoragePaths()
 
         intent.apply {
             if (action == Intent.ACTION_SEND && type == MIME_TEXT_PLAIN) {
@@ -157,7 +154,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun handleText(text: String) {
-        val notes = mDb.getNotes()
+        val notes = dbHelper.getNotes()
         val list = arrayListOf<RadioItem>().apply {
             add(RadioItem(0, getString(R.string.create_new_note)))
             notes.forEachIndexed { index, note ->
@@ -176,9 +173,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun handleFile(path: String) {
-        val id = mDb.getNoteId(path)
+        val id = dbHelper.getNoteId(path)
 
-        if (mDb.isValidId(id)) {
+        if (dbHelper.isValidId(id)) {
             updateSelectedNote(id)
             return
         }
@@ -191,7 +188,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun initViewPager() {
-        mNotes = mDb.getNotes()
+        mNotes = dbHelper.getNotes()
         mCurrentNote = mNotes[0]
         var wantedNoteId = intent.getIntExtra(OPEN_NOTE_ID, -1)
         if (wantedNoteId == -1)
@@ -217,7 +214,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun displayRenameDialog() {
-        RenameNoteDialog(this, mDb, mCurrentNote) {
+        RenameNoteDialog(this, dbHelper, mCurrentNote) {
             mCurrentNote = it
             initViewPager()
         }
@@ -231,15 +228,15 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun displayNewNoteDialog(value: String = "") {
-        NewNoteDialog(this, mDb) {
+        NewNoteDialog(this, dbHelper) {
             val newNote = Note(0, it, value, TYPE_NOTE)
             addNewNote(newNote)
         }
     }
 
     private fun addNewNote(note: Note) {
-        val id = mDb.insertNote(note)
-        mNotes = mDb.getNotes()
+        val id = dbHelper.insertNote(note)
+        mNotes = dbHelper.getNotes()
         invalidateOptionsMenu()
         initViewPager()
         updateSelectedNote(id)
@@ -276,7 +273,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             toast(R.string.invalid_file_format)
         } else if (file.length() > 10 * 1000 * 1000) {
             toast(R.string.file_too_large)
-        } else if (checkTitle && mDb.doesTitleExist(path.getFilenameFromPath())) {
+        } else if (checkTitle && dbHelper.doesTitleExist(path.getFilenameFromPath())) {
             toast(R.string.title_taken)
         } else {
             onChecksPassed(file)
@@ -286,7 +283,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun importFileWithSync(path: String) {
         openFile(path, false) {
             var title = path.getFilenameFromPath()
-            if (mDb.doesTitleExist(title))
+            if (dbHelper.doesTitleExist(title))
                 title += " (file)"
 
             val note = Note(0, title, "", TYPE_NOTE, path)
@@ -372,8 +369,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
         val deletedNoteId = mCurrentNote.id
         val path = mCurrentNote.path
-        mDb.deleteNote(mCurrentNote.id)
-        mNotes = mDb.getNotes()
+        dbHelper.deleteNote(mCurrentNote.id)
+        mNotes = dbHelper.getNotes()
 
         val firstNoteId = mNotes[0].id
         updateSelectedNote(firstNoteId)

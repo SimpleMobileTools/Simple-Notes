@@ -1,7 +1,6 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.support.v7.app.AlertDialog
-import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.simplemobiletools.commons.extensions.getFilenameFromPath
 import com.simplemobiletools.commons.extensions.humanizePath
@@ -18,7 +17,7 @@ class OpenFileDialog(val activity: SimpleActivity, val path: String, val callbac
     private var dialog: AlertDialog
 
     init {
-        val view = (LayoutInflater.from(activity).inflate(R.layout.dialog_open_file, null) as ViewGroup).apply {
+        val view = (activity.layoutInflater.inflate(R.layout.dialog_open_file, null) as ViewGroup).apply {
             open_file_filename.text = activity.humanizePath(path)
         }
 
@@ -26,20 +25,21 @@ class OpenFileDialog(val activity: SimpleActivity, val path: String, val callbac
                 .setPositiveButton(R.string.ok, null)
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
-            activity.setupDialogStuff(view, this, R.string.open_file)
-            getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener({
-                val updateFileOnEdit = view.open_file_type.checkedRadioButtonId == open_file_update_file
-                val storePath = if (updateFileOnEdit) path else ""
-                val storeContent = if (updateFileOnEdit) "" else File(path).readText()
+            activity.setupDialogStuff(view, this, R.string.open_file) {
+                getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                    val updateFileOnEdit = view.open_file_type.checkedRadioButtonId == open_file_update_file
+                    val storePath = if (updateFileOnEdit) path else ""
+                    val storeContent = if (updateFileOnEdit) "" else File(path).readText()
 
-                if (updateFileOnEdit) {
-                    activity.handleSAFDialog(File(path)) {
+                    if (updateFileOnEdit) {
+                        activity.handleSAFDialog(File(path)) {
+                            saveNote(storeContent, storePath)
+                        }
+                    } else {
                         saveNote(storeContent, storePath)
                     }
-                } else {
-                    saveNote(storeContent, storePath)
                 }
-            })
+            }
         }
     }
 

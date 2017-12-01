@@ -1,7 +1,6 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.support.v7.app.AlertDialog
-import android.view.LayoutInflater
 import com.simplemobiletools.commons.extensions.beVisible
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.R
@@ -14,7 +13,7 @@ class DeleteNoteDialog(val activity: SimpleActivity, val note: Note, val callbac
 
     init {
         val message = String.format(activity.getString(R.string.delete_note_prompt_message), note.title)
-        val view = LayoutInflater.from(activity).inflate(R.layout.dialog_delete_note, null).apply {
+        val view = activity.layoutInflater.inflate(R.layout.dialog_delete_note, null).apply {
             if (note.path.isNotEmpty()) {
                 delete_note_checkbox.text = String.format(activity.getString(R.string.delete_file_itself), note.path)
                 delete_note_checkbox.beVisible()

@@ -23,7 +23,7 @@ class RenameNoteDialog(val activity: SimpleActivity, val db: DBHelper, val note:
                 .create().apply {
             window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
             activity.setupDialogStuff(view, this, R.string.rename_note)
-            getButton(BUTTON_POSITIVE).setOnClickListener({
+            getButton(BUTTON_POSITIVE).setOnClickListener {
                 val title = view.note_name.value
                 when {
                     title.isEmpty() -> activity.toast(R.string.no_title)
@@ -59,7 +59,7 @@ class RenameNoteDialog(val activity: SimpleActivity, val db: DBHelper, val note:
                         callback(note)
                     }
                 }
-            })
+            }
         }
     }
 }

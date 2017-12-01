@@ -1,11 +1,10 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.app.Activity
-import android.graphics.PorterDuff
-import android.graphics.PorterDuffColorFilter
 import android.support.v7.app.AlertDialog
 import android.view.ViewGroup
 import android.widget.RadioGroup
+import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.extensions.toast
@@ -37,7 +36,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
                 }
                 open_note_item_icon.apply {
                     beVisibleIf(note.path.isNotEmpty())
-                    colorFilter = PorterDuffColorFilter(textColor, PorterDuff.Mode.SRC_IN)
+                    applyColorFilter(textColor)
                     setOnClickListener {
                         activity.toast(note.path)
                     }
