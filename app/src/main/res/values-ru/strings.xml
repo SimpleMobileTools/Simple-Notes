@@ -3,7 +3,7 @@
     <string name="app_launcher_name">Заметки</string>
     <string name="widget_config">Благодарим вас за использование Simple Notes.\nБольше простых приложений вы можете найти на SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Нельзя поделиться пустым текстом</string>
-    <string name="simple_note">Simple Note</string>
+    <string name="simple_note">Простая заметка</string>
     <string name="new_note">Добавить новую заметку</string>
     <string name="no_title">Пожалуйста, назовите заметку</string>
     <string name="title_taken">Заметка с таким названием уже существует</string>
@@ -24,7 +24,7 @@
     <string name="update_file_at_note">Обновлять содержимое файла при обновлении заметки\n(заметка удалится, если удалить файл или изменить путь к нему)</string>
     <string name="delete_file_itself">Также удалить файл \"%s\"</string>
     <string name="note_saved_successfully">Заметка \"%s\" сохранена</string>
-    <string name="note_exported_successfully">Note \"%s\" экспортирована</string>
+    <string name="note_exported_successfully">Заметка \"%s\" экспортирована</string>
 
     <!-- Settings -->
     <string name="display_success_message">Уведомлять, что файл успешно сохранен</string>
