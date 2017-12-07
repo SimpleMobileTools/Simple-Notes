@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">简约笔记</string>
+    <string name="app_launcher_name">笔记</string>
+    <string name="widget_config">谢谢使用简约笔记.\n想要获取更多的简约app,您可以访问这个SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">没有内容不能分享M</string>
+    <string name="simple_note">简约笔记</string>
+    <string name="new_note">添加一个新的笔记</string>
+    <string name="no_title">请提供笔记名字</string>
+    <string name="title_taken">笔记的标题已经存在</string>
+    <string name="open_note">打开笔记</string>
+    <string name="delete_note">删除笔记</string>
+    <string name="delete_note_prompt_message">您确定要删除这个笔记吗\"%s\"?</string>
+    <string name="pick_a_note">选择一个笔记</string>
+    <string name="rename_note">重命名笔记</string>
+    <string name="general_note">一般笔记</string>
+    <string name="create_new_note">创建一个新的笔记</string>
+    <string name="add_to_note">添加到笔记</string>
+
+    <!-- File notes -->
+    <string name="open_file">打开文件</string>
+    <string name="export_as_file">以文件的形式导出</string>
+    <string name="file_too_large">文件太大了, 限制只有10MB</string>
+    <string name="only_import_file_content">只要导入文件的内容\n(改变文件不会影响笔记)</string>
+    <string name="update_file_at_note">在更新笔记的时侯更新文件本身\n(注意，如果文件被删除或路径更改，将被删除)</string>
+    <string name="delete_file_itself">同时删除文件 \"%s\"</string>
+    <string name="note_saved_successfully">笔记 \"%s\" 保存成功</string>
+    <string name="note_exported_successfully">笔记 \"%s\" 导出成功</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">显示保存成功消息</string>
+    <string name="links_and_emails_clickable">使链接和电子邮件可点击</string>
+    <string name="place_cursor_end">将光标放在笔记的末尾</string>
+    <string name="monospaced_font">使用等宽字体</string>
+    <string name="show_keyboard">在启动时显示键盘</string>
+    <string name="show_word_count">显示字数</string>
+    <string name="alignment">对准</string>
+    <string name="left">左边</string>
+    <string name="center">中间</string>
+    <string name="right">右边</string>
+    <string name="widget_note">在小部件中使用笔记</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">一个简约的、没有广告快速添加笔记</string>
+    <string name="app_long_description">
+        Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
+
+        You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
+
+        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+
+        This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
