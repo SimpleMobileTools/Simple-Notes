@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.1"
+    buildToolsVersion "27.0.2"
 
     defaultConfig {
         applicationId "com.simplemobiletools.notes"
@@ -45,7 +45,7 @@ ext {
 }
 
 dependencies {
-    implementation 'com.simplemobiletools:commons:3.2.3'
+    implementation 'com.simplemobiletools:commons:3.3.12'
     implementation 'com.facebook.stetho:stetho:1.5.0'
 
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
