@@ -41,15 +41,15 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Ein einfaches Textfeld für Notizen. Komplett ohne Werbung.</string>
+    <string name="app_short_description">Ein einfaches Textfeld für Notizen, ganz ohne Werbung.</string>
     <string name="app_long_description">
-        Du musst dir schnell aufschreiben, was du kaufen wolltest oder eine Adresse oder Startup Idee? Dann ist diese App genau das Richtige für dich! Keine komplizierte Einrichtung, du kannst direkt beginnen zu tippen. Inklusive Autosave-Funktion, damit du keine ungespeicherten Änderungen verlierst. Unterstützt die Erstellung von mehreren unabhängigen Notizen.
+        Du musst dir schnell aufschreiben, was du kaufen wolltest oder vielleicht eine Adresse oder Idee für ein Startup? Dann ist diese App genau das Richtige für dich! Keine komplizierte Einrichtung, du kannst direkt beginnen zu tippen. Inklusive Autosave-Funktion, damit du keine ungespeicherten Änderungen verlierst. Unterstützt die Erstellung von mehreren unabhängigen Notizen.
 
         Du kannst auf eine Notiz in Windeseile durch die anpassbaren Widgets zurückgreifen, welche die App mit einem Klick öffnen.
 
-        Beinhaltet keine Werbung und benötigt keine unnötigen Berechtigungen. Die App ist komplett Open Source und bietet nach Wunsch anpassbare Farben.
+        Beinhaltet keine Werbung oder unnötige Berechtigungen. Sie ist komplett Open Source, alle verwendeten Farben sind anpassbar.
 
-        Diese App ist nur eine von vielen unserer Apps. Du kannst alle anderen hier finden: http://www.simplemobiletools.com
+        Diese App ist nur eine aus einer größeren Serie von schlichten Apps. Der Rest davon findet sich auf http://www.simplemobiletools.com
     </string>
 
     <!--
