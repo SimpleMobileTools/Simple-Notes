@@ -24,16 +24,16 @@
     <string name="update_file_at_note">Metttre à jour le fichier lui-même lors de la mise à jour de la note\n(la note est supprimée si le fichier est supprimé, ou que le chemin change)</string>
     <string name="delete_file_itself">Supprimer également le fichier \"%s\"</string>
     <string name="note_saved_successfully">Note \"%s\" sauvegardée avec succès</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
+    <string name="note_exported_successfully">Note \"%s\" exportée avec succès</string>
 
     <!-- Settings -->
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
     <string name="links_and_emails_clickable">Rendre les liens et les emails cliquables</string>
     <string name="place_cursor_end">Placer le curseur à la fin de la note</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
-    <string name="show_word_count">Show word count</string>
-    <string name="alignment">Alignment</string>
+    <string name="monospaced_font">Utiliser une police monospace</string>
+    <string name="show_keyboard">Afficher le clavier au démarrage</string>
+    <string name="show_word_count">Afficher le nombre de mots</string>
+    <string name="alignment">Alignement</string>
     <string name="left">Gauche</string>
     <string name="center">Centre</string>
     <string name="right">Droite</string>
