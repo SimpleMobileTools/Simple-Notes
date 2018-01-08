@@ -1,6 +1,5 @@
 package com.simplemobiletools.notes.dialogs
 
-import android.os.Environment
 import android.support.v7.app.AlertDialog
 import android.view.WindowManager
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
@@ -15,7 +14,7 @@ import java.io.File
 class ExportAsDialog(val activity: SimpleActivity, val note: Note, val callback: (exportPath: String) -> Unit) {
 
     init {
-        var realPath = File(note.path).parent ?: Environment.getExternalStorageDirectory().toString()
+        var realPath = File(note.path).parent ?: activity.config.lastUsedSavePath
         val view = activity.layoutInflater.inflate(R.layout.dialog_export_as, null).apply {
             file_path.text = activity.humanizePath(realPath)
 
@@ -52,6 +51,7 @@ class ExportAsDialog(val activity: SimpleActivity, val note: Note, val callback:
                     }
 
                     activity.config.lastUsedExtension = extension
+                    activity.config.lastUsedSavePath = realPath
                     callback(newFile.absolutePath)
                     dismiss()
                 }
