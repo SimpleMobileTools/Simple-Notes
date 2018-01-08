@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 3.1.0 *(2018-01-08)*
+----------------------------
+
+ * Remember the last used save folder
+ * Make dark theme the default
+ * Some stability improvements
+
 Version 3.0.1 *(2017-12-06)*
 ----------------------------
 
