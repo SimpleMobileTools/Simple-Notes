@@ -39,6 +39,7 @@
     <string name="right">Vpravo</string>
     <string name="widget_note">Poznámka použitá vo widgete</string>
     <string name="show_note_picker">Zobraziť zoznam poznámok po spustení</string>
+    <string name="autosave_notes">Automaticky ukladať poznámky</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovať všetky poznámky ako súbory</string>

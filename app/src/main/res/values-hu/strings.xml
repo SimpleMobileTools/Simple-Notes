@@ -39,6 +39,7 @@
     <string name="right">Jobb</string>
     <string name="widget_note">Widgetben használt jegyzet</string>
     <string name="show_note_picker">Show a note picker on startup</string>
+    <string name="autosave_notes">Autosave notes</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Export all notes as files</string>

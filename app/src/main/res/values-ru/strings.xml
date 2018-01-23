@@ -39,6 +39,7 @@
     <string name="right">По правому краю</string>
     <string name="widget_note">Заметка, отображаемая в виджете</string>
     <string name="show_note_picker">Show a note picker on startup</string>
+    <string name="autosave_notes">Autosave notes</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Export all notes as files</string>
