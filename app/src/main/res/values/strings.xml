@@ -38,6 +38,11 @@
     <string name="center">Center</string>
     <string name="right">Right</string>
     <string name="widget_note">Note used in widget</string>
+    <string name="show_note_picker">Show a note picker on startup</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Export all notes as files</string>
+    <string name="import_notes">Import multiple files as notes</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

@@ -38,6 +38,11 @@
     <string name="center">Uprostred</string>
     <string name="right">Vpravo</string>
     <string name="widget_note">Poznámka použitá vo widgete</string>
+    <string name="show_note_picker">Zobraziť zoznam poznámok po spustení</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Exportovať všetky poznámky ako súbory</string>
+    <string name="import_notes">Importovať viacero súborov ako poznámky</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
