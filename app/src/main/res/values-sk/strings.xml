@@ -40,7 +40,7 @@
     <string name="widget_note">Poznámka použitá vo widgete</string>
     <string name="show_note_picker">Zobraziť zoznam poznámok po spustení</string>
     <string name="autosave_notes">Automaticky ukladať poznámky</string>
-    <string name="enable_word_wrap">Povoliť zalamovanie riadkov</string>
+    <string name="enable_line_wrap">Povoliť zalamovanie riadkov</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovať všetky poznámky ako súbory</string>

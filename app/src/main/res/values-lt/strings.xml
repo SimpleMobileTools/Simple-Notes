@@ -40,7 +40,7 @@
     <string name="widget_note">Įraðas panaudotas šaukinyje</string>
     <string name="show_note_picker">Show a note picker on startup</string>
     <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_word_wrap">Enable word wrap</string>
+    <string name="enable_line_wrap">Enable line wrap</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Export all notes as files</string>
