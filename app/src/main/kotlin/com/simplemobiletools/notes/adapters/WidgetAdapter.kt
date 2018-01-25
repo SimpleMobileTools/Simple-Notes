@@ -20,7 +20,7 @@ import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
 class WidgetAdapter(val context: Context) : RemoteViewsService.RemoteViewsFactory {
     private val textIds = arrayOf(R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right)
     val config = context.config
-    val widgetTextColor = config.widgetTextColor
+    private val widgetTextColor = config.widgetTextColor
 
     override fun getViewAt(position: Int): RemoteViews {
         val views = RemoteViews(context.packageName, R.layout.widget_text_layout).apply {

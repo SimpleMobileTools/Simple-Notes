@@ -25,7 +25,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
         val fragment = NoteFragment()
         fragment.arguments = bundle
-        fragments.put(position, fragment)
+        fragments[position] = fragment
         return fragment
     }
 

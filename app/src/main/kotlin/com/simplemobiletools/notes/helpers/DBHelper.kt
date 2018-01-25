@@ -16,15 +16,15 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     private val mDb: SQLiteDatabase = writableDatabase
 
     companion object {
-        private val DB_NAME = "notes.db"
-        private val DB_VERSION = 3
-        private val TABLE_NAME = "notes"
+        private const val DB_NAME = "notes.db"
+        private const val DB_VERSION = 3
+        private const val TABLE_NAME = "notes"
 
-        private val COL_ID = "id"
-        private val COL_TITLE = "title"
-        private val COL_VALUE = "value"
-        private val COL_TYPE = "type"
-        private val COL_PATH = "path"
+        private const val COL_ID = "id"
+        private const val COL_TITLE = "title"
+        private const val COL_VALUE = "value"
+        private const val COL_TYPE = "type"
+        private const val COL_PATH = "path"
 
         fun newInstance(context: Context) = DBHelper(context)
     }
