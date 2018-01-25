@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
-import android.util.Log
 import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
@@ -380,17 +379,26 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     fun deleteNote(deleteFile: Boolean) {
-        if (mNotes.size <= 1)
+        if (mNotes.size <= 1) {
             return
+        }
 
-        val deletedNoteId = mCurrentNote.id
-        val path = mCurrentNote.path
+        if (!deleteFile) {
+            doDeleteNote(mCurrentNote, deleteFile)
+        } else {
+            handleSAFDialog(File(mCurrentNote.path)) {
+                doDeleteNote(mCurrentNote, deleteFile)
+            }
+        }
+    }
+
+    private fun doDeleteNote(note: Note, deleteFile: Boolean) {
         dbHelper.deleteNote(mCurrentNote.id)
         mNotes = dbHelper.getNotes()
 
         val firstNoteId = mNotes[0].id
         updateSelectedNote(firstNoteId)
-        if (config.widgetNoteId == deletedNoteId) {
+        if (config.widgetNoteId == note.id) {
             config.widgetNoteId = mCurrentNote.id
             updateWidget()
         }
@@ -398,7 +406,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         initViewPager()
 
         if (deleteFile) {
-            deleteFile(File(path)) {
+            deleteFile(File(note.path)) {
                 if (!it) {
                     toast(R.string.unknown_error_occurred)
                 }
