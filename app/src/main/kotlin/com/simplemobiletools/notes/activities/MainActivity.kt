@@ -1,10 +1,12 @@
 package com.simplemobiletools.notes.activities
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
@@ -63,7 +65,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             }
 
             if (action == Intent.ACTION_VIEW) {
-                handleFile(data.path)
+                handleUri(data)
                 intent.removeCategory(Intent.CATEGORY_DEFAULT)
                 intent.action = null
             }
@@ -172,8 +174,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
-    private fun handleFile(path: String) {
-        val id = dbHelper.getNoteId(path)
+    private fun handleUri(uri: Uri) {
+        val id = dbHelper.getNoteId(uri.path)
 
         if (dbHelper.isValidId(id)) {
             updateSelectedNote(id)
@@ -182,7 +184,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
         handlePermission(PERMISSION_WRITE_STORAGE) {
             if (it) {
-                importFileWithSync(path)
+                importFileWithSync(uri)
             }
         }
     }
@@ -269,7 +271,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun openFile(path: String, checkTitle: Boolean, onChecksPassed: (file: File) -> Unit) {
         val file = File(path)
-        if (file.isImageVideoGif()) {
+        if (path.isImageVideoGif()) {
             toast(R.string.invalid_file_format)
         } else if (file.length() > 10 * 1000 * 1000) {
             toast(R.string.file_too_large)
@@ -280,7 +282,21 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
-    private fun importFileWithSync(path: String) {
+    private fun importFileWithSync(uri: Uri) {
+        when (uri.scheme) {
+            "file" -> openPath(uri.path)
+            "content" -> {
+                val realPath = getRealPathFromURI(uri)
+                if (realPath != null) {
+                    openPath(realPath)
+                } else {
+                    R.string.unknown_error_occurred
+                }
+            }
+        }
+    }
+
+    private fun openPath(path: String) {
         openFile(path, false) {
             var title = path.getFilenameFromPath()
             if (dbHelper.doesTitleExist(title))
