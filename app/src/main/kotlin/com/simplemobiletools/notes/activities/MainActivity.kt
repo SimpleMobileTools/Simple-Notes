@@ -71,6 +71,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
 
         storeStateVariables()
+        if (config.showNotePicker) {
+            displayOpenNoteDialog()
+        }
         wasInit = true
     }
 
@@ -204,8 +207,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             addOnPageChangeListener(this@MainActivity)
         }
 
-        if (!config.showKeyboard)
+        if (!config.showKeyboard) {
             hideKeyboard()
+        }
     }
 
     private fun currentNotesView() = if (view_pager == null) {

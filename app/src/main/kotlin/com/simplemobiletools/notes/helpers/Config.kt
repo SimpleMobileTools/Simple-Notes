@@ -25,6 +25,10 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getBoolean(SHOW_KEYBOARD, true)
         set(showKeyboard) = prefs.edit().putBoolean(SHOW_KEYBOARD, showKeyboard).apply()
 
+    var showNotePicker: Boolean
+        get() = prefs.getBoolean(SHOW_NOTE_PICKER, false)
+        set(showNotePicker) = prefs.edit().putBoolean(SHOW_NOTE_PICKER, showNotePicker).apply()
+
     var showWordCount: Boolean
         get() = prefs.getBoolean(SHOW_WORD_COUNT, false)
         set(showWordCount) = prefs.edit().putBoolean(SHOW_WORD_COUNT, showWordCount).apply()

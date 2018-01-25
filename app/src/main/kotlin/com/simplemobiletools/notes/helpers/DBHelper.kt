@@ -84,7 +84,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         }
     }
 
-    fun getNotes(): List<Note> {
+    fun getNotes(): ArrayList<Note> {
         val notes = ArrayList<Note>()
         val cols = arrayOf(COL_ID, COL_TITLE, COL_VALUE, COL_TYPE, COL_PATH)
         var cursor: Cursor? = null

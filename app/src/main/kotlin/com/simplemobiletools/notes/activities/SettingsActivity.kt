@@ -19,11 +19,13 @@ import java.util.*
 
 class SettingsActivity : SimpleActivity() {
     lateinit var res: Resources
+    var notes = ArrayList<Note>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         res = resources
+        notes = dbHelper.getNotes()
     }
 
     override fun onResume() {
@@ -35,6 +37,7 @@ class SettingsActivity : SimpleActivity() {
         setupClickableLinks()
         setupMonospacedFont()
         setupShowKeyboard()
+        setupShowNotePicker()
         setupShowWordCount()
         setupFontSize()
         setupGravity()
@@ -88,6 +91,15 @@ class SettingsActivity : SimpleActivity() {
         settings_show_keyboard_holder.setOnClickListener {
             settings_show_keyboard.toggle()
             config.showKeyboard = settings_show_keyboard.isChecked
+        }
+    }
+
+    private fun setupShowNotePicker() {
+        settings_show_note_picker_holder.beVisibleIf(notes.size > 1)
+        settings_show_note_picker.isChecked = config.showNotePicker
+        settings_show_note_picker_holder.setOnClickListener {
+            settings_show_note_picker.toggle()
+            config.showNotePicker = settings_show_note_picker.isChecked
         }
     }
 
@@ -146,7 +158,6 @@ class SettingsActivity : SimpleActivity() {
     })
 
     private fun setupWidgetNote() {
-        val notes = dbHelper.getNotes()
         if (notes.size <= 1) {
             settings_widget_note_holder.visibility = View.GONE
             return
