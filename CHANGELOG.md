@@ -1,6 +1,15 @@
 Changelog
 ==========
 
+Version 3.1.1 *(2018-01-26)*
+----------------------------
+
+ * Allow exporting all notes to files at once
+ * Allow toggling autosave
+ * Allow toggling line wrap
+ * Allow showing a notes picker on startup
+ * Fix creating new notes via handling third party intents
+
 Version 3.1.0 *(2018-01-08)*
 ----------------------------
 
