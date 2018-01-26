@@ -538,6 +538,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             add(Release(28, R.string.release_28))
             add(Release(29, R.string.release_29))
             add(Release(39, R.string.release_39))
+            add(Release(45, R.string.release_45))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }
