@@ -60,11 +60,13 @@ class NoteFragment : Fragment() {
     fun getNotesView() = view.notes_view
 
     fun saveText() {
-        if (note.path.isNotEmpty() && !File(note.path).exists())
+        if (note.path.isNotEmpty() && !File(note.path).exists()) {
             return
+        }
 
-        if (context == null || activity == null)
+        if (context == null || activity == null) {
             return
+        }
 
         val newText = getCurrentNoteViewText()
         val oldText = context!!.getNoteStoredValue(note)
@@ -84,7 +86,7 @@ class NoteFragment : Fragment() {
             mDb.updateNoteValue(note)
             (activity as MainActivity).noteSavedSuccessfully(note.title)
         } else {
-            (activity as MainActivity).exportNoteValueToFile(note.path, getCurrentNoteViewText())
+            (activity as MainActivity).exportNoteValueToFile(note.path, getCurrentNoteViewText(), true)
         }
     }
 

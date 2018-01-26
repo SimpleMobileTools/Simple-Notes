@@ -8,14 +8,14 @@ import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.models.Note
-import kotlinx.android.synthetic.main.dialog_export_as.view.*
+import kotlinx.android.synthetic.main.dialog_export_file.view.*
 import java.io.File
 
-class ExportAsDialog(val activity: SimpleActivity, val note: Note, val callback: (exportPath: String) -> Unit) {
+class ExportFileDialog(val activity: SimpleActivity, val note: Note, val callback: (exportPath: String) -> Unit) {
 
     init {
         var realPath = File(note.path).parent ?: activity.config.lastUsedSavePath
-        val view = activity.layoutInflater.inflate(R.layout.dialog_export_as, null).apply {
+        val view = activity.layoutInflater.inflate(R.layout.dialog_export_file, null).apply {
             file_path.text = activity.humanizePath(realPath)
 
             file_name.setText(note.title)

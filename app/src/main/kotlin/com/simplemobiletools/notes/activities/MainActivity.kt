@@ -38,7 +38,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private var mAdapter: NotesPagerAdapter? = null
 
     lateinit var mCurrentNote: Note
-    lateinit var mNotes: List<Note>
+    private var mNotes = ArrayList<Note>()
 
     private var noteViewWithTextSelected: MyEditText? = null
     private var wasInit = false
@@ -110,6 +110,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             findItem(R.id.rename_note).isVisible = shouldBeVisible
             findItem(R.id.open_note).isVisible = shouldBeVisible
             findItem(R.id.delete_note).isVisible = shouldBeVisible
+            findItem(R.id.export_all_notes).isVisible = shouldBeVisible
         }
 
         pager_title_strip.beVisibleIf(shouldBeVisible)
@@ -125,6 +126,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             R.id.share -> shareText()
             R.id.open_file -> tryOpenFile()
             R.id.export_as_file -> tryExportAsFile()
+            R.id.export_all_notes -> tryExportAllNotes()
             R.id.delete_note -> displayDeleteNotePrompt()
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
@@ -319,14 +321,42 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun exportAsFile() {
-        ExportAsDialog(this, mCurrentNote) {
+        ExportFileDialog(this, mCurrentNote) {
             if (getCurrentNoteText()?.isNotEmpty() == true) {
-                exportNoteValueToFile(it, getCurrentNoteText()!!)
+                exportNoteValueToFile(it, getCurrentNoteText()!!, true)
             }
         }
     }
 
-    fun exportNoteValueToFile(path: String, content: String) {
+    private fun tryExportAllNotes() {
+        handlePermission(PERMISSION_WRITE_STORAGE) {
+            if (it) {
+                exportAllNotes()
+            }
+        }
+    }
+
+    private fun exportAllNotes() {
+        ExportFilesDialog(this, mNotes) { parent, extension ->
+            var failCount = 0
+            mNotes = dbHelper.getNotes()
+            mNotes.forEachIndexed { index, note ->
+                val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
+                val file = File(parent, filename)
+                exportNoteValueToFile(file.absolutePath, note.value, false) {
+                    if (!it) {
+                        failCount++
+                    }
+
+                    if (index == mNotes.size - 1) {
+                        toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
+                    }
+                }
+            }
+        }
+    }
+
+    fun exportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
         try {
             val file = File(path)
             if (file.isDirectory) {
@@ -345,16 +375,23 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                         flush()
                         close()
                     }
-                    noteExportedSuccessfully(path.getFilenameFromPath())
+                    if (showSuccessToasts) {
+                        noteExportedSuccessfully(path.getFilenameFromPath())
+                    }
+                    callback?.invoke(true)
                 }
             } else {
                 file.printWriter().use { out ->
                     out.write(content)
                 }
-                noteExportedSuccessfully(path.getFilenameFromPath())
+                if (showSuccessToasts) {
+                    noteExportedSuccessfully(path.getFilenameFromPath())
+                }
+                callback?.invoke(true)
             }
         } catch (e: Exception) {
             showErrorToast(e)
+            callback?.invoke(false)
         }
     }
 
