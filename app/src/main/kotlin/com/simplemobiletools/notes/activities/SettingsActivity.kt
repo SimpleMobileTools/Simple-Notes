@@ -40,6 +40,7 @@ class SettingsActivity : SimpleActivity() {
         setupShowKeyboard()
         setupShowNotePicker()
         setupShowWordCount()
+        setupEnableLineWrap()
         setupFontSize()
         setupGravity()
         setupWidgetNote()
@@ -117,6 +118,14 @@ class SettingsActivity : SimpleActivity() {
         settings_show_word_count_holder.setOnClickListener {
             settings_show_word_count.toggle()
             config.showWordCount = settings_show_word_count.isChecked
+        }
+    }
+
+    private fun setupEnableLineWrap() {
+        settings_enable_line_wrap.isChecked = config.enableLineWrap
+        settings_enable_line_wrap_holder.setOnClickListener {
+            settings_enable_line_wrap.toggle()
+            config.enableLineWrap = settings_enable_line_wrap.isChecked
         }
     }
 

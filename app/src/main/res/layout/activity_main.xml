@@ -12,4 +12,5 @@
         android:layout_gravity="top"
         android:paddingLeft="@dimen/activity_margin"
         android:paddingRight="@dimen/activity_margin"/>
+
 </com.simplemobiletools.commons.views.MyViewPager>

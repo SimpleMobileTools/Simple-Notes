@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.simplemobiletools.commons.extensions.beGone
 import com.simplemobiletools.commons.extensions.beVisible
+import com.simplemobiletools.commons.extensions.onGlobalLayout
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.extensions.*
@@ -24,27 +25,34 @@ import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.fragment_note.*
 import kotlinx.android.synthetic.main.fragment_note.view.*
+import kotlinx.android.synthetic.main.note_view_horiz_scrollable.view.*
 import java.io.File
 
 class NoteFragment : Fragment() {
     private var noteId = 0
     lateinit var note: Note
     lateinit var view: ViewGroup
-    lateinit var mDb: DBHelper
+    private lateinit var db: DBHelper
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_note, container, false) as ViewGroup
         noteId = arguments!!.getInt(NOTE_ID)
-        mDb = context!!.dbHelper
-        note = mDb.getNote(noteId) ?: return view
+        db = context!!.dbHelper
+        note = db.getNote(noteId) ?: return view
         retainInstance = true
 
+        val layoutToInflate = if (context!!.config.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
+        inflater.inflate(layoutToInflate, view.notes_relative_layout, true)
         if (context!!.config.clickableLinks) {
             view.notes_view.apply {
                 linksClickable = true
                 autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES
                 movementMethod = LinkMovementMethod.getInstance()
             }
+        }
+
+        view.notes_horizontal_scrollview?.onGlobalLayout {
+            view.notes_view.minWidth = view.notes_horizontal_scrollview.width
         }
 
         return view
@@ -133,7 +141,7 @@ class NoteFragment : Fragment() {
 
     private fun saveNoteValue(note: Note) {
         if (note.path.isEmpty()) {
-            mDb.updateNoteValue(note)
+            db.updateNoteValue(note)
             (activity as MainActivity).noteSavedSuccessfully(note.title)
         } else {
             (activity as MainActivity).exportNoteValueToFile(note.path, getCurrentNoteViewText(), true)

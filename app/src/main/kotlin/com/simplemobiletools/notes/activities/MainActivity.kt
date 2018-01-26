@@ -43,6 +43,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private var noteViewWithTextSelected: MyEditText? = null
     private var wasInit = false
     private var storedUseEnglish = false
+    private var storedEnableLineWrap = true
     private var showSaveButton = false
     private var saveNoteButton: MenuItem? = null
 
@@ -84,6 +85,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         if (storedUseEnglish != config.useEnglish) {
             restartActivity()
             return
+        }
+
+        if (storedEnableLineWrap != config.enableLineWrap) {
+            initViewPager()
         }
 
         invalidateOptionsMenu()
@@ -165,7 +170,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun storeStateVariables() {
-        storedUseEnglish = config.useEnglish
+        config.apply {
+            storedUseEnglish = useEnglish
+            storedEnableLineWrap = enableLineWrap
+        }
     }
 
     private fun handleText(text: String) {
@@ -206,8 +214,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         mNotes = dbHelper.getNotes()
         mCurrentNote = mNotes[0]
         var wantedNoteId = intent.getIntExtra(OPEN_NOTE_ID, -1)
-        if (wantedNoteId == -1)
+        if (wantedNoteId == -1) {
             wantedNoteId = config.currentNoteId
+        }
 
         val itemIndex = getNoteIndexWithId(wantedNoteId)
 
