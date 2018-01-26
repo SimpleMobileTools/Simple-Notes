@@ -50,10 +50,60 @@ class NoteFragment : Fragment() {
         return view
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        val config = context!!.config
+        view.notes_view.apply {
+            typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
+
+            val fileContents = context.getNoteStoredValue(note)
+
+            if (fileContents == null) {
+                (activity as MainActivity).deleteNote(false)
+                return
+            }
+
+            setColors(config.textColor, config.primaryColor, config.backgroundColor)
+            setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
+            gravity = getTextGravity()
+            if (text.toString() != fileContents) {
+                setText(fileContents)
+                setSelection(if (config.placeCursorToEnd) text.length else 0)
+            }
+        }
+
+        if (config.showWordCount) {
+            view.notes_counter.beVisible()
+            view.notes_counter.setTextColor(config.textColor)
+            setWordCounter(view.notes_view.text.toString())
+        } else {
+            view.notes_counter.beGone()
+        }
+
+        if (config.showWordCount || !config.autosaveNotes) {
+            view.notes_view.addTextChangedListener(textWatcher)
+        } else {
+            view.notes_view.addTextChangedListener(null)
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (context!!.config.autosaveNotes) {
+            saveText()
+        }
+        view.notes_view.removeTextChangedListener(textWatcher)
+    }
+
     override fun setMenuVisibility(menuVisible: Boolean) {
         super.setMenuVisibility(menuVisible)
-        if (noteId != 0 && context?.config?.autosaveNotes == true) {
+        if (!menuVisible && noteId != 0 && context?.config?.autosaveNotes == true) {
             saveText()
+        }
+
+        if (menuVisible && noteId != 0) {
+            (activity as MainActivity).currentNoteTextChanged(getCurrentNoteViewText())
         }
     }
 
@@ -98,50 +148,8 @@ class NoteFragment : Fragment() {
         else -> Gravity.LEFT
     }
 
-    override fun onResume() {
-        super.onResume()
-
-        val config = context!!.config
-
-        view.notes_view.apply {
-            typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
-
-            val fileContents = context.getNoteStoredValue(note)
-
-            if (fileContents == null) {
-                (activity as MainActivity).deleteNote(false)
-                return
-            }
-
-            setColors(config.textColor, config.primaryColor, config.backgroundColor)
-            setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
-            gravity = getTextGravity()
-            if (text.toString() != fileContents) {
-                setText(fileContents)
-                setSelection(if (config.placeCursorToEnd) text.length else 0)
-            }
-        }
-
-        if (config.showWordCount) {
-            view.notes_view.addTextChangedListener(textWatcher)
-            view.notes_counter.beVisible()
-            view.notes_counter.setTextColor(config.textColor)
-            setWordCounter(view.notes_view.text)
-        } else {
-            view.notes_counter.beGone()
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        if (context!!.config.autosaveNotes) {
-            saveText()
-        }
-        view.notes_view.removeTextChangedListener(textWatcher)
-    }
-
-    private fun setWordCounter(text: Editable) {
-        val words = text.toString().replace("\n", " ").split(" ")
+    private fun setWordCounter(text: String) {
+        val words = text.replace("\n", " ").split(" ")
         notes_counter.text = words.count { it.isNotEmpty() }.toString()
     }
 
@@ -153,7 +161,9 @@ class NoteFragment : Fragment() {
         }
 
         override fun afterTextChanged(editable: Editable) {
-            setWordCounter(editable)
+            val text = editable.toString()
+            setWordCounter(text)
+            (activity as MainActivity).currentNoteTextChanged(text)
         }
     }
 }

@@ -43,6 +43,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private var noteViewWithTextSelected: MyEditText? = null
     private var wasInit = false
     private var storedUseEnglish = false
+    private var showSaveButton = false
+    private var saveNoteButton: MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,7 +113,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             findItem(R.id.open_note).isVisible = shouldBeVisible
             findItem(R.id.delete_note).isVisible = shouldBeVisible
             findItem(R.id.export_all_notes).isVisible = shouldBeVisible
-            findItem(R.id.save_note).isVisible = !config.autosaveNotes
+
+            saveNoteButton = findItem(R.id.save_note)
+            saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton
         }
 
         pager_title_strip.beVisibleIf(shouldBeVisible)
@@ -249,6 +253,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun addNewNote(note: Note) {
         val id = dbHelper.insertNote(note)
         mNotes = dbHelper.getNotes()
+        showSaveButton = false
         invalidateOptionsMenu()
         initViewPager()
         updateSelectedNote(id)
@@ -468,6 +473,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun saveNote() {
         saveCurrentNote()
+        showSaveButton = false
+        invalidateOptionsMenu()
     }
 
     private fun getNoteIndexWithId(id: Int): Int {
@@ -507,6 +514,13 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     override fun onPageSelected(position: Int) {
         mCurrentNote = mNotes[position]
         config.currentNoteId = mCurrentNote.id
+    }
+
+    fun currentNoteTextChanged(newText: String) {
+        showSaveButton = newText != mCurrentNote.value
+        if (showSaveButton != saveNoteButton?.isVisible) {
+            invalidateOptionsMenu()
+        }
     }
 
     private fun checkWhatsNewDialog() {
