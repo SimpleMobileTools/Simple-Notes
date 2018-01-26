@@ -111,6 +111,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             findItem(R.id.open_note).isVisible = shouldBeVisible
             findItem(R.id.delete_note).isVisible = shouldBeVisible
             findItem(R.id.export_all_notes).isVisible = shouldBeVisible
+            findItem(R.id.save_note).isVisible = !config.autosaveNotes
         }
 
         pager_title_strip.beVisibleIf(shouldBeVisible)
@@ -118,9 +119,13 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        saveCurrentNote()
+        if (config.autosaveNotes) {
+            saveCurrentNote()
+        }
+
         when (item.itemId) {
             R.id.open_note -> displayOpenNoteDialog()
+            R.id.save_note -> saveNote()
             R.id.new_note -> displayNewNoteDialog()
             R.id.rename_note -> displayRenameDialog()
             R.id.share -> shareText()
@@ -459,6 +464,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         OpenNoteDialog(this) {
             updateSelectedNote(it)
         }
+    }
+
+    private fun saveNote() {
+        saveCurrentNote()
     }
 
     private fun getNoteIndexWithId(id: Int): Int {

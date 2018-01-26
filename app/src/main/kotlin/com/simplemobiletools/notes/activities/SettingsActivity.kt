@@ -33,6 +33,7 @@ class SettingsActivity : SimpleActivity() {
 
         setupCustomizeColors()
         setupUseEnglish()
+        setupAutosaveNotes()
         setupDisplaySuccess()
         setupClickableLinks()
         setupMonospacedFont()
@@ -59,6 +60,14 @@ class SettingsActivity : SimpleActivity() {
             settings_use_english.toggle()
             config.useEnglish = settings_use_english.isChecked
             useEnglishToggled()
+        }
+    }
+
+    private fun setupAutosaveNotes() {
+        settings_autosave_notes.isChecked = config.autosaveNotes
+        settings_autosave_notes_holder.setOnClickListener {
+            settings_autosave_notes.toggle()
+            config.autosaveNotes = settings_autosave_notes.isChecked
         }
     }
 

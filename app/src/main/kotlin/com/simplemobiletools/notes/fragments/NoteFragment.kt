@@ -52,7 +52,7 @@ class NoteFragment : Fragment() {
 
     override fun setMenuVisibility(menuVisible: Boolean) {
         super.setMenuVisibility(menuVisible)
-        if (noteId != 0) {
+        if (noteId != 0 && context?.config?.autosaveNotes == true) {
             saveText()
         }
     }
@@ -134,7 +134,9 @@ class NoteFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        saveText()
+        if (context!!.config.autosaveNotes) {
+            saveText()
+        }
         view.notes_view.removeTextChangedListener(textWatcher)
     }
 

@@ -9,6 +9,10 @@ class Config(context: Context) : BaseConfig(context) {
         fun newInstance(context: Context) = Config(context)
     }
 
+    var autosaveNotes: Boolean
+        get() = prefs.getBoolean(AUTOSAVE_NOTES, true)
+        set(autosaveNotes) = prefs.edit().putBoolean(AUTOSAVE_NOTES, autosaveNotes).apply()
+
     var displaySuccess: Boolean
         get() = prefs.getBoolean(DISPLAY_SUCCESS, false)
         set(displaySuccess) = prefs.edit().putBoolean(DISPLAY_SUCCESS, displaySuccess).apply()

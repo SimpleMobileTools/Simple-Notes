@@ -5,6 +5,7 @@ const val OPEN_NOTE_ID = "open_note_id"
 
 // shared preferences
 const val CURRENT_NOTE_ID = "current_note_id"
+const val AUTOSAVE_NOTES = "autosave_notes"
 const val DISPLAY_SUCCESS = "display_success"
 const val CLICKABLE_LINKS = "clickable_links"
 const val WIDGET_NOTE_ID = "widget_note_id"
