@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_home_description">Ana ekrana git</string>
+    <string name="abc_action_bar_up_description">Yukarı git</string>
+    <string name="abc_action_menu_overflow_description">Diğer seçenekler</string>
+    <string name="abc_action_mode_done">Bitti</string>
+    <string name="abc_activity_chooser_view_see_all">Tümünü göster</string>
+    <string name="abc_activitychooserview_choose_application">Bir uygulama seçin</string>
+    <string name="abc_capital_off">KAPAT</string>
+    <string name="abc_capital_on">AÇ</string>
+    <string name="abc_font_family_body_1_material">sans-serif</string>
+    <string name="abc_font_family_body_2_material">sans-serif-medium</string>
+    <string name="abc_font_family_button_material">sans-serif-medium</string>
+    <string name="abc_font_family_caption_material">sans-serif</string>
+    <string name="abc_font_family_display_1_material">sans-serif</string>
+    <string name="abc_font_family_display_2_material">sans-serif</string>
+    <string name="abc_font_family_display_3_material">sans-serif</string>
+    <string name="abc_font_family_display_4_material">sans-serif-light</string>
+    <string name="abc_font_family_headline_material">sans-serif</string>
+    <string name="abc_font_family_menu_material">sans-serif</string>
+    <string name="abc_font_family_subhead_material">sans-serif</string>
+    <string name="abc_font_family_title_material">sans-serif-medium</string>
+    <string name="abc_search_hint">Ara…</string>
+    <string name="abc_searchview_description_clear">Sorguyu temizle</string>
+    <string name="abc_searchview_description_query">Arama sorgusu</string>
+    <string name="abc_searchview_description_search">Ara</string>
+    <string name="abc_searchview_description_submit">Sorguyu gönder</string>
+    <string name="abc_searchview_description_voice">Sesli arama</string>
+    <string name="abc_shareactionprovider_share_with">Şununla paylaş</string>
+    <string name="abc_shareactionprovider_share_with_application">%s ile paylaş</string>
+    <string name="abc_toolbar_collapse_description">Daralt</string>
+    <string name="about">Hakkında</string>
+    <string name="add_fingerprint">Parmak izi ekle</string>
+    <string name="add_to_note">Nota ekle</string>
+    <string name="additional_info">Ek bilgi</string>
+    <string name="album">Albüm</string>
+    <string name="alignment">Hizalama</string>
+    <string name="an_error_occurred">Bir hata oluştu: %s</string>
+    <string name="app_launcher_name">Notlar</string>
+    <string name="app_long_description">"Satın almanız gereken bir şey, adres veya aklınıza gelen bir fikir hakkında hızlı bir not almanız mı gerekti? O halde, aradığınız uygulama bu! Karmaşık kurulum adımları gerekmeden hemen notunuzu yazın. Otomatik kaydetme ile birlikte gelir, bu nedenle yanlışlıkla değişiklikleri kaybetmezsiniz. Birden fazla bağımsız not oluşturmayı destekler. Nota, tıklamayla açılan, özelleştirilebilir ve yeniden boyutlandırılabilir widget'ı kullanarak anında erişebilirsiniz. Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sunar. Bu uygulama, daha büyük bir uygulama serisinden sadece bir parça. Geri kalanı http://www.simplemobiletools.com adresinde bulabilirsiniz"</string>
+    <string name="app_name">Basit Notlar</string>
+    <string name="app_short_description">Reklamsız, hızlı not eklemek için basit bir metin alanı.</string>
+    <string name="app_version">Uygulama sürümü: %1$s</string>
+    <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="append">"'_1' ile ekle"</string>
+    <string name="apply_to_all">Tüm çatışmalara uygula</string>
+    <string name="apply_to_all_apps">Tüm Basit Uygulamalara renk uygula</string>
+    <string name="artist">Sanatçı</string>
+    <string name="ascending">Artan</string>
+    <string name="authentication_blocked">Kimlik doğrulama engellendi, lütfen birazdan tekrar deneyin</string>
+    <string name="authentication_failed">Kimlik doğrulama başarısız oldu</string>
+    <string name="autofittextview_text">"Copyright 2014 Grantland Chew
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="autofittextview_title">AutoFitTextView (resizing text)</string>
+    <string name="autofittextview_url">https://github.com/grantland/android-autofittextview</string>
+    <string name="autosave_notes">Notları otomatik kaydet</string>
+    <string name="background_color">Arkaplan rengi</string>
+    <string name="black_white">Siyah &amp; Beyaz</string>
+    <string name="bottom_sheet_behavior">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="camera">Kamera</string>
+    <string name="cancel">İptal</string>
+    <string name="cannot_share_empty_text">Boş metin paylaşılamaz</string>
+    <string name="center">Ortaya</string>
+    <string name="change_filter">Filtreyi değiştir</string>
+    <string name="changing_color_description">Bir rengi değiştirdiğinizde Özel temaya geçeceksiniz</string>
+    <string name="character_counter_pattern">%1$d / %2$d</string>
+    <string name="click_select_destination">Hedef seçmek için buraya tıklayın</string>
+    <string name="confirm_selection">Seçimi onayla</string>
+    <string name="confirm_storage_access_text">Yazma erişimi vermek için lütfen bir sonraki ekranda SD kartın kök klasörünü seçin</string>
+    <string name="confirm_storage_access_text_sd">"SD kartı görmüyorsanız, bunu deneyin"</string>
+    <string name="confirm_storage_access_title">Harici depolama erişimini onayla</string>
+    <string name="copy">Kopyala</string>
+    <string name="copy_failed">Dosyalar kopyalanamıyor</string>
+    <string name="copy_move">Kopyala / Taşı</string>
+    <string name="copy_move_failed">Bir hata oluştu</string>
+    <string name="copy_to">Kopyala</string>
+    <string name="copying">Kopyalanıyor…</string>
+    <string name="copying_success">Dosyalar başarıyla kopyalandı</string>
+    <string name="copying_success_partial">Dosyalar kopyalanamadı</string>
+    <string name="copyright">"v %1$s
+Telif hakkı © Simple Mobile Tools %2$d"</string>
+    <string name="could_not_create_file">%s dosyası oluşturulamadı</string>
+    <string name="could_not_create_folder">%s klasörü oluşturulamadı</string>
+    <string name="create_new">Yeni oluştur</string>
+    <string name="create_new_folder">Yeni klasör oluştur</string>
+    <string name="create_new_note">Yeni not oluştur</string>
+    <string name="cropper_text">"Copyright 2016, Arthur Teplitzki, 2013, Edmodo, Inc.
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="cropper_title">Android Image Cropper (image crop and rotate)</string>
+    <string name="cropper_url">https://github.com/ArthurHub/Android-Image-Cropper</string>
+    <string name="custom">Özel</string>
+    <string name="customize_colors">Renkleri özelleştir</string>
+    <string name="dark_red">Koyu kırmızı</string>
+    <string name="dark_theme">Koyu</string>
+    <string name="date_taken">Karanlık alındı</string>
+    <string name="delete">Sil</string>
+    <string name="delete_file_itself">\"%s\" dosyasını da sil</string>
+    <string name="delete_note">Notu sil</string>
+    <string name="delete_note_prompt_message">\"%s\" notunu silmek istediğinizden emin misiniz?</string>
+    <string name="descending">Azalan</string>
+    <string name="destination">Hedef</string>
+    <string name="device_os">Cihaz İS: %1$s</string>
+    <string name="direct_children_count">Direct children count</string>
+    <string name="discard">İptal</string>
+    <string name="display_success_message">Başarıyla kaydedildi mesajlarını görüntüle</string>
+    <string name="donate">Bağış yap</string>
+    <string name="donate_please">Merhaba,&lt;br>&lt;br> umarım uygulamadan memnunsunuzdur. Hiçbir reklam içermiyor, bu yüzden lütfen &lt;a href=https://play.google.com/store/apps/details?id=com.simplemobiletools.thankyou>Simple Thank You&lt;/a> uygulamasını satın alarak geliştirmeyi destekleyip, bu pencerenin tekrar görünmesini de önleyin.&lt;br>&lt;br> Daha fazla bağış seçeneği &lt;a href=http://simplemobiletools.com/donate>buradadır&lt;/a>.&lt;br>&lt;br> Teşekkürler!</string>
+    <string name="donate_underlined"><u>Bağış yap</u></string>
+    <string name="donate_url">http://simplemobiletools.com/donate</string>
+    <string name="duration">Süre</string>
+    <string name="email_label">Görüşlerinizi veya önerilerinizi buraya gönderin</string>
+    <string name="empty_name">Lütfen bir ad girin</string>
+    <string name="enable_line_wrap">Sözcük kaydırmayı etkinleştir</string>
+    <string name="enter_pin">PIN girin</string>
+    <string name="espresso_text">"Copyright 2014 The Android Open Source Project
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="espresso_title">Espresso (yardımcı test edici)</string>
+    <string name="espresso_url">https://developer.android.com/training/testing/espresso/index.html</string>
+    <string name="exif">EXIF</string>
+    <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
+    <string name="export_as_file">Dosya olarak dışa aktar</string>
+    <string name="exporting">Dışa aktarılıyor…</string>
+    <string name="exporting_failed">Dışa aktarma başarısız</string>
+    <string name="exporting_some_entries_failed">Bazı öğeler dışa aktarılamadı</string>
+    <string name="exporting_successful">Dışa aktarma başarılı</string>
+    <string name="exposure_time">Pozlama süresi</string>
+    <string name="extension">Uzantı</string>
+    <string name="extension_cannot_be_empty">Uzantı boş olamaz</string>
+    <string name="extra_large">Çok büyük</string>
+    <string name="f_number">F-number</string>
+    <string name="file">Dosya</string>
+    <string name="file_already_exists">%1$s dosyası zaten var</string>
+    <string name="file_already_exists_overwrite">%1$s dosyası zaten var. Üzerine yazılsın mı?</string>
+    <string name="file_operations">Dosya işlemleri</string>
+    <string name="file_saved">Dosya başarıyla kaydedildi</string>
+    <string name="file_too_large">Dosya çok büyük, sınır 10MB</string>
+    <string name="filename">Dosya adı</string>
+    <string name="filename_cannot_be_empty">Dosya adı boş olamaz</string>
+    <string name="filename_invalid_characters">Dosya adı geçersiz karakterler içeriyor</string>
+    <string name="files_count">Toplam dosya sayısı</string>
+    <string name="filter">Filtre</string>
+    <string name="fingerprint">Parmak izi</string>
+    <string name="fingerprint_acquired_imager_dirty">Parmak izi sensörü kirli. Lütfen temizleyip tekrar deneyin.</string>
+    <string name="fingerprint_acquired_insufficient">"Parmak izi işlenemedi. Lütfen tekrar deneyin."</string>
+    <string name="fingerprint_acquired_partial">Kısmi parmak izi tespit edildi. Lütfen tekrar deneyin.</string>
+    <string name="fingerprint_acquired_too_fast">Parmak çok hızlı hareket etti. Lütfen tekrar deneyin.</string>
+    <string name="fingerprint_acquired_too_slow">Parmak çok yavaş ilerledi. Lütfen tekrar deneyin.</string>
+    <string name="fingerprint_error_canceled">Parmak izi işlemi iptal edildi.</string>
+    <string name="fingerprint_error_hw_not_available">Parmak izi donanımı mevcut değil.</string>
+    <string name="fingerprint_error_lockout">Çok fazla deneme. Daha sonra tekrar deneyin.</string>
+    <string name="fingerprint_error_no_space">"Parmak izi saklanamıyor. Lütfen mevcut bir parmak izini kaldırın."</string>
+    <string name="fingerprint_error_timeout">Parmak izi zaman aşımına uğradı. Tekrar deneyin.</string>
+    <string name="fingerprint_error_unable_to_process">Tekrar deneyin.</string>
+    <string name="fingerprint_not_recognized">Tanınmadı</string>
+    <string name="fingerprint_setup_successfully">Koruma kurulumu başarıyla gerçekleştirildi. Lütfen sıfırlama ile ilgili sorunlar olması durumunda uygulamayı yeniden yükleyin.</string>
+    <string name="fingerprints">Parmak izleri:</string>
+    <string name="focal_length">Odak uzaklığı</string>
+    <string name="folder">Klasör</string>
+    <string name="follow_us">Bizi takip edin</string>
+    <string name="font_size">Yazı tipi boyutu</string>
+    <string name="general_note">Genel not</string>
+    <string name="gif_drawable_text">"The MIT License (MIT)
+
+Copyright (c) 2016 Karol Wrótniak, Droids on Roids
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."</string>
+    <string name="gif_drawable_title">Gif Drawable (loading GIFs)</string>
+    <string name="gif_drawable_url">https://github.com/koral--/android-gif-drawable</string>
+    <string name="glide_text">"Copyright 2014 Google, Inc. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY GOOGLE, INC. ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL GOOGLE, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."</string>
+    <string name="glide_title">Glide (image loading and caching)</string>
+    <string name="glide_url">https://github.com/bumptech/glide</string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="gson_text">"Copyright 2008 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="gson_title">Gson (JSON parser)</string>
+    <string name="gson_url">https://github.com/google/gson</string>
+    <string name="hide">Gizle</string>
+    <string name="hide_folder">Klasörü gizle</string>
+    <string name="import_notes">Birden çok dosyayı not olarak içe aktar</string>
+    <string name="importing">İçe aktarılıyor…</string>
+    <string name="importing_failed">İçe aktarılamadı</string>
+    <string name="importing_some_entries_failed">Bazı öğeler içe aktarılamadı</string>
+    <string name="importing_successful">İçe aktarma başarısız</string>
+    <string name="insert_pattern">Desen ekle</string>
+    <string name="internal">Dahili</string>
+    <string name="invalid_destination">Seçilen hedefe yazılamadı</string>
+    <string name="invalid_file_format">Geçersiz dosya biçimi</string>
+    <string name="invalid_name">İsim, geçersiz karakterler içeriyor</string>
+    <string name="invite_friends_underlined"><u>Arkadaşlarını davet et</u></string>
+    <string name="invite_via">Şununla davet et</string>
+    <string name="iso_speed">ISO hızı</string>
+    <string name="items_selected">Seçilen öğeler</string>
+    <string name="joda_text">"Copyright 2013 JodaOrg
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License.You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS,WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="joda_title">Joda-Time (Java date replacement)</string>
+    <string name="joda_url">https://github.com/JodaOrg/joda-time</string>
+    <string name="keep_last_modified">Keep old last-modified value at file copy/move/rename</string>
+    <string name="kotlin_text">"Copyright 2010 - 2018 JetBrains s.r.o.
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License.You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS,WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="kotlin_title">Kotlin (programming language)</string>
+    <string name="kotlin_url">https://github.com/JetBrains/kotlin</string>
+    <string name="large">Büyük</string>
+    <string name="last_modified">Son değiştirme</string>
+    <string name="leak_canary_title">Leak Canary (memory leak detector)</string>
+    <string name="leakcanary_text">"Copyright 2015 Square, Inc.
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="leakcanary_url">https://github.com/square/leakcanary</string>
+    <string name="left">Sola</string>
+    <string name="lib_name">PatternLockView</string>
+    <string name="light_theme">Sağa</string>
+    <string name="links_and_emails_clickable">Bağlantıları ve e-postaları tıklanabilir yap</string>
+    <string name="maximum_share_reached">Bu kadar çok içeriği bir kerede paylaşamazsınız</string>
+    <string name="medium">Orta</string>
+    <string name="message_pattern_cleared">Desen silindi</string>
+    <string name="message_pattern_detected">Desen çizimi tamamlandı</string>
+    <string name="message_pattern_dot_added">Desene nokta eklendi</string>
+    <string name="message_pattern_started">Desen çizimi başlatıldı</string>
+    <string name="monospaced_font">Sabit genişlikli yazı tipi kullan</string>
+    <string name="more_apps_underlined"><u>Daha fazla uygulama</u></string>
+    <string name="move">Taşı</string>
+    <string name="move_to">Taşı</string>
+    <string name="moving">Taşınıyor…</string>
+    <string name="moving_success">Dosyalar başarıyla taşındı</string>
+    <string name="moving_success_partial">Bazı dosyalar taşınamadı</string>
+    <string name="multiselect_text">"The MIT License (MIT)
+
+Copyright (c) 2014 Big Nerd Ranch
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."</string>
+    <string name="multiselect_title">RecyclerView MultiSelect (selecting multiple list items)</string>
+    <string name="multiselect_url">https://github.com/bignerdranch/recyclerview-multiselect</string>
+    <string name="my_email">hello@simplemobiletools.com</string>
+    <string name="my_website">"
+http://simplemobiletools.com"</string>
+    <string name="name">Ad</string>
+    <string name="name_taken">Bu ada sahip bir dosya veya klasör zaten var</string>
+    <string name="new_note">Yeni not ekle</string>
+    <string name="no">Hayır</string>
+    <string name="no_app_found">Geçerli bir uygulama bulunamadı</string>
+    <string name="no_audio_permissions">Ses izni gerekiyor</string>
+    <string name="no_camera_permissions">Kamera izni gerekiyor</string>
+    <string name="no_contacts_permission">Kişi izni gerekiyor</string>
+    <string name="no_entries_for_exporting">Dışa aktarılacak öğe bulunamadı</string>
+    <string name="no_files_selected">Hiçbir dosya seçilmedi</string>
+    <string name="no_fingerprints_registered">Parmak iziniz kayıtlı değil, lütfen cihazınızın Ayarlar bölümüne ekleyin</string>
+    <string name="no_items_found">Hiçbir öğe bulunamadı.</string>
+    <string name="no_storage_permissions">Depolama izni gerekiyor</string>
+    <string name="no_title">Lütfen notunuzu adlandırın</string>
+    <string name="note_exported_successfully">\"%s\" notu başarıyla dışa aktarıldı</string>
+    <string name="note_saved_successfully">\"%s\" notu başarıyla kaydedildi</string>
+    <string name="notice">Bu uygulama hayatımı kolaylaştırmak için aşağıdaki üçüncü parti kitaplıklarını kullanır. Teşekkürler.</string>
+    <string name="ok">Tamam</string>
+    <string name="only_import_file_content">"Sadece dosya içeriğini içe aktar\n(dosyayı değiştirmek notu etkilemez)"</string>
+    <string name="open_file">Dosya aç</string>
+    <string name="open_note">Not aç</string>
+    <string name="open_with">Birlikte aç</string>
+    <string name="otto_text">"Copyright 2012 Square, Inc.
+Copyright 2010 Google, Inc.
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="otto_title">Otto (event bus)</string>
+    <string name="otto_url">https://github.com/square/otto</string>
+    <string name="out_of_memory_error">Bellek yetersiz hatası</string>
+    <string name="overwrite">Üzerine yaz</string>
+    <string name="password_protect_hidden_items">Parola korumalı gizli öğe görünürlüğü</string>
+    <string name="password_protect_whole_app">Parola tüm uygulamayı korur</string>
+    <string name="password_toggle_content_description">Parola görünürlüğünü değiştir</string>
+    <string name="path">Yol</string>
+    <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
+    <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
+    <string name="pattern">Desen</string>
+    <string name="pattern_text">"Copyright 2017 aritraroy
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="pattern_title">PatternLockView (pattern protection)</string>
+    <string name="pattern_url">https://github.com/aritraroy/PatternLockView</string>
+    <string name="photoview_text">"Copyright 2017 Chris Banes
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="photoview_title">PhotoView (zoomable GIFs)</string>
+    <string name="photoview_url">https://github.com/chrisbanes/PhotoView</string>
+    <string name="picasso_text">"Copyright 2013 Square, Inc.
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="picasso_title">Picasso (image loading and caching)</string>
+    <string name="picasso_url">https://github.com/square/picasso</string>
+    <string name="pick_a_note">Not seç</string>
+    <string name="pin">PIN</string>
+    <string name="place_cursor_end">İmleci notun sonuna getir</string>
+    <string name="place_finger">Lütfen parmağınızı parmak izi sensörüne yerleştirin</string>
+    <string name="please_enter_pin">Lütfen bir PIN girin</string>
+    <string name="please_select_destination">Lütfen bir hedef seçin</string>
+    <string name="primary_color">Ana renk</string>
+    <string name="proceed_with_deletion">Silme işlemine devam etmek istediğinizden emin misiniz?</string>
+    <string name="progress">%1$s / %2$s</string>
+    <string name="properties">Özellikler</string>
+    <string name="protection_setup_successfully">Şifre kurulumu başarılı oldu. Lütfen unuttuğunuz durumda uygulamayı yeniden yükleyin.</string>
+    <string name="purchase">Satın al</string>
+    <string name="purchase_thank_you">Bu işlevin kilidini açmak ve gelişimi desteklemek için lütfen &lt;a href=https://play.google.com/store/apps/details?id=com.simplemobiletools.thankyou>Simple Thank You&lt;/a>\'yu satın alın. Teşekkürler!</string>
+    <string name="rate_us_underlined"><u>Bizi değerlendirin</u></string>
+    <string name="release_25">"Added more color customization options
+ Your settings have been cleared, please reset them"</string>
+    <string name="release_28">Allow picking colors by hex codes</string>
+    <string name="release_29">"Added an option to make emails and links clickable
+ Allow importing text from files
+ Allow saving notes to files"</string>
+    <string name="release_39">"Added a new option to use english language on non-english devices
+ Allow scrolling widgets vertically"</string>
+    <string name="release_45">Allow exporting all notes at once, toggling line wrap and autosave</string>
+    <string name="remove">Kaldır</string>
+    <string name="rename">Yeniden adlandır</string>
+    <string name="rename_file">Dosyayı yeniden adlandır</string>
+    <string name="rename_file_error">Dosya yeniden adlandırılamıyor</string>
+    <string name="rename_folder">Klasörü yeniden adlandır</string>
+    <string name="rename_folder_empty">Klasör adı boş olamaz</string>
+    <string name="rename_folder_error">Klasör yeniden adlandırılamıyor</string>
+    <string name="rename_folder_exists">Bu ada sahip bir klasör zaten var</string>
+    <string name="rename_folder_ok">Klasör başarıyla yeniden adlandırıldı</string>
+    <string name="rename_folder_root">Depolama biriminin kök klasörünü yeniden adlandıramıyor</string>
+    <string name="rename_note">Notu yeniden adlandır</string>
+    <string name="renaming_folder">Klasörü yeniden adlandırma</string>
+    <string name="repeat_pattern">Deseni tekrarla</string>
+    <string name="repeat_pin">PIN\'i tekrarla</string>
+    <string name="reprint_text">"Copyright 2015 - 2017 AJ Alt
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="reprint_title">Reprint (fingerprint protection)</string>
+    <string name="reprint_url">https://github.com/ajalt/reprint</string>
+    <string name="resolution">Çözünürlük</string>
+    <string name="restore_defaults">Varsayılanları geri yükle</string>
+    <string name="right">Sağa</string>
+    <string name="robolectric_text">"The MIT License
+
+Copyright (c) 2010 Xtreme Labs and Pivotal Labs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the Software), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."</string>
+    <string name="robolectric_title">Robolectric (testing framework)</string>
+    <string name="robolectric_url">https://github.com/robolectric/robolectric</string>
+    <string name="root">Root</string>
+    <string name="rtl_viewpager_text">"Copyright 2015 Diego Gómez Olvera
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License.You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS,WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="rtl_viewpager_title">RtlViewPager (right to left swiping)</string>
+    <string name="rtl_viewpager_url">https://github.com/diego-gomez-olvera/RtlViewPager</string>
+    <string name="save">Kaydet</string>
+    <string name="save_as">Farklı kaydet</string>
+    <string name="save_before_closing">Kaydedilmemiş değişiklikleriniz mevcut. Çıkmadan önce kaydedilsin mi?</string>
+    <string name="saving">Kaydediliyor…</string>
+    <string name="scrolling">Kaydırma</string>
+    <string name="sd_card">SD Kart</string>
+    <string name="search">Ara</string>
+    <string name="search_menu_title">Ara</string>
+    <string name="security">Güvenlik</string>
+    <string name="select_all">Tümünü seç</string>
+    <string name="select_an_action">Bir eylem seç</string>
+    <string name="select_destination">Hedef seç</string>
+    <string name="select_file">Bir dosya seç</string>
+    <string name="select_folder">Bir klasör seç</string>
+    <string name="select_storage">Depolama seç</string>
+    <string name="set_as">Ayarla</string>
+    <string name="settings">Ayarlar</string>
+    <string name="share">Paylaş</string>
+    <string name="share_colors_success">"Renkler başarıyla güncellendi. 'Paylaşılan' adlı yeni bir Tema eklendi, lütfen gelecekte tüm uygulama renklerini güncellemek için kullanınız."</string>
+    <string name="share_text">Hey, %1$s adlı mükemmel bir not uygulaması buldum. %2$s adresinden bak</string>
+    <string name="share_via">Şununla paylaş</string>
+    <string name="shared">Paylaşılan</string>
+    <string name="show_hidden_items">Gizli öğeleri göster</string>
+    <string name="show_info_bubble">Kaydırma çubuğunu sürükleyerek öğeleri kaydırmada bilgi balonunu göster</string>
+    <string name="show_keyboard">Başlangıçta klavyeyi göster</string>
+    <string name="show_note_picker">Başlangıçta bir not seçici göster</string>
+    <string name="show_word_count">Sözcük sayısını göster</string>
+    <string name="simple_commons">Simple Commons</string>
+    <string name="simple_note">Simple Note</string>
+    <string name="size">Boyut</string>
+    <string name="skip">Atla</string>
+    <string name="small">Küçük</string>
+    <string name="solarized">Solarized</string>
+    <string name="song_title">Şarkı başlığı</string>
+    <string name="sort_by">Sıralama</string>
+    <string name="source">Kaynak</string>
+    <string name="source_and_destination_same">Kaynak ve hedef aynı olamaz</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="stetho_text">"BSD License
+
+For Stetho software
+
+Copyright (c) 2015, Facebook, Inc. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice, this
+ list of conditions and the following disclaimer.
+
+ * Redistributions in binary form must reproduce the above copyright notice,
+ this list of conditions and the following disclaimer in the documentation
+ and/or other materials provided with the distribution.
+
+ * Neither the name Facebook nor the names of its contributors may be used to
+ endorse or promote products derived from this software without specific
+ prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS AS IS AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."</string>
+    <string name="stetho_title">Stetho (debugging databases)</string>
+    <string name="stetho_url">https://github.com/facebook/stetho</string>
+    <string name="stop_showing_hidden">Gizli medyayı göstermeyi bırak</string>
+    <string name="subsampling_text">"Copyright 2018 David Morrissey
+
+Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License.You may obtain a copy of the License at
+
+https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS,WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.See the License for the specific language governing permissions and limitations under the License."</string>
+    <string name="subsampling_title">Subsampling Scale Image View (zoomable imageviews)</string>
+    <string name="subsampling_url">https://github.com/davemorrissey/subsampling-scale-image-view</string>
+    <string name="temporarily_show_hidden">Geçici olarak gizliyi göster</string>
+    <string name="text_color">Metin rengi</string>
+    <string name="thank_you_url">https://play.google.com/store/apps/details?id=com.simplemobiletools.thankyou</string>
+    <string name="theme">Tema</string>
+    <string name="third_party_licences">Üçüncü taraf lisansları</string>
+    <string name="third_party_licences_underlined"><u>Üçüncü taraf lisansları</u></string>
+    <string name="title">Başlık</string>
+    <string name="title_taken">Bu başlığa sahip bir not zaten mevcut</string>
+    <string name="two_string_placeholder">%1$s%2$s</string>
+    <string name="type_2_characters">Aramaya başlamak için en az 2 karakter yazın.</string>
+    <string name="undo_changes">Değişiklikleri geri al</string>
+    <string name="undo_changes_confirmation">Değişikliklerinizi geri almak istediğinizden emin misiniz?</string>
+    <string name="unhide">Göster</string>
+    <string name="unhide_folder">Klasörü göster</string>
+    <string name="unknown">Bilinmeyen</string>
+    <string name="unknown_error_occurred">Bilinmeyen bir hata oluştu</string>
+    <string name="update_file_at_note">"Not güncellenirken orijinal dosyayı da güncelle\n(dosya silinirse veya yol değişirse not silinir)"</string>
+    <string name="use_english_language">İngilizce dilini kullan</string>
+    <string name="use_for_this_folder">Sadece bu klasör için kullan</string>
+    <string name="value_copied_to_clipboard">Değer panoya kopyalandı</string>
+    <string name="visibility">Görünürlük</string>
+    <string name="website_label">Kaynak kodları için ziyaret edin</string>
+    <string name="whats_new">"Yenilikler"</string>
+    <string name="whats_new_disclaimer">* yalnızca büyük güncellemeler burada listelenmiştir; daima bazı küçük geliştirmeler de vardır</string>
+    <string name="widget_config">"Basit Notlar'ı kullandığınız için teşekkürler.\nDaha fazla basit uygulamalar için lütfen SimpleMobileTools.com adresini ziyaret edin."</string>
+    <string name="widget_note">Widget\'ta kullanılan not</string>
+    <string name="wrong_pattern">Yanlış desen</string>
+    <string name="wrong_pin">Yanlış PIN</string>
+    <string name="wrong_root_selected">Yanlış klasör seçildi, lütfen SD kartınızın kök klasörünü seçin</string>
+    <string name="yes">Evet</string>
+</resources>
