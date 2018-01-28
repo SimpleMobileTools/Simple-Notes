@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Simple Noter</string>
+    <string name="app_launcher_name">Noter</string>
+    <string name="widget_config">Tak for at du har valgt Simple Noter.\nDu finder flere Simple Apps på siden SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">Kan ikke dele en tom tekst</string>
+    <string name="simple_note">Simpel Note</string>
+    <string name="new_note">Tilføj en ny note</string>
+    <string name="no_title">Navngiv din note</string>
+    <string name="title_taken">Navnet bruges allerede til en anden note</string>
+    <string name="open_note">Åbn note</string>
+    <string name="delete_note">Slet note</string>
+    <string name="delete_note_prompt_message">Er du sikker på at du vil slette noten \"%s\"?</string>
+    <string name="pick_a_note">Vælg note</string>
+    <string name="rename_note">Omdøb note</string>
+    <string name="general_note">Generel note</string>
+    <string name="create_new_note">Opret en ny note</string>
+    <string name="add_to_note">Føj til note</string>
+
+    <!-- File notes -->
+    <string name="open_file">Åbn fil …</string>
+    <string name="export_as_file">Eksporter som fil</string>
+    <string name="file_too_large">Filen er for stor, den må højst fylde 10MB</string>
+    <string name="only_import_file_content">Importer kun filindholdet\n(ændring af filen vil ikke berøre noten)</string>
+    <string name="update_file_at_note">Opdater selve filen når noten ændres\n(noten slettes hvis filen bliver slettet eller flyttes til en anden placering)</string>
+    <string name="delete_file_itself">Slet også filen \"%s\"</string>
+    <string name="note_saved_successfully">Noten \"%s\" er gemt</string>
+    <string name="note_exported_successfully">Noten \"%s\" er eksporteret</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">Vis en meddelelse når en fil er gemt</string>
+    <string name="links_and_emails_clickable">Gør links og mailadresser klikbare</string>
+    <string name="place_cursor_end">Placer markøren i slutningen af noten</string>
+    <string name="monospaced_font">Brug en monospatieret font</string>
+    <string name="show_keyboard">Vis tastatur fra start</string>
+    <string name="show_word_count">Vis antal ord</string>
+    <string name="alignment">Justering</string>
+    <string name="left">Venstre</string>
+    <string name="center">Centreret</string>
+    <string name="right">Højre</string>
+    <string name="widget_note">Note vist i widget</string>
+    <string name="show_note_picker">Vis en notevælger ved opstart</string>
+    <string name="autosave_notes">Autogem noter</string>
+    <string name="enable_line_wrap">Aktiver tekstombrydning</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Eksporter alle noter som filer</string>
+    <string name="import_notes">Importer flere filer som noter</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Et simpelt tekstfelt til at tage noter på - uden reklamer!</string>
+    <string name="app_long_description">
+        Har du brug for hurtigt at notere noget, fx en huskeseddel, en adresse eller en ide, så er denne app lige noget for dig! Der er ingen komplicerede opsætninger, gå bare i gang med at notere med det samme. Indeholder automatisk gemmefunktion, så du mister ikke dine ændringer ved en fejltagelse. Understøtter oprettelse af flere uafhængige noter.
+
+        Du kan tilgå en note på ingen tid ved at bruge appens widget, som kan tilpasses og skaleres og åbnes med et enkelt klik.
+
+        Uden reklamer og unødvendige tilladelser. Den er helt igennem open source, og du kan selv bestemme farverne.
+
+        Denne app er en del af en større serie. Du kan finde dem alle på siden http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
