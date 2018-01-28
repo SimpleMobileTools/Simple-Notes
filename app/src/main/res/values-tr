@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Basit Notlar</string>
+    <string name="app_launcher_name">Notlar</string>
+    <string name="widget_config">Basit Notlar\'ı kullandığınız için teşekkürler.\nDaha fazla basit uygulamalar için lütfen SimpleMobileTools.com adresini ziyaret edin.</string>
+    <string name="cannot_share_empty_text">Boş metin paylaşılamaz</string>
+    <string name="simple_note">Basit Not</string>
+    <string name="new_note">Yeni not ekle</string>
+    <string name="no_title">Lütfen notunuzu adlandırın</string>
+    <string name="title_taken">Bu başlığa sahip bir not zaten mevcut</string>
+    <string name="open_note">Notu aç</string>
+    <string name="delete_note">Notu sil</string>
+    <string name="delete_note_prompt_message">\"%s\" notunu silmek istediğinizden emin misiniz?</string>
+    <string name="pick_a_note">Not seç</string>
+    <string name="rename_note">Notu yeniden adlandır</string>
+    <string name="general_note">Genel not</string>
+    <string name="create_new_note">Yeni not oluştur</string>
+    <string name="add_to_note">Nota ekle</string>
+
+    <!-- File notes -->
+    <string name="open_file">Dosya aç</string>
+    <string name="export_as_file">Dosya olarak aktar</string>
+    <string name="file_too_large">Dosya çok büyük, sınır 10MB</string>
+    <string name="only_import_file_content">Sadece dosya içeriğini içe aktar\n(dosyayı değiştirmek notu etkilemez)</string>
+    <string name="update_file_at_note">Not güncellenirken orijinal dosyayı da güncelle\n(dosya silinirse veya yol değişirse not silinir)</string>
+    <string name="delete_file_itself">\"%s\" dosyasını da sil</string>
+    <string name="note_saved_successfully">\"%s\" notu başarıyla kaydedildi</string>
+    <string name="note_exported_successfully">\"%s\" notu başarıyla dışa aktarıldı</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">Başarıyla kaydedildi mesajlarını görüntüle</string>
+    <string name="links_and_emails_clickable">Bağlantıları ve e-postaları tıklanabilir yap</string>
+    <string name="place_cursor_end">İmleci notun sonuna getir</string>
+    <string name="monospaced_font">Sabit genişlikli yazı tipi kullan</string>
+    <string name="show_keyboard">Başlangıçta klavyeyi göster</string>
+    <string name="show_word_count">Kelime sayısını göster</string>
+    <string name="alignment">Hizalama</string>
+    <string name="left">Sola</string>
+    <string name="center">Ortaya</string>
+    <string name="right">Sağa</string>
+    <string name="widget_note">Widget\'ta kullanılan not</string>
+    <string name="show_note_picker">Başlangıçta bir not seçici göster</string>
+    <string name="autosave_notes">Notları otomatik kaydet</string>
+    <string name="enable_line_wrap">Sözcük kaydırmayı etkinleştir</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
+    <string name="import_notes">Birden çok dosyayı not olarak içe aktar</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Reklamsız, hızlı not eklemek için basit bir metin alanı.</string>
+    <string name="app_long_description">
+        Satın almanız gereken bir şey, adres veya aklınıza gelen bir fikir hakkında hızlı bir not almanız mı gerekti? O halde, aradığınız uygulama bu! Karmaşık kurulum adımları gerekmeden hemen notunuzu yazın. Otomatik kaydetme ile birlikte gelir, bu nedenle yanlışlıkla değişiklikleri kaybetmezsiniz. Birden fazla bağımsız not oluşturmayı destekler.
+
+        Nota, tıklamayla açılan, özelleştirilebilir ve yeniden boyutlandırılabilir widget\'ı kullanarak anında erişebilirsiniz.
+
+        Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sunar.
+
+        Bu uygulama, daha büyük bir uygulama serisinden sadece bir parça. Geri kalanı http://www.simplemobiletools.com adresinde bulabilirsiniz
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
