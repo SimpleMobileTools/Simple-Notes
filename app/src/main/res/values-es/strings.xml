@@ -13,38 +13,38 @@
     <string name="pick_a_note">Seleccione una nota</string>
     <string name="rename_note">Renombrar nota</string>
     <string name="general_note">Nota principal</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
+    <string name="create_new_note">Crear una nota nueva</string>
+    <string name="add_to_note">Añadir a la nota</string>
 
     <!-- File notes -->
-    <string name="open_file">Open file</string>
-    <string name="export_as_file">Export as file</string>
-    <string name="file_too_large">File too large, the limit is 10MB</string>
-    <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%s\"</string>
-    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
+    <string name="open_file">Abrir archivo</string>
+    <string name="export_as_file">Exportar como archivo</string>
+    <string name="file_too_large">Archivo demasiado grande, el límite es 10MB</string>
+    <string name="only_import_file_content">Sólo importar el contenido del archivo\n(cambiar el archivo no afectará a la nota)</string>
+    <string name="update_file_at_note">Actualizar el propio archivo cuando se actualice la nota\n(la nota se borrará si el archivo se elimina, o la ruta cambia)</string>
+    <string name="delete_file_itself">También borrar el archivo \"%s\"</string>
+    <string name="note_saved_successfully">Nota \"%s\" guardada con éxito</string>
+    <string name="note_exported_successfully">Nota \"%s\" exportada con éxito</string>
 
     <!-- Settings -->
-    <string name="display_success_message">Display save success messages</string>
-    <string name="links_and_emails_clickable">Make links and emails clickable</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
-    <string name="show_word_count">Show word count</string>
+    <string name="display_success_message">Mostrar mensajes de guardado con éxito</string>
+    <string name="links_and_emails_clickable">Mostrar enlaces y direcciones de correo como seleccionables</string>
+    <string name="place_cursor_end">Colocar el cursor al final de la nota</string>
+    <string name="monospaced_font">Usar fuente monoespaciada</string>
+    <string name="show_keyboard">Mostrar el teclado al incio</string>
+    <string name="show_word_count">Mostrar recuento de palabras</string>
     <string name="alignment">Alineación del texto</string>
     <string name="left">Izquierda</string>
     <string name="center">Centrado</string>
     <string name="right">Derecha</string>
     <string name="widget_note">Nota del widget</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
+    <string name="show_note_picker">Mostrar un selector de notas al inicio</string>
+    <string name="autosave_notes">Guardado automático de notas</string>
+    <string name="enable_line_wrap">Activar ajuste de línea</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
+    <string name="export_all_notes">Exportar todas las notas como archivos</string>
+    <string name="import_notes">Importar múltiples archivos como notas</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
