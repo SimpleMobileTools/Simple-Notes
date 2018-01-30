@@ -154,7 +154,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         super.onActionModeStarted(mode)
         if (wasInit) {
             currentNotesView()?.apply {
-                if (config.clickableLinks || movementMethod == LinkMovementMethod.getInstance()) {
+                if (config.clickableLinks || movementMethod is LinkMovementMethod) {
                     movementMethod = ArrowKeyMovementMethod.getInstance()
                     noteViewWithTextSelected = this
                 }
