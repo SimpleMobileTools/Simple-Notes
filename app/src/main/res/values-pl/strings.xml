@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Proste Notatki</string>
-    <string name="app_launcher_name">Notatki</string>
-    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Simple Notes.\nPo więcej prostych aplikacji, takich jak ta, udaj się na SimpleMobileTools.com.</string>
+    <string name="app_name">Prosty Notatnik</string>
+    <string name="app_launcher_name">Prosty Notatnik</string>
+    <string name="widget_config">Dziękujemy za korzystanie z aplikacji.\nPo więcej prostych aplikacji, takich jak ta, udaj się na SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nie mogę udostępnić pustej notatki</string>
-    <string name="simple_note">Simple Note</string>
+    <string name="simple_note">Prosta Notatka</string>
     <string name="new_note">Dodaj nową notatkę</string>
     <string name="no_title">Nazwij swoją notatkę</string>
     <string name="title_taken">Notatka o tej nazwie już istnieje</string>
@@ -32,25 +32,25 @@
     <string name="place_cursor_end">Umieszczaj kursor na końcu notatki</string>
     <string name="monospaced_font">Używaj czcionki monospace</string>
     <string name="show_keyboard">Pokazuj klawiaturę na starcie</string>
-    <string name="show_word_count">Show word count</string>
+    <string name="show_word_count">Pokazuj liczbę słów</string>
     <string name="alignment">Wyrównanie tekstu w notatkach</string>
     <string name="left">Do lewej strony</string>
     <string name="center">Do środka</string>
     <string name="right">Do prawej strony</string>
     <string name="widget_note">Notatka używana w widżecie</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
+    <string name="show_note_picker">Pokazuj wybór notatki po uruchomieniu</string>
+    <string name="autosave_notes">Autozapis notatek</string>
+    <string name="enable_line_wrap">Zawijanie linii</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
+    <string name="export_all_notes">Eksportuj wszystkie notatki jako pliki</string>
+    <string name="import_notes">Importuj pliki jako notatki</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Prosty notatnik bez reklam.</string>
     <string name="app_long_description">
-        Potrzebujesz szybko zanotować, co masz kupić, gdzie masz pojść lub co zrobić? Zatem jest to aplikacja, której szukasz. Nie ma tu żadnych skomplikowanych kroków ani ustawień, po prostu pisz, co musisz zapamiętać. Autozapis nie pozwoli na umknięcie niczego. Dla zabieganych jest opcja pisania kilka notatek na raz.
+        Potrzebujesz szybko zanotować, co masz kupić, gdzie masz pojść lub co zrobić? Zatem jest to aplikacja, której szukasz. Nie ma tu żadnych skomplikowanych kroków ani ustawień, po prostu pisz, co konieczne jest do zapamiętania. Autozapis nie pozwoli na umknięcie niczego. Dla zabieganych jest opcja pisania kilka notatek na raz.
 
         Widżet dodatkowo ułatwia sprawę. Klikasz go i już możesz pisać.
 
