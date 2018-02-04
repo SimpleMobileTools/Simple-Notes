@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Anteckningar</string>
-    <string name="widget_config">Tack för att du använder Simple Notes.\nFör fler enkla appar, gå till simplemobiletools.com.</string>
-    <string name="cannot_share_empty_text">Det går inte att dela utan text</string>
+    <string name="widget_config">Tack för att du använder Simple Notes.\nDu hittar fler enkla appar på simplemobiletools.com.</string>
+    <string name="cannot_share_empty_text">Det går inte att dela en tom anteckning</string>
     <string name="simple_note">Enkel anteckning</string>
     <string name="new_note">Lägg till en ny anteckning</string>
     <string name="no_title">Namnge din anteckning</string>
@@ -24,37 +24,37 @@
     <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
     <string name="delete_file_itself">Ta även bort filen \"%s\"</string>
     <string name="note_saved_successfully">Anteckningen \"%s\" har sparats</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
+    <string name="note_exported_successfully">Anteckningen \"%s\" har exporterats</string>
 
     <!-- Settings -->
     <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
     <string name="links_and_emails_clickable">Gör länkar och e-postadresser klickbara</string>
     <string name="place_cursor_end">Placera markören vid slutet av anteckningen</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
-    <string name="show_word_count">Show word count</string>
+    <string name="monospaced_font">Använd ett teckensnitt med fast bredd</string>
+    <string name="show_keyboard">Visa tangentbordet vid start</string>
+    <string name="show_word_count">Visa antal ord</string>
     <string name="alignment">Justering</string>
     <string name="left">Vänster</string>
     <string name="center">Centrerad</string>
     <string name="right">Höger</string>
     <string name="widget_note">Anteckningen används i widgeten</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
+    <string name="show_note_picker">Visa en anteckningsväljare vid start</string>
+    <string name="autosave_notes">Spara anteckningar automatiskt</string>
+    <string name="enable_line_wrap">Aktivera radbrytning</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
+    <string name="export_all_notes">Exportera alla anteckningar som filer</string>
+    <string name="import_notes">Importera flera filer som anteckningar</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Ett enkelt textfält för att lägga till snabba anteckningar, utan reklam.</string>
     <string name="app_long_description">
-        Behöver du snabbt anteckna något att köpa, en adress eller en företagsidé? Då är det här appen som du har letat efter! Ingen komplicerad konfiguration behövs. Anteckningen sparas automatiskt så att dina ändringar inte tas bort av misstag. Har stöd för att skapa flera oberoende anteckningar.
+        Behöver du snabbt anteckna något att köpa, en adress eller en företagsidé? Då är det här appen som du har letat efter! Ingen komplicerad konfiguration behövs. Anteckningen sparas automatiskt så att dina ändringar inte tas bort av misstag. Du kan skapa flera oberoende anteckningar.
 
-        Du kan komma åt anteckningen på nolltid genom att använda den anpassningsbara och justerbara widgeten, som öppnar appen när du klickar på den.
+        Du kan komma åt anteckningen på nolltid genom att använda den anpassningsbara och justerbara widgeten, som öppnar appen när du trycker på den.
 
-        Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och har även ett Mörkt tema.
+        Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger.
 
         Denna app är bara en del av en större serie appar. Du hittar resten av dem på http://www.simplemobiletools.com
     </string>
