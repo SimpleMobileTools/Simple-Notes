@@ -38,13 +38,13 @@
     <string name="center">Centro</string>
     <string name="right">Direita</string>
     <string name="widget_note">Nota utilizada no widget</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
+    <string name="show_note_picker">Mostrar seletor de notas ao iniciar</string>
+    <string name="autosave_notes">Guardar nota automaticamente</string>
+    <string name="enable_line_wrap">Ativar quebra de linha</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
+    <string name="export_all_notes">Exportar todas as notas como ficheiros</string>
+    <string name="import_notes">Importar ficheiros para notas</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
