@@ -1,0 +1,69 @@
+<!-- desde values/strings.xml -->
+<!-- primeira tradución ao galego (gl), por XoseM correo@xmgz.eu -->
+<resources>
+    <string name="app_name">Simple Notes</string>
+    <string name="app_launcher_name">Notas</string>
+    <string name="widget_config">Grazas por utilizar Simple Notes.\nPara máis aplicativos simples visite SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">Non pode compartir un texto baldeiro</string>
+    <string name="simple_note">Simple Note</string>
+    <string name="new_note">Engadir unha nova nota</string>
+    <string name="no_title">Delle nome a nota</string>
+    <string name="title_taken">Xa existe unha nota con ese nome</string>
+    <string name="open_note">Abrir nota</string>
+    <string name="delete_note">Eliminar nota</string>
+    <string name="delete_note_prompt_message">Seguro que quere eliminar a nota \"%s\"?</string>
+    <string name="pick_a_note">Escolla unha nota</string>
+    <string name="rename_note">Cambie o nome da nota</string>
+    <string name="general_note">nota Xeral</string>
+    <string name="create_new_note">Crear unha nova nota</string>
+    <string name="add_to_note">Engadir a nota</string>
+
+    <!-- File notes -->
+    <string name="open_file">Abrir ficheiro</string>
+    <string name="export_as_file">Exportar como ficheiro</string>
+    <string name="file_too_large">Ficheiro demasiado grande, o límite é 10MB</string>
+    <string name="only_import_file_content">Só importa o contido do ficheiro\n(cambiar o ficheiro non afecta a nota)</string>
+    <string name="update_file_at_note">Actualiza o propio ficheiro ao actualizar a nota\n(a nota elimínase si se elimina o ficheiro, ou cambia a ruta)</string>
+    <string name="delete_file_itself">Borra tamén ficheiro \"%s\"</string>
+    <string name="note_saved_successfully">Nota \"%s\" gardada correctamente</string>
+    <string name="note_exported_successfully">Nota \"%s\" exportada correctamente</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">Mostra mensaxe de gardado correcto</string>
+    <string name="links_and_emails_clickable">Fai que ligazóns e correo-e sexan clicables</string>
+    <string name="place_cursor_end">Colocar o cursor ao final da nota</string>
+    <string name="monospaced_font">Use monospaced font</string>
+    <string name="show_keyboard">Mostrar teclado ao inicio</string>
+    <string name="show_word_count">Mostrar conta de palabras</string>
+    <string name="alignment">Aliñamento</string>
+    <string name="left">Esquerda</string>
+    <string name="center">Centro</string>
+    <string name="right">Dereita</string>
+    <string name="widget_note">Nota a utilizar no widget</string>
+    <string name="show_note_picker">Mostrar selector de nota ao inicio</string>
+    <string name="autosave_notes">Gardado automático</string>
+    <!-- teño que mirar qué fai line-wrap #fuzzy -->
+    <string name="enable_line_wrap">Habilitar sangrado de liña</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Exportar todas as notas como ficheiros</string>
+    <string name="import_notes">Importar varios ficheiros como notas</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Un cadro de texto simple para engadir notas rápidas, sen publicidade.</string>
+    <string name="app_long_description">
+        Precisa tomar unha nota rápida de algo para mercar, un enderezo, unha idea brillante? Entón este é o aplicativo que estaba a buscar! Sin configuracións complicadas, escriba o que desexa. Ten gardado automático, así non perderá os cambios sin querer. Pode crear varias notas independentes. 
+
+        Pode acceder a nota rápidamente utilizando o widget personalizado que inclúe, con tamaño variable, que abre o app ao pulsalo.
+
+        Non ten publicidade ou permisos innecesarios. É de código totalmente aberto e pode mudar a cor ao seu gusto.
+
+        Este aplicativo é parte de unha serie maior de aplicativos. Pode atopar o resto en http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
