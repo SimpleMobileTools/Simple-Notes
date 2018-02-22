@@ -32,7 +32,7 @@ class OpenFileDialog(val activity: SimpleActivity, val path: String, val callbac
                     val storeContent = if (updateFileOnEdit) "" else File(path).readText()
 
                     if (updateFileOnEdit) {
-                        activity.handleSAFDialog(File(path)) {
+                        activity.handleSAFDialog(path) {
                             saveNote(storeContent, storePath)
                         }
                     } else {

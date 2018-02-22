@@ -44,7 +44,7 @@ class RenameNoteDialog(val activity: SimpleActivity, val db: DBHelper, val note:
                                     return@setOnClickListener
                                 }
 
-                                activity.renameFile(file, newFile) {
+                                activity.renameFile(file.absolutePath, newFile.absolutePath) {
                                     if (it) {
                                         note.path = newFile.absolutePath
                                         db.updateNotePath(note)

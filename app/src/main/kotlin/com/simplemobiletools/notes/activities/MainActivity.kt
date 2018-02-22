@@ -15,6 +15,7 @@ import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
+import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.commons.models.Release
 import com.simplemobiletools.commons.views.MyEditText
@@ -377,17 +378,16 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     fun exportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
         try {
-            val file = File(path)
-            if (file.isDirectory) {
+            if (getIsPathDirectory(path)) {
                 toast(R.string.name_taken)
                 return
             }
 
             if (needsStupidWritePermissions(path)) {
-                handleSAFDialog(file) {
-                    var document = getFileDocument(path) ?: return@handleSAFDialog
-                    if (!file.exists()) {
-                        document = document.createFile("", file.name)
+                handleSAFDialog(path) {
+                    var document = getDocumentFile(path) ?: return@handleSAFDialog
+                    if (!getDoesFilePathExist(path)) {
+                        document = document.createFile("", path.getFilenameFromPath())
                     }
                     contentResolver.openOutputStream(document.uri).apply {
                         write(content.toByteArray(Charset.forName("UTF-8")), 0, content.length)
@@ -400,6 +400,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                     callback?.invoke(true)
                 }
             } else {
+                val file = File(path)
                 file.printWriter().use { out ->
                     out.write(content)
                 }
@@ -446,7 +447,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         if (!deleteFile) {
             doDeleteNote(mCurrentNote, deleteFile)
         } else {
-            handleSAFDialog(File(mCurrentNote.path)) {
+            handleSAFDialog(mCurrentNote.path) {
                 doDeleteNote(mCurrentNote, deleteFile)
             }
         }
@@ -466,7 +467,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         initViewPager()
 
         if (deleteFile) {
-            deleteFile(File(note.path)) {
+            deleteFile(FileDirItem(note.path, note.title)) {
                 if (!it) {
                     toast(R.string.unknown_error_occurred)
                 }

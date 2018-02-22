@@ -11,7 +11,6 @@ import com.simplemobiletools.notes.activities.SimpleActivity
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.dialog_export_files.view.*
-import java.io.File
 
 class ExportFilesDialog(val activity: SimpleActivity, val notes: ArrayList<Note>, val callback: (parent: String, extension: String) -> Unit) {
     init {
@@ -35,7 +34,7 @@ class ExportFilesDialog(val activity: SimpleActivity, val notes: ArrayList<Note>
             window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
             activity.setupDialogStuff(view, this, R.string.export_as_file) {
                 getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                    activity.handleSAFDialog(File(realPath)) {
+                    activity.handleSAFDialog(realPath) {
                         val extension = view.file_extension.value
                         activity.config.lastUsedExtension = extension
                         activity.config.lastUsedSavePath = realPath
