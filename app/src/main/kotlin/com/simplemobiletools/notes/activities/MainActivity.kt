@@ -369,13 +369,17 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             mNotes.forEachIndexed { index, note ->
                 val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
                 val file = File(parent, filename)
-                exportNoteValueToFile(file.absolutePath, note.value, false) {
-                    if (!it) {
-                        failCount++
-                    }
+                if (!filename.isAValidFilename()) {
+                    toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
+                } else {
+                    exportNoteValueToFile(file.absolutePath, note.value, false) {
+                        if (!it) {
+                            failCount++
+                        }
 
-                    if (index == mNotes.size - 1) {
-                        toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
+                        if (index == mNotes.size - 1) {
+                            toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
+                        }
                     }
                 }
             }

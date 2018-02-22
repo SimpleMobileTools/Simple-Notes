@@ -44,15 +44,14 @@ class ExportFileDialog(val activity: SimpleActivity, val note: Note, val callbac
                     }
 
                     val fullFilename = if (extension.isEmpty()) filename else "$filename.$extension"
-                    val newFile = File(realPath, fullFilename)
-                    if (!newFile.name.isAValidFilename()) {
-                        activity.toast(R.string.filename_invalid_characters)
+                    if (!fullFilename.isAValidFilename()) {
+                        activity.toast(String.format(activity.getString(R.string.filename_invalid_characters_placeholder, fullFilename)))
                         return@setOnClickListener
                     }
 
                     activity.config.lastUsedExtension = extension
                     activity.config.lastUsedSavePath = realPath
-                    callback(newFile.absolutePath)
+                    callback("$realPath/$fullFilename")
                     dismiss()
                 }
             }
