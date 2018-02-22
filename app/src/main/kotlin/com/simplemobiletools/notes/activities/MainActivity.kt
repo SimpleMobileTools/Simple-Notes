@@ -15,6 +15,7 @@ import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
+import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.commons.models.Release
@@ -273,7 +274,12 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun launchAbout() {
-        startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_STETHO or LICENSE_RTL or LICENSE_LEAK_CANARY, BuildConfig.VERSION_NAME)
+        val faqItems = arrayListOf(
+                FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
+                FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons),
+                FAQItem(R.string.faq_4_title_commons, R.string.faq_4_text_commons)
+        )
+        startAboutActivity(R.string.app_name, LICENSE_KOTLIN or LICENSE_STETHO or LICENSE_RTL or LICENSE_LEAK_CANARY, BuildConfig.VERSION_NAME, faqItems)
     }
 
     private fun tryOpenFile() {
