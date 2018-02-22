@@ -111,7 +111,10 @@ class NoteFragment : Fragment() {
         }
 
         if (menuVisible && noteId != 0) {
-            (activity as MainActivity).currentNoteTextChanged(getCurrentNoteViewText())
+            val currentText = getCurrentNoteViewText()
+            if (currentText != null) {
+                (activity as MainActivity).currentNoteTextChanged(currentText)
+            }
         }
     }
 
@@ -128,7 +131,7 @@ class NoteFragment : Fragment() {
 
         val newText = getCurrentNoteViewText()
         val oldText = context!!.getNoteStoredValue(note)
-        if (newText != oldText) {
+        if (newText != null && newText != oldText) {
             note.value = newText
             saveNoteValue(note)
             context!!.updateWidget()
@@ -144,11 +147,14 @@ class NoteFragment : Fragment() {
             db.updateNoteValue(note)
             (activity as MainActivity).noteSavedSuccessfully(note.title)
         } else {
-            (activity as MainActivity).exportNoteValueToFile(note.path, getCurrentNoteViewText(), true)
+            val currentText = getCurrentNoteViewText()
+            if (currentText != null) {
+                (activity as MainActivity).exportNoteValueToFile(note.path, currentText, true)
+            }
         }
     }
 
-    fun getCurrentNoteViewText() = view.notes_view?.text.toString()
+    fun getCurrentNoteViewText() = view.notes_view?.text?.toString()
 
     private fun getTextGravity() = when (context!!.config.gravity) {
         GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
