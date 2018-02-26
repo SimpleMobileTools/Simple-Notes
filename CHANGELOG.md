@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 3.1.2 *(2018-02-26)*
+----------------------------
+
+ * Added a FAQ section
+ * Do not allow exporting notes with slash in them
+ * Many translation and file handling improvements
+
 Version 3.1.1 *(2018-01-26)*
 ----------------------------
 
