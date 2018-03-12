@@ -21,7 +21,7 @@
     <string name="export_as_file">Exporter dans un fichier</string>
     <string name="file_too_large">Taille du fichier trop importante, la limite est de 10MB</string>
     <string name="only_import_file_content">Importer seulement le contenu du fichier\n(changer le fichier n\'affectera pas la note)</string>
-    <string name="update_file_at_note">Metttre à jour le fichier lui-même lors de la mise à jour de la note\n(la note est supprimée si le fichier est supprimé, ou que le chemin change)</string>
+    <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note\n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
     <string name="delete_file_itself">Supprimer également le fichier \"%s\"</string>
     <string name="note_saved_successfully">Note \"%s\" sauvegardée avec succès</string>
     <string name="note_exported_successfully">Note \"%s\" exportée avec succès</string>
@@ -38,23 +38,23 @@
     <string name="center">Centre</string>
     <string name="right">Droite</string>
     <string name="widget_note">Note utilisée dans le widget</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
+    <string name="show_note_picker">Choisir une note au démarrage</string>
+    <string name="autosave_notes">Sauvegarder automatiquement les notes</string>
+    <string name="enable_line_wrap">Activer le retour à la ligne</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
+    <string name="export_all_notes">Exporter toutes les notes en tant que fichiers</string>
+    <string name="import_notes">Importer plusieurs fichiers en tant que notes</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Un champ texte simple pour ajouter des notes rapides, sans publicités.</string>
     <string name="app_long_description">
-        Besoin de noter rapidement quelquechose à acheter, une adresse, ou une idée de startup ? Alors ceci est l\'application que vous cherchiez ! Pas d\'étapes compliquées de configuration nécéssaires, saisissez juste ce pourquoi vous êtes venu. Fournit une sauvegarde automatique, ainsi vous ne rejetterez pas vos changements par erreur. Supporte la création de multiples notes indépendantes.
+        Besoin de noter rapidement quelque chose à acheter, une adresse, ou une idée de startup ? Alors ceci est l\'application que vous cherchiez ! Pas d\'étapes compliquées de configuration nécéssaires, saisissez juste ce pourquoi vous êtes venu. Fournit une sauvegarde automatique, ainsi vous ne rejetterez pas vos changements par erreur. Supporte la création de multiples notes indépendantes.
 
-        Vous pouvez accéder à la note en peu de temps en utilisant le widget personnalisable et redimensionnable, qui ouvre l\'application au clic.
+        Vous pouvez accéder à la note en peu de temps en utilisant le widget personnalisable et redimensionnable, qui ouvre l\'application en un clic.
 
-        Ne contient pas de publicités ou d\'autorisations inutiles. Complèetement opensource, fournit un thème sombre également.
+        Ne contient ni publicités, ni autorisations inutiles. Complétement opensource, fournit un thème sombre également.
 
         Cette application est juste une pièce d\'une plus grande série d\'applications. Vous pouvez trouver le reste de celles-ci à http://www.simplemobiletools.com
     </string>
