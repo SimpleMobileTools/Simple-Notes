@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Jednostavne bilješke</string>
+    <string name="app_launcher_name">Bilješke</string>
+    <string name="widget_config">Hvala što koristite Jednostavne bilješke.\nZa više jednostavnih aplikacija posjetite SimpleMobileTools.com..</string>
+    <string name="cannot_share_empty_text">Nije moguće dijeliti prazan tekst</string>
+    <string name="simple_note">Jednostavna bilješka</string>
+    <string name="new_note">Dodaj novu bilješku</string>
+    <string name="no_title">Nazovite svoju bilješku</string>
+    <string name="title_taken">Bilješka s tim naslovom već postoji</string>
+    <string name="open_note">Otvori bilješku</string>
+    <string name="delete_note">Izbriši bilješku</string>
+    <string name="delete_note_prompt_message">Jeste li sigurni da želite izbrisati bilješku \"%s\"?</string>
+    <string name="pick_a_note">Odaberi bilješku</string>
+    <string name="rename_note">Preimenuj bilješku</string>
+    <string name="general_note">Opća bilješka</string>
+    <string name="create_new_note">Stvori novu bilješku</string>
+    <string name="add_to_note">Dodaj u bilješku</string>
+
+    <!-- File notes -->
+    <string name="open_file">Otvori datoteku</string>
+    <string name="export_as_file">Izvezi kao datoteku</string>
+    <string name="file_too_large">Datoteka je prevelika, granica je 10 MB</string>
+    <string name="only_import_file_content">Uvezi samo sadržaj datoteke\n(promjena datoteke neće utjecati na bilješku)</string>
+    <string name="update_file_at_note">Ažurirajte samu datoteku prilikom ažuriranja bilješke\n(bilješka se briše ako se datoteka izbriše ili promjeni putanja)</string>
+    <string name="delete_file_itself">Također izbriši datoteku \"%s\"</string>
+    <string name="note_saved_successfully">Bilješka \"%s\" uspješno spremljena</string>
+    <string name="note_exported_successfully">Bilješka \"%s\" uspješno izvezena</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">Prikaži poruke kada je spremanje uspješno</string>
+    <string name="links_and_emails_clickable">Napravite veze i e-poruke koje se mogu kliknuti</string>
+    <string name="place_cursor_end">Postavite pokazivač do kraja napomene</string>
+    <string name="monospaced_font">Koristi font jednake širine i visine</string>
+    <string name="show_keyboard">Prikažite tipkovnicu prilikom pokretanja</string>
+    <string name="show_word_count">Prikaz broja riječi</string>
+    <string name="alignment">Poravnanje</string>
+    <string name="left">Lijevo</string>
+    <string name="center">Sredina</string>
+    <string name="right">Desno</string>
+    <string name="widget_note">Bilješka korištena u widgetu</string>
+    <string name="show_note_picker">Prikaži odabir bilješke prilikom pokretanja</string>
+    <string name="autosave_notes">Automatsko spremanje bilješki</string>
+    <string name="enable_line_wrap">Omogući omotavanje linije</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
+    <string name="import_notes">Uvezi više datoteka kao bilješke</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Jednostavno tekstno polje za brzo dodavanje bilješki, bez oglasa.</string>
+    <string name="app_long_description">
+        Trebate li brzo zapamtiti nešto za kupiti, adresu ili startup ideju? Onda je ovo aplikacija koju ste tražili! Nema kompliciranih koraka postavljanja, samo upišite ono za što ste došli. Dolazi s opcijom automatskog spremanja bilješki, tako da nećete odbaciti svoje promjene pogreškom. Podržava stvaranje više nezavisnih bilješki.
+
+        Bilješci možete pristupiti u bilo kojem trenutku pomoću prilagodljivog widgeta promjenjive veličine koji otvara aplikaciju klikom.
+
+        Ne sadrži oglase ili nepotrebne dozvole. Aplikacije je otvorenog koda, pruža prilagodljive boje.
+
+        Ova je aplikacija samo dio većeg broja aplikacija. Možete pronaći ostatak na http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
