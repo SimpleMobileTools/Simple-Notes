@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Simple Notes</string>
-    <string name="app_launcher_name">Notes</string>
+    <string name="app_name">Paprasti užrašai</string>
+    <string name="app_launcher_name">Užrašai</string>
     <string name="widget_config">Ačiū, jog naudojate Simple Notes.\nDaugiau paprastų programų rasite SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Negalima dalintis tuščiu įrašu</string>
-    <string name="simple_note">Simple Note</string>
+    <string name="simple_note">Paprastas užrašas</string>
     <string name="new_note">Pridėti naujà įrašą</string>
     <string name="no_title">Įrašo pavadinimas</string>
     <string name="title_taken">Įrašas tokiu pavadinimu jau egzistuoja</string>
@@ -38,13 +38,13 @@
     <string name="center">Centre</string>
     <string name="right">Dešinėje</string>
     <string name="widget_note">Įraðas panaudotas šaukinyje</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
+    <string name="show_note_picker">Rodyti užrašų parinkiklį pajungus programėlę</string>
+    <string name="autosave_notes">Automatiškai išsaugoti užrašus</string>
+    <string name="enable_line_wrap">naudoti eilutės perkėlimą</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
+    <string name="export_all_notes">Eksportuoti visus užrašus kaip bylas</string>
+    <string name="import_notes">Importuoti keletą bylų, kaip užrašus</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
