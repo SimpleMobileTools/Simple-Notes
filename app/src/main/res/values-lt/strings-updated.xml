@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Paprasti užrašai</string>
+    <string name="app_launcher_name">Užrašai</string>
+    <string name="widget_config">Ačiū, kad naudojate paprastus užrašus.\nDėl daugiau paprastų programėlių apsilankykite SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">Negalima pasidalinti tuščio teksto</string>
+    <string name="simple_note">Paprastas užrašas</string>
+    <string name="new_note">Pridėti naują užrašą</string>
+    <string name="no_title">Prašome pavadinti Jūsų užrašą</string>
+    <string name="title_taken">Užrašas tokiu pavadinimu jau yra</string>
+    <string name="open_note">Atidaryti užrašą</string>
+    <string name="delete_note">Ištrinti užrašą</string>
+    <string name="delete_note_prompt_message">Ar Jūs tikrai norite ištrinti užrašą \"%s\"?</string>
+    <string name="pick_a_note">Pasirinkti užrašą</string>
+    <string name="rename_note">Pervardyti užrašą</string>
+    <string name="general_note">Pagrindinis užrašas</string>
+    <string name="create_new_note">Sukurti naują užrašą</string>
+    <string name="add_to_note">Pridėti į užrašą</string>
+
+    <!-- File notes -->
+    <string name="open_file">Atidaryti bylą</string>
+    <string name="export_as_file">Eksportuoti kaip bylą</string>
+    <string name="file_too_large">Byla per didelė, didžiausias leistinas dydis yra 10MB</string>
+    <string name="only_import_file_content">Importuoti tik bylos turinį\n(bylos pakeitimas nepaveiks užrašo)</string>
+    <string name="update_file_at_note">Atnaujinti bylą kai atnaujinamas užrašas\n(užrašas ištrinamas jei byla ištrinama, arba pasikeičia kelias iki bylos)</string>
+    <string name="delete_file_itself">Taip pat ištrinti bylą \"%s\"</string>
+    <string name="note_saved_successfully">Užrašas \"%s\" išsaugotas sėkmingai</string>
+    <string name="note_exported_successfully">Užrašas \"%s\" eksportuotas sėkmingai</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">Rodyti sėkmingo išsaugojimo pranešimus</string>
+    <string name="links_and_emails_clickable">Padaryti nuorodas ir elektroninius paštus aktyvius (paspaudžiamus)</string>
+    <string name="place_cursor_end">Padėti žymeklį užrašo gale</string>
+    <string name="monospaced_font">Naudoti vienodo pločio šriftą</string>
+    <string name="show_keyboard">Rodyti klaviatūrą įjungus programėlę</string>
+    <string name="show_word_count">Rodyti žodžių kiekį</string>
+    <string name="alignment">Lygiavimas</string>
+    <string name="left">Kairė</string>
+    <string name="center">Centras</string>
+    <string name="right">Dešinė</string>
+    <string name="widget_note">Užrašas panaudotas skydelyje</string>
+    <string name="show_note_picker">Rodyti užrašų parinkiklį pajungus programėlę</string>
+    <string name="autosave_notes">Automatiškai išsaugoti užrašus</string>
+    <string name="enable_line_wrap">naudoti eilutės perkėlimą</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Eksportuoti visus užrašus kaip bylas</string>
+    <string name="import_notes">Importuoti keletą bylų, kaip užrašus</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Paprastas teksto laukas užrašų pridėjimui, be reklamų.</string>
+    <string name="app_long_description">
+        Reikia, kažką greitai užsirašyti arba pasižymėti nusipirkimui, adresą, arba startuolio įdėją? tada ši programėlė kaip tik \'tai ko Jūs ieškote! Jokių sudėtingų derinimo žingsnių, tiesiog rašykite tai ką norite. Turi automatinio išsaugojimo funkciją, taigi Jūs niekada atsitiktainai neištrinsite tai ką užrašėte. Palaiko daug atskirų užrašų sukūrimą.
+
+        Jūs galite matyti užrašą tinkinamame ir keičiamo dydžio skydelyje, Kuris vienu paspaudimu atidaro programėlę.
+
+        Neturi reklamų ar nereikalingų leidimų. Programėlė visiškai atviro kodo, yra galimybė keisti spalvas.
+
+        Ši programėle yra vienintelė iš keletos mūsų programėlių. Likusias Jūs galite rasti čia http://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
