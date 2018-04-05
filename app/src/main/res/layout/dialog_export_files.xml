@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/activity_margin"
-        android:paddingLeft="@dimen/activity_margin"
+        android:paddingLeft="@dimen/normal_margin"
         android:paddingRight="@dimen/small_margin"
         android:paddingTop="@dimen/small_margin"/>
 
@@ -35,6 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_margin"
+        android:layout_marginLeft="@dimen/medium_margin"
         android:inputType="text"
         android:singleLine="true"
         android:textCursorDrawable="@null"
