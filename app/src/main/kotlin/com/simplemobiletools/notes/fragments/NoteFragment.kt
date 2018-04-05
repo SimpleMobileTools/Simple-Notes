@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.Editable
 import android.text.TextWatcher
-import android.text.method.LinkMovementMethod
 import android.text.util.Linkify
 import android.util.TypedValue
 import android.view.Gravity
@@ -18,10 +17,7 @@ import com.simplemobiletools.commons.extensions.onGlobalLayout
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.extensions.*
-import com.simplemobiletools.notes.helpers.DBHelper
-import com.simplemobiletools.notes.helpers.GRAVITY_CENTER
-import com.simplemobiletools.notes.helpers.GRAVITY_RIGHT
-import com.simplemobiletools.notes.helpers.NOTE_ID
+import com.simplemobiletools.notes.helpers.*
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.fragment_note.*
 import kotlinx.android.synthetic.main.fragment_note.view.*
@@ -47,7 +43,7 @@ class NoteFragment : Fragment() {
             view.notes_view.apply {
                 linksClickable = true
                 autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES
-                movementMethod = LinkMovementMethod.getInstance()
+                movementMethod = MyMovementMethod.getInstance()
             }
         }
 
