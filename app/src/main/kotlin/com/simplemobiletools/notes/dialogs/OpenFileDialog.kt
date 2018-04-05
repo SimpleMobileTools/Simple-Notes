@@ -25,22 +25,22 @@ class OpenFileDialog(val activity: SimpleActivity, val path: String, val callbac
                 .setPositiveButton(R.string.ok, null)
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
-            activity.setupDialogStuff(view, this, R.string.open_file) {
-                getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                    val updateFileOnEdit = view.open_file_type.checkedRadioButtonId == open_file_update_file
-                    val storePath = if (updateFileOnEdit) path else ""
-                    val storeContent = if (updateFileOnEdit) "" else File(path).readText()
+                    activity.setupDialogStuff(view, this, R.string.open_file) {
+                        getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                            val updateFileOnEdit = view.open_file_type.checkedRadioButtonId == open_file_update_file
+                            val storePath = if (updateFileOnEdit) path else ""
+                            val storeContent = if (updateFileOnEdit) "" else File(path).readText()
 
-                    if (updateFileOnEdit) {
-                        activity.handleSAFDialog(path) {
-                            saveNote(storeContent, storePath)
+                            if (updateFileOnEdit) {
+                                activity.handleSAFDialog(path) {
+                                    saveNote(storeContent, storePath)
+                                }
+                            } else {
+                                saveNote(storeContent, storePath)
+                            }
                         }
-                    } else {
-                        saveNote(storeContent, storePath)
                     }
                 }
-            }
-        }
     }
 
     private fun saveNote(storeContent: String, storePath: String) {

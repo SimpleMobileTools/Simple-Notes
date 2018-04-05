@@ -6,7 +6,6 @@ import android.view.View
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.updateTextColors
-import com.simplemobiletools.commons.extensions.useEnglishToggled
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
@@ -61,7 +60,7 @@ class SettingsActivity : SimpleActivity() {
         settings_use_english_holder.setOnClickListener {
             settings_use_english.toggle()
             config.useEnglish = settings_use_english.isChecked
-            useEnglishToggled()
+            System.exit(0)
         }
     }
 

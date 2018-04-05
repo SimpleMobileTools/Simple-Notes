@@ -111,16 +111,20 @@ class WidgetConfigureActivity : SimpleActivity() {
     }
 
     private fun pickBackgroundColor() {
-        ColorPickerDialog(this, mBgColorWithoutTransparency) {
-            mBgColorWithoutTransparency = it
-            updateBackgroundColor()
+        ColorPickerDialog(this, mBgColorWithoutTransparency) { wasPositivePressed, color ->
+            if (wasPositivePressed) {
+                mBgColorWithoutTransparency = color
+                updateBackgroundColor()
+            }
         }
     }
 
     private fun pickTextColor() {
-        ColorPickerDialog(this, mTextColor) {
-            mTextColor = it
-            updateTextColor()
+        ColorPickerDialog(this, mTextColor) { wasPositivePressed, color ->
+            if (wasPositivePressed) {
+                mTextColor = color
+                updateTextColor()
+            }
         }
     }
 

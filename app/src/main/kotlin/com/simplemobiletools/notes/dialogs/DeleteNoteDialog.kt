@@ -25,8 +25,8 @@ class DeleteNoteDialog(val activity: SimpleActivity, val note: Note, val callbac
                 .setPositiveButton(R.string.ok, { dialog, which -> dialogConfirmed(view.delete_note_checkbox.isChecked) })
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
-            activity.setupDialogStuff(view, this)
-        }
+                    activity.setupDialogStuff(view, this)
+                }
     }
 
     private fun dialogConfirmed(deleteFile: Boolean) {

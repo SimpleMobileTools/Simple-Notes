@@ -1,10 +1,10 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.support.v7.app.AlertDialog
-import android.view.WindowManager
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.humanizePath
 import com.simplemobiletools.commons.extensions.setupDialogStuff
+import com.simplemobiletools.commons.extensions.showKeyboard
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity
@@ -31,18 +31,18 @@ class ExportFilesDialog(val activity: SimpleActivity, val notes: ArrayList<Note>
                 .setPositiveButton(R.string.ok, null)
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
-            window!!.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
-            activity.setupDialogStuff(view, this, R.string.export_as_file) {
-                getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                    activity.handleSAFDialog(realPath) {
-                        val extension = view.file_extension.value
-                        activity.config.lastUsedExtension = extension
-                        activity.config.lastUsedSavePath = realPath
-                        callback(realPath, extension)
-                        dismiss()
+                    activity.setupDialogStuff(view, this, R.string.export_as_file) {
+                        showKeyboard(view.file_extension)
+                        getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                            activity.handleSAFDialog(realPath) {
+                                val extension = view.file_extension.value
+                                activity.config.lastUsedExtension = extension
+                                activity.config.lastUsedSavePath = realPath
+                                callback(realPath, extension)
+                                dismiss()
+                            }
+                        }
                     }
                 }
-            }
-        }
     }
 }

@@ -17,7 +17,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:padding="@dimen/activity_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_customize_colors_label"
@@ -36,7 +39,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:padding="@dimen/activity_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_use_english"
@@ -79,7 +85,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:padding="@dimen/activity_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_autosave_notes"
@@ -99,7 +108,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:padding="@dimen/activity_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_display_success"
@@ -119,7 +131,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:padding="@dimen/activity_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_clickable_links"
@@ -139,10 +154,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingBottom="@dimen/bigger_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"
-            android:paddingTop="@dimen/bigger_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_cursor_placement"
@@ -162,10 +177,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingBottom="@dimen/bigger_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"
-            android:paddingTop="@dimen/bigger_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_monospaced_font"
@@ -185,10 +200,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingBottom="@dimen/bigger_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"
-            android:paddingTop="@dimen/bigger_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_show_keyboard"
@@ -208,10 +223,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingBottom="@dimen/bigger_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"
-            android:paddingTop="@dimen/bigger_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_show_note_picker"
@@ -231,10 +246,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingBottom="@dimen/bigger_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"
-            android:paddingTop="@dimen/bigger_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_show_word_count"
@@ -254,7 +269,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:padding="@dimen/activity_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MySwitchCompat
                 android:id="@+id/settings_enable_line_wrap"
@@ -274,10 +292,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingBottom="@dimen/bigger_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"
-            android:paddingTop="@dimen/bigger_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_font_size_label"
@@ -309,10 +327,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingBottom="@dimen/bigger_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"
-            android:paddingTop="@dimen/bigger_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_gravity_label"
@@ -344,10 +362,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:background="?attr/selectableItemBackground"
-            android:paddingBottom="@dimen/bigger_margin"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"
-            android:paddingTop="@dimen/bigger_margin">
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin">
 
             <com.simplemobiletools.commons.views.MyTextView
                 android:id="@+id/settings_widget_note_label"
