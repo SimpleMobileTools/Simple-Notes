@@ -6,9 +6,10 @@ import android.content.Context
 import android.content.Intent
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.helpers.*
-import com.simplemobiletools.notes.models.Note
-import java.io.File
-import java.io.FileNotFoundException
+
+val Context.config: Config get() = Config.newInstance(applicationContext)
+
+val Context.dbHelper: DBHelper get() = DBHelper.newInstance(applicationContext)
 
 fun Context.getTextSize() =
         when (config.fontSize) {
@@ -19,28 +20,12 @@ fun Context.getTextSize() =
         }
 
 fun Context.updateWidget() {
-    val widgetManager = AppWidgetManager.getInstance(this)
-    val ids = widgetManager.getAppWidgetIds(ComponentName(this, MyWidgetProvider::class.java))
-
-    Intent(this, MyWidgetProvider::class.java).apply {
-        action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
-        putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
-        sendBroadcast(this)
-    }
-}
-
-val Context.config: Config get() = Config.newInstance(applicationContext)
-
-val Context.dbHelper: DBHelper get() = DBHelper.newInstance(applicationContext)
-
-fun Context.getNoteStoredValue(note: Note): String? {
-    return if (note.path.isNotEmpty()) {
-        return try {
-            File(note.path).readText()
-        } catch (e: FileNotFoundException) {
-            null
+    val widgetIDs = AppWidgetManager.getInstance(this).getAppWidgetIds(ComponentName(this, MyWidgetProvider::class.java))
+    if (widgetIDs.isNotEmpty()) {
+        Intent(this, MyWidgetProvider::class.java).apply {
+            action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+            putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIDs)
+            sendBroadcast(this)
         }
-    } else {
-        note.value
     }
 }

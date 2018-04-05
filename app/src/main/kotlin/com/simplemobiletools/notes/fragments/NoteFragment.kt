@@ -16,7 +16,10 @@ import com.simplemobiletools.commons.extensions.beVisible
 import com.simplemobiletools.commons.extensions.onGlobalLayout
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
-import com.simplemobiletools.notes.extensions.*
+import com.simplemobiletools.notes.extensions.config
+import com.simplemobiletools.notes.extensions.dbHelper
+import com.simplemobiletools.notes.extensions.getTextSize
+import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.helpers.*
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.fragment_note.*
@@ -61,8 +64,7 @@ class NoteFragment : Fragment() {
         view.notes_view.apply {
             typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
 
-            val fileContents = context.getNoteStoredValue(note)
-
+            val fileContents = note.getNoteStoredValue()
             if (fileContents == null) {
                 (activity as MainActivity).deleteNote(false)
                 return
@@ -126,7 +128,7 @@ class NoteFragment : Fragment() {
         }
 
         val newText = getCurrentNoteViewText()
-        val oldText = context!!.getNoteStoredValue(note)
+        val oldText = note.getNoteStoredValue()
         if (newText != null && newText != oldText) {
             note.value = newText
             saveNoteValue(note)
