@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 3.2.0 *(2018-04-05)*
+----------------------------
+
+ * Fix moving the cursor with keyboard arrow keys
+ * Couple smaller improvements here and there
+
 Version 3.1.2 *(2018-02-26)*
 ----------------------------
 
