@@ -45,6 +45,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
     <string name="import_notes">Birden çok dosyayı not olarak içe aktar</string>
+    <string name="import_folder">Import folder</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
