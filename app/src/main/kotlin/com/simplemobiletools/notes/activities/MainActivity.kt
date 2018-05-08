@@ -14,10 +14,7 @@ import android.view.MenuItem
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.LICENSE_LEAK_CANARY
-import com.simplemobiletools.commons.helpers.LICENSE_RTL
-import com.simplemobiletools.commons.helpers.LICENSE_STETHO
-import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
+import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.RadioItem
@@ -138,6 +135,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             R.id.rename_note -> displayRenameDialog()
             R.id.share -> shareText()
             R.id.open_file -> tryOpenFile()
+            R.id.import_folder -> tryOpenFolder()
             R.id.export_as_file -> tryExportAsFile()
             R.id.export_all_notes -> tryExportAllNotes()
             R.id.delete_note -> displayDeleteNotePrompt()
@@ -309,6 +307,13 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
+    private fun openFolder(path: String, onChecksPassed: (file: File) -> Unit) {
+        val file = File(path)
+        if (file.isDirectory) {
+            onChecksPassed(file)
+        }
+    }
+
     private fun importFileWithSync(uri: Uri) {
         when (uri.scheme) {
             "file" -> openPath(uri.path)
@@ -331,6 +336,31 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
             val note = Note(0, title, "", TYPE_NOTE, path)
             addNewNote(note)
+        }
+    }
+
+    private fun tryOpenFolder() {
+        handlePermission(PERMISSION_READ_STORAGE) {
+            if (it) {
+                openFolder()
+            }
+        }
+    }
+
+    private fun openFolder() {
+        FilePickerDialog(this, pickFile = false) {
+            openFolder(it) {
+                ImportFolderDialog(this, it.path) {
+                    mNotes = dbHelper.getNotes()
+                    showSaveButton = false
+                    invalidateOptionsMenu()
+                    initViewPager()
+                    updateSelectedNote(it)
+                    view_pager.onGlobalLayout {
+                        mAdapter?.focusEditText(getNoteIndexWithId(it))
+                    }
+                }
+            }
         }
     }
 
