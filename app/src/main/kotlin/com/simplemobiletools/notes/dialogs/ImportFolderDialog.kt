@@ -8,7 +8,7 @@ import com.simplemobiletools.notes.activities.SimpleActivity
 import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.models.Note
-import kotlinx.android.synthetic.main.dialog_open_file.view.*
+import kotlinx.android.synthetic.main.dialog_import_folder.view.*
 import java.io.File
 
 class ImportFolderDialog(val activity: SimpleActivity, val path: String, val callback: (id: Int) -> Unit) : AlertDialog.Builder(activity) {
