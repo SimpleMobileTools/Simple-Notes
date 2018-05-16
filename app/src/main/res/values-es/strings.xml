@@ -45,6 +45,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas las notas como archivos</string>
     <string name="import_notes">Importar múltiples archivos como notas</string>
+    <string name="import_folder">Import folder</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

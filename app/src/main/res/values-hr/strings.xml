@@ -45,6 +45,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
     <string name="import_notes">Uvezi više datoteka kao bilješke</string>
+    <string name="import_folder">Import folder</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->

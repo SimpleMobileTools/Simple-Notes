@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/open_file_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_margin"
+    android:paddingRight="@dimen/activity_margin"
+    android:paddingTop="@dimen/activity_margin">
+
+    <com.simplemobiletools.commons.views.MyTextView
+        android:id="@+id/open_file_filename_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/folder"
+        android:textSize="@dimen/smaller_text_size"/>
+
+    <com.simplemobiletools.commons.views.MyTextView
+        android:id="@+id/open_file_filename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:layout_marginLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/small_margin"
+        android:paddingTop="@dimen/small_margin"/>
+
+    <RadioGroup
+        android:id="@+id/open_file_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.simplemobiletools.commons.views.MyCompatRadioButton
+            android:id="@+id/open_file_update_file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingTop="@dimen/activity_margin"
+            android:text="@string/update_file_at_note"/>
+
+        <com.simplemobiletools.commons.views.MyCompatRadioButton
+            android:id="@+id/open_file_content_only"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_margin"
+            android:paddingTop="@dimen/activity_margin"
+            android:text="@string/only_import_file_content"/>
+
+    </RadioGroup>
+</LinearLayout>
