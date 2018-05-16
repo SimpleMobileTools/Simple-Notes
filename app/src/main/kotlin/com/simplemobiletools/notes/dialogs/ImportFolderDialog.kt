@@ -2,7 +2,10 @@ package com.simplemobiletools.notes.dialogs
 
 import android.support.v7.app.AlertDialog
 import android.view.ViewGroup
-import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.extensions.getFilenameFromPath
+import com.simplemobiletools.commons.extensions.humanizePath
+import com.simplemobiletools.commons.extensions.isImageVideoGif
+import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity
 import com.simplemobiletools.notes.extensions.dbHelper
@@ -34,8 +37,8 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
 
     private fun saveFolder(updateFilesOnEdit: Boolean) {
         val folder = File(path)
-        var lastSavedNoteId = -1;
-        folder.listFiles({ file ->
+        var lastSavedNoteId = -1
+        folder.listFiles { file ->
             val filename = file.path.getFilenameFromPath()
             when {
                 filename.isImageVideoGif() -> false
@@ -43,7 +46,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
                 activity.dbHelper.doesTitleExist(filename) -> false
                 else -> true
             }
-        }).forEach {
+        }.forEach {
             val storePath = if (updateFilesOnEdit) it.path else ""
             val storeContent = if (updateFilesOnEdit) "" else it.readText()
 
@@ -66,7 +69,6 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
     private fun saveNote(storeContent: String, storePath: String): Int {
         val filename = storePath.getFilenameFromPath()
         val note = Note(0, filename, storeContent, TYPE_NOTE, storePath)
-        val id = activity.dbHelper.insertNote(note)
-        return id
+        return activity.dbHelper.insertNote(note)
     }
 }
