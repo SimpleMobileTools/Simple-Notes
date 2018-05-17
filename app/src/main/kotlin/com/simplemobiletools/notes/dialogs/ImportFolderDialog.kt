@@ -48,15 +48,16 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
                 else -> true
             }
         }.forEach {
-            val storePath = if (updateFilesOnEdit) it.path else ""
-            val storeContent = if (updateFilesOnEdit) "" else it.readText()
+            val storePath = if (updateFilesOnEdit) it.absolutePath else ""
+            val title = it.absolutePath.getFilenameFromPath()
+            val value = if (updateFilesOnEdit) "" else it.readText()
 
             if (updateFilesOnEdit) {
                 activity.handleSAFDialog(path) {
-                    lastSavedNoteId = saveNote(storeContent, storePath)
+                    lastSavedNoteId = saveNote(title, value, storePath)
                 }
             } else {
-                lastSavedNoteId = saveNote(storeContent, storePath)
+                lastSavedNoteId = saveNote(title, value, storePath)
             }
         }
 
@@ -67,9 +68,8 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
         dialog.dismiss()
     }
 
-    private fun saveNote(storeContent: String, storePath: String): Int {
-        val filename = storePath.getFilenameFromPath()
-        val note = Note(0, filename, storeContent, TYPE_NOTE, storePath)
+    private fun saveNote(title: String, value: String, path: String): Int {
+        val note = Note(0, title, value, TYPE_NOTE, path)
         return activity.dbHelper.insertNote(note)
     }
 }

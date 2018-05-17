@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteDatabase.CONFLICT_IGNORE
 import android.database.sqlite.SQLiteOpenHelper
 import com.simplemobiletools.commons.extensions.getIntValue
 import com.simplemobiletools.commons.extensions.getStringValue
@@ -57,7 +58,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun insertNote(note: Note): Int {
         val values = fillContentValues(note)
-        return mDb.insert(TABLE_NAME, null, values).toInt()
+        return mDb.insertWithOnConflict(TABLE_NAME, null, values, CONFLICT_IGNORE).toInt()
     }
 
     private fun fillContentValues(note: Note): ContentValues {
