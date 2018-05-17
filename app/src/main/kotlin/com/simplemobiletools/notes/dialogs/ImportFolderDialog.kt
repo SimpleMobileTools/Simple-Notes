@@ -41,6 +41,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
         folder.listFiles { file ->
             val filename = file.path.getFilenameFromPath()
             when {
+                file.isDirectory -> false
                 filename.isImageVideoGif() -> false
                 file.length() > 10 * 1000 * 1000 -> false
                 activity.dbHelper.doesTitleExist(filename) -> false
