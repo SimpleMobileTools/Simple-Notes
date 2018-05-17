@@ -102,14 +102,14 @@ class WidgetConfigureActivity : SimpleActivity() {
     private fun updateBackgroundColor() {
         mBgColor = mBgColorWithoutTransparency.adjustAlpha(mBgAlpha)
         notes_view.setBackgroundColor(mBgColor)
-        config_bg_color.setFillWithStroke(mBgColor, Color.BLACK)
         config_save.setBackgroundColor(mBgColor)
+        config_bg_color.setFillWithStroke(mBgColor, Color.BLACK)
     }
 
     private fun updateTextColor() {
-        config_text_color.setFillWithStroke(mTextColor, Color.BLACK)
         config_save.setTextColor(mTextColor)
         notes_view.setTextColor(mTextColor)
+        config_text_color.setFillWithStroke(mTextColor, Color.BLACK)
     }
 
     private fun pickBackgroundColor() {
