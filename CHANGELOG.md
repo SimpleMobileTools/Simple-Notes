@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 4.0.0 *(2018-05-17)*
+----------------------------
+
+ * Allow customizing the app launcher icon color
+ * Allow importing multiple text files from a folder (by trubitsyn)
+ * Split settings into multiple sections
+ * Allow changing the widget color from settings without recreating it
+
 Version 3.2.0 *(2018-04-05)*
 ----------------------------
 
