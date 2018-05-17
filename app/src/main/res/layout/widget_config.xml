@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
-    android:layout_margin="@dimen/activity_margin"
-    android:paddingBottom="@dimen/activity_margin">
+    android:layout_margin="@dimen/activity_margin">
 
     <TextView
         android:id="@+id/notes_view"
@@ -19,10 +18,10 @@
         android:padding="@dimen/activity_margin"
         android:text="@string/widget_config"/>
 
-    <Button
+    <ImageView
         android:id="@+id/config_bg_color"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/widget_colorpicker_size"
+        android:layout_height="@dimen/widget_colorpicker_size"
         android:layout_above="@+id/config_text_color"/>
 
     <RelativeLayout
@@ -44,10 +43,10 @@
             android:paddingRight="@dimen/activity_margin"/>
     </RelativeLayout>
 
-    <Button
+    <ImageView
         android:id="@+id/config_text_color"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/widget_colorpicker_size"
+        android:layout_height="@dimen/widget_colorpicker_size"
         android:layout_alignParentBottom="true"/>
 
     <Button
@@ -61,7 +60,7 @@
         android:fontFamily="sans-serif-light"
         android:paddingLeft="@dimen/activity_margin"
         android:paddingRight="@dimen/activity_margin"
-        android:text="@android:string/ok"
+        android:text="@string/ok"
         android:textColor="@android:color/white"
         android:textSize="@dimen/big_text_size"/>
 

@@ -1,10 +1,12 @@
 package com.simplemobiletools.notes.activities
 
-import android.os.Bundle
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
+import com.simplemobiletools.notes.R
 
 open class SimpleActivity : BaseSimpleActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    override fun getAppIconIDs() = arrayListOf(
+            R.mipmap.ic_launcher
+    )
+
+    override fun getAppLauncherName() = getString(R.string.app_launcher_name)
 }

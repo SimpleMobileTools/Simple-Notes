@@ -1,11 +1,14 @@
 package com.simplemobiletools.notes.activities
 
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.beVisibleIf
+import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
 import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
@@ -45,7 +48,16 @@ class SettingsActivity : SimpleActivity() {
         setupGravity()
         setupWidgetNote()
         setupCursorPlacement()
+        setupCustomizeWidgetColors()
         updateTextColors(settings_scrollview)
+        setupSectionColors()
+    }
+
+    private fun setupSectionColors() {
+        val adjustedPrimaryColor = getAdjustedPrimaryColor()
+        arrayListOf(widgets_label).forEach {
+            it.setTextColor(adjustedPrimaryColor)
+        }
     }
 
     private fun setupCustomizeColors() {
@@ -211,4 +223,13 @@ class SettingsActivity : SimpleActivity() {
 
     private fun getCurrentWidgetNoteTitle(currentNoteId: Int, notes: List<Note>) =
             notes.firstOrNull { it.id == currentNoteId }?.title ?: ""
+
+    private fun setupCustomizeWidgetColors() {
+        settings_customize_widget_colors_holder.setOnClickListener {
+            Intent(this, WidgetConfigureActivity::class.java).apply {
+                putExtra(IS_CUSTOMIZING_COLORS, true)
+                startActivity(this)
+            }
+        }
+    }
 }
