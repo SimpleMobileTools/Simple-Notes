@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.RemoteViews
+import com.simplemobiletools.commons.extensions.getLaunchIntent
 import com.simplemobiletools.commons.extensions.setBackgroundColor
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SplashActivity
@@ -32,7 +33,7 @@ class MyWidgetProvider : AppWidgetProvider() {
             }
 
             val widgetId = context.config.widgetNoteId
-            val startActivityIntent = Intent(context, SplashActivity::class.java)
+            val startActivityIntent = context.getLaunchIntent() ?: Intent(context, SplashActivity::class.java)
             val startActivityPendingIntent = PendingIntent.getActivity(context, widgetId, startActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT)
             views.setPendingIntentTemplate(R.id.notes_widget_listview, startActivityPendingIntent)
 
@@ -45,7 +46,7 @@ class MyWidgetProvider : AppWidgetProvider() {
 
     private fun setupAppOpenIntent(context: Context, views: RemoteViews, id: Int) {
         val widgetId = context.config.widgetNoteId
-        val intent = Intent(context, SplashActivity::class.java)
+        val intent = context.getLaunchIntent() ?: Intent(context, SplashActivity::class.java)
         intent.putExtra(OPEN_NOTE_ID, widgetId)
         val pendingIntent = PendingIntent.getActivity(context, widgetId, intent, 0)
         views.setOnClickPendingIntent(id, pendingIntent)
