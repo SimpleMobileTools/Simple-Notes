@@ -45,7 +45,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">將全部筆記匯出成檔案</string>
     <string name="import_notes">將多個檔案匯入成筆記</string>
-    <string name="import_folder">Import folder</string>
+    <string name="import_folder">匯入資料夾</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
