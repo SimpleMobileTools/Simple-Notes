@@ -539,25 +539,25 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun displayDeleteNotePrompt() {
         DeleteNoteDialog(this, mCurrentNote) {
             deleteNote(it)
-                    }
+        }
     }
 
     fun deleteNote(deleteFile: Boolean) {
         if (mNotes.size <= 1) {
-                        return
+            return
         }
 
         if (!deleteFile) {
             doDeleteNote(mCurrentNote, deleteFile)
         } else {
             handleSAFDialog(mCurrentNote.path) {
-                                doDeleteNote(mCurrentNote, deleteFile)
+                doDeleteNote(mCurrentNote, deleteFile)
             }
         }
     }
 
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
-                dbHelper.deleteNote(mCurrentNote.id)
+        dbHelper.deleteNote(mCurrentNote.id)
         mNotes = dbHelper.getNotes()
 
         val firstNoteId = mNotes[0].id

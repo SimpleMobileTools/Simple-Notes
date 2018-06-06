@@ -53,7 +53,7 @@ class NotesRecyclerAdapter(val _notes: List<Note>) :
 
                 OpenNoteFragmentHelper.openNote(fragment,bundle,adapter)
 
-                            }
+            }
         })
     }
 

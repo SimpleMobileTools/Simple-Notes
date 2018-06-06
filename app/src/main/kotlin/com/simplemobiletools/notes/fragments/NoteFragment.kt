@@ -117,7 +117,7 @@ class NoteFragment : Fragment() {
     fun getNotesView() = view.notes_view
 
     fun saveText() {
-                if (note.path.isNotEmpty() && !File(note.path).exists()) {
+        if (note.path.isNotEmpty() && !File(note.path).exists()) {
             return
         }
 
@@ -172,7 +172,7 @@ class NoteFragment : Fragment() {
 
         override fun afterTextChanged(editable: Editable) {
             val text = editable.toString()
-                        setWordCounter(text)
+            setWordCounter(text)
             (activity as MainActivity).currentNoteTextChanged(text)
         }
     }
