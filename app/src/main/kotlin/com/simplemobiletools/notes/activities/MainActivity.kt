@@ -28,11 +28,11 @@ import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.extensions.updateWidget
-import com.simplemobiletools.notes.helpers.MIME_TEXT_PLAIN
-import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
-import com.simplemobiletools.notes.helpers.TYPE_NOTE
+import com.simplemobiletools.notes.fragments.NoteFragment
+import com.simplemobiletools.notes.fragments.RecyclerViewFragment
+import com.simplemobiletools.notes.helpers.*
 import com.simplemobiletools.notes.models.Note
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_view_pager_main.*
 import java.io.File
 import java.nio.charset.Charset
 
@@ -47,16 +47,35 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private var storedEnableLineWrap = true
     private var showSaveButton = false
     private var saveNoteButton: MenuItem? = null
+    private lateinit var recyclerViewFragment : RecyclerViewFragment
+
+
+    companion object {
+        lateinit var mainActivityInstance : MainActivity
+        var listNotesLayout : Boolean = false
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         appLaunched(BuildConfig.APPLICATION_ID)
 
-        initViewPager()
+        mainActivityInstance = this
+        /*
+            Use one layout for whole session, setting change requires restart. This makes sure that
+            nothing breaks.
+         */
+        listNotesLayout = config.listNotesLayout
 
-        pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
-        pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
+        mNotes = dbHelper.getNotes()
+        if(MainActivity.listNotesLayout) {
+            initRecyclerView()
+        }else {
+            setContentView(R.layout.activity_view_pager_main)
+            initViewPager()
+            pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
+            pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
+        }
+
         checkWhatsNewDialog()
 
         intent.apply {
@@ -75,7 +94,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
 
         storeStateVariables()
-        if (config.showNotePicker) {
+        if (config.showNotePicker && MainActivity.listNotesLayout==false) {
             displayOpenNoteDialog()
         }
         wasInit = true
@@ -83,18 +102,22 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     override fun onResume() {
         super.onResume()
-        if (storedEnableLineWrap != config.enableLineWrap) {
-            initViewPager()
-        }
 
-        invalidateOptionsMenu()
-        pager_title_strip.apply {
-            setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
-            setGravity(Gravity.CENTER_VERTICAL)
-            setNonPrimaryAlpha(0.4f)
-            setTextColor(config.textColor)
+        if(MainActivity.listNotesLayout==false) {
+
+            if (storedEnableLineWrap != config.enableLineWrap) {
+                initViewPager()
+            }
+
+            invalidateOptionsMenu()
+            pager_title_strip.apply {
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
+                setGravity(Gravity.CENTER_VERTICAL)
+                setNonPrimaryAlpha(0.4f)
+                setTextColor(config.textColor)
+            }
+            updateTextColors(view_pager)
         }
-        updateTextColors(view_pager)
     }
 
     override fun onPause() {
@@ -119,12 +142,12 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton
         }
 
-        pager_title_strip.beVisibleIf(shouldBeVisible)
+        if(MainActivity.listNotesLayout==false) pager_title_strip.beVisibleIf(shouldBeVisible)
         return super.onPrepareOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (config.autosaveNotes) {
+        if (config.autosaveNotes && MainActivity.listNotesLayout==false) {
             saveCurrentNote()
         }
 
@@ -206,8 +229,16 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
+    private fun initRecyclerView() {
+        setContentView(R.layout.fragment_container)
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        recyclerViewFragment = RecyclerViewFragment()
+        fragmentTransaction.replace(android.R.id.content,recyclerViewFragment, RECYCLER_VIEW_FRAGMENT)
+        fragmentTransaction.commit()
+    }
+
     private fun initViewPager() {
-        mNotes = dbHelper.getNotes()
         mCurrentNote = mNotes[0]
         var wantedNoteId = intent.getIntExtra(OPEN_NOTE_ID, -1)
         if (wantedNoteId == -1) {
@@ -236,16 +267,22 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun displayRenameDialog() {
         RenameNoteDialog(this, mCurrentNote) {
-            mCurrentNote = it
-            initViewPager()
+            if(MainActivity.listNotesLayout==false) {
+                mCurrentNote = it
+                initViewPager()
+            }else{
+                supportActionBar?.setTitle(mCurrentNote.title)
+            }
         }
     }
 
     private fun updateSelectedNote(id: Int) {
         config.currentNoteId = id
-        val index = getNoteIndexWithId(id)
-        view_pager.currentItem = index
-        mCurrentNote = mNotes[index]
+        if(MainActivity.listNotesLayout==false) {
+            val index = getNoteIndexWithId(id)
+            view_pager.currentItem = index
+            mCurrentNote = mNotes[index]
+        }
     }
 
     private fun displayNewNoteDialog(value: String = "") {
@@ -257,15 +294,28 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun addNewNote(note: Note) {
         val id = dbHelper.insertNote(note)
-        mNotes = dbHelper.getNotes()
-        showSaveButton = false
-        invalidateOptionsMenu()
-        initViewPager()
-        updateSelectedNote(id)
-        view_pager.onGlobalLayout {
-            mAdapter?.focusEditText(getNoteIndexWithId(id))
+        if(MainActivity.listNotesLayout==false) {
+            mNotes = dbHelper.getNotes()
+            showSaveButton = false
+            invalidateOptionsMenu()
+            initViewPager()
+            updateSelectedNote(id)
+            view_pager.onGlobalLayout {
+                mAdapter?.focusEditText(getNoteIndexWithId(id))
+            }
+        }else {
+
+            var fragment = NoteFragment()
+            var bundle = Bundle()
+            bundle.putInt(NOTE_ID, id)
+            bundle.putString("title",note.title)
+            fragment.arguments = bundle
+
+            OpenNoteFragmentHelper.openNote(fragment,bundle,recyclerViewFragment.notesRecyclerAdapter)
         }
     }
+
+
 
     private fun launchAbout() {
         val faqItems = arrayListOf(
@@ -351,13 +401,18 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         FilePickerDialog(this, pickFile = false) {
             openFolder(it) {
                 ImportFolderDialog(this, it.path) {
-                    mNotes = dbHelper.getNotes()
-                    showSaveButton = false
-                    invalidateOptionsMenu()
-                    initViewPager()
-                    updateSelectedNote(it)
-                    view_pager.onGlobalLayout {
-                        mAdapter?.focusEditText(getNoteIndexWithId(it))
+                    if(MainActivity.listNotesLayout==false) {
+                        mNotes = dbHelper.getNotes()
+                        showSaveButton = false
+                        invalidateOptionsMenu()
+                        initViewPager()
+                        updateSelectedNote(it)
+                        view_pager.onGlobalLayout {
+                            mAdapter?.focusEditText(getNoteIndexWithId(it))
+                        }
+                    }else{
+                        recyclerViewFragment.notesRecyclerAdapter.notes = dbHelper.getNotes()
+                        recyclerViewFragment.notesRecyclerAdapter.notifyDataSetChanged()
                     }
                 }
             }
@@ -463,11 +518,23 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
-    private fun getCurrentNoteText() = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteViewText(view_pager.currentItem)
+    private fun getCurrentNoteText() : String?{
+        if(MainActivity.listNotesLayout==false) {
+            return (view_pager.adapter as NotesPagerAdapter).getCurrentNoteViewText(view_pager.currentItem)
+        }else{
+            return recyclerViewFragment.notesRecyclerAdapter.currentlyOpenNote.getCurrentNoteViewText()
+        }
+    }
 
     private fun addTextToCurrentNote(text: String) = (view_pager.adapter as NotesPagerAdapter).appendText(view_pager.currentItem, text)
 
-    private fun saveCurrentNote() = (view_pager.adapter as NotesPagerAdapter).saveCurrentNote(view_pager.currentItem)
+    private fun saveCurrentNote(){
+        if(MainActivity.listNotesLayout==false) {
+            (view_pager.adapter as NotesPagerAdapter).saveCurrentNote(view_pager.currentItem)
+        }else{
+            recyclerViewFragment.notesRecyclerAdapter.currentlyOpenNote.saveText()
+        }
+    }
 
     private fun displayDeleteNotePrompt() {
         DeleteNoteDialog(this, mCurrentNote) {
@@ -500,7 +567,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             updateWidget()
         }
         invalidateOptionsMenu()
-        initViewPager()
+
+        if(MainActivity.listNotesLayout == false) initViewPager()
 
         if (deleteFile) {
             deleteFile(FileDirItem(note.path, note.title)) {
@@ -508,6 +576,12 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                     toast(R.string.unknown_error_occurred)
                 }
             }
+        }
+
+        if(MainActivity.listNotesLayout) {
+            val fragmentManager = supportFragmentManager
+            fragmentManager.popBackStack()
+            supportActionBar?.setTitle(R.string.app_launcher_name)
         }
     }
 
@@ -577,6 +651,18 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             add(Release(39, R.string.release_39))
             add(Release(45, R.string.release_45))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        if(MainActivity.listNotesLayout) {
+            val fragmentManager = supportFragmentManager
+            if (fragmentManager.findFragmentByTag(RECYCLER_VIEW_FRAGMENT).isResumed) {
+                supportActionBar?.setTitle(R.string.app_launcher_name)
+            }
+            showSaveButton = false
         }
     }
 }

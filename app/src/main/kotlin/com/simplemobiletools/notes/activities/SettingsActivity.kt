@@ -51,6 +51,7 @@ class SettingsActivity : SimpleActivity() {
         setupCustomizeWidgetColors()
         updateTextColors(settings_scrollview)
         setupSectionColors()
+        setupLayoutStyle()
     }
 
     private fun setupSectionColors() {
@@ -230,6 +231,14 @@ class SettingsActivity : SimpleActivity() {
                 putExtra(IS_CUSTOMIZING_COLORS, true)
                 startActivity(this)
             }
+        }
+    }
+
+    private fun setupLayoutStyle(){
+        settings_layout_toggle.isChecked = config.listNotesLayout
+        settings_layout_holder.setOnClickListener {
+            settings_layout_toggle.toggle()
+            config.listNotesLayout = settings_layout_toggle.isChecked
         }
     }
 }

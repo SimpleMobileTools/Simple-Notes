@@ -71,7 +71,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     }
 
     private fun saveConfig() {
-        val views = RemoteViews(packageName, R.layout.activity_main)
+        val views = RemoteViews(packageName, R.layout.activity_view_pager_main)
         views.setBackgroundColor(R.id.notes_view, mBgColor)
         AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
 

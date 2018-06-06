@@ -7,10 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.util.Linkify
 import android.util.TypedValue
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import com.simplemobiletools.commons.extensions.beGone
 import com.simplemobiletools.commons.extensions.beVisible
 import com.simplemobiletools.commons.extensions.onGlobalLayout
@@ -34,6 +31,7 @@ class NoteFragment : Fragment() {
     private lateinit var db: DBHelper
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        if(MainActivity.listNotesLayout) setHasOptionsMenu(true)
         view = inflater.inflate(R.layout.fragment_note, container, false) as ViewGroup
         noteId = arguments!!.getInt(NOTE_ID)
         db = context!!.dbHelper
@@ -143,11 +141,11 @@ class NoteFragment : Fragment() {
     private fun saveNoteValue(note: Note) {
         if (note.path.isEmpty()) {
             db.updateNoteValue(note)
-            (activity as MainActivity).noteSavedSuccessfully(note.title)
+            MainActivity.mainActivityInstance.noteSavedSuccessfully(note.title)
         } else {
             val currentText = getCurrentNoteViewText()
             if (currentText != null) {
-                (activity as MainActivity).exportNoteValueToFile(note.path, currentText, true)
+                MainActivity.mainActivityInstance.exportNoteValueToFile(note.path, currentText, true)
             }
         }
     }
@@ -178,4 +176,20 @@ class NoteFragment : Fragment() {
             (activity as MainActivity).currentNoteTextChanged(text)
         }
     }
+
+    override fun onPrepareOptionsMenu(menu : Menu) {
+        if(MainActivity.listNotesLayout){
+            menu.apply {
+                findItem(R.id.rename_note).isVisible = true
+                findItem(R.id.export_as_file).isVisible = true
+                findItem(R.id.delete_note).isVisible = true
+                findItem(R.id.open_note).isVisible = false
+                findItem(R.id.open_file).isVisible = false
+                findItem(R.id.new_note).isVisible = false
+                findItem(R.id.import_folder).isVisible = false
+            }
+        }
+        return super.onPrepareOptionsMenu(menu)
+    }
+
 }

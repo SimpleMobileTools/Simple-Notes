@@ -19,6 +19,7 @@ const val CURSOR_PLACEMENT = "cursor_placement"
 const val LAST_USED_EXTENSION = "last_used_extension"
 const val LAST_USED_SAVE_PATH = "last_used_save_path"
 const val ENABLE_LINE_WRAP = "enable_line_wrap"
+const val LIST_NOTES_LAYOUT = "list_notes_layout"
 
 // gravity
 const val GRAVITY_LEFT = 0
@@ -37,3 +38,7 @@ const val TYPE_CHECKLIST = 1
 
 // mime types
 const val MIME_TEXT_PLAIN = "text/plain"
+
+// fragment tags
+const val EDIT_NOTE_FRAGMENT = "edit_note_fragment"
+const val RECYCLER_VIEW_FRAGMENT = "recycler_view_fragment"
