@@ -37,12 +37,17 @@ class RecyclerViewFragment : Fragment(){
     }
 
     override fun onPrepareOptionsMenu(menu : Menu) {
-        (menu.findItem(R.id.rename_note) as MenuItem).setVisible(false)
-        (menu.findItem(R.id.save_note) as MenuItem).setVisible(false)
-        (menu.findItem(R.id.export_as_file) as MenuItem).setVisible(false)
-        (menu.findItem(R.id.open_note) as MenuItem).setVisible(false)
-        (menu.findItem(R.id.share) as MenuItem).setVisible(false)
-        (menu.findItem(R.id.delete_note) as MenuItem).setVisible(false)
+        
+        menu.apply {
+            findItem(R.id.rename_note) .isVisible = false
+            findItem(R.id.save_note) .isVisible = false
+            findItem(R.id.export_as_file) .isVisible = false
+            findItem(R.id.open_note) .isVisible = false
+            findItem(R.id.share) .isVisible = false
+            findItem(R.id.delete_note) .isVisible = false
+        }
+        
+        return super.onPrepareOptionsMenu(menu)
     }
 
 }

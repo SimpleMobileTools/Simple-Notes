@@ -179,12 +179,15 @@ class NoteFragment : Fragment() {
 
     override fun onPrepareOptionsMenu(menu : Menu) {
         if(MainActivity.listNotesLayout){
-            (menu.findItem(R.id.rename_note) as MenuItem).setVisible(true)
-            (menu.findItem(R.id.export_as_file) as MenuItem).setVisible(true)
-            (menu.findItem(R.id.delete_note) as MenuItem).setVisible(true)
-            (menu.findItem(R.id.open_note) as MenuItem).setVisible(false)
-            (menu.findItem(R.id.open_file) as MenuItem).setVisible(false)
-            (menu.findItem(R.id.new_note) as MenuItem).setVisible(false)
+            menu.apply {
+                findItem(R.id.rename_note).isVisible = true
+                findItem(R.id.export_as_file).isVisible = true
+                findItem(R.id.delete_note).isVisible = true
+                findItem(R.id.open_note).isVisible = false
+                findItem(R.id.open_file).isVisible = false
+                findItem(R.id.new_note).isVisible = false
+                findItem(R.id.import_folder).isVisible = false
+            }
         }
         return super.onPrepareOptionsMenu(menu)
     }
