@@ -68,4 +68,8 @@ class Config(context: Context) : BaseConfig(context) {
     var lastUsedSavePath: String
         get() = prefs.getString(LAST_USED_SAVE_PATH, Environment.getExternalStorageDirectory().toString())
         set(lastUsedSavePath) = prefs.edit().putString(LAST_USED_SAVE_PATH, lastUsedSavePath).apply()
+
+    var listNotesLayout : Boolean
+        get() = prefs.getBoolean(LIST_NOTES_LAYOUT,false)
+        set(listNotesLayout) = prefs.edit().putBoolean(LIST_NOTES_LAYOUT, listNotesLayout).apply()
 }

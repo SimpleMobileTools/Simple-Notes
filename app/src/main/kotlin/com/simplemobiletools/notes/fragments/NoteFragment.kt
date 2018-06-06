@@ -7,10 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.util.Linkify
 import android.util.TypedValue
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import com.simplemobiletools.commons.extensions.beGone
 import com.simplemobiletools.commons.extensions.beVisible
 import com.simplemobiletools.commons.extensions.onGlobalLayout
@@ -34,6 +31,7 @@ class NoteFragment : Fragment() {
     private lateinit var db: DBHelper
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        if(MainActivity.listNotesLayout) setHasOptionsMenu(true)
         view = inflater.inflate(R.layout.fragment_note, container, false) as ViewGroup
         noteId = arguments!!.getInt(NOTE_ID)
         db = context!!.dbHelper
@@ -119,7 +117,7 @@ class NoteFragment : Fragment() {
     fun getNotesView() = view.notes_view
 
     fun saveText() {
-        if (note.path.isNotEmpty() && !File(note.path).exists()) {
+                if (note.path.isNotEmpty() && !File(note.path).exists()) {
             return
         }
 
@@ -143,11 +141,11 @@ class NoteFragment : Fragment() {
     private fun saveNoteValue(note: Note) {
         if (note.path.isEmpty()) {
             db.updateNoteValue(note)
-            (activity as MainActivity).noteSavedSuccessfully(note.title)
+            MainActivity.mainActivityInstance.noteSavedSuccessfully(note.title)
         } else {
             val currentText = getCurrentNoteViewText()
             if (currentText != null) {
-                (activity as MainActivity).exportNoteValueToFile(note.path, currentText, true)
+                MainActivity.mainActivityInstance.exportNoteValueToFile(note.path, currentText, true)
             }
         }
     }
@@ -174,8 +172,18 @@ class NoteFragment : Fragment() {
 
         override fun afterTextChanged(editable: Editable) {
             val text = editable.toString()
-            setWordCounter(text)
+                        setWordCounter(text)
             (activity as MainActivity).currentNoteTextChanged(text)
         }
     }
+
+    override fun onPrepareOptionsMenu(menu : Menu) {
+        if(MainActivity.listNotesLayout){
+            (menu.findItem(R.id.rename_note) as MenuItem).setVisible(true)
+            (menu.findItem(R.id.export_as_file) as MenuItem).setVisible(true)
+            (menu.findItem(R.id.delete_note) as MenuItem).setVisible(true)
+            (menu.findItem(R.id.open_note) as MenuItem).setVisible(false)
+        }
+    }
+
 }

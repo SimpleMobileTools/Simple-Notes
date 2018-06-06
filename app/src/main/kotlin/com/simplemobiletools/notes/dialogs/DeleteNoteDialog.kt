@@ -30,7 +30,7 @@ class DeleteNoteDialog(val activity: SimpleActivity, val note: Note, val callbac
     }
 
     private fun dialogConfirmed(deleteFile: Boolean) {
-        callback(deleteFile && note.path.isNotEmpty())
+                callback(deleteFile && note.path.isNotEmpty())
         dialog?.dismiss()
     }
 }
