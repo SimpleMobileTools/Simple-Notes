@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Prosty Notatnik</string>
+    <string name="app_name">Prosty notatnik</string>
     <string name="app_launcher_name">Notatnik</string>
     <string name="widget_config">Dziękujemy za korzystanie z aplikacji.\nPo więcej prostych aplikacji, takich jak ta, udaj się na SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nie mogę udostępnić pustej notatki</string>
-    <string name="simple_note">Prosta Notatka</string>
+    <string name="simple_note">Prosta notatka</string>
     <string name="new_note">Dodaj nową notatkę</string>
     <string name="no_title">Nazwij swoją notatkę</string>
     <string name="title_taken">Notatka o tej nazwie już istnieje</string>
@@ -30,7 +30,7 @@
     <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisaniu notatki</string>
     <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy.</string>
     <string name="place_cursor_end">Umieszczaj kursor na końcu notatki</string>
-    <string name="monospaced_font">Używaj czcionki monospace</string>
+    <string name="monospaced_font">Używaj czcionki o stałej szerokości</string>
     <string name="show_keyboard">Pokazuj klawiaturę na starcie</string>
     <string name="show_word_count">Pokazuj liczbę słów</string>
     <string name="alignment">Wyrównanie tekstu w notatkach</string>
@@ -45,7 +45,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Eksportuj wszystkie notatki jako pliki</string>
     <string name="import_notes">Importuj pliki jako notatki</string>
-    <string name="import_folder">Import folder</string>
+    <string name="import_folder">Importuj folder</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
