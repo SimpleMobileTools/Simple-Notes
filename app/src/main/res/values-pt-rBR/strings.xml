@@ -17,7 +17,7 @@
     <string name="create_new_note">Criar uma nova nota</string>
     <string name="add_to_note">Adicionar à nota</string>
 
-    <!-- Arquivo de notas -->
+    <!-- File notes -->
     <string name="export_as_file">Exportar como arquivo</string>
     <string name="file_too_large">Arquivo muito grande, o limite é 10 MB</string>
     <string name="only_import_file_content">Importe apenas o conteúdo do arquivo\n(modificar o arquivo não afetará a nota)</string>
@@ -26,7 +26,7 @@
     <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
 
-    <!-- Configurações -->
+    <!-- Settings -->
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
     <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>
     <string name="place_cursor_end">Coloque o cursor no final da nota</string>
@@ -42,13 +42,13 @@
     <string name="autosave_notes">Salvar notas automaticamente</string>
     <string name="enable_line_wrap">Ativar quebra de linha</string>
 
-    <!-- Importar / Exportar -->
+    <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como arquivo</string>
     <string name="import_notes">Importar múltiplos arquivos como notas</string>
     <string name="import_folder">Importar pasta</string>
 
-    <!-- Strings mostardas apenas na Google Playstore. Opcional, mas é bom ter -->
-    <!-- Descrição curta tem que ter menos de 80 caracteres -->
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Um campo de texto para adicionar as suas notas.</string>
     <string name="app_long_description">
         Precisa escrever uma nota sobre algo? Então este aplicativo é para você! Sem complicações, basta escrever o seu texto na nota. As notas são salvas automaticamente, para que não as perca inesperadamente. Possui suporte a diversas notas independentes.
@@ -61,7 +61,7 @@
     </string>
 
     <!--
-        Não encontrou todas as chaves paraa traduzir? Existem mais algumas em:
+        Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
     -->
 </resources>
