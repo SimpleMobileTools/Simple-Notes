@@ -28,7 +28,7 @@
 
     <!-- Settings -->
     <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
-    <string name="links_and_emails_clickable">Gör länkar och e-postadresser klickbara</string>
+    <string name="links_and_emails_clickable">Gör länkar och e-postadresser tryckbara</string>
     <string name="place_cursor_end">Placera markören vid slutet av anteckningen</string>
     <string name="monospaced_font">Använd ett teckensnitt med fast bredd</string>
     <string name="show_keyboard">Visa tangentbordet vid start</string>
@@ -45,7 +45,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Exportera alla anteckningar som filer</string>
     <string name="import_notes">Importera flera filer som anteckningar</string>
-    <string name="import_folder">Import folder</string>
+    <string name="import_folder">Importera mapp</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
