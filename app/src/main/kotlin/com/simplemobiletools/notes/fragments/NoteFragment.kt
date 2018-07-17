@@ -87,11 +87,7 @@ class NoteFragment : Fragment() {
             view.notes_counter.beGone()
         }
 
-        if (config.showWordCount || !config.autosaveNotes) {
-            view.notes_view.addTextChangedListener(textWatcher)
-        } else {
-            view.notes_view.removeTextChangedListener(textWatcher)
-        }
+        view.notes_view.addTextChangedListener(textWatcher)
     }
 
     override fun onPause() {

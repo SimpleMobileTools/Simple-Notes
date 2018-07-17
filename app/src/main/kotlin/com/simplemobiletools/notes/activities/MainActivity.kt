@@ -564,9 +564,11 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     fun currentNoteTextChanged(newText: String) {
-        showSaveButton = newText != mCurrentNote.value
-        if (showSaveButton != saveNoteButton?.isVisible) {
-            invalidateOptionsMenu()
+        if (!config.autosaveNotes) {
+            showSaveButton = newText != mCurrentNote.value
+            if (showSaveButton != saveNoteButton?.isVisible) {
+                invalidateOptionsMenu()
+            }
         }
     }
 
