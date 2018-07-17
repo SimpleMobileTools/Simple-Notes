@@ -5,9 +5,7 @@ import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
-import com.simplemobiletools.commons.extensions.beVisibleIf
-import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
-import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.R
@@ -33,6 +31,7 @@ class SettingsActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
 
+        setupPurchaseThankYou()
         setupCustomizeColors()
         setupUseEnglish()
         setupAvoidWhatsNew()
@@ -57,6 +56,13 @@ class SettingsActivity : SimpleActivity() {
         val adjustedPrimaryColor = getAdjustedPrimaryColor()
         arrayListOf(text_label, startup_label, saving_label, widgets_label).forEach {
             it.setTextColor(adjustedPrimaryColor)
+        }
+    }
+
+    private fun setupPurchaseThankYou() {
+        settings_purchase_thank_you_holder.beVisibleIf(config.appRunCount > 10 && !isThankYouInstalled())
+        settings_purchase_thank_you_holder.setOnClickListener {
+            launchPurchaseThankYouIntent()
         }
     }
 
