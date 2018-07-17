@@ -79,6 +79,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             displayOpenNoteDialog()
         }
         wasInit = true
+        checkAppOnSDCard()
     }
 
     override fun onResume() {
