@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 4.1.0 *(2018-07-17)*
+----------------------------
+
+ * Added undo/redo
+ * Fixed a couple glitches related to device rotating
+
 Version 4.0.0 *(2018-05-17)*
 ----------------------------
 
