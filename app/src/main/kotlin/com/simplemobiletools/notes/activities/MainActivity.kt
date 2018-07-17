@@ -132,6 +132,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         when (item.itemId) {
             R.id.open_note -> displayOpenNoteDialog()
             R.id.save_note -> saveNote()
+            R.id.undo -> undo()
+            R.id.redo -> redo()
             R.id.new_note -> displayNewNoteDialog()
             R.id.rename_note -> displayRenameDialog()
             R.id.share -> shareText()
@@ -287,11 +289,11 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun openFile() {
         FilePickerDialog(this) {
-            openFile(it, true, {
+            openFile(it, true) {
                 OpenFileDialog(this, it.path) {
                     addNewNote(it)
                 }
-            })
+            }
         }
     }
 
@@ -522,6 +524,14 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         saveCurrentNote()
         showSaveButton = false
         invalidateOptionsMenu()
+    }
+
+    private fun undo() {
+        mAdapter?.undo(view_pager.currentItem)
+    }
+
+    private fun redo() {
+        mAdapter?.redo(view_pager.currentItem)
     }
 
     private fun getNoteIndexWithId(id: Int): Int {

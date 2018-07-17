@@ -4,7 +4,9 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.text.Editable
+import android.text.Selection
 import android.text.TextWatcher
+import android.text.style.UnderlineSpan
 import android.text.util.Linkify
 import android.util.TypedValue
 import android.view.Gravity
@@ -22,12 +24,18 @@ import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.extensions.updateWidget
 import com.simplemobiletools.notes.helpers.*
 import com.simplemobiletools.notes.models.Note
+import com.simplemobiletools.notes.models.TextHistory
+import com.simplemobiletools.notes.models.TextHistoryItem
 import kotlinx.android.synthetic.main.fragment_note.*
 import kotlinx.android.synthetic.main.fragment_note.view.*
 import kotlinx.android.synthetic.main.note_view_horiz_scrollable.view.*
 import java.io.File
 
+// text history handling taken from https://gist.github.com/zeleven/0cfa738c1e8b65b23ff7df1fc30c9f7e
 class NoteFragment : Fragment() {
+    private var textHistory = TextHistory()
+
+    private var isUndoOrRedo = false
     private var noteId = 0
     lateinit var note: Note
     lateinit var view: ViewGroup
@@ -161,11 +169,69 @@ class NoteFragment : Fragment() {
         notes_counter.text = words.count { it.isNotEmpty() }.toString()
     }
 
-    private var textWatcher: TextWatcher = object : TextWatcher {
-        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+    fun undo() {
+        val edit = textHistory.getPrevious() ?: return
+
+        val text = view.notes_view.editableText
+        val start = edit.start
+        val end = start + if (edit.after != null) edit.after.length else 0
+
+        isUndoOrRedo = true
+        text.replace(start, end, edit.before)
+        isUndoOrRedo = false
+
+        for (span in text.getSpans(0, text.length, UnderlineSpan::class.java)) {
+            text.removeSpan(span)
         }
 
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        Selection.setSelection(text, if (edit.before == null) {
+            start
+        } else {
+            start + edit.before.length
+        })
+    }
+
+    fun redo() {
+        val edit = textHistory.getNext() ?: return
+
+        val text = view.notes_view.editableText
+        val start = edit.start
+        val end = start + if (edit.before != null) edit.before.length else 0
+
+        isUndoOrRedo = true
+        text.replace(start, end, edit.after)
+        isUndoOrRedo = false
+
+        for (o in text.getSpans(0, text.length, UnderlineSpan::class.java)) {
+            text.removeSpan(o)
+        }
+
+        Selection.setSelection(text, if (edit.after == null) {
+            start
+        } else {
+            start + edit.after.length
+        })
+    }
+
+    fun isUndoAvailable() = textHistory.position > 0
+
+    fun isRedoAvailable() = textHistory.position < textHistory.history.size
+
+    private var textWatcher: TextWatcher = object : TextWatcher {
+        private var beforeChange: CharSequence? = null
+        private var afterChange: CharSequence? = null
+
+        override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+            if (!isUndoOrRedo) {
+                beforeChange = s.subSequence(start, start + count)
+            }
+        }
+
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+            if (!isUndoOrRedo) {
+                afterChange = s.subSequence(start, start + count)
+                textHistory.add(TextHistoryItem(start, beforeChange!!, afterChange!!))
+            }
         }
 
         override fun afterTextChanged(editable: Editable) {
