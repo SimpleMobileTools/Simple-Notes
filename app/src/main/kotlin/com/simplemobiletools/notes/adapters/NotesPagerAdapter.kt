@@ -20,8 +20,9 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
         val id = notes[position].id
         bundle.putInt(NOTE_ID, id)
 
-        if (fragments.containsKey(position))
+        if (fragments.containsKey(position)) {
             return fragments[position]!!
+        }
 
         val fragment = NoteFragment()
         fragment.arguments = bundle
@@ -52,5 +53,11 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         super.destroyItem(container, position, `object`)
         fragments.remove(position)
+    }
+
+    override fun instantiateItem(container: ViewGroup, position: Int): Any {
+        val fragment = super.instantiateItem(container, position) as NoteFragment
+        fragments[position] = fragment
+        return fragment
     }
 }
