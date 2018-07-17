@@ -7,6 +7,16 @@
         android:title="@string/save"
         app:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/undo"
+        android:icon="@drawable/ic_undo"
+        android:title="@string/undo"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/redo"
+        android:icon="@drawable/ic_redo"
+        android:title="@string/redo"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/open_note"
         android:icon="@drawable/ic_open"
         android:title="@string/open_note"
