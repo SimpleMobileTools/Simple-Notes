@@ -1,5 +1,6 @@
 package com.simplemobiletools.notes.fragments
 
+import android.annotation.SuppressLint
 import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -115,7 +116,7 @@ class NoteFragment : Fragment() {
         if (menuVisible && noteId != 0) {
             val currentText = getCurrentNoteViewText()
             if (currentText != null) {
-                (activity as MainActivity).currentNoteTextChanged(currentText)
+                (activity as MainActivity).currentNoteTextChanged(currentText, isUndoAvailable(), isRedoAvailable())
             }
         }
     }
@@ -158,6 +159,7 @@ class NoteFragment : Fragment() {
 
     fun getCurrentNoteViewText() = view.notes_view?.text?.toString()
 
+    @SuppressLint("RtlHardcoded")
     private fun getTextGravity() = when (context!!.config.gravity) {
         GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
         GRAVITY_RIGHT -> Gravity.RIGHT
@@ -237,7 +239,7 @@ class NoteFragment : Fragment() {
         override fun afterTextChanged(editable: Editable) {
             val text = editable.toString()
             setWordCounter(text)
-            (activity as MainActivity).currentNoteTextChanged(text)
+            (activity as MainActivity).currentNoteTextChanged(text, isUndoAvailable(), isRedoAvailable())
         }
     }
 }

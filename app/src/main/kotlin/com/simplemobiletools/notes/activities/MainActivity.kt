@@ -46,6 +46,8 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private var wasInit = false
     private var storedEnableLineWrap = true
     private var showSaveButton = false
+    private var showUndoButton = false
+    private var showRedoButton = false
     private var saveNoteButton: MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -105,6 +107,11 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
+        menu.apply {
+            findItem(R.id.undo).isVisible = showUndoButton
+            findItem(R.id.redo).isVisible = showRedoButton
+        }
+
         return true
     }
 
@@ -573,12 +580,27 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         config.currentNoteId = mCurrentNote.id
     }
 
-    fun currentNoteTextChanged(newText: String) {
+    fun currentNoteTextChanged(newText: String, showUndo: Boolean, showRedo: Boolean) {
+        var shouldRecreateMenu = false
+        if (showUndo != showUndoButton) {
+            showUndoButton = showUndo
+            shouldRecreateMenu = true
+        }
+
+        if (showRedo != showRedoButton) {
+            showRedoButton = showRedo
+            shouldRecreateMenu = true
+        }
+
         if (!config.autosaveNotes) {
             showSaveButton = newText != mCurrentNote.value
             if (showSaveButton != saveNoteButton?.isVisible) {
-                invalidateOptionsMenu()
+                shouldRecreateMenu = true
             }
+        }
+
+        if (shouldRecreateMenu) {
+            invalidateOptionsMenu()
         }
     }
 
