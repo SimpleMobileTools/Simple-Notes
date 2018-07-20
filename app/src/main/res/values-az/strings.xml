@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Sadə Qeydlər</string>
+    <string name="app_launcher_name">Qeydlər</string>
+    <string name="widget_config">Sadə Qeydləri istifadə etdiyiniz üçün təşəkkürlər.\nDaha çox sadə tətbiq üçün SimpleMobileTools.com saytını ziyarət edin.</string>
+    <string name="cannot_share_empty_text">Boş mətni paylaşmaq olmur</string>
+    <string name="simple_note">Sadə Qeyd</string>
+    <string name="new_note">Yeni qeyd əlavə et</string>
+    <string name="no_title">Qeydi adlandırın</string>
+    <string name="title_taken">Bu başlıqda qeyd artıq mövcuddur</string>
+    <string name="open_note">Qeydi aç</string>
+    <string name="delete_note">Qeydi sil</string>
+    <string name="delete_note_prompt_message">\"%s\" qeydini silmək istədiyinizə əminsiniz?</string>
+    <string name="pick_a_note">Qeyd götür</string>
+    <string name="rename_note">Qeydi yenidən adlandır</string>
+    <string name="general_note">Ümumi qeyd</string>
+    <string name="create_new_note">Yeni qeyd yarat</string>
+    <string name="add_to_note">Qeydə əlavə et</string>
+
+    <!-- File notes -->
+    <string name="open_file">Faylı Aç</string>
+    <string name="export_as_file">Fayl kimi çıxar</string>
+    <string name="file_too_large">Fayl çox böyükdür, limit 10mb\"dır</string>
+    <string name="only_import_file_content">Yalnız fayl məzmununu daxil et\n(faylı dəyişmək qeydı təsir etməyəcək)</string>
+    <string name="update_file_at_note">Qeydi təzələdikdə faylı da təzələ\n(fayl silinirsə qeyd də silinər və ya yeri dəyişər)</string>
+    <string name="delete_file_itself">Həmçinin \"%s\" faylını da sil</string>
+    <string name="note_saved_successfully">\"%s\" qeydi uğurla saxlandı</string>
+    <string name="note_exported_successfully">\"%s\" qeydi uğurla çıxarıldı</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">Uğurlu saxlama mesajını göstər</string>
+    <string name="links_and_emails_clickable">Keçidləri və e-poçtları toxuna bilən et</string>
+    <string name="place_cursor_end">Kursoru qeydin sonunda yerləşdir</string>
+    <string name="monospaced_font">Tək aralıqlı şrift işlət</string>
+    <string name="show_keyboard">Başlanğıcda klaviaturanı göstər</string>
+    <string name="show_word_count">Söz sayını göstər</string>
+    <string name="alignment">Sıra</string>
+    <string name="left">Sol</string>
+    <string name="center">Mərkəz</string>
+    <string name="right">Sağ</string>
+    <string name="widget_note">Widgetdə işlədilmiş qeyd</string>
+    <string name="show_note_picker">Başlanğıcda qeyd götürəni göstər</string>
+    <string name="autosave_notes">Qeydləri avtomatik saxla</string>
+    <string name="enable_line_wrap">Cız sarğısını göstər</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Bütün qeydləri fayl şəklində çıxar</string>
+    <string name="import_notes">Toplu faylları qeyd şəklində daxil et</string>
+    <string name="import_folder">Qovluq daxil et</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">A simple text field for adding quick notes, without ads.</string>
+    <string name="app_long_description">
+        Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
+
+        You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
+
+        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+
+        This app is just one piece of a bigger series of apps. You can find the rest of them at https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
