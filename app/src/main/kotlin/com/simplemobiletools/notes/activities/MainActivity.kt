@@ -566,7 +566,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         val shareTitle = res.getString(R.string.share_via)
         Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_SUBJECT, res.getString(R.string.simple_note))
+            putExtra(Intent.EXTRA_SUBJECT, mCurrentNote.title)
             putExtra(Intent.EXTRA_TEXT, text)
             type = "text/plain"
             startActivity(Intent.createChooser(this, shareTitle))
