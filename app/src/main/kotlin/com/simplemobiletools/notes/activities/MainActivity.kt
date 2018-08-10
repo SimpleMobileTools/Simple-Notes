@@ -278,12 +278,15 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun launchAbout() {
+        val licenses = LICENSE_STETHO or LICENSE_RTL or LICENSE_LEAK_CANARY
+
         val faqItems = arrayListOf(
                 FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
                 FAQItem(R.string.faq_4_title_commons, R.string.faq_4_text_commons),
                 FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons)
         )
-        startAboutActivity(R.string.app_name, LICENSE_STETHO or LICENSE_RTL or LICENSE_LEAK_CANARY, BuildConfig.VERSION_NAME, faqItems)
+
+        startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
     }
 
     private fun tryOpenFile() {
