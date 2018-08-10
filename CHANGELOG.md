@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 4.2.0 *(2018-08-10)*
+----------------------------
+
+ * Use the note title as the subject at sharing
+ * Couple other UX improvements
+
 Version 4.1.0 *(2018-07-17)*
 ----------------------------
 
