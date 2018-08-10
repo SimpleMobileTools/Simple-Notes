@@ -77,9 +77,10 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
 
         storeStateVariables()
-        if (config.showNotePicker) {
+        if (config.showNotePicker && savedInstanceState == null) {
             displayOpenNoteDialog()
         }
+
         wasInit = true
         checkAppOnSDCard()
     }
