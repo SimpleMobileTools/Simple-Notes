@@ -34,8 +34,9 @@ import java.io.File
 
 // text history handling taken from https://gist.github.com/zeleven/0cfa738c1e8b65b23ff7df1fc30c9f7e
 class NoteFragment : Fragment() {
-    private var textHistory = TextHistory()
+    private val TEXT = "text"
 
+    private var textHistory = TextHistory()
     private var isUndoOrRedo = false
     private var noteId = 0
     lateinit var note: Note
@@ -102,7 +103,7 @@ class NoteFragment : Fragment() {
     override fun onPause() {
         super.onPause()
         if (context!!.config.autosaveNotes) {
-            saveText()
+            saveText(false)
         }
         view.notes_view.removeTextChangedListener(textWatcher)
     }
@@ -110,7 +111,7 @@ class NoteFragment : Fragment() {
     override fun setMenuVisibility(menuVisible: Boolean) {
         super.setMenuVisibility(menuVisible)
         if (!menuVisible && noteId != 0 && context?.config?.autosaveNotes == true) {
-            saveText()
+            saveText(false)
         }
 
         if (menuVisible && noteId != 0) {
@@ -121,9 +122,22 @@ class NoteFragment : Fragment() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString(TEXT, getCurrentNoteViewText())
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        if (savedInstanceState != null) {
+            note.value = savedInstanceState.getString(TEXT) ?: ""
+            view.notes_view.setText(note.value)
+        }
+    }
+
     fun getNotesView() = view.notes_view
 
-    fun saveText() {
+    fun saveText(force: Boolean) {
         if (note.path.isNotEmpty() && !File(note.path).exists()) {
             return
         }
@@ -134,7 +148,7 @@ class NoteFragment : Fragment() {
 
         val newText = getCurrentNoteViewText()
         val oldText = note.getNoteStoredValue()
-        if (newText != null && newText != oldText) {
+        if (newText != null && (newText != oldText || force)) {
             note.value = newText
             saveNoteValue(note)
             context!!.updateWidget()

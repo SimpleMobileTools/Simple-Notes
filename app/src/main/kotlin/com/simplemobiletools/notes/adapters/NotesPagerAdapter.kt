@@ -38,7 +38,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     fun appendText(position: Int, text: String) = fragments[position]?.getNotesView()?.append(text)
 
-    fun saveCurrentNote(position: Int) = fragments[position]?.saveText()
+    fun saveCurrentNote(position: Int, force: Boolean) = fragments[position]?.saveText(force)
 
     fun focusEditText(position: Int) = fragments[position]?.focusEditText()
 

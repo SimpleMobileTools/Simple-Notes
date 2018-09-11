@@ -134,7 +134,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (config.autosaveNotes) {
-            saveCurrentNote()
+            saveCurrentNote(false)
         }
 
         when (item.itemId) {
@@ -481,7 +481,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun addTextToCurrentNote(text: String) = (view_pager.adapter as NotesPagerAdapter).appendText(view_pager.currentItem, text)
 
-    private fun saveCurrentNote() = (view_pager.adapter as NotesPagerAdapter).saveCurrentNote(view_pager.currentItem)
+    private fun saveCurrentNote(force: Boolean) = (view_pager.adapter as NotesPagerAdapter).saveCurrentNote(view_pager.currentItem, force)
 
     private fun displayDeleteNotePrompt() {
         DeleteNoteDialog(this, mCurrentNote) {
@@ -532,7 +532,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun saveNote() {
-        saveCurrentNote()
+        saveCurrentNote(true)
         showSaveButton = false
         invalidateOptionsMenu()
     }
