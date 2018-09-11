@@ -4,7 +4,7 @@ import android.support.v7.app.AlertDialog
 import android.view.ViewGroup
 import com.simplemobiletools.commons.extensions.getFilenameFromPath
 import com.simplemobiletools.commons.extensions.humanizePath
-import com.simplemobiletools.commons.extensions.isImageVideoGif
+import com.simplemobiletools.commons.extensions.isMediaFile
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity
@@ -42,7 +42,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
             val filename = file.path.getFilenameFromPath()
             when {
                 file.isDirectory -> false
-                filename.isImageVideoGif() -> false
+                filename.isMediaFile() -> false
                 file.length() > 10 * 1000 * 1000 -> false
                 activity.dbHelper.doesTitleExist(filename) -> false
                 else -> true

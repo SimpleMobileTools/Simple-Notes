@@ -310,7 +310,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
 
     private fun openFile(path: String, checkTitle: Boolean, onChecksPassed: (file: File) -> Unit) {
         val file = File(path)
-        if (path.isImageVideoGif()) {
+        if (path.isMediaFile()) {
             toast(R.string.invalid_file_format)
         } else if (file.length() > 10 * 1000 * 1000) {
             toast(R.string.file_too_large)
