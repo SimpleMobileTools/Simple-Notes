@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="@null"
         android:gravity="left"
-        android:padding="@dimen/activity_margin"
+        android:padding="@dimen/small_margin"
         android:visibility="gone"/>
 
     <TextView
@@ -20,7 +20,7 @@
         android:layout_height="match_parent"
         android:background="@null"
         android:gravity="center_horizontal"
-        android:padding="@dimen/activity_margin"
+        android:padding="@dimen/small_margin"
         android:visibility="gone"/>
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_height="match_parent"
         android:background="@null"
         android:gravity="right"
-        android:padding="@dimen/activity_margin"
+        android:padding="@dimen/small_margin"
         android:visibility="gone"/>
 
 </RelativeLayout>
