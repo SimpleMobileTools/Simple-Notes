@@ -13,11 +13,12 @@
     <string name="pick_a_note">Selecione uma nota</string>
     <string name="rename_note">Renomear nota</string>
     <string name="general_note">Nota genérica</string>
-    <string name="open_file">Abrir ficheiro</string>
     <string name="create_new_note">Criar uma nota</string>
     <string name="add_to_note">Adicionar a uma nota</string>
+    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
 
     <!-- File notes -->
+    <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
     <string name="file_too_large">Ficheiro muito grande, o limite são 10 MB</string>
     <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro\n(se alterar o ficheiro, a nota fica intacta)</string>

@@ -13,11 +13,12 @@
     <string name="pick_a_note">Välj en anteckning</string>
     <string name="rename_note">Byt namn på anteckning</string>
     <string name="general_note">Allmän anteckning</string>
-    <string name="open_file">Öppna fil</string>
     <string name="create_new_note">Skapa en ny anteckning</string>
     <string name="add_to_note">Lägg till i anteckning</string>
+    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
 
     <!-- File notes -->
+    <string name="open_file">Öppna fil</string>
     <string name="export_as_file">Exportera som fil</string>
     <string name="file_too_large">Filen är för stor, gränsen är 10 MB</string>
     <string name="only_import_file_content">Importera bara innehållet i filen\n(anteckningen påverkas inte om filen ändras)</string>

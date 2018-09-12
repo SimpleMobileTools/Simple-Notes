@@ -15,6 +15,7 @@
     <string name="general_note">Alapértelmezett jegyzet</string>
     <string name="create_new_note">Create a new note</string>
     <string name="add_to_note">Add to note</string>
+    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
 
     <!-- File notes -->
     <string name="open_file">Fájl megnyitása</string>

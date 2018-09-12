@@ -15,6 +15,7 @@
     <string name="general_note">Generel note</string>
     <string name="create_new_note">Opret en ny note</string>
     <string name="add_to_note">Føj til note</string>
+    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
 
     <!-- File notes -->
     <string name="open_file">Åbn fil …</string>
