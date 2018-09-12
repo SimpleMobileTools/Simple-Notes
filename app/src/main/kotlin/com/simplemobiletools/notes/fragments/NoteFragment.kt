@@ -38,6 +38,7 @@ class NoteFragment : Fragment() {
 
     private var textHistory = TextHistory()
     private var isUndoOrRedo = false
+    private var skipTextUpdating = false
     private var noteId = 0
     lateinit var note: Note
     lateinit var view: ViewGroup
@@ -84,7 +85,10 @@ class NoteFragment : Fragment() {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
             gravity = getTextGravity()
             if (text.toString() != fileContents) {
-                setText(fileContents)
+                if (!skipTextUpdating) {
+                    setText(fileContents)
+                }
+                skipTextUpdating = false
                 setSelection(if (config.placeCursorToEnd) text.length else 0)
             }
         }
@@ -130,8 +134,9 @@ class NoteFragment : Fragment() {
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
         if (savedInstanceState != null) {
-            note.value = savedInstanceState.getString(TEXT) ?: ""
-            view.notes_view.setText(note.value)
+            skipTextUpdating = true
+            val newText = savedInstanceState.getString(TEXT) ?: ""
+            view.notes_view.setText(newText)
         }
     }
 
