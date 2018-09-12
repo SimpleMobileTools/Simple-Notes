@@ -34,6 +34,7 @@ class MyWidgetProvider : AppWidgetProvider() {
 
             val widgetId = context.config.widgetNoteId
             val startActivityIntent = context.getLaunchIntent() ?: Intent(context, SplashActivity::class.java)
+            startActivityIntent.putExtra(OPEN_NOTE_ID, widgetId)
             val startActivityPendingIntent = PendingIntent.getActivity(context, widgetId, startActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT)
             views.setPendingIntentTemplate(R.id.notes_widget_listview, startActivityPendingIntent)
 
