@@ -11,6 +11,7 @@ import android.view.ActionMode
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
@@ -174,6 +175,21 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         super.onActionModeFinished(mode)
         if (config.clickableLinks) {
             noteViewWithTextSelected?.movementMethod = LinkMovementMethod.getInstance()
+        }
+    }
+
+    override fun onBackPressed() {
+        if (!config.autosaveNotes && mAdapter?.anyHasUnsavedChanges() == true) {
+            ConfirmationAdvancedDialog(this, "", R.string.unsaved_changes_warning, R.string.save, R.string.discard) {
+                if (it) {
+                    mAdapter?.saveAllFragmentTexts()
+                    super.onBackPressed()
+                } else {
+                    super.onBackPressed()
+                }
+            }
+        } else {
+            super.onBackPressed()
         }
     }
 

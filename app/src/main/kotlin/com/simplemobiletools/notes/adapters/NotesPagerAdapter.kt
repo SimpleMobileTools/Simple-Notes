@@ -42,6 +42,10 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     fun focusEditText(position: Int) = fragments[position]?.focusEditText()
 
+    fun anyHasUnsavedChanges() = fragments.values.any { it.hasUnsavedChanges() }
+
+    fun saveAllFragmentTexts() = fragments.values.forEach { it.saveText(false) }
+
     fun undo(position: Int) = fragments[position]?.undo()
 
     fun redo(position: Int) = fragments[position]?.redo()
