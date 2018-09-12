@@ -193,6 +193,11 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         }
     }
 
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        view_pager.currentItem = getWantedNoteIndex()
+    }
+
     private fun storeStateVariables() {
         config.apply {
             storedEnableLineWrap = enableLineWrap
@@ -236,23 +241,24 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun initViewPager() {
         mNotes = dbHelper.getNotes()
         mCurrentNote = mNotes[0]
-        var wantedNoteId = intent.getIntExtra(OPEN_NOTE_ID, -1)
-        if (wantedNoteId == -1) {
-            wantedNoteId = config.currentNoteId
-        }
-
-        val itemIndex = getNoteIndexWithId(wantedNoteId)
-
         mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
         view_pager.apply {
             adapter = mAdapter
-            currentItem = itemIndex
+            currentItem = getWantedNoteIndex()
             addOnPageChangeListener(this@MainActivity)
         }
 
         if (!config.showKeyboard) {
             hideKeyboard()
         }
+    }
+
+    private fun getWantedNoteIndex(): Int {
+        var wantedNoteId = intent.getIntExtra(OPEN_NOTE_ID, -1)
+        if (wantedNoteId == -1) {
+            wantedNoteId = config.currentNoteId
+        }
+        return getNoteIndexWithId(wantedNoteId)
     }
 
     private fun currentNotesView() = if (view_pager == null) {
