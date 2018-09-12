@@ -16,6 +16,7 @@
     <string name="create_new_note">Criar uma nova nota</string>
     <string name="add_to_note">Adicionar à nota</string>
     <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
+    <string name="note_shown_widget">Note shown in the widget:</string>
 
     <!-- File notes -->
     <string name="open_file">Abrir arquivo</string>

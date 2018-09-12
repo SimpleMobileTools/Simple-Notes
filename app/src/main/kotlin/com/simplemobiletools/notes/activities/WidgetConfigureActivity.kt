@@ -4,19 +4,20 @@ import android.app.Activity
 import android.appwidget.AppWidgetManager
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.TypedValue
 import android.widget.RemoteViews
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
-import com.simplemobiletools.commons.extensions.adjustAlpha
-import com.simplemobiletools.commons.extensions.setBackgroundColor
-import com.simplemobiletools.commons.extensions.setFillWithStroke
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
+import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.MyWidgetProvider
+import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.widget_config.*
 
 class WidgetConfigureActivity : SimpleActivity() {
@@ -25,6 +26,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mBgColor = 0
     private var mBgColorWithoutTransparency = 0
     private var mTextColor = 0
+    private var mNotes = ArrayList<Note>()
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         useDynamicTheme = false
@@ -40,9 +42,12 @@ class WidgetConfigureActivity : SimpleActivity() {
             finish()
         }
 
+        updateTextColors(notes_picker_holder)
         config_save.setOnClickListener { saveConfig() }
         config_bg_color.setOnClickListener { pickBackgroundColor() }
         config_text_color.setOnClickListener { pickTextColor() }
+        notes_picker_value.setOnClickListener { showNoteSelector() }
+        notes_picker_holder.background = ColorDrawable(config.backgroundColor)
     }
 
     override fun onResume() {
@@ -68,6 +73,12 @@ class WidgetConfigureActivity : SimpleActivity() {
 
         mTextColor = config.widgetTextColor
         updateTextColor()
+        mNotes = dbHelper.getNotes()
+        notes_picker_holder.beVisibleIf(mNotes.size > 1)
+    }
+
+    private fun showNoteSelector() {
+
     }
 
     private fun saveConfig() {

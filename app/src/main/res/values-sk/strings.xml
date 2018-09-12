@@ -16,6 +16,7 @@
     <string name="create_new_note">Vytvoriť novú poznámku</string>
     <string name="add_to_note">Pridať k poznámke</string>
     <string name="unsaved_changes_warning">Máte nejaké neuložené zmeny. Čo s nimi chcete spraviť?</string>
+    <string name="note_shown_widget">Poznámka zobrazená vo widgete:</string>
 
     <!-- File notes -->
     <string name="open_file">Otvoriť súbor</string>
