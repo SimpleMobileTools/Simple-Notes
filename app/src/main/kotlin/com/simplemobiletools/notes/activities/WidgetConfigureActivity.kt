@@ -10,8 +10,10 @@ import android.util.TypedValue
 import android.widget.RemoteViews
 import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
+import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
+import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.dbHelper
@@ -27,6 +29,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mBgColorWithoutTransparency = 0
     private var mTextColor = 0
     private var mNotes = ArrayList<Note>()
+    private var mCurrentNoteId = 0
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         useDynamicTheme = false
@@ -75,10 +78,26 @@ class WidgetConfigureActivity : SimpleActivity() {
         updateTextColor()
         mNotes = dbHelper.getNotes()
         notes_picker_holder.beVisibleIf(mNotes.size > 1)
+        updateCurrentNote(mNotes.first())
     }
 
     private fun showNoteSelector() {
+        val items = ArrayList<RadioItem>()
+        mNotes.forEach {
+            items.add(RadioItem(it.id, it.title))
+        }
 
+        RadioGroupDialog(this, items, mCurrentNoteId) {
+            val selectedId = it as Int
+            updateCurrentNote(mNotes.first { it.id == selectedId })
+        }
+    }
+
+    private fun updateCurrentNote(note: Note) {
+        mCurrentNoteId = note.id
+        notes_picker_value.text = note.title
+        val sampleValue = if (note.value.isEmpty()) getString(R.string.widget_config) else note.value
+        notes_view.text = sampleValue
     }
 
     private fun saveConfig() {
