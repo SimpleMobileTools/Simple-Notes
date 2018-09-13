@@ -219,4 +219,22 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     }
 
     fun isValidId(id: Int) = id > 0
+
+    fun getNoteWidgetIds(noteId: Int): ArrayList<Int> {
+        val widgetIds = ArrayList<Int>()
+        val cols = arrayOf(COL_WIDGET_ID)
+        val selection = "$COL_NOTE_ID = ?"
+        val selectionArgs = arrayOf(noteId.toString())
+        var cursor: Cursor? = null
+        try {
+            cursor = mDb.query(WIDGETS_TABLE_NAME, cols, selection, selectionArgs, null, null, null)
+            if (cursor?.moveToFirst() == true) {
+                val widgetId = cursor.getIntValue(COL_WIDGET_ID)
+                widgetIds.add(widgetId)
+            }
+        } finally {
+            cursor?.close()
+        }
+        return widgetIds
+    }
 }

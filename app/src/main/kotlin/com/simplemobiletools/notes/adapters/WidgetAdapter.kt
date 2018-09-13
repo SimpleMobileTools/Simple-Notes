@@ -14,15 +14,17 @@ import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.GRAVITY_CENTER
 import com.simplemobiletools.notes.helpers.GRAVITY_RIGHT
+import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
 
-class WidgetAdapter(val context: Context) : RemoteViewsService.RemoteViewsFactory {
+class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsService.RemoteViewsFactory {
     private val textIds = arrayOf(R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right)
     private val widgetTextColor = context.config.widgetTextColor
 
     override fun getViewAt(position: Int): RemoteViews {
+        val noteId = intent.getIntExtra(NOTE_ID, 1)
         val views = RemoteViews(context.packageName, R.layout.widget_text_layout).apply {
-            val note = context.dbHelper.getNote(context.config.widgetNoteId)
+            val note = context.dbHelper.getNoteWithId(noteId)
             if (note != null) {
                 val noteText = note.getNoteStoredValue() ?: ""
                 val textSize = context.getTextSize() / context.resources.displayMetrics.density
@@ -35,7 +37,7 @@ class WidgetAdapter(val context: Context) : RemoteViewsService.RemoteViewsFactor
             }
 
             Intent().apply {
-                putExtra(OPEN_NOTE_ID, context.config.widgetNoteId)
+                putExtra(OPEN_NOTE_ID, noteId)
                 setOnClickFillInIntent(widget_text_holder, this)
             }
 

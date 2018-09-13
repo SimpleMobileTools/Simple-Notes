@@ -22,7 +22,7 @@ import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.getTextSize
-import com.simplemobiletools.notes.extensions.updateWidget
+import com.simplemobiletools.notes.extensions.updateNoteWidget
 import com.simplemobiletools.notes.helpers.*
 import com.simplemobiletools.notes.models.Note
 import com.simplemobiletools.notes.models.TextHistory
@@ -156,7 +156,7 @@ class NoteFragment : Fragment() {
         if (newText != null && (newText != oldText || force)) {
             note.value = newText
             saveNoteValue(note)
-            context!!.updateWidget()
+            context!!.updateNoteWidget(note.id)
         }
     }
 

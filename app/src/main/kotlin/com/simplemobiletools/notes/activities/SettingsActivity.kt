@@ -3,7 +3,6 @@ package com.simplemobiletools.notes.activities
 import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
-import android.view.View
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
@@ -11,7 +10,7 @@ import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.dbHelper
-import com.simplemobiletools.notes.extensions.updateWidget
+import com.simplemobiletools.notes.extensions.updateWidgets
 import com.simplemobiletools.notes.helpers.*
 import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_settings.*
@@ -45,7 +44,6 @@ class SettingsActivity : SimpleActivity() {
         setupEnableLineWrap()
         setupFontSize()
         setupGravity()
-        setupWidgetNote()
         setupCursorPlacement()
         setupCustomizeWidgetColors()
         updateTextColors(settings_scrollview)
@@ -167,7 +165,7 @@ class SettingsActivity : SimpleActivity() {
             RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
                 config.fontSize = it as Int
                 settings_font_size.text = getFontSizeText()
-                updateWidget()
+                updateWidgets()
             }
         }
     }
@@ -190,7 +188,7 @@ class SettingsActivity : SimpleActivity() {
             RadioGroupDialog(this@SettingsActivity, items, config.gravity) {
                 config.gravity = it as Int
                 settings_gravity.text = getGravityText()
-                updateWidget()
+                updateWidgets()
             }
         }
     }
@@ -201,24 +199,6 @@ class SettingsActivity : SimpleActivity() {
         else -> R.string.right
     })
 
-    private fun setupWidgetNote() {
-        if (notes.size <= 1) {
-            settings_widget_note_holder.visibility = View.GONE
-            return
-        }
-
-        settings_widget_note.text = getCurrentWidgetNoteTitle(config.widgetNoteId, notes)
-        settings_widget_note_holder.setOnClickListener {
-            val items = notes.map { RadioItem(it.id, it.title) } as ArrayList
-
-            RadioGroupDialog(this@SettingsActivity, items, config.widgetNoteId) {
-                config.widgetNoteId = it as Int
-                settings_widget_note.text = getCurrentWidgetNoteTitle(it, notes)
-                updateWidget()
-            }
-        }
-    }
-
     private fun setupCursorPlacement() {
         settings_cursor_placement.isChecked = config.placeCursorToEnd
         settings_cursor_placement_holder.setOnClickListener {
@@ -226,9 +206,6 @@ class SettingsActivity : SimpleActivity() {
             config.placeCursorToEnd = settings_cursor_placement.isChecked
         }
     }
-
-    private fun getCurrentWidgetNoteTitle(currentNoteId: Int, notes: List<Note>) =
-            notes.firstOrNull { it.id == currentNoteId }?.title ?: ""
 
     private fun setupCustomizeWidgetColors() {
         settings_customize_widget_colors_holder.setOnClickListener {
