@@ -2,6 +2,7 @@
 <resources>
 
     <!-- Release notes -->
+    <string name="release_51">Allow creating separate widgets per notes</string>
     <string name="release_49">Added undo/redo</string>
     <string name="release_45">Allow exporting all notes at once, toggling line wrap and autosave</string>
     <string name="release_39">
