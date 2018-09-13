@@ -29,8 +29,9 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mBgColor = 0
     private var mBgColorWithoutTransparency = 0
     private var mTextColor = 0
-    private var mNotes = ArrayList<Note>()
     private var mCurrentNoteId = 0
+    private var mIsCustomizingColors = false
+    private var mNotes = ArrayList<Note>()
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         useDynamicTheme = false
@@ -39,10 +40,9 @@ class WidgetConfigureActivity : SimpleActivity() {
         setContentView(R.layout.widget_config)
         initVariables()
 
-        val isCustomizingColors = intent.extras?.getBoolean(IS_CUSTOMIZING_COLORS) ?: false
         mWidgetId = intent.extras?.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID) ?: AppWidgetManager.INVALID_APPWIDGET_ID
 
-        if (mWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID && !isCustomizingColors) {
+        if (mWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID && !mIsCustomizingColors) {
             finish()
         }
 
@@ -78,7 +78,8 @@ class WidgetConfigureActivity : SimpleActivity() {
         mTextColor = config.widgetTextColor
         updateTextColor()
         mNotes = dbHelper.getNotes()
-        notes_picker_holder.beVisibleIf(mNotes.size > 1)
+        mIsCustomizingColors = intent.extras?.getBoolean(IS_CUSTOMIZING_COLORS) ?: false
+        notes_picker_holder.beVisibleIf(mNotes.size > 1 && !mIsCustomizingColors)
         updateCurrentNote(mNotes.first())
     }
 
@@ -97,7 +98,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private fun updateCurrentNote(note: Note) {
         mCurrentNoteId = note.id
         notes_picker_value.text = note.title
-        val sampleValue = if (note.value.isEmpty()) getString(R.string.widget_config) else note.value
+        val sampleValue = if (note.value.isEmpty() || mIsCustomizingColors) getString(R.string.widget_config) else note.value
         notes_view.text = sampleValue
     }
 
