@@ -20,6 +20,7 @@ import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.getTextSize
 import com.simplemobiletools.notes.helpers.MyWidgetProvider
 import com.simplemobiletools.notes.models.Note
+import com.simplemobiletools.notes.models.Widget
 import kotlinx.android.synthetic.main.widget_config.*
 
 class WidgetConfigureActivity : SimpleActivity() {
@@ -104,6 +105,8 @@ class WidgetConfigureActivity : SimpleActivity() {
         val views = RemoteViews(packageName, R.layout.activity_main)
         views.setBackgroundColor(R.id.notes_view, mBgColor)
         AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
+        val widget = Widget(mWidgetId, mCurrentNoteId)
+        dbHelper.insertWidget(widget)
 
         storeWidgetBackground()
         requestWidgetUpdate()
