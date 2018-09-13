@@ -25,7 +25,7 @@ class NewNoteDialog(val activity: Activity, val db: DBHelper, callback: (title: 
                             val title = view.note_name.value
                             when {
                                 title.isEmpty() -> activity.toast(R.string.no_title)
-                                db.doesTitleExist(title) -> activity.toast(R.string.title_taken)
+                                db.doesNoteTitleExist(title) -> activity.toast(R.string.title_taken)
                                 else -> {
                                     callback(title)
                                     dismiss()

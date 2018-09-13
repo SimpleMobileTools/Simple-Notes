@@ -48,7 +48,7 @@ class NoteFragment : Fragment() {
         view = inflater.inflate(R.layout.fragment_note, container, false) as ViewGroup
         noteId = arguments!!.getInt(NOTE_ID)
         db = context!!.dbHelper
-        note = db.getNote(noteId) ?: return view
+        note = db.getNoteWithId(noteId) ?: return view
         retainInstance = true
 
         val layoutToInflate = if (context!!.config.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable

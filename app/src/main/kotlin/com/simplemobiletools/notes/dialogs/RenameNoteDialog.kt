@@ -26,7 +26,7 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, callback: (
                             val title = view.note_name.value
                             when {
                                 title.isEmpty() -> activity.toast(R.string.no_title)
-                                activity.dbHelper.doesTitleExist(title) -> activity.toast(R.string.title_taken)
+                                activity.dbHelper.doesNoteTitleExist(title) -> activity.toast(R.string.title_taken)
                                 else -> {
                                     note.title = title
                                     val path = note.path

@@ -44,7 +44,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
                 file.isDirectory -> false
                 filename.isMediaFile() -> false
                 file.length() > 10 * 1000 * 1000 -> false
-                activity.dbHelper.doesTitleExist(filename) -> false
+                activity.dbHelper.doesNoteTitleExist(filename) -> false
                 else -> true
             }
         }.forEach {

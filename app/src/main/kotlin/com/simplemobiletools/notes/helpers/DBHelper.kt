@@ -1,5 +1,7 @@
 package com.simplemobiletools.notes.helpers
 
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -9,7 +11,9 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.simplemobiletools.commons.extensions.getIntValue
 import com.simplemobiletools.commons.extensions.getStringValue
 import com.simplemobiletools.notes.R
+import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.models.Note
+import com.simplemobiletools.notes.models.Widget
 import java.io.File
 import java.util.*
 
@@ -18,8 +22,9 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     companion object {
         private const val DB_NAME = "notes.db"
-        private const val DB_VERSION = 3
-        private const val TABLE_NAME = "notes"
+        private const val DB_VERSION = 4
+        private const val NOTES_TABLE_NAME = "notes"
+        private const val WIDGETS_TABLE_NAME = "widgets"
 
         private const val COL_ID = "id"
         private const val COL_TITLE = "title"
@@ -27,21 +32,30 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         private const val COL_TYPE = "type"
         private const val COL_PATH = "path"
 
+        private const val COL_WIDGET_ID = "widget_id"
+        private const val COL_NOTE_ID = "note_id"
+
         fun newInstance(context: Context) = DBHelper(context)
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL("CREATE TABLE $TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COL_TITLE TEXT UNIQUE, $COL_VALUE TEXT, $COL_TYPE INTEGER DEFAULT 0, $COL_PATH TEXT)")
+        db.execSQL("CREATE TABLE $NOTES_TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COL_TITLE TEXT UNIQUE, $COL_VALUE TEXT, $COL_TYPE INTEGER DEFAULT 0, $COL_PATH TEXT)")
+        db.execSQL("CREATE TABLE $WIDGETS_TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COL_WIDGET_ID INTEGER DEFAULT 0, $COL_NOTE_ID INTEGER DEFAULT 0)")
         insertFirstNote(db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         if (oldVersion < 2) {
-            db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
+            db.execSQL("ALTER TABLE $NOTES_TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
         }
 
         if (oldVersion < 3) {
-            db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COL_PATH TEXT DEFAULT ''")
+            db.execSQL("ALTER TABLE $NOTES_TABLE_NAME ADD COLUMN $COL_PATH TEXT DEFAULT ''")
+        }
+
+        if (oldVersion < 4) {
+            db.execSQL("CREATE TABLE $WIDGETS_TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COL_WIDGET_ID INTEGER DEFAULT 0, $COL_NOTE_ID INTEGER DEFAULT 0)")
+            insertFirstWidget(db)
         }
     }
 
@@ -51,17 +65,36 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         insertNote(note, db)
     }
 
+    // if a user has exactly 1 widget active, prefill it. Can happen only at upgrading from older app versions
+    private fun insertFirstWidget(db: SQLiteDatabase) {
+        val widgetIDs = AppWidgetManager.getInstance(mContext).getAppWidgetIds(ComponentName(mContext, MyWidgetProvider::class.java))
+        if (widgetIDs.size == 1) {
+            val widget = Widget(widgetIDs.first(), mContext.config.widgetNoteId)
+            insertWidget(widget, db)
+        }
+    }
+
     private fun insertNote(note: Note, db: SQLiteDatabase) {
-        val values = fillContentValues(note)
-        db.insert(TABLE_NAME, null, values)
+        val values = fillNoteContentValues(note)
+        db.insert(NOTES_TABLE_NAME, null, values)
+    }
+
+    private fun insertWidget(widget: Widget, db: SQLiteDatabase) {
+        val values = fillWidgetContentValues(widget)
+        db.insert(WIDGETS_TABLE_NAME, null, values)
     }
 
     fun insertNote(note: Note): Int {
-        val values = fillContentValues(note)
-        return mDb.insertWithOnConflict(TABLE_NAME, null, values, CONFLICT_IGNORE).toInt()
+        val values = fillNoteContentValues(note)
+        return mDb.insertWithOnConflict(NOTES_TABLE_NAME, null, values, CONFLICT_IGNORE).toInt()
     }
 
-    private fun fillContentValues(note: Note): ContentValues {
+    fun insertWidget(widget: Widget): Int {
+        val values = fillWidgetContentValues(widget)
+        return mDb.insertWithOnConflict(NOTES_TABLE_NAME, null, values, CONFLICT_IGNORE).toInt()
+    }
+
+    private fun fillNoteContentValues(note: Note): ContentValues {
         return ContentValues().apply {
             put(COL_TITLE, note.title)
             put(COL_VALUE, note.value)
@@ -70,17 +103,24 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         }
     }
 
-    fun deleteNote(id: Int) {
-        mDb.delete(TABLE_NAME, "$COL_ID = $id", null)
+    private fun fillWidgetContentValues(widget: Widget): ContentValues {
+        return ContentValues().apply {
+            put(COL_WIDGET_ID, widget.widgetId)
+            put(COL_NOTE_ID, widget.noteId)
+        }
     }
 
-    fun doesTitleExist(title: String): Boolean {
+    fun deleteNote(id: Int) {
+        mDb.delete(NOTES_TABLE_NAME, "$COL_ID = $id", null)
+    }
+
+    fun doesNoteTitleExist(title: String): Boolean {
         val cols = arrayOf(COL_ID)
         val selection = "$COL_TITLE = ? COLLATE NOCASE"
         val selectionArgs = arrayOf(title)
         var cursor: Cursor? = null
         try {
-            cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null)
+            cursor = mDb.query(NOTES_TABLE_NAME, cols, selection, selectionArgs, null, null, null)
             return cursor.count == 1
         } finally {
             cursor?.close()
@@ -92,7 +132,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         val cols = arrayOf(COL_ID, COL_TITLE, COL_VALUE, COL_TYPE, COL_PATH)
         var cursor: Cursor? = null
         try {
-            cursor = mDb.query(TABLE_NAME, cols, null, null, null, null, "$COL_TITLE COLLATE NOCASE ASC")
+            cursor = mDb.query(NOTES_TABLE_NAME, cols, null, null, null, null, "$COL_TITLE COLLATE NOCASE ASC")
             if (cursor?.moveToFirst() == true) {
                 do {
                     try {
@@ -120,14 +160,14 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         return notes
     }
 
-    fun getNote(id: Int): Note? {
+    fun getNoteWithId(id: Int): Note? {
         val cols = arrayOf(COL_TITLE, COL_VALUE, COL_TYPE, COL_PATH)
         val selection = "$COL_ID = ?"
         val selectionArgs = arrayOf(id.toString())
         var note: Note? = null
         var cursor: Cursor? = null
         try {
-            cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null)
+            cursor = mDb.query(NOTES_TABLE_NAME, cols, selection, selectionArgs, null, null, null)
             if (cursor?.moveToFirst() == true) {
                 val title = cursor.getStringValue(COL_TITLE)
                 val value = cursor.getStringValue(COL_VALUE)
@@ -147,7 +187,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         val selectionArgs = arrayOf(path)
         var cursor: Cursor? = null
         try {
-            cursor = mDb.query(TABLE_NAME, cols, selection, selectionArgs, null, null, null)
+            cursor = mDb.query(NOTES_TABLE_NAME, cols, selection, selectionArgs, null, null, null)
             if (cursor?.moveToFirst() == true) {
                 return cursor.getIntValue(COL_ID)
             }
@@ -175,7 +215,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     private fun updateNote(id: Int, values: ContentValues) {
         val selection = "$COL_ID = ?"
         val selectionArgs = arrayOf(id.toString())
-        mDb.update(TABLE_NAME, values, selection, selectionArgs)
+        mDb.update(NOTES_TABLE_NAME, values, selection, selectionArgs)
     }
 
     fun isValidId(id: Int) = id > 0

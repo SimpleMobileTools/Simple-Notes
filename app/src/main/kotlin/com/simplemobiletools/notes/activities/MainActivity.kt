@@ -336,7 +336,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
             toast(R.string.invalid_file_format)
         } else if (file.length() > 10 * 1000 * 1000) {
             toast(R.string.file_too_large)
-        } else if (checkTitle && dbHelper.doesTitleExist(path.getFilenameFromPath())) {
+        } else if (checkTitle && dbHelper.doesNoteTitleExist(path.getFilenameFromPath())) {
             toast(R.string.title_taken)
         } else {
             onChecksPassed(file)
@@ -367,7 +367,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
     private fun openPath(path: String) {
         openFile(path, false) {
             var title = path.getFilenameFromPath()
-            if (dbHelper.doesTitleExist(title))
+            if (dbHelper.doesNoteTitleExist(title))
                 title += " (file)"
 
             val note = Note(0, title, "", TYPE_NOTE, path)
