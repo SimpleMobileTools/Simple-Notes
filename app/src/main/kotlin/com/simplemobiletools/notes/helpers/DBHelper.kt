@@ -18,7 +18,7 @@ import java.io.File
 import java.util.*
 
 class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHelper(mContext, DB_NAME, null, DB_VERSION) {
-    private val mDb: SQLiteDatabase = writableDatabase
+    private val mDb = writableDatabase
 
     companion object {
         private const val DB_NAME = "notes.db"
@@ -221,21 +221,24 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun isValidId(id: Int) = id > 0
 
-    fun getNoteWidgetIds(noteId: Int): ArrayList<Int> {
-        val widgetIds = ArrayList<Int>()
-        val cols = arrayOf(COL_WIDGET_ID)
-        val selection = "$COL_NOTE_ID = ?"
-        val selectionArgs = arrayOf(noteId.toString())
+    fun getWidgets(): ArrayList<Widget> {
+        val widgets = ArrayList<Widget>()
+        val cols = arrayOf(COL_WIDGET_ID, COL_NOTE_ID)
         var cursor: Cursor? = null
         try {
-            cursor = mDb.query(WIDGETS_TABLE_NAME, cols, selection, selectionArgs, null, null, null)
+            cursor = mDb.query(WIDGETS_TABLE_NAME, cols, null, null, null, null, null)
             if (cursor?.moveToFirst() == true) {
-                val widgetId = cursor.getIntValue(COL_WIDGET_ID)
-                widgetIds.add(widgetId)
+                do {
+                    val widgetId = cursor.getIntValue(COL_WIDGET_ID)
+                    val noteId = cursor.getIntValue(COL_NOTE_ID)
+                    val widget = Widget(widgetId, noteId)
+                    widgets.add(widget)
+                } while (cursor.moveToNext())
             }
         } finally {
             cursor?.close()
         }
-        return widgetIds
+
+        return widgets
     }
 }

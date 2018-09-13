@@ -25,7 +25,10 @@ import com.simplemobiletools.notes.BuildConfig
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.dialogs.*
-import com.simplemobiletools.notes.extensions.*
+import com.simplemobiletools.notes.extensions.config
+import com.simplemobiletools.notes.extensions.dbHelper
+import com.simplemobiletools.notes.extensions.getTextSize
+import com.simplemobiletools.notes.extensions.updateWidgets
 import com.simplemobiletools.notes.helpers.MIME_TEXT_PLAIN
 import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.helpers.TYPE_NOTE
@@ -530,7 +533,7 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
         updateSelectedNote(firstNoteId)
         if (config.widgetNoteId == note.id) {
             config.widgetNoteId = mCurrentNote.id
-            updateNoteWidget(mCurrentNote.id)
+            updateWidgets()
         }
         invalidateOptionsMenu()
         initViewPager()

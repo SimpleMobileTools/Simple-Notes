@@ -1,5 +1,7 @@
 package com.simplemobiletools.notes.extensions
 
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import com.simplemobiletools.notes.R
@@ -17,18 +19,11 @@ fun Context.getTextSize() = when (config.fontSize) {
 }
 
 fun Context.updateWidgets() {
-    dbHelper.getNotes().forEach {
-        updateNoteWidget(it.id)
-    }
-}
-
-fun Context.updateNoteWidget(noteId: Int) {
-    val widgetIds = dbHelper.getNoteWidgetIds(noteId)
-    widgetIds.forEach {
-        Intent(this, MyWidgetProvider::class.java).apply {
-            action = UPDATE_WIDGET
-            putExtra(WIDGET_ID, it)
-            putExtra(NOTE_ID, noteId)
+    val widgetIDs = AppWidgetManager.getInstance(applicationContext).getAppWidgetIds(ComponentName(applicationContext, MyWidgetProvider::class.java))
+    if (widgetIDs.isNotEmpty()) {
+        Intent(applicationContext, MyWidgetProvider::class.java).apply {
+            action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+            putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIDs)
             sendBroadcast(this)
         }
     }

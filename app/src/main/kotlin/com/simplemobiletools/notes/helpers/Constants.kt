@@ -2,8 +2,6 @@ package com.simplemobiletools.notes.helpers
 
 const val NOTE_ID = "note_id"
 const val OPEN_NOTE_ID = "open_note_id"
-const val UPDATE_WIDGET = "update_widget"
-const val WIDGET_ID = "widget_id"
 
 // shared preferences
 const val CURRENT_NOTE_ID = "current_note_id"
