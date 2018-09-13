@@ -112,6 +112,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun deleteNote(id: Int) {
         mDb.delete(NOTES_TABLE_NAME, "$COL_ID = $id", null)
+        mDb.delete(WIDGETS_TABLE_NAME, "$COL_NOTE_ID = $id", null)
     }
 
     fun doesNoteTitleExist(title: String): Boolean {
