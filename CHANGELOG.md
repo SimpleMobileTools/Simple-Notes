@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 4.3.0 *(2018-09-13)*
+----------------------------
+
+ * Allow creating separate widgets per notes
+ * Added a discard dialog at unsaved changes with autosave disabled
+ * Some bugfixes and UX improvements
+
 Version 4.2.0 *(2018-08-10)*
 ----------------------------
 
