@@ -91,7 +91,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun insertWidget(widget: Widget): Int {
         val values = fillWidgetContentValues(widget)
-        return mDb.insertWithOnConflict(NOTES_TABLE_NAME, null, values, CONFLICT_IGNORE).toInt()
+        return mDb.insertWithOnConflict(WIDGETS_TABLE_NAME, null, values, CONFLICT_IGNORE).toInt()
     }
 
     private fun fillNoteContentValues(note: Note): ContentValues {
