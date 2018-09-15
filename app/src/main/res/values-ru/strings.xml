@@ -15,8 +15,8 @@
     <string name="general_note">Общая заметка</string>
     <string name="create_new_note">Новая заметка</string>
     <string name="add_to_note">Добавить к заметке</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
+    <string name="unsaved_changes_warning">Есть несохраненные изменения. Что вы хотите с ними сделать?</string>
+    <string name="note_shown_widget">Заметка, показываемая в виджете:</string>
 
     <!-- File notes -->
     <string name="open_file">Открыть файл</string>
