@@ -15,8 +15,8 @@
     <string name="general_note">Opća bilješka</string>
     <string name="create_new_note">Stvori novu bilješku</string>
     <string name="add_to_note">Dodaj u bilješku</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
+    <string name="unsaved_changes_warning">Imate neke nespremljene izmjene. Što želite učiniti s njima??</string>
+    <string name="note_shown_widget">Bilješka prikazana u widgetu:</string>
 
     <!-- File notes -->
     <string name="open_file">Otvori datoteku</string>
@@ -47,7 +47,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
     <string name="import_notes">Uvezi više datoteka kao bilješke</string>
-    <string name="import_folder">Import folder</string>
+    <string name="import_folder">Mapa za uvoz</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
