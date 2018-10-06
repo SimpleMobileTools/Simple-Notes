@@ -1,65 +1,65 @@
 <resources>
     <string name="app_name">Simple Notes</string>
-    <string name="app_launcher_name">Notes</string>
+    <string name="app_launcher_name">Note</string>
     <string name="widget_config">Grazie per avere scelto Simple Notes.\nPer altre semplici app visita SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Impossibile condividere un testo vuoto</string>
-    <string name="simple_note">Simple Note</string>
-    <string name="new_note">Add a new note</string>
-    <string name="no_title">Please name your note</string>
-    <string name="title_taken">A note with that title already exists</string>
-    <string name="open_note">Open note</string>
-    <string name="delete_note">Delete note</string>
-    <string name="delete_note_prompt_message">Are you sure you want to delete note \"%s\"?</string>
-    <string name="pick_a_note">Pick a note</string>
-    <string name="rename_note">Rename note</string>
-    <string name="general_note">General note</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
+    <string name="simple_note">Nota semplice</string>
+    <string name="new_note">Aggiungi una nuova nota</string>
+    <string name="no_title">Inserisci il nome della note</string>
+    <string name="title_taken">Una nota con lo stesso titolo è già esistente</string>
+    <string name="open_note">Apri nota</string>
+    <string name="delete_note">Elimina nota</string>
+    <string name="delete_note_prompt_message">Sicuro di eliminare la nota \"%s\"?</string>
+    <string name="pick_a_note">Scegli una nota</string>
+    <string name="rename_note">Rinomina nota</string>
+    <string name="general_note">Nota generale</string>
+    <string name="create_new_note">Crea una nuova nota</string>
+    <string name="add_to_note">Aggiunta alla nota</string>
+    <string name="unsaved_changes_warning">Hai delle modifiche non salvate. Cosa ci si vuole fare?</string>
+    <string name="note_shown_widget">Nota mostrata nel widget:</string>
 
     <!-- File notes -->
-    <string name="open_file">Open file</string>
-    <string name="export_as_file">Export as file</string>
-    <string name="file_too_large">File too large, the limit is 10MB</string>
-    <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%s\"</string>
-    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
+    <string name="open_file">Apri file</string>
+    <string name="export_as_file">Esporta come file</string>
+    <string name="file_too_large">File troppo grande, il limite è di 10MB</string>
+    <string name="only_import_file_content">Importa solo il contenuto del file\n(modificare il file non influenzerà la nota)</string>
+    <string name="update_file_at_note">Aggiorna il file quando si aggiorna una nota\n(la nota viene eliminata se il file viene eliminato, oppure cambia il percorso)</string>
+    <string name="delete_file_itself">Elimina anche il file \"%s\"</string>
+    <string name="note_saved_successfully">La nota \"%s\" è stata salvata correttamente</string>
+    <string name="note_exported_successfully">La nota \"%s\" è stata esportata correttamente</string>
 
     <!-- Settings -->
-    <string name="display_success_message">Display save success messages</string>
-    <string name="links_and_emails_clickable">Make links and emails clickable</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
-    <string name="show_word_count">Show word count</string>
-    <string name="alignment">Alignment</string>
-    <string name="left">Left</string>
-    <string name="center">Center</string>
-    <string name="right">Right</string>
-    <string name="widget_note">Note used in widget</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
+    <string name="display_success_message">Mostra i messaggi di salvataggio riusciti</string>
+    <string name="links_and_emails_clickable">Rendi i link e le email cliccabili</string>
+    <string name="place_cursor_end">Posiziona il cursose alla fine della nota</string>
+    <string name="monospaced_font">Una un carattere monospace</string>
+    <string name="show_keyboard">Mostra la tastiera all\'avvio</string>
+    <string name="show_word_count">Mostra il conteggio delle parole</string>
+    <string name="alignment">Allineamento</string>
+    <string name="left">A sinistra</string>
+    <string name="center">Centrato</string>
+    <string name="right">A destra</string>
+    <string name="widget_note">Nota usata nel widget</string>
+    <string name="show_note_picker">Mostra un selettore di note all\'avvio</string>
+    <string name="autosave_notes">Salva automaticamente le note</string>
+    <string name="enable_line_wrap">Abilita a capo automatico</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
-    <string name="import_folder">Import folder</string>
+    <string name="export_all_notes">Esporta le note come file</string>
+    <string name="import_notes">Importa file multipli come note</string>
+    <string name="import_folder">Importa cartella</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">A simple textfield for adding quick notes, without ads.</string>
+    <string name="app_short_description">Un cempo di testo per aggiungere velocemente le note, senza pubblicità.</string>
     <string name="app_long_description">
-        Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
+        Hai bisogno di prendere una nota rapida riguardo qualcosa da acquistare, un indirizzo o un\'idea per una startup? Allora questa è l\'applicazione che stavi cercando! Nessun passaggio di impostazioni complicato, basta solamente scrivere quello che vuoi. Offre il salvataggio automatico, così non butterai via le tue modifiche per errore. Supporta la creazione di più note indipendenti.
 
-        You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
+        Puoi anche accedere alla nota in modo istantaneo utilizzando il widget personalizzabile e ridimensionabile, che apre l\'applicazione al tocco.
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+        Non contiene pubblicità o permessi non necessari. È completamente open source, fornisce colori personalizzabili.
 
-        This app is just one piece of a bigger series of apps. You can find the rest of them at https://www.simplemobiletools.com
+        Questa applicazione è solamente una di una serie più grande. Puoi trovare le altre su https://www.simplemobiletools.com
     </string>
 
     <!--
