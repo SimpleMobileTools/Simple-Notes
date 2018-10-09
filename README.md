@@ -7,7 +7,7 @@ Need to take a quick note of something to buy, an address, or a startup idea? Th
 
 You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
 
-Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+Contains no ads or unnecessary permissions. It is fully open source and provides customizable colors.
 
 This app is just one piece of a bigger series of apps. You can find the rest of them at http://www.simplemobiletools.com
 
