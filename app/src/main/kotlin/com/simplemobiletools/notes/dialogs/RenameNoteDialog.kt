@@ -1,7 +1,7 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.content.DialogInterface.BUTTON_POSITIVE
-import android.support.v7.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.SimpleActivity

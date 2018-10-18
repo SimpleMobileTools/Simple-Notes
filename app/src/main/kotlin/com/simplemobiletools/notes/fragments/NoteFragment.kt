@@ -3,7 +3,7 @@ package com.simplemobiletools.notes.fragments
 import android.annotation.SuppressLint
 import android.graphics.Typeface
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.text.Editable
 import android.text.Selection
 import android.text.TextWatcher
@@ -33,7 +33,7 @@ import kotlinx.android.synthetic.main.note_view_horiz_scrollable.view.*
 import java.io.File
 
 // text history handling taken from https://gist.github.com/zeleven/0cfa738c1e8b65b23ff7df1fc30c9f7e
-class NoteFragment : Fragment() {
+class NoteFragment : androidx.fragment.app.Fragment() {
     private val TEXT = "text"
 
     private var textHistory = TextHistory()

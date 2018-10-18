@@ -3,7 +3,6 @@ package com.simplemobiletools.notes.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.v4.view.ViewPager
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
 import android.util.TypedValue
@@ -37,7 +36,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.nio.charset.Charset
 
-class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
+class MainActivity : SimpleActivity(), androidx.viewpager.widget.ViewPager.OnPageChangeListener {
     private var mAdapter: NotesPagerAdapter? = null
 
     private lateinit var mCurrentNote: Note
@@ -459,8 +458,9 @@ class MainActivity : SimpleActivity(), ViewPager.OnPageChangeListener {
                 handleSAFDialog(path) {
                     var document = getDocumentFile(path) ?: return@handleSAFDialog
                     if (!getDoesFilePathExist(path)) {
-                        document = document.createFile("", path.getFilenameFromPath())
+                        document = document.createFile("", path.getFilenameFromPath())!!
                     }
+
                     contentResolver.openOutputStream(document.uri).apply {
                         write(content.toByteArray(Charset.forName("UTF-8")), 0, content.length)
                         flush()

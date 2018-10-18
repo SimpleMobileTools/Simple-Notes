@@ -1,9 +1,9 @@
 package com.simplemobiletools.notes.dialogs
 
 import android.app.Activity
-import android.support.v7.app.AlertDialog
 import android.view.ViewGroup
 import android.widget.RadioGroup
+import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.setupDialogStuff
