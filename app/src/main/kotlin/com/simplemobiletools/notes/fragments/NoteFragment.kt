@@ -16,10 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.annotation.RequiresApi
-import com.simplemobiletools.commons.extensions.beGone
-import com.simplemobiletools.commons.extensions.beVisible
-import com.simplemobiletools.commons.extensions.onGlobalLayout
-import com.simplemobiletools.commons.extensions.removeBit
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.extensions.config
@@ -214,7 +211,13 @@ class NoteFragment : androidx.fragment.app.Fragment() {
         val end = start + if (edit.after != null) edit.after.length else 0
 
         isUndoOrRedo = true
-        text.replace(start, end, edit.before)
+        try {
+            text.replace(start, end, edit.before)
+        } catch (e: Exception) {
+            activity?.showErrorToast(e)
+            return
+        }
+
         isUndoOrRedo = false
 
         for (span in text.getSpans(0, text.length, UnderlineSpan::class.java)) {
