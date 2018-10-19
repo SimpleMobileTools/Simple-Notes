@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 5.0.0 *(2018-10-19)*
+----------------------------
+
+ * Increase the minimal required Android OS version to 5
+ * Replaced G+ button with Reddit
+ * Adding an option to use Incognito mode of keyboards
+
 Version 4.3.0 *(2018-09-13)*
 ----------------------------
 
