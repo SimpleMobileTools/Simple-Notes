@@ -45,7 +45,7 @@
     <string name="show_note_picker">Mostrar selector de nota ao inicio</string>
     <string name="autosave_notes">Gardado automático</string>
     <string name="enable_line_wrap">Habilitar sangrado de liña</string>
-    <string name="use_incognito_mode">Use Incognito Mode of keyboards</string>
+    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como ficheiros</string>

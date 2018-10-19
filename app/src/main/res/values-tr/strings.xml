@@ -43,7 +43,7 @@
     <string name="show_note_picker">Başlangıçta bir not seçici göster</string>
     <string name="autosave_notes">Notları otomatik kaydet</string>
     <string name="enable_line_wrap">Sözcük kaydırmayı etkinleştir</string>
-    <string name="use_incognito_mode">Use Incognito Mode of keyboards</string>
+    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>

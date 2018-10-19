@@ -43,7 +43,7 @@
     <string name="show_note_picker">Mostrar um seletor de notas na inicialização</string>
     <string name="autosave_notes">Salvar notas automaticamente</string>
     <string name="enable_line_wrap">Ativar quebra de linha</string>
-    <string name="use_incognito_mode">Use Incognito Mode of keyboards</string>
+    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como arquivo</string>

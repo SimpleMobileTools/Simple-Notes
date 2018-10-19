@@ -43,7 +43,7 @@
     <string name="show_note_picker">Vis en notevælger ved opstart</string>
     <string name="autosave_notes">Autogem noter</string>
     <string name="enable_line_wrap">Aktiver tekstombrydning</string>
-    <string name="use_incognito_mode">Use Incognito Mode of keyboards</string>
+    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Eksporter alle noter som filer</string>

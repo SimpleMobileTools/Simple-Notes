@@ -43,7 +43,7 @@
     <string name="show_note_picker">Visa en anteckningsväljare vid start</string>
     <string name="autosave_notes">Spara anteckningar automatiskt</string>
     <string name="enable_line_wrap">Aktivera radbrytning</string>
-    <string name="use_incognito_mode">Use Incognito Mode of keyboards</string>
+    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportera alla anteckningar som filer</string>
