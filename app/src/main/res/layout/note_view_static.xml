@@ -8,6 +8,7 @@
     android:freezesText="true"
     android:gravity="top"
     android:inputType="textCapSentences|textMultiLine"
+    android:imeOptions="flagNoPersonalizedLearning"
     android:padding="@dimen/activity_margin"
     android:scrollbars="vertical"
     android:textCursorDrawable="@null"/>
