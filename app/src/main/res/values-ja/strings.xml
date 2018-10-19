@@ -43,7 +43,7 @@
     <string name="show_note_picker">Show a note picker on startup</string>
     <string name="autosave_notes">Autosave notes</string>
     <string name="enable_line_wrap">Enable line wrap</string>
-    <string name="enable_personalized_learning">Enable the \"Personalized learning\" function of some keyboards</string>
+    <string name="use_incognito_mode">Use Incognito Mode of keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Export all notes as files</string>

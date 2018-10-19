@@ -69,7 +69,7 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getString(LAST_USED_SAVE_PATH, Environment.getExternalStorageDirectory().toString())
         set(lastUsedSavePath) = prefs.edit().putString(LAST_USED_SAVE_PATH, lastUsedSavePath).apply()
 
-    var enablePersonalizedLearning: Boolean
-        get() = prefs.getBoolean(ENABLE_PERSONALIZED_LEARNING, true)
-        set(enablePersonalizedLearning) = prefs.edit().putBoolean(ENABLE_PERSONALIZED_LEARNING, enablePersonalizedLearning).apply()
+    var useIncognitoMode: Boolean
+        get() = prefs.getBoolean(USE_INCOGNITO_MODE, false)
+        set(useIncognitoMode) = prefs.edit().putBoolean(USE_INCOGNITO_MODE, useIncognitoMode).apply()
 }

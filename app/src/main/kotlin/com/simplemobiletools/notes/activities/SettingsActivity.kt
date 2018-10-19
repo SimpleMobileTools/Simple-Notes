@@ -46,7 +46,7 @@ class SettingsActivity : SimpleActivity() {
         setupFontSize()
         setupGravity()
         setupCursorPlacement()
-        setupPersonalizedLearning()
+        setupIncognitoMode()
         setupCustomizeWidgetColors()
         updateTextColors(settings_scrollview)
         setupSectionColors()
@@ -218,12 +218,12 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun setupPersonalizedLearning() {
-        settings_enable_personalized_learning_holder.beVisibleIf(isOreoPlus())
-        settings_enable_personalized_learning.isChecked = config.enablePersonalizedLearning
-        settings_enable_personalized_learning_holder.setOnClickListener {
-            settings_enable_personalized_learning.toggle()
-            config.enablePersonalizedLearning = settings_enable_personalized_learning.isChecked
+    private fun setupIncognitoMode() {
+        settings_use_incognito_mode_holder.beVisibleIf(isOreoPlus())
+        settings_use_incognito_mode.isChecked = config.useIncognitoMode
+        settings_use_incognito_mode_holder.setOnClickListener {
+            settings_use_incognito_mode.toggle()
+            config.useIncognitoMode = settings_use_incognito_mode.isChecked
         }
     }
 }

@@ -43,7 +43,7 @@
     <string name="show_note_picker">Zeige einen Notiz-Wähler beim Start</string>
     <string name="autosave_notes">Notizen automatisch speichern</string>
     <string name="enable_line_wrap">Zeilenumbruch aktivieren</string>
-    <string name="enable_personalized_learning">Enable the \"Personalized learning\" function of some keyboards</string>
+    <string name="use_incognito_mode">Use Incognito Mode of keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Alle Notizen als Dateien exportieren</string>

@@ -100,7 +100,7 @@ class NoteFragment : androidx.fragment.app.Fragment() {
                 requestFocus()
             }
 
-            imeOptions = if (config.enablePersonalizedLearning) {
+            imeOptions = if (config.useIncognitoMode) {
                 imeOptions or EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
             } else {
                 imeOptions.removeBit(EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)
