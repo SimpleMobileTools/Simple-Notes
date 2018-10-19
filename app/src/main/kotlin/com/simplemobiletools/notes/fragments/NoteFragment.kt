@@ -3,7 +3,6 @@ package com.simplemobiletools.notes.fragments
 import android.annotation.SuppressLint
 import android.graphics.Typeface
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.text.Editable
 import android.text.Selection
 import android.text.TextWatcher
@@ -89,6 +88,11 @@ class NoteFragment : androidx.fragment.app.Fragment() {
                     setText(fileContents)
                 }
                 skipTextUpdating = false
+
+                if (config.showKeyboard) {
+                    requestFocus()
+                }
+
                 setSelection(if (config.placeCursorToEnd) text.length else 0)
             }
         }
