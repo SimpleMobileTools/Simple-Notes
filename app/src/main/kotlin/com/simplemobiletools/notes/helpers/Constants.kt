@@ -19,6 +19,7 @@ const val CURSOR_PLACEMENT = "cursor_placement"
 const val LAST_USED_EXTENSION = "last_used_extension"
 const val LAST_USED_SAVE_PATH = "last_used_save_path"
 const val ENABLE_LINE_WRAP = "enable_line_wrap"
+const val ENABLE_PERSONALIZED_LEARNING = "enable_personalized_learning"
 
 // gravity
 const val GRAVITY_LEFT = 0

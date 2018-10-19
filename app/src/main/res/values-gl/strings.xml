@@ -44,8 +44,8 @@
     <string name="widget_note">Nota a utilizar no widget</string>
     <string name="show_note_picker">Mostrar selector de nota ao inicio</string>
     <string name="autosave_notes">Gardado automático</string>
-    <!-- teño que mirar qué fai line-wrap #fuzzy -->
     <string name="enable_line_wrap">Habilitar sangrado de liña</string>
+    <string name="enable_personalized_learning">Enable the \"Personalized learning\" function of some keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como ficheiros</string>

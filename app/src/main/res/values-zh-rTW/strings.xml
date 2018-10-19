@@ -43,6 +43,7 @@
     <string name="show_note_picker">啟動時顯示筆記選擇器</string>
     <string name="autosave_notes">自動儲存筆記</string>
     <string name="enable_line_wrap">自動換行</string>
+    <string name="enable_personalized_learning">Enable the \"Personalized learning\" function of some keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">將全部筆記匯出成檔案</string>

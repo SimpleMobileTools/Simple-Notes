@@ -43,6 +43,7 @@
     <string name="show_note_picker">Başlanğıcda qeyd götürəni göstər</string>
     <string name="autosave_notes">Qeydləri avtomatik saxla</string>
     <string name="enable_line_wrap">Cız sarğısını göstər</string>
+    <string name="enable_personalized_learning">Enable the \"Personalized learning\" function of some keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Bütün qeydləri fayl şəklində çıxar</string>

@@ -43,6 +43,7 @@
     <string name="show_note_picker">Mostra un selettore di note all\'avvio</string>
     <string name="autosave_notes">Salva automaticamente le note</string>
     <string name="enable_line_wrap">Abilita a capo automatico</string>
+    <string name="enable_personalized_learning">Enable the \"Personalized learning\" function of some keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Esporta le note come file</string>

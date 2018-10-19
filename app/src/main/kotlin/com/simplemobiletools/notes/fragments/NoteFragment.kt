@@ -2,6 +2,7 @@ package com.simplemobiletools.notes.fragments
 
 import android.annotation.SuppressLint
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.Selection
@@ -13,9 +14,12 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import androidx.annotation.RequiresApi
 import com.simplemobiletools.commons.extensions.beGone
 import com.simplemobiletools.commons.extensions.beVisible
 import com.simplemobiletools.commons.extensions.onGlobalLayout
+import com.simplemobiletools.commons.extensions.removeBit
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.activities.MainActivity
 import com.simplemobiletools.notes.extensions.config
@@ -67,6 +71,7 @@ class NoteFragment : androidx.fragment.app.Fragment() {
         return view
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onResume() {
         super.onResume()
 
@@ -88,12 +93,17 @@ class NoteFragment : androidx.fragment.app.Fragment() {
                     setText(fileContents)
                 }
                 skipTextUpdating = false
-
-                if (config.showKeyboard) {
-                    requestFocus()
-                }
-
                 setSelection(if (config.placeCursorToEnd) text.length else 0)
+            }
+
+            if (config.showKeyboard) {
+                requestFocus()
+            }
+
+            imeOptions = if (config.enablePersonalizedLearning) {
+                imeOptions or EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
+            } else {
+                imeOptions.removeBit(EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)
             }
         }
 

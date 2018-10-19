@@ -68,4 +68,8 @@ class Config(context: Context) : BaseConfig(context) {
     var lastUsedSavePath: String
         get() = prefs.getString(LAST_USED_SAVE_PATH, Environment.getExternalStorageDirectory().toString())
         set(lastUsedSavePath) = prefs.edit().putString(LAST_USED_SAVE_PATH, lastUsedSavePath).apply()
+
+    var enablePersonalizedLearning: Boolean
+        get() = prefs.getBoolean(ENABLE_PERSONALIZED_LEARNING, true)
+        set(enablePersonalizedLearning) = prefs.edit().putBoolean(ENABLE_PERSONALIZED_LEARNING, enablePersonalizedLearning).apply()
 }

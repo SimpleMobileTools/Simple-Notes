@@ -43,6 +43,7 @@
     <string name="show_note_picker">Pokazuj wybór notatki po uruchomieniu</string>
     <string name="autosave_notes">Autozapis notatek</string>
     <string name="enable_line_wrap">Zawijanie linii</string>
+    <string name="enable_personalized_learning">Enable the \"Personalized learning\" function of some keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Eksportuj wszystkie notatki jako pliki</string>

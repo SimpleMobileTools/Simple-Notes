@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
+import com.simplemobiletools.commons.helpers.isOreoPlus
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.R
 import com.simplemobiletools.notes.extensions.config
@@ -45,6 +46,7 @@ class SettingsActivity : SimpleActivity() {
         setupFontSize()
         setupGravity()
         setupCursorPlacement()
+        setupPersonalizedLearning()
         setupCustomizeWidgetColors()
         updateTextColors(settings_scrollview)
         setupSectionColors()
@@ -213,6 +215,15 @@ class SettingsActivity : SimpleActivity() {
                 putExtra(IS_CUSTOMIZING_COLORS, true)
                 startActivity(this)
             }
+        }
+    }
+
+    private fun setupPersonalizedLearning() {
+        settings_enable_personalized_learning_holder.beVisibleIf(isOreoPlus())
+        settings_enable_personalized_learning.isChecked = config.enablePersonalizedLearning
+        settings_enable_personalized_learning_holder.setOnClickListener {
+            settings_enable_personalized_learning.toggle()
+            config.enablePersonalizedLearning = settings_enable_personalized_learning.isChecked
         }
     }
 }

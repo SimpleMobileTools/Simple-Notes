@@ -43,6 +43,7 @@
     <string name="show_note_picker">Visa en anteckningsväljare vid start</string>
     <string name="autosave_notes">Spara anteckningar automatiskt</string>
     <string name="enable_line_wrap">Aktivera radbrytning</string>
+    <string name="enable_personalized_learning">Enable the \"Personalized learning\" function of some keyboards</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportera alla anteckningar som filer</string>
