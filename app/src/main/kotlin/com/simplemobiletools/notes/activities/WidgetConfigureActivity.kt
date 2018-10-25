@@ -8,7 +8,6 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.TypedValue
 import android.widget.RemoteViews
-import android.widget.SeekBar
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
@@ -65,13 +64,17 @@ class WidgetConfigureActivity : SimpleActivity() {
             mBgColor = Color.BLACK
             mBgAlpha = .2f
         } else {
-            mBgAlpha = Color.alpha(mBgColor) / 255.toFloat()
+            mBgAlpha = Color.alpha(mBgColor) / 255f
         }
 
         mBgColorWithoutTransparency = Color.rgb(Color.red(mBgColor), Color.green(mBgColor), Color.blue(mBgColor))
         config_bg_seekbar.apply {
-            setOnSeekBarChangeListener(bgSeekbarChangeListener)
             progress = (mBgAlpha * 100).toInt()
+
+            onSeekBarChangeListener {
+                mBgAlpha = it / 100f
+                updateBackgroundColor()
+            }
         }
         updateBackgroundColor()
 
@@ -161,21 +164,6 @@ class WidgetConfigureActivity : SimpleActivity() {
                 mTextColor = color
                 updateTextColor()
             }
-        }
-    }
-
-    private val bgSeekbarChangeListener = object : SeekBar.OnSeekBarChangeListener {
-        override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-            mBgAlpha = progress.toFloat() / 100.toFloat()
-            updateBackgroundColor()
-        }
-
-        override fun onStartTrackingTouch(seekBar: SeekBar) {
-
-        }
-
-        override fun onStopTrackingTouch(seekBar: SeekBar) {
-
         }
     }
 }

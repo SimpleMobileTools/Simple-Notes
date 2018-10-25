@@ -3,12 +3,14 @@ package com.simplemobiletools.notes.adapters
 import android.app.Activity
 import android.os.Bundle
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
 import com.simplemobiletools.commons.extensions.showErrorToast
 import com.simplemobiletools.notes.fragments.NoteFragment
 import com.simplemobiletools.notes.helpers.NOTE_ID
 import com.simplemobiletools.notes.models.Note
 
-class NotesPagerAdapter(fm: androidx.fragment.app.FragmentManager, val notes: List<Note>, val activity: Activity) : androidx.fragment.app.FragmentStatePagerAdapter(fm) {
+class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity: Activity) : FragmentStatePagerAdapter(fm) {
     private var fragments: HashMap<Int, NoteFragment> = LinkedHashMap()
 
     override fun getCount() = notes.size

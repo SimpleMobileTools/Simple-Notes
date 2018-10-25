@@ -36,19 +36,18 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.nio.charset.Charset
 
-class MainActivity : SimpleActivity(), androidx.viewpager.widget.ViewPager.OnPageChangeListener {
-    private var mAdapter: NotesPagerAdapter? = null
-
+class MainActivity : SimpleActivity() {
     private lateinit var mCurrentNote: Note
     private var mNotes = ArrayList<Note>()
-
+    private var mAdapter: NotesPagerAdapter? = null
     private var noteViewWithTextSelected: MyEditText? = null
+    private var saveNoteButton: MenuItem? = null
+
     private var wasInit = false
     private var storedEnableLineWrap = true
     private var showSaveButton = false
     private var showUndoButton = false
     private var showRedoButton = false
-    private var saveNoteButton: MenuItem? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -182,10 +181,8 @@ class MainActivity : SimpleActivity(), androidx.viewpager.widget.ViewPager.OnPag
             ConfirmationAdvancedDialog(this, "", R.string.unsaved_changes_warning, R.string.save, R.string.discard) {
                 if (it) {
                     mAdapter?.saveAllFragmentTexts()
-                    super.onBackPressed()
-                } else {
-                    super.onBackPressed()
                 }
+                super.onBackPressed()
             }
         } else {
             super.onBackPressed()
@@ -244,7 +241,11 @@ class MainActivity : SimpleActivity(), androidx.viewpager.widget.ViewPager.OnPag
         view_pager.apply {
             adapter = mAdapter
             currentItem = getWantedNoteIndex()
-            addOnPageChangeListener(this@MainActivity)
+
+            onPageChangeListener {
+                mCurrentNote = mNotes[it]
+                config.currentNoteId = mCurrentNote.id
+            }
         }
 
         if (!config.showKeyboard) {
@@ -499,11 +500,13 @@ class MainActivity : SimpleActivity(), androidx.viewpager.widget.ViewPager.OnPag
         }
     }
 
-    private fun getCurrentNoteText() = (view_pager.adapter as NotesPagerAdapter).getCurrentNoteViewText(view_pager.currentItem)
+    private fun getPagerAdapter() = view_pager.adapter as NotesPagerAdapter
 
-    private fun addTextToCurrentNote(text: String) = (view_pager.adapter as NotesPagerAdapter).appendText(view_pager.currentItem, text)
+    private fun getCurrentNoteText() = getPagerAdapter().getCurrentNoteViewText(view_pager.currentItem)
 
-    private fun saveCurrentNote(force: Boolean) = (view_pager.adapter as NotesPagerAdapter).saveCurrentNote(view_pager.currentItem, force)
+    private fun addTextToCurrentNote(text: String) = getPagerAdapter().appendText(view_pager.currentItem, text)
+
+    private fun saveCurrentNote(force: Boolean) = getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
 
     private fun displayDeleteNotePrompt() {
         DeleteNoteDialog(this, mCurrentNote) {
@@ -594,17 +597,6 @@ class MainActivity : SimpleActivity(), androidx.viewpager.widget.ViewPager.OnPag
             type = "text/plain"
             startActivity(Intent.createChooser(this, shareTitle))
         }
-    }
-
-    override fun onPageScrollStateChanged(state: Int) {
-    }
-
-    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-    }
-
-    override fun onPageSelected(position: Int) {
-        mCurrentNote = mNotes[position]
-        config.currentNoteId = mCurrentNote.id
     }
 
     fun currentNoteTextChanged(newText: String, showUndo: Boolean, showRedo: Boolean) {

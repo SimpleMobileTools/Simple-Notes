@@ -1,7 +1,6 @@
 package com.simplemobiletools.notes.activities
 
 import android.content.Intent
-import android.content.res.Resources
 import android.os.Bundle
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
@@ -18,13 +17,11 @@ import kotlinx.android.synthetic.main.activity_settings.*
 import java.util.*
 
 class SettingsActivity : SimpleActivity() {
-    lateinit var res: Resources
     var notes = ArrayList<Note>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-        res = resources
         notes = dbHelper.getNotes()
     }
 
@@ -159,10 +156,10 @@ class SettingsActivity : SimpleActivity() {
         settings_font_size.text = getFontSizeText()
         settings_font_size_holder.setOnClickListener {
             val items = arrayListOf(
-                    RadioItem(FONT_SIZE_SMALL, res.getString(R.string.small)),
-                    RadioItem(FONT_SIZE_MEDIUM, res.getString(R.string.medium)),
-                    RadioItem(FONT_SIZE_LARGE, res.getString(R.string.large)),
-                    RadioItem(FONT_SIZE_EXTRA_LARGE, res.getString(R.string.extra_large)))
+                    RadioItem(FONT_SIZE_SMALL, getString(R.string.small)),
+                    RadioItem(FONT_SIZE_MEDIUM, getString(R.string.medium)),
+                    RadioItem(FONT_SIZE_LARGE, getString(R.string.large)),
+                    RadioItem(FONT_SIZE_EXTRA_LARGE, getString(R.string.extra_large)))
 
             RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
                 config.fontSize = it as Int
@@ -183,9 +180,9 @@ class SettingsActivity : SimpleActivity() {
         settings_gravity.text = getGravityText()
         settings_gravity_holder.setOnClickListener {
             val items = arrayListOf(
-                    RadioItem(GRAVITY_LEFT, res.getString(R.string.left)),
-                    RadioItem(GRAVITY_CENTER, res.getString(R.string.center)),
-                    RadioItem(GRAVITY_RIGHT, res.getString(R.string.right)))
+                    RadioItem(GRAVITY_LEFT, getString(R.string.left)),
+                    RadioItem(GRAVITY_CENTER, getString(R.string.center)),
+                    RadioItem(GRAVITY_RIGHT, getString(R.string.right)))
 
             RadioGroupDialog(this@SettingsActivity, items, config.gravity) {
                 config.gravity = it as Int
