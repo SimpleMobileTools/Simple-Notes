@@ -51,9 +51,9 @@ class NoteFragment : androidx.fragment.app.Fragment() {
         note = db.getNoteWithId(noteId) ?: return view
         retainInstance = true
 
-        val layoutToInflate = if (context!!.config.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
+        val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
         inflater.inflate(layoutToInflate, view.notes_relative_layout, true)
-        if (context!!.config.clickableLinks) {
+        if (config!!.clickableLinks) {
             view.notes_view.apply {
                 linksClickable = true
                 autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES
@@ -72,7 +72,7 @@ class NoteFragment : androidx.fragment.app.Fragment() {
     override fun onResume() {
         super.onResume()
 
-        val config = context!!.config
+        val config = config!!
         view.notes_view.apply {
             typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
 
@@ -117,7 +117,7 @@ class NoteFragment : androidx.fragment.app.Fragment() {
 
     override fun onPause() {
         super.onPause()
-        if (context!!.config.autosaveNotes) {
+        if (config!!.autosaveNotes) {
             saveText(false)
         }
         view.notes_view.removeTextChangedListener(textWatcher)
@@ -125,7 +125,7 @@ class NoteFragment : androidx.fragment.app.Fragment() {
 
     override fun setMenuVisibility(menuVisible: Boolean) {
         super.setMenuVisibility(menuVisible)
-        if (!menuVisible && noteId != 0 && context?.config?.autosaveNotes == true) {
+        if (!menuVisible && noteId != 0 && config?.autosaveNotes == true) {
             saveText(false)
         }
 
@@ -192,7 +192,7 @@ class NoteFragment : androidx.fragment.app.Fragment() {
     fun getCurrentNoteViewText() = view.notes_view?.text?.toString()
 
     @SuppressLint("RtlHardcoded")
-    private fun getTextGravity() = when (context!!.config.gravity) {
+    private fun getTextGravity() = when (config!!.gravity) {
         GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
         GRAVITY_RIGHT -> Gravity.RIGHT
         else -> Gravity.LEFT
