@@ -27,6 +27,7 @@
     <string name="delete_file_itself">Apagar também o ficheiro \"%s\"</string>
     <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
+    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>

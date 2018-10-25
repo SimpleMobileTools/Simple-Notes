@@ -27,6 +27,7 @@
     <string name="delete_file_itself">Također izbriši datoteku \"%s\"</string>
     <string name="note_saved_successfully">Bilješka \"%s\" uspješno spremljena</string>
     <string name="note_exported_successfully">Bilješka \"%s\" uspješno izvezena</string>
+    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Prikaži poruke kada je spremanje uspješno</string>

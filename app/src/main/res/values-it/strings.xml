@@ -27,6 +27,7 @@
     <string name="delete_file_itself">Elimina anche il file \"%s\"</string>
     <string name="note_saved_successfully">La nota \"%s\" è stata salvata correttamente</string>
     <string name="note_exported_successfully">La nota \"%s\" è stata esportata correttamente</string>
+    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Mostra i messaggi di salvataggio riusciti</string>

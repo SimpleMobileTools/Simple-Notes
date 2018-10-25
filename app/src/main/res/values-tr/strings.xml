@@ -27,6 +27,7 @@
     <string name="delete_file_itself">\"%s\" dosyasını da sil</string>
     <string name="note_saved_successfully">\"%s\" notu başarıyla kaydedildi</string>
     <string name="note_exported_successfully">\"%s\" notu başarıyla dışa aktarıldı</string>
+    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Başarıyla kaydedildi mesajlarını görüntüle</string>

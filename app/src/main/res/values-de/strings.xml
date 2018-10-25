@@ -27,6 +27,7 @@
     <string name="delete_file_itself">Lösche Datei \"%s\"</string>
     <string name="note_saved_successfully">Notiz \"%s\" erfolgreich gespeichert</string>
     <string name="note_exported_successfully">Notiz \"%s\" erfolgreich exportiert</string>
+    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>

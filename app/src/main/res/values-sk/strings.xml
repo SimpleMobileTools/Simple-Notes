@@ -27,6 +27,7 @@
     <string name="delete_file_itself">Odstrániť aj súbor \"%s\"</string>
     <string name="note_saved_successfully">Poznámka \"%s\" bola úspešne uložená</string>
     <string name="note_exported_successfully">Poznámka \"%s\" bola úspešne exportovaná</string>
+    <string name="only_export_file_content">Iba exportovať súčasný obsah súboru\n(úprava poznámky nebude mať vplyv na súbor)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Zobraziť správu o úspešnom uložení poznámky</string>

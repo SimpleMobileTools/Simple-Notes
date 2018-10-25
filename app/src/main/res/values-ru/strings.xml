@@ -27,6 +27,7 @@
     <string name="delete_file_itself">Также удалить файл \"%s\"</string>
     <string name="note_saved_successfully">Заметка \"%s\" сохранена</string>
     <string name="note_exported_successfully">Заметка \"%s\" экспортирована</string>
+    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Уведомлять, что файл успешно сохранен</string>

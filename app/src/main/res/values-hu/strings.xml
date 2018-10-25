@@ -27,6 +27,7 @@
     <string name="delete_file_itself">\"%s\" fájl is törlődjön</string>
     <string name="note_saved_successfully">\"%s\" nevű jegyzet elmentve</string>
     <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
+    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Sikeres mentés üzenetek megjelenítése</string>

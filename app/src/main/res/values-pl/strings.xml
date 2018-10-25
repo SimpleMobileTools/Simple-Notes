@@ -27,6 +27,7 @@
     <string name="delete_file_itself">Usuń także plik \"%s\"</string>
     <string name="note_saved_successfully">Notatka \"%s\" została zapisana</string>
     <string name="note_exported_successfully">Notatka \"%s\" została eksportowana</string>
+    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisaniu notatki</string>

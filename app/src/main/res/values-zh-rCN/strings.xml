@@ -27,6 +27,7 @@
     <string name="delete_file_itself">同时删除文件 \"%s\"</string>
     <string name="note_saved_successfully">笔记 \"%s\" 保存成功</string>
     <string name="note_exported_successfully">笔记 \"%s\" 导出成功</string>
+    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
 
     <!-- Settings -->
     <string name="display_success_message">显示保存成功消息</string>
