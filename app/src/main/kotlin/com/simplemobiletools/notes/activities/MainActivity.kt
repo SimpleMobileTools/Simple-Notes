@@ -321,7 +321,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun openFile() {
-        FilePickerDialog(this) {
+        FilePickerDialog(this, canAddShowHiddenButton = true) {
             openFile(it, true) {
                 OpenFileDialog(this, it.path) {
                     addNewNote(it)
@@ -384,7 +384,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun openFolder() {
-        FilePickerDialog(this, pickFile = false) {
+        FilePickerDialog(this, pickFile = false, canAddShowHiddenButton = true) {
             openFolder(it) {
                 ImportFolderDialog(this, it.path) {
                     mNotes = dbHelper.getNotes()

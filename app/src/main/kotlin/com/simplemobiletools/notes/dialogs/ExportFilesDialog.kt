@@ -20,7 +20,7 @@ class ExportFilesDialog(val activity: SimpleActivity, val notes: ArrayList<Note>
 
             file_extension.setText(activity.config.lastUsedExtension)
             folder_path.setOnClickListener {
-                FilePickerDialog(activity, realPath, false, false, true) {
+                FilePickerDialog(activity, realPath, false, false, true, true) {
                     folder_path.text = activity.humanizePath(it)
                     realPath = it
                 }
