@@ -37,6 +37,9 @@ import java.io.File
 import java.nio.charset.Charset
 
 class MainActivity : SimpleActivity() {
+    private val EXPORT_FILE_SYNC = 1
+    private val EXPORT_FILE_NO_SYNC = 2
+
     private lateinit var mCurrentNote: Note
     private var mNotes = ArrayList<Note>()
     private var mAdapter: NotesPagerAdapter? = null
@@ -411,7 +414,34 @@ class MainActivity : SimpleActivity() {
     private fun exportAsFile() {
         ExportFileDialog(this, mCurrentNote) {
             if (getCurrentNoteText()?.isNotEmpty() == true) {
-                exportNoteValueToFile(it, getCurrentNoteText()!!, true)
+                showExportFilePickUpdateDialog(it)
+            }
+        }
+    }
+
+    private fun showExportFilePickUpdateDialog(exportPath: String) {
+        val items = arrayListOf(
+                RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
+                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
+
+        RadioGroupDialog(this, items) {
+            val syncFile = it as Int == EXPORT_FILE_SYNC
+            val currentNoteText = getCurrentNoteText()
+            if (currentNoteText == null) {
+                toast(R.string.unknown_error_occurred)
+                return@RadioGroupDialog
+            }
+
+            exportNoteValueToFile(exportPath, currentNoteText, true) {
+                if (syncFile) {
+                    mCurrentNote.path = exportPath
+                    dbHelper.updateNotePath(mCurrentNote)
+
+                    if (mCurrentNote.getNoteStoredValue() == currentNoteText) {
+                        mCurrentNote.value = ""
+                        dbHelper.updateNoteValue(mCurrentNote)
+                    }
+                }
             }
         }
     }
