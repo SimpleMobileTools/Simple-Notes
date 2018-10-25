@@ -19,7 +19,7 @@ import com.simplemobiletools.notes.helpers.OPEN_NOTE_ID
 
 class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsService.RemoteViewsFactory {
     private val textIds = arrayOf(R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right)
-    private val widgetTextColor = context.config.widgetTextColor
+    private var widgetTextColor = context.config.widgetTextColor
 
     override fun getViewAt(position: Int): RemoteViews {
         val noteId = intent.getIntExtra(NOTE_ID, 1)
@@ -58,7 +58,9 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
 
     override fun getItemId(position: Int) = position.toLong()
 
-    override fun onDataSetChanged() {}
+    override fun onDataSetChanged() {
+        widgetTextColor = context.config.widgetTextColor
+    }
 
     override fun hasStableIds() = true
 
