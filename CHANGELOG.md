@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 5.0.1 *(2018-10-26)*
+----------------------------
+
+ * Improve the "Export as file" function, allow keeping the note in sync with file
+ * Couple stability and translation improvements
+
 Version 5.0.0 *(2018-10-19)*
 ----------------------------
 
