@@ -15,8 +15,8 @@
     <string name="general_note">Genel not</string>
     <string name="create_new_note">Yeni not oluştur</string>
     <string name="add_to_note">Nota ekle</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
+    <string name="unsaved_changes_warning">Kaydedilmemiş bazı değişiklikleriniz var. Onlarla ne yapmak istersiniz?</string>
+    <string name="note_shown_widget">Widget\'ta gösterilen not:</string>
 
     <!-- File notes -->
     <string name="open_file">Dosya aç</string>
@@ -27,7 +27,7 @@
     <string name="delete_file_itself">\"%s\" dosyasını da sil</string>
     <string name="note_saved_successfully">\"%s\" notu başarıyla kaydedildi</string>
     <string name="note_exported_successfully">\"%s\" notu başarıyla dışa aktarıldı</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Sadece geçerli dosya içeriğini dışa aktar\n(notu değiştirmek dosyayı etkilemez)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Başarıyla kaydedildi mesajlarını görüntüle</string>
@@ -44,7 +44,7 @@
     <string name="show_note_picker">Başlangıçta bir not seçici göster</string>
     <string name="autosave_notes">Notları otomatik kaydet</string>
     <string name="enable_line_wrap">Sözcük kaydırmayı etkinleştir</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="use_incognito_mode">Klavyelerin Gizli modunu kullan</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
