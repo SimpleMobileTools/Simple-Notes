@@ -18,7 +18,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
     private val mDb = writableDatabase
 
     companion object {
-        private const val DB_NAME = "notes.db"
+        private const val DB_NAME = "notes_old.db"
         private const val DB_VERSION = 4
         private const val NOTES_TABLE_NAME = "notes"
         private const val WIDGETS_TABLE_NAME = "widgets"
