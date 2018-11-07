@@ -2,6 +2,7 @@ package com.simplemobiletools.notes.pro.helpers
 
 import android.app.Activity
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.models.Note
 import java.io.File
@@ -9,6 +10,12 @@ import java.io.File
 class NotesHelper(val activity: Activity) {
     fun getNotes(callback: (notes: ArrayList<Note>) -> Unit) {
         Thread {
+            // make sure the initial note has enough time to be precreated
+            if (activity.config.appRunCount == 1) {
+                activity.notesDB.getNotes()
+                Thread.sleep(200)
+            }
+
             val notes = activity.notesDB.getNotes() as ArrayList<Note>
             val notesToDelete = ArrayList<Note>(notes.size)
             notes.forEach {
