@@ -108,13 +108,6 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         return 0
     }
 
-    fun updateNote(note: Note) {
-        val values = fillNoteContentValues(note)
-        val selection = "$COL_ID = ?"
-        val selectionArgs = arrayOf(note.id.toString())
-        mDb.update(NOTES_TABLE_NAME, values, selection, selectionArgs)
-    }
-
     fun getWidgets(): ArrayList<Widget> {
         val widgets = ArrayList<Widget>()
         val cols = arrayOf(COL_WIDGET_ID, COL_NOTE_ID)

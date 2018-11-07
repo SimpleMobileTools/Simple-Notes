@@ -41,4 +41,13 @@ class NotesHelper(val activity: Activity) {
             }
         }.start()
     }
+
+    fun insertOrUpdateNote(note: Note, callback: ((newNoteId: Long) -> Unit)? = null) {
+        Thread {
+            val noteId = activity.notesDB.insertOrUpdate(note)
+            activity.runOnUiThread {
+                callback?.invoke(noteId)
+            }
+        }.start()
+    }
 }

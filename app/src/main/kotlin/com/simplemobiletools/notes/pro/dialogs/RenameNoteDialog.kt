@@ -6,6 +6,7 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.extensions.dbHelper
+import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_new_note.view.*
 import java.io.File
@@ -31,7 +32,10 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, callback: (
                                     note.title = title
                                     val path = note.path
                                     if (path.isEmpty()) {
-                                        activity.dbHelper.updateNote(note)
+                                        NotesHelper(activity).insertOrUpdateNote(note) {
+                                            dismiss()
+                                            callback(note)
+                                        }
                                     } else {
                                         if (title.isEmpty()) {
                                             activity.toast(R.string.filename_cannot_be_empty)
@@ -48,16 +52,16 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, callback: (
                                         activity.renameFile(file.absolutePath, newFile.absolutePath) {
                                             if (it) {
                                                 note.path = newFile.absolutePath
-                                                activity.dbHelper.updateNote(note)
+                                                NotesHelper(activity).insertOrUpdateNote(note) {
+                                                    dismiss()
+                                                    callback(note)
+                                                }
                                             } else {
                                                 activity.toast(R.string.rename_file_error)
                                                 return@renameFile
                                             }
                                         }
                                     }
-
-                                    dismiss()
-                                    callback(note)
                                 }
                             }
                         }

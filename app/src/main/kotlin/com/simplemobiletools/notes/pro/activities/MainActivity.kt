@@ -27,7 +27,10 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.dialogs.*
-import com.simplemobiletools.notes.pro.extensions.*
+import com.simplemobiletools.notes.pro.extensions.config
+import com.simplemobiletools.notes.pro.extensions.dbHelper
+import com.simplemobiletools.notes.pro.extensions.getTextSize
+import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.MIME_TEXT_PLAIN
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
@@ -304,19 +307,16 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun addNewNote(note: Note) {
-        Thread {
-            val id = notesDB.insertOrUpdate(note)
-            mNotes = notesDB.getNotes().toMutableList() as ArrayList<Note>
+        NotesHelper(this).insertOrUpdateNote(note) {
+            val newNoteId = it
             showSaveButton = false
-            runOnUiThread {
-                invalidateOptionsMenu()
-                initViewPager()
-                updateSelectedNote(id)
-                view_pager.onGlobalLayout {
-                    mAdapter?.focusEditText(getNoteIndexWithId(id))
-                }
+            invalidateOptionsMenu()
+            initViewPager()
+            updateSelectedNote(newNoteId)
+            view_pager.onGlobalLayout {
+                mAdapter?.focusEditText(getNoteIndexWithId(newNoteId))
             }
-        }.start()
+        }
     }
 
     private fun launchAbout() {
@@ -455,7 +455,7 @@ class MainActivity : SimpleActivity() {
                         mCurrentNote.value = ""
                     }
 
-                    dbHelper.updateNote(mCurrentNote)
+                    NotesHelper(this).insertOrUpdateNote(mCurrentNote)
                 }
             }
         }

@@ -188,8 +188,9 @@ class NoteFragment : androidx.fragment.app.Fragment() {
 
     private fun saveNoteValue(note: Note) {
         if (note.path.isEmpty()) {
-            db.updateNote(note)
-            (activity as MainActivity).noteSavedSuccessfully(note.title)
+            NotesHelper(activity!!).insertOrUpdateNote(note) {
+                (activity as MainActivity).noteSavedSuccessfully(note.title)
+            }
         } else {
             val currentText = getCurrentNoteViewText()
             if (currentText != null) {
