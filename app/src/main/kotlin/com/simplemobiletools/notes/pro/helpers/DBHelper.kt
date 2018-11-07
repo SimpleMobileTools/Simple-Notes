@@ -128,6 +128,13 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
             cursor?.close()
         }
 
+        if (notes.isEmpty()) {
+            val generalNote = mContext.resources.getString(R.string.general_note)
+            val note = Note(1, generalNote, "", TYPE_NOTE)
+            insertNote(note)
+            return arrayListOf(note)
+        }
+
         return notes
     }
 
