@@ -202,7 +202,7 @@ class MainActivity : SimpleActivity() {
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        view_pager.currentItem = getWantedNoteIndex()
+        view_pager.currentItem = getWantedNoteIndex(null)
     }
 
     private fun storeStateVariables() {
@@ -247,7 +247,7 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun initViewPager() {
+    private fun initViewPager(wantedNoteId: Long? = null) {
         NotesHelper(this).getNotes {
             mNotes = it
             invalidateOptionsMenu()
@@ -255,7 +255,7 @@ class MainActivity : SimpleActivity() {
             mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
             view_pager.apply {
                 adapter = mAdapter
-                currentItem = getWantedNoteIndex()
+                currentItem = getWantedNoteIndex(wantedNoteId)
 
                 onPageChangeListener {
                     mCurrentNote = mNotes[it]
@@ -269,10 +269,10 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun getWantedNoteIndex(): Int {
+    private fun getWantedNoteIndex(secondaryWantedNoteId: Long?): Int {
         var wantedNoteId = intent.getLongExtra(OPEN_NOTE_ID, -1)
         if (wantedNoteId == -1L) {
-            wantedNoteId = config.currentNoteId
+            wantedNoteId = secondaryWantedNoteId ?: config.currentNoteId
         }
         return getNoteIndexWithId(wantedNoteId)
     }
@@ -286,7 +286,7 @@ class MainActivity : SimpleActivity() {
     private fun displayRenameDialog() {
         RenameNoteDialog(this, mCurrentNote) {
             mCurrentNote = it
-            initViewPager()
+            initViewPager(mCurrentNote.id)
         }
     }
 
@@ -308,7 +308,7 @@ class MainActivity : SimpleActivity() {
         NotesHelper(this).insertOrUpdateNote(note) {
             val newNoteId = it
             showSaveButton = false
-            initViewPager()
+            initViewPager(newNoteId)
             updateSelectedNote(newNoteId)
             view_pager.onGlobalLayout {
                 mAdapter?.focusEditText(getNoteIndexWithId(newNoteId))

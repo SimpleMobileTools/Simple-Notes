@@ -190,12 +190,12 @@ class NoteFragment : androidx.fragment.app.Fragment() {
     private fun saveNoteValue(note: Note) {
         if (note.path.isEmpty()) {
             NotesHelper(activity!!).insertOrUpdateNote(note) {
-                (activity as MainActivity).noteSavedSuccessfully(note.title)
+                (activity as? MainActivity)?.noteSavedSuccessfully(note.title)
             }
         } else {
             val currentText = getCurrentNoteViewText()
             if (currentText != null) {
-                (activity as MainActivity).exportNoteValueToFile(note.path, currentText, true)
+                (activity as? MainActivity)?.exportNoteValueToFile(note.path, currentText, true)
             }
         }
     }
