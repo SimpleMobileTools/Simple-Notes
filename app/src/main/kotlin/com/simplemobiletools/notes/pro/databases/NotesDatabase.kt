@@ -11,7 +11,6 @@ import com.simplemobiletools.notes.pro.interfaces.NotesDao
 import com.simplemobiletools.notes.pro.interfaces.WidgetsDao
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
-import com.simplemobiletools.notes.pro.objects.MyExecutor
 import java.util.concurrent.Executors
 
 @Database(entities = [Note::class, Widget::class], version = 1)
@@ -29,7 +28,6 @@ abstract class NotesDatabase : RoomDatabase() {
                 synchronized(NotesDatabase::class) {
                     if (db == null) {
                         db = Room.databaseBuilder(context.applicationContext, NotesDatabase::class.java, "notes.db")
-                                .setQueryExecutor(MyExecutor.myExecutor)
                                 .addCallback(object : Callback() {
                                     override fun onCreate(db: SupportSQLiteDatabase) {
                                         super.onCreate(db)
@@ -49,7 +47,7 @@ abstract class NotesDatabase : RoomDatabase() {
         }
 
         private fun insertFirstNote(context: Context) {
-            Executors.newSingleThreadExecutor().execute {
+            Executors.newSingleThreadScheduledExecutor().execute {
                 val generalNote = context.resources.getString(R.string.general_note)
                 val note = Note(null, generalNote, "", TYPE_NOTE)
                 db!!.NotesDao().insertOrUpdate(note)
