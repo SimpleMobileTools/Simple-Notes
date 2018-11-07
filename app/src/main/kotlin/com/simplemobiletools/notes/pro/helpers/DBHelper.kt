@@ -1,7 +1,5 @@
 package com.simplemobiletools.notes.pro.helpers
 
-import android.appwidget.AppWidgetManager
-import android.content.ComponentName
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -11,7 +9,6 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.simplemobiletools.commons.extensions.getIntValue
 import com.simplemobiletools.commons.extensions.getStringValue
 import com.simplemobiletools.notes.pro.R
-import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import java.io.File
@@ -44,20 +41,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         insertFirstNote(db)
     }
 
-    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        if (oldVersion < 2) {
-            db.execSQL("ALTER TABLE $NOTES_TABLE_NAME ADD COLUMN $COL_TYPE INTEGER DEFAULT 0")
-        }
-
-        if (oldVersion < 3) {
-            db.execSQL("ALTER TABLE $NOTES_TABLE_NAME ADD COLUMN $COL_PATH TEXT DEFAULT ''")
-        }
-
-        if (oldVersion < 4) {
-            db.execSQL("CREATE TABLE $WIDGETS_TABLE_NAME ($COL_ID INTEGER PRIMARY KEY AUTOINCREMENT, $COL_WIDGET_ID INTEGER DEFAULT 0, $COL_NOTE_ID INTEGER DEFAULT 0)")
-            insertFirstWidget(db)
-        }
-    }
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
 
     private fun insertFirstNote(db: SQLiteDatabase) {
         val generalNote = mContext.resources.getString(R.string.general_note)
@@ -65,23 +49,9 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         insertNote(note, db)
     }
 
-    // if a user has exactly 1 widget active, prefill it. Can happen only at upgrading from older app versions
-    private fun insertFirstWidget(db: SQLiteDatabase) {
-        val widgetIDs = AppWidgetManager.getInstance(mContext).getAppWidgetIds(ComponentName(mContext, MyWidgetProvider::class.java))
-        if (widgetIDs.size == 1) {
-            val widget = Widget(widgetIDs.first(), mContext.config.widgetNoteId)
-            insertWidget(widget, db)
-        }
-    }
-
     private fun insertNote(note: Note, db: SQLiteDatabase) {
         val values = fillNoteContentValues(note)
         db.insert(NOTES_TABLE_NAME, null, values)
-    }
-
-    private fun insertWidget(widget: Widget, db: SQLiteDatabase) {
-        val values = fillWidgetContentValues(widget)
-        db.insert(WIDGETS_TABLE_NAME, null, values)
     }
 
     fun insertNote(note: Note): Int {
