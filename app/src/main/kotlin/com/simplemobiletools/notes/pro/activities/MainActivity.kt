@@ -300,7 +300,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun displayNewNoteDialog(value: String = "") {
-        NewNoteDialog(this, dbHelper) {
+        NewNoteDialog(this) {
             val newNote = Note(null, it, value, TYPE_NOTE)
             addNewNote(newNote)
         }
@@ -355,7 +355,7 @@ class MainActivity : SimpleActivity() {
             toast(R.string.invalid_file_format)
         } else if (file.length() > 10 * 1000 * 1000) {
             toast(R.string.file_too_large)
-        } else if (checkTitle && dbHelper.doesNoteTitleExist(path.getFilenameFromPath())) {
+        } else if (checkTitle && mNotes.any { it.title.equals(path.getFilenameFromPath(), true) }) {
             toast(R.string.title_taken)
         } else {
             onChecksPassed(file)
@@ -386,7 +386,7 @@ class MainActivity : SimpleActivity() {
     private fun openPath(path: String) {
         openFile(path, false) {
             var title = path.getFilenameFromPath()
-            if (dbHelper.doesNoteTitleExist(title)) {
+            if (mNotes.any { it.title.equals(title, true) }) {
                 title += " (file)"
             }
 

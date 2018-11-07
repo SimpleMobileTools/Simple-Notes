@@ -8,10 +8,10 @@ import com.simplemobiletools.commons.extensions.showKeyboard
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.pro.R
-import com.simplemobiletools.notes.pro.helpers.DBHelper
+import com.simplemobiletools.notes.pro.extensions.notesDB
 import kotlinx.android.synthetic.main.dialog_new_note.view.*
 
-class NewNoteDialog(val activity: Activity, val db: DBHelper, callback: (title: String) -> Unit) {
+class NewNoteDialog(val activity: Activity, callback: (title: String) -> Unit) {
     init {
         val view = activity.layoutInflater.inflate(R.layout.dialog_new_note, null)
 
@@ -23,14 +23,16 @@ class NewNoteDialog(val activity: Activity, val db: DBHelper, callback: (title: 
                         showKeyboard(view.note_name)
                         getButton(BUTTON_POSITIVE).setOnClickListener {
                             val title = view.note_name.value
-                            when {
-                                title.isEmpty() -> activity.toast(R.string.no_title)
-                                db.doesNoteTitleExist(title) -> activity.toast(R.string.title_taken)
-                                else -> {
-                                    callback(title)
-                                    dismiss()
+                            Thread {
+                                when {
+                                    title.isEmpty() -> activity.toast(R.string.no_title)
+                                    activity.notesDB.getNoteIdWithTitle(title) != null -> activity.toast(R.string.title_taken)
+                                    else -> {
+                                        callback(title)
+                                        dismiss()
+                                    }
                                 }
-                            }
+                            }.start()
                         }
                     }
                 }

@@ -8,7 +8,7 @@ import com.simplemobiletools.commons.extensions.isMediaFile
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
-import com.simplemobiletools.notes.pro.extensions.dbHelper
+import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.pro.models.Note
@@ -30,7 +30,9 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
                     activity.setupDialogStuff(view, this, R.string.import_folder) {
                         getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                             val updateFilesOnEdit = view.open_file_type.checkedRadioButtonId == R.id.open_file_update_file
-                            saveFolder(updateFilesOnEdit)
+                            Thread {
+                                saveFolder(updateFilesOnEdit)
+                            }.start()
                         }
                     }
                 }
@@ -44,7 +46,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
                 file.isDirectory -> false
                 filename.isMediaFile() -> false
                 file.length() > 10 * 1000 * 1000 -> false
-                activity.dbHelper.doesNoteTitleExist(filename) -> false
+                activity.notesDB.getNoteIdWithTitle(filename) != null -> false
                 else -> true
             }
         }.forEach {
@@ -61,8 +63,10 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
             }
         }
 
-        callback()
-        dialog.dismiss()
+        activity.runOnUiThread {
+            callback()
+            dialog.dismiss()
+        }
     }
 
     private fun saveNote(title: String, value: String, path: String) {
