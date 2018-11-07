@@ -236,16 +236,16 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun handleUri(uri: Uri) {
-        val id = dbHelper.getNoteId(uri.path)
+        NotesHelper(this).getNoteIdWithPath(uri.path) {
+            if (it != null && it > 0L) {
+                updateSelectedNote(it)
+                return@getNoteIdWithPath
+            }
 
-        if (id > 0) {
-            updateSelectedNote(id)
-            return
-        }
-
-        handlePermission(PERMISSION_WRITE_STORAGE) {
-            if (it) {
-                importFileWithSync(uri)
+            handlePermission(PERMISSION_WRITE_STORAGE) {
+                if (it) {
+                    importFileWithSync(uri)
+                }
             }
         }
     }

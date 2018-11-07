@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteDatabase.CONFLICT_IGNORE
 import android.database.sqlite.SQLiteOpenHelper
 import com.simplemobiletools.commons.extensions.getIntValue
-import com.simplemobiletools.commons.extensions.getLongValue
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
@@ -90,22 +89,6 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         } finally {
             cursor?.close()
         }
-    }
-
-    fun getNoteId(path: String): Long {
-        val cols = arrayOf(COL_ID)
-        val selection = "$COL_PATH = ?"
-        val selectionArgs = arrayOf(path)
-        var cursor: Cursor? = null
-        try {
-            cursor = mDb.query(NOTES_TABLE_NAME, cols, selection, selectionArgs, null, null, null)
-            if (cursor?.moveToFirst() == true) {
-                return cursor.getLongValue(COL_ID)
-            }
-        } finally {
-            cursor?.close()
-        }
-        return 0
     }
 
     fun getWidgets(): ArrayList<Widget> {

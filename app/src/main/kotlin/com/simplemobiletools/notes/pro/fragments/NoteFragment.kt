@@ -117,7 +117,7 @@ class NoteFragment : androidx.fragment.app.Fragment() {
     }
 
     private fun setupFragment() {
-        val config = config!!
+        val config = config ?: return
         view.notes_view.apply {
             typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
 
@@ -163,6 +163,10 @@ class NoteFragment : androidx.fragment.app.Fragment() {
     fun getNotesView() = view.notes_view
 
     fun saveText(force: Boolean) {
+        if (note == null) {
+            return
+        }
+
         if (note!!.path.isNotEmpty() && !File(note!!.path).exists()) {
             return
         }

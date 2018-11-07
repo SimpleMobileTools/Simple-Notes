@@ -11,6 +11,9 @@ interface NotesDao {
     @Query("SELECT * FROM notes WHERE id = :id")
     fun getNoteWithId(id: Int): Note?
 
+    @Query("SELECT id FROM notes WHERE path = :path")
+    fun getNoteIdWithPath(path: String): Long?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertOrUpdate(note: Note): Long
 

@@ -42,6 +42,15 @@ class NotesHelper(val activity: Activity) {
         }.start()
     }
 
+    fun getNoteIdWithPath(path: String, callback: (id: Long?) -> Unit) {
+        Thread {
+            val id = activity.notesDB.getNoteIdWithPath(path)
+            activity.runOnUiThread {
+                callback(id)
+            }
+        }.start()
+    }
+
     fun insertOrUpdateNote(note: Note, callback: ((newNoteId: Long) -> Unit)? = null) {
         Thread {
             val noteId = activity.notesDB.insertOrUpdate(note)
