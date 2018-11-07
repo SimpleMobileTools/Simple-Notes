@@ -15,7 +15,10 @@ import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.dialogs.UpgradeToProDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.*
+import com.simplemobiletools.commons.helpers.LICENSE_RTL
+import com.simplemobiletools.commons.helpers.LICENSE_STETHO
+import com.simplemobiletools.commons.helpers.PERMISSION_READ_STORAGE
+import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.RadioItem
@@ -310,7 +313,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun launchAbout() {
-        val licenses = LICENSE_STETHO or LICENSE_RTL or LICENSE_LEAK_CANARY
+        val licenses = LICENSE_STETHO or LICENSE_RTL
 
         val faqItems = arrayListOf(
                 FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
