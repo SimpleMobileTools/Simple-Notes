@@ -18,6 +18,7 @@ import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.dbHelper
 import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.helpers.MyWidgetProvider
+import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.widget_config.*
@@ -80,10 +81,12 @@ class WidgetConfigureActivity : SimpleActivity() {
 
         mTextColor = config.widgetTextColor
         updateTextColor()
-        mNotes = dbHelper.getNotes()
         mIsCustomizingColors = intent.extras?.getBoolean(IS_CUSTOMIZING_COLORS) ?: false
-        notes_picker_holder.beVisibleIf(mNotes.size > 1 && !mIsCustomizingColors)
-        updateCurrentNote(mNotes.first())
+        NotesHelper(this).getNotes {
+            mNotes = it
+            notes_picker_holder.beVisibleIf(mNotes.size > 1 && !mIsCustomizingColors)
+            updateCurrentNote(mNotes.first())
+        }
     }
 
     private fun showNoteSelector() {

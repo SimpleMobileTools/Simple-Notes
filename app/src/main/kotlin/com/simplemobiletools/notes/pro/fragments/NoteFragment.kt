@@ -40,7 +40,8 @@ class NoteFragment : androidx.fragment.app.Fragment() {
     private var isUndoOrRedo = false
     private var skipTextUpdating = false
     private var noteId = 0
-    lateinit var note: Note
+    private var note: Note? = null
+
     lateinit var view: ViewGroup
     private lateinit var db: DBHelper
 
@@ -48,7 +49,6 @@ class NoteFragment : androidx.fragment.app.Fragment() {
         view = inflater.inflate(R.layout.fragment_note, container, false) as ViewGroup
         noteId = arguments!!.getInt(NOTE_ID)
         db = context!!.dbHelper
-        note = db.getNoteWithId(noteId) ?: return view
         retainInstance = true
 
         val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
@@ -72,47 +72,12 @@ class NoteFragment : androidx.fragment.app.Fragment() {
     override fun onResume() {
         super.onResume()
 
-        val config = config!!
-        view.notes_view.apply {
-            typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
-
-            val fileContents = note.getNoteStoredValue()
-            if (fileContents == null) {
-                (activity as MainActivity).deleteNote(false)
-                return
-            }
-
-            setColors(config.textColor, config.primaryColor, config.backgroundColor)
-            setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
-            gravity = getTextGravity()
-            if (text.toString() != fileContents) {
-                if (!skipTextUpdating) {
-                    setText(fileContents)
-                }
-                skipTextUpdating = false
-                setSelection(if (config.placeCursorToEnd) text.length else 0)
-            }
-
-            if (config.showKeyboard) {
-                requestFocus()
-            }
-
-            imeOptions = if (config.useIncognitoMode) {
-                imeOptions or EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
-            } else {
-                imeOptions.removeBit(EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)
+        NotesHelper(activity!!).getNoteWithId(noteId) {
+            if (it != null) {
+                note = it
+                setupFragment()
             }
         }
-
-        if (config.showWordCount) {
-            view.notes_counter.beVisible()
-            view.notes_counter.setTextColor(config.textColor)
-            setWordCounter(view.notes_view.text.toString())
-        } else {
-            view.notes_counter.beGone()
-        }
-
-        view.notes_view.addTextChangedListener(textWatcher)
     }
 
     override fun onPause() {
@@ -151,10 +116,54 @@ class NoteFragment : androidx.fragment.app.Fragment() {
         }
     }
 
+    private fun setupFragment() {
+        val config = config!!
+        view.notes_view.apply {
+            typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
+
+            val fileContents = note!!.getNoteStoredValue()
+            if (fileContents == null) {
+                (activity as MainActivity).deleteNote(false)
+                return
+            }
+
+            setColors(config.textColor, config.primaryColor, config.backgroundColor)
+            setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
+            gravity = getTextGravity()
+            if (text.toString() != fileContents) {
+                if (!skipTextUpdating) {
+                    setText(fileContents)
+                }
+                skipTextUpdating = false
+                setSelection(if (config.placeCursorToEnd) text.length else 0)
+            }
+
+            if (config.showKeyboard) {
+                requestFocus()
+            }
+
+            imeOptions = if (config.useIncognitoMode) {
+                imeOptions or EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING
+            } else {
+                imeOptions.removeBit(EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING)
+            }
+        }
+
+        if (config.showWordCount) {
+            view.notes_counter.beVisible()
+            view.notes_counter.setTextColor(config.textColor)
+            setWordCounter(view.notes_view.text.toString())
+        } else {
+            view.notes_counter.beGone()
+        }
+
+        view.notes_view.addTextChangedListener(textWatcher)
+    }
+
     fun getNotesView() = view.notes_view
 
     fun saveText(force: Boolean) {
-        if (note.path.isNotEmpty() && !File(note.path).exists()) {
+        if (note!!.path.isNotEmpty() && !File(note!!.path).exists()) {
             return
         }
 
@@ -163,15 +172,15 @@ class NoteFragment : androidx.fragment.app.Fragment() {
         }
 
         val newText = getCurrentNoteViewText()
-        val oldText = note.getNoteStoredValue()
+        val oldText = note!!.getNoteStoredValue()
         if (newText != null && (newText != oldText || force)) {
-            note.value = newText
-            saveNoteValue(note)
+            note!!.value = newText
+            saveNoteValue(note!!)
             context!!.updateWidgets()
         }
     }
 
-    fun hasUnsavedChanges() = getCurrentNoteViewText() != note.getNoteStoredValue()
+    fun hasUnsavedChanges() = getCurrentNoteViewText() != note!!.getNoteStoredValue()
 
     fun focusEditText() {
         view.notes_view.requestFocus()

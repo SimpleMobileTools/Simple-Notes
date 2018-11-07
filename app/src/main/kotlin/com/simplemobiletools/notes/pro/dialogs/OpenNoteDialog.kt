@@ -1,6 +1,7 @@
 package com.simplemobiletools.notes.pro.dialogs
 
 import android.app.Activity
+import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioGroup
 import androidx.appcompat.app.AlertDialog
@@ -10,17 +11,23 @@ import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.dbHelper
+import com.simplemobiletools.notes.pro.helpers.NotesHelper
+import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_open_note.view.*
 import kotlinx.android.synthetic.main.open_note_item.view.*
 
 class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> Unit) {
-    lateinit var dialog: AlertDialog
+    private var dialog: AlertDialog? = null
 
     init {
         val view = activity.layoutInflater.inflate(R.layout.dialog_open_note, null)
+        NotesHelper(activity).getNotes {
+            initDialog(it, view)
+        }
+    }
+
+    private fun initDialog(notes: ArrayList<Note>, view: View) {
         val textColor = activity.config.textColor
-        val notes = activity.dbHelper.getNotes()
         notes.forEach {
             activity.layoutInflater.inflate(R.layout.open_note_item, null).apply {
                 val note = it
@@ -31,7 +38,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
 
                     setOnClickListener {
                         callback(id)
-                        dialog.dismiss()
+                        dialog?.dismiss()
                     }
                 }
                 open_note_item_icon.apply {

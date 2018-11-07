@@ -10,8 +10,8 @@ import com.simplemobiletools.commons.extensions.setTextSize
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.R.id.widget_text_holder
 import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.dbHelper
 import com.simplemobiletools.notes.pro.extensions.getTextSize
+import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.GRAVITY_CENTER
 import com.simplemobiletools.notes.pro.helpers.GRAVITY_RIGHT
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
@@ -24,7 +24,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
     override fun getViewAt(position: Int): RemoteViews {
         val noteId = intent.getIntExtra(NOTE_ID, 1)
         val views = RemoteViews(context.packageName, R.layout.widget_text_layout).apply {
-            val note = context.dbHelper.getNoteWithId(noteId)
+            val note = context.notesDB.getNoteWithId(noteId)
             if (note != null) {
                 val noteText = note.getNoteStoredValue() ?: ""
                 val textSize = context.getTextSize() / context.resources.displayMetrics.density

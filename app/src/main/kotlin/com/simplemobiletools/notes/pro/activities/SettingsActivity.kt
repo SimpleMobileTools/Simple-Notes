@@ -11,7 +11,6 @@ import com.simplemobiletools.commons.helpers.isOreoPlus
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.dbHelper
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.*
 import kotlinx.android.synthetic.main.activity_settings.*
@@ -109,7 +108,10 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupShowNotePicker() {
-        settings_show_note_picker_holder.beVisibleIf(dbHelper.getNotes().size > 1)
+        NotesHelper(this).getNotes {
+            settings_show_note_picker_holder.beVisibleIf(it.size > 1)
+        }
+
         settings_show_note_picker.isChecked = config.showNotePicker
         settings_show_note_picker_holder.setOnClickListener {
             settings_show_note_picker.toggle()

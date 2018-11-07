@@ -1,14 +1,11 @@
 package com.simplemobiletools.notes.pro.interfaces
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.simplemobiletools.notes.pro.models.Note
 
 @Dao
 interface NotesDao {
-    @Query("SELECT * FROM notes")
+    @Query("SELECT * FROM notes ORDER BY title COLLATE NOCASE ASC")
     fun getNotes(): List<Note>
 
     @Query("SELECT * FROM notes WHERE id = :id")
@@ -16,4 +13,7 @@ interface NotesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertOrUpdate(note: Note): Long
+
+    @Delete
+    fun deleteNote(note: Note)
 }

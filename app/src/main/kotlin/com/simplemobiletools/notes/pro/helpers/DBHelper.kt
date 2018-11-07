@@ -7,11 +7,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteDatabase.CONFLICT_IGNORE
 import android.database.sqlite.SQLiteOpenHelper
 import com.simplemobiletools.commons.extensions.getIntValue
-import com.simplemobiletools.commons.extensions.getStringValue
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
-import java.io.File
 import java.util.*
 
 class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHelper(mContext, DB_NAME, null, DB_VERSION) {
@@ -96,67 +94,6 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         } finally {
             cursor?.close()
         }
-    }
-
-    fun getNotes(): ArrayList<Note> {
-        val notes = ArrayList<Note>()
-        val cols = arrayOf(COL_ID, COL_TITLE, COL_VALUE, COL_TYPE, COL_PATH)
-        var cursor: Cursor? = null
-        try {
-            cursor = mDb.query(NOTES_TABLE_NAME, cols, null, null, null, null, "$COL_TITLE COLLATE NOCASE ASC")
-            if (cursor?.moveToFirst() == true) {
-                do {
-                    try {
-                        val id = cursor.getIntValue(COL_ID)
-                        val title = cursor.getStringValue(COL_TITLE)
-                        val value = cursor.getStringValue(COL_VALUE)
-                        val type = cursor.getIntValue(COL_TYPE)
-                        val path = cursor.getStringValue(COL_PATH) ?: ""
-                        if (path.isNotEmpty() && !File(path).exists()) {
-                            deleteNote(id)
-                            continue
-                        }
-
-                        val note = Note(id, title, value, type, path)
-                        notes.add(note)
-                    } catch (e: Exception) {
-                        continue
-                    }
-                } while (cursor.moveToNext())
-            }
-        } finally {
-            cursor?.close()
-        }
-
-        if (notes.isEmpty()) {
-            val generalNote = mContext.resources.getString(R.string.general_note)
-            val note = Note(1, generalNote, "", TYPE_NOTE)
-            insertNote(note)
-            return arrayListOf(note)
-        }
-
-        return notes
-    }
-
-    fun getNoteWithId(id: Int): Note? {
-        val cols = arrayOf(COL_TITLE, COL_VALUE, COL_TYPE, COL_PATH)
-        val selection = "$COL_ID = ?"
-        val selectionArgs = arrayOf(id.toString())
-        var note: Note? = null
-        var cursor: Cursor? = null
-        try {
-            cursor = mDb.query(NOTES_TABLE_NAME, cols, selection, selectionArgs, null, null, null)
-            if (cursor?.moveToFirst() == true) {
-                val title = cursor.getStringValue(COL_TITLE)
-                val value = cursor.getStringValue(COL_VALUE)
-                val type = cursor.getIntValue(COL_TYPE)
-                val path = cursor.getStringValue(COL_PATH) ?: ""
-                note = Note(id, title, value, type, path)
-            }
-        } finally {
-            cursor?.close()
-        }
-        return note
     }
 
     fun getNoteId(path: String): Int {

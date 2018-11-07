@@ -27,11 +27,9 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.dialogs.*
-import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.dbHelper
-import com.simplemobiletools.notes.pro.extensions.getTextSize
-import com.simplemobiletools.notes.pro.extensions.updateWidgets
+import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.helpers.MIME_TEXT_PLAIN
+import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.pro.models.Note
@@ -69,7 +67,7 @@ class MainActivity : SimpleActivity() {
         intent.apply {
             if (action == Intent.ACTION_SEND && type == MIME_TEXT_PLAIN) {
                 getStringExtra(Intent.EXTRA_TEXT)?.let {
-                    handleText(it)
+                    handleTextIntent(it)
                     intent.removeExtra(Intent.EXTRA_TEXT)
                 }
             }
@@ -213,21 +211,23 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun handleText(text: String) {
-        val notes = dbHelper.getNotes()
-        val list = arrayListOf<RadioItem>().apply {
-            add(RadioItem(0, getString(R.string.create_new_note)))
-            notes.forEachIndexed { index, note ->
-                add(RadioItem(index + 1, note.title))
+    private fun handleTextIntent(text: String) {
+        NotesHelper(this).getNotes {
+            val notes = it
+            val list = arrayListOf<RadioItem>().apply {
+                add(RadioItem(0, getString(R.string.create_new_note)))
+                notes.forEachIndexed { index, note ->
+                    add(RadioItem(index + 1, note.title))
+                }
             }
-        }
 
-        RadioGroupDialog(this, list, -1, R.string.add_to_note) {
-            if (it as Int == 0) {
-                displayNewNoteDialog(text)
-            } else {
-                updateSelectedNote(notes[it - 1].id!!)
-                addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
+            RadioGroupDialog(this, list, -1, R.string.add_to_note) {
+                if (it as Int == 0) {
+                    displayNewNoteDialog(text)
+                } else {
+                    updateSelectedNote(notes[it - 1].id!!)
+                    addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
+                }
             }
         }
     }
@@ -248,21 +248,23 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun initViewPager() {
-        mNotes = dbHelper.getNotes()
-        mCurrentNote = mNotes[0]
-        mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
-        view_pager.apply {
-            adapter = mAdapter
-            currentItem = getWantedNoteIndex()
+        NotesHelper(this).getNotes {
+            mNotes = it
+            mCurrentNote = mNotes[0]
+            mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
+            view_pager.apply {
+                adapter = mAdapter
+                currentItem = getWantedNoteIndex()
 
-            onPageChangeListener {
-                mCurrentNote = mNotes[it]
-                config.currentNoteId = mCurrentNote.id!!
+                onPageChangeListener {
+                    mCurrentNote = mNotes[it]
+                    config.currentNoteId = mCurrentNote.id!!
+                }
             }
-        }
 
-        if (!config.showKeyboard) {
-            hideKeyboard()
+            if (!config.showKeyboard) {
+                hideKeyboard()
+            }
         }
     }
 
@@ -302,15 +304,19 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun addNewNote(note: Note) {
-        val id = dbHelper.insertNote(note)
-        mNotes = dbHelper.getNotes()
-        showSaveButton = false
-        invalidateOptionsMenu()
-        initViewPager()
-        updateSelectedNote(id)
-        view_pager.onGlobalLayout {
-            mAdapter?.focusEditText(getNoteIndexWithId(id))
-        }
+        Thread {
+            val id = notesDB.insertOrUpdate(note).toInt()
+            mNotes = notesDB.getNotes().toMutableList() as ArrayList<Note>
+            showSaveButton = false
+            runOnUiThread {
+                invalidateOptionsMenu()
+                initViewPager()
+                updateSelectedNote(id)
+                view_pager.onGlobalLayout {
+                    mAdapter?.focusEditText(getNoteIndexWithId(id))
+                }
+            }
+        }.start()
     }
 
     private fun launchAbout() {
@@ -400,13 +406,16 @@ class MainActivity : SimpleActivity() {
         FilePickerDialog(this, pickFile = false, canAddShowHiddenButton = true) {
             openFolder(it) {
                 ImportFolderDialog(this, it.path) {
-                    mNotes = dbHelper.getNotes()
-                    showSaveButton = false
-                    invalidateOptionsMenu()
-                    initViewPager()
-                    updateSelectedNote(it)
-                    view_pager.onGlobalLayout {
-                        mAdapter?.focusEditText(getNoteIndexWithId(it))
+                    val noteId = it
+                    NotesHelper(this).getNotes {
+                        mNotes = it
+                        showSaveButton = false
+                        invalidateOptionsMenu()
+                        initViewPager()
+                        updateSelectedNote(noteId)
+                        view_pager.onGlobalLayout {
+                            mAdapter?.focusEditText(getNoteIndexWithId(noteId))
+                        }
                     }
                 }
             }
@@ -467,20 +476,22 @@ class MainActivity : SimpleActivity() {
     private fun exportAllNotes() {
         ExportFilesDialog(this, mNotes) { parent, extension ->
             var failCount = 0
-            mNotes = dbHelper.getNotes()
-            mNotes.forEachIndexed { index, note ->
-                val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
-                val file = File(parent, filename)
-                if (!filename.isAValidFilename()) {
-                    toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
-                } else {
-                    exportNoteValueToFile(file.absolutePath, note.value, false) {
-                        if (!it) {
-                            failCount++
-                        }
+            NotesHelper(this).getNotes {
+                mNotes = it
+                mNotes.forEachIndexed { index, note ->
+                    val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
+                    val file = File(parent, filename)
+                    if (!filename.isAValidFilename()) {
+                        toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
+                    } else {
+                        exportNoteValueToFile(file.absolutePath, note.value, false) {
+                            if (!it) {
+                                failCount++
+                            }
 
-                        if (index == mNotes.size - 1) {
-                            toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
+                            if (index == mNotes.size - 1) {
+                                toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
+                            }
                         }
                     }
                 }
@@ -570,22 +581,23 @@ class MainActivity : SimpleActivity() {
 
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
         dbHelper.deleteNote(mCurrentNote.id!!)
-        mNotes = dbHelper.getNotes()
+        NotesHelper(this).getNotes {
+            mNotes = it
+            val firstNoteId = mNotes[0].id
+            updateSelectedNote(firstNoteId!!)
+            if (config.widgetNoteId == note.id) {
+                config.widgetNoteId = mCurrentNote.id!!
+                updateWidgets()
+            }
 
-        val firstNoteId = mNotes[0].id
-        updateSelectedNote(firstNoteId!!)
-        if (config.widgetNoteId == note.id) {
-            config.widgetNoteId = mCurrentNote.id!!
-            updateWidgets()
-        }
+            invalidateOptionsMenu()
+            initViewPager()
 
-        invalidateOptionsMenu()
-        initViewPager()
-
-        if (deleteFile) {
-            deleteFile(FileDirItem(note.path, note.title)) {
-                if (!it) {
-                    toast(R.string.unknown_error_occurred)
+            if (deleteFile) {
+                deleteFile(FileDirItem(note.path, note.title)) {
+                    if (!it) {
+                        toast(R.string.unknown_error_occurred)
+                    }
                 }
             }
         }
