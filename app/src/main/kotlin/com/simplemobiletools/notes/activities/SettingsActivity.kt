@@ -3,7 +3,9 @@ package com.simplemobiletools.notes.activities
 import android.content.Intent
 import android.os.Bundle
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
-import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.extensions.beVisibleIf
+import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
+import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
 import com.simplemobiletools.commons.helpers.isOreoPlus
 import com.simplemobiletools.commons.models.RadioItem
@@ -24,7 +26,6 @@ class SettingsActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
 
-        setupUpgradeToPro()
         setupCustomizeColors()
         setupUseEnglish()
         setupAutosaveNotes()
@@ -48,13 +49,6 @@ class SettingsActivity : SimpleActivity() {
         val adjustedPrimaryColor = getAdjustedPrimaryColor()
         arrayListOf(text_label, startup_label, saving_label, widgets_label).forEach {
             it.setTextColor(adjustedPrimaryColor)
-        }
-    }
-
-    private fun setupUpgradeToPro() {
-        settings_upgrade_to_pro_holder.beGoneIf(isAProApp())
-        settings_upgrade_to_pro_holder.setOnClickListener {
-            launchUpgradeToProIntent()
         }
     }
 

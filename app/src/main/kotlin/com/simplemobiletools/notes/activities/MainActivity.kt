@@ -13,10 +13,8 @@ import android.view.MenuItem
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
-import com.simplemobiletools.commons.dialogs.UpgradeToProDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_RTL
-import com.simplemobiletools.commons.helpers.LICENSE_STETHO
 import com.simplemobiletools.commons.helpers.PERMISSION_READ_STORAGE
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
 import com.simplemobiletools.commons.models.FAQItem
@@ -89,11 +87,6 @@ class MainActivity : SimpleActivity() {
 
         wasInit = true
         checkAppOnSDCard()
-
-        if (!config.wasInitialUpgradeToProShown) {
-            UpgradeToProDialog(this)
-            config.wasInitialUpgradeToProShown = true
-        }
     }
 
     override fun onResume() {
@@ -313,7 +306,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun launchAbout() {
-        val licenses = LICENSE_STETHO or LICENSE_RTL
+        val licenses = LICENSE_RTL
 
         val faqItems = arrayListOf(
                 FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
