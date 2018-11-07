@@ -5,11 +5,15 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.helpers.*
+import com.simplemobiletools.notes.pro.interfaces.NotesDao
 
 val Context.config: Config get() = Config.newInstance(applicationContext)
 
 val Context.dbHelper: DBHelper get() = DBHelper.newInstance(applicationContext)
+
+val Context.notesDB: NotesDao get() = NotesDatabase.getInstance(applicationContext).NotesDao()
 
 fun Context.getTextSize() = when (config.fontSize) {
     FONT_SIZE_SMALL -> resources.getDimension(R.dimen.smaller_text_size)

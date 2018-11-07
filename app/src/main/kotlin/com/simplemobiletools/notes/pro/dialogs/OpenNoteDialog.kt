@@ -27,7 +27,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
                 open_note_item_radio_button.apply {
                     text = note.title
                     isChecked = note.id == activity.config.currentNoteId
-                    id = note.id
+                    id = note.id!!
 
                     setOnClickListener {
                         callback(id)

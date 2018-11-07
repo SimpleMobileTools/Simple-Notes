@@ -25,6 +25,7 @@ import com.simplemobiletools.commons.views.MyEditText
 import com.simplemobiletools.notes.pro.BuildConfig
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.adapters.NotesPagerAdapter
+import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.dialogs.*
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.dbHelper
@@ -108,6 +109,13 @@ class MainActivity : SimpleActivity() {
     override fun onPause() {
         super.onPause()
         storeStateVariables()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (!isChangingConfigurations) {
+            NotesDatabase.destroyInstance()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -218,7 +226,7 @@ class MainActivity : SimpleActivity() {
             if (it as Int == 0) {
                 displayNewNoteDialog(text)
             } else {
-                updateSelectedNote(notes[it - 1].id)
+                updateSelectedNote(notes[it - 1].id!!)
                 addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
             }
         }
@@ -249,7 +257,7 @@ class MainActivity : SimpleActivity() {
 
             onPageChangeListener {
                 mCurrentNote = mNotes[it]
-                config.currentNoteId = mCurrentNote.id
+                config.currentNoteId = mCurrentNote.id!!
             }
         }
 
@@ -561,13 +569,13 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
-        dbHelper.deleteNote(mCurrentNote.id)
+        dbHelper.deleteNote(mCurrentNote.id!!)
         mNotes = dbHelper.getNotes()
 
         val firstNoteId = mNotes[0].id
-        updateSelectedNote(firstNoteId)
+        updateSelectedNote(firstNoteId!!)
         if (config.widgetNoteId == note.id) {
-            config.widgetNoteId = mCurrentNote.id
+            config.widgetNoteId = mCurrentNote.id!!
             updateWidgets()
         }
 

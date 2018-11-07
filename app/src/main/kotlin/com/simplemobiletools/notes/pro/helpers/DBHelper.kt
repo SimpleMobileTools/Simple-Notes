@@ -170,17 +170,17 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
 
     fun updateNoteValue(note: Note) {
         val values = ContentValues().apply { put(COL_VALUE, note.value) }
-        updateNote(note.id, values)
+        updateNote(note.id!!, values)
     }
 
     fun updateNoteTitle(note: Note) {
         val values = ContentValues().apply { put(COL_TITLE, note.title) }
-        updateNote(note.id, values)
+        updateNote(note.id!!, values)
     }
 
     fun updateNotePath(note: Note) {
         val values = ContentValues().apply { put(COL_PATH, note.path) }
-        updateNote(note.id, values)
+        updateNote(note.id!!, values)
     }
 
     private fun updateNote(id: Int, values: ContentValues) {
