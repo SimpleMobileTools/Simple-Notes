@@ -250,6 +250,7 @@ class MainActivity : SimpleActivity() {
     private fun initViewPager() {
         NotesHelper(this).getNotes {
             mNotes = it
+            invalidateOptionsMenu()
             mCurrentNote = mNotes[0]
             mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
             view_pager.apply {
@@ -307,7 +308,6 @@ class MainActivity : SimpleActivity() {
         NotesHelper(this).insertOrUpdateNote(note) {
             val newNoteId = it
             showSaveButton = false
-            invalidateOptionsMenu()
             initViewPager()
             updateSelectedNote(newNoteId)
             view_pager.onGlobalLayout {
@@ -407,7 +407,6 @@ class MainActivity : SimpleActivity() {
                     NotesHelper(this).getNotes {
                         mNotes = it
                         showSaveButton = false
-                        invalidateOptionsMenu()
                         initViewPager()
                     }
                 }
@@ -590,7 +589,6 @@ class MainActivity : SimpleActivity() {
                 updateWidgets()
             }
 
-            invalidateOptionsMenu()
             initViewPager()
 
             if (deleteFile) {
