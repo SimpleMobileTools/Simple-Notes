@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteDatabase.CONFLICT_IGNORE
 import android.database.sqlite.SQLiteOpenHelper
 import com.simplemobiletools.commons.extensions.getIntValue
+import com.simplemobiletools.commons.extensions.getLongValue
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
@@ -52,11 +53,6 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         db.insert(NOTES_TABLE_NAME, null, values)
     }
 
-    fun insertNote(note: Note): Int {
-        val values = fillNoteContentValues(note)
-        return mDb.insertWithOnConflict(NOTES_TABLE_NAME, null, values, CONFLICT_IGNORE).toInt()
-    }
-
     fun insertWidget(widget: Widget): Int {
         val values = fillWidgetContentValues(widget)
         return mDb.insertWithOnConflict(WIDGETS_TABLE_NAME, null, values, CONFLICT_IGNORE).toInt()
@@ -78,7 +74,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         }
     }
 
-    fun deleteNote(id: Int) {
+    fun deleteNote(id: Long) {
         mDb.delete(NOTES_TABLE_NAME, "$COL_ID = $id", null)
         mDb.delete(WIDGETS_TABLE_NAME, "$COL_NOTE_ID = $id", null)
     }
@@ -96,7 +92,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         }
     }
 
-    fun getNoteId(path: String): Int {
+    fun getNoteId(path: String): Long {
         val cols = arrayOf(COL_ID)
         val selection = "$COL_PATH = ?"
         val selectionArgs = arrayOf(path)
@@ -104,7 +100,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         try {
             cursor = mDb.query(NOTES_TABLE_NAME, cols, selection, selectionArgs, null, null, null)
             if (cursor?.moveToFirst() == true) {
-                return cursor.getIntValue(COL_ID)
+                return cursor.getLongValue(COL_ID)
             }
         } finally {
             cursor?.close()

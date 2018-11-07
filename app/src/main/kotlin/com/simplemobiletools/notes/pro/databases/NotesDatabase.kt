@@ -51,7 +51,7 @@ abstract class NotesDatabase : RoomDatabase() {
         private fun insertFirstNote(context: Context) {
             Executors.newSingleThreadExecutor().execute {
                 val generalNote = context.resources.getString(R.string.general_note)
-                val note = Note(1, generalNote, "", TYPE_NOTE)
+                val note = Note(null, generalNote, "", TYPE_NOTE)
                 db!!.NotesDao().insertOrUpdate(note)
             }
         }

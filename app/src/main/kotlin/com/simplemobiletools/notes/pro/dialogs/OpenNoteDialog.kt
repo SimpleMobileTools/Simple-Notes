@@ -16,7 +16,7 @@ import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_open_note.view.*
 import kotlinx.android.synthetic.main.open_note_item.view.*
 
-class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> Unit) {
+class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long) -> Unit) {
     private var dialog: AlertDialog? = null
 
     init {
@@ -34,10 +34,10 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Int) -> U
                 open_note_item_radio_button.apply {
                     text = note.title
                     isChecked = note.id == activity.config.currentNoteId
-                    id = note.id!!
+                    id = note.id!!.toInt()
 
                     setOnClickListener {
-                        callback(id)
+                        callback(note.id!!)
                         dialog?.dismiss()
                     }
                 }

@@ -9,7 +9,7 @@ import java.io.FileNotFoundException
 
 @Entity(tableName = "notes", indices = [(Index(value = ["id"], unique = true))])
 data class Note(
-        @PrimaryKey(autoGenerate = true) var id: Int?,
+        @PrimaryKey(autoGenerate = true) var id: Long?,
         @ColumnInfo(name = "title") var title: String,
         @ColumnInfo(name = "value") var value: String,
         @ColumnInfo(name = "type") var type: Int,

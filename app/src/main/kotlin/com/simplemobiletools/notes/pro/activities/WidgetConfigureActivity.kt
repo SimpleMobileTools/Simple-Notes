@@ -92,17 +92,17 @@ class WidgetConfigureActivity : SimpleActivity() {
     private fun showNoteSelector() {
         val items = ArrayList<RadioItem>()
         mNotes.forEach {
-            items.add(RadioItem(it.id!!, it.title))
+            items.add(RadioItem(it.id!!.toInt(), it.title))
         }
 
         RadioGroupDialog(this, items, mCurrentNoteId) {
             val selectedId = it as Int
-            updateCurrentNote(mNotes.first { it.id == selectedId })
+            updateCurrentNote(mNotes.first { it.id!!.toInt() == selectedId })
         }
     }
 
     private fun updateCurrentNote(note: Note) {
-        mCurrentNoteId = note.id!!
+        mCurrentNoteId = note.id!!.toInt()
         notes_picker_value.text = note.title
         val sampleValue = if (note.value.isEmpty() || mIsCustomizingColors) getString(R.string.widget_config) else note.value
         notes_view.text = sampleValue

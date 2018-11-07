@@ -269,8 +269,8 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun getWantedNoteIndex(): Int {
-        var wantedNoteId = intent.getIntExtra(OPEN_NOTE_ID, -1)
-        if (wantedNoteId == -1) {
+        var wantedNoteId = intent.getLongExtra(OPEN_NOTE_ID, -1)
+        if (wantedNoteId == -1L) {
             wantedNoteId = config.currentNoteId
         }
         return getNoteIndexWithId(wantedNoteId)
@@ -289,7 +289,7 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun updateSelectedNote(id: Int) {
+    private fun updateSelectedNote(id: Long) {
         config.currentNoteId = id
         val index = getNoteIndexWithId(id)
         view_pager.currentItem = index
@@ -298,14 +298,14 @@ class MainActivity : SimpleActivity() {
 
     private fun displayNewNoteDialog(value: String = "") {
         NewNoteDialog(this, dbHelper) {
-            val newNote = Note(0, it, value, TYPE_NOTE)
+            val newNote = Note(null, it, value, TYPE_NOTE)
             addNewNote(newNote)
         }
     }
 
     private fun addNewNote(note: Note) {
         Thread {
-            val id = notesDB.insertOrUpdate(note).toInt()
+            val id = notesDB.insertOrUpdate(note)
             mNotes = notesDB.getNotes().toMutableList() as ArrayList<Note>
             showSaveButton = false
             runOnUiThread {
@@ -386,10 +386,11 @@ class MainActivity : SimpleActivity() {
     private fun openPath(path: String) {
         openFile(path, false) {
             var title = path.getFilenameFromPath()
-            if (dbHelper.doesNoteTitleExist(title))
+            if (dbHelper.doesNoteTitleExist(title)) {
                 title += " (file)"
+            }
 
-            val note = Note(0, title, "", TYPE_NOTE, path)
+            val note = Note(null, title, "", TYPE_NOTE, path)
             addNewNote(note)
         }
     }
@@ -406,16 +407,11 @@ class MainActivity : SimpleActivity() {
         FilePickerDialog(this, pickFile = false, canAddShowHiddenButton = true) {
             openFolder(it) {
                 ImportFolderDialog(this, it.path) {
-                    val noteId = it
                     NotesHelper(this).getNotes {
                         mNotes = it
                         showSaveButton = false
                         invalidateOptionsMenu()
                         initViewPager()
-                        updateSelectedNote(noteId)
-                        view_pager.onGlobalLayout {
-                            mAdapter?.focusEditText(getNoteIndexWithId(noteId))
-                        }
                     }
                 }
             }
@@ -623,7 +619,7 @@ class MainActivity : SimpleActivity() {
         mAdapter?.redo(view_pager.currentItem)
     }
 
-    private fun getNoteIndexWithId(id: Int): Int {
+    private fun getNoteIndexWithId(id: Long): Int {
         for (i in 0 until mNotes.count()) {
             if (mNotes[i].id == id) {
                 mCurrentNote = mNotes[i]

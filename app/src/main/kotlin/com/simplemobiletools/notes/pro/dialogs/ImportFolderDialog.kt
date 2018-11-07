@@ -9,12 +9,13 @@ import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.extensions.dbHelper
+import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.TYPE_NOTE
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_import_folder.view.*
 import java.io.File
 
-class ImportFolderDialog(val activity: SimpleActivity, val path: String, val callback: (id: Int) -> Unit) : AlertDialog.Builder(activity) {
+class ImportFolderDialog(val activity: SimpleActivity, val path: String, val callback: () -> Unit) : AlertDialog.Builder(activity) {
     private var dialog: AlertDialog
 
     init {
@@ -37,7 +38,6 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
 
     private fun saveFolder(updateFilesOnEdit: Boolean) {
         val folder = File(path)
-        var lastSavedNoteId = -1
         folder.listFiles { file ->
             val filename = file.path.getFilenameFromPath()
             when {
@@ -54,22 +54,21 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
 
             if (updateFilesOnEdit) {
                 activity.handleSAFDialog(path) {
-                    lastSavedNoteId = saveNote(title, value, storePath)
+                    saveNote(title, value, storePath)
                 }
             } else {
-                lastSavedNoteId = saveNote(title, value, storePath)
+                saveNote(title, value, storePath)
             }
         }
 
-        if (lastSavedNoteId != -1) {
-            callback(lastSavedNoteId)
-        }
-
+        callback()
         dialog.dismiss()
     }
 
-    private fun saveNote(title: String, value: String, path: String): Int {
-        val note = Note(0, title, value, TYPE_NOTE, path)
-        return activity.dbHelper.insertNote(note)
+    private fun saveNote(title: String, value: String, path: String) {
+        val note = Note(null, title, value, TYPE_NOTE, path)
+        Thread {
+            activity.notesDB.insertOrUpdate(note)
+        }
     }
 }

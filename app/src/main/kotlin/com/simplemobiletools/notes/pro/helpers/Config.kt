@@ -45,13 +45,13 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getInt(GRAVITY, GRAVITY_LEFT)
         set(size) = prefs.edit().putInt(GRAVITY, size).apply()
 
-    var currentNoteId: Int
-        get() = prefs.getInt(CURRENT_NOTE_ID, 1)
-        set(id) = prefs.edit().putInt(CURRENT_NOTE_ID, id).apply()
+    var currentNoteId: Long
+        get() = prefs.getLong(CURRENT_NOTE_ID, 1L)
+        set(id) = prefs.edit().putLong(CURRENT_NOTE_ID, id).apply()
 
-    var widgetNoteId: Int
-        get() = prefs.getInt(WIDGET_NOTE_ID, 1)
-        set(id) = prefs.edit().putInt(WIDGET_NOTE_ID, id).apply()
+    var widgetNoteId: Long
+        get() = prefs.getLong(WIDGET_NOTE_ID, 1L)
+        set(id) = prefs.edit().putLong(WIDGET_NOTE_ID, id).apply()
 
     var placeCursorToEnd: Boolean
         get() = prefs.getBoolean(CURSOR_PLACEMENT, true)
