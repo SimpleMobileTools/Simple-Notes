@@ -235,7 +235,7 @@ class MainActivity : SimpleActivity() {
     private fun handleUri(uri: Uri) {
         val id = dbHelper.getNoteId(uri.path)
 
-        if (dbHelper.isValidId(id)) {
+        if (id > 0) {
             updateSelectedNote(id)
             return
         }

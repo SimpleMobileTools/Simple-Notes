@@ -182,8 +182,6 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         mDb.update(NOTES_TABLE_NAME, values, selection, selectionArgs)
     }
 
-    fun isValidId(id: Int) = id > 0
-
     fun getWidgets(): ArrayList<Widget> {
         val widgets = ArrayList<Widget>()
         val cols = arrayOf(COL_WIDGET_ID, COL_NOTE_ID)
