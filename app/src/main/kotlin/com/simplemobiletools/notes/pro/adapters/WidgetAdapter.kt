@@ -22,7 +22,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
     private var widgetTextColor = context.config.widgetTextColor
 
     override fun getViewAt(position: Int): RemoteViews {
-        val noteId = intent.getIntExtra(NOTE_ID, 1)
+        val noteId = intent.getLongExtra(NOTE_ID, 0L)
         val views = RemoteViews(context.packageName, R.layout.widget_text_layout).apply {
             val note = context.notesDB.getNoteWithId(noteId)
             if (note != null) {

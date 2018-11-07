@@ -38,14 +38,14 @@ class NoteFragment : androidx.fragment.app.Fragment() {
     private var textHistory = TextHistory()
     private var isUndoOrRedo = false
     private var skipTextUpdating = false
-    private var noteId = 0
+    private var noteId = 0L
     private var note: Note? = null
 
     lateinit var view: ViewGroup
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_note, container, false) as ViewGroup
-        noteId = arguments!!.getInt(NOTE_ID)
+        noteId = arguments!!.getLong(NOTE_ID)
         retainInstance = true
 
         val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
@@ -87,11 +87,11 @@ class NoteFragment : androidx.fragment.app.Fragment() {
 
     override fun setMenuVisibility(menuVisible: Boolean) {
         super.setMenuVisibility(menuVisible)
-        if (!menuVisible && noteId != 0 && config?.autosaveNotes == true) {
+        if (!menuVisible && noteId != 0L && config?.autosaveNotes == true) {
             saveText(false)
         }
 
-        if (menuVisible && noteId != 0) {
+        if (menuVisible && noteId != 0L) {
             val currentText = getCurrentNoteViewText()
             if (currentText != null) {
                 (activity as MainActivity).currentNoteTextChanged(currentText, isUndoAvailable(), isRedoAvailable())

@@ -9,7 +9,7 @@ interface NotesDao {
     fun getNotes(): List<Note>
 
     @Query("SELECT * FROM notes WHERE id = :id")
-    fun getNoteWithId(id: Int): Note?
+    fun getNoteWithId(id: Long): Note?
 
     @Query("SELECT id FROM notes WHERE path = :path")
     fun getNoteIdWithPath(path: String): Long?

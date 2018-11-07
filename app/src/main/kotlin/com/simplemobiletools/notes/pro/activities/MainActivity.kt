@@ -58,8 +58,7 @@ class MainActivity : SimpleActivity() {
         setContentView(R.layout.activity_main)
         appLaunched(BuildConfig.APPLICATION_ID)
 
-        initViewPager()
-
+        initViewPager(intent.getLongExtra(OPEN_NOTE_ID, -1L))
         pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
         pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
         checkWhatsNewDialog()
@@ -202,7 +201,8 @@ class MainActivity : SimpleActivity() {
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        view_pager.currentItem = getWantedNoteIndex(null)
+        val wantedNoteId = intent.getLongExtra(OPEN_NOTE_ID, -1L)
+        view_pager.currentItem = getWantedNoteIndex(wantedNoteId)
     }
 
     private fun storeStateVariables() {
@@ -256,6 +256,7 @@ class MainActivity : SimpleActivity() {
             view_pager.apply {
                 adapter = mAdapter
                 currentItem = getWantedNoteIndex(wantedNoteId)
+                config.currentNoteId = mCurrentNote.id!!
 
                 onPageChangeListener {
                     mCurrentNote = mNotes[it]
@@ -269,12 +270,10 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun getWantedNoteIndex(secondaryWantedNoteId: Long?): Int {
-        var wantedNoteId = intent.getLongExtra(OPEN_NOTE_ID, -1)
-        if (wantedNoteId == -1L) {
-            wantedNoteId = secondaryWantedNoteId ?: config.currentNoteId
-        }
-        return getNoteIndexWithId(wantedNoteId)
+    private fun getWantedNoteIndex(wantedNoteId: Long?): Int {
+        intent.removeExtra(OPEN_NOTE_ID)
+        val noteIdToOpen = if (wantedNoteId == null || wantedNoteId == -1L) config.currentNoteId else wantedNoteId
+        return getNoteIndexWithId(noteIdToOpen)
     }
 
     private fun currentNotesView() = if (view_pager == null) {

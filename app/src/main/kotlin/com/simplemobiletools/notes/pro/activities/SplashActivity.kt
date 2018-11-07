@@ -8,7 +8,7 @@ class SplashActivity : BaseSplashActivity() {
     override fun initActivity() {
         if (intent.extras?.containsKey(OPEN_NOTE_ID) == true) {
             Intent(this, MainActivity::class.java).apply {
-                putExtra(OPEN_NOTE_ID, intent.getIntExtra(OPEN_NOTE_ID, -1))
+                putExtra(OPEN_NOTE_ID, intent.getLongExtra(OPEN_NOTE_ID, -1L))
                 startActivity(this)
             }
         } else {

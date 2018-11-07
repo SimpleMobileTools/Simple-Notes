@@ -18,7 +18,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
     override fun getItem(position: Int): NoteFragment {
         val bundle = Bundle()
         val id = notes[position].id
-        bundle.putInt(NOTE_ID, id!!.toInt())
+        bundle.putLong(NOTE_ID, id!!)
 
         if (fragments.containsKey(position)) {
             return fragments[position]!!

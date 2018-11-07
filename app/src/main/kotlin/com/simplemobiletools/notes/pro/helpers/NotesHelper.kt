@@ -40,7 +40,7 @@ class NotesHelper(val activity: Activity) {
         }.start()
     }
 
-    fun getNoteWithId(id: Int, callback: (note: Note?) -> Unit) {
+    fun getNoteWithId(id: Long, callback: (note: Note?) -> Unit) {
         Thread {
             val note = activity.notesDB.getNoteWithId(id)
             activity.runOnUiThread {
