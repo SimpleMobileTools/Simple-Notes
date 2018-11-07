@@ -13,6 +13,7 @@ import android.view.MenuItem
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
+import com.simplemobiletools.commons.dialogs.UpgradeToProDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.FAQItem
@@ -85,6 +86,11 @@ class MainActivity : SimpleActivity() {
 
         wasInit = true
         checkAppOnSDCard()
+
+        if (!config.wasInitialUpgradeToProShown) {
+            UpgradeToProDialog(this)
+            config.wasInitialUpgradeToProShown = true
+        }
     }
 
     override fun onResume() {

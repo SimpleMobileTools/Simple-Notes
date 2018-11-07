@@ -12,26 +12,21 @@ import com.simplemobiletools.notes.extensions.config
 import com.simplemobiletools.notes.extensions.dbHelper
 import com.simplemobiletools.notes.extensions.updateWidgets
 import com.simplemobiletools.notes.helpers.*
-import com.simplemobiletools.notes.models.Note
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.util.*
 
 class SettingsActivity : SimpleActivity() {
-    var notes = ArrayList<Note>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-        notes = dbHelper.getNotes()
     }
 
     override fun onResume() {
         super.onResume()
 
-        setupPurchaseThankYou()
+        setupUpgradeToPro()
         setupCustomizeColors()
         setupUseEnglish()
-        setupAvoidWhatsNew()
         setupAutosaveNotes()
         setupDisplaySuccess()
         setupClickableLinks()
@@ -56,10 +51,10 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun setupPurchaseThankYou() {
-        settings_purchase_thank_you_holder.beVisibleIf(config.appRunCount > 10 && !isThankYouInstalled())
-        settings_purchase_thank_you_holder.setOnClickListener {
-            launchPurchaseThankYouIntent()
+    private fun setupUpgradeToPro() {
+        settings_upgrade_to_pro_holder.beGoneIf(isAProApp())
+        settings_upgrade_to_pro_holder.setOnClickListener {
+            launchUpgradeToProIntent()
         }
     }
 
@@ -76,14 +71,6 @@ class SettingsActivity : SimpleActivity() {
             settings_use_english.toggle()
             config.useEnglish = settings_use_english.isChecked
             System.exit(0)
-        }
-    }
-
-    private fun setupAvoidWhatsNew() {
-        settings_avoid_whats_new.isChecked = config.avoidWhatsNew
-        settings_avoid_whats_new_holder.setOnClickListener {
-            settings_avoid_whats_new.toggle()
-            config.avoidWhatsNew = settings_avoid_whats_new.isChecked
         }
     }
 
@@ -128,7 +115,7 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupShowNotePicker() {
-        settings_show_note_picker_holder.beVisibleIf(notes.size > 1)
+        settings_show_note_picker_holder.beVisibleIf(dbHelper.getNotes().size > 1)
         settings_show_note_picker.isChecked = config.showNotePicker
         settings_show_note_picker_holder.setOnClickListener {
             settings_show_note_picker.toggle()
