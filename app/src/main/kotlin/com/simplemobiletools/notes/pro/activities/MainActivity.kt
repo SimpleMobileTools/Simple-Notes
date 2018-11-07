@@ -27,10 +27,7 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.dialogs.*
-import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.dbHelper
-import com.simplemobiletools.notes.pro.extensions.getTextSize
-import com.simplemobiletools.notes.pro.extensions.updateWidgets
+import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.helpers.MIME_TEXT_PLAIN
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
@@ -576,7 +573,14 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
-        dbHelper.deleteNote(mCurrentNote.id!!)
+        Thread {
+            notesDB.deleteNote(note)
+            widgetsDB.deleteNoteWidgets(note.id!!)
+            refreshNotes(note, deleteFile)
+        }.start()
+    }
+
+    private fun refreshNotes(note: Note, deleteFile: Boolean) {
         NotesHelper(this).getNotes {
             mNotes = it
             val firstNoteId = mNotes[0].id

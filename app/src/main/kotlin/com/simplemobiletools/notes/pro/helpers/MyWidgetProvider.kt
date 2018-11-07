@@ -12,7 +12,7 @@ import com.simplemobiletools.commons.extensions.setBackgroundColor
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SplashActivity
 import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.dbHelper
+import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.models.Widget
 import com.simplemobiletools.notes.pro.services.WidgetService
 
@@ -26,8 +26,7 @@ class MyWidgetProvider : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         super.onUpdate(context, appWidgetManager, appWidgetIds)
-        val widgets = context.dbHelper.getWidgets()
-        widgets.forEach {
+        context.widgetsDB.getWidgets().forEach {
             val views = RemoteViews(context.packageName, R.layout.widget)
             views.setBackgroundColor(R.id.notes_widget_holder, context.config.widgetBgColor)
             setupAppOpenIntent(context, views, R.id.notes_widget_holder, it)

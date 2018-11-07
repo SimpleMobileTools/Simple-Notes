@@ -15,8 +15,8 @@ import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.dbHelper
 import com.simplemobiletools.notes.pro.extensions.getTextSize
+import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.helpers.MyWidgetProvider
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
@@ -29,7 +29,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mBgColor = 0
     private var mBgColorWithoutTransparency = 0
     private var mTextColor = 0
-    private var mCurrentNoteId = 0
+    private var mCurrentNoteId = 0L
     private var mIsCustomizingColors = false
     private var mNotes = ArrayList<Note>()
 
@@ -95,14 +95,14 @@ class WidgetConfigureActivity : SimpleActivity() {
             items.add(RadioItem(it.id!!.toInt(), it.title))
         }
 
-        RadioGroupDialog(this, items, mCurrentNoteId) {
+        RadioGroupDialog(this, items, mCurrentNoteId.toInt()) {
             val selectedId = it as Int
             updateCurrentNote(mNotes.first { it.id!!.toInt() == selectedId })
         }
     }
 
     private fun updateCurrentNote(note: Note) {
-        mCurrentNoteId = note.id!!.toInt()
+        mCurrentNoteId = note.id!!
         notes_picker_value.text = note.title
         val sampleValue = if (note.value.isEmpty() || mIsCustomizingColors) getString(R.string.widget_config) else note.value
         notes_view.text = sampleValue
@@ -113,7 +113,9 @@ class WidgetConfigureActivity : SimpleActivity() {
         views.setBackgroundColor(R.id.notes_view, mBgColor)
         AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
         val widget = Widget(null, mWidgetId, mCurrentNoteId)
-        dbHelper.insertWidget(widget)
+        Thread {
+            widgetsDB.insertOrUpdate(widget)
+        }.start()
 
         storeWidgetBackground()
         requestWidgetUpdate()

@@ -9,4 +9,4 @@ import androidx.room.PrimaryKey
 data class Widget(
         @PrimaryKey(autoGenerate = true) var id: Int?,
         @ColumnInfo(name = "widget_id") var widgetId: Int,
-        @ColumnInfo(name = "note_id") var noteId: Int)
+        @ColumnInfo(name = "note_id") var noteId: Long)

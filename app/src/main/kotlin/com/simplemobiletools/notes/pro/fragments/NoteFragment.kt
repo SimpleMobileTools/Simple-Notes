@@ -20,7 +20,6 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.MainActivity
 import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.dbHelper
 import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.*
@@ -43,12 +42,10 @@ class NoteFragment : androidx.fragment.app.Fragment() {
     private var note: Note? = null
 
     lateinit var view: ViewGroup
-    private lateinit var db: DBHelper
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_note, container, false) as ViewGroup
         noteId = arguments!!.getInt(NOTE_ID)
-        db = context!!.dbHelper
         retainInstance = true
 
         val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
