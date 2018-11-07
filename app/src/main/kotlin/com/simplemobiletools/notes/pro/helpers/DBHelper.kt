@@ -69,7 +69,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
             put(COL_TITLE, note.title)
             put(COL_VALUE, note.value)
             put(COL_PATH, note.path)
-            put(COL_TYPE, 0)
+            put(COL_TYPE, TYPE_NOTE)
         }
     }
 
@@ -168,24 +168,10 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
         return 0
     }
 
-    fun updateNoteValue(note: Note) {
-        val values = ContentValues().apply { put(COL_VALUE, note.value) }
-        updateNote(note.id!!, values)
-    }
-
-    fun updateNoteTitle(note: Note) {
-        val values = ContentValues().apply { put(COL_TITLE, note.title) }
-        updateNote(note.id!!, values)
-    }
-
-    fun updateNotePath(note: Note) {
-        val values = ContentValues().apply { put(COL_PATH, note.path) }
-        updateNote(note.id!!, values)
-    }
-
-    private fun updateNote(id: Int, values: ContentValues) {
+    fun updateNote(note: Note) {
+        val values = fillNoteContentValues(note)
         val selection = "$COL_ID = ?"
-        val selectionArgs = arrayOf(id.toString())
+        val selectionArgs = arrayOf(note.id.toString())
         mDb.update(NOTES_TABLE_NAME, values, selection, selectionArgs)
     }
 

@@ -445,12 +445,12 @@ class MainActivity : SimpleActivity() {
             exportNoteValueToFile(exportPath, currentNoteText, true) {
                 if (syncFile) {
                     mCurrentNote.path = exportPath
-                    dbHelper.updateNotePath(mCurrentNote)
 
                     if (mCurrentNote.getNoteStoredValue() == currentNoteText) {
                         mCurrentNote.value = ""
-                        dbHelper.updateNoteValue(mCurrentNote)
                     }
+
+                    dbHelper.updateNote(mCurrentNote)
                 }
             }
         }
