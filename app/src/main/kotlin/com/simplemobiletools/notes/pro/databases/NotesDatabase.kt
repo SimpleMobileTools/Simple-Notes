@@ -6,14 +6,18 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.simplemobiletools.notes.pro.interfaces.NotesDao
+import com.simplemobiletools.notes.pro.interfaces.WidgetsDao
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.Widget
 import com.simplemobiletools.notes.pro.objects.MyExecutor
 import java.util.concurrent.Executors
 
-@Database(entities = [Note::class], version = 1)
+@Database(entities = [Note::class, Widget::class], version = 1)
 abstract class NotesDatabase : RoomDatabase() {
 
     abstract fun NotesDao(): NotesDao
+
+    abstract fun WidgetsDao(): WidgetsDao
 
     companion object {
         private var db: NotesDatabase? = null

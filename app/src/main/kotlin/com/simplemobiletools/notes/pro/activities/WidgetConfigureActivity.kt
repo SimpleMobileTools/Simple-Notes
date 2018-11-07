@@ -109,7 +109,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         val views = RemoteViews(packageName, R.layout.activity_main)
         views.setBackgroundColor(R.id.notes_view, mBgColor)
         AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
-        val widget = Widget(mWidgetId, mCurrentNoteId)
+        val widget = Widget(null, mWidgetId, mCurrentNoteId)
         dbHelper.insertWidget(widget)
 
         storeWidgetBackground()

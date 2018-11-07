@@ -201,7 +201,7 @@ class DBHelper private constructor(private val mContext: Context) : SQLiteOpenHe
                 do {
                     val widgetId = cursor.getIntValue(COL_WIDGET_ID)
                     val noteId = cursor.getIntValue(COL_NOTE_ID)
-                    val widget = Widget(widgetId, noteId)
+                    val widget = Widget(0, widgetId, noteId)
                     widgets.add(widget)
                 } while (cursor.moveToNext())
             }
