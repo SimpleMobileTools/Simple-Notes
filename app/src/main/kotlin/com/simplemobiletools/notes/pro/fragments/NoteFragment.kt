@@ -195,7 +195,7 @@ class NoteFragment : androidx.fragment.app.Fragment() {
         } else {
             val currentText = getCurrentNoteViewText()
             if (currentText != null) {
-                (activity as? MainActivity)?.exportNoteValueToFile(note.path, currentText, true)
+                (activity as? MainActivity)?.exportNoteValueToFile(note.path, currentText, false)
             }
         }
     }
