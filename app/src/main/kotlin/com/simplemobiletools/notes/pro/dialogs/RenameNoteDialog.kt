@@ -6,6 +6,7 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.extensions.notesDB
+import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_new_note.view.*
 import java.io.File
@@ -61,8 +62,7 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val callbac
                     activity.renameFile(file.absolutePath, newFile.absolutePath) {
                         if (it) {
                             note.path = newFile.absolutePath
-                            activity.notesDB.insertOrUpdate(note)
-                            activity.runOnUiThread {
+                            NotesHelper(activity).insertOrUpdateNote(note) {
                                 dialog.dismiss()
                                 callback(note)
                             }
