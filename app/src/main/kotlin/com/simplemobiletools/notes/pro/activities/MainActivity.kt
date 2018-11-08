@@ -17,6 +17,7 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LICENSE_RTL
 import com.simplemobiletools.commons.helpers.PERMISSION_READ_STORAGE
 import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
+import com.simplemobiletools.commons.helpers.REAL_FILE_PATH
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.RadioItem
@@ -72,7 +73,13 @@ class MainActivity : SimpleActivity() {
             }
 
             if (action == Intent.ACTION_VIEW) {
-                handleUri(data)
+                val realPath = intent.getStringExtra(REAL_FILE_PATH)
+                if (realPath != null) {
+                    val file = File(realPath)
+                    handleUri(Uri.fromFile(file))
+                } else {
+                    handleUri(data)
+                }
                 intent.removeCategory(Intent.CATEGORY_DEFAULT)
                 intent.action = null
             }
@@ -291,9 +298,16 @@ class MainActivity : SimpleActivity() {
 
     private fun updateSelectedNote(id: Long) {
         config.currentNoteId = id
-        val index = getNoteIndexWithId(id)
-        view_pager.currentItem = index
-        mCurrentNote = mNotes[index]
+        if (mNotes.isEmpty()) {
+            NotesHelper(this).getNotes {
+                mNotes = it
+                updateSelectedNote(id)
+            }
+        } else {
+            val index = getNoteIndexWithId(id)
+            view_pager.currentItem = index
+            mCurrentNote = mNotes[index]
+        }
     }
 
     private fun displayNewNoteDialog(value: String = "") {
