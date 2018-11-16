@@ -101,12 +101,14 @@ class NoteFragment : androidx.fragment.app.Fragment() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putString(TEXT, getCurrentNoteViewText())
+        if (note != null) {
+            outState.putString(TEXT, getCurrentNoteViewText())
+        }
     }
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
-        if (savedInstanceState != null) {
+        if (savedInstanceState != null && note != null && savedInstanceState.containsKey(TEXT)) {
             skipTextUpdating = true
             val newText = savedInstanceState.getString(TEXT) ?: ""
             view.notes_view.setText(newText)
