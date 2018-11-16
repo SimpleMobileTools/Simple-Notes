@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.0.1 *(2018-11-16)*
+----------------------------
+
+ * Fixed a glitch with disappearing note value under some circumstances
+ * Some translation and stability improvements
+
 Version 6.0.0 *(2018-11-08)*
 ----------------------------
 
