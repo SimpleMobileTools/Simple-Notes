@@ -11,7 +11,7 @@ class NotesHelper(val activity: Activity) {
     fun getNotes(callback: (notes: ArrayList<Note>) -> Unit) {
         Thread {
             // make sure the initial note has enough time to be precreated
-            if (activity.config.appRunCount == 1) {
+            if (activity.config.appRunCount <= 1) {
                 activity.notesDB.getNotes()
                 Thread.sleep(200)
             }
