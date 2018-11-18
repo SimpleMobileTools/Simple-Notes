@@ -6,7 +6,7 @@
     <string name="simple_note">Enkel anteckning</string>
     <string name="new_note">Lägg till en ny anteckning</string>
     <string name="no_title">Namnge din anteckning</string>
-    <string name="title_taken">En anteckning med den titeln finns redan</string>
+    <string name="title_taken">Det finns redan en anteckning med samma titel</string>
     <string name="open_note">Öppna anteckning</string>
     <string name="delete_note">Ta bort anteckning</string>
     <string name="delete_note_prompt_message">Är du säker på att du vill ta bort anteckningen \"%s\"?</string>
@@ -15,8 +15,8 @@
     <string name="general_note">Allmän anteckning</string>
     <string name="create_new_note">Skapa en ny anteckning</string>
     <string name="add_to_note">Lägg till i anteckning</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
+    <string name="unsaved_changes_warning">Det finns några ändringar som inte har sparats. Vad vill du göra med dem?</string>
+    <string name="note_shown_widget">Anteckning som visas i widgeten:</string>
 
     <!-- File notes -->
     <string name="open_file">Öppna fil</string>
@@ -27,7 +27,7 @@
     <string name="delete_file_itself">Ta även bort filen \"%s\"</string>
     <string name="note_saved_successfully">Anteckningen \"%s\" har sparats</string>
     <string name="note_exported_successfully">Anteckningen \"%s\" har exporterats</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Exportera bara det aktuella innehållet i filen\n(filen påverkas inte om anteckningen ändras)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
@@ -44,7 +44,7 @@
     <string name="show_note_picker">Visa en anteckningsväljare vid start</string>
     <string name="autosave_notes">Spara anteckningar automatiskt</string>
     <string name="enable_line_wrap">Aktivera radbrytning</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportera alla anteckningar som filer</string>
