@@ -27,7 +27,7 @@
     <string name="delete_file_itself">Apagar também o ficheiro \"%s\"</string>
     <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Exportar apenas o conteúdo do ficheiro atual\n(a alteração da nota não afeta não afeta o ficheiro)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
@@ -44,7 +44,7 @@
     <string name="show_note_picker">Mostrar seletor de notas ao iniciar</string>
     <string name="autosave_notes">Guardar nota automaticamente</string>
     <string name="enable_line_wrap">Ativar quebra de linha</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="use_incognito_mode">Utilizar modo incógnito no teclado</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como ficheiros</string>
