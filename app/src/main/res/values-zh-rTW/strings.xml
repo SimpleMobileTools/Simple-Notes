@@ -27,7 +27,7 @@
     <string name="delete_file_itself">也刪除檔案 \"%s\"</string>
     <string name="note_saved_successfully">筆記 \"%s\" 儲存成功</string>
     <string name="note_exported_successfully">筆記 \"%s\" 匯出成功</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+   <string name="only_export_file_content">只匯出目前的檔案內容\n(修改筆記不影響檔案)</string>
 
     <!-- Settings -->
     <string name="display_success_message">顯示儲存成功的訊息</string>
