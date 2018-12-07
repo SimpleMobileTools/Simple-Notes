@@ -46,6 +46,9 @@
     <string name="enable_line_wrap">Переносить строки</string>
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
+    <!-- Checklist -->
+    <string name="checklist">Checklist</string>
+
     <!-- Import / Export -->
     <string name="export_all_notes">Экспортировать все заметки в файлы</string>
     <string name="import_notes">Импортировать несколько файлов в заметки</string>

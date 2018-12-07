@@ -46,6 +46,9 @@
     <string name="enable_line_wrap">Omogući omotavanje linije</string>
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
+    <!-- Checklist -->
+    <string name="checklist">Checklist</string>
+
     <!-- Import / Export -->
     <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
     <string name="import_notes">Uvezi više datoteka kao bilješke</string>

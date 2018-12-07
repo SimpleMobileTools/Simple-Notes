@@ -46,6 +46,9 @@
     <string name="enable_line_wrap">Activar ajuste de línea</string>
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
+    <!-- Checklist -->
+    <string name="checklist">Checklist</string>
+
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas las notas como archivos</string>
     <string name="import_notes">Importar múltiples archivos como notas</string>

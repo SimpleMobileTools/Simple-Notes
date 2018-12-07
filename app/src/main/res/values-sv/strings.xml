@@ -46,6 +46,9 @@
     <string name="enable_line_wrap">Aktivera radbrytning</string>
     <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
 
+    <!-- Checklist -->
+    <string name="checklist">Checklist</string>
+
     <!-- Import / Export -->
     <string name="export_all_notes">Exportera alla anteckningar som filer</string>
     <string name="import_notes">Importera flera filer som anteckningar</string>
