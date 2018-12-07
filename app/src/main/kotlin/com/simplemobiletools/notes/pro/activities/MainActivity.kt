@@ -29,10 +29,7 @@ import com.simplemobiletools.notes.pro.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.dialogs.*
 import com.simplemobiletools.notes.pro.extensions.*
-import com.simplemobiletools.notes.pro.helpers.MIME_TEXT_PLAIN
-import com.simplemobiletools.notes.pro.helpers.NotesHelper
-import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
-import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
+import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
@@ -271,7 +268,7 @@ class MainActivity : SimpleActivity() {
                 }
             }
 
-            if (!config.showKeyboard) {
+            if (!config.showKeyboard || mCurrentNote.type == TYPE_CHECKLIST) {
                 hideKeyboard()
             }
         }
