@@ -9,9 +9,12 @@ import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.notesDB
+import com.simplemobiletools.notes.pro.helpers.TYPE_CHECKLIST
+import com.simplemobiletools.notes.pro.helpers.TYPE_NOTE
+import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_new_note.view.*
 
-class NewNoteDialog(val activity: Activity, callback: (title: String) -> Unit) {
+class NewNoteDialog(val activity: Activity, callback: (note: Note) -> Unit) {
     init {
         val view = activity.layoutInflater.inflate(R.layout.dialog_new_note, null)
 
@@ -28,7 +31,9 @@ class NewNoteDialog(val activity: Activity, callback: (title: String) -> Unit) {
                                     title.isEmpty() -> activity.toast(R.string.no_title)
                                     activity.notesDB.getNoteIdWithTitle(title) != null -> activity.toast(R.string.title_taken)
                                     else -> {
-                                        callback(title)
+                                        val type = if (view.note_checklist.isChecked) TYPE_CHECKLIST else TYPE_NOTE
+                                        val newNote = Note(null, title, "", type)
+                                        callback(newNote)
                                         dismiss()
                                     }
                                 }

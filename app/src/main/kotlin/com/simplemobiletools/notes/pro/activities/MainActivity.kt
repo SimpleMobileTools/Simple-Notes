@@ -312,8 +312,8 @@ class MainActivity : SimpleActivity() {
 
     private fun displayNewNoteDialog(value: String = "") {
         NewNoteDialog(this) {
-            val newNote = Note(null, it, value, TYPE_NOTE)
-            addNewNote(newNote)
+            it.value = value
+            addNewNote(it)
         }
     }
 
