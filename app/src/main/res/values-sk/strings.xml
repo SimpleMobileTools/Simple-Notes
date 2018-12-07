@@ -46,8 +46,9 @@
     <string name="enable_line_wrap">Povoliť zalamovanie riadkov</string>
     <string name="use_incognito_mode">Použiť Inkognito mód klávesníc</string>
 
-    <!-- Checklist -->
-    <string name="checklist">Zoznam vecí</string>
+    <!-- Checklists -->
+    <string name="checklist">Zoznam položiek</string>
+    <string name="add_new_checklist_item">Pridať do zoznamu novú položku</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovať všetky poznámky ako súbory</string>

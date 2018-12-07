@@ -46,8 +46,9 @@
     <string name="enable_line_wrap">Aktiver tekstombrydning</string>
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
-    <!-- Checklist -->
+    <!-- Checklists -->
     <string name="checklist">Checklist</string>
+    <string name="add_new_checklist_item">Add a new checklist item</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Eksporter alle noter som filer</string>

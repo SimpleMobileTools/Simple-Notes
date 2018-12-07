@@ -23,9 +23,9 @@ class NewNoteDialog(val activity: Activity, callback: (note: Note) -> Unit) {
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
                     activity.setupDialogStuff(view, this, R.string.new_note) {
-                        showKeyboard(view.note_name)
+                        showKeyboard(view.note_title)
                         getButton(BUTTON_POSITIVE).setOnClickListener {
-                            val title = view.note_name.value
+                            val title = view.note_title.value
                             Thread {
                                 when {
                                     title.isEmpty() -> activity.toast(R.string.no_title)
