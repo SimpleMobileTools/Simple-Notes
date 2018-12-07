@@ -1,13 +1,19 @@
 package com.simplemobiletools.notes.pro.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.simplemobiletools.commons.extensions.applyColorFilter
+import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
+import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
+import com.simplemobiletools.commons.extensions.isBlackAndWhiteTheme
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
+import kotlinx.android.synthetic.main.fragment_checklist.view.*
 
 class ChecklistFragment : NoteFragment() {
     private var noteId = 0L
@@ -25,7 +31,7 @@ class ChecklistFragment : NoteFragment() {
         super.onResume()
 
         NotesHelper(activity!!).getNoteWithId(noteId) {
-            if (it != null) {
+            if (it != null && activity?.isDestroyed == false) {
                 note = it
                 setupFragment()
             }
@@ -33,6 +39,13 @@ class ChecklistFragment : NoteFragment() {
     }
 
     private fun setupFragment() {
+        val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus, if (context!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
+        view.checklist_fab.apply {
+            setImageDrawable(plusIcon)
+            background.applyColorFilter(context!!.getAdjustedPrimaryColor())
+            setOnClickListener {
 
+            }
+        }
     }
 }
