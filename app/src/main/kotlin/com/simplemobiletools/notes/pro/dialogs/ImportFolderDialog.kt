@@ -10,7 +10,7 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
-import com.simplemobiletools.notes.pro.helpers.TYPE_NOTE
+import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_import_folder.view.*
 import java.io.File
@@ -70,7 +70,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
     }
 
     private fun saveNote(title: String, value: String, path: String) {
-        val note = Note(null, title, value, TYPE_NOTE, path)
+        val note = Note(null, title, value, TYPE_TEXT, path)
         NotesHelper(activity).insertOrUpdateNote(note)
     }
 }

@@ -6,8 +6,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.simplemobiletools.commons.extensions.showErrorToast
+import com.simplemobiletools.notes.pro.fragments.ChecklistFragment
 import com.simplemobiletools.notes.pro.fragments.NoteFragment
+import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
+import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
 import com.simplemobiletools.notes.pro.models.Note
 
 class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity: Activity) : FragmentStatePagerAdapter(fm) {
@@ -17,14 +20,15 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     override fun getItem(position: Int): NoteFragment {
         val bundle = Bundle()
-        val id = notes[position].id
+        val note = notes[position]
+        val id = note.id
         bundle.putLong(NOTE_ID, id!!)
 
         if (fragments.containsKey(position)) {
             return fragments[position]!!
         }
 
-        val fragment = NoteFragment()
+        val fragment = if (note.type == TYPE_TEXT) TextFragment() else ChecklistFragment()
         fragment.arguments = bundle
         fragments[position] = fragment
         return fragment
@@ -32,23 +36,23 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     override fun getPageTitle(position: Int) = notes[position].title
 
-    fun getCurrentNotesView(position: Int) = fragments[position]?.getNotesView()
+    fun getCurrentNotesView(position: Int) = (fragments[position] as? TextFragment)?.getNotesView()
 
-    fun getCurrentNoteViewText(position: Int) = fragments[position]?.getCurrentNoteViewText()
+    fun getCurrentNoteViewText(position: Int) = (fragments[position] as? TextFragment)?.getCurrentNoteViewText()
 
-    fun appendText(position: Int, text: String) = fragments[position]?.getNotesView()?.append(text)
+    fun appendText(position: Int, text: String) = (fragments[position] as? TextFragment)?.getNotesView()?.append(text)
 
-    fun saveCurrentNote(position: Int, force: Boolean) = fragments[position]?.saveText(force)
+    fun saveCurrentNote(position: Int, force: Boolean) = (fragments[position] as? TextFragment)?.saveText(force)
 
-    fun focusEditText(position: Int) = fragments[position]?.focusEditText()
+    fun focusEditText(position: Int) = (fragments[position] as? TextFragment)?.focusEditText()
 
-    fun anyHasUnsavedChanges() = fragments.values.any { it.hasUnsavedChanges() }
+    fun anyHasUnsavedChanges() = fragments.values.any { (it as? TextFragment)?.hasUnsavedChanges() == true }
 
-    fun saveAllFragmentTexts() = fragments.values.forEach { it.saveText(false) }
+    fun saveAllFragmentTexts() = fragments.values.forEach { (it as? TextFragment)?.saveText(false) }
 
-    fun undo(position: Int) = fragments[position]?.undo()
+    fun undo(position: Int) = (fragments[position] as? TextFragment)?.undo()
 
-    fun redo(position: Int) = fragments[position]?.redo()
+    fun redo(position: Int) = (fragments[position] as? TextFragment)?.redo()
 
     override fun finishUpdate(container: ViewGroup) {
         try {

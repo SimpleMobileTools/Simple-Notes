@@ -29,7 +29,7 @@ class NotesHelper(val activity: Activity) {
 
             if (notes.isEmpty()) {
                 val generalNote = activity.resources.getString(R.string.general_note)
-                val note = Note(null, generalNote, "", TYPE_NOTE)
+                val note = Note(null, generalNote, "", TYPE_TEXT)
                 activity.notesDB.insertOrUpdate(note)
                 notes.add(note)
             }

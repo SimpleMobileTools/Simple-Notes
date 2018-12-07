@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.simplemobiletools.notes.pro.R
-import com.simplemobiletools.notes.pro.helpers.TYPE_NOTE
+import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
 import com.simplemobiletools.notes.pro.interfaces.NotesDao
 import com.simplemobiletools.notes.pro.interfaces.WidgetsDao
 import com.simplemobiletools.notes.pro.models.Note
@@ -49,7 +49,7 @@ abstract class NotesDatabase : RoomDatabase() {
         private fun insertFirstNote(context: Context) {
             Executors.newSingleThreadScheduledExecutor().execute {
                 val generalNote = context.resources.getString(R.string.general_note)
-                val note = Note(null, generalNote, "", TYPE_NOTE)
+                val note = Note(null, generalNote, "", TYPE_TEXT)
                 db!!.NotesDao().insertOrUpdate(note)
             }
         }

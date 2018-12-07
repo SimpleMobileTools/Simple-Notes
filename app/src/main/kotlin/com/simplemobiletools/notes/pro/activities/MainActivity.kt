@@ -32,7 +32,7 @@ import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.helpers.MIME_TEXT_PLAIN
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
-import com.simplemobiletools.notes.pro.helpers.TYPE_NOTE
+import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
@@ -400,7 +400,7 @@ class MainActivity : SimpleActivity() {
                 title += " (file)"
             }
 
-            val note = Note(null, title, "", TYPE_NOTE, path)
+            val note = Note(null, title, "", TYPE_TEXT, path)
             addNewNote(note)
         }
     }

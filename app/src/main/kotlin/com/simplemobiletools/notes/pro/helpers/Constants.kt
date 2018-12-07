@@ -33,7 +33,7 @@ const val FONT_SIZE_LARGE = 2
 const val FONT_SIZE_EXTRA_LARGE = 3
 
 // note types
-const val TYPE_NOTE = 0
+const val TYPE_TEXT = 0
 const val TYPE_CHECKLIST = 1
 
 // mime types
