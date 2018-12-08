@@ -1,5 +1,6 @@
 package com.simplemobiletools.notes.pro.adapters
 
+import android.graphics.Paint
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
@@ -51,6 +52,14 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
             checklist_title.apply {
                 text = checklistItem.title
                 setTextColor(textColor)
+
+                if (checklistItem.isDone) {
+                    paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+                    alpha = 0.4f
+                } else {
+                    paintFlags = 0
+                    alpha = 1f
+                }
             }
             checklist_holder.isSelected = isSelected
         }
