@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
@@ -16,11 +15,12 @@ import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
+import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.fragment_checklist.view.*
 
-class ChecklistFragment : NoteFragment(), RefreshRecyclerViewListener {
+class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     private var noteId = 0L
     private var note: Note? = null
     private var items = ArrayList<ChecklistItem>()
@@ -64,7 +64,7 @@ class ChecklistFragment : NoteFragment(), RefreshRecyclerViewListener {
                     val currentMaxId = items.maxBy { it.id }?.id ?: 0
                     val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
                     items.add(checklistItem)
-                    saveNote(-1)
+                    saveNote()
                 }
             }
         }
@@ -81,7 +81,7 @@ class ChecklistFragment : NoteFragment(), RefreshRecyclerViewListener {
         }
     }
 
-    private fun saveNote(refreshIndex: Int) {
+    private fun saveNote(refreshIndex: Int = -1) {
         Thread {
             if (note != null && context != null) {
                 if (refreshIndex != -1) {
@@ -94,6 +94,10 @@ class ChecklistFragment : NoteFragment(), RefreshRecyclerViewListener {
                 context?.notesDB?.insertOrUpdate(note!!)
             }
         }.start()
+    }
+
+    override fun saveChecklist() {
+        saveNote()
     }
 
     override fun refreshItems() {

@@ -8,14 +8,14 @@ import android.view.ViewGroup
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
-import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
 import com.simplemobiletools.commons.views.MyRecyclerView
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import kotlinx.android.synthetic.main.item_checklist.view.*
 import java.util.*
 
-class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<ChecklistItem>, val listener: RefreshRecyclerViewListener?,
+class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<ChecklistItem>, val listener: ChecklistItemsListener?,
                        recyclerView: MyRecyclerView, itemClick: (Any) -> Unit) : MyRecyclerViewAdapter(activity, recyclerView, null, itemClick) {
 
     private lateinit var crossDrawable: Drawable
@@ -28,7 +28,15 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
 
     override fun getActionMenuId() = R.menu.cab_delete_only
 
-    override fun actionItemPressed(id: Int) {}
+    override fun actionItemPressed(id: Int) {
+        if (selectedKeys.isEmpty()) {
+            return
+        }
+
+        when (id) {
+            R.id.cab_delete -> deleteSelection()
+        }
+    }
 
     override fun getSelectableItemCount() = items.size
 
@@ -57,6 +65,34 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
         crossDrawable = res.getColoredDrawableWithColor(R.drawable.ic_cross_big, res.getColor(R.color.theme_dark_red_primary_color))
         checkDrawable = res.getColoredDrawableWithColor(R.drawable.ic_check_big, res.getColor(R.color.md_green_700))
     }
+
+    private fun deleteSelection() {
+        val removeItems = ArrayList<ChecklistItem>(selectedKeys.size)
+        val positions = ArrayList<Int>()
+        selectedKeys.forEach {
+            val key = it
+            val position = items.indexOfFirst { it.id == key }
+            if (position != -1) {
+                positions.add(position)
+
+                val favorite = getItemWithKey(key)
+                if (favorite != null) {
+                    removeItems.add(favorite)
+                }
+            }
+        }
+
+        positions.sortDescending()
+        removeSelectedItems(positions)
+
+        items.removeAll(removeItems)
+        listener?.saveChecklist()
+        if (items.isEmpty()) {
+            listener?.refreshItems()
+        }
+    }
+
+    private fun getItemWithKey(key: Int): ChecklistItem? = items.firstOrNull { it.id == key }
 
     private fun setupView(view: View, checklistItem: ChecklistItem) {
         val isSelected = selectedKeys.contains(checklistItem.id)
