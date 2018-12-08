@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
+import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
@@ -15,7 +17,7 @@ import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.fragment_checklist.view.*
 
-class ChecklistFragment : NoteFragment() {
+class ChecklistFragment : NoteFragment(), RefreshRecyclerViewListener {
     private var noteId = 0L
     private var note: Note? = null
     private var items = ArrayList<ChecklistItem>()
@@ -53,10 +55,24 @@ class ChecklistFragment : NoteFragment() {
             background.applyColorFilter(context!!.getAdjustedPrimaryColor())
             setOnClickListener {
                 NewChecklistItemDialog(activity as SimpleActivity) {
-                    val checklistItem = ChecklistItem(it, false)
+                    val currentMaxId = items.maxBy { it.id }?.id ?: 0
+                    val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
                     items.add(checklistItem)
+                    setupAdapter()
                 }
             }
         }
+        setupAdapter()
+    }
+
+    private fun setupAdapter() {
+        ChecklistAdapter(activity as SimpleActivity, items, this, view.checklist_list) {
+
+        }.apply {
+            view.checklist_list.adapter = this
+        }
+    }
+
+    override fun refreshItems() {
     }
 }
