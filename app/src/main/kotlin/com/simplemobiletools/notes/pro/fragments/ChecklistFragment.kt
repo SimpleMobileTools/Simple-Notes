@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
+import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.ChecklistItem
@@ -36,6 +39,9 @@ class ChecklistFragment : NoteFragment(), RefreshRecyclerViewListener {
         NotesHelper(activity!!).getNoteWithId(noteId) {
             if (it != null && activity?.isDestroyed == false) {
                 note = it
+
+                val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
+                items = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.value, checklistItemType) ?: ArrayList(1)
                 setupFragment()
             }
         }
@@ -59,6 +65,12 @@ class ChecklistFragment : NoteFragment(), RefreshRecyclerViewListener {
                     val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
                     items.add(checklistItem)
                     setupAdapter()
+                    Thread {
+                        if (note != null && context != null) {
+                            note!!.value = Gson().toJson(items)
+                            context?.notesDB?.insertOrUpdate(note!!)
+                        }
+                    }.start()
                 }
             }
         }
