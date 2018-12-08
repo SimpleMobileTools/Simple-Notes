@@ -64,13 +64,7 @@ class ChecklistFragment : NoteFragment(), RefreshRecyclerViewListener {
                     val currentMaxId = items.maxBy { it.id }?.id ?: 0
                     val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
                     items.add(checklistItem)
-                    setupAdapter()
-                    Thread {
-                        if (note != null && context != null) {
-                            note!!.value = Gson().toJson(items)
-                            context?.notesDB?.insertOrUpdate(note!!)
-                        }
-                    }.start()
+                    saveNote(-1)
                 }
             }
         }
@@ -79,10 +73,27 @@ class ChecklistFragment : NoteFragment(), RefreshRecyclerViewListener {
 
     private fun setupAdapter() {
         ChecklistAdapter(activity as SimpleActivity, items, this, view.checklist_list) {
-
+            val clickedNote = it as ChecklistItem
+            clickedNote.isDone = !clickedNote.isDone
+            saveNote(items.indexOfFirst { it.id == clickedNote.id })
         }.apply {
             view.checklist_list.adapter = this
         }
+    }
+
+    private fun saveNote(refreshIndex: Int) {
+        Thread {
+            if (note != null && context != null) {
+                if (refreshIndex != -1) {
+                    view.checklist_list.post {
+                        view.checklist_list.adapter?.notifyItemChanged(refreshIndex)
+                    }
+                }
+
+                note!!.value = Gson().toJson(items)
+                context?.notesDB?.insertOrUpdate(note!!)
+            }
+        }.start()
     }
 
     override fun refreshItems() {
