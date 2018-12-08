@@ -51,7 +51,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.simplemobiletools:commons:5.5.14'
+    implementation 'com.simplemobiletools:commons:5.5.15'
 
     kapt 'androidx.room:room-compiler:2.0.0'
     implementation 'androidx.room:room-runtime:2.0.0'

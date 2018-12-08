@@ -1,11 +1,13 @@
 package com.simplemobiletools.notes.pro.adapters
 
 import android.graphics.Paint
+import android.graphics.drawable.Drawable
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
+import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
 import com.simplemobiletools.commons.interfaces.RefreshRecyclerViewListener
 import com.simplemobiletools.commons.views.MyRecyclerView
 import com.simplemobiletools.notes.pro.R
@@ -16,8 +18,12 @@ import java.util.*
 class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<ChecklistItem>, val listener: RefreshRecyclerViewListener?,
                        recyclerView: MyRecyclerView, itemClick: (Any) -> Unit) : MyRecyclerViewAdapter(activity, recyclerView, null, itemClick) {
 
+    private lateinit var crossDrawable: Drawable
+    private lateinit var checkDrawable: Drawable
+
     init {
         setupDragListener(true)
+        initDrawables()
     }
 
     override fun getActionMenuId() = R.menu.cab_delete_only
@@ -46,6 +52,12 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
 
     override fun getItemCount() = items.size
 
+    fun initDrawables() {
+        val res = activity.resources
+        crossDrawable = res.getColoredDrawableWithColor(R.drawable.ic_cross_big, res.getColor(R.color.theme_dark_red_primary_color))
+        checkDrawable = res.getColoredDrawableWithColor(R.drawable.ic_check_big, res.getColor(R.color.md_green_700))
+    }
+
     private fun setupView(view: View, checklistItem: ChecklistItem) {
         val isSelected = selectedKeys.contains(checklistItem.id)
         view.apply {
@@ -61,6 +73,8 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
                     alpha = 1f
                 }
             }
+
+            checklist_image.setImageDrawable(if (checklistItem.isDone) checkDrawable else crossDrawable)
             checklist_holder.isSelected = isSelected
         }
     }
