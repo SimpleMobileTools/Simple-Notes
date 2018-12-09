@@ -13,6 +13,7 @@ import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.notesDB
+import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
@@ -100,6 +101,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             val clickedNote = it as ChecklistItem
             clickedNote.isDone = !clickedNote.isDone
             saveNote(items.indexOfFirst { it.id == clickedNote.id })
+            context?.updateWidgets()
         }.apply {
             view.checklist_list.adapter = this
         }
