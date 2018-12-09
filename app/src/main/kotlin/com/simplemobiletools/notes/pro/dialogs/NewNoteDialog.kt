@@ -31,7 +31,7 @@ class NewNoteDialog(val activity: Activity, callback: (note: Note) -> Unit) {
                                     title.isEmpty() -> activity.toast(R.string.no_title)
                                     activity.notesDB.getNoteIdWithTitle(title) != null -> activity.toast(R.string.title_taken)
                                     else -> {
-                                        val type = if (view.note_checklist.isChecked) TYPE_CHECKLIST else TYPE_TEXT
+                                        val type = if (view.new_note_type.checkedRadioButtonId == view.type_checklist.id) TYPE_CHECKLIST else TYPE_TEXT
                                         val newNote = Note(null, title, "", type)
                                         callback(newNote)
                                         dismiss()

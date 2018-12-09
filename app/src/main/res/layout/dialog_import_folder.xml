@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/open_file_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_margin"
-    android:paddingRight="@dimen/activity_margin"
-    android:paddingTop="@dimen/activity_margin">
+    android:paddingTop="@dimen/activity_margin"
+    android:paddingRight="@dimen/activity_margin">
 
     <com.simplemobiletools.commons.views.MyTextView
         android:id="@+id/open_file_filename_label"
@@ -20,10 +21,11 @@
         android:id="@+id/open_file_filename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_margin"
         android:layout_marginLeft="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:paddingTop="@dimen/small_margin"
         android:paddingRight="@dimen/small_margin"
-        android:paddingTop="@dimen/small_margin"/>
+        tools:text="myfile.txt"/>
 
     <RadioGroup
         android:id="@+id/open_file_type"
@@ -35,16 +37,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:paddingBottom="@dimen/activity_margin"
             android:paddingTop="@dimen/activity_margin"
+            android:paddingBottom="@dimen/activity_margin"
             android:text="@string/update_file_at_note"/>
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/open_file_content_only"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/activity_margin"
             android:paddingTop="@dimen/activity_margin"
+            android:paddingBottom="@dimen/activity_margin"
             android:text="@string/only_import_file_content"/>
 
     </RadioGroup>
