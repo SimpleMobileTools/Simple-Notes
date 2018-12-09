@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/notes_holder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -32,7 +33,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/notes_view"
+        android:id="@+id/text_note_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/config_bg_color"
@@ -42,6 +43,18 @@
         android:gravity="top"
         android:padding="@dimen/activity_margin"
         android:text="@string/widget_config"/>
+
+    <com.simplemobiletools.commons.views.MyRecyclerView
+        android:id="@+id/checklist_note_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/config_bg_color"
+        android:layout_below="@+id/notes_picker_holder"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:visibility="gone"
+        app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager"/>
 
     <ImageView
         android:id="@+id/config_bg_color"
@@ -53,8 +66,8 @@
         android:id="@+id/config_bg_seekbar_holder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignBottom="@+id/config_bg_color"
         android:layout_alignTop="@+id/config_bg_color"
+        android:layout_alignBottom="@+id/config_bg_color"
         android:layout_toEndOf="@+id/config_bg_color"
         android:layout_toRightOf="@+id/config_bg_color"
         android:background="@android:color/white">
@@ -78,10 +91,10 @@
         android:id="@+id/config_save"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_alignTop="@+id/config_text_color"
         android:layout_alignBottom="@+id/config_text_color"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/config_text_color"
         android:fontFamily="sans-serif-light"
         android:paddingLeft="@dimen/activity_margin"
         android:paddingRight="@dimen/activity_margin"

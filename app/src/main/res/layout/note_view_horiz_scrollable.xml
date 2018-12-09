@@ -8,7 +8,7 @@
     android:scrollbars="horizontal">
 
     <com.simplemobiletools.commons.views.MyEditText
-        android:id="@+id/notes_view"
+        android:id="@+id/text_note_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@null"

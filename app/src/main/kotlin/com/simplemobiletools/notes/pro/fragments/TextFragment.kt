@@ -48,7 +48,7 @@ class TextFragment : NoteFragment() {
         val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
         inflater.inflate(layoutToInflate, view.notes_relative_layout, true)
         if (config!!.clickableLinks) {
-            view.notes_view.apply {
+            view.text_note_view.apply {
                 linksClickable = true
                 autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES
                 movementMethod = MyMovementMethod.getInstance()
@@ -56,7 +56,7 @@ class TextFragment : NoteFragment() {
         }
 
         view.notes_horizontal_scrollview?.onGlobalLayout {
-            view.notes_view.minWidth = view.notes_horizontal_scrollview.width
+            view.text_note_view.minWidth = view.notes_horizontal_scrollview.width
         }
 
         return view
@@ -78,7 +78,7 @@ class TextFragment : NoteFragment() {
         if (config!!.autosaveNotes) {
             saveText(false)
         }
-        view.notes_view.removeTextChangedListener(textWatcher)
+        view.text_note_view.removeTextChangedListener(textWatcher)
     }
 
     override fun setMenuVisibility(menuVisible: Boolean) {
@@ -107,13 +107,13 @@ class TextFragment : NoteFragment() {
         if (savedInstanceState != null && note != null && savedInstanceState.containsKey(TEXT)) {
             skipTextUpdating = true
             val newText = savedInstanceState.getString(TEXT) ?: ""
-            view.notes_view.setText(newText)
+            view.text_note_view.setText(newText)
         }
     }
 
     private fun setupFragment() {
         val config = config ?: return
-        view.notes_view.apply {
+        view.text_note_view.apply {
             typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
 
             val fileContents = note!!.getNoteStoredValue()
@@ -147,15 +147,15 @@ class TextFragment : NoteFragment() {
         if (config.showWordCount) {
             view.notes_counter.beVisible()
             view.notes_counter.setTextColor(config.textColor)
-            setWordCounter(view.notes_view.text.toString())
+            setWordCounter(view.text_note_view.text.toString())
         } else {
             view.notes_counter.beGone()
         }
 
-        view.notes_view.addTextChangedListener(textWatcher)
+        view.text_note_view.addTextChangedListener(textWatcher)
     }
 
-    fun getNotesView() = view.notes_view
+    fun getNotesView() = view.text_note_view
 
     fun saveText(force: Boolean) {
         if (note == null) {
@@ -182,7 +182,7 @@ class TextFragment : NoteFragment() {
     fun hasUnsavedChanges() = getCurrentNoteViewText() != note!!.getNoteStoredValue()
 
     fun focusEditText() {
-        view.notes_view.requestFocus()
+        view.text_note_view.requestFocus()
     }
 
     private fun saveNoteValue(note: Note) {
@@ -199,7 +199,7 @@ class TextFragment : NoteFragment() {
         }
     }
 
-    fun getCurrentNoteViewText() = view.notes_view?.text?.toString()
+    fun getCurrentNoteViewText() = view.text_note_view?.text?.toString()
 
     @SuppressLint("RtlHardcoded")
     private fun getTextGravity() = when (config!!.gravity) {
@@ -216,7 +216,7 @@ class TextFragment : NoteFragment() {
     fun undo() {
         val edit = textHistory.getPrevious() ?: return
 
-        val text = view.notes_view.editableText
+        val text = view.text_note_view.editableText
         val start = edit.start
         val end = start + if (edit.after != null) edit.after.length else 0
 
@@ -244,7 +244,7 @@ class TextFragment : NoteFragment() {
     fun redo() {
         val edit = textHistory.getNext() ?: return
 
-        val text = view.notes_view.editableText
+        val text = view.text_note_view.editableText
         val start = edit.start
         val end = start + if (edit.before != null) edit.before.length else 0
 

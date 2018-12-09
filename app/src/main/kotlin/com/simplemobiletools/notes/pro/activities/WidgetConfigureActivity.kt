@@ -19,6 +19,7 @@ import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.helpers.MyWidgetProvider
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
+import com.simplemobiletools.notes.pro.helpers.TYPE_CHECKLIST
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.widget_config.*
@@ -56,7 +57,7 @@ class WidgetConfigureActivity : SimpleActivity() {
 
     override fun onResume() {
         super.onResume()
-        notes_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, applicationContext.getTextSize())
+        text_note_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, applicationContext.getTextSize())
     }
 
     private fun initVariables() {
@@ -104,13 +105,21 @@ class WidgetConfigureActivity : SimpleActivity() {
     private fun updateCurrentNote(note: Note) {
         mCurrentNoteId = note.id!!
         notes_picker_value.text = note.title
-        val sampleValue = if (note.value.isEmpty() || mIsCustomizingColors) getString(R.string.widget_config) else note.value
-        notes_view.text = sampleValue
+        if (note.type == TYPE_CHECKLIST) {
+            text_note_view.beGone()
+            checklist_note_view.beVisible()
+        } else {
+            val sampleValue = if (note.value.isEmpty() || mIsCustomizingColors) getString(R.string.widget_config) else note.value
+            text_note_view.text = sampleValue
+            text_note_view.beVisible()
+            checklist_note_view.beGone()
+        }
     }
 
     private fun saveConfig() {
         val views = RemoteViews(packageName, R.layout.activity_main)
-        views.setBackgroundColor(R.id.notes_view, mBgColor)
+        views.setBackgroundColor(R.id.text_note_view, mBgColor)
+        views.setBackgroundColor(R.id.checklist_note_view, mBgColor)
         AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
         val widget = Widget(null, mWidgetId, mCurrentNoteId)
         Thread {
@@ -143,14 +152,15 @@ class WidgetConfigureActivity : SimpleActivity() {
 
     private fun updateBackgroundColor() {
         mBgColor = mBgColorWithoutTransparency.adjustAlpha(mBgAlpha)
-        notes_view.setBackgroundColor(mBgColor)
+        text_note_view.setBackgroundColor(mBgColor)
+        checklist_note_view.setBackgroundColor(mBgColor)
         config_save.setBackgroundColor(mBgColor)
         config_bg_color.setFillWithStroke(mBgColor, Color.BLACK)
     }
 
     private fun updateTextColor() {
         config_save.setTextColor(mTextColor)
-        notes_view.setTextColor(mTextColor)
+        text_note_view.setTextColor(mTextColor)
         config_text_color.setFillWithStroke(mTextColor, Color.BLACK)
     }
 
