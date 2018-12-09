@@ -17,6 +17,8 @@
     <string name="add_to_note">Aan notitie toevoegen</string>
     <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
     <string name="note_shown_widget">Note shown in the widget:</string>
+    <string name="new_note_type">New note type:</string>
+    <string name="text_note">Text note</string>
 
     <!-- File notes -->
     <string name="open_file">Bestand openen</string>

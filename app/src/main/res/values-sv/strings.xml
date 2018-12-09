@@ -17,6 +17,8 @@
     <string name="add_to_note">Lägg till i anteckning</string>
     <string name="unsaved_changes_warning">Det finns några ändringar som inte har sparats. Vad vill du göra med dem?</string>
     <string name="note_shown_widget">Anteckning som visas i widgeten:</string>
+    <string name="new_note_type">New note type:</string>
+    <string name="text_note">Text note</string>
 
     <!-- File notes -->
     <string name="open_file">Öppna fil</string>

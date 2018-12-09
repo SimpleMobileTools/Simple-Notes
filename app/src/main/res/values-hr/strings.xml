@@ -17,6 +17,8 @@
     <string name="add_to_note">Dodaj u bilješku</string>
     <string name="unsaved_changes_warning">Imate neke nespremljene izmjene. Što želite učiniti s njima??</string>
     <string name="note_shown_widget">Bilješka prikazana u widgetu:</string>
+    <string name="new_note_type">New note type:</string>
+    <string name="text_note">Text note</string>
 
     <!-- File notes -->
     <string name="open_file">Otvori datoteku</string>
