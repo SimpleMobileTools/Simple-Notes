@@ -349,9 +349,20 @@ class MainActivity : SimpleActivity() {
     private fun openFile() {
         FilePickerDialog(this, canAddShowHiddenButton = true) {
             openFile(it, true) {
-                OpenFileDialog(this, it.path) {
-                    addNewNote(it)
-                }
+                Thread {
+                    val fileText = it.readText().trim()
+                    val checklistItems = fileText.parseChecklistItems()
+                    if (checklistItems != null) {
+                        val note = Note(null, it.absolutePath.getFilenameFromPath(), fileText, TYPE_CHECKLIST)
+                        addNewNote(note)
+                    } else {
+                        runOnUiThread {
+                            OpenFileDialog(this, it.path) {
+                                addNewNote(it)
+                            }
+                        }
+                    }
+                }.start()
             }
         }
     }
