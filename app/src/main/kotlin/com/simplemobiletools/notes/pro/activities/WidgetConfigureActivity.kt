@@ -123,6 +123,7 @@ class WidgetConfigureActivity : SimpleActivity() {
             }
 
             ChecklistAdapter(this, items, null, checklist_note_view, false) {}.apply {
+                updateTextColor(mTextColor)
                 checklist_note_view.adapter = this
             }
             text_note_view.beGone()
@@ -180,6 +181,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private fun updateTextColor() {
         config_save.setTextColor(mTextColor)
         text_note_view.setTextColor(mTextColor)
+        (checklist_note_view.adapter as? ChecklistAdapter)?.updateTextColor(mTextColor)
         config_text_color.setFillWithStroke(mTextColor, Color.BLACK)
     }
 
