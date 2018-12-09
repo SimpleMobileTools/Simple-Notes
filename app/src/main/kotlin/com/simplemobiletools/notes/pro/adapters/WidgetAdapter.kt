@@ -10,35 +10,44 @@ import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.setText
 import com.simplemobiletools.commons.extensions.setTextSize
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.R.id.checklist_title
 import com.simplemobiletools.notes.pro.R.id.widget_text_holder
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.ChecklistItem
+import com.simplemobiletools.notes.pro.models.Note
 
 class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsService.RemoteViewsFactory {
     private val textIds = arrayOf(R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right)
     private var widgetTextColor = context.config.widgetTextColor
+    private var note: Note? = null
+    private var checklistItems = ArrayList<ChecklistItem>()
 
     override fun getViewAt(position: Int): RemoteViews {
         val noteId = intent.getLongExtra(NOTE_ID, 0L)
         val remoteView: RemoteViews
 
-        val note = context.notesDB.getNoteWithId(noteId) ?: return RemoteViews(context.packageName, R.layout.widget_text_layout)
+        if (note == null) {
+            return RemoteViews(context.packageName, R.layout.widget_text_layout)
+        }
 
         val textSize = context.getTextSize() / context.resources.displayMetrics.density
-        if (note.type == TYPE_CHECKLIST) {
-            val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-            val items = Gson().fromJson<ArrayList<ChecklistItem>>(note.value, checklistItemType) ?: ArrayList(1)
+        if (note!!.type == TYPE_CHECKLIST) {
             remoteView = RemoteViews(context.packageName, R.layout.item_checklist_widget).apply {
-                setText(R.id.checklist_title, items.getOrNull(position)?.title ?: "")
+                setText(R.id.checklist_title, checklistItems.getOrNull(position)?.title ?: "")
                 setTextColor(R.id.checklist_title, widgetTextColor)
                 setTextSize(R.id.checklist_title, textSize)
+
+                Intent().apply {
+                    putExtra(OPEN_NOTE_ID, noteId)
+                    setOnClickFillInIntent(checklist_title, this)
+                }
             }
         } else {
             remoteView = RemoteViews(context.packageName, R.layout.widget_text_layout).apply {
-                val noteText = note.getNoteStoredValue() ?: ""
+                val noteText = note!!.getNoteStoredValue() ?: ""
                 for (id in textIds) {
                     setText(id, noteText)
                     setTextColor(id, widgetTextColor)
@@ -46,12 +55,12 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
                     setViewVisibility(id, View.GONE)
                 }
                 setViewVisibility(getProperTextView(context), View.VISIBLE)
-            }
-        }
 
-        Intent().apply {
-            putExtra(OPEN_NOTE_ID, noteId)
-            remoteView.setOnClickFillInIntent(widget_text_holder, this)
+                Intent().apply {
+                    putExtra(OPEN_NOTE_ID, noteId)
+                    setOnClickFillInIntent(widget_text_holder, this)
+                }
+            }
         }
 
         return remoteView
@@ -71,11 +80,23 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
 
     override fun onDataSetChanged() {
         widgetTextColor = context.config.widgetTextColor
+        val noteId = intent.getLongExtra(NOTE_ID, 0L)
+        note = context.notesDB.getNoteWithId(noteId)
+        if (note?.type == TYPE_CHECKLIST) {
+            val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
+            checklistItems = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.value, checklistItemType) ?: ArrayList(1)
+        }
     }
 
     override fun hasStableIds() = true
 
-    override fun getCount() = 1
+    override fun getCount(): Int {
+        return if (note?.type == TYPE_CHECKLIST) {
+            checklistItems.size
+        } else {
+            1
+        }
+    }
 
     override fun getViewTypeCount() = 2
 
