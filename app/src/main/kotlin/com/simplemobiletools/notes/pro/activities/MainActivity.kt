@@ -412,11 +412,14 @@ class MainActivity : SimpleActivity() {
                 Note(null, title, "", TYPE_TEXT, path)
             }
 
-            if (mNotes.any { it.title.equals(note.title, true) }) {
-                note.title += " (file)"
-            }
+            NotesHelper(this).getNotes {
+                mNotes = it
+                if (mNotes.any { it.title.equals(note.title, true) }) {
+                    note.title += " (file)"
+                }
 
-            addNewNote(note)
+                addNewNote(note)
+            }
         }
     }
 
