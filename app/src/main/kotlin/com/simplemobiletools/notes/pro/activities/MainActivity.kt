@@ -434,30 +434,29 @@ class MainActivity : SimpleActivity() {
 
     private fun exportAsFile() {
         ExportFileDialog(this, mCurrentNote) {
-            if (getCurrentNoteText()?.isNotEmpty() == true) {
-                showExportFilePickUpdateDialog(it)
+            val textToExport = if (mCurrentNote.type == TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+            if (textToExport == null || textToExport.isEmpty()) {
+                toast(R.string.unknown_error_occurred)
+            } else if (mCurrentNote.type == TYPE_TEXT) {
+                showExportFilePickUpdateDialog(it, textToExport)
+            } else {
+                exportNoteValueToFile(it, textToExport, true)
             }
         }
     }
 
-    private fun showExportFilePickUpdateDialog(exportPath: String) {
+    private fun showExportFilePickUpdateDialog(exportPath: String, textToExport: String) {
         val items = arrayListOf(
                 RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
                 RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
-            val currentNoteText = getCurrentNoteText()
-            if (currentNoteText == null) {
-                toast(R.string.unknown_error_occurred)
-                return@RadioGroupDialog
-            }
-
-            exportNoteValueToFile(exportPath, currentNoteText, true) {
+            exportNoteValueToFile(exportPath, textToExport, true) {
                 if (syncFile) {
                     mCurrentNote.path = exportPath
 
-                    if (mCurrentNote.getNoteStoredValue() == currentNoteText) {
+                    if (mCurrentNote.getNoteStoredValue() == textToExport) {
                         mCurrentNote.value = ""
                     }
 
@@ -642,7 +641,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun shareText() {
-        val text = getCurrentNoteText()
+        val text = if (mCurrentNote.type == TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
         if (text == null || text.isEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
