@@ -53,6 +53,7 @@
         android:layout_marginBottom="@dimen/activity_margin"
         android:clipToPadding="false"
         android:overScrollMode="never"
+        android:paddingTop="@dimen/small_margin"
         android:visibility="gone"
         app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager"/>
 

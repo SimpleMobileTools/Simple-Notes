@@ -96,7 +96,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             checklist_list.beVisibleIf(items.isNotEmpty())
         }
 
-        ChecklistAdapter(activity as SimpleActivity, items, this, view.checklist_list) {
+        ChecklistAdapter(activity as SimpleActivity, items, this, view.checklist_list, true) {
             val clickedNote = it as ChecklistItem
             clickedNote.isDone = !clickedNote.isDone
             saveNote(items.indexOfFirst { it.id == clickedNote.id })

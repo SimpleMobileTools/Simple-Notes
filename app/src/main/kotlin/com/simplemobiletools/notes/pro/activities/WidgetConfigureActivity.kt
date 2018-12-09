@@ -8,18 +8,22 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.TypedValue
 import android.widget.RemoteViews
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.helpers.MyWidgetProvider
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.helpers.TYPE_CHECKLIST
+import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.widget_config.*
@@ -106,6 +110,21 @@ class WidgetConfigureActivity : SimpleActivity() {
         mCurrentNoteId = note.id!!
         notes_picker_value.text = note.title
         if (note.type == TYPE_CHECKLIST) {
+            val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
+            val items = Gson().fromJson<ArrayList<ChecklistItem>>(note.value, checklistItemType) ?: ArrayList(1)
+            items.apply {
+                if (isEmpty()) {
+                    add(ChecklistItem(0, "Milk", true))
+                    add(ChecklistItem(1, "Butter", true))
+                    add(ChecklistItem(2, "Salt", false))
+                    add(ChecklistItem(3, "Water", false))
+                    add(ChecklistItem(4, "Meat", true))
+                }
+            }
+
+            ChecklistAdapter(this, items, null, checklist_note_view, false) {}.apply {
+                checklist_note_view.adapter = this
+            }
             text_note_view.beGone()
             checklist_note_view.beVisible()
         } else {
