@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.1.0 *(2018-12-09)*
+----------------------------
+
+ * Added a Checklist type of note
+ * Fixed some glitches around creating new notes from files/texts
+
 Version 6.0.1 *(2018-11-16)*
 ----------------------------
 
