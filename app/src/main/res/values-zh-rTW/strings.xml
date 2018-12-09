@@ -17,8 +17,8 @@
     <string name="add_to_note">添加到筆記</string>
     <string name="unsaved_changes_warning">你有一些尚未儲存的變更。你想對他們怎麼處理?</string>
     <string name="note_shown_widget">在小工具顯示的筆記:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="new_note_type">新筆記類型:</string>
+    <string name="text_note">文字筆記</string>
 
     <!-- File notes -->
     <string name="open_file">打開檔案</string>
@@ -51,7 +51,7 @@
     <!-- Checklists -->
     <string name="checklist">核對清單</string>
     <string name="add_new_checklist_item">新增新的核對清單項目</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist_is_empty">核對清單為空白</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">將全部筆記匯出成檔案</string>
