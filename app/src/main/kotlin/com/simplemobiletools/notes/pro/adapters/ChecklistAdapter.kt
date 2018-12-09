@@ -11,6 +11,7 @@ import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
 import com.simplemobiletools.commons.views.MyRecyclerView
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.helpers.DONE_CHECKLIST_ITEM_ALPHA
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import kotlinx.android.synthetic.main.item_checklist.view.*
@@ -104,7 +105,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
 
                 if (checklistItem.isDone) {
                     paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-                    alpha = 0.4f
+                    alpha = DONE_CHECKLIST_ITEM_ALPHA
                 } else {
                     paintFlags = 0
                     alpha = 1f

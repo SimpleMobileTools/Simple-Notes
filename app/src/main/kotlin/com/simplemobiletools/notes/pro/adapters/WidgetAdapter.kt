@@ -2,11 +2,13 @@ package com.simplemobiletools.notes.pro.adapters
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.view.View
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.simplemobiletools.commons.extensions.adjustAlpha
 import com.simplemobiletools.commons.extensions.setText
 import com.simplemobiletools.commons.extensions.setTextSize
 import com.simplemobiletools.notes.pro.R
@@ -36,9 +38,15 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         val textSize = context.getTextSize() / context.resources.displayMetrics.density
         if (note!!.type == TYPE_CHECKLIST) {
             remoteView = RemoteViews(context.packageName, R.layout.item_checklist_widget).apply {
-                setText(R.id.checklist_title, checklistItems.getOrNull(position)?.title ?: "")
-                setTextColor(R.id.checklist_title, widgetTextColor)
+                val checklistItem = checklistItems.getOrNull(position) ?: return@apply
+                setText(R.id.checklist_title, checklistItem.title)
+
+                val widgetNewTextColor = if (checklistItem.isDone) widgetTextColor.adjustAlpha(DONE_CHECKLIST_ITEM_ALPHA) else widgetTextColor
+                setTextColor(R.id.checklist_title, widgetNewTextColor)
                 setTextSize(R.id.checklist_title, textSize)
+
+                val paintFlags = if (checklistItem.isDone) Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG else 0
+                setInt(R.id.checklist_title, "setPaintFlags", paintFlags)
 
                 Intent().apply {
                     putExtra(OPEN_NOTE_ID, noteId)
