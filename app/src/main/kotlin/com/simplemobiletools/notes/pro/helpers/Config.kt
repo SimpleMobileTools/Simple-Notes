@@ -72,4 +72,8 @@ class Config(context: Context) : BaseConfig(context) {
     var useIncognitoMode: Boolean
         get() = prefs.getBoolean(USE_INCOGNITO_MODE, false)
         set(useIncognitoMode) = prefs.edit().putBoolean(USE_INCOGNITO_MODE, useIncognitoMode).apply()
+
+    var lastCreatedNoteType: Int
+        get() = prefs.getInt(LAST_CREATED_NOTE_TYPE, TYPE_TEXT)
+        set(lastCreatedNoteType) = prefs.edit().putInt(LAST_CREATED_NOTE_TYPE, lastCreatedNoteType).apply()
 }

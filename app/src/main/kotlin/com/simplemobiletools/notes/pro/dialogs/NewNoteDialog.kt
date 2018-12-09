@@ -8,6 +8,7 @@ import com.simplemobiletools.commons.extensions.showKeyboard
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.TYPE_CHECKLIST
 import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
@@ -16,7 +17,9 @@ import kotlinx.android.synthetic.main.dialog_new_note.view.*
 
 class NewNoteDialog(val activity: Activity, callback: (note: Note) -> Unit) {
     init {
-        val view = activity.layoutInflater.inflate(R.layout.dialog_new_note, null)
+        val view = activity.layoutInflater.inflate(R.layout.dialog_new_note, null).apply {
+            new_note_type.check(if (activity.config.lastCreatedNoteType == TYPE_TEXT) type_text_note.id else type_checklist.id)
+        }
 
         AlertDialog.Builder(activity)
                 .setPositiveButton(R.string.ok, null)
@@ -32,6 +35,7 @@ class NewNoteDialog(val activity: Activity, callback: (note: Note) -> Unit) {
                                     activity.notesDB.getNoteIdWithTitle(title) != null -> activity.toast(R.string.title_taken)
                                     else -> {
                                         val type = if (view.new_note_type.checkedRadioButtonId == view.type_checklist.id) TYPE_CHECKLIST else TYPE_TEXT
+                                        activity.config.lastCreatedNoteType = type
                                         val newNote = Note(null, title, "", type)
                                         callback(newNote)
                                         dismiss()
