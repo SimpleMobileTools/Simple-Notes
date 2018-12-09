@@ -60,27 +60,7 @@ class MainActivity : SimpleActivity() {
         pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
         pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
         checkWhatsNewDialog()
-
-        intent.apply {
-            if (action == Intent.ACTION_SEND && type == MIME_TEXT_PLAIN) {
-                getStringExtra(Intent.EXTRA_TEXT)?.let {
-                    handleTextIntent(it)
-                    intent.removeExtra(Intent.EXTRA_TEXT)
-                }
-            }
-
-            if (action == Intent.ACTION_VIEW) {
-                val realPath = intent.getStringExtra(REAL_FILE_PATH)
-                if (realPath != null) {
-                    val file = File(realPath)
-                    handleUri(Uri.fromFile(file))
-                } else {
-                    handleUri(data)
-                }
-                intent.removeCategory(Intent.CATEGORY_DEFAULT)
-                intent.action = null
-            }
-        }
+        checkIntents(intent)
 
         storeStateVariables()
         if (config.showNotePicker && savedInstanceState == null) {
@@ -207,6 +187,30 @@ class MainActivity : SimpleActivity() {
         super.onNewIntent(intent)
         val wantedNoteId = intent.getLongExtra(OPEN_NOTE_ID, -1L)
         view_pager.currentItem = getWantedNoteIndex(wantedNoteId)
+        checkIntents(intent)
+    }
+
+    private fun checkIntents(intent: Intent) {
+        intent.apply {
+            if (action == Intent.ACTION_SEND && type == MIME_TEXT_PLAIN) {
+                getStringExtra(Intent.EXTRA_TEXT)?.let {
+                    handleTextIntent(it)
+                    intent.removeExtra(Intent.EXTRA_TEXT)
+                }
+            }
+
+            if (action == Intent.ACTION_VIEW) {
+                val realPath = intent.getStringExtra(REAL_FILE_PATH)
+                if (realPath != null) {
+                    val file = File(realPath)
+                    handleUri(Uri.fromFile(file))
+                } else {
+                    handleUri(data)
+                }
+                intent.removeCategory(Intent.CATEGORY_DEFAULT)
+                intent.action = null
+            }
+        }
     }
 
     private fun storeStateVariables() {
