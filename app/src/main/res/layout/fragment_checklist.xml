@@ -6,13 +6,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.simplemobiletools.commons.views.MyRecyclerView
-        android:id="@+id/checklist_list"
+    <RelativeLayout
+        android:id="@+id/checklist_items_holder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
-        app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager"/>
+        android:layout_height="match_parent">
+
+        <com.simplemobiletools.commons.views.MyRecyclerView
+            android:id="@+id/checklist_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:visibility="gone"
+            app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager"/>
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/fragment_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:gravity="center"
+            android:paddingLeft="@dimen/activity_margin"
+            android:paddingRight="@dimen/activity_margin"
+            android:text="@string/checklist_is_empty"
+            android:textSize="@dimen/bigger_text_size"
+            android:visibility="gone"/>
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/fragment_placeholder_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_placeholder"
+            android:layout_centerHorizontal="true"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="@dimen/activity_margin"
+            android:text="@string/add_new_checklist_item"
+            android:textSize="@dimen/bigger_text_size"
+            android:visibility="gone"/>
+    </RelativeLayout>
 
     <com.simplemobiletools.commons.views.MyFloatingActionButton
         android:id="@+id/checklist_fab"

@@ -51,6 +51,7 @@
     <!-- Checklists -->
     <string name="checklist">核對清單</string>
     <string name="add_new_checklist_item">新增新的核對清單項目</string>
+    <string name="checklist_is_empty">The checklist is empty</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">將全部筆記匯出成檔案</string>

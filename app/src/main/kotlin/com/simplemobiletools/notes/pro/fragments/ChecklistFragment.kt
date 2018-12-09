@@ -42,6 +42,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
                 val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
                 items = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.value, checklistItemType) ?: ArrayList(1)
+                context!!.updateTextColors(view.checklist_holder)
                 setupFragment()
             }
         }
@@ -56,22 +57,42 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private fun setupFragment() {
         val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus, if (context!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
-        view.checklist_fab.apply {
-            setImageDrawable(plusIcon)
-            background.applyColorFilter(context!!.getAdjustedPrimaryColor())
-            setOnClickListener {
-                NewChecklistItemDialog(activity as SimpleActivity) {
-                    val currentMaxId = items.maxBy { it.id }?.id ?: 0
-                    val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
-                    items.add(checklistItem)
-                    saveNote()
+        view.apply {
+            checklist_fab.apply {
+                setImageDrawable(plusIcon)
+                background.applyColorFilter(context!!.getAdjustedPrimaryColor())
+                setOnClickListener {
+                    showNewItemDialog()
+                }
+            }
+
+            fragment_placeholder_2.apply {
+                setTextColor(context!!.getAdjustedPrimaryColor())
+                underlineText()
+                setOnClickListener {
+                    showNewItemDialog()
                 }
             }
         }
         setupAdapter()
     }
 
+    private fun showNewItemDialog() {
+        NewChecklistItemDialog(activity as SimpleActivity) {
+            val currentMaxId = items.maxBy { it.id }?.id ?: 0
+            val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
+            items.add(checklistItem)
+            saveNote()
+        }
+    }
+
     private fun setupAdapter() {
+        view.apply {
+            fragment_placeholder.beVisibleIf(items.isEmpty())
+            fragment_placeholder_2.beVisibleIf(items.isEmpty())
+            checklist_list.beVisibleIf(items.isNotEmpty())
+        }
+
         ChecklistAdapter(activity as SimpleActivity, items, this, view.checklist_list) {
             val clickedNote = it as ChecklistItem
             clickedNote.isDone = !clickedNote.isDone
@@ -101,5 +122,6 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     override fun refreshItems() {
+        setupAdapter()
     }
 }

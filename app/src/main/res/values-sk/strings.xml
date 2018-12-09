@@ -51,6 +51,7 @@
     <!-- Checklists -->
     <string name="checklist">Zoznam položiek</string>
     <string name="add_new_checklist_item">Pridať do zoznamu novú položku</string>
+    <string name="checklist_is_empty">Zoznam položiek je prázdny</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovať všetky poznámky ako súbory</string>
