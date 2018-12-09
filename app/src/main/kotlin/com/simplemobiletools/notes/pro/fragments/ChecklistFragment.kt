@@ -83,6 +83,9 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
             items.add(checklistItem)
             saveNote()
+            if (items.size == 1) {
+                setupAdapter()
+            }
         }
     }
 
