@@ -102,8 +102,8 @@ class MainActivity : SimpleActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         menu.apply {
-            findItem(R.id.undo).isVisible = showUndoButton
-            findItem(R.id.redo).isVisible = showRedoButton
+            findItem(R.id.undo).isVisible = showUndoButton && mCurrentNote.type == TYPE_TEXT
+            findItem(R.id.redo).isVisible = showRedoButton && mCurrentNote.type == TYPE_TEXT
         }
 
         return true
@@ -118,7 +118,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.export_all_notes).isVisible = shouldBeVisible
 
             saveNoteButton = findItem(R.id.save_note)
-            saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton
+            saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == TYPE_TEXT
         }
 
         pager_title_strip.beVisibleIf(shouldBeVisible)
@@ -272,6 +272,7 @@ class MainActivity : SimpleActivity() {
                 onPageChangeListener {
                     mCurrentNote = mNotes[it]
                     config.currentNoteId = mCurrentNote.id!!
+                    invalidateOptionsMenu()
                 }
             }
 
