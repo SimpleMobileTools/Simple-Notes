@@ -17,8 +17,8 @@
     <string name="add_to_note">Aggiunta alla nota</string>
     <string name="unsaved_changes_warning">Hai delle modifiche non salvate. Cosa ci si vuole fare?</string>
     <string name="note_shown_widget">Nota mostrata nel widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="new_note_type">Nuovo tipo di nota:</string>
+    <string name="text_note">Nota di testo</string>
 
     <!-- File notes -->
     <string name="open_file">Apri file</string>
@@ -49,9 +49,9 @@
     <string name="use_incognito_mode">Usa la modalità incognito per le tastiere</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Scaletta</string>
+    <string name="add_new_checklist_item">Aggiungi un nuovo elemento della scaletta</string>
+    <string name="checklist_is_empty">La scaletta è vuota</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Esporta le note come file</string>
