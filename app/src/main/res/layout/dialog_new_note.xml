@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_margin"
-    android:paddingTop="@dimen/activity_margin"
+    android:paddingTop="@dimen/small_margin"
     android:paddingRight="@dimen/activity_margin">
 
     <com.simplemobiletools.commons.views.MyEditText
@@ -22,8 +22,7 @@
         android:id="@+id/new_note_type_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/small_margin"
-        android:paddingRight="@dimen/small_margin"
+        android:paddingTop="@dimen/medium_margin"
         android:text="@string/new_note_type"/>
 
     <RadioGroup
@@ -36,16 +35,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:paddingTop="@dimen/activity_margin"
-            android:paddingBottom="@dimen/activity_margin"
+            android:paddingTop="@dimen/normal_margin"
+            android:paddingBottom="@dimen/normal_margin"
             android:text="@string/text_note"/>
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/type_checklist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/activity_margin"
-            android:paddingBottom="@dimen/activity_margin"
+            android:paddingTop="@dimen/normal_margin"
+            android:paddingBottom="@dimen/normal_margin"
             android:text="@string/checklist"/>
 
     </RadioGroup>
