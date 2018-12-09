@@ -353,7 +353,7 @@ class MainActivity : SimpleActivity() {
                     val fileText = it.readText().trim()
                     val checklistItems = fileText.parseChecklistItems()
                     if (checklistItems != null) {
-                        val note = Note(null, it.absolutePath.getFilenameFromPath(), fileText, TYPE_CHECKLIST)
+                        val note = Note(null, it.absolutePath.getFilenameFromPath().substringBeforeLast('.'), fileText, TYPE_CHECKLIST)
                         addNewNote(note)
                     } else {
                         runOnUiThread {
