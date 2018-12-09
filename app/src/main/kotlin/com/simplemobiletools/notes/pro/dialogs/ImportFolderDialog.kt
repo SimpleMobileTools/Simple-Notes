@@ -9,7 +9,9 @@ import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.extensions.notesDB
+import com.simplemobiletools.notes.pro.extensions.parseChecklistItems
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
+import com.simplemobiletools.notes.pro.helpers.TYPE_CHECKLIST
 import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_import_folder.view.*
@@ -53,13 +55,18 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
             val storePath = if (updateFilesOnEdit) it.absolutePath else ""
             val title = it.absolutePath.getFilenameFromPath()
             val value = if (updateFilesOnEdit) "" else it.readText()
-
-            if (updateFilesOnEdit) {
-                activity.handleSAFDialog(path) {
-                    saveNote(title, value, storePath)
-                }
+            val fileText = it.readText().trim()
+            val checklistItems = fileText.parseChecklistItems()
+            if (checklistItems != null) {
+                saveNote(title.substringBeforeLast('.'), fileText, TYPE_CHECKLIST, "")
             } else {
-                saveNote(title, value, storePath)
+                if (updateFilesOnEdit) {
+                    activity.handleSAFDialog(path) {
+                        saveNote(title, value, TYPE_TEXT, storePath)
+                    }
+                } else {
+                    saveNote(title, value, TYPE_TEXT, storePath)
+                }
             }
         }
 
@@ -69,8 +76,8 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
         }
     }
 
-    private fun saveNote(title: String, value: String, path: String) {
-        val note = Note(null, title, value, TYPE_TEXT, path)
+    private fun saveNote(title: String, value: String, type: Int, path: String) {
+        val note = Note(null, title, value, type, path)
         NotesHelper(activity).insertOrUpdateNote(note)
     }
 }
