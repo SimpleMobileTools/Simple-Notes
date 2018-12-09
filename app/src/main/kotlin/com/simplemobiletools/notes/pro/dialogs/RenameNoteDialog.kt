@@ -5,13 +5,14 @@ import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
+import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_new_note.view.*
 import java.io.File
 
-class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val callback: (note: Note) -> Unit) {
+class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val currentNoteText: String?, val callback: (note: Note) -> Unit) {
 
     init {
         val view = activity.layoutInflater.inflate(R.layout.dialog_rename_note, null)
@@ -39,6 +40,10 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val callbac
             activity.notesDB.getNoteIdWithTitle(title) != null -> activity.toast(R.string.title_taken)
             else -> {
                 note.title = title
+                if (activity.config.autosaveNotes && currentNoteText != null) {
+                    note.value = currentNoteText
+                }
+
                 val path = note.path
                 if (path.isEmpty()) {
                     activity.notesDB.insertOrUpdate(note)

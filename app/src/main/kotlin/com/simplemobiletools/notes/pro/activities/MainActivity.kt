@@ -294,7 +294,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun displayRenameDialog() {
-        RenameNoteDialog(this, mCurrentNote) {
+        RenameNoteDialog(this, mCurrentNote, getCurrentNoteText()) {
             mCurrentNote = it
             initViewPager(mCurrentNote.id)
         }
