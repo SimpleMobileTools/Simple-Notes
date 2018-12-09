@@ -245,7 +245,10 @@ class MainActivity : SimpleActivity() {
 
             handlePermission(PERMISSION_WRITE_STORAGE) {
                 if (it) {
-                    importFileWithSync(uri)
+                    NotesHelper(this).getNotes {
+                        mNotes = it
+                        importUri(uri)
+                    }
                 }
             }
         }
@@ -387,7 +390,7 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun importFileWithSync(uri: Uri) {
+    private fun importUri(uri: Uri) {
         when (uri.scheme) {
             "file" -> openPath(uri.path)
             "content" -> {
@@ -412,14 +415,11 @@ class MainActivity : SimpleActivity() {
                 Note(null, title, "", TYPE_TEXT, path)
             }
 
-            NotesHelper(this).getNotes {
-                mNotes = it
-                if (mNotes.any { it.title.equals(note.title, true) }) {
-                    note.title += " (file)"
-                }
-
-                addNewNote(note)
+            if (mNotes.any { it.title.equals(note.title, true) }) {
+                note.title += " (file)"
             }
+
+            addNewNote(note)
         }
     }
 
