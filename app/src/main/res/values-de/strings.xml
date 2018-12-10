@@ -17,8 +17,8 @@
     <string name="add_to_note">Zu Notiz hinzufügen</string>
     <string name="unsaved_changes_warning">Du hast ungespeicherte Notizen. Was soll mit ihnen geschehen?</string>
     <string name="note_shown_widget">Im Widget angezeigte Notiz:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="new_note_type">Neue Notizart:</string>
+    <string name="text_note">Textnotiz</string>
 
     <!-- File notes -->
     <string name="open_file">Datei öffnen</string>
@@ -29,7 +29,7 @@
     <string name="delete_file_itself">Lösche Datei \"%s\"</string>
     <string name="note_saved_successfully">Notiz \"%s\" erfolgreich gespeichert</string>
     <string name="note_exported_successfully">Notiz \"%s\" erfolgreich exportiert</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Nur den aktuellen Dateiinhalt exportieren\n(Das Verändern der Notiz wird nicht die Datei beeinflussen)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
@@ -46,12 +46,12 @@
     <string name="show_note_picker">Zeige einen Notiz-Wähler beim Start</string>
     <string name="autosave_notes">Notizen automatisch speichern</string>
     <string name="enable_line_wrap">Zeilenumbruch aktivieren</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="use_incognito_mode">Benutze den Inkognitomodus von Tastaturen</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Checkliste</string>
+    <string name="add_new_checklist_item">Einen neuen Checklisteneintrag hinzufügen</string>
+    <string name="checklist_is_empty">Die Checkliste ist leer</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Alle Notizen als Dateien exportieren</string>
