@@ -24,12 +24,12 @@
     <string name="open_file">Bestand openen</string>
     <string name="export_as_file">Als bestand exporteren</string>
     <string name="file_too_large">Bestand is te groot: limiet is 10MB</string>
-    <string name="only_import_file_content">Alleen de bestandsinhoud importeren\n(veranderingen aan het bestand zullen de notitie niet beïnvloeden)</string>
+    <string name="only_import_file_content">Alleen de bestandsinhoud importeren\n(wijzigingen aan het bestand zullen de notitie niet beïnvloeden)</string>
     <string name="update_file_at_note">Bestand aanpassen bij wijzigingen in de notitie\n(de notitie wordt gewist als het bestand wordt verplaatst of verwijderd)</string>
     <string name="delete_file_itself">Bestand \"%s\" ook verwijderen</string>
     <string name="note_saved_successfully">Notitie \"%s\" opgeslagen</string>
     <string name="note_exported_successfully">Notitie \"%s\" geëxporteerd</string>
-    <string name="only_export_file_content">Alleen de inhoud van het bestand exporteren\n(wijzigingen aan de notitie zullen niet in het bestand doorgevoerd worden)</string>
+    <string name="only_export_file_content">Alleen de huidige bestandsinhoud exporteren\n(wijzigingen in de notitie zullen niet in het bestand doorgevoerd worden)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Bevestigingen weergeven</string>
@@ -62,7 +62,7 @@
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Eenvoudig notitieblok met aan te passen widget en zonder advertenties.</string>
     <string name="app_long_description">
-        Maak snel een notitie van bijvoorbeeld een aankoop, adres of idee. Geen gecompliceerde instellingen, gewoon typen. Notities worden automatisch opgeslagen, dus veranderingen gaan niet per ongeluk verloren. Ondersteunt het aanmaken van meerdere notities die als verschuifbare tabs worden weergegeven.
+        Maak snel een notitie van bijvoorbeeld een aankoop, adres of idee. Geen gecompliceerde instellingen, gewoon typen. Notities worden automatisch opgeslagen, dus wijzigingen gaan niet per ongeluk verloren. Ondersteunt het aanmaken van meerdere notities die als verschuifbare tabs worden weergegeven.
 
         Bevat een aan te passen widget die met één klik de notitie opent.
 
