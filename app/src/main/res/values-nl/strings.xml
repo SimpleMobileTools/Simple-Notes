@@ -15,21 +15,21 @@
     <string name="general_note">Algemeen</string>
     <string name="create_new_note">Nieuwe notitie maken</string>
     <string name="add_to_note">Aan notitie toevoegen</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="unsaved_changes_warning">Wijzigingen zijn nog niet opgeslagen</string>
+    <string name="note_shown_widget">Notitie in widget weergeven:</string>
+    <string name="new_note_type">Type notitie:</string>
+    <string name="text_note">Tekst</string>
 
     <!-- File notes -->
     <string name="open_file">Bestand openen</string>
     <string name="export_as_file">Als bestand exporteren</string>
     <string name="file_too_large">Bestand is te groot: limiet is 10MB</string>
-    <string name="only_import_file_content">Alleen de bestandsinhoud importeren\n(veranderingen aan het bestand zullen de notitie niet beïnvloeden)</string>
+    <string name="only_import_file_content">Alleen de bestandsinhoud importeren\n(wijzigingen aan het bestand zullen de notitie niet beïnvloeden)</string>
     <string name="update_file_at_note">Bestand aanpassen bij wijzigingen in de notitie\n(de notitie wordt gewist als het bestand wordt verplaatst of verwijderd)</string>
     <string name="delete_file_itself">Bestand \"%s\" ook verwijderen</string>
     <string name="note_saved_successfully">Notitie \"%s\" opgeslagen</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="note_exported_successfully">Notitie \"%s\" geëxporteerd</string>
+    <string name="only_export_file_content">Alleen de huidige bestandsinhoud exporteren\n(wijzigingen in de notitie zullen niet in het bestand doorgevoerd worden)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Bevestigingen weergeven</string>
@@ -37,32 +37,32 @@
     <string name="place_cursor_end">Cursor onderaan notitie plaatsen</string>
     <string name="monospaced_font">Lettertype met vaste breedte gebruiken</string>
     <string name="show_keyboard">Toetsenbord bij start tonen</string>
-    <string name="show_word_count">Show word count</string>
+    <string name="show_word_count">Aantal woorden weergeven</string>
     <string name="alignment">Uitlijning</string>
     <string name="left">Links</string>
     <string name="center">Midden</string>
     <string name="right">Rechts</string>
     <string name="widget_note">Notitie in widget</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="show_note_picker">Bij opstarten een keuzescherm met notities weergeven</string>
+    <string name="autosave_notes">Notities automatisch opslaan</string>
+    <string name="enable_line_wrap">Automatische terugloop inschakelen</string>
+    <string name="use_incognito_mode">Incognito-modus van toetsenbord gebruiken</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="add_new_checklist_item">Nieuw item</string>
+    <string name="checklist_is_empty">De lijst is leeg</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
-    <string name="import_folder">Import folder</string>
+    <string name="export_all_notes">Alle notities naar bestanden exporteren</string>
+    <string name="import_notes">Bestanden als notitites importeren</string>
+    <string name="import_folder">Map importeren</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Eenvoudig notitieblok met aan te passen widget en zonder advertenties.</string>
     <string name="app_long_description">
-        Maak snel een notitie van bijvoorbeeld een aankoop, adres of idee. Geen gecompliceerde instellingen, gewoon typen. Notities worden automatisch opgeslagen, dus veranderingen gaan niet per ongeluk verloren. Ondersteunt het aanmaken van meerdere notities die als verschuifbare tabs worden weergegeven.
+        Maak snel een notitie van bijvoorbeeld een aankoop, adres of idee. Geen gecompliceerde instellingen, gewoon typen. Notities worden automatisch opgeslagen, dus wijzigingen gaan niet per ongeluk verloren. Ondersteunt het aanmaken van meerdere notities die als verschuifbare tabs worden weergegeven.
 
         Bevat een aan te passen widget die met één klik de notitie opent.
 
