@@ -16,4 +16,7 @@ interface WidgetsDao {
 
     @Query("DELETE FROM widgets WHERE note_id = :noteId")
     fun deleteNoteWidgets(noteId: Long)
+
+    @Query("DELETE FROM widgets WHERE widget_id = :widgetId")
+    fun deleteWidgetId(widgetId: Int)
 }

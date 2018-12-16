@@ -48,4 +48,13 @@ class MyWidgetProvider : AppWidgetProvider() {
             }
         }.start()
     }
+
+    override fun onDeleted(context: Context, appWidgetIds: IntArray) {
+        super.onDeleted(context, appWidgetIds)
+        Thread {
+            appWidgetIds.forEach {
+                context.widgetsDB.deleteWidgetId(it)
+            }
+        }.start()
+    }
 }
