@@ -50,8 +50,8 @@
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Nieuw item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
+    <string name="add_new_checklist_item">Item toevoegen</string>
+    <string name="add_new_checklist_items">Items toevoegen</string>
     <string name="checklist_is_empty">De lijst is leeg</string>
 
     <!-- Import / Export -->
