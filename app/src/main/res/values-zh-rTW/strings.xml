@@ -51,7 +51,7 @@
     <!-- Checklists -->
     <string name="checklist">核對清單</string>
     <string name="add_new_checklist_item">新增新的核對清單項目</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
+    <string name="add_new_checklist_items">新增新的核對清單項目</string>
     <string name="checklist_is_empty">核對清單為空白</string>
 
     <!-- Import / Export -->
