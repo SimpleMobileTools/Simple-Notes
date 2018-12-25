@@ -1,21 +1,21 @@
 <resources>
-    <string name="app_name">Simple Notes</string>
+    <string name="app_name">Semplice Note</string>
     <string name="app_launcher_name">Note</string>
-    <string name="widget_config">Grazie per avere scelto Simple Notes.\nPer altre semplici app visita SimpleMobileTools.com.</string>
+    <string name="widget_config">Grazie per avere scelto Semplice Note.\nPer altre semplici app visita SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Impossibile condividere un testo vuoto</string>
     <string name="simple_note">Nota semplice</string>
     <string name="new_note">Aggiungi una nuova nota</string>
-    <string name="no_title">Inserisci il nome della note</string>
+    <string name="no_title">Inserisci il nome della nota</string>
     <string name="title_taken">Una nota con lo stesso titolo è già esistente</string>
     <string name="open_note">Apri nota</string>
     <string name="delete_note">Elimina nota</string>
-    <string name="delete_note_prompt_message">Sicuro di eliminare la nota \"%s\"?</string>
+    <string name="delete_note_prompt_message">Eliminare davvero la nota \"%s\"?</string>
     <string name="pick_a_note">Scegli una nota</string>
-    <string name="rename_note">Rinomina nota</string>
+    <string name="rename_note">Rinomina una nota</string>
     <string name="general_note">Nota generale</string>
     <string name="create_new_note">Crea una nuova nota</string>
     <string name="add_to_note">Aggiunta alla nota</string>
-    <string name="unsaved_changes_warning">Hai delle modifiche non salvate. Cosa ci si vuole fare?</string>
+    <string name="unsaved_changes_warning">Ci sono delle modifiche non salvate. Cosa fare?</string>
     <string name="note_shown_widget">Nota mostrata nel widget:</string>
     <string name="new_note_type">Nuovo tipo di nota:</string>
     <string name="text_note">Nota di testo</string>
@@ -34,10 +34,10 @@
     <!-- Settings -->
     <string name="display_success_message">Mostra i messaggi di salvataggio riusciti</string>
     <string name="links_and_emails_clickable">Rendi i link e le email cliccabili</string>
-    <string name="place_cursor_end">Posiziona il cursose alla fine della nota</string>
-    <string name="monospaced_font">Una un carattere monospace</string>
+    <string name="place_cursor_end">Posiziona il cursose in fondo alla nota</string>
+    <string name="monospaced_font">Una un font monospace</string>
     <string name="show_keyboard">Mostra la tastiera all\'avvio</string>
-    <string name="show_word_count">Mostra il conteggio delle parole</string>
+    <string name="show_word_count">Mostra il numero delle parole</string>
     <string name="alignment">Allineamento</string>
     <string name="left">A sinistra</string>
     <string name="center">Centrato</string>
@@ -61,15 +61,15 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Un cempo di testo per aggiungere velocemente le note, senza pubblicità.</string>
+    <string name="app_short_description">Un semplice campo di testo per aggiungere velocemente le note, senza pubblicità.</string>
     <string name="app_long_description">
-        Hai bisogno di prendere una nota rapida riguardo qualcosa da acquistare, un indirizzo o un\'idea per una startup? Allora questa è l\'applicazione che stavi cercando! Nessun passaggio di impostazioni complicato, basta solamente scrivere quello che vuoi. Offre il salvataggio automatico, così non butterai via le tue modifiche per errore. Supporta la creazione di più note indipendenti.
+        C\'è bisogno di prendere una nota rapida riguardo qualcosa da acquistare, un indirizzo o un\'idea per una startup? Allora questa è l\'applicazione che si stava cercando! Basta aprire l\'app a scrivere quello che si vuole, non è necessaria nessuna impostazione preliminare. C\'è il comodo salvataggio automatico, così non si butteranno via le modifiche per errore. Supporta la creazione di più note indipendenti.
 
-        Puoi anche accedere alla nota in modo istantaneo utilizzando il widget personalizzabile e ridimensionabile, che apre l\'applicazione al tocco.
+        Si può anche accedere alla nota in modo istantaneo utilizzando il widget personalizzabile e ridimensionabile, che apre l\'applicazione al tocco.
 
-        Non contiene pubblicità o permessi non necessari. È completamente open source, fornisce colori personalizzabili.
+        L\'applicazione non contiene pubblicità o permessi non necessari; è completamente opensource e la si può personalizzare con i propri colori preferiti.
 
-        Questa applicazione è solamente una di una serie più grande. Puoi trovare le altre su https://www.simplemobiletools.com
+        Questa è solamente una delle tante applicazioni della serie Simple Mobile Tools. Si possono trovare le altre su https://www.simplemobiletools.com
     </string>
 
     <!--
