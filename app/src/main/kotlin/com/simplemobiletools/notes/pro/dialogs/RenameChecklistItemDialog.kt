@@ -10,22 +10,24 @@ import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.pro.R
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.*
 
-class NewChecklistItemDialog(val activity: Activity, callback: (title: String) -> Unit) {
+class RenameChecklistItemDialog(val activity: Activity, val oldTitle: String, callback: (newTitle: String) -> Unit) {
     init {
-        val view = activity.layoutInflater.inflate(R.layout.dialog_new_checklist_item, null)
+        val view = activity.layoutInflater.inflate(R.layout.dialog_rename_checklist_item, null).apply {
+            checklist_item_title.setText(oldTitle)
+        }
 
         AlertDialog.Builder(activity)
                 .setPositiveButton(R.string.ok, null)
                 .setNegativeButton(R.string.cancel, null)
                 .create().apply {
-                    activity.setupDialogStuff(view, this, R.string.add_new_checklist_item) {
+                    activity.setupDialogStuff(view, this) {
                         showKeyboard(view.checklist_item_title)
                         getButton(BUTTON_POSITIVE).setOnClickListener {
-                            val title = view.checklist_item_title.value
+                            val newTitle = view.checklist_item_title.value
                             when {
-                                title.isEmpty() -> activity.toast(R.string.empty_name)
+                                newTitle.isEmpty() -> activity.toast(R.string.empty_name)
                                 else -> {
-                                    callback(title)
+                                    callback(newTitle)
                                     dismiss()
                                 }
                             }

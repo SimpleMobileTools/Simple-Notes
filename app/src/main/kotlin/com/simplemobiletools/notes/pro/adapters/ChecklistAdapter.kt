@@ -11,6 +11,7 @@ import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
 import com.simplemobiletools.commons.views.MyRecyclerView
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.dialogs.RenameChecklistItemDialog
 import com.simplemobiletools.notes.pro.helpers.DONE_CHECKLIST_ITEM_ALPHA
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
@@ -77,7 +78,14 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
     }
 
     private fun renameChecklistItem() {
-
+        val item = getSelectedItems().first()
+        RenameChecklistItemDialog(activity, item.title) {
+            val position = getSelectedItemPositions().first()
+            item.title = it
+            listener?.saveChecklist()
+            notifyItemChanged(position)
+            finishActMode()
+        }
     }
 
     private fun deleteSelection() {
