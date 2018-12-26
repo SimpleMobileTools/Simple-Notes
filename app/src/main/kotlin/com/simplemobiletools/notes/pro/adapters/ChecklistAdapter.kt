@@ -28,7 +28,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
         initDrawables()
     }
 
-    override fun getActionMenuId() = R.menu.cab_delete_only
+    override fun getActionMenuId() = R.menu.cab_checklist
 
     override fun actionItemPressed(id: Int) {
         if (selectedKeys.isEmpty()) {
@@ -36,6 +36,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
         }
 
         when (id) {
+            R.id.cab_edit -> editNote()
             R.id.cab_delete -> deleteSelection()
         }
     }
@@ -48,7 +49,14 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
 
     override fun getItemKeyPosition(key: Int) = items.indexOfFirst { it.id == key }
 
-    override fun prepareActionMode(menu: Menu) {}
+    override fun prepareActionMode(menu: Menu) {
+        val selectedItems = getSelectedItems()
+        if (selectedItems.isEmpty()) {
+            return
+        }
+
+        menu.findItem(R.id.cab_edit).isVisible = isOneItemSelected()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = createViewHolder(R.layout.item_checklist, parent)
 
@@ -66,6 +74,10 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
         val res = activity.resources
         crossDrawable = res.getColoredDrawableWithColor(R.drawable.ic_cross_big, res.getColor(R.color.theme_dark_red_primary_color))
         checkDrawable = res.getColoredDrawableWithColor(R.drawable.ic_check_big, res.getColor(R.color.md_green_700))
+    }
+
+    private fun editNote() {
+
     }
 
     private fun deleteSelection() {
@@ -95,6 +107,8 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
     }
 
     private fun getItemWithKey(key: Int): ChecklistItem? = items.firstOrNull { it.id == key }
+
+    private fun getSelectedItems() = items.filter { selectedKeys.contains(it.id) } as ArrayList<ChecklistItem>
 
     private fun setupView(view: View, checklistItem: ChecklistItem) {
         val isSelected = selectedKeys.contains(checklistItem.id)
