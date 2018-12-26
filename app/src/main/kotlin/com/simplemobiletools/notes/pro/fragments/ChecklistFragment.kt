@@ -80,12 +80,17 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private fun showNewItemDialog() {
         NewChecklistItemDialog(activity as SimpleActivity) {
-            val currentMaxId = items.maxBy { it.id }?.id ?: 0
-            val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
-            items.add(checklistItem)
+            var currentMaxId = items.maxBy { it.id }?.id ?: 0
+            it.forEach {
+                val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
+                items.add(checklistItem)
+                currentMaxId++
+            }
             saveNote()
             if (items.size == 1) {
                 setupAdapter()
+            } else {
+                (view.checklist_list.adapter as? ChecklistAdapter)?.notifyDataSetChanged()
             }
         }
     }

@@ -8,7 +8,7 @@ import com.simplemobiletools.commons.extensions.showKeyboard
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
 import com.simplemobiletools.notes.pro.R
-import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.*
+import kotlinx.android.synthetic.main.dialog_rename_checklist_item.view.*
 
 class RenameChecklistItemDialog(val activity: Activity, val oldTitle: String, callback: (newTitle: String) -> Unit) {
     init {
