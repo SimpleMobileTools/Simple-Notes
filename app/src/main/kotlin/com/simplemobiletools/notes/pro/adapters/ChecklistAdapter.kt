@@ -36,7 +36,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
         }
 
         when (id) {
-            R.id.cab_edit -> editNote()
+            R.id.cab_rename -> renameChecklistItem()
             R.id.cab_delete -> deleteSelection()
         }
     }
@@ -55,7 +55,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
             return
         }
 
-        menu.findItem(R.id.cab_edit).isVisible = isOneItemSelected()
+        menu.findItem(R.id.cab_rename).isVisible = isOneItemSelected()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = createViewHolder(R.layout.item_checklist, parent)
@@ -76,7 +76,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
         checkDrawable = res.getColoredDrawableWithColor(R.drawable.ic_check_big, res.getColor(R.color.md_green_700))
     }
 
-    private fun editNote() {
+    private fun renameChecklistItem() {
 
     }
 
