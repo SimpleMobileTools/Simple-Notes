@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 6.1.1 *(2018-12-27)*
+----------------------------
+
+ * Allow adding multiple checklist items at once
+ * Fix exporting notes on SD cards
+ * Added some warnings related to some launchers not handling icon customization properly
+ * Some translation improvements
+
 Version 6.1.0 *(2018-12-09)*
 ----------------------------
 
