@@ -87,7 +87,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 currentMaxId++
             }
             saveNote()
-            if (items.size == 1) {
+            if (items.size == it.size) {
                 setupAdapter()
             } else {
                 (view.checklist_list.adapter as? ChecklistAdapter)?.notifyDataSetChanged()
