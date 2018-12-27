@@ -536,7 +536,7 @@ class MainActivity : SimpleActivity() {
 
             if (needsStupidWritePermissions(path)) {
                 handleSAFDialog(path) {
-                    var document = getDocumentFile(path) ?: return@handleSAFDialog
+                    var document = getDocumentFile(File(path).parent) ?: return@handleSAFDialog
                     if (!getDoesFilePathExist(path)) {
                         document = document.createFile("", path.getFilenameFromPath())!!
                     }
