@@ -194,7 +194,7 @@ class TextFragment : NoteFragment() {
             val currentText = getCurrentNoteViewText()
             if (currentText != null) {
                 val displaySuccess = activity?.config?.displaySuccess ?: false
-                (activity as? MainActivity)?.exportNoteValueToFile(note.path, currentText, displaySuccess)
+                (activity as? MainActivity)?.tryExportNoteValueToFile(note.path, currentText, displaySuccess)
             }
         }
     }

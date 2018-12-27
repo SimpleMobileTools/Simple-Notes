@@ -467,7 +467,7 @@ class MainActivity : SimpleActivity() {
             } else if (mCurrentNote.type == TYPE_TEXT) {
                 showExportFilePickUpdateDialog(it, textToExport)
             } else {
-                exportNoteValueToFile(it, textToExport, true)
+                tryExportNoteValueToFile(it, textToExport, true)
             }
         }
     }
@@ -479,7 +479,7 @@ class MainActivity : SimpleActivity() {
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
-            exportNoteValueToFile(exportPath, textToExport, true) {
+            tryExportNoteValueToFile(exportPath, textToExport, true) {
                 if (syncFile) {
                     mCurrentNote.path = exportPath
 
@@ -512,7 +512,7 @@ class MainActivity : SimpleActivity() {
                     if (!filename.isAValidFilename()) {
                         toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
                     } else {
-                        exportNoteValueToFile(file.absolutePath, note.value, false) {
+                        tryExportNoteValueToFile(file.absolutePath, note.value, false) {
                             if (!it) {
                                 failCount++
                             }
@@ -527,7 +527,15 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    fun exportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
+    fun tryExportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
+        handlePermission(PERMISSION_WRITE_STORAGE) {
+            if (it) {
+                exportNoteValueToFile(path, content, showSuccessToasts, callback)
+            }
+        }
+    }
+
+    private fun exportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
         try {
             if (getIsPathDirectory(path)) {
                 toast(R.string.name_taken)
