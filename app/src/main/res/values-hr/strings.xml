@@ -17,8 +17,8 @@
     <string name="add_to_note">Dodaj u bilješku</string>
     <string name="unsaved_changes_warning">Imate neke nespremljene izmjene. Što želite učiniti s njima??</string>
     <string name="note_shown_widget">Bilješka prikazana u widgetu:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="new_note_type">Nova vrsta bilješke:</string>
+    <string name="text_note">Tekstualna bilješka</string>
 
     <!-- File notes -->
     <string name="open_file">Otvori datoteku</string>
@@ -29,7 +29,7 @@
     <string name="delete_file_itself">Također izbriši datoteku \"%s\"</string>
     <string name="note_saved_successfully">Bilješka \"%s\" uspješno spremljena</string>
     <string name="note_exported_successfully">Bilješka \"%s\" uspješno izvezena</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Izvoz samo trenutnog sadržaja datoteke\n(mijenjanje bilješke neće utjecati na datoteku)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Prikaži poruke kada je spremanje uspješno</string>
@@ -49,10 +49,10 @@
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Spisak</string>
+    <string name="add_new_checklist_item">Dodajte novu stavku na spisak</string>
+    <string name="add_new_checklist_items">Dodajte nove stavke na spisak</string>
+    <string name="checklist_is_empty">Spisak je prazan</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
