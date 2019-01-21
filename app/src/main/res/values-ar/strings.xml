@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">الملاحظات</string>
+    <string name="app_launcher_name">الملاحظات</string>
+    <string name="widget_config">Thank you for using Simple Notes.\nFor more simple apps please visit SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">لا يمكن مشاركة نص فارغ</string>
+    <string name="simple_note">ملاحظة</string>
+    <string name="new_note">إضافة ملاحظة</string>
+    <string name="no_title">الرجاء تسمية الملاحظة</string>
+    <string name="title_taken">توجد ملاحظة بهذا العنوان</string>
+    <string name="open_note">فتح ملاحظة</string>
+    <string name="delete_note">حذف ملاحظة</string>
+    <string name="delete_note_prompt_message">هل أنت متأكد من حذف الملاحظة \"%s\"؟</string>
+    <string name="pick_a_note">إختر ملاحظة</string>
+    <string name="rename_note">إعادة تسمية ملاحظة</string>
+    <string name="general_note">ملاحظة عامة</string>
+    <string name="create_new_note">إضافة ملاحظة جديدة</string>
+    <string name="add_to_note">إضافة الى ملاحظة</string>
+    <string name="unsaved_changes_warning">لديك بعض التعديلات غير محفظة. ماذا تريد أن تفعل بها؟</string>
+    <string name="note_shown_widget">ملاحظة معروضة في widget:</string>
+    <string name="new_note_type">نوع ملاحظة جديد:</string>
+    <string name="text_note">ملاحظة نصية</string>
+
+    <!-- File notes -->
+    <string name="open_file">فتح ملف</string>
+    <string name="export_as_file">تصدير كملف</string>
+    <string name="file_too_large">ملف كبير جداً، الحد المسموح 10MB</string>
+    <string name="only_import_file_content">استيراد محتوى الملف فقط\n(تغيير الملف لن يؤثر على الملاحظة)</string>
+    <string name="update_file_at_note">قم بتحديث الملف نفسه عند تحديث الملاحظة\n(يتم حذف الملاحظة إذا تم حذف الملف أو تغيير المسار)</string>
+    <string name="delete_file_itself">أيضا حذف الملف \"%s\"</string>
+    <string name="note_saved_successfully">تم حفظ الملاحظة \"%s\"</string>
+    <string name="note_exported_successfully">تم تصدير الملاحظة \"%s\"</string>
+    <string name="only_export_file_content">تصدير فقط محتوى الملف الحالي\n(تغيير الملاحظة لن يؤثر على الملف)</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">عرض حفظ رسائل النجاح</string>
+    <string name="links_and_emails_clickable">جعل الروابط ورسائل البريد الإلكتروني قابلة للنقر</string>
+    <string name="place_cursor_end">ضع المؤشر في نهاية الملاحظة</string>
+    <string name="monospaced_font">استخدام الخط monospace</string>
+    <string name="show_keyboard">عرض لوحة المفاتيح عند بدء التشغيل</string>
+    <string name="show_word_count">إظهار عدد الكلمات</string>
+    <string name="alignment">المحاذاة</string>
+    <string name="left">يسار</string>
+    <string name="center">وسط</string>
+    <string name="right">يمين</string>
+    <string name="widget_note">ملاحظة مستخدمة في widget</string>
+    <string name="show_note_picker">عرض منتقي الملاحظات عند بدء التشغيل</string>
+    <string name="autosave_notes">حفظ الملاحظات تلقائيا</string>
+    <string name="enable_line_wrap">تفعيل التفاف الخط</string>
+    <string name="use_incognito_mode">استخدام وضع التصفح المتخفي للوحات المفاتيح</string>
+
+    <!-- Checklists -->
+    <string name="checklist">قائمة تدقيق</string>
+    <string name="add_new_checklist_item">إضافة عنصر قائمة تدقيق جديد</string>
+    <string name="add_new_checklist_items">إضافة عناصر قائمة تدقيق جديدة</string>
+    <string name="checklist_is_empty">قائمة التدقيق فارغة</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">تصدير جميع الملاحظات كملفات</string>
+    <string name="import_notes">استيراد ملفات متعددة كملاحظات</string>
+    <string name="import_folder">مجلد الاستيراد</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">A simple text field for adding quick notes, without ads.</string>
+    <string name="app_long_description">
+        Need to take a quick note of something to buy, an address, or a startup idea? Then this is the app you\'ve been looking for! No complicated setup steps needed, just type in what you came for. Comes with autosave, so you will not discard your changes by mistake. Supports creating multiple independent notes.
+
+        You can access the note in no time by using the customizable and resizable widget, which opens the app on click.
+
+        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+
+        This app is just one piece of a bigger series of apps. You can find the rest of them at https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
