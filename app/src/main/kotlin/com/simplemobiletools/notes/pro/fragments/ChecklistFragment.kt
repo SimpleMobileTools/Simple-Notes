@@ -123,6 +123,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
                 note!!.value = Gson().toJson(items)
                 context?.notesDB?.insertOrUpdate(note!!)
+                context?.updateWidgets()
             }
         }.start()
     }
