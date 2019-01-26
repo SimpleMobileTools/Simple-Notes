@@ -87,6 +87,8 @@ class WidgetConfigureActivity : SimpleActivity() {
         mTextColor = config.widgetTextColor
         updateTextColor()
         mIsCustomizingColors = intent.extras?.getBoolean(IS_CUSTOMIZING_COLORS) ?: false
+        notes_picker_holder.beVisibleIf(!mIsCustomizingColors)
+
         NotesHelper(this).getNotes {
             mNotes = it
             notes_picker_holder.beVisibleIf(mNotes.size > 1 && !mIsCustomizingColors)
