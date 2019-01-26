@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 6.1.2 *(2019-01-26)*
+----------------------------
+
+ * Fixed some checklist widget related glitches
+
 Version 6.1.1 *(2018-12-27)*
 ----------------------------
 
