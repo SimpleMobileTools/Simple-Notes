@@ -13,51 +13,51 @@
     <string name="pick_a_note">メモを選択</string>
     <string name="rename_note">メモの名前を変更</string>
     <string name="general_note">全般メモ</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="create_new_note">新しいメモを作成</string>
+    <string name="add_to_note">メモに追加</string>
+    <string name="unsaved_changes_warning">未保存の変更があります。どのように対応しますか？</string>
+    <string name="note_shown_widget">ウィジェットに表示中のメモ:</string>
+    <string name="new_note_type">新しいメモの種類:</string>
+    <string name="text_note">テキストメモ</string>
 
     <!-- File notes -->
-    <string name="open_file">Open file</string>
-    <string name="export_as_file">Export as file</string>
-    <string name="file_too_large">File too large, the limit is 10MB</string>
-    <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%s\"</string>
-    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="open_file">ファイルを開く</string>
+    <string name="export_as_file">ファイルとしてエクスポート</string>
+    <string name="file_too_large">ファイルが大きすぎます (最大:10MBまで)</string>
+    <string name="only_import_file_content">ファイルの内容のみインポートする\n(メモを編集してもファイルには影響しません)</string>
+    <string name="update_file_at_note">メモを更新するとき、ファイル自体も更新する\n(ファイルが削除、またはパスが変更された場合、メモも削除されます)</string>
+    <string name="delete_file_itself">ファイル \"%s\" も削除する</string>
+    <string name="note_saved_successfully">メモ \"%s\" は正常に保存されました</string>
+    <string name="note_exported_successfully">メモ \"%s\" は正常にエクスポートされました</string>
+    <string name="only_export_file_content">現在のファイルの内容のみエクスポートする\n(メモを編集してもファイルには影響しません)</string>
 
     <!-- Settings -->
-    <string name="display_success_message">Display save success messages</string>
-    <string name="links_and_emails_clickable">Make links and emails clickable</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
-    <string name="show_word_count">Show word count</string>
-    <string name="alignment">重力</string>
+    <string name="display_success_message">正常保存時にメッセージを表示する</string>
+    <string name="links_and_emails_clickable">URLとメールアドレスのリンクを有効にする</string>
+    <string name="place_cursor_end">メモの最後にカーソルを移動する</string>
+    <string name="monospaced_font">等幅フォントを使用する</string>
+    <string name="show_keyboard">起動時にキーボードを表示する</string>
+    <string name="show_word_count">単語数を表示する</string>
+    <string name="alignment">配置</string>
     <string name="left">左</string>
     <string name="center">中央</string>
     <string name="right">右</string>
     <string name="widget_note">ウィジェットで使用するメモ</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="show_note_picker">起動時にメモを選択する</string>
+    <string name="autosave_notes">メモを自動保存する</string>
+    <string name="enable_line_wrap">行の折り返しを有効にする</string>
+    <string name="use_incognito_mode">キーボードのシークレットモードを使用する</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">チェックリスト</string>
+    <string name="add_new_checklist_item">新しいチェックリスト項目を追加</string>
+    <string name="add_new_checklist_items">新しいチェックリスト項目を追加</string>
+    <string name="checklist_is_empty">チェックリストが空です</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
-    <string name="import_folder">Import folder</string>
+    <string name="export_all_notes">すべてのメモをファイルとしてエクスポート</string>
+    <string name="import_notes">複数のファイルをメモとしてインポート</string>
+    <string name="import_folder">フォルダからインポート</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
