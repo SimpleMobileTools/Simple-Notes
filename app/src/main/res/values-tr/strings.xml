@@ -17,8 +17,8 @@
     <string name="add_to_note">Nota ekle</string>
     <string name="unsaved_changes_warning">Kaydedilmemiş bazı değişiklikleriniz var. Onlarla ne yapmak istersiniz?</string>
     <string name="note_shown_widget">Widget\'ta gösterilen not:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="new_note_type">Yeni not türü:</string>
+    <string name="text_note">Metin notu</string>
 
     <!-- File notes -->
     <string name="open_file">Dosya aç</string>
@@ -49,10 +49,10 @@
     <string name="use_incognito_mode">Klavyelerin Gizli modunu kullan</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Yapılacak listesi</string>
+    <string name="add_new_checklist_item">Yeni bir yapılacak listesi öğesi ekle</string>
+    <string name="add_new_checklist_items">Yeni yapılacak listesi öğeleri ekle</string>
+    <string name="checklist_is_empty">Yapılacak listesi boş</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
