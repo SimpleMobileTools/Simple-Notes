@@ -17,8 +17,8 @@
     <string name="add_to_note">Lägg till i anteckning</string>
     <string name="unsaved_changes_warning">Det finns några ändringar som inte har sparats. Vad vill du göra med dem?</string>
     <string name="note_shown_widget">Anteckning som visas i widgeten:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="new_note_type">Anteckningstyp:</string>
+    <string name="text_note">Textanteckning</string>
 
     <!-- File notes -->
     <string name="open_file">Öppna fil</string>
@@ -49,10 +49,10 @@
     <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Checklista</string>
+    <string name="add_new_checklist_item">Lägg till ett nytt checklisteobjekt</string>
+    <string name="add_new_checklist_items">Lägg till nya checklisteobjekt</string>
+    <string name="checklist_is_empty">Checklistan är tom</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportera alla anteckningar som filer</string>
