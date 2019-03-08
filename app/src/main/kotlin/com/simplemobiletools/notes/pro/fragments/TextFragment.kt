@@ -155,6 +155,14 @@ class TextFragment : NoteFragment() {
         view.text_note_view.addTextChangedListener(textWatcher)
     }
 
+    fun updateNoteValue(value: String) {
+        note?.value = value
+    }
+
+    fun updateNotePath(path: String) {
+        note?.path = path
+    }
+
     fun getNotesView() = view.text_note_view
 
     fun saveText(force: Boolean) {

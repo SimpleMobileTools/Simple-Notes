@@ -488,6 +488,7 @@ class MainActivity : SimpleActivity() {
                     mCurrentNote.value = textToExport
                 }
 
+                getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
                 NotesHelper(this).insertOrUpdateNote(mCurrentNote)
             }
         }
@@ -532,6 +533,7 @@ class MainActivity : SimpleActivity() {
                                 if (mCurrentNote.id == note.id) {
                                     mCurrentNote.value = note.value
                                     mCurrentNote.path = note.path
+                                    getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
                                 }
 
                                 if (!it) {
