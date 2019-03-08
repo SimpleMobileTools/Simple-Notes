@@ -537,7 +537,7 @@ class MainActivity : SimpleActivity() {
 
     private fun exportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
         try {
-            if (getIsPathDirectory(path)) {
+            if (File(path).isDirectory) {
                 toast(R.string.name_taken)
                 return
             }
@@ -545,7 +545,7 @@ class MainActivity : SimpleActivity() {
             if (needsStupidWritePermissions(path)) {
                 handleSAFDialog(path) {
                     var document = getDocumentFile(File(path).parent) ?: return@handleSAFDialog
-                    if (!getDoesFilePathExist(path)) {
+                    if (!File(path).exists()) {
                         document = document.createFile("", path.getFilenameFromPath())!!
                     }
 
