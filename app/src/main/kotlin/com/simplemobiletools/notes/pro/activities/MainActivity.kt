@@ -479,14 +479,13 @@ class MainActivity : SimpleActivity() {
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
-            val storedValue = mCurrentNote.getNoteStoredValue() ?: ""
             tryExportNoteValueToFile(exportPath, textToExport, true) {
                 if (syncFile) {
                     mCurrentNote.path = exportPath
                     mCurrentNote.value = ""
                 } else {
                     mCurrentNote.path = ""
-                    mCurrentNote.value = storedValue
+                    mCurrentNote.value = textToExport
                 }
 
                 NotesHelper(this).insertOrUpdateNote(mCurrentNote)
