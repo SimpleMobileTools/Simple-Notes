@@ -479,16 +479,17 @@ class MainActivity : SimpleActivity() {
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
+            val storedValue = mCurrentNote.getNoteStoredValue() ?: ""
             tryExportNoteValueToFile(exportPath, textToExport, true) {
                 if (syncFile) {
                     mCurrentNote.path = exportPath
-
-                    if (mCurrentNote.getNoteStoredValue() == textToExport) {
-                        mCurrentNote.value = ""
-                    }
-
-                    NotesHelper(this).insertOrUpdateNote(mCurrentNote)
+                    mCurrentNote.value = ""
+                } else {
+                    mCurrentNote.path = ""
+                    mCurrentNote.value = storedValue
                 }
+
+                NotesHelper(this).insertOrUpdateNote(mCurrentNote)
             }
         }
     }
@@ -503,22 +504,44 @@ class MainActivity : SimpleActivity() {
 
     private fun exportAllNotes() {
         ExportFilesDialog(this, mNotes) { parent, extension ->
-            var failCount = 0
-            NotesHelper(this).getNotes {
-                mNotes = it
-                mNotes.forEachIndexed { index, note ->
-                    val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
-                    val file = File(parent, filename)
-                    if (!filename.isAValidFilename()) {
-                        toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
-                    } else {
-                        tryExportNoteValueToFile(file.absolutePath, note.value, false) {
-                            if (!it) {
-                                failCount++
-                            }
+            val items = arrayListOf(
+                    RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
+                    RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
 
-                            if (index == mNotes.size - 1) {
-                                toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
+            RadioGroupDialog(this, items) {
+                val syncFile = it as Int == EXPORT_FILE_SYNC
+                var failCount = 0
+                NotesHelper(this).getNotes {
+                    mNotes = it
+                    mNotes.forEachIndexed { index, note ->
+                        val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
+                        val file = File(parent, filename)
+                        if (!filename.isAValidFilename()) {
+                            toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
+                        } else {
+                            val noteStoredValue = note.getNoteStoredValue() ?: ""
+                            tryExportNoteValueToFile(file.absolutePath, note.value, false) {
+                                if (syncFile) {
+                                    note.path = file.absolutePath
+                                    note.value = ""
+                                } else {
+                                    note.path = ""
+                                    note.value = noteStoredValue
+                                }
+
+                                NotesHelper(this).insertOrUpdateNote(note)
+                                if (mCurrentNote.id == note.id) {
+                                    mCurrentNote.value = note.value
+                                    mCurrentNote.path = note.path
+                                }
+
+                                if (!it) {
+                                    failCount++
+                                }
+
+                                if (index == mNotes.size - 1) {
+                                    toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
+                                }
                             }
                         }
                     }

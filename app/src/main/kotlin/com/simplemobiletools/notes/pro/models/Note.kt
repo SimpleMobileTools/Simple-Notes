@@ -17,7 +17,7 @@ data class Note(
 
     fun getNoteStoredValue(): String? {
         return if (path.isNotEmpty()) {
-            return try {
+            try {
                 File(path).readText()
             } catch (e: FileNotFoundException) {
                 null
