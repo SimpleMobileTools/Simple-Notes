@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.1.3 *(2019-03-09)*
+----------------------------
+
+ * Fixed saving notes to files on SD cards
+ * Allow syncing notes with files at mass exporting
+
 Version 6.1.2 *(2019-01-26)*
 ----------------------------
 
