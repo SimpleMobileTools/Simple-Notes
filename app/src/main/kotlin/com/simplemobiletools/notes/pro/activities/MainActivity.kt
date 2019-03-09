@@ -568,9 +568,11 @@ class MainActivity : SimpleActivity() {
 
             if (needsStupidWritePermissions(path)) {
                 handleSAFDialog(path) {
-                    var document = getDocumentFile(File(path).parent) ?: return@handleSAFDialog
-                    if (!File(path).exists()) {
-                        document = document.createFile("", path.getFilenameFromPath())!!
+                    val document = if (File(path).exists()) {
+                        getDocumentFile(path) ?: return@handleSAFDialog
+                    } else {
+                        val parent = getDocumentFile(File(path).parent) ?: return@handleSAFDialog
+                        parent.createFile("", path.getFilenameFromPath())!!
                     }
 
                     contentResolver.openOutputStream(document.uri).apply {
