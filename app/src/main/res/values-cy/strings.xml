@@ -63,7 +63,6 @@
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Maes testun syml i wneud nodiadau\'n gyflym, heb hysbysebion.</string>
     <string name="app_long_description">
-
         Angen gwneud nodyn yn gyflym o rywbeth i brynu, cyfeiriad, neu syniad da? Dyma\'r ap wyt ti ei angen! Dim camau gosod cymhleth - jyst teipia be wyt ti eisiau cofnodi. Mae\'n cadw yn awtomatig, felly ni fyddi di\'n colli dy newidiadau trwy ddamwain. Mae creu nifer o nodiadau annibynnol yn bosib.
 		
         Gellir cael at dy nodyn yn gyflym wrth ddefnyddio\'r teclyn addasedig, sy\'n agor yr ap gydag un clic.
