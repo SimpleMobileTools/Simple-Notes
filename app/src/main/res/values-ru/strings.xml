@@ -17,8 +17,8 @@
     <string name="add_to_note">Добавить к заметке</string>
     <string name="unsaved_changes_warning">Есть несохраненные изменения. Что вы хотите с ними сделать?</string>
     <string name="note_shown_widget">Заметка, показываемая в виджете:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="new_note_type">Тип новой заметки:</string>
+    <string name="text_note">Текстовая заметка</string>
 
     <!-- File notes -->
     <string name="open_file">Открыть файл</string>
@@ -29,7 +29,7 @@
     <string name="delete_file_itself">Также удалить файл \"%s\"</string>
     <string name="note_saved_successfully">Заметка \"%s\" сохранена</string>
     <string name="note_exported_successfully">Заметка \"%s\" экспортирована</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Экспортировать только текущее содержимое файла\n(изменение заметки не затронет файл)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Уведомлять, что файл успешно сохранен</string>
@@ -46,13 +46,13 @@
     <string name="show_note_picker">Показывать список заметок при запуске</string>
     <string name="autosave_notes">Автосохранение заметок</string>
     <string name="enable_line_wrap">Переносить строки</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="use_incognito_mode">Использовать режим инкогнито для клавиатур</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Список</string>
+    <string name="add_new_checklist_item">Добавить позицию в список</string>
+    <string name="add_new_checklist_items">Добавить позиции в список</string>
+    <string name="checklist_is_empty">Список пуст</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Экспортировать все заметки в файлы</string>
