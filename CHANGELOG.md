@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.1.4 *(2019-06-14)*
+----------------------------
+
+ * Reduced the max file size to be imported from 10 MB to 1 MB
+ * Some stability and translation improvements
+
 Version 6.1.3 *(2019-03-09)*
 ----------------------------
 
