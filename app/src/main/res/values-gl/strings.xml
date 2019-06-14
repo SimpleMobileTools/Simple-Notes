@@ -25,7 +25,7 @@
     <!-- File notes -->
     <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
-    <string name="file_too_large">Ficheiro demasiado grande, o límite é 10MB</string>
+    <string name="file_too_large">Ficheiro demasiado grande, o límite é 1MB</string>
     <string name="only_import_file_content">Só importa o contido do ficheiro\n(cambiar o ficheiro non afecta a nota)</string>
     <string name="update_file_at_note">Actualiza o propio ficheiro ao actualizar a nota\n(a nota elimínase si se elimina o ficheiro, ou cambia a ruta)</string>
     <string name="delete_file_itself">Borra tamén ficheiro \"%s\"</string>

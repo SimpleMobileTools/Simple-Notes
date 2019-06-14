@@ -23,7 +23,7 @@
     <!-- File notes -->
     <string name="open_file">Abrir archivo</string>
     <string name="export_as_file">Exportar como archivo</string>
-    <string name="file_too_large">Archivo demasiado grande, el límite es 10MB</string>
+    <string name="file_too_large">Archivo demasiado grande, el límite es 1MB</string>
     <string name="only_import_file_content">Sólo importar el contenido del archivo\n(cambiar el archivo no afectará a la nota)</string>
     <string name="update_file_at_note">Actualizar el propio archivo cuando se actualice la nota\n(la nota se borrará si el archivo se elimina, o la ruta cambia)</string>
     <string name="delete_file_itself">También borrar el archivo \"%s\"</string>

@@ -23,7 +23,7 @@
     <!-- File notes -->
     <string name="open_file">打开文件</string>
     <string name="export_as_file">以文件的形式导出</string>
-    <string name="file_too_large">文件太大了, 限制只有10MB</string>
+    <string name="file_too_large">文件太大了, 限制只有1MB</string>
     <string name="only_import_file_content">只要导入文件的内容\n(改变文件不会影响笔记)</string>
     <string name="update_file_at_note">在更新笔记的时侯更新文件本身\n(注意，如果文件被删除或路径更改，将被删除)</string>
     <string name="delete_file_itself">同时删除文件 \"%s\"</string>

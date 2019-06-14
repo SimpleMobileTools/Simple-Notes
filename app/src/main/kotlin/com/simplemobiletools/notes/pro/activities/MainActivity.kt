@@ -380,7 +380,7 @@ class MainActivity : SimpleActivity() {
         val file = File(path)
         if (path.isMediaFile()) {
             toast(R.string.invalid_file_format)
-        } else if (file.length() > 10 * 1000 * 1000) {
+        } else if (file.length() > 1000 * 1000) {
             toast(R.string.file_too_large)
         } else if (checkTitle && mNotes.any { it.title.equals(path.getFilenameFromPath(), true) }) {
             toast(R.string.title_taken)

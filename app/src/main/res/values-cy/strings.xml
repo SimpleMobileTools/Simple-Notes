@@ -23,7 +23,7 @@
     <!-- File notes -->
     <string name="open_file">Agor ffeil</string>
     <string name="export_as_file">Allforio fel ffeil</string>
-    <string name="file_too_large">Ffeil yn rhy fawr. Ni all fod yn fwy na 10MB</string>
+    <string name="file_too_large">Ffeil yn rhy fawr. Ni all fod yn fwy na 1MB</string>
     <string name="only_import_file_content">Mewnforio cynnwys y ffeil yn unig\n(ni fydd newid y ffeil yn addasu\'r nodyn)</string>
     <string name="update_file_at_note">Diweddaru\'r ffeil ei hun wrth ddiweddaru\'r nodyn\n(caiff y nodyn ei ddileu os yw\'r ffeil yn cael ei dileu neu ei leoliad yn newid)</string>
     <string name="delete_file_itself">Hefyd dileu\'r ffeil \"%s\"</string>

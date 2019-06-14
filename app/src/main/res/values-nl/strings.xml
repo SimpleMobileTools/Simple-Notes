@@ -23,7 +23,7 @@
     <!-- File notes -->
     <string name="open_file">Bestand openen</string>
     <string name="export_as_file">Als bestand exporteren</string>
-    <string name="file_too_large">Bestand is te groot: limiet is 10MB</string>
+    <string name="file_too_large">Bestand is te groot: limiet is 1MB</string>
     <string name="only_import_file_content">Alleen de bestandsinhoud importeren\n(wijzigingen aan het bestand zullen de notitie niet beïnvloeden)</string>
     <string name="update_file_at_note">Bestand aanpassen bij wijzigingen in de notitie\n(de notitie wordt gewist als het bestand wordt verplaatst of verwijderd)</string>
     <string name="delete_file_itself">Bestand \"%s\" ook verwijderen</string>

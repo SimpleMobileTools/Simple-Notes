@@ -23,7 +23,7 @@
     <!-- File notes -->
     <string name="open_file">Faylı Aç</string>
     <string name="export_as_file">Fayl kimi çıxar</string>
-    <string name="file_too_large">Fayl çox böyükdür, limit 10mb\"dır</string>
+    <string name="file_too_large">Fayl çox böyükdür, limit 1mb\"dır</string>
     <string name="only_import_file_content">Yalnız fayl məzmununu daxil et\n(faylı dəyişmək qeydı təsir etməyəcək)</string>
     <string name="update_file_at_note">Qeydi təzələdikdə faylı da təzələ\n(fayl silinirsə qeyd də silinər və ya yeri dəyişər)</string>
     <string name="delete_file_itself">Həmçinin \"%s\" faylını da sil</string>

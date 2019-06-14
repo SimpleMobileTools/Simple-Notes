@@ -23,7 +23,7 @@
     <!-- File notes -->
     <string name="open_file">Öppna fil</string>
     <string name="export_as_file">Exportera som fil</string>
-    <string name="file_too_large">Filen är för stor, gränsen är 10 MB</string>
+    <string name="file_too_large">Filen är för stor, gränsen är 1 MB</string>
     <string name="only_import_file_content">Importera bara innehållet i filen\n(anteckningen påverkas inte om filen ändras)</string>
     <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
     <string name="delete_file_itself">Ta även bort filen \"%s\"</string>

@@ -23,7 +23,7 @@
     <!-- File notes -->
     <string name="open_file">Otvoriť súbor</string>
     <string name="export_as_file">Exportovať ako súbor</string>
-    <string name="file_too_large">Súbor je príliš veľký, maximálny limit je 10MB</string>
+    <string name="file_too_large">Súbor je príliš veľký, maximálny limit je 1MB</string>
     <string name="only_import_file_content">Iba importovať obsah súboru\n(úprava súboru nebude mať vplyv na poznámku)</string>
     <string name="update_file_at_note">Aktualizovať samotný súbor po úprave poznámky\n(ak bude daný súbor presunutý, alebo vymazaný, bude vymazaná aj poznámka)</string>
     <string name="delete_file_itself">Odstrániť aj súbor \"%s\"</string>

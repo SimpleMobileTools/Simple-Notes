@@ -23,7 +23,7 @@
     <!-- File notes -->
     <string name="open_file">فتح ملف</string>
     <string name="export_as_file">تصدير كملف</string>
-    <string name="file_too_large">ملف كبير جداً، الحد المسموح 10MB</string>
+    <string name="file_too_large">ملف كبير جداً، الحد المسموح 1MB</string>
     <string name="only_import_file_content">استيراد محتوى الملف فقط\n(تغيير الملف لن يؤثر على الملاحظة)</string>
     <string name="update_file_at_note">قم بتحديث الملف نفسه عند تحديث الملاحظة\n(يتم حذف الملاحظة إذا تم حذف الملف أو تغيير المسار)</string>
     <string name="delete_file_itself">أيضا حذف الملف \"%s\"</string>
