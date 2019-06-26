@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Simple Notes</string>
+    <string name="app_launcher_name">Catatan</string>
+    <string name="widget_config">Terima kasih sudah menggunakan Simple Notes.\nUntuk aplikasi lainnya silakan kunjungi SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">Tidak bisa membagikan teks kosong</string>
+    <string name="simple_note">Catatan</string>
+    <string name="new_note">Tambah catatan baru</string>
+    <string name="no_title">Beri nama catatan anda</string>
+    <string name="title_taken">Catatan dengan nama sama sudah ada</string>
+    <string name="open_note">Buka catatan</string>
+    <string name="delete_note">Hapus catatan</string>
+    <string name="delete_note_prompt_message">Apakah anda yakin ingin menghapus catatan \"%s\"?</string>
+    <string name="pick_a_note">Pilih catatan</string>
+    <string name="rename_note">Ubah nama catatan</string>
+    <string name="general_note">Catatan umum</string>
+    <string name="create_new_note">Buat catatan baru</string>
+    <string name="add_to_note">Tambahkan ke catatan</string>
+    <string name="unsaved_changes_warning">Anda memiliki perubahan yang belum disimpan. Apa yang ingin anda lakukan?</string>
+    <string name="note_shown_widget">Catatan yang ditampilkan di widget:</string>
+    <string name="new_note_type">Tipe catatan baru:</string>
+    <string name="text_note">Catatan teks</string>
+
+    <!-- File notes -->
+    <string name="open_file">Buka berkas</string>
+    <string name="export_as_file">Ekspor sebagai berkas</string>
+    <string name="file_too_large">Ukuran berkas terlalu besar, batasnya adalah 1MB</string>
+    <string name="only_import_file_content">Hanya impor konten berkas\n(mengubah berkasnya tidak akan berdampak pada catatan)</string>
+    <string name="update_file_at_note">Perbarui berkas saat memperbarui catatan\n(catatan akan dihapus jika berkas dihapus, atau jalur berkas berubah)</string>
+    <string name="delete_file_itself">Hapus juga berkas \"%s\"</string>
+    <string name="note_saved_successfully">Catatan \"%s\" berhasil disimpan</string>
+    <string name="note_exported_successfully">Catatan \"%s\" berhasil diekspor</string>
+    <string name="only_export_file_content">Hanya ekspor konten berkas ini\n(mengubah catatan tidak akan berdampak pada berkas)</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">Tampilkan pesan jika berhasil disimpan</string>
+    <string name="links_and_emails_clickable">Buat tautan dan email bisa diklik</string>
+    <string name="place_cursor_end">Taruh kursor di akhir catatan</string>
+    <string name="monospaced_font">Gunakan fon monospace</string>
+    <string name="show_keyboard">Tampilkan papan ketik saat memulai</string>
+    <string name="show_word_count">Tampilkan penghitung huruf</string>
+    <string name="alignment">Kesejajaran</string>
+    <string name="left">Kiri</string>
+    <string name="center">Tengah</string>
+    <string name="right">Kanan</string>
+    <string name="widget_note">Catatan yang ditampilkan di widget</string>
+    <string name="show_note_picker">Tampilkan pemilih catatan saat memulai</string>
+    <string name="autosave_notes">Otomatis simpan catatan</string>
+    <string name="enable_line_wrap">Aktifkan baris berlibat</string>
+    <string name="use_incognito_mode">Gunakan mode papan ketik incognito</string>
+
+    <!-- Checklists -->
+    <string name="checklist">Checklist</string>
+    <string name="add_new_checklist_item">Tambah item checklist baru</string>
+    <string name="add_new_checklist_items">Tambah item checklist baru</string>
+    <string name="checklist_is_empty">Checklist kosong</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Ekspor semua catatan ke berkas</string>
+    <string name="import_notes">Impor beberapa berkas ke catatan</string>
+    <string name="import_folder">Impor folder</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Aplikasi teks sederhana untuk menambahkan catatan dengan cepat, tanpa iklan.</string>
+    <string name="app_long_description">
+        Ingin membuat catatan daftar belanjaan, alamat tempat, atau ide-ide bisnis dengan cepat? Maka ini adalah aplikasi yang paling tepat untuk anda! Tidak perlu menyiapkan hal-hal yang rumit, cukup ketik apa yang anda inginkan. Dengan fitur simpan otomatis, anda tidak perlu khawatir kehilangan catatan karena sesuatu yang tidak diduga. Juga mendukung membuat beberapa catatan independen.
+
+        Anda bisa mengakses catatan dengan cepat menggunakan widget, dan membuka aplikasi catatan saat anda mengklik widget tersebut.
+
+        Sama sekali tidak berisi iklan dan tidak membutuhkan perizinan yang tidak perlu. Sepenuhnya bersumber terbuka, dengan warna yang bisa disesuaikan.
+
+        Aplikasi ini hanya salah satu bagian dari rangkaian aplikasi yang lebih besar. Anda bisa menemukan yang lainnya di https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
