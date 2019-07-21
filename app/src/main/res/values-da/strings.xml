@@ -15,10 +15,10 @@
     <string name="general_note">Generel note</string>
     <string name="create_new_note">Opret en ny note</string>
     <string name="add_to_note">Føj til note</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="unsaved_changes_warning">Du har ændringer der ikke er gemt. Hvad skal der ske med dem?</string>
+    <string name="note_shown_widget">Note vist i widget\'en:</string>
+    <string name="new_note_type">Ny type note:</string>
+    <string name="text_note">Tekstnote</string>
 
     <!-- File notes -->
     <string name="open_file">Åbn fil …</string>
@@ -29,7 +29,7 @@
     <string name="delete_file_itself">Slet også filen \"%s\"</string>
     <string name="note_saved_successfully">Noten \"%s\" er gemt</string>
     <string name="note_exported_successfully">Noten \"%s\" er eksporteret</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Eksporter kun filens indhold\n(ændring af noten påvirker ikke filen</string>
 
     <!-- Settings -->
     <string name="display_success_message">Vis en meddelelse når en fil er gemt</string>
@@ -46,18 +46,18 @@
     <string name="show_note_picker">Vis en notevælger ved opstart</string>
     <string name="autosave_notes">Autogem noter</string>
     <string name="enable_line_wrap">Aktiver tekstombrydning</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="use_incognito_mode">Anvend inkognito-tilstand til tastatur</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Tjekliste</string>
+    <string name="add_new_checklist_item">Føj et nyt punkt til tjeklisten</string>
+    <string name="add_new_checklist_items">Føj nye punkter til tjeklisten</string>
+    <string name="checklist_is_empty">Tjeklisten er tom</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Eksporter alle noter som filer</string>
     <string name="import_notes">Importer flere filer som noter</string>
-    <string name="import_folder">Import folder</string>
+    <string name="import_folder">Importer mappe</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
