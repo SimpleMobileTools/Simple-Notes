@@ -29,7 +29,7 @@ class MyWidgetProvider : AppWidgetProvider() {
         Thread {
             context.widgetsDB.getWidgets().forEach {
                 val views = RemoteViews(context.packageName, R.layout.widget)
-                views.setBackgroundColor(R.id.notes_widget_holder, context.config.widgetBgColor)
+                views.setBackgroundColor(R.id.frame_widget, context.config.widgetBgColor)
                 setupAppOpenIntent(context, views, R.id.notes_widget_holder, it)
 
                 Intent(context, WidgetService::class.java).apply {
