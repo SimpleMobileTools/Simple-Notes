@@ -61,7 +61,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Egyszerű szövegmező gyors jegyzetírásra, reklámok nélkül.</string>
+    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
     <string name="app_long_description">
         Gyorsan le kell jegyezned valami tennivalót, egy címet, vagy egy ötletet egy új startup-ra? Akkor ez a Neked való alkalmazás! Semmi bonyonyolult beállítást nem igényel, csak írd le, ami eszedbe jut. Automatikusan ment, hogy biztosan ne felejtsd el a leírtakat elmenteni. Több, egymástól független jegyzetet is kezelhetsz. 
 

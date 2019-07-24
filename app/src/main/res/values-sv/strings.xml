@@ -61,7 +61,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Ett enkelt textfält för att lägga till snabba anteckningar, utan reklam.</string>
+    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
     <string name="app_long_description">
         Behöver du snabbt anteckna något att köpa, en adress eller en företagsidé? Då är det här appen som du har letat efter! Ingen komplicerad konfiguration behövs. Anteckningen sparas automatiskt så att dina ändringar inte tas bort av misstag. Du kan skapa flera oberoende anteckningar.
 

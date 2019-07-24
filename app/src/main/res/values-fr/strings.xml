@@ -61,7 +61,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Un champ texte simple pour ajouter des notes rapides, sans publicités.</string>
+    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
     <string name="app_long_description">
         Besoin de noter rapidement quelque chose à acheter, une adresse, ou une idée de startup ? Alors ceci est l\'application que vous cherchiez ! Pas d\'étapes compliquées de configuration nécéssaires, saisissez juste ce pourquoi vous êtes venu. Fournit une sauvegarde automatique, ainsi vous ne rejetterez pas vos changements par erreur. Supporte la création de multiples notes indépendantes.
 

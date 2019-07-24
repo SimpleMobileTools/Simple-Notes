@@ -61,7 +61,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Простий текстовий редактор для додавання швидких нотаток, без реклами.</string>
+    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
     <string name="app_long_description">
         Потрібно швидко занотувати список покупок, адресу чи ідею для стартапу? Тоді це є додаток, який ви шукали! Без складних налаштувань, просто нотуйте те, що потрібно. Вбудована функція автозбереження, що завадить вам помилково скасувати зміни. Підтримує створення багатьох незалежних нотаток.
 

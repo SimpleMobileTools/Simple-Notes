@@ -63,7 +63,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Un cadro de texto simple para engadir notas rápidas, sen publicidade.</string>
+    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
     <string name="app_long_description">
         Precisa tomar unha nota rápida de algo para mercar, un enderezo, unha idea brillante? Entón este é o aplicativo que estaba a buscar! Sin configuracións complicadas, escriba o que desexa. Ten gardado automático, así non perderá os cambios sin querer. Pode crear varias notas independentes. 
 

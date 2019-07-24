@@ -61,7 +61,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Et simpelt tekstfelt til at tage noter på - uden reklamer!</string>
+    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
     <string name="app_long_description">
         Har du brug for hurtigt at notere noget, fx en huskeseddel, en adresse eller en ide, så er denne app lige noget for dig! Der er ingen komplicerede opsætninger, gå bare i gang med at notere med det samme. Indeholder automatisk gemmefunktion, så du mister ikke dine ændringer ved en fejltagelse. Understøtter oprettelse af flere uafhængige noter.
 

@@ -61,7 +61,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">簡単なメモを追加するためのシンプルなテキストフィールド。広告はありません。</string>
+    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
     <string name="app_long_description">
         何か買うもの、住所、またはスタートアップのアイデアをすばやくメモする必要がありますか？ それなら、これがあなたが探していたアプリです！ 複雑なセットアップ手順は必要ありません。 思いついたものを入力するだけです。 自動保存機能が付いているので、誤って変更内容を破棄することはありません。 複数の独立したメモの作成をサポートしています。
 

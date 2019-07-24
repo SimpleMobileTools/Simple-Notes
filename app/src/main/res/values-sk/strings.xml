@@ -57,11 +57,11 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovať všetky poznámky ako súbory</string>
     <string name="import_notes">Importovať viacero súborov ako poznámky</string>
-    <string name="import_folder">Import folder</string>
+    <string name="import_folder">Importovať priečinok</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Jednoduché textové pole pre pridávanie rýchlych poznámok, bez reklám.</string>
+    <string name="app_short_description">Krásna apka na pridávanie rýchlych poznámok bez reklám a nepotrebných oprávnení.</string>
     <string name="app_long_description">
         Potrebujete si rýchlo poznačiť niečo na nákup, adresu, alebo nápad na startup? Ak áno, táto apka je pre vás ako stvorená! Nieje potrebné žiadne zdĺhavé nastavovanie, iba zapíšte, čo chcete. Poznámky sa ukladajú automaticky, čiže ich ani náhodou nestratíte. Poskytuje možnosť vytvorenia viacerých nezávislých poznámok.
 
