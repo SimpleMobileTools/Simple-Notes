@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.1.5 *(2019-07-25)*
+----------------------------
+
+ * Fixed widget text being cut in some cases (by herou)
+ * Added some dark theme related improvements
+ * Allow customizing the bottom navigation bar color
+
 Version 6.1.4 *(2019-06-14)*
 ----------------------------
 
