@@ -39,14 +39,14 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         if (note!!.type == TYPE_CHECKLIST) {
             remoteView = RemoteViews(context.packageName, R.layout.item_checklist_widget).apply {
                 val checklistItem = checklistItems.getOrNull(position) ?: return@apply
-                setText(R.id.checklist_title, checklistItem.title)
+                setText(checklist_title, checklistItem.title)
 
                 val widgetNewTextColor = if (checklistItem.isDone) widgetTextColor.adjustAlpha(DONE_CHECKLIST_ITEM_ALPHA) else widgetTextColor
-                setTextColor(R.id.checklist_title, widgetNewTextColor)
-                setTextSize(R.id.checklist_title, textSize)
+                setTextColor(checklist_title, widgetNewTextColor)
+                setTextSize(checklist_title, textSize)
 
                 val paintFlags = if (checklistItem.isDone) Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG else 0
-                setInt(R.id.checklist_title, "setPaintFlags", paintFlags)
+                setInt(checklist_title, "setPaintFlags", paintFlags)
 
                 Intent().apply {
                     putExtra(OPEN_NOTE_ID, noteId)
