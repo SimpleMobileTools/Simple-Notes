@@ -61,7 +61,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
+    <string name="app_short_description">一個美觀又快速記筆記的應用程式，而且沒有廣告或奇怪權限。</string>
     <string name="app_long_description">
         需要快速記下得購買的東西、地址或創業點子?那麼這就是你一直在尋找的程式!不需要繁複的設定步驟，把你目的寫下就可以了。隨著自動儲存，你不會不小心失去你的修改。支援建立多個獨立的筆記。
 		
