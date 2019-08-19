@@ -4,8 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.simplemobiletools.commons.helpers.DEFAULT_WIDGET_BG_COLOR
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.helpers.DEFAULT_WIDGET_TEXT_COLOR
 import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
 import com.simplemobiletools.notes.pro.interfaces.NotesDao
 import com.simplemobiletools.notes.pro.interfaces.WidgetsDao
@@ -13,7 +16,7 @@ import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import java.util.concurrent.Executors
 
-@Database(entities = [Note::class, Widget::class], version = 1)
+@Database(entities = [Note::class, Widget::class], version = 2)
 abstract class NotesDatabase : RoomDatabase() {
 
     abstract fun NotesDao(): NotesDao
@@ -34,6 +37,7 @@ abstract class NotesDatabase : RoomDatabase() {
                                         insertFirstNote(context)
                                     }
                                 })
+                                .addMigrations(MIGRATION_1_2)
                                 .build()
                         db!!.openHelper.setWriteAheadLoggingEnabled(true)
                     }
@@ -51,6 +55,15 @@ abstract class NotesDatabase : RoomDatabase() {
                 val generalNote = context.resources.getString(R.string.general_note)
                 val note = Note(null, generalNote, "", TYPE_TEXT)
                 db!!.NotesDao().insertOrUpdate(note)
+            }
+        }
+
+        private val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.apply {
+                    execSQL("ALTER TABLE widgets ADD COLUMN widget_bg_color INTEGER NOT NULL DEFAULT $DEFAULT_WIDGET_BG_COLOR")
+                    execSQL("ALTER TABLE widgets ADD COLUMN widget_text_color INTEGER NOT NULL DEFAULT $DEFAULT_WIDGET_TEXT_COLOR")
+                }
             }
         }
     }

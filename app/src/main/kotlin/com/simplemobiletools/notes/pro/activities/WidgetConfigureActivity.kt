@@ -150,7 +150,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         views.setBackgroundColor(R.id.text_note_view, mBgColor)
         views.setBackgroundColor(R.id.checklist_note_view, mBgColor)
         AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
-        val widget = Widget(null, mWidgetId, mCurrentNoteId)
+        val widget = Widget(null, mWidgetId, mCurrentNoteId, mBgColor, mTextColor)
         ensureBackgroundThread {
             widgetsDB.insertOrUpdate(widget)
         }

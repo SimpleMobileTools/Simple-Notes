@@ -1,8 +1,11 @@
 package com.simplemobiletools.notes.pro.helpers
 
+import android.graphics.Color
+
 const val NOTE_ID = "note_id"
 const val OPEN_NOTE_ID = "open_note_id"
 const val DONE_CHECKLIST_ITEM_ALPHA = 0.4f
+val DEFAULT_WIDGET_TEXT_COLOR = Color.parseColor("#FFF57C00")
 
 // shared preferences
 const val CURRENT_NOTE_ID = "current_note_id"

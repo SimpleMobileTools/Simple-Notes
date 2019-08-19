@@ -9,4 +9,6 @@ import androidx.room.PrimaryKey
 data class Widget(
         @PrimaryKey(autoGenerate = true) var id: Long?,
         @ColumnInfo(name = "widget_id") var widgetId: Int,
-        @ColumnInfo(name = "note_id") var noteId: Long)
+        @ColumnInfo(name = "note_id") var noteId: Long,
+        @ColumnInfo(name = "widget_bg_color") var widgetBgColor: Int,
+        @ColumnInfo(name = "widget_text_color") var widgetTextColor: Int)
