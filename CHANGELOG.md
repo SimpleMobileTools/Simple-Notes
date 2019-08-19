@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.1.7 *(2019-08-19)*
+----------------------------
+
+ * Allow using different text and background color per widget
+ * Fixed some light theme related issues
+
 Version 6.1.6 *(2019-07-26)*
 ----------------------------
 
