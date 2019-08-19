@@ -3,6 +3,7 @@
     <string name="package_name">com.simplemobiletools.notes.pro</string>
 
     <!-- Release notes -->
+    <string name="release_64">Allow setting different text and background color per widget</string>
     <string name="release_62">Allow customizing the bottom navigation bar color</string>
     <string name="release_57">Added a Checklist type of note</string>
     <string name="release_51">Allow creating separate widgets per notes</string>
