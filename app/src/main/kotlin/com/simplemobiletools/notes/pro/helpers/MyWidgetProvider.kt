@@ -9,10 +9,10 @@ import android.net.Uri
 import android.widget.RemoteViews
 import com.simplemobiletools.commons.extensions.getLaunchIntent
 import com.simplemobiletools.commons.extensions.setBackgroundColor
+import com.simplemobiletools.commons.helpers.WIDGET_TEXT_COLOR
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SplashActivity
-import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.models.Widget
 import com.simplemobiletools.notes.pro.services.WidgetService
@@ -28,24 +28,26 @@ class MyWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         super.onUpdate(context, appWidgetManager, appWidgetIds)
         ensureBackgroundThread {
-            context.widgetsDB.getWidgets().forEach {
+            for (widgetId in appWidgetIds) {
+                val widget = context.widgetsDB.getWidgetWithWidgetId(widgetId) ?: continue
                 val views = RemoteViews(context.packageName, R.layout.widget)
-                views.setBackgroundColor(R.id.notes_widget_holder, context.config.widgetBgColor)
-                setupAppOpenIntent(context, views, R.id.notes_widget_holder, it)
+                views.setBackgroundColor(R.id.notes_widget_holder, widget.widgetBgColor)
+                setupAppOpenIntent(context, views, R.id.notes_widget_holder, widget)
 
                 Intent(context, WidgetService::class.java).apply {
-                    putExtra(NOTE_ID, it.noteId)
+                    putExtra(NOTE_ID, widget.noteId)
+                    putExtra(WIDGET_TEXT_COLOR, widget.widgetTextColor)
                     data = Uri.parse(this.toUri(Intent.URI_INTENT_SCHEME))
                     views.setRemoteAdapter(R.id.notes_widget_listview, this)
                 }
 
                 val startActivityIntent = context.getLaunchIntent() ?: Intent(context, SplashActivity::class.java)
-                startActivityIntent.putExtra(OPEN_NOTE_ID, it.noteId)
-                val startActivityPendingIntent = PendingIntent.getActivity(context, it.widgetId, startActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+                startActivityIntent.putExtra(OPEN_NOTE_ID, widget.noteId)
+                val startActivityPendingIntent = PendingIntent.getActivity(context, widgetId, startActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT)
                 views.setPendingIntentTemplate(R.id.notes_widget_listview, startActivityPendingIntent)
 
-                appWidgetManager.updateAppWidget(it.widgetId, views)
-                appWidgetManager.notifyAppWidgetViewDataChanged(it.widgetId, R.id.notes_widget_listview)
+                appWidgetManager.updateAppWidget(widgetId, views)
+                appWidgetManager.notifyAppWidgetViewDataChanged(widgetId, R.id.notes_widget_listview)
             }
         }
     }

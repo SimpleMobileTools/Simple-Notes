@@ -11,6 +11,7 @@ import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.adjustAlpha
 import com.simplemobiletools.commons.extensions.setText
 import com.simplemobiletools.commons.extensions.setTextSize
+import com.simplemobiletools.commons.helpers.WIDGET_TEXT_COLOR
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.R.id.checklist_title
 import com.simplemobiletools.notes.pro.R.id.widget_text_holder
@@ -23,7 +24,7 @@ import com.simplemobiletools.notes.pro.models.Note
 
 class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsService.RemoteViewsFactory {
     private val textIds = arrayOf(R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right)
-    private var widgetTextColor = context.config.widgetTextColor
+    private var widgetTextColor = DEFAULT_WIDGET_TEXT_COLOR
     private var note: Note? = null
     private var checklistItems = ArrayList<ChecklistItem>()
 
@@ -87,7 +88,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
     override fun getItemId(position: Int) = position.toLong()
 
     override fun onDataSetChanged() {
-        widgetTextColor = context.config.widgetTextColor
+        widgetTextColor = intent.getIntExtra(WIDGET_TEXT_COLOR, DEFAULT_WIDGET_TEXT_COLOR)
         val noteId = intent.getLongExtra(NOTE_ID, 0L)
         note = context.notesDB.getNoteWithId(noteId)
         if (note?.type == TYPE_CHECKLIST) {
