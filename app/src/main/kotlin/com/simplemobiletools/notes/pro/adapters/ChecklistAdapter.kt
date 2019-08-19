@@ -73,8 +73,8 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
 
     private fun initDrawables() {
         val res = activity.resources
-        crossDrawable = res.getColoredDrawableWithColor(R.drawable.ic_cross_big, res.getColor(R.color.theme_dark_red_primary_color))
-        checkDrawable = res.getColoredDrawableWithColor(R.drawable.ic_check_big, res.getColor(R.color.md_green_700))
+        crossDrawable = res.getColoredDrawableWithColor(R.drawable.ic_cross_vector, res.getColor(R.color.theme_dark_red_primary_color))
+        checkDrawable = res.getColoredDrawableWithColor(R.drawable.ic_check_vector, res.getColor(R.color.md_green_700))
     }
 
     private fun renameChecklistItem() {

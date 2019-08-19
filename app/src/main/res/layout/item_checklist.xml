@@ -30,6 +30,6 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:padding="@dimen/normal_margin"
-        android:src="@drawable/ic_cross_big"/>
+        android:src="@drawable/ic_cross_vector"/>
 
 </RelativeLayout>

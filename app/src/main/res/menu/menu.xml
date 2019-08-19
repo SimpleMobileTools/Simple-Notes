@@ -3,27 +3,27 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/save_note"
-        android:icon="@drawable/ic_save"
+        android:icon="@drawable/ic_save_vector"
         android:title="@string/save"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/undo"
-        android:icon="@drawable/ic_undo"
+        android:icon="@drawable/ic_undo_vector"
         android:title="@string/undo"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/redo"
-        android:icon="@drawable/ic_redo"
+        android:icon="@drawable/ic_redo_vector"
         android:title="@string/redo"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/open_note"
-        android:icon="@drawable/ic_open"
+        android:icon="@drawable/ic_folder_open_vector"
         android:title="@string/open_note"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/new_note"
-        android:icon="@drawable/ic_plus"
+        android:icon="@drawable/ic_plus_vector"
         android:title="@string/new_note"
         app:showAsAction="ifRoom"/>
     <item
@@ -33,7 +33,7 @@
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/share"
-        android:icon="@drawable/ic_share"
+        android:icon="@drawable/ic_share_vector"
         android:title="@string/share"
         app:showAsAction="ifRoom"/>
     <item
@@ -54,7 +54,7 @@
         app:showAsAction="never"/>
     <item
         android:id="@+id/delete_note"
-        android:icon="@drawable/ic_delete"
+        android:icon="@drawable/ic_delete_vector"
         android:title="@string/delete_note"
         app:showAsAction="ifRoom"/>
     <item

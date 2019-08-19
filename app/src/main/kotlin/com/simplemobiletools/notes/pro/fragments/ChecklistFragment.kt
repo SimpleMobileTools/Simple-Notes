@@ -57,7 +57,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun setupFragment() {
-        val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus, if (context!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
+        val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus_vector, if (context!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
         view.apply {
             checklist_fab.apply {
                 setImageDrawable(plusIcon)

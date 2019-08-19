@@ -17,10 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginEnd="@dimen/small_margin"
-        android:layout_marginRight="@dimen/small_margin"
         android:padding="@dimen/small_margin"
-        android:src="@drawable/ic_attach_file"/>
+        android:src="@drawable/ic_attach_file_vector"/>
 
 </RelativeLayout>
