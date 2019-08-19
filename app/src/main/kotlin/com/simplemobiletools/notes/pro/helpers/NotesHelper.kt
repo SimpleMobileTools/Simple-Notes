@@ -3,6 +3,7 @@ package com.simplemobiletools.notes.pro.helpers
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
@@ -11,7 +12,7 @@ import java.io.File
 
 class NotesHelper(val context: Context) {
     fun getNotes(callback: (notes: ArrayList<Note>) -> Unit) {
-        Thread {
+        ensureBackgroundThread {
             // make sure the initial note has enough time to be precreated
             if (context.config.appRunCount <= 1) {
                 context.notesDB.getNotes()
@@ -39,33 +40,33 @@ class NotesHelper(val context: Context) {
             Handler(Looper.getMainLooper()).post {
                 callback(notes)
             }
-        }.start()
+        }
     }
 
     fun getNoteWithId(id: Long, callback: (note: Note?) -> Unit) {
-        Thread {
+        ensureBackgroundThread {
             val note = context.notesDB.getNoteWithId(id)
             Handler(Looper.getMainLooper()).post {
                 callback(note)
             }
-        }.start()
+        }
     }
 
     fun getNoteIdWithPath(path: String, callback: (id: Long?) -> Unit) {
-        Thread {
+        ensureBackgroundThread {
             val id = context.notesDB.getNoteIdWithPath(path)
             Handler(Looper.getMainLooper()).post {
                 callback(id)
             }
-        }.start()
+        }
     }
 
     fun insertOrUpdateNote(note: Note, callback: ((newNoteId: Long) -> Unit)? = null) {
-        Thread {
+        ensureBackgroundThread {
             val noteId = context.notesDB.insertOrUpdate(note)
             Handler(Looper.getMainLooper()).post {
                 callback?.invoke(noteId)
             }
-        }.start()
+        }
     }
 }

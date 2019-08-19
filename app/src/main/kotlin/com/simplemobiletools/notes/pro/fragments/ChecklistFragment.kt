@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
@@ -113,7 +114,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun saveNote(refreshIndex: Int = -1) {
-        Thread {
+        ensureBackgroundThread {
             if (note != null && context != null) {
                 if (refreshIndex != -1) {
                     view.checklist_list.post {
@@ -125,7 +126,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 context?.notesDB?.insertOrUpdate(note!!)
                 context?.updateWidgets()
             }
-        }.start()
+        }
     }
 
     override fun saveChecklist() {

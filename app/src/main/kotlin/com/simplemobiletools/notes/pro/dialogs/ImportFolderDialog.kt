@@ -6,6 +6,7 @@ import com.simplemobiletools.commons.extensions.getFilenameFromPath
 import com.simplemobiletools.commons.extensions.humanizePath
 import com.simplemobiletools.commons.extensions.isMediaFile
 import com.simplemobiletools.commons.extensions.setupDialogStuff
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.extensions.notesDB
@@ -32,9 +33,9 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
                     activity.setupDialogStuff(view, this, R.string.import_folder) {
                         getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                             val updateFilesOnEdit = view.open_file_type.checkedRadioButtonId == R.id.open_file_update_file
-                            Thread {
+                            ensureBackgroundThread {
                                 saveFolder(updateFilesOnEdit)
-                            }.start()
+                            }
                         }
                     }
                 }

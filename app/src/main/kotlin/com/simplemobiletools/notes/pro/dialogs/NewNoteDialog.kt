@@ -7,6 +7,7 @@ import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.extensions.showKeyboard
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
@@ -29,7 +30,7 @@ class NewNoteDialog(val activity: Activity, callback: (note: Note) -> Unit) {
                         showKeyboard(view.note_title)
                         getButton(BUTTON_POSITIVE).setOnClickListener {
                             val title = view.note_title.value
-                            Thread {
+                            ensureBackgroundThread {
                                 when {
                                     title.isEmpty() -> activity.toast(R.string.no_title)
                                     activity.notesDB.getNoteIdWithTitle(title) != null -> activity.toast(R.string.title_taken)
@@ -41,7 +42,7 @@ class NewNoteDialog(val activity: Activity, callback: (note: Note) -> Unit) {
                                         dismiss()
                                     }
                                 }
-                            }.start()
+                            }
                         }
                     }
                 }

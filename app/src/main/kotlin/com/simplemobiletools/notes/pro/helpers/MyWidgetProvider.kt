@@ -9,6 +9,7 @@ import android.net.Uri
 import android.widget.RemoteViews
 import com.simplemobiletools.commons.extensions.getLaunchIntent
 import com.simplemobiletools.commons.extensions.setBackgroundColor
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SplashActivity
 import com.simplemobiletools.notes.pro.extensions.config
@@ -26,7 +27,7 @@ class MyWidgetProvider : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         super.onUpdate(context, appWidgetManager, appWidgetIds)
-        Thread {
+        ensureBackgroundThread {
             context.widgetsDB.getWidgets().forEach {
                 val views = RemoteViews(context.packageName, R.layout.widget)
                 views.setBackgroundColor(R.id.notes_widget_holder, context.config.widgetBgColor)
@@ -46,15 +47,15 @@ class MyWidgetProvider : AppWidgetProvider() {
                 appWidgetManager.updateAppWidget(it.widgetId, views)
                 appWidgetManager.notifyAppWidgetViewDataChanged(it.widgetId, R.id.notes_widget_listview)
             }
-        }.start()
+        }
     }
 
     override fun onDeleted(context: Context, appWidgetIds: IntArray) {
         super.onDeleted(context, appWidgetIds)
-        Thread {
+        ensureBackgroundThread {
             appWidgetIds.forEach {
                 context.widgetsDB.deleteWidgetId(it)
             }
-        }.start()
+        }
     }
 }

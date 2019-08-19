@@ -15,6 +15,7 @@ import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
@@ -150,9 +151,9 @@ class WidgetConfigureActivity : SimpleActivity() {
         views.setBackgroundColor(R.id.checklist_note_view, mBgColor)
         AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
         val widget = Widget(null, mWidgetId, mCurrentNoteId)
-        Thread {
+        ensureBackgroundThread {
             widgetsDB.insertOrUpdate(widget)
-        }.start()
+        }
 
         storeWidgetBackground()
         requestWidgetUpdate()

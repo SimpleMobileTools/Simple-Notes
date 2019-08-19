@@ -14,10 +14,7 @@ import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.LICENSE_RTL
-import com.simplemobiletools.commons.helpers.PERMISSION_READ_STORAGE
-import com.simplemobiletools.commons.helpers.PERMISSION_WRITE_STORAGE
-import com.simplemobiletools.commons.helpers.REAL_FILE_PATH
+import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.FAQItem
 import com.simplemobiletools.commons.models.FileDirItem
 import com.simplemobiletools.commons.models.RadioItem
@@ -360,7 +357,7 @@ class MainActivity : SimpleActivity() {
     private fun openFile() {
         FilePickerDialog(this, canAddShowHiddenButton = true) {
             openFile(it, true) {
-                Thread {
+                ensureBackgroundThread {
                     val fileText = it.readText().trim()
                     val checklistItems = fileText.parseChecklistItems()
                     if (checklistItems != null) {
@@ -373,7 +370,7 @@ class MainActivity : SimpleActivity() {
                             }
                         }
                     }
-                }.start()
+                }
             }
         }
     }
@@ -644,11 +641,11 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
-        Thread {
+        ensureBackgroundThread {
             notesDB.deleteNote(note)
             widgetsDB.deleteNoteWidgets(note.id!!)
             refreshNotes(note, deleteFile)
-        }.start()
+        }
     }
 
     private fun refreshNotes(note: Note, deleteFile: Boolean) {

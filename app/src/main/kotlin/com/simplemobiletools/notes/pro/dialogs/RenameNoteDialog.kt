@@ -3,6 +3,7 @@ package com.simplemobiletools.notes.pro.dialogs
 import android.content.DialogInterface.BUTTON_POSITIVE
 import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.extensions.config
@@ -26,9 +27,9 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val current
                         showKeyboard(view.note_title)
                         getButton(BUTTON_POSITIVE).setOnClickListener {
                             val title = view.note_title.value
-                            Thread {
+                            ensureBackgroundThread {
                                 newTitleConfirmed(title, this)
-                            }.start()
+                            }
                         }
                     }
                 }
