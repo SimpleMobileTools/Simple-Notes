@@ -106,6 +106,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.redo).isVisible = showRedoButton && mCurrentNote.type == TYPE_TEXT
         }
 
+        updateMenuItemColors(menu)
         return true
     }
 

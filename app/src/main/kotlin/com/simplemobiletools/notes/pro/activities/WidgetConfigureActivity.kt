@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.Menu
 import android.widget.RemoteViews
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -62,6 +63,11 @@ class WidgetConfigureActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
         text_note_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, applicationContext.getTextSize())
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        updateMenuItemColors(menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun initVariables() {

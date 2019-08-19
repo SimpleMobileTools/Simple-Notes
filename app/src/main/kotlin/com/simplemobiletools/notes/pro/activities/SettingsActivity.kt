@@ -2,6 +2,7 @@ package com.simplemobiletools.notes.pro.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
@@ -42,6 +43,12 @@ class SettingsActivity : SimpleActivity() {
         setupCustomizeWidgetColors()
         updateTextColors(settings_scrollview)
         setupSectionColors()
+        invalidateOptionsMenu()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        updateMenuItemColors(menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun setupSectionColors() {
