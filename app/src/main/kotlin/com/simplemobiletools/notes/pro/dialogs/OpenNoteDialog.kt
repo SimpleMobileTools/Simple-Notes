@@ -54,7 +54,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long) -> 
 
         dialog = AlertDialog.Builder(activity)
                 .create().apply {
-                    activity.setupDialogStuff(view, this, R.string.pick_a_note)
+                    activity.setupDialogStuff(view, this, R.string.open_note)
                 }
     }
 }
