@@ -61,7 +61,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
+    <string name="app_short_description">Um aplicação sem anúncios para registar as suas notas.</string>
     <string name="app_long_description">
         Necessita de escrever uma nota sobre algo? Então esta aplicação é para si! Sem complicações, basta escrever o seu texto na nota. Guarda automaticamente as notas, para que não as perca inesperadamente. Possui suporte a diversas notas independentes.
 
