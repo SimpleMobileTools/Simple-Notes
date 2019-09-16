@@ -575,7 +575,8 @@ class MainActivity : SimpleActivity() {
                     }
 
                     contentResolver.openOutputStream(document.uri).apply {
-                        write(content.toByteArray(Charset.forName("UTF-8")), 0, content.length)
+                        val byteArray = content.toByteArray(Charset.forName("UTF-8"))
+                        write(byteArray, 0, byteArray.size)
                         flush()
                         close()
                     }
