@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 6.2.0 *(2019-09-16)*
+----------------------------
+
+ * Fixed a glitch with note content getting trimmed in some cases
+
 Version 6.1.7 *(2019-08-19)*
 ----------------------------
 
