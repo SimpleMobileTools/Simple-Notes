@@ -15,10 +15,10 @@
     <string name="general_note">Nota geral</string>
     <string name="create_new_note">Criar uma nova nota</string>
     <string name="add_to_note">Adicionar à nota</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="unsaved_changes_warning">Você tem algumas alterações que ainda não foram salvas. O que você gostaria de fazer com elas?</string>
+    <string name="note_shown_widget">Exibir nota em um widget:</string>
+    <string name="new_note_type">Novo tipo de nota:</string>
+    <string name="text_note">Anotações</string>
 
     <!-- File notes -->
     <string name="open_file">Abrir arquivo</string>
@@ -29,7 +29,7 @@
     <string name="delete_file_itself">Apagar também o arquivo \"%s\"</string>
     <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Exportar apenas o conteúdo atual do arquivo\n(alterar a nota não afetará o arquivo)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
@@ -46,13 +46,13 @@
     <string name="show_note_picker">Mostrar um seletor de notas na inicialização</string>
     <string name="autosave_notes">Salvar notas automaticamente</string>
     <string name="enable_line_wrap">Ativar quebra de linha</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="use_incognito_mode">Usar o teclado no modo de Navegação Anônima</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Lista de verificação</string>
+    <string name="add_new_checklist_item">Adicionar novo item de lista de verificação</string>
+    <string name="add_new_checklist_items">Adicionar novos itens de lista de verificação</string>
+    <string name="checklist_is_empty">A lista de verificação está vazia</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como arquivo</string>
@@ -61,7 +61,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
+    <string name="app_short_description">Um lindo aplicativo para anotações rápidas, além de não conter anúncios ou permissões esquisitas.</string>
     <string name="app_long_description">
         Precisa escrever uma nota sobre algo? Então este aplicativo é para você! Sem complicações, basta escrever o seu texto na nota. As notas são salvas automaticamente, para que não as perca inesperadamente. Possui suporte a diversas notas independentes.
 
