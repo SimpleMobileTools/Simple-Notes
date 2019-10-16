@@ -1,0 +1,7 @@
+C'è bisogno di prendere una nota rapida riguardo qualcosa da acquistare, un indirizzo o un'idea per una startup? Allora questa è l'applicazione che si stava cercando! Basta aprire l'app a scrivere quello che si vuole, non è necessaria nessuna impostazione preliminare. C'è il comodo salvataggio automatico, così non si butteranno via le modifiche per errore. Supporta la creazione di più note indipendenti.
+
+Si può anche accedere alla nota in modo istantaneo utilizzando il widget personalizzabile e ridimensionabile, che apre l'applicazione al tocco.
+
+L'applicazione non contiene pubblicità o permessi non necessari; è completamente opensource e la si può personalizzare con i propri colori preferiti.
+
+Questa è solamente una delle tante applicazioni della serie Simple Mobile Tools. Si possono trovare le altre su https://www.simplemobiletools.com

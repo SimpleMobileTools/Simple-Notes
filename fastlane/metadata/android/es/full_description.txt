@@ -1,0 +1,7 @@
+¿Necesita tomar nota de algo para comprar, una dirección o una idea? ¡Entonces ésta es la aplicación que estaba buscando! Sin complicadas configuraciones, tan solo escriba lo que quiera. Viene con guardado automático, por tanto usted no descartará ningún cambio por error. Soporta la creación de múltiples notas independientes.
+
+Puede acceder rápidamente a la nota desde el widget personalizable y ajustable, el cual abre la aplicación con un simple toque.
+
+No contiene anuncios ni permisos innecesarios. Es completamente OpenSource y además provee un tema oscuro.
+
+Esta aplicación es tan solo una pequeña parte de una serie de aplicaciones. Puede encontrar el resto en https://www.simplemobiletools.com

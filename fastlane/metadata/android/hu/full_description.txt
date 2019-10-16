@@ -1,0 +1,7 @@
+Gyorsan le kell jegyezned valami tennivalót, egy címet, vagy egy ötletet egy új startup-ra? Akkor ez a Neked való alkalmazás! Semmi bonyonyolult beállítást nem igényel, csak írd le, ami eszedbe jut. Automatikusan ment, hogy biztosan ne felejtsd el a leírtakat elmenteni. Több, egymástól független jegyzetet is kezelhetsz. 
+
+Láthatod és gyorsan elérheted a jegyzetedet egy személyre szabható és átméretezhető widget-tel, ami megnyomásra megnyitja az alkalmazást.
+
+Nem mutat reklámokat, és nem igényel hozzáféréseket. Teljesen nyílt forráskódú, és sötét téma is beállítható.
+
+Ez az alkalmazás egy nagyobb alkalmazás-sorozat része. A továbbiak itt találhatók: https://www.simplemobiletools.com

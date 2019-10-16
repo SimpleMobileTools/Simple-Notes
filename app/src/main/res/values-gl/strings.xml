@@ -1,5 +1,3 @@
-<!-- desde values/strings.xml -->
-<!-- primeira tradución ao galego (gl), por XoseM correo@xmgz.eu -->
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>

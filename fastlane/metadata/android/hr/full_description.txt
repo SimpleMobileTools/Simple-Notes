@@ -1,0 +1,7 @@
+Trebate li brzo zapamtiti nešto za kupiti, adresu ili startup ideju? Onda je ovo aplikacija koju ste tražili! Nema kompliciranih koraka postavljanja, samo upišite ono za što ste došli. Dolazi s opcijom automatskog spremanja bilješki, tako da nećete odbaciti svoje promjene pogreškom. Podržava stvaranje više nezavisnih bilješki.
+
+Bilješci možete pristupiti u bilo kojem trenutku pomoću prilagodljivog widgeta promjenjive veličine koji otvara aplikaciju klikom.
+
+Ne sadrži oglase ili nepotrebne dozvole. Aplikacije je otvorenog koda, pruža prilagodljive boje.
+
+Ova je aplikacija samo dio većeg broja aplikacija. Možete pronaći ostatak na https://www.simplemobiletools.com

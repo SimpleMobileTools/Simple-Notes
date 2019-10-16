@@ -1,0 +1,7 @@
+Behöver du snabbt anteckna något att köpa, en adress eller en företagsidé? Då är det här appen som du har letat efter! Ingen komplicerad konfiguration behövs. Anteckningen sparas automatiskt så att dina ändringar inte tas bort av misstag. Du kan skapa flera oberoende anteckningar.
+
+Du kan komma åt anteckningen på nolltid genom att använda den anpassningsbara och justerbara widgeten, som öppnar appen när du trycker på den.
+
+Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger.
+
+Denna app är bara en del av en större serie appar. Du hittar resten av dem på https://www.simplemobiletools.com

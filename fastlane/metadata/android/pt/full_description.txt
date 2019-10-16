@@ -1,0 +1,7 @@
+Necessita de escrever uma nota sobre algo? Então esta aplicação é para si! Sem complicações, basta escrever o seu texto na nota. Guarda automaticamente as notas, para que não as perca inesperadamente. Possui suporte a diversas notas independentes.
+
+Pode abrir a aplicação e aceder à sua nota através de um toque no widget.
+
+Não contém anúncios nem permissões desnecessárias. Disponibiliza um tema escuro e é totalmente 'open source'.
+
+Esta aplicação é apenas parte de um conjunto mais vasto de aplicações. Saiba mais em https://www.simplemobiletools.com

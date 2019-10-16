@@ -1,0 +1,7 @@
+Besoin de noter rapidement quelque chose à acheter, une adresse, ou une idée de startup ? Alors ceci est l'application que vous cherchiez ! Pas d'étapes compliquées de configuration nécéssaires, saisissez juste ce pourquoi vous êtes venu. Fournit une sauvegarde automatique, ainsi vous ne rejetterez pas vos changements par erreur. Supporte la création de multiples notes indépendantes.
+
+Vous pouvez accéder à la note en peu de temps en utilisant le widget personnalisable et redimensionnable, qui ouvre l'application en un clic.
+
+Ne contient ni publicités, ni autorisations inutiles. Complétement opensource, fournit un thème sombre également.
+
+Cette application est juste une pièce d'une plus grande série d'applications. Vous pouvez trouver le reste de celles-ci à https://www.simplemobiletools.com

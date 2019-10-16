@@ -1,0 +1,7 @@
+Har du brug for hurtigt at notere noget, fx en huskeseddel, en adresse eller en ide, så er denne app lige noget for dig! Der er ingen komplicerede opsætninger, gå bare i gang med at notere med det samme. Indeholder automatisk gemmefunktion, så du mister ikke dine ændringer ved en fejltagelse. Understøtter oprettelse af flere uafhængige noter.
+
+Du kan tilgå en note på ingen tid ved at bruge appens widget, som kan tilpasses og skaleres og åbnes med et enkelt klik.
+
+Uden reklamer og unødvendige tilladelser. Den er helt igennem open source, og du kan selv bestemme farverne.
+
+Denne app er en del af en større serie. Du kan finde dem alle på siden https://www.simplemobiletools.com

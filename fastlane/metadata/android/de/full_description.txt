@@ -1,0 +1,7 @@
+Du musst dir schnell aufschreiben, was du kaufen wolltest oder vielleicht eine Adresse oder Idee für ein Startup? Dann ist diese App genau das Richtige für dich! Keine komplizierte Einrichtung, du kannst direkt beginnen, zu tippen. Inklusive Autosave-Funktion, damit du keine ungespeicherten Änderungen verlierst. Unterstützt die Erstellung von mehreren unabhängigen Notizen.
+
+Du kannst auf eine Notiz in Windeseile durch die anpassbaren Widgets zurückgreifen, welche die App mit einem Klick öffnen.
+
+Beinhaltet keine Werbung oder unnötige Berechtigungen. Sie ist komplett Open Source, alle verwendeten Farben sind anpassbar.
+
+Diese App ist nur eine aus einer größeren Serie von schlichten Apps. Der Rest davon findet sich auf https://www.simplemobiletools.com

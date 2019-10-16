@@ -1,0 +1,7 @@
+Maak snel een notitie van bijvoorbeeld een aankoop, adres of idee. Geen gecompliceerde instellingen, gewoon typen. Notities worden automatisch opgeslagen, dus wijzigingen gaan niet per ongeluk verloren. Ondersteunt het aanmaken van meerdere notities die als verschuifbare tabs worden weergegeven.
+
+Bevat een aan te passen widget die met één klik de notitie opent.
+
+Bevat geen advertenties of onnodige permissies. Volledig open-source. Kleuren van de app kunnen worden aangepast.
+
+Deze app is onderdeel van een grotere verzameling. Vind de andere apps op https://www.simplemobiletools.com
