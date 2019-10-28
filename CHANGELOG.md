@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.2.1 *(2019-10-28)*
+----------------------------
+
+ * Show the widget color changing button in the app settings only if there aren't multiple widgets active
+ * Fixed some smaller glitches
+ * Some stability and translation improvements
+
 Version 6.2.0 *(2019-09-16)*
 ----------------------------
 
