@@ -60,8 +60,8 @@
     <string name="import_folder">Map importeren</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Hoe verander ik de kleuren van de widgets?</string>
+    <string name="faq_1_text">Gebruik de optie in de instellingen van de app om de kleuren aan te passen, of maak de widget opnieuw aan. Indien er meerdere widgets van deze app actief zijn, zal deze optie niet beschikbaar zijn. De kleuren zijn dan alleen aan te passen door de widget opnieuw aan te maken.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
