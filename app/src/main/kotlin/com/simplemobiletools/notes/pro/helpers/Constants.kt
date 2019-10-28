@@ -5,6 +5,11 @@ import android.graphics.Color
 const val NOTE_ID = "note_id"
 const val OPEN_NOTE_ID = "open_note_id"
 const val DONE_CHECKLIST_ITEM_ALPHA = 0.4f
+const val CUSTOMIZED_WIDGET_ID = "customized_widget_id"
+const val CUSTOMIZED_WIDGET_KEY_ID = "customized_widget_key_id"
+const val CUSTOMIZED_WIDGET_NOTE_ID = "customized_widget_note_id"
+const val CUSTOMIZED_WIDGET_BG_COLOR = "customized_widget_bg_color"
+const val CUSTOMIZED_WIDGET_TEXT_COLOR = "customized_widget_text_color"
 val DEFAULT_WIDGET_TEXT_COLOR = Color.parseColor("#FFF57C00")
 
 // shared preferences

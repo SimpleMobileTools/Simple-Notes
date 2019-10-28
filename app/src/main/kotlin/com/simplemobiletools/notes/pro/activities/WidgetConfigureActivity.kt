@@ -22,9 +22,7 @@ import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.extensions.widgetsDB
-import com.simplemobiletools.notes.pro.helpers.MyWidgetProvider
-import com.simplemobiletools.notes.pro.helpers.NotesHelper
-import com.simplemobiletools.notes.pro.helpers.TYPE_CHECKLIST
+import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
@@ -72,7 +70,15 @@ class WidgetConfigureActivity : SimpleActivity() {
     }
 
     private fun initVariables() {
-        mBgColor = config.widgetBgColor
+        val extras = intent.extras
+        if (extras?.getLong(CUSTOMIZED_WIDGET_ID, 0L) == 0L) {
+            mBgColor = config.widgetBgColor
+            mTextColor = config.widgetTextColor
+        } else {
+            mBgColor = extras?.getInt(CUSTOMIZED_WIDGET_BG_COLOR) ?: config.widgetBgColor
+            mTextColor = extras?.getInt(CUSTOMIZED_WIDGET_TEXT_COLOR) ?: config.widgetTextColor
+        }
+
         if (mBgColor == 1) {
             mBgColor = Color.BLACK
             mBgAlpha = .2f
@@ -91,9 +97,8 @@ class WidgetConfigureActivity : SimpleActivity() {
         }
         updateBackgroundColor()
 
-        mTextColor = config.widgetTextColor
         updateTextColor()
-        mIsCustomizingColors = intent.extras?.getBoolean(IS_CUSTOMIZING_COLORS) ?: false
+        mIsCustomizingColors = extras?.getBoolean(IS_CUSTOMIZING_COLORS) ?: false
         notes_picker_holder.beVisibleIf(!mIsCustomizingColors)
 
         NotesHelper(this).getNotes {
@@ -150,7 +155,12 @@ class WidgetConfigureActivity : SimpleActivity() {
         views.setBackgroundColor(R.id.text_note_view, mBgColor)
         views.setBackgroundColor(R.id.checklist_note_view, mBgColor)
         AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
-        val widget = Widget(null, mWidgetId, mCurrentNoteId, mBgColor, mTextColor)
+
+        val extras = intent.extras
+        val id = if (extras?.containsKey(CUSTOMIZED_WIDGET_KEY_ID) == true) extras.getLong(CUSTOMIZED_WIDGET_KEY_ID) else null
+        mWidgetId = extras?.getInt(CUSTOMIZED_WIDGET_ID, mWidgetId) ?: mWidgetId
+        mCurrentNoteId = extras?.getLong(CUSTOMIZED_WIDGET_NOTE_ID, mCurrentNoteId) ?: mCurrentNoteId
+        val widget = Widget(id, mWidgetId, mCurrentNoteId, mBgColor, mTextColor)
         ensureBackgroundThread {
             widgetsDB.insertOrUpdate(widget)
         }

@@ -17,6 +17,7 @@ import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.helpers.*
+import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.util.*
 
@@ -200,15 +201,29 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupCustomizeWidgetColors() {
+        var widgetToCustomize: Widget? = null
+
         settings_customize_widget_colors_holder.setOnClickListener {
             Intent(this, WidgetConfigureActivity::class.java).apply {
                 putExtra(IS_CUSTOMIZING_COLORS, true)
+
+                widgetToCustomize?.apply {
+                    putExtra(CUSTOMIZED_WIDGET_ID, widgetId)
+                    putExtra(CUSTOMIZED_WIDGET_KEY_ID, id)
+                    putExtra(CUSTOMIZED_WIDGET_NOTE_ID, noteId)
+                    putExtra(CUSTOMIZED_WIDGET_BG_COLOR, widgetBgColor)
+                    putExtra(CUSTOMIZED_WIDGET_TEXT_COLOR, widgetTextColor)
+                }
+
                 startActivity(this)
             }
         }
 
         ensureBackgroundThread {
-            if (widgetsDB.getWidgets().size > 1) {
+            val widgets = widgetsDB.getWidgets().filter { it.widgetId != 0 }
+            if (widgets.size == 1) {
+                widgetToCustomize = widgets.first()
+            } else if (widgets.size > 1) {
                 arrayListOf(widgets_divider, widgets_label, settings_customize_widget_colors_holder).forEach {
                     it.beGone()
                 }
