@@ -57,6 +57,8 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     fun saveAllFragmentTexts() = fragments.values.forEach { (it as? TextFragment)?.saveText(false) }
 
+    fun getNoteChecklistItems(position: Int) = (fragments[position] as? ChecklistFragment)?.getChecklistItems()
+
     fun undo(position: Int) = (fragments[position] as? TextFragment)?.undo()
 
     fun redo(position: Int) = (fragments[position] as? TextFragment)?.redo()

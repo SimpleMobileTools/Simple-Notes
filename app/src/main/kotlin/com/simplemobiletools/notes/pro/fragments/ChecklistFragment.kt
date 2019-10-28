@@ -122,12 +122,14 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                     }
                 }
 
-                note!!.value = Gson().toJson(items)
+                note!!.value = getChecklistItems()
                 context?.notesDB?.insertOrUpdate(note!!)
                 context?.updateWidgets()
             }
         }
     }
+
+    fun getChecklistItems() = Gson().toJson(items)
 
     override fun saveChecklist() {
         saveNote()

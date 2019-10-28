@@ -619,7 +619,12 @@ class MainActivity : SimpleActivity() {
 
     private fun addTextToCurrentNote(text: String) = getPagerAdapter().appendText(view_pager.currentItem, text)
 
-    private fun saveCurrentNote(force: Boolean) = getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
+    private fun saveCurrentNote(force: Boolean) {
+        getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
+        if (mCurrentNote.type == TYPE_CHECKLIST) {
+            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
+        }
+    }
 
     private fun displayDeleteNotePrompt() {
         DeleteNoteDialog(this, mCurrentNote) {
