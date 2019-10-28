@@ -15,8 +15,8 @@ android {
         applicationId "com.simplemobiletools.notes.pro"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 65
-        versionName "6.2.0"
+        versionCode 66
+        versionName "6.2.1"
         setProperty("archivesBaseName", "notes")
     }
 
