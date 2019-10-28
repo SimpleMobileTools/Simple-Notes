@@ -4,15 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
+import com.simplemobiletools.commons.extensions.beGone
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
 import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.commons.helpers.isOreoPlus
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
+import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.helpers.*
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.util.*
@@ -201,6 +204,14 @@ class SettingsActivity : SimpleActivity() {
             Intent(this, WidgetConfigureActivity::class.java).apply {
                 putExtra(IS_CUSTOMIZING_COLORS, true)
                 startActivity(this)
+            }
+        }
+
+        ensureBackgroundThread {
+            if (widgetsDB.getWidgets().size > 1) {
+                arrayListOf(widgets_divider, widgets_label, settings_customize_widget_colors_holder).forEach {
+                    it.beGone()
+                }
             }
         }
     }
