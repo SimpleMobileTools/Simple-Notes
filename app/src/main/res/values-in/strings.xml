@@ -60,12 +60,12 @@
     <string name="import_folder">Impor folder</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Bagaimana caranya mengubah warna widget?</string>
+    <string name="faq_1_text">Jika anda hanya memiliki 1 widget aktif, anda bisa menambahkan ulang, atau gunakan tombol di dalam pengaturan aplikasi untuk mengubahnya. Jika anda memiliki banyak widget aktif, tombol di dalam pengaturan aplikasi tidak akan tersedia. Karena aplikasi mendukung penyesuaian warna per-widget, anda harus menghapus dan menambahkan ulang widget yang ingin anda ubah warnanya.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
+    <string name="app_short_description">Aplikasi catatan yang indah tanpa iklan atau perizinan yang tidak perlu.</string>
     <string name="app_long_description">
         Ingin membuat catatan daftar belanjaan, alamat tempat, atau ide-ide bisnis dengan cepat? Maka ini adalah aplikasi yang paling tepat untuk anda! Tidak perlu menyiapkan hal-hal yang rumit, cukup ketik apa yang anda inginkan. Dengan fitur simpan otomatis, anda tidak perlu khawatir kehilangan catatan karena sesuatu yang tidak diduga. Juga mendukung membuat beberapa catatan independen.
 
