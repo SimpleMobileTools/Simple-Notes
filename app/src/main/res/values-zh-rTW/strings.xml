@@ -60,8 +60,8 @@
     <string name="import_folder">匯入資料夾</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">我如何變更小工具的顏色?</string>
+    <string name="faq_1_text">要是你只有1個現行的小工具，你可以重新建立，或者使用程式設定中的按鈕來自訂。如果你有多個現行的小工具，程式設定中的按鈕會沒作用。你必須將想要自訂的小工具重新建立，如此一來程式便能支援每個小工具自訂顏色。</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- Short description has to have less than 80 chars -->
