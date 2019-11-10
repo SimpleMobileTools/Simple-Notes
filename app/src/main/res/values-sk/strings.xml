@@ -64,6 +64,8 @@
     <string name="faq_1_text">V prípade, že máte iba 1 aktívny widget, ho môžete buď znova vytvoriť, alebo použiť tlačidlo v nastaveniach apky na zmenu farby. Ak máte widgetov viacero, tlačidlo v nastaveniach apky zmizne. Keďže apka podporuje rôzne farby pre každý widget, budete musieť znovu vytvoriť ten widget, ktorého farby chcete zmeniť.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Jednoduché poznámky Pro - Rýchla tvorba zápiskov</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Krásna apka na pridávanie rýchlych poznámok bez reklám a nepotrebných oprávnení.</string>
     <string name="app_long_description">

@@ -64,6 +64,8 @@
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Notes Pro - Create handy notes easily</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Um lindo aplicativo para notas rápidas, sem anúncios ou permissões esquisitas.</string>
     <string name="app_long_description">

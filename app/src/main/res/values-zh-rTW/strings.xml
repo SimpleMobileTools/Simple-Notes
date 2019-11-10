@@ -64,6 +64,8 @@
     <string name="faq_1_text">要是你只有1個現行的小工具，你可以重新建立，或者使用程式設定中的按鈕來自訂。如果你有多個現行的小工具，程式設定中的按鈕會沒作用。你必須將想要自訂的小工具重新建立，如此一來程式便能支援每個小工具自訂顏色。</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Notes Pro - Create handy notes easily</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">一個美觀又快速記筆記的應用程式，而且沒有廣告或奇怪權限。</string>
     <string name="app_long_description">

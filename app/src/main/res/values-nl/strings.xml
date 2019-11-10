@@ -64,6 +64,8 @@
     <string name="faq_1_text">Gebruik de optie in de instellingen van de app om de kleuren aan te passen, of maak de widget opnieuw aan. Indien er meerdere widgets van deze app actief zijn, zal deze optie niet beschikbaar zijn. De kleuren zijn dan alleen aan te passen door de widget opnieuw aan te maken.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Notes Pro - Create handy notes easily</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Een prachtig notitieblok zonder advertenties en onnodige permissies.</string>
     <string name="app_long_description">

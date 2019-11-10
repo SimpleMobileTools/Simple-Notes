@@ -64,6 +64,8 @@
     <string name="faq_1_text">Jika anda hanya memiliki 1 widget aktif, anda bisa menambahkan ulang, atau gunakan tombol di dalam pengaturan aplikasi untuk mengubahnya. Jika anda memiliki banyak widget aktif, tombol di dalam pengaturan aplikasi tidak akan tersedia. Karena aplikasi mendukung penyesuaian warna per-widget, anda harus menghapus dan menambahkan ulang widget yang ingin anda ubah warnanya.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Notes Pro - Create handy notes easily</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Aplikasi catatan yang indah tanpa iklan atau perizinan yang tidak perlu.</string>
     <string name="app_long_description">
