@@ -11,7 +11,7 @@
     <string name="delete_note">Supprimer la note</string>
     <string name="delete_note_prompt_message">Etes-vous sûr de vouloir supprimer la note \"%s\"?</string>
     <string name="pick_a_note">Choisir une note</string>
-    <string name="rename_note">Renomme la note</string>
+    <string name="rename_note">Renommer la note</string>
     <string name="general_note">Note générale</string>
     <string name="create_new_note">Créer une nouvelle note</string>
     <string name="add_to_note">Ajouter à la note</string>
@@ -57,7 +57,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Exporter toutes les notes en tant que fichiers</string>
     <string name="import_notes">Importer plusieurs fichiers en tant que notes</string>
-    <string name="import_folder">Import folder</string>
+    <string name="import_folder">Importer depuis un dossier</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">How can I change the widgets color?</string>
