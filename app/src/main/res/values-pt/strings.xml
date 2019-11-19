@@ -60,12 +60,12 @@
     <string name="import_folder">Importar pasta</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Como posso alterar a cor do widget?</string>
+    <string name="faq_1_text">Se apenas tiver um widget ativo, pode recriá-lo ou utilizar o botão nas definições o personalizar. Se tiver vários widgets, este botão não estará disponível. Como cada um dos widgets pode ser personalizado, terá que os recriar sempre que o quiser personalizar.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro - Create handy notes easily</string>
+    <string name="app_title">Simple Notes Pro - Criação de notas</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Um aplicação sem anúncios para registar as suas notas.</string>
     <string name="app_long_description">
