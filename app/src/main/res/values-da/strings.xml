@@ -47,6 +47,7 @@
     <string name="autosave_notes">Autogem noter</string>
     <string name="enable_line_wrap">Aktiver tekstombrydning</string>
     <string name="use_incognito_mode">Anvend inkognito-tilstand til tastatur</string>
+    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">Tjekliste</string>

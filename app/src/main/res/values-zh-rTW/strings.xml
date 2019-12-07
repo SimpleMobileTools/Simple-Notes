@@ -47,6 +47,7 @@
     <string name="autosave_notes">自動儲存筆記</string>
     <string name="enable_line_wrap">自動換行</string>
     <string name="use_incognito_mode">使用無痕模式的鍵盤</string>
+    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">核對清單</string>

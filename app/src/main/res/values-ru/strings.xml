@@ -47,6 +47,7 @@
     <string name="autosave_notes">Автосохранение заметок</string>
     <string name="enable_line_wrap">Переносить строки</string>
     <string name="use_incognito_mode">Использовать режим инкогнито для клавиатур</string>
+    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">Список</string>

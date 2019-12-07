@@ -47,6 +47,7 @@
     <string name="autosave_notes">Automatsko spremanje bilješki</string>
     <string name="enable_line_wrap">Omogući omotavanje linije</string>
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">Spisak</string>

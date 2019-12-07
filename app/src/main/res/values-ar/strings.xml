@@ -47,6 +47,7 @@
     <string name="autosave_notes">حفظ الملاحظات تلقائيا</string>
     <string name="enable_line_wrap">تفعيل التفاف الخط</string>
     <string name="use_incognito_mode">استخدام وضع التصفح المتخفي للوحات المفاتيح</string>
+    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">قائمة تدقيق</string>
