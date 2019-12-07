@@ -412,19 +412,23 @@ class MainActivity : SimpleActivity() {
     private fun openPath(path: String) {
         openFile(path, false) {
             val title = path.getFilenameFromPath()
-            val fileText = it.readText().trim()
-            val checklistItems = fileText.parseChecklistItems()
-            val note = if (checklistItems != null) {
-                Note(null, title.substringBeforeLast('.'), fileText, TYPE_CHECKLIST)
-            } else {
-                Note(null, title, "", TYPE_TEXT, path)
-            }
+            try {
+                val fileText = it.readText().trim()
+                val checklistItems = fileText.parseChecklistItems()
+                val note = if (checklistItems != null) {
+                    Note(null, title.substringBeforeLast('.'), fileText, TYPE_CHECKLIST)
+                } else {
+                    Note(null, title, "", TYPE_TEXT, path)
+                }
 
-            if (mNotes.any { it.title.equals(note.title, true) }) {
-                note.title += " (file)"
-            }
+                if (mNotes.any { it.title.equals(note.title, true) }) {
+                    note.title += " (file)"
+                }
 
-            addNewNote(note)
+                addNewNote(note)
+            } catch (e: Exception) {
+                showErrorToast(e)
+            }
         }
     }
 

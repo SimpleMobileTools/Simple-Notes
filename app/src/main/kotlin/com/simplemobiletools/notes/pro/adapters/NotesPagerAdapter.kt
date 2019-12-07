@@ -22,7 +22,9 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
         val bundle = Bundle()
         val note = notes[position]
         val id = note.id
-        bundle.putLong(NOTE_ID, id!!)
+        if (id != null) {
+            bundle.putLong(NOTE_ID, id)
+        }
 
         if (fragments.containsKey(position)) {
             return fragments[position]!!

@@ -31,7 +31,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_checklist, container, false) as ViewGroup
-        noteId = arguments!!.getLong(NOTE_ID)
+        noteId = arguments!!.getLong(NOTE_ID, 0L)
         return view
     }
 

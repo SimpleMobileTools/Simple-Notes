@@ -42,7 +42,7 @@ class TextFragment : NoteFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_text, container, false) as ViewGroup
-        noteId = arguments!!.getLong(NOTE_ID)
+        noteId = arguments!!.getLong(NOTE_ID, 0L)
         retainInstance = true
 
         val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
