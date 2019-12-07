@@ -628,12 +628,12 @@ class MainActivity : SimpleActivity() {
 
     private fun displayDeleteNotePrompt() {
         DeleteNoteDialog(this, mCurrentNote) {
-            deleteNote(it)
+            deleteNote(it, mCurrentNote)
         }
     }
 
-    fun deleteNote(deleteFile: Boolean) {
-        if (mNotes.size <= 1) {
+    fun deleteNote(deleteFile: Boolean, note: Note) {
+        if (mNotes.size <= 1 || note != mCurrentNote) {
             return
         }
 

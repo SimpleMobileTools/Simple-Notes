@@ -118,7 +118,7 @@ class TextFragment : NoteFragment() {
 
             val fileContents = note!!.getNoteStoredValue()
             if (fileContents == null) {
-                (activity as MainActivity).deleteNote(false)
+                (activity as MainActivity).deleteNote(false, note!!)
                 return
             }
 
