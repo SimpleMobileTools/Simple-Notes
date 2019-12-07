@@ -51,9 +51,9 @@ android {
 }
 
 dependencies {
-    implementation 'com.simplemobiletools:commons:5.18.14'
+    implementation 'com.simplemobiletools:commons:5.20.6'
 
-    kapt 'androidx.room:room-compiler:2.2.1'
-    implementation 'androidx.room:room-runtime:2.2.1'
-    annotationProcessor 'androidx.room:room-compiler:2.2.1'
+    kapt 'androidx.room:room-compiler:2.2.2'
+    implementation 'androidx.room:room-runtime:2.2.2'
+    annotationProcessor 'androidx.room:room-compiler:2.2.2'
 }
