@@ -13,6 +13,7 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
+import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
@@ -44,6 +45,10 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
                 val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
                 items = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.value, checklistItemType) ?: ArrayList(1)
+                if (config!!.moveUndoneChecklistItems) {
+                    items.sortBy { it.isDone }
+                }
+
                 context!!.updateTextColors(view.checklist_holder)
                 setupFragment()
             }
