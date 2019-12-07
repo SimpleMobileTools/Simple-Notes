@@ -30,6 +30,7 @@ const val LAST_USED_SAVE_PATH = "last_used_save_path"
 const val ENABLE_LINE_WRAP = "enable_line_wrap"
 const val USE_INCOGNITO_MODE = "use_incognito_mode"
 const val LAST_CREATED_NOTE_TYPE = "last_created_note_type"
+const val MOVE_UNDONE_CHECKLIST_ITEMS = "move_undone_checklist_items"
 
 // gravity
 const val GRAVITY_LEFT = 0

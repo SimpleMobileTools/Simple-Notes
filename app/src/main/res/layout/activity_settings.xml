@@ -338,6 +338,29 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/settings_move_undone_checklist_items_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:background="?attr/selectableItemBackground"
+            android:paddingLeft="@dimen/normal_margin"
+            android:paddingTop="@dimen/activity_margin"
+            android:paddingRight="@dimen/normal_margin"
+            android:paddingBottom="@dimen/activity_margin">
+
+            <com.simplemobiletools.commons.views.MySwitchCompat
+                android:id="@+id/settings_move_undone_checklist_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:clickable="false"
+                android:paddingStart="@dimen/medium_margin"
+                android:text="@string/move_undone_checklist_items"
+                app:switchPadding="@dimen/medium_margin"/>
+
+        </RelativeLayout>
+
         <View
             android:id="@+id/saving_divider"
             android:layout_width="match_parent"

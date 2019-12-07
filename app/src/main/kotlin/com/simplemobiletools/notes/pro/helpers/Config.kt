@@ -76,4 +76,8 @@ class Config(context: Context) : BaseConfig(context) {
     var lastCreatedNoteType: Int
         get() = prefs.getInt(LAST_CREATED_NOTE_TYPE, TYPE_TEXT)
         set(lastCreatedNoteType) = prefs.edit().putInt(LAST_CREATED_NOTE_TYPE, lastCreatedNoteType).apply()
+
+    var moveUndoneChecklistItems: Boolean
+        get() = prefs.getBoolean(MOVE_UNDONE_CHECKLIST_ITEMS, false)
+        set(moveUndoneChecklistItems) = prefs.edit().putBoolean(MOVE_UNDONE_CHECKLIST_ITEMS, moveUndoneChecklistItems).apply()
 }
