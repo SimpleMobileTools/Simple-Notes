@@ -38,7 +38,7 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val current
     private fun newTitleConfirmed(title: String, dialog: AlertDialog) {
         when {
             title.isEmpty() -> activity.toast(R.string.no_title)
-            activity.notesDB.getNoteIdWithTitle(title) != null -> activity.toast(R.string.title_taken)
+            activity.notesDB.getNoteIdWithTitleCaseSensitive(title) != null -> activity.toast(R.string.title_taken)
             else -> {
                 note.title = title
                 if (activity.config.autosaveNotes && currentNoteText != null) {

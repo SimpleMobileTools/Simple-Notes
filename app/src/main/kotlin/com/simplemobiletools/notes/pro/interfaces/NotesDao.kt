@@ -17,6 +17,9 @@ interface NotesDao {
     @Query("SELECT id FROM notes WHERE title = :title COLLATE NOCASE")
     fun getNoteIdWithTitle(title: String): Long?
 
+    @Query("SELECT id FROM notes WHERE title = :title")
+    fun getNoteIdWithTitleCaseSensitive(title: String): Long?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertOrUpdate(note: Note): Long
 
