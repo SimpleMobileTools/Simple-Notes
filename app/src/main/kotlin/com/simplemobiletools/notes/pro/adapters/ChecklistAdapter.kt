@@ -4,8 +4,11 @@ import android.graphics.Paint
 import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import android.view.Menu
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
 import com.simplemobiletools.commons.extensions.applyColorFilter
@@ -17,20 +20,34 @@ import com.simplemobiletools.notes.pro.dialogs.RenameChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.helpers.DONE_CHECKLIST_ITEM_ALPHA
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
+import com.simplemobiletools.notes.pro.interfaces.ItemMoveCallback
+import com.simplemobiletools.notes.pro.interfaces.ItemTouchHelperContract
+import com.simplemobiletools.notes.pro.interfaces.StartReorderDragListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import kotlinx.android.synthetic.main.item_checklist.view.*
 import java.util.*
 
 class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<ChecklistItem>, val listener: ChecklistItemsListener?,
                        recyclerView: MyRecyclerView, val showIcons: Boolean, itemClick: (Any) -> Unit) :
-        MyRecyclerViewAdapter(activity, recyclerView, null, itemClick) {
+        MyRecyclerViewAdapter(activity, recyclerView, null, itemClick), ItemTouchHelperContract {
 
     private lateinit var crossDrawable: Drawable
     private lateinit var checkDrawable: Drawable
+    private var touchHelper: ItemTouchHelper? = null
+    private var startReorderDragListener: StartReorderDragListener
 
     init {
         setupDragListener(true)
         initDrawables()
+
+        touchHelper = ItemTouchHelper(ItemMoveCallback(this))
+        touchHelper!!.attachToRecyclerView(recyclerView)
+
+        startReorderDragListener = object : StartReorderDragListener {
+            override fun requestDrag(viewHolder: RecyclerView.ViewHolder) {
+                touchHelper?.startDrag(viewHolder)
+            }
+        }
     }
 
     override fun getActionMenuId() = R.menu.cab_checklist
@@ -76,7 +93,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.bindView(item, true, true) { itemView, layoutPosition ->
-            setupView(itemView, item)
+            setupView(itemView, item, holder)
         }
         bindViewHolder(holder)
     }
@@ -130,7 +147,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
 
     private fun getSelectedItems() = items.filter { selectedKeys.contains(it.id) } as ArrayList<ChecklistItem>
 
-    private fun setupView(view: View, checklistItem: ChecklistItem) {
+    private fun setupView(view: View, checklistItem: ChecklistItem, holder: ViewHolder) {
         val isSelected = selectedKeys.contains(checklistItem.id)
         view.apply {
             checklist_title.apply {
@@ -149,10 +166,36 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
 
             checklist_image.setImageDrawable(if (checklistItem.isDone) checkDrawable else crossDrawable)
             checklist_image.beVisibleIf(showIcons)
+            checklist_holder.isSelected = isSelected
 
             checklist_drag_handle.beVisibleIf(selectedKeys.isNotEmpty())
             checklist_drag_handle.applyColorFilter(textColor)
-            checklist_holder.isSelected = isSelected
+            checklist_drag_handle.setOnTouchListener { v, event ->
+                if (event.action == MotionEvent.ACTION_DOWN) {
+                    startReorderDragListener.requestDrag(holder)
+                }
+                false
+            }
         }
+    }
+
+    override fun onRowMoved(fromPosition: Int, toPosition: Int) {
+        if (fromPosition < toPosition) {
+            for (i in fromPosition until toPosition) {
+                Collections.swap(items, i, i + 1)
+            }
+        } else {
+            for (i in fromPosition downTo toPosition + 1) {
+                Collections.swap(items, i, i - 1)
+            }
+        }
+        notifyItemMoved(fromPosition, toPosition)
+    }
+
+    override fun onRowSelected(myViewHolder: ViewHolder?) {
+    }
+
+    override fun onRowClear(myViewHolder: ViewHolder?) {
+        listener?.saveChecklist()
     }
 }
