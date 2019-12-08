@@ -1,6 +1,15 @@
 Changelog
 ==========
 
+Version 6.3.0 *(2019-12-08)*
+----------------------------
+
+ * Allow reordering checklist items by dragging, once selection mode by long pressing is activated
+ * Added a new settings item for moving undone checklist items at the top automatically
+ * Properly apply the selected gravity and font size at checklist items
+ * Allow just changing a letter case at renaming a note
+ * Some other UX, stability and translation improvements
+
 Version 6.2.1 *(2019-10-28)*
 ----------------------------
 

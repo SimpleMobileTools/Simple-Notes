@@ -1,0 +1,5 @@
+ * Allow reordering checklist items by dragging, once selection mode by long pressing is activated
+ * Added a new settings item for moving undone checklist items at the top automatically
+ * Properly apply the selected gravity and font size at checklist items
+ * Allow just changing a letter case at renaming a note
+ * Some other UX, stability and translation improvements
