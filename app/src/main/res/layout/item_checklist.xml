@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/checklist_holder"
     android:layout_width="match_parent"
@@ -14,22 +15,32 @@
         android:id="@+id/checklist_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/medium_margin"
-        android:layout_marginTop="@dimen/medium_margin"
-        android:layout_marginRight="@dimen/medium_margin"
-        android:layout_toStartOf="@+id/checklist_image"
         android:paddingStart="@dimen/activity_margin"
         android:textSize="@dimen/bigger_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/checklist_image"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Butter" />
 
     <ImageView
         android:id="@+id/checklist_image"
         android:layout_width="@dimen/checklist_image_size"
         android:layout_height="@dimen/checklist_image_size"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
         android:padding="@dimen/normal_margin"
-        android:src="@drawable/ic_cross_vector" />
+        android:src="@drawable/ic_cross_vector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/checklist_drag_handle"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/checklist_drag_handle"
+        android:layout_width="@dimen/checklist_image_size"
+        android:layout_height="@dimen/checklist_image_size"
+        android:padding="@dimen/normal_margin"
+        android:src="@drawable/ic_drag_handle_vector"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

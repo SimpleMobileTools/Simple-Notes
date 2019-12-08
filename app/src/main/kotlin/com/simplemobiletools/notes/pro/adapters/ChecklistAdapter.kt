@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
+import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
 import com.simplemobiletools.commons.views.MyRecyclerView
@@ -21,7 +22,8 @@ import kotlinx.android.synthetic.main.item_checklist.view.*
 import java.util.*
 
 class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<ChecklistItem>, val listener: ChecklistItemsListener?,
-                       recyclerView: MyRecyclerView, val showIcons: Boolean, itemClick: (Any) -> Unit) : MyRecyclerViewAdapter(activity, recyclerView, null, itemClick) {
+                       recyclerView: MyRecyclerView, val showIcons: Boolean, itemClick: (Any) -> Unit) :
+        MyRecyclerViewAdapter(activity, recyclerView, null, itemClick) {
 
     private lateinit var crossDrawable: Drawable
     private lateinit var checkDrawable: Drawable
@@ -51,6 +53,14 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
     override fun getItemSelectionKey(position: Int) = items.getOrNull(position)?.id
 
     override fun getItemKeyPosition(key: Int) = items.indexOfFirst { it.id == key }
+
+    override fun onActionModeCreated() {
+        notifyDataSetChanged()
+    }
+
+    override fun onActionModeDestroyed() {
+        notifyDataSetChanged()
+    }
 
     override fun prepareActionMode(menu: Menu) {
         val selectedItems = getSelectedItems()
@@ -139,6 +149,9 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
 
             checklist_image.setImageDrawable(if (checklistItem.isDone) checkDrawable else crossDrawable)
             checklist_image.beVisibleIf(showIcons)
+
+            checklist_drag_handle.beVisibleIf(selectedKeys.isNotEmpty())
+            checklist_drag_handle.applyColorFilter(textColor)
             checklist_holder.isSelected = isSelected
         }
     }
