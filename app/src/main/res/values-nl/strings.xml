@@ -47,7 +47,7 @@
     <string name="autosave_notes">Notities automatisch opslaan</string>
     <string name="enable_line_wrap">Automatische terugloop inschakelen</string>
     <string name="use_incognito_mode">Incognito-modus van toetsenbord gebruiken</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="move_undone_checklist_items">Afgewerkte items naar onderen verplaatsen</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
