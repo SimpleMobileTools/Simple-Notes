@@ -17,6 +17,7 @@ import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
 import com.simplemobiletools.commons.views.MyRecyclerView
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.dialogs.RenameChecklistItemDialog
+import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.helpers.DONE_CHECKLIST_ITEM_ALPHA
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
@@ -154,6 +155,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
                 text = checklistItem.title
                 setTextColor(textColor)
                 setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
+                gravity = context.config.getTextGravity()
 
                 if (checklistItem.isDone) {
                     paintFlags = Paint.STRIKE_THRU_TEXT_FLAG

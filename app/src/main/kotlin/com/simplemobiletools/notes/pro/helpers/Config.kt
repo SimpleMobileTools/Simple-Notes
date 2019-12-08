@@ -1,7 +1,9 @@
 package com.simplemobiletools.notes.pro.helpers
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Environment
+import android.view.Gravity
 import com.simplemobiletools.commons.helpers.BaseConfig
 
 class Config(context: Context) : BaseConfig(context) {
@@ -80,4 +82,11 @@ class Config(context: Context) : BaseConfig(context) {
     var moveUndoneChecklistItems: Boolean
         get() = prefs.getBoolean(MOVE_UNDONE_CHECKLIST_ITEMS, false)
         set(moveUndoneChecklistItems) = prefs.edit().putBoolean(MOVE_UNDONE_CHECKLIST_ITEMS, moveUndoneChecklistItems).apply()
+
+    @SuppressLint("RtlHardcoded")
+    fun getTextGravity() = when (gravity) {
+        GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
+        GRAVITY_RIGHT -> Gravity.RIGHT
+        else -> Gravity.LEFT
+    }
 }

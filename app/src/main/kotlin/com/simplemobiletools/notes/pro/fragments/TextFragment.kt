@@ -1,6 +1,5 @@
 package com.simplemobiletools.notes.pro.fragments
 
-import android.annotation.SuppressLint
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Editable
@@ -9,7 +8,6 @@ import android.text.TextWatcher
 import android.text.style.UnderlineSpan
 import android.text.util.Linkify
 import android.util.TypedValue
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +18,9 @@ import com.simplemobiletools.notes.pro.activities.MainActivity
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
-import com.simplemobiletools.notes.pro.helpers.*
+import com.simplemobiletools.notes.pro.helpers.MyMovementMethod
+import com.simplemobiletools.notes.pro.helpers.NOTE_ID
+import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.TextHistory
 import com.simplemobiletools.notes.pro.models.TextHistoryItem
@@ -124,7 +124,7 @@ class TextFragment : NoteFragment() {
 
             setColors(config.textColor, config.primaryColor, config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
-            gravity = getTextGravity()
+            gravity = config.getTextGravity()
             if (text.toString() != fileContents) {
                 if (!skipTextUpdating) {
                     setText(fileContents)
@@ -208,13 +208,6 @@ class TextFragment : NoteFragment() {
     }
 
     fun getCurrentNoteViewText() = view.text_note_view?.text?.toString()
-
-    @SuppressLint("RtlHardcoded")
-    private fun getTextGravity() = when (config!!.gravity) {
-        GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
-        GRAVITY_RIGHT -> Gravity.RIGHT
-        else -> Gravity.LEFT
-    }
 
     private fun setWordCounter(text: String) {
         val words = text.replace("\n", " ").split(" ")

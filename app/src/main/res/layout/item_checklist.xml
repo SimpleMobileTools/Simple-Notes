@@ -13,12 +13,13 @@
 
     <com.simplemobiletools.commons.views.MyTextView
         android:id="@+id/checklist_title"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/activity_margin"
         android:textSize="@dimen/bigger_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/checklist_image"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Butter" />
 
