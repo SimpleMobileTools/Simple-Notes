@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_centerVertical="true"
-    android:layout_toLeftOf="@+id/checklist_image"
-    android:paddingLeft="@dimen/activity_margin"
+    android:layout_toStartOf="@+id/checklist_image"
+    android:paddingStart="@dimen/activity_margin"
     android:paddingTop="@dimen/medium_margin"
-    android:paddingRight="@dimen/medium_margin"
+    android:paddingEnd="@dimen/medium_margin"
     android:paddingBottom="@dimen/medium_margin"
     android:textSize="@dimen/bigger_text_size"
-    tools:text="Butter"/>
+    tools:text="Butter" />
