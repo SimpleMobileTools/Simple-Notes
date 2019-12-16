@@ -47,7 +47,7 @@
     <string name="autosave_notes">自動儲存筆記</string>
     <string name="enable_line_wrap">自動換行</string>
     <string name="use_incognito_mode">使用無痕模式的鍵盤</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="move_undone_checklist_items">將未完成的核對清單項目移動至頂端</string>
 
     <!-- Checklists -->
     <string name="checklist">核對清單</string>
@@ -66,7 +66,7 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro - Create handy notes easily</string>
+    <string name="app_title">簡易筆記 Pro - 輕鬆建立便利的筆記</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">一個美觀又快速記筆記的應用程式，而且沒有廣告或奇怪權限。</string>
     <string name="app_long_description">
