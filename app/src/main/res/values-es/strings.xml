@@ -15,21 +15,21 @@
     <string name="general_note">Nota principal</string>
     <string name="create_new_note">Crear una nota nueva</string>
     <string name="add_to_note">Añadir a la nota</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="unsaved_changes_warning">Tienes cambios sin guardar. ¿Qué quieres ahcer con ellos?</string>
+    <string name="note_shown_widget">Nota mostrada en el widget:</string>
+    <string name="new_note_type">Nuevo tipo de nota:</string>
+    <string name="text_note">Nota de texto</string>
 
     <!-- File notes -->
     <string name="open_file">Abrir archivo</string>
     <string name="export_as_file">Exportar como archivo</string>
     <string name="file_too_large">Archivo demasiado grande, el límite es 1MB</string>
-    <string name="only_import_file_content">Sólo importar el contenido del archivo\n(cambiar el archivo no afectará a la nota)</string>
-    <string name="update_file_at_note">Actualizar el propio archivo cuando se actualice la nota\n(la nota se borrará si el archivo se elimina, o la ruta cambia)</string>
+    <string name="only_import_file_content">Solo importar el contenido del archivo\n(Cambiar el archivo no afectará a la nota)</string>
+    <string name="update_file_at_note">Actualizar el propio archivo cuando se actualice la nota\n(La nota se borrará si el archivo se elimina, o la ruta cambia)</string>
     <string name="delete_file_itself">También borrar el archivo \"%s\"</string>
     <string name="note_saved_successfully">Nota \"%s\" guardada con éxito</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada con éxito</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Solo exportar el contenido del archivo actual\n(Modificar la nota no afectará el archivo)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Mostrar mensajes de guardado con éxito</string>
@@ -46,29 +46,29 @@
     <string name="show_note_picker">Mostrar un selector de notas al inicio</string>
     <string name="autosave_notes">Guardado automático de notas</string>
     <string name="enable_line_wrap">Activar ajuste de línea</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="use_incognito_mode">Usar modo incógnito de los teclados</string>
+    <string name="move_undone_checklist_items">Mover Elementos sin erminar de una lista al inicio</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Lista</string>
+    <string name="add_new_checklist_item">Añadir un nuevo item a la lista</string>
+    <string name="add_new_checklist_items">Añadir nuevos items a la lista</string>
+    <string name="checklist_is_empty">La lista está vacía</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas las notas como archivos</string>
     <string name="import_notes">Importar múltiples archivos como notas</string>
-    <string name="import_folder">Import folder</string>
+    <string name="import_folder">Importar carpeta</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">¿Cómo puedo cambiar los colores del widget?</string>
+    <string name="faq_1_text">En caso de que solo tengas un widget activo, Puedes volverlo a crear, o usar el botón en los ajustes de la aplicación para personalziarlo. Si tienes múltiples widgets activos, el botón en los ajustes de la aplicación no estará disponible. Ya que la aplicación soporta personalización de color por widget, tendrás que volver a crear el widget tque quieres personalizar.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro - Create handy notes easily</string>
+    <string name="app_title">Simple Notes Pro - Crea notas fácilmente</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
+    <string name="app_short_description">Una hermosa app para tomar notas rápidas sin anuncios o permisos raros.</string>
     <string name="app_long_description">
         ¿Necesita tomar nota de algo para comprar, una dirección o una idea? ¡Entonces ésta es la aplicación que estaba buscando! Sin complicadas configuraciones, tan solo escriba lo que quiera. Viene con guardado automático, por tanto usted no descartará ningún cambio por error. Soporta la creación de múltiples notas independientes.
 
