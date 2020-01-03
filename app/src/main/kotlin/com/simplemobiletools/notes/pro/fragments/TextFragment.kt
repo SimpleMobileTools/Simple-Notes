@@ -122,7 +122,7 @@ class TextFragment : NoteFragment() {
                 return
             }
 
-            setColors(config.textColor, config.primaryColor, config.backgroundColor)
+            setColors(config.textColor, context.getAdjustedPrimaryColor(), config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
             gravity = config.getTextGravity()
             if (text.toString() != fileContents) {
