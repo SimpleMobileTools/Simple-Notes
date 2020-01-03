@@ -10,7 +10,7 @@
         android:id="@+id/open_note_item_radio_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/open_note_item_icon"/>
+        android:layout_toStartOf="@+id/open_note_item_icon"/>
 
     <ImageView
         android:id="@+id/open_note_item_icon"

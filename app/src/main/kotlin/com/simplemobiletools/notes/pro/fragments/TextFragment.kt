@@ -122,8 +122,11 @@ class TextFragment : NoteFragment() {
                 return
             }
 
-            setColors(config.textColor, context.getAdjustedPrimaryColor(), config.backgroundColor)
+            val adjustedPrimaryColor = context.getAdjustedPrimaryColor()
+            setColors(config.textColor, adjustedPrimaryColor, config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
+            highlightColor = adjustedPrimaryColor.adjustAlpha(.4f)
+
             gravity = config.getTextGravity()
             if (text.toString() != fileContents) {
                 if (!skipTextUpdating) {
