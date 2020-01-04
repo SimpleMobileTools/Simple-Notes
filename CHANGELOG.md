@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.3.1 *(2020-01-04)*
+----------------------------
+
+ * Fixed some B&W theme related issues
+ * Added some UI refreshments and translation improvements
+
 Version 6.3.0 *(2019-12-08)*
 ----------------------------
 
