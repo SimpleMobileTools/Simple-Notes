@@ -47,12 +47,12 @@
     <string name="autosave_notes">Notizen automatisch speichern</string>
     <string name="enable_line_wrap">Zeilenumbruch aktivieren</string>
     <string name="use_incognito_mode">Benutze den Inkognitomodus von Tastaturen</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="move_undone_checklist_items">Verschiebe rückgängig gemachte Checklisteneinträge nach open</string>
 
     <!-- Checklists -->
     <string name="checklist">Checkliste</string>
     <string name="add_new_checklist_item">Einen neuen Checklisteneintrag hinzufügen</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
+    <string name="add_new_checklist_items">Neue Checklisteneinträge hinzufügen</string>
     <string name="checklist_is_empty">Die Checkliste ist leer</string>
 
     <!-- Import / Export -->
@@ -61,14 +61,14 @@
     <string name="import_folder">Ordner importieren</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Wie kann ich die Farbe der Widgets ändern?</string>
+    <string name="faq_1_text">Wenn nur ein Widget aktiv ist, kann die Farbe über die Einstellungen unter dem Punkt Widgets angepasst werden, ansonsten muss es neu erstellt werden.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro - Create handy notes easily</string>
+    <string name="app_title">Simple Notes Pro - Einfach Handy Notizen erstellen</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
+    <string name="app_short_description">Eine schöne, schnelle App zum Verfassen von Notizen ohne Werbung oder sonderbare Berechtigungen.</string>
     <string name="app_long_description">
         Du musst dir schnell aufschreiben, was du kaufen wolltest oder vielleicht eine Adresse oder Idee für ein Startup? Dann ist diese App genau das Richtige für dich! Keine komplizierte Einrichtung, du kannst direkt beginnen, zu tippen. Inklusive Autosave-Funktion, damit du keine ungespeicherten Änderungen verlierst. Unterstützt die Erstellung von mehreren unabhängigen Notizen.
 
