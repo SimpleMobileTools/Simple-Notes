@@ -47,7 +47,7 @@
     <string name="autosave_notes">Notizen automatisch speichern</string>
     <string name="enable_line_wrap">Zeilenumbruch aktivieren</string>
     <string name="use_incognito_mode">Benutze den Inkognitomodus von Tastaturen</string>
-    <string name="move_undone_checklist_items">Verschiebe rückgängig gemachte Checklisteneinträge nach open</string>
+    <string name="move_undone_checklist_items">Verschiebe rückgängig gemachte Checklisteneinträge nach oben</string>
 
     <!-- Checklists -->
     <string name="checklist">Checkliste</string>
@@ -68,7 +68,7 @@
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro - Einfach Handy Notizen erstellen</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Eine schöne, schnelle App zum Verfassen von Notizen ohne Werbung oder sonderbare Berechtigungen.</string>
+    <string name="app_short_description">Schnell und einfach Notizen verfassen ohne Werbung oder seltsame Berechtigungen.</string>
     <string name="app_long_description">
         Du musst dir schnell aufschreiben, was du kaufen wolltest oder vielleicht eine Adresse oder Idee für ein Startup? Dann ist diese App genau das Richtige für dich! Keine komplizierte Einrichtung, du kannst direkt beginnen, zu tippen. Inklusive Autosave-Funktion, damit du keine ungespeicherten Änderungen verlierst. Unterstützt die Erstellung von mehreren unabhängigen Notizen.
 
