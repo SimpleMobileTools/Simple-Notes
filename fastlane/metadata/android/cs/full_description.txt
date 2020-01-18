@@ -1,0 +1,7 @@
+Potřebujete si rychle poznačit něco na nákup, adresu, nebo nápad na startup? Pokud ano, tato apka je pro vás jako stvořená! Nepotřebuje žádná zdlouhavá nastavování, jen zapište, co chcete. Poznámky se ukládají automaticky, takže je ani náhodou neztratíte. Poskytuje možnost vytvoření vícera nezávislých poznámek.
+
+K poznámkám můžete rychle přistupovat přes upravitelný widget, který klepnutím otevře apku.
+
+Neobsahuje žádné reklamy a nepotřebná oprávnění. Je opensource, poskytuje možnost změny barev.
+
+Tato aplikace je pouze jednou ze skupiny aplikací. Ostatní můžete najít na https://www.simplemobiletools.com
