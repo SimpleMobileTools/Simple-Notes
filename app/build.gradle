@@ -57,7 +57,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.simplemobiletools:commons:5.21.19'
+    implementation 'com.simplemobiletools:commons:5.21.28'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
 
     kapt 'androidx.room:room-compiler:2.2.2'
