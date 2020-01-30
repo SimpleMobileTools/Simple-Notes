@@ -203,7 +203,7 @@ class MainActivity : SimpleActivity() {
                     val file = File(realPath)
                     handleUri(Uri.fromFile(file))
                 } else {
-                    handleUri(data)
+                    handleUri(data!!)
                 }
                 intent.removeCategory(Intent.CATEGORY_DEFAULT)
                 intent.action = null
@@ -239,7 +239,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun handleUri(uri: Uri) {
-        NotesHelper(this).getNoteIdWithPath(uri.path) {
+        NotesHelper(this).getNoteIdWithPath(uri.path!!) {
             if (it != null && it > 0L) {
                 updateSelectedNote(it)
                 return@getNoteIdWithPath
@@ -397,7 +397,7 @@ class MainActivity : SimpleActivity() {
 
     private fun importUri(uri: Uri) {
         when (uri.scheme) {
-            "file" -> openPath(uri.path)
+            "file" -> openPath(uri.path!!)
             "content" -> {
                 val realPath = getRealPathFromURI(uri)
                 if (realPath != null) {
@@ -578,12 +578,13 @@ class MainActivity : SimpleActivity() {
                         parent.createFile("", path.getFilenameFromPath())!!
                     }
 
-                    contentResolver.openOutputStream(document.uri).apply {
+                    contentResolver.openOutputStream(document.uri)!!.apply {
                         val byteArray = content.toByteArray(Charset.forName("UTF-8"))
                         write(byteArray, 0, byteArray.size)
                         flush()
                         close()
                     }
+
                     if (showSuccessToasts) {
                         noteExportedSuccessfully(path.getFilenameFromPath())
                     }
