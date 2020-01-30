@@ -1,0 +1,2 @@
+ * Properly color some elements at using light themes
+ * Some translation improvements

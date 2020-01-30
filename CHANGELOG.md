@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.4.0 *(2020-01-30)*
+----------------------------
+
+ * Properly color some elements at using light themes
+ * Some translation improvements
+
 Version 6.3.1 *(2020-01-04)*
 ----------------------------
 
