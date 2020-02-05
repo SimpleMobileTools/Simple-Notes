@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Απλή Σημείωση</string>
+    <string name="app_launcher_name">Σημείωση</string>
+    <string name="widget_config">Σας ευχαριστούμε που χρησιμοποιείτε τις Απλές σημειώσεις.\nΓια άλλες Απλές εφαρμογές, επισκεφθείτε το SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">Αδύνατη η κοινή χρήση κενού κειμένου</string>
+    <string name="simple_note">Απλή Σημείωση</string>
+    <string name="new_note">Προσθήκη νέας σημείωσης</string>
+    <string name="no_title">Δώστε όνομα στη σημείωσή σας</string>
+    <string name="title_taken">Υπάρχει ήδη μια σημείωση με αυτόν τον τίτλο</string>
+    <string name="open_note">Άνοιγμα σημείωσης</string>
+    <string name="delete_note">Διαγραφή σημείωσης</string>
+    <string name="delete_note_prompt_message">Είστε βέβαιοι ότι θέλετε να διαγράψετε τη σημείωση \"%s\";</string>
+    <string name="pick_a_note">Επιλέξτε σημείωση</string>
+    <string name="rename_note">Μετονομασία σημείωσης</string>
+    <string name="general_note">Γενική σημείωση</string>
+    <string name="create_new_note">Δημιουργία νέας σημείωσης</string>
+    <string name="add_to_note">Προσθήκη στη σημείωση</string>
+    <string name="unsaved_changes_warning">Έχετε ορισμένες μη αποθηκευμένες αλλαγές. Τι θέλεις να κάνεις με αυτές;</string>
+    <string name="note_shown_widget">Σημείωση που εμφανίζεται στο widget:</string>
+    <string name="new_note_type">Νέος τύπος σημείωσης:</string>
+    <string name="text_note">Σημείωση κειμένου</string>
+
+    <!-- File notes -->
+    <string name="open_file">Άνοιγμα αρχείου</string>
+    <string name="export_as_file">Εξαγωγή ως αρχείο</string>
+    <string name="file_too_large">Το αρχείο είναι πολύ μεγάλο, το όριο είναι 1MB</string>
+    <string name="only_import_file_content">Εισαγωγή μόνο του περιεχομένου του αρχείου\n(η αλλαγή του αρχείου δεν θα επηρεάσει τη σημείωση)</string>
+    <string name="update_file_at_note">Ενημέρωση του ίδιου του αρχείου κατά την ενημέρωση της σημείωσης\n(η σημείωση διαγράφεται αν το αρχείο διαγραφεί ή αλλάξει η διαδρομή)</string>
+    <string name="delete_file_itself">Διαγραφή επίσης του αρχείου \"%s\"</string>
+    <string name="note_saved_successfully">Η Σημείωση \"%s\" αποθηκεύτηκε με επιτυχία</string>
+    <string name="note_exported_successfully">Η εξαγωγή \"%s\" ολοκληρώθηκε με επιτυχία</string>
+    <string name="only_export_file_content">Εξαγωγή μόνο του περιεχομένου του τρέχοντος αρχείου\n(η αλλαγή της σημείωσης δεν θα επηρεάσει το αρχείο)</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">Εμφάνιση μηνυμάτων επιτυχούς αποθήκευσης</string>
+    <string name="links_and_emails_clickable">Δυνατότητα επιλογής συνδέσεων και μηνυμάτων ηλεκτρονικού ταχυδρομείου</string>
+    <string name="place_cursor_end">Τοποθέτηση δρομέα στο τέλος της σημείωσης</string>
+    <string name="monospaced_font">Χρήση μονοδιάστατης γραμματοσειράς</string>
+    <string name="show_keyboard">Εμφάνιση πληκτρολογίου κατά την εκκίνηση</string>
+    <string name="show_word_count">Εμφάνιση καταμέτρησης λέξεων</string>
+    <string name="alignment">Στοίχιση</string>
+    <string name="left">Αριστερά</string>
+    <string name="center">Κέντρο</string>
+    <string name="right">Δεξιά</string>
+    <string name="widget_note">Σημείωση που χρησιμοποιείται στο Γραφικό στοιχείο</string>
+    <string name="show_note_picker">Εμφάνιση επιλογής σημείωσης στην εκκίνηση</string>
+    <string name="autosave_notes">Αυτόματη αποθήκευση σημειώσεων</string>
+    <string name="enable_line_wrap">Ενεργοποίηση αναδίπλωσης γραμμής</string>
+    <string name="use_incognito_mode">Χρήση λειτουργίας Incognito πληκτρολόγιου</string>
+    <string name="move_undone_checklist_items">Μετακίνηση ανεπιτυχών λίστας ελέγχου στο επάνω μέρος</string>
+
+    <!-- Checklists -->
+    <string name="checklist">Λίστα ελέγχου</string>
+    <string name="add_new_checklist_item">Προσθήκη νέου στοιχείου λίστας ελέγχου</string>
+    <string name="add_new_checklist_items">Προσθήκη νέων στοιχείων λίστας ελέγχου</string>
+    <string name="checklist_is_empty">Η λίστα ελέγχου είναι κενή</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">Εξαγωγή όλων των σημειώσεων ως αρχεία</string>
+    <string name="import_notes">Εισαγωγή πολλών αρχείων ως σημειώσεις</string>
+    <string name="import_folder">Εισαγωγή φακέλου</string>
+
+    <!-- FAQ -->
+    <string name="faq_1_title">Πώς μπορώ να αλλάξω το χρώμα των Γραφικών στοιχείων;</string>
+    <string name="faq_1_text">Σε περίπτωση που έχετε μόνο 1 ενεργό Γραφικό στοιχείο, μπορείτε να το δημιουργήσετε εκ νέου ή να χρησιμοποιήσετε το κουμπί στις ρυθμίσεις της εφαρμογής για να το προσαρμόσετε. Αν έχετε πολλά ενεργά , το κουμπί στις ρυθμίσεις της εφαρμογής δεν θα είναι διαθέσιμο. Καθώς η εφαρμογή υποστηρίζει προσαρμογή χρώματος ανά Γραφικό στοιχείο, θα πρέπει να το δημιουργήσετε ξανά αυτό που θέλετε να προσαρμόσετε.</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Απλές Σημειώσεις Pro - Πολύ εύκολη δημιουργία</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">Μια όμορφη εφαρμογή χωρίς διαφημίσεις ή περίεργα δικαιώματα.</string>
+    <string name="app_long_description">
+        Χρειάζεστε μια σημείωση για κάτι ή για αγορά, μιαδιεύθυνση ή μια ιδέα που σας ήρθε; Τότε αυτή είναι η εφαρμογή που αναζητάτε! Δεν απαιτούνται περίπλοκα βήματα εγκατάστασης, απλώς πληκτρολογήστε αυτό το οποίο θέλετε. Διατίθεται με αυτόματη αποθήκευση, ώστε να μην απορρίψετε τις αλλαγές σας κατά λάθος. Υποστηρίζει τη δημιουργία πολλών ανεξάρτητων σημειώσεων.
+
+        Μπορείτε να αποκτήσετε πρόσβαση στη σημείωση σε ελάχιστο χρόνο χρησιμοποιώντας το προσαρμοζόμενο γραφικό στοιχείο, το οποίο ανοίγει την εφαρμογή με ένα κλικ.
+
+        Δεν περιέχει διαφημίσεις ή περιττές άδειες. Είναι πλήρως ανοιχτού κώδικα, και παρέχει προσαρμόσιμα χρώματα.
+
+        Αυτή η εφαρμογή είναι μόνο ένα μέρος μιας μεγαλύτερης σειράς εφαρμογών. Μπορείτε να βρείτε τις υπόλοιπες στη διεύθυνση https://www.simplemobiletools.com
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
