@@ -22,7 +22,6 @@ const val MONOSPACED_FONT = "monospaced_font"
 const val SHOW_KEYBOARD = "show_keyboard"
 const val SHOW_NOTE_PICKER = "show_note_picker"
 const val SHOW_WORD_COUNT = "show_word_count"
-const val FONT_SIZE = "font_size"
 const val GRAVITY = "gravity"
 const val CURSOR_PLACEMENT = "cursor_placement"
 const val LAST_USED_EXTENSION = "last_used_extension"
@@ -36,12 +35,6 @@ const val MOVE_UNDONE_CHECKLIST_ITEMS = "move_undone_checklist_items"
 const val GRAVITY_LEFT = 0
 const val GRAVITY_CENTER = 1
 const val GRAVITY_RIGHT = 2
-
-// font sizes
-const val FONT_SIZE_SMALL = 0
-const val FONT_SIZE_MEDIUM = 1
-const val FONT_SIZE_LARGE = 2
-const val FONT_SIZE_EXTRA_LARGE = 3
 
 // note types
 const val TYPE_TEXT = 0

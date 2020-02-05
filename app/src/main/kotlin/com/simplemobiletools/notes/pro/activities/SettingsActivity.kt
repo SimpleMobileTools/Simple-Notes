@@ -4,13 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
-import com.simplemobiletools.commons.extensions.beGone
-import com.simplemobiletools.commons.extensions.beVisibleIf
-import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
-import com.simplemobiletools.commons.extensions.updateTextColors
-import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
-import com.simplemobiletools.commons.helpers.ensureBackgroundThread
-import com.simplemobiletools.commons.helpers.isOreoPlus
+import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
@@ -171,13 +166,6 @@ class SettingsActivity : SimpleActivity() {
             }
         }
     }
-
-    private fun getFontSizeText() = getString(when (config.fontSize) {
-        FONT_SIZE_SMALL -> R.string.small
-        FONT_SIZE_MEDIUM -> R.string.medium
-        FONT_SIZE_LARGE -> R.string.large
-        else -> R.string.extra_large
-    })
 
     private fun setupGravity() {
         settings_gravity.text = getGravityText()

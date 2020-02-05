@@ -9,6 +9,7 @@ import android.widget.RemoteViewsService
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.adjustAlpha
+import com.simplemobiletools.commons.extensions.getTextSize
 import com.simplemobiletools.commons.extensions.setText
 import com.simplemobiletools.commons.extensions.setTextSize
 import com.simplemobiletools.commons.helpers.WIDGET_TEXT_COLOR
@@ -16,7 +17,6 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.R.id.checklist_title
 import com.simplemobiletools.notes.pro.R.id.widget_text_holder
 import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.getTextSize
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.ChecklistItem
