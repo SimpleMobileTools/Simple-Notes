@@ -72,7 +72,7 @@ class Config(context: Context) : BaseConfig(context) {
         set(useIncognitoMode) = prefs.edit().putBoolean(USE_INCOGNITO_MODE, useIncognitoMode).apply()
 
     var lastCreatedNoteType: Int
-        get() = prefs.getInt(LAST_CREATED_NOTE_TYPE, TYPE_TEXT)
+        get() = prefs.getInt(LAST_CREATED_NOTE_TYPE, NoteType.TYPE_TEXT.value)
         set(lastCreatedNoteType) = prefs.edit().putInt(LAST_CREATED_NOTE_TYPE, lastCreatedNoteType).apply()
 
     var moveUndoneChecklistItems: Boolean

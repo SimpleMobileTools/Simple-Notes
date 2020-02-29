@@ -122,7 +122,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private fun updateCurrentNote(note: Note) {
         mCurrentNoteId = note.id!!
         notes_picker_value.text = note.title
-        if (note.type == TYPE_CHECKLIST) {
+        if (note.type == NoteType.TYPE_CHECKLIST.value) {
             val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
             val items = Gson().fromJson<ArrayList<ChecklistItem>>(note.value, checklistItemType) ?: ArrayList(1)
             items.apply {

@@ -7,7 +7,7 @@ import com.simplemobiletools.commons.extensions.humanizePath
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
-import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
+import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_open_file.*
 import kotlinx.android.synthetic.main.dialog_open_file.view.*
@@ -45,7 +45,7 @@ class OpenFileDialog(val activity: SimpleActivity, val path: String, val callbac
 
     private fun saveNote(storeContent: String, storePath: String) {
         val filename = path.getFilenameFromPath()
-        val note = Note(null, filename, storeContent, TYPE_TEXT, storePath)
+        val note = Note(null, filename, storeContent, NoteType.TYPE_TEXT.value, storePath)
         callback(note)
         dialog.dismiss()
     }

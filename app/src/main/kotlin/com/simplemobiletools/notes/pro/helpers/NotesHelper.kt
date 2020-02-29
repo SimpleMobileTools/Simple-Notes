@@ -32,7 +32,7 @@ class NotesHelper(val context: Context) {
 
             if (notes.isEmpty()) {
                 val generalNote = context.resources.getString(R.string.general_note)
-                val note = Note(null, generalNote, "", TYPE_TEXT)
+                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value)
                 context.notesDB.insertOrUpdate(note)
                 notes.add(note)
             }

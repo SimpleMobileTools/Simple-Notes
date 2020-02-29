@@ -11,9 +11,8 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.extensions.parseChecklistItems
+import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
-import com.simplemobiletools.notes.pro.helpers.TYPE_CHECKLIST
-import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_import_folder.view.*
 import java.io.File
@@ -59,14 +58,14 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
             val fileText = it.readText().trim()
             val checklistItems = fileText.parseChecklistItems()
             if (checklistItems != null) {
-                saveNote(title.substringBeforeLast('.'), fileText, TYPE_CHECKLIST, "")
+                saveNote(title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value, "")
             } else {
                 if (updateFilesOnEdit) {
                     activity.handleSAFDialog(path) {
-                        saveNote(title, value, TYPE_TEXT, storePath)
+                        saveNote(title, value, NoteType.TYPE_TEXT.value, storePath)
                     }
                 } else {
-                    saveNote(title, value, TYPE_TEXT, storePath)
+                    saveNote(title, value, NoteType.TYPE_TEXT.value, storePath)
                 }
             }
         }

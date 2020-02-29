@@ -37,8 +37,7 @@ const val GRAVITY_CENTER = 1
 const val GRAVITY_RIGHT = 2
 
 // note types
-const val TYPE_TEXT = 0
-const val TYPE_CHECKLIST = 1
+enum class NoteType(val value: Int) { TYPE_TEXT(0), TYPE_CHECKLIST(1) }
 
 // mime types
 const val MIME_TEXT_PLAIN = "text/plain"
