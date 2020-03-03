@@ -9,7 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.simplemobiletools.commons.helpers.DEFAULT_WIDGET_BG_COLOR
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.helpers.DEFAULT_WIDGET_TEXT_COLOR
-import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
+import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.interfaces.NotesDao
 import com.simplemobiletools.notes.pro.interfaces.WidgetsDao
 import com.simplemobiletools.notes.pro.models.Note
@@ -53,7 +53,7 @@ abstract class NotesDatabase : RoomDatabase() {
         private fun insertFirstNote(context: Context) {
             Executors.newSingleThreadScheduledExecutor().execute {
                 val generalNote = context.resources.getString(R.string.general_note)
-                val note = Note(null, generalNote, "", TYPE_TEXT)
+                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value)
                 db!!.NotesDao().insertOrUpdate(note)
             }
         }

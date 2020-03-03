@@ -11,15 +11,14 @@ import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
-import com.simplemobiletools.notes.pro.helpers.TYPE_CHECKLIST
-import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
+import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_new_note.view.*
 
 class NewNoteDialog(val activity: Activity, callback: (note: Note) -> Unit) {
     init {
         val view = activity.layoutInflater.inflate(R.layout.dialog_new_note, null).apply {
-            new_note_type.check(if (activity.config.lastCreatedNoteType == TYPE_TEXT) type_text_note.id else type_checklist.id)
+            new_note_type.check(if (activity.config.lastCreatedNoteType == NoteType.TYPE_TEXT.value) type_text_note.id else type_checklist.id)
         }
 
         AlertDialog.Builder(activity)
@@ -35,7 +34,7 @@ class NewNoteDialog(val activity: Activity, callback: (note: Note) -> Unit) {
                                     title.isEmpty() -> activity.toast(R.string.no_title)
                                     activity.notesDB.getNoteIdWithTitle(title) != null -> activity.toast(R.string.title_taken)
                                     else -> {
-                                        val type = if (view.new_note_type.checkedRadioButtonId == view.type_checklist.id) TYPE_CHECKLIST else TYPE_TEXT
+                                        val type = if (view.new_note_type.checkedRadioButtonId == view.type_checklist.id) NoteType.TYPE_CHECKLIST.value else NoteType.TYPE_TEXT.value
                                         activity.config.lastCreatedNoteType = type
                                         val newNote = Note(null, title, "", type)
                                         callback(newNote)

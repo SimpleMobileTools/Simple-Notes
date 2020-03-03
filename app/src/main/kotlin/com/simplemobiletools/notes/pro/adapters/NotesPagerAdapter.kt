@@ -10,7 +10,7 @@ import com.simplemobiletools.notes.pro.fragments.ChecklistFragment
 import com.simplemobiletools.notes.pro.fragments.NoteFragment
 import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
-import com.simplemobiletools.notes.pro.helpers.TYPE_TEXT
+import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.models.Note
 
 class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity: Activity) : FragmentStatePagerAdapter(fm) {
@@ -30,7 +30,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
             return fragments[position]!!
         }
 
-        val fragment = if (note.type == TYPE_TEXT) TextFragment() else ChecklistFragment()
+        val fragment = if (note.type == NoteType.TYPE_TEXT.value) TextFragment() else ChecklistFragment()
         fragment.arguments = bundle
         fragments[position] = fragment
         return fragment
@@ -59,7 +59,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     fun saveAllFragmentTexts() = fragments.values.forEach { (it as? TextFragment)?.saveText(false) }
 
-    fun getNoteChecklistItems(position: Int) = (fragments[position] as? ChecklistFragment)?.getChecklistItems()
+    fun getNoteChecklistItems(position: Int) = (fragments[position] as? ChecklistFragment)?.checklistItems
 
     fun undo(position: Int) = (fragments[position] as? TextFragment)?.undo()
 

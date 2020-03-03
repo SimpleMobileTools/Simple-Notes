@@ -37,7 +37,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         }
 
         val textSize = context.getTextSize() / context.resources.displayMetrics.density
-        if (note!!.type == TYPE_CHECKLIST) {
+        if (note!!.type == NoteType.TYPE_CHECKLIST.value) {
             remoteView = RemoteViews(context.packageName, R.layout.item_checklist_widget).apply {
                 val checklistItem = checklistItems.getOrNull(position) ?: return@apply
                 setText(checklist_title, checklistItem.title)
@@ -91,7 +91,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         widgetTextColor = intent.getIntExtra(WIDGET_TEXT_COLOR, DEFAULT_WIDGET_TEXT_COLOR)
         val noteId = intent.getLongExtra(NOTE_ID, 0L)
         note = context.notesDB.getNoteWithId(noteId)
-        if (note?.type == TYPE_CHECKLIST) {
+        if (note?.type == NoteType.TYPE_CHECKLIST.value) {
             val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
             checklistItems = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.value, checklistItemType) ?: ArrayList(1)
             if (context.config.moveUndoneChecklistItems) {
@@ -103,7 +103,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
     override fun hasStableIds() = true
 
     override fun getCount(): Int {
-        return if (note?.type == TYPE_CHECKLIST) {
+        return if (note?.type == NoteType.TYPE_CHECKLIST.value) {
             checklistItems.size
         } else {
             1

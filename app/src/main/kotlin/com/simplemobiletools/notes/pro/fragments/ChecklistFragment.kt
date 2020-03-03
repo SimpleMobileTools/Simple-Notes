@@ -13,9 +13,7 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
-import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.notesDB
-import com.simplemobiletools.notes.pro.extensions.updateWidgets
+import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
@@ -24,11 +22,14 @@ import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.fragment_checklist.view.*
 
 class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
+
     private var noteId = 0L
-    private var note: Note? = null
     private var items = ArrayList<ChecklistItem>()
+    private var note: Note? = null
 
     lateinit var view: ViewGroup
+
+    val checklistItems get(): String = Gson().toJson(items)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_checklist, container, false) as ViewGroup
@@ -39,78 +40,113 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     override fun onResume() {
         super.onResume()
 
-        NotesHelper(activity!!).getNoteWithId(noteId) {
-            if (it != null && activity?.isDestroyed == false) {
-                note = it
-
-                val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-                items = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.value, checklistItemType) ?: ArrayList(1)
-                if (config!!.moveUndoneChecklistItems) {
-                    items.sortBy { it.isDone }
-                }
-
-                context!!.updateTextColors(view.checklist_holder)
-                setupFragment()
-            }
-        }
+        loadNoteById(noteId)
     }
 
     override fun setMenuVisibility(menuVisible: Boolean) {
         super.setMenuVisibility(menuVisible)
+
         if (menuVisible) {
             activity?.hideKeyboard()
         }
     }
 
+    private fun loadNoteById(noteId: Long) {
+        NotesHelper(requiredActivity).getNoteWithId(noteId) { storedNote ->
+            if (storedNote != null && activity?.isDestroyed == false) {
+                note = storedNote
+
+                try {
+                    val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
+                    items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.value, checklistItemType)
+                            ?: ArrayList(1)
+                } catch (e: Exception) {
+                    migrateCheckListOnFailure(storedNote)
+                }
+
+                if (config?.moveUndoneChecklistItems == true) {
+                    items.sortBy { it.isDone }
+                }
+
+                requiredActivity.updateTextColors(view.checklist_holder)
+                setupFragment()
+            }
+        }
+    }
+
+    private fun migrateCheckListOnFailure(note: Note) {
+        items.clear()
+
+        note.value.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEachIndexed { index, value ->
+            items.add(ChecklistItem(
+                    id = index,
+                    title = value,
+                    isDone = false
+            ))
+        }
+
+        saveChecklist()
+    }
+
     private fun setupFragment() {
-        val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus_vector, if (context!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
+        val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus_vector, if (requiredActivity.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
+
         view.apply {
-            checklist_fab.apply {
+            with(checklist_fab) {
                 setImageDrawable(plusIcon)
-                background.applyColorFilter(context!!.getAdjustedPrimaryColor())
+                background.applyColorFilter(requiredActivity.getAdjustedPrimaryColor())
                 setOnClickListener {
                     showNewItemDialog()
                 }
             }
 
-            fragment_placeholder_2.apply {
-                setTextColor(context!!.getAdjustedPrimaryColor())
+            with(fragment_placeholder_2) {
+                setTextColor(requiredActivity.getAdjustedPrimaryColor())
                 underlineText()
                 setOnClickListener {
                     showNewItemDialog()
                 }
             }
         }
+
         setupAdapter()
     }
 
     private fun showNewItemDialog() {
-        NewChecklistItemDialog(activity as SimpleActivity) {
-            var currentMaxId = items.maxBy { it.id }?.id ?: 0
-            it.forEach {
-                val checklistItem = ChecklistItem(currentMaxId + 1, it, false)
-                items.add(checklistItem)
-                currentMaxId++
+        NewChecklistItemDialog(activity as SimpleActivity) { titles ->
+            var currentMaxId = items.maxBy { item -> item.id }?.id ?: 0
+
+            titles.forEach { title ->
+                title.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
+                    items.add(ChecklistItem(currentMaxId + 1, row, false))
+                    currentMaxId++
+                }
             }
+
             saveNote()
-            if (items.size == it.size) {
-                setupAdapter()
-            } else {
-                (view.checklist_list.adapter as? ChecklistAdapter)?.notifyDataSetChanged()
-            }
+            setupAdapter()
+
+            (view.checklist_list.adapter as? ChecklistAdapter)?.notifyDataSetChanged()
         }
     }
 
     private fun setupAdapter() {
-        view.apply {
+        with(view) {
             fragment_placeholder.beVisibleIf(items.isEmpty())
             fragment_placeholder_2.beVisibleIf(items.isEmpty())
             checklist_list.beVisibleIf(items.isNotEmpty())
         }
 
-        ChecklistAdapter(activity as SimpleActivity, items, this, view.checklist_list, true) {
-            val clickedNote = it as ChecklistItem
+        ChecklistAdapter(
+                activity = activity as SimpleActivity,
+                items = items,
+                listener = this,
+                recyclerView = view.checklist_list,
+                showIcons = true
+        ) { item ->
+            val clickedNote = item as ChecklistItem
             clickedNote.isDone = !clickedNote.isDone
+
             saveNote(items.indexOfFirst { it.id == clickedNote.id })
             context?.updateWidgets()
         }.apply {
@@ -120,21 +156,21 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private fun saveNote(refreshIndex: Int = -1) {
         ensureBackgroundThread {
-            if (note != null && context != null) {
-                if (refreshIndex != -1) {
-                    view.checklist_list.post {
-                        view.checklist_list.adapter?.notifyItemChanged(refreshIndex)
+            context?.let { ctx ->
+                note?.let { currentNote ->
+                    if (refreshIndex != -1) {
+                        view.checklist_list.post {
+                            view.checklist_list.adapter?.notifyItemChanged(refreshIndex)
+                        }
                     }
-                }
 
-                note!!.value = getChecklistItems()
-                context?.notesDB?.insertOrUpdate(note!!)
-                context?.updateWidgets()
+                    currentNote.value = checklistItems
+                    ctx.notesDB.insertOrUpdate(currentNote)
+                    ctx.updateWidgets()
+                }
             }
         }
     }
-
-    fun getChecklistItems() = Gson().toJson(items)
 
     override fun saveChecklist() {
         saveNote()

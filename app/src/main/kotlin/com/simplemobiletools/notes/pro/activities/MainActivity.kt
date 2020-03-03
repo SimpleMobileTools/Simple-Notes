@@ -99,8 +99,8 @@ class MainActivity : SimpleActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         menu.apply {
-            findItem(R.id.undo).isVisible = showUndoButton && mCurrentNote.type == TYPE_TEXT
-            findItem(R.id.redo).isVisible = showRedoButton && mCurrentNote.type == TYPE_TEXT
+            findItem(R.id.undo).isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+            findItem(R.id.redo).isVisible = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
         }
 
         updateMenuItemColors(menu)
@@ -116,7 +116,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.export_all_notes).isVisible = shouldBeVisible
 
             saveNoteButton = findItem(R.id.save_note)
-            saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == TYPE_TEXT
+            saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
         }
 
         pager_title_strip.beVisibleIf(shouldBeVisible)
@@ -274,7 +274,7 @@ class MainActivity : SimpleActivity() {
                 }
             }
 
-            if (!config.showKeyboard || mCurrentNote.type == TYPE_CHECKLIST) {
+            if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
                 hideKeyboard()
             }
         }
@@ -361,7 +361,7 @@ class MainActivity : SimpleActivity() {
                     val fileText = it.readText().trim()
                     val checklistItems = fileText.parseChecklistItems()
                     if (checklistItems != null) {
-                        val note = Note(null, it.absolutePath.getFilenameFromPath().substringBeforeLast('.'), fileText, TYPE_CHECKLIST)
+                        val note = Note(null, it.absolutePath.getFilenameFromPath().substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value)
                         addNewNote(note)
                     } else {
                         runOnUiThread {
@@ -416,9 +416,9 @@ class MainActivity : SimpleActivity() {
                 val fileText = it.readText().trim()
                 val checklistItems = fileText.parseChecklistItems()
                 val note = if (checklistItems != null) {
-                    Note(null, title.substringBeforeLast('.'), fileText, TYPE_CHECKLIST)
+                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value)
                 } else {
-                    Note(null, title, "", TYPE_TEXT, path)
+                    Note(null, title, "", NoteType.TYPE_TEXT.value, path)
                 }
 
                 if (mNotes.any { it.title.equals(note.title, true) }) {
@@ -464,10 +464,10 @@ class MainActivity : SimpleActivity() {
 
     private fun exportAsFile() {
         ExportFileDialog(this, mCurrentNote) {
-            val textToExport = if (mCurrentNote.type == TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+            val textToExport = if (mCurrentNote.type == NoteType.TYPE_TEXT.value) getCurrentNoteText() else mCurrentNote.value
             if (textToExport == null || textToExport.isEmpty()) {
                 toast(R.string.unknown_error_occurred)
-            } else if (mCurrentNote.type == TYPE_TEXT) {
+            } else if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
                 showExportFilePickUpdateDialog(it, textToExport)
             } else {
                 tryExportNoteValueToFile(it, textToExport, true)
@@ -626,7 +626,7 @@ class MainActivity : SimpleActivity() {
 
     private fun saveCurrentNote(force: Boolean) {
         getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
-        if (mCurrentNote.type == TYPE_CHECKLIST) {
+        if (mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
             mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
         }
     }
@@ -712,7 +712,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun shareText() {
-        val text = if (mCurrentNote.type == TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT.value) getCurrentNoteText() else mCurrentNote.value
         if (text == null || text.isEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
