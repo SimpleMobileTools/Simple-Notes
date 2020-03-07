@@ -47,7 +47,7 @@
     <string name="autosave_notes">Notları otomatik kaydet</string>
     <string name="enable_line_wrap">Sözcük kaydırmayı etkinleştir</string>
     <string name="use_incognito_mode">Klavyelerin Gizli modunu kullan</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="move_undone_checklist_items">Tamamlanmamış yapılacak listesi öğelerini en üste taşı</string>
 
     <!-- Checklists -->
     <string name="checklist">Yapılacak listesi</string>
@@ -61,14 +61,14 @@
     <string name="import_folder">Klasörü içe aktar</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Widget\'ların rengini nasıl değiştirebilirim?</string>
+    <string name="faq_1_text">Yalnızca 1 etkin widget\'ınız varsa, yeniden oluşturabilir veya özelleştirmek için uygulama ayarlarındaki düğmeyi kullanabilirsiniz. Birden fazla etkin widget'ınız varsa, uygulama ayarlarındaki düğme kullanılamaz. Uygulama, widget başına renk özelleştirmeyi desteklediğinden, özelleştirmek istediğiniz widget\'ı yeniden oluşturmanız gerekir.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro - Create handy notes easily</string>
+    <string name="app_title">Basit Notlar Pro-Kolayca yararlı notlar oluşturun</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">A beautiful quick note taking app without ads or weird permissions.</string>
+    <string name="app_short_description">Reklamsız ve garip izinler istemeyen güzel bir hızlı not alma uygulaması.</string>
     <string name="app_long_description">
         Satın almanız gereken bir şey, adres veya aklınıza gelen bir fikir hakkında hızlı bir not almanız mı gerekti? O halde, aradığınız uygulama bu! Karmaşık kurulum adımları gerekmeden hemen notunuzu yazın. Otomatik kaydetme ile birlikte gelir, bu nedenle yanlışlıkla değişiklikleri kaybetmezsiniz. Birden fazla bağımsız not oluşturmayı destekler.
 
@@ -76,10 +76,10 @@
 
         Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sunar.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Basit Araçlar paketinin tamamını buradan inceleyin:</b>
         https://www.simplemobiletools.com
 
-        <b>Standalone website of Simple Notes Pro:</b>
+        <b>Basit Notlar Pro\'nun bağımsız web sitesi:</b>
         https://www.simplemobiletools.com/notes
 
         <b>Facebook:</b>
