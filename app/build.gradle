@@ -11,7 +11,7 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.simplemobiletools.notes.pro"
@@ -57,7 +57,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.simplemobiletools:commons:5.22.18'
+    implementation 'com.simplemobiletools:commons:5.22.19'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
 
     kapt 'androidx.room:room-compiler:2.2.2'
