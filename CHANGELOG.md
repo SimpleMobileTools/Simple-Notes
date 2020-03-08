@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.4.1 *(2020-03-08)*
+----------------------------
+
+ * Allow importing text as checklist items split at new lines
+ * Fixed some crashes at importing text with special characters
+ * Other stability and translation improvements
+
 Version 6.4.0 *(2020-01-30)*
 ----------------------------
 
