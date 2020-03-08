@@ -62,7 +62,7 @@
 
     <!-- FAQ -->
     <string name="faq_1_title">Widget\'ların rengini nasıl değiştirebilirim?</string>
-    <string name="faq_1_text">Yalnızca 1 etkin widget\'ınız varsa, yeniden oluşturabilir veya özelleştirmek için uygulama ayarlarındaki düğmeyi kullanabilirsiniz. Birden fazla etkin widget'ınız varsa, uygulama ayarlarındaki düğme kullanılamaz. Uygulama, widget başına renk özelleştirmeyi desteklediğinden, özelleştirmek istediğiniz widget\'ı yeniden oluşturmanız gerekir.</string>
+    <string name="faq_1_text">Yalnızca 1 etkin widget\'ınız varsa, yeniden oluşturabilir veya özelleştirmek için uygulama ayarlarındaki düğmeyi kullanabilirsiniz. Birden fazla etkin widget\'ınız varsa, uygulama ayarlarındaki düğme kullanılamaz. Uygulama, widget başına renk özelleştirmeyi desteklediğinden, özelleştirmek istediğiniz widget\'ı yeniden oluşturmanız gerekir.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
