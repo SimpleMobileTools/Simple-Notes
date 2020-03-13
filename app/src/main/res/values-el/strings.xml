@@ -15,7 +15,7 @@
     <string name="general_note">Γενική σημείωση</string>
     <string name="create_new_note">Δημιουργία νέας σημείωσης</string>
     <string name="add_to_note">Προσθήκη στη σημείωση</string>
-    <string name="unsaved_changes_warning">Έχετε ορισμένες μη αποθηκευμένες αλλαγές. Τι θέλεις να κάνεις με αυτές;</string>
+    <string name="unsaved_changes_warning">Έχετε ορισμένες μη αποθηκευμένες αλλαγές. Τι θέλετε να κάνετε με αυτές;</string>
     <string name="note_shown_widget">Σημείωση που εμφανίζεται στο widget:</string>
     <string name="new_note_type">Νέος τύπος σημείωσης:</string>
     <string name="text_note">Σημείωση κειμένου</string>
@@ -66,29 +66,29 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Απλές σημειώσεις Pro: προγραμματίζει &amp; οργανώνει</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Απλός οργανωτής: Σημειώσεις &amp; αντίγραφα με το εργαλείο γρήγορης υπενθύμισης</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★ Χρειάζεστε μια γρήγορη σημείωση κάτι για αγορά, μια διεύθυνση ή μια ιδέα; Στη συνέχεια, μην ψάχνετε κάτι άλλο καθώς αυτό είναι το απλό εργαλείο οργάνωσης που αναζητάτε: Απλές σημειώσεις: Οργάνωση και προγραμματισμός λίστας εκκρεμών εργασιών! Δεν απαιτούνται περίπλοκες ρυθμίσεις, απλά πληκτρολογήστε αυτό για το οποίο θέλετε να σημειώσετε, γρήγορες λίστες, λίστες ελέγχου ή αντίγραφα ασφαλείας για οτι σκέφτεστε. Με το απλό σημειωματάριο μπορείτε να θυμάστε τα πάντα γρήγορα! Οι αγορές ειδών, οι σκέψεις σας και η εύκολη ρύθμιση υπενθυμίσεων για λήψη σημειώσεων δεν ήταν ποτέ ευκολότερη ★
 
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+        Ο Απλός προγραμματιστής σημειώσεων είναι γρήγορος, απλός στη χρήση οργανωτής και προσεκτικός προγραμματιστής θα χρησιμεύσει ως ανεκτίμητο εργαλείο και σύντροφος, βοηθώντας σας να θυμάστε την απαραίτητη πληροφορία!
 
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+        Το Εργαλείο υπενθύμισης σας επιτρέπει να παρακολουθείτε τα καθήκοντά σας, να δημιουργείτε ημερήσιες λίστες ελέγχου για στοιχεία ή ιδέες με πρωτοφανή απλότητα, με απαράμιλλη αξία που εξοικονομεί χρόνο. Διαχειριστείτε το χρονοδιάγραμμά σας με γρήγορο και απλό τρόπο.
 
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+        Αυτό το εργαλείο υπενθύμισης σημειωματάριου συνοδεύεται από αυτόματη αποθήκευση, ώστε να μην απορρίψετε τις αλλαγές σας κατά λάθος. Επίσης, υποστηρίζει τη δημιουργία πολλών ανεξάρτητων σημειώσεων και λιστών απλού κειμένου πολύ γρήγορα.
 
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+        Μπορείτε εύκολα να αποκτήσετε πρόσβαση στη σημείωση και να οργανώσετε τη λίστα των υποψήφιων εργασιών σας σε χρόνο μηδέν χρησιμοποιώντας το προσαρμόσιμο και με δυνατότητα αλλαγής μεγέθους widget, το οποίο ανοίγει την εφαρμογή με το πάτημα.
 
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+        Είναι φιλική προς το χρήστη και δεν περιέχει καμία διαφήμιση ή περιττά δικαιώματα - &amp; χωρίς συνημμένες συμβολοσειρές. Είναι πλήρως ανοιχτού κώδικα, παρέχει προσαρμόσιμα χρώματα τα οποία μπορούν να προσαρμοστούν με γρήγορη εναλλαγή.
 
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+        <b>Απλές σημειώσεις Pro: προγραμματίζει &amp; οργανώνει</b> είναι η καλύτερος οργανωτής και προγραμματιστής λίστας που μπορείτε να χρησιμοποιήσετε χωρίς διαφημίσεις. Εάν χρειάζεστε έναν οργανωτή υψηλής ποιότητας για γρήγορες και καλές σημειώσεις, μια αξιόπιστη και φιλική προς το χρήστη υπενθύμιση που να είναι πραγματικά απλή στη χρήση, πραγματοποιήστε λήψη της εφαρμογής μας τώρα:) Έχετε το δικό σας προσωπικό σημειωματάριο στην τσέπη κάθε μέρα και έχετε ένα σχεδιαστή αντιγράφων ασφαλείας, ώστε να μην ανησυχείτε μήπως ξεχάσετε μια σημαντική σύσκεψη ή τη λίστα αγορών σας :).
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        Διατίθεται με σχεδίαση υλικού και σκούρο θέμα από προεπιλογή, παρέχει εξαιρετική εμπειρία χρήστη για εύκολη χρήση. Η έλλειψη πρόσβασης στο διαδίκτυο σάς παρέχει περισσότερο απόρρητο, ασφάλεια και σταθερότητα από οτι άλλες εφαρμογές.
 
         Δεν περιέχει διαφημίσεις ή περιττές άδειες. Είναι πλήρως ανοιχτού κώδικα, και παρέχει προσαρμόσιμα χρώματα.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Δείτε την πλήρη σειρά των Απλών Εργαλείων εδώ:</b>
         https://www.simplemobiletools.com
 
         <b>Standalone website of Simple Notes Pro:</b>
