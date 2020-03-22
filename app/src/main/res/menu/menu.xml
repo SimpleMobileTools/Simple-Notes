@@ -17,6 +17,11 @@
         android:title="@string/redo"
         app:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/open_search"
+        android:icon="@drawable/ic_search_vector"
+        android:title="@string/search"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/open_note"
         android:icon="@drawable/ic_folder_open_vector"
         android:title="@string/open_note"

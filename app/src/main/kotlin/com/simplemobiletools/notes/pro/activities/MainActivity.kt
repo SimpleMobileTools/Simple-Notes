@@ -3,13 +3,17 @@ package com.simplemobiletools.notes.pro.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
+import android.text.style.BackgroundColorSpan
 import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
@@ -26,9 +30,13 @@ import com.simplemobiletools.notes.pro.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.dialogs.*
 import com.simplemobiletools.notes.pro.extensions.*
-import com.simplemobiletools.notes.pro.helpers.*
+import com.simplemobiletools.notes.pro.helpers.MIME_TEXT_PLAIN
+import com.simplemobiletools.notes.pro.helpers.NoteType
+import com.simplemobiletools.notes.pro.helpers.NotesHelper
+import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.search_item.*
 import java.io.File
 import java.nio.charset.Charset
 
@@ -47,6 +55,9 @@ class MainActivity : SimpleActivity() {
     private var showSaveButton = false
     private var showUndoButton = false
     private var showRedoButton = false
+    private var searchIndex = 0
+    private var searchMatches = emptyList<Int>()
+    private var searchIsActive = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +76,127 @@ class MainActivity : SimpleActivity() {
         }
 
         wasInit = true
+
         checkAppOnSDCard()
+        searchListeners()
+    }
+
+    private fun searchListeners() {
+        search_query.onTextChangeListener { query ->
+            currentNotesView()?.let { noteView ->
+                noteView.setText(noteView.value)
+
+                if (query.isNotBlank() && query.length > 1) {
+                    searchMatches = searchMatches(query, noteView.value)
+                    searchHighLightText(noteView, query)
+                }
+            }
+        }
+
+        search_previous.setOnClickListener {
+            currentNotesView()?.let { noteView ->
+                if (searchIndex > 0) {
+                    searchIndex--
+                }
+                else {
+                    searchIndex = searchMatches.lastIndex
+                }
+
+                selectMatch(noteView)
+            }
+        }
+
+        search_next.setOnClickListener {
+            currentNotesView()?.let { noteView ->
+                if (searchIndex < searchMatches.lastIndex) {
+                    searchIndex++
+                }
+                else {
+                    searchIndex = 0
+                }
+
+                selectMatch(noteView)
+            }
+        }
+
+        search_clear.setOnClickListener {
+            if (search_query.value.isNotBlank())
+                search_query.text?.clear()
+            else
+                searchHide()
+        }
+
+        view_pager.onPageChangeListener {
+            if (searchIsActive) searchHide()
+        }
+    }
+
+    private fun selectMatch(noteView: MyEditText) {
+        if (searchMatches.isNotEmpty()) {
+            noteView.requestFocus()
+            noteView.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
+        } else {
+            hideKeyboard()
+            //toast("No matches")//TODO
+        }
+    }
+
+    private fun searchMatches(textToHighlight: String, content: String): ArrayList<Int> {
+        val indexes = arrayListOf<Int>()
+        var indexOf = content.indexOf(textToHighlight, 0, ignoreCase = true)
+
+        var offset = 0
+        while (offset < content.length && indexOf != -1) {
+            indexOf = content.indexOf(textToHighlight, offset, ignoreCase = true)
+
+            if (indexOf == -1)
+                break
+            else
+                indexes.add(indexOf)
+
+            offset = indexOf + 1
+        }
+
+        return indexes
+    }
+
+    private fun searchHighLightText(view: MyEditText, textToHighlight: String) {
+        val content = view.text.toString()
+        var indexOf = content.indexOf(textToHighlight, 0, true)
+        val wordToSpan = SpannableString(view.text)
+
+        var offset = 0
+        while (offset < content.length && indexOf != -1) {
+            indexOf = content.indexOf(textToHighlight, offset, true)
+
+            if (indexOf == -1) break
+            else {
+                wordToSpan.setSpan(BackgroundColorSpan(color(R.color.color_accent)), indexOf, indexOf + textToHighlight.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                view.setText(wordToSpan, TextView.BufferType.SPANNABLE)
+            }
+
+            offset = indexOf + 1
+        }
+    }
+
+    private fun searchShow() {
+        searchIsActive = true
+        search_root.beVisible()
+        showKeyboard(search_query)
+
+        currentNotesView()?.let { noteView ->
+            noteView.requestFocus()
+            noteView.setSelection(0)
+        }
+
+        search_query.postDelayed({
+            search_query.requestFocus()
+        }, 250)
+    }
+
+    private fun searchHide() {
+        searchIsActive = false
+        search_root.beGone()
     }
 
     override fun onResume() {
@@ -129,6 +260,7 @@ class MainActivity : SimpleActivity() {
         }
 
         when (item.itemId) {
+            R.id.open_search -> searchShow()
             R.id.open_note -> displayOpenNoteDialog()
             R.id.save_note -> saveNote()
             R.id.undo -> undo()
@@ -627,7 +759,8 @@ class MainActivity : SimpleActivity() {
     private fun saveCurrentNote(force: Boolean) {
         getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
         if (mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
-            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
+            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem)
+                    ?: ""
         }
     }
 
@@ -730,26 +863,28 @@ class MainActivity : SimpleActivity() {
     }
 
     fun currentNoteTextChanged(newText: String, showUndo: Boolean, showRedo: Boolean) {
-        var shouldRecreateMenu = false
-        if (showUndo != showUndoButton) {
-            showUndoButton = showUndo
-            shouldRecreateMenu = true
-        }
-
-        if (showRedo != showRedoButton) {
-            showRedoButton = showRedo
-            shouldRecreateMenu = true
-        }
-
-        if (!config.autosaveNotes) {
-            showSaveButton = newText != mCurrentNote.value
-            if (showSaveButton != saveNoteButton?.isVisible) {
+        if (searchIsActive.not()) {
+            var shouldRecreateMenu = false
+            if (showUndo != showUndoButton) {
+                showUndoButton = showUndo
                 shouldRecreateMenu = true
             }
-        }
 
-        if (shouldRecreateMenu) {
-            invalidateOptionsMenu()
+            if (showRedo != showRedoButton) {
+                showRedoButton = showRedo
+                shouldRecreateMenu = true
+            }
+
+            if (!config.autosaveNotes) {
+                showSaveButton = newText != mCurrentNote.value
+                if (showSaveButton != saveNoteButton?.isVisible) {
+                    shouldRecreateMenu = true
+                }
+            }
+
+            if (shouldRecreateMenu) {
+                invalidateOptionsMenu()
+            }
         }
     }
 
