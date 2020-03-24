@@ -45,6 +45,8 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
         }
     }
 
+    fun textFragment(position: Int): TextFragment? = (fragments[position] as? TextFragment)
+
     fun getCurrentNotesView(position: Int) = (fragments[position] as? TextFragment)?.getNotesView()
 
     fun getCurrentNoteViewText(position: Int) = (fragments[position] as? TextFragment)?.getCurrentNoteViewText()

@@ -3,6 +3,7 @@ package com.simplemobiletools.notes.pro.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.method.ArrowKeyMovementMethod
@@ -30,6 +31,7 @@ import com.simplemobiletools.notes.pro.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.dialogs.*
 import com.simplemobiletools.notes.pro.extensions.*
+import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.MIME_TEXT_PLAIN
 import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
@@ -84,12 +86,15 @@ class MainActivity : SimpleActivity() {
     private fun searchListeners() {
         search_query.onTextChangeListener { query ->
             currentNotesView()?.let { noteView ->
-                noteView.setText(noteView.value)
+                currentTextFragment?.removeTextWatcher()
+                searchClearSpans(noteView.text)
 
                 if (query.isNotBlank() && query.length > 1) {
                     searchMatches = searchMatches(query, noteView.value)
                     searchHighLightText(noteView, query)
                 }
+
+                currentTextFragment?.setTextWatcher()
             }
         }
 
@@ -127,7 +132,26 @@ class MainActivity : SimpleActivity() {
         }
 
         view_pager.onPageChangeListener {
-            if (searchIsActive) searchHide()
+            currentTextFragment?.removeTextWatcher()
+            currentNotesView()?.let { noteView ->
+                searchClearSpans(noteView.text)
+            }
+
+            search_query.text?.clear()
+            searchHide()
+
+            currentTextFragment?.setTextWatcher()
+        }
+    }
+    
+    private val currentTextFragment: TextFragment? get() = mAdapter?.textFragment(view_pager.currentItem)
+
+    private fun searchClearSpans(editable: Editable) {
+        val spans = editable.getSpans(0, editable.length, Any::class.java)
+        for (span in spans) {
+            if (span is BackgroundColorSpan) {
+                editable.removeSpan(span)
+            }
         }
     }
 
@@ -135,10 +159,8 @@ class MainActivity : SimpleActivity() {
         if (searchMatches.isNotEmpty()) {
             noteView.requestFocus()
             noteView.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
-        } else {
+        } else
             hideKeyboard()
-            //toast("No matches")//TODO
-        }
     }
 
     private fun searchMatches(textToHighlight: String, content: String): ArrayList<Int> {
@@ -245,6 +267,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.open_note).isVisible = shouldBeVisible
             findItem(R.id.delete_note).isVisible = shouldBeVisible
             findItem(R.id.export_all_notes).isVisible = shouldBeVisible
+            findItem(R.id.open_search).isVisible = view_pager.currentItem != 0
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
