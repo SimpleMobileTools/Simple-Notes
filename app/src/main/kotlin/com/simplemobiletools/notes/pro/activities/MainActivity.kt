@@ -14,6 +14,7 @@ import android.view.ActionMode
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import androidx.core.graphics.ColorUtils
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
@@ -134,7 +135,6 @@ class MainActivity : SimpleActivity() {
         }
 
         search_clear.setOnClickListener {
-            search_query.text?.clear()
             searchHide()
         }
 
@@ -144,11 +144,18 @@ class MainActivity : SimpleActivity() {
                 searchClearSpans(noteView.text)
             }
 
-            search_query.text?.clear()
             searchHide()
-
             currentTextFragment?.setTextWatcher()
         }
+
+        search_query.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                search_next.performClick()
+                return@OnEditorActionListener true
+            }
+
+            false
+        })
     }
     
     private val currentTextFragment: TextFragment? get() = mAdapter?.textFragment(view_pager.currentItem)
@@ -202,7 +209,7 @@ class MainActivity : SimpleActivity() {
             if (indexOf == -1) {
                 break
             } else {
-                val spanBgColor = BackgroundColorSpan(ColorUtils.setAlphaComponent(config.primaryColor, 90))
+                val spanBgColor = BackgroundColorSpan(ColorUtils.setAlphaComponent(config.primaryColor, 128))
                 val spanFlag = Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                 wordToSpan.setSpan(spanBgColor, indexOf, indexOf + highlightText.length, spanFlag)
                 view.setText(wordToSpan, TextView.BufferType.SPANNABLE)
@@ -228,6 +235,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun searchHide() {
+        search_query.text?.clear()
         searchIsActive = false
         search_root.beGone()
     }
@@ -348,6 +356,8 @@ class MainActivity : SimpleActivity() {
                 }
                 super.onBackPressed()
             }
+        } else if (searchIsActive) {
+            searchHide()
         } else {
             super.onBackPressed()
         }
