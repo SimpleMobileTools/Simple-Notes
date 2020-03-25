@@ -77,7 +77,8 @@ class TextFragment : NoteFragment() {
         if (config!!.autosaveNotes) {
             saveText(false)
         }
-        view.text_note_view.removeTextChangedListener(textWatcher)
+
+        removeTextWatcher()
     }
 
     override fun setMenuVisibility(menuVisible: Boolean) {
@@ -154,8 +155,11 @@ class TextFragment : NoteFragment() {
             view.notes_counter.beGone()
         }
 
-        view.text_note_view.addTextChangedListener(textWatcher)
+        setTextWatcher()
     }
+
+    fun setTextWatcher() = view.text_note_view.addTextChangedListener(textWatcher)
+    fun removeTextWatcher() = view.text_note_view.removeTextChangedListener(textWatcher)
 
     fun updateNoteValue(value: String) {
         note?.value = value

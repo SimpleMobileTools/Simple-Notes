@@ -4,6 +4,7 @@ import android.appwidget.AppWidgetManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import androidx.core.content.ContextCompat
 import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.helpers.Config
 import com.simplemobiletools.notes.pro.helpers.MyWidgetProvider
@@ -26,3 +27,5 @@ fun Context.updateWidgets() {
         }
     }
 }
+
+fun Context.color(id: Int) = ContextCompat.getColor(this, id)
