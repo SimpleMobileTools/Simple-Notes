@@ -64,5 +64,5 @@
         android:layout_height="1dp"
         android:layout_gravity="bottom"
         android:alpha="0.1"
-        android:background="#fff" />
+        android:background="@color/md_grey_white" />
 </FrameLayout>

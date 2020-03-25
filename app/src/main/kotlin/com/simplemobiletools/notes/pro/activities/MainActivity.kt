@@ -190,19 +190,21 @@ class MainActivity : SimpleActivity() {
         return indexes
     }
 
-    private fun searchHighLightText(view: MyEditText, textToHighlight: String) {
+    private fun searchHighLightText(view: MyEditText, highlightText: String) {
         val content = view.text.toString()
-        var indexOf = content.indexOf(textToHighlight, 0, true)
+        var indexOf = content.indexOf(highlightText, 0, true)
         val wordToSpan = SpannableString(view.text)
 
         var offset = 0
         while (offset < content.length && indexOf != -1) {
-            indexOf = content.indexOf(textToHighlight, offset, true)
+            indexOf = content.indexOf(highlightText, offset, true)
 
             if (indexOf == -1) {
                 break
             } else {
-                wordToSpan.setSpan(BackgroundColorSpan(ColorUtils.setAlphaComponent(config.primaryColor, 90)), indexOf, indexOf + textToHighlight.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                val spanBgColor = BackgroundColorSpan(ColorUtils.setAlphaComponent(config.primaryColor, 90))
+                val spanFlag = Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                wordToSpan.setSpan(spanBgColor, indexOf, indexOf + highlightText.length, spanFlag)
                 view.setText(wordToSpan, TextView.BufferType.SPANNABLE)
             }
 
@@ -245,10 +247,11 @@ class MainActivity : SimpleActivity() {
         }
         updateTextColors(view_pager)
 
+        val contrastColor = config.primaryColor.getContrastColor()
         search_root.setBackgroundColor(config.primaryColor)
-        search_previous.applyColorFilter(config.primaryColor.getContrastColor())
-        search_next.applyColorFilter(config.primaryColor.getContrastColor())
-        search_clear.applyColorFilter(config.primaryColor.getContrastColor())
+        search_previous.applyColorFilter(contrastColor)
+        search_next.applyColorFilter(contrastColor)
+        search_clear.applyColorFilter(contrastColor)
     }
 
     override fun onPause() {
@@ -356,6 +359,7 @@ class MainActivity : SimpleActivity() {
         view_pager.currentItem = getWantedNoteIndex(wantedNoteId)
         checkIntents(intent)
     }
+
     private val currentItemIsCheckList get() = mAdapter?.isChecklistFragment(view_pager.currentItem) ?: false
 
     private fun checkIntents(intent: Intent) {
