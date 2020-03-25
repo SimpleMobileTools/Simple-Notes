@@ -15,6 +15,7 @@ import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
+import androidx.core.graphics.ColorUtils
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
@@ -95,6 +96,15 @@ class MainActivity : SimpleActivity() {
                 }
 
                 currentTextFragment?.setTextWatcher()
+
+                if (searchMatches.isNotEmpty()) {
+                    noteView.requestFocus()
+                    noteView.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
+                }
+
+                search_query.postDelayed({
+                    search_query.requestFocus()
+                }, 50)
             }
         }
 
@@ -115,8 +125,7 @@ class MainActivity : SimpleActivity() {
             currentNotesView()?.let { noteView ->
                 if (searchIndex < searchMatches.lastIndex) {
                     searchIndex++
-                }
-                else {
+                } else {
                     searchIndex = 0
                 }
 
@@ -125,10 +134,8 @@ class MainActivity : SimpleActivity() {
         }
 
         search_clear.setOnClickListener {
-            if (search_query.value.isNotBlank())
-                search_query.text?.clear()
-            else
-                searchHide()
+            search_query.text?.clear()
+            searchHide()
         }
 
         view_pager.onPageChangeListener {
@@ -171,10 +178,11 @@ class MainActivity : SimpleActivity() {
         while (offset < content.length && indexOf != -1) {
             indexOf = content.indexOf(textToHighlight, offset, ignoreCase = true)
 
-            if (indexOf == -1)
+            if (indexOf == -1) {
                 break
-            else
+            } else {
                 indexes.add(indexOf)
+            }
 
             offset = indexOf + 1
         }
@@ -191,9 +199,10 @@ class MainActivity : SimpleActivity() {
         while (offset < content.length && indexOf != -1) {
             indexOf = content.indexOf(textToHighlight, offset, true)
 
-            if (indexOf == -1) break
-            else {
-                wordToSpan.setSpan(BackgroundColorSpan(color(R.color.color_accent)), indexOf, indexOf + textToHighlight.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            if (indexOf == -1) {
+                break
+            } else {
+                wordToSpan.setSpan(BackgroundColorSpan(ColorUtils.setAlphaComponent(config.primaryColor, 90)), indexOf, indexOf + textToHighlight.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                 view.setText(wordToSpan, TextView.BufferType.SPANNABLE)
             }
 
@@ -235,6 +244,11 @@ class MainActivity : SimpleActivity() {
             setTextColor(config.textColor)
         }
         updateTextColors(view_pager)
+
+        search_root.setBackgroundColor(config.primaryColor)
+        search_previous.applyColorFilter(config.primaryColor.getContrastColor())
+        search_next.applyColorFilter(config.primaryColor.getContrastColor())
+        search_clear.applyColorFilter(config.primaryColor.getContrastColor())
     }
 
     override fun onPause() {
@@ -267,7 +281,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.open_note).isVisible = shouldBeVisible
             findItem(R.id.delete_note).isVisible = shouldBeVisible
             findItem(R.id.export_all_notes).isVisible = shouldBeVisible
-            findItem(R.id.open_search).isVisible = view_pager.currentItem != 0
+            findItem(R.id.open_search).isVisible = currentItemIsCheckList.not()
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
@@ -342,6 +356,7 @@ class MainActivity : SimpleActivity() {
         view_pager.currentItem = getWantedNoteIndex(wantedNoteId)
         checkIntents(intent)
     }
+    private val currentItemIsCheckList get() = mAdapter?.isChecklistFragment(view_pager.currentItem) ?: false
 
     private fun checkIntents(intent: Intent) {
         intent.apply {

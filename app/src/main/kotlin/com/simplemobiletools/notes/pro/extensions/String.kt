@@ -21,5 +21,9 @@ fun String.parseChecklistItems(): ArrayList<ChecklistItem>? {
 }
 
 @RequiresApi(Build.VERSION_CODES.N)
-fun String.toHtml() = if (isNougatPlus()) Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY) else Html.fromHtml(this)
+fun String.toHtml() =
+        if (isNougatPlus())
+            Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY)
+        else
+            Html.fromHtml(this)
 
