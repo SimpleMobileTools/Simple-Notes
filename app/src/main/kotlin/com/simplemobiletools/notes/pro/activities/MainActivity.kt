@@ -61,7 +61,7 @@ class MainActivity : SimpleActivity() {
     private var showRedoButton = false
     private var searchIndex = 0
     private var searchMatches = emptyList<Int>()
-    private var searchIsActive = false
+    private var isSearchActive = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,7 +89,7 @@ class MainActivity : SimpleActivity() {
         search_query.onTextChangeListener { query ->
             currentNotesView()?.let { noteView ->
                 currentTextFragment?.removeTextWatcher()
-                searchClearSpans(noteView.text)
+                noteView.text.clearSpans()
 
                 if (query.isNotBlank() && query.length > 1) {
                     searchMatches = searchMatches(query, noteView.value)
@@ -141,7 +141,7 @@ class MainActivity : SimpleActivity() {
         view_pager.onPageChangeListener {
             currentTextFragment?.removeTextWatcher()
             currentNotesView()?.let { noteView ->
-                searchClearSpans(noteView.text)
+                noteView.text.clearSpans()
             }
 
             searchHide()
@@ -159,15 +159,6 @@ class MainActivity : SimpleActivity() {
     }
     
     private val currentTextFragment: TextFragment? get() = mAdapter?.textFragment(view_pager.currentItem)
-
-    private fun searchClearSpans(editable: Editable) {
-        val spans = editable.getSpans(0, editable.length, Any::class.java)
-        for (span in spans) {
-            if (span is BackgroundColorSpan) {
-                editable.removeSpan(span)
-            }
-        }
-    }
 
     private fun selectMatch(noteView: MyEditText) {
         if (searchMatches.isNotEmpty()) {
@@ -220,7 +211,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun searchShow() {
-        searchIsActive = true
+        isSearchActive = true
         search_root.beVisible()
         showKeyboard(search_query)
 
@@ -236,7 +227,7 @@ class MainActivity : SimpleActivity() {
 
     private fun searchHide() {
         search_query.text?.clear()
-        searchIsActive = false
+        isSearchActive = false
         search_root.beGone()
     }
 
@@ -356,7 +347,7 @@ class MainActivity : SimpleActivity() {
                 }
                 super.onBackPressed()
             }
-        } else if (searchIsActive) {
+        } else if (isSearchActive) {
             searchHide()
         } else {
             super.onBackPressed()
@@ -916,7 +907,7 @@ class MainActivity : SimpleActivity() {
     }
 
     fun currentNoteTextChanged(newText: String, showUndo: Boolean, showRedo: Boolean) {
-        if (searchIsActive.not()) {
+        if (isSearchActive.not()) {
             var shouldRecreateMenu = false
             if (showUndo != showUndoButton) {
                 showUndoButton = showUndo
