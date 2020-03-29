@@ -234,7 +234,7 @@ class MainActivity : SimpleActivity() {
 
             if (action == Intent.ACTION_VIEW) {
                 val realPath = intent.getStringExtra(REAL_FILE_PATH)
-                if (realPath != null) {
+                if (realPath != null && hasPermission(PERMISSION_READ_STORAGE)) {
                     val file = File(realPath)
                     handleUri(Uri.fromFile(file))
                 } else {
@@ -280,13 +280,9 @@ class MainActivity : SimpleActivity() {
                 return@getNoteIdWithPath
             }
 
-            handlePermission(PERMISSION_WRITE_STORAGE) {
-                if (it) {
-                    NotesHelper(this).getNotes {
-                        mNotes = it
-                        importUri(uri)
-                    }
-                }
+            NotesHelper(this).getNotes {
+                mNotes = it
+                importUri(uri)
             }
         }
     }
@@ -507,7 +503,7 @@ class MainActivity : SimpleActivity() {
 
     private fun openFile() {
         FilePickerDialog(this, canAddShowHiddenButton = true) {
-            openFile(it, true) {
+            checkFile(it, true) {
                 ensureBackgroundThread {
                     val fileText = it.readText().trim()
                     val checklistItems = fileText.parseChecklistItems()
@@ -527,7 +523,7 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun openFile(path: String, checkTitle: Boolean, onChecksPassed: (file: File) -> Unit) {
+    private fun checkFile(path: String, checkTitle: Boolean, onChecksPassed: (file: File) -> Unit) {
         val file = File(path)
         if (path.isMediaFile()) {
             toast(R.string.invalid_file_format)
@@ -537,6 +533,15 @@ class MainActivity : SimpleActivity() {
             toast(R.string.title_taken)
         } else {
             onChecksPassed(file)
+        }
+    }
+
+    private fun checkUri(uri: Uri, onChecksPassed: () -> Unit) {
+        val inputStream = contentResolver.openInputStream(uri) ?: return
+        if (inputStream.available() > 1000 * 1000) {
+            toast(R.string.file_too_large)
+        } else {
+            onChecksPassed()
         }
     }
 
@@ -552,17 +557,40 @@ class MainActivity : SimpleActivity() {
             "file" -> openPath(uri.path!!)
             "content" -> {
                 val realPath = getRealPathFromURI(uri)
-                if (realPath != null) {
-                    openPath(realPath)
+                if (hasPermission(PERMISSION_READ_STORAGE)) {
+                    if (realPath != null) {
+                        openPath(realPath)
+                    } else {
+                        R.string.unknown_error_occurred
+                    }
+                } else if (realPath != null && realPath != "") {
+                    checkFile(realPath, false) {
+                        addNoteFromUri(uri, realPath.getFilenameFromPath())
+                    }
                 } else {
-                    R.string.unknown_error_occurred
+                    checkUri(uri) {
+                        addNoteFromUri(uri)
+                    }
                 }
             }
         }
     }
 
+    private fun addNoteFromUri(uri: Uri, filename: String? = null) {
+        val noteTitle = if (filename?.isEmpty() == true) {
+            getNewNoteTitle()
+        } else {
+            filename!!
+        }
+
+        val inputStream = contentResolver.openInputStream(uri)
+        val content = inputStream?.bufferedReader().use { it!!.readText() }
+        val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value, "")
+        addNewNote(note)
+    }
+
     private fun openPath(path: String) {
-        openFile(path, false) {
+        checkFile(path, false) {
             val title = path.getFilenameFromPath()
             try {
                 val fileText = it.readText().trim()
@@ -595,6 +623,18 @@ class MainActivity : SimpleActivity() {
                     }
                 }
             }
+        }
+    }
+
+    private fun getNewNoteTitle(): String {
+        val base = getString(R.string.text_note)
+        var i = 1
+        while (true) {
+            val tryTitle = "$base $i"
+            if (mNotes.none { it.title == tryTitle }) {
+                return tryTitle
+            }
+            i++
         }
     }
 
