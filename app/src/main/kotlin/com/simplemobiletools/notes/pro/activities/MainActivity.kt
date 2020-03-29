@@ -42,6 +42,7 @@ import java.nio.charset.Charset
 class MainActivity : SimpleActivity() {
     private val EXPORT_FILE_SYNC = 1
     private val EXPORT_FILE_NO_SYNC = 2
+    private val PICK_OPEN_FILE_INTENT = 1
 
     private lateinit var mCurrentNote: Note
     private var mNotes = ArrayList<Note>()
@@ -219,6 +220,13 @@ class MainActivity : SimpleActivity() {
         val wantedNoteId = intent.getLongExtra(OPEN_NOTE_ID, -1L)
         view_pager.currentItem = getWantedNoteIndex(wantedNoteId)
         checkIntents(intent)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+        super.onActivityResult(requestCode, resultCode, resultData)
+        if (requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null) {
+            importUri(resultData.data!!)
+        }
     }
 
     private val currentItemIsCheckList get() = mAdapter?.isChecklistFragment(view_pager.currentItem) ?: false
@@ -494,9 +502,13 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun tryOpenFile() {
-        handlePermission(PERMISSION_WRITE_STORAGE) {
-            if (it) {
-                openFile()
+        if (hasPermission(PERMISSION_READ_STORAGE)) {
+            openFile()
+        } else {
+            Intent(Intent.ACTION_GET_CONTENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "text/*"
+                startActivityForResult(this, PICK_OPEN_FILE_INTENT)
             }
         }
     }
@@ -577,10 +589,10 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun addNoteFromUri(uri: Uri, filename: String? = null) {
-        val noteTitle = if (filename?.isEmpty() == true) {
-            getNewNoteTitle()
+        val noteTitle = if (filename?.isEmpty() == false) {
+            filename
         } else {
-            filename!!
+            getNewNoteTitle()
         }
 
         val inputStream = contentResolver.openInputStream(uri)
