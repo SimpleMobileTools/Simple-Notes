@@ -56,13 +56,6 @@
 
         </RelativeLayout>
 
-        <View
-            android:id="@+id/text_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/divider_grey"
-            android:importantForAccessibility="no"/>
-
         <com.simplemobiletools.commons.views.MyTextView
             android:id="@+id/text_label"
             android:layout_width="wrap_content"
@@ -252,13 +245,6 @@
 
         </RelativeLayout>
 
-        <View
-            android:id="@+id/startup_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/divider_grey"
-            android:importantForAccessibility="no"/>
-
         <com.simplemobiletools.commons.views.MyTextView
             android:id="@+id/startup_label"
             android:layout_width="wrap_content"
@@ -361,13 +347,6 @@
 
         </RelativeLayout>
 
-        <View
-            android:id="@+id/saving_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/divider_grey"
-            android:importantForAccessibility="no"/>
-
         <com.simplemobiletools.commons.views.MyTextView
             android:id="@+id/saving_label"
             android:layout_width="wrap_content"
@@ -423,13 +402,6 @@
                 app:switchPadding="@dimen/medium_margin"/>
 
         </RelativeLayout>
-
-        <View
-            android:id="@+id/widgets_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/divider_grey"
-            android:importantForAccessibility="no"/>
 
         <com.simplemobiletools.commons.views.MyTextView
             android:id="@+id/widgets_label"

@@ -221,7 +221,7 @@ class SettingsActivity : SimpleActivity() {
             if (widgets.size == 1) {
                 widgetToCustomize = widgets.first()
             } else if (widgets.size > 1) {
-                arrayListOf(widgets_divider, widgets_label, settings_customize_widget_colors_holder).forEach {
+                arrayListOf(widgets_label, settings_customize_widget_colors_holder).forEach {
                     it.beGone()
                 }
             }
