@@ -145,7 +145,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.delete_note).isVisible = multipleNotesExist
-            findItem(R.id.export_all_notes).isVisible = multipleNotesExist
+            findItem(R.id.export_all_notes).isVisible = multipleNotesExist && hasPermission(PERMISSION_WRITE_STORAGE)
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist()
             findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
 
