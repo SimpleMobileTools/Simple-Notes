@@ -3,20 +3,16 @@ package com.simplemobiletools.notes.pro.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.text.Editable
-import android.text.Spannable
-import android.text.SpannableString
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
-import android.text.style.BackgroundColorSpan
 import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.inputmethod.EditorInfo
+import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.graphics.ColorUtils
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
@@ -40,7 +36,6 @@ import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.search_item.*
 import java.io.File
 import java.nio.charset.Charset
 
@@ -63,10 +58,20 @@ class MainActivity : SimpleActivity() {
     private var searchMatches = emptyList<Int>()
     private var isSearchActive = false
 
+    private lateinit var searchQueryET: MyEditText
+    private lateinit var searchPrevBtn: ImageView
+    private lateinit var searchNextBtn: ImageView
+    private lateinit var searchClearBtn: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         appLaunched(BuildConfig.APPLICATION_ID)
+
+        searchQueryET = findViewById(R.id.search_query)
+        searchPrevBtn = findViewById(R.id.search_previous)
+        searchNextBtn = findViewById(R.id.search_next)
+        searchClearBtn = findViewById(R.id.search_clear)
 
         initViewPager(intent.getLongExtra(OPEN_NOTE_ID, -1L))
         pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
@@ -82,153 +87,7 @@ class MainActivity : SimpleActivity() {
         wasInit = true
 
         checkAppOnSDCard()
-        searchListeners()
-    }
-
-    private fun searchListeners() {
-        search_query.onTextChangeListener { query ->
-            currentNotesView()?.let { noteView ->
-                currentTextFragment?.removeTextWatcher()
-                noteView.text.clearSpans()
-
-                if (query.isNotBlank() && query.length > 1) {
-                    searchMatches = searchMatches(query, noteView.value)
-                    searchHighLightText(noteView, query)
-                }
-
-                currentTextFragment?.setTextWatcher()
-
-                if (searchMatches.isNotEmpty()) {
-                    noteView.requestFocus()
-                    noteView.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
-                }
-
-                search_query.postDelayed({
-                    search_query.requestFocus()
-                }, 50)
-            }
-        }
-
-        search_previous.setOnClickListener {
-            currentNotesView()?.let { noteView ->
-                if (searchIndex > 0) {
-                    searchIndex--
-                }
-                else {
-                    searchIndex = searchMatches.lastIndex
-                }
-
-                selectMatch(noteView)
-            }
-        }
-
-        search_next.setOnClickListener {
-            currentNotesView()?.let { noteView ->
-                if (searchIndex < searchMatches.lastIndex) {
-                    searchIndex++
-                } else {
-                    searchIndex = 0
-                }
-
-                selectMatch(noteView)
-            }
-        }
-
-        search_clear.setOnClickListener {
-            searchHide()
-        }
-
-        view_pager.onPageChangeListener {
-            currentTextFragment?.removeTextWatcher()
-            currentNotesView()?.let { noteView ->
-                noteView.text.clearSpans()
-            }
-
-            searchHide()
-            currentTextFragment?.setTextWatcher()
-        }
-
-        search_query.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                search_next.performClick()
-                return@OnEditorActionListener true
-            }
-
-            false
-        })
-    }
-    
-    private val currentTextFragment: TextFragment? get() = mAdapter?.textFragment(view_pager.currentItem)
-
-    private fun selectMatch(noteView: MyEditText) {
-        if (searchMatches.isNotEmpty()) {
-            noteView.requestFocus()
-            noteView.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
-        } else
-            hideKeyboard()
-    }
-
-    private fun searchMatches(textToHighlight: String, content: String): ArrayList<Int> {
-        val indexes = arrayListOf<Int>()
-        var indexOf = content.indexOf(textToHighlight, 0, ignoreCase = true)
-
-        var offset = 0
-        while (offset < content.length && indexOf != -1) {
-            indexOf = content.indexOf(textToHighlight, offset, ignoreCase = true)
-
-            if (indexOf == -1) {
-                break
-            } else {
-                indexes.add(indexOf)
-            }
-
-            offset = indexOf + 1
-        }
-
-        return indexes
-    }
-
-    private fun searchHighLightText(view: MyEditText, highlightText: String) {
-        val content = view.text.toString()
-        var indexOf = content.indexOf(highlightText, 0, true)
-        val wordToSpan = SpannableString(view.text)
-
-        var offset = 0
-        while (offset < content.length && indexOf != -1) {
-            indexOf = content.indexOf(highlightText, offset, true)
-
-            if (indexOf == -1) {
-                break
-            } else {
-                val spanBgColor = BackgroundColorSpan(ColorUtils.setAlphaComponent(config.primaryColor, 128))
-                val spanFlag = Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-                wordToSpan.setSpan(spanBgColor, indexOf, indexOf + highlightText.length, spanFlag)
-                view.setText(wordToSpan, TextView.BufferType.SPANNABLE)
-            }
-
-            offset = indexOf + 1
-        }
-    }
-
-    private fun searchShow() {
-        isSearchActive = true
-        search_root.beVisible()
-        showKeyboard(search_query)
-
-        currentNotesView()?.let { noteView ->
-            noteView.requestFocus()
-            noteView.setSelection(0)
-        }
-
-        search_query.postDelayed({
-            search_query.requestFocus()
-        }, 250)
-    }
-
-    private fun searchHide() {
-        search_query.text?.clear()
-        isSearchActive = false
-        search_root.beGone()
+        setupSearchButtons()
     }
 
     override fun onResume() {
@@ -246,11 +105,11 @@ class MainActivity : SimpleActivity() {
         }
         updateTextColors(view_pager)
 
+        search_wrapper.setBackgroundColor(config.primaryColor)
         val contrastColor = config.primaryColor.getContrastColor()
-        search_root.setBackgroundColor(config.primaryColor)
-        search_previous.applyColorFilter(contrastColor)
-        search_next.applyColorFilter(contrastColor)
-        search_clear.applyColorFilter(contrastColor)
+        arrayListOf(searchPrevBtn, searchNextBtn, searchClearBtn).forEach {
+            it.applyColorFilter(contrastColor)
+        }
     }
 
     override fun onPause() {
@@ -283,7 +142,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.open_note).isVisible = shouldBeVisible
             findItem(R.id.delete_note).isVisible = shouldBeVisible
             findItem(R.id.export_all_notes).isVisible = shouldBeVisible
-            findItem(R.id.open_search).isVisible = currentItemIsCheckList.not()
+            findItem(R.id.open_search).isVisible = !currentItemIsCheckList
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
@@ -299,7 +158,7 @@ class MainActivity : SimpleActivity() {
         }
 
         when (item.itemId) {
-            R.id.open_search -> searchShow()
+            R.id.open_search -> openSearch()
             R.id.open_note -> displayOpenNoteDialog()
             R.id.save_note -> saveNote()
             R.id.undo -> undo()
@@ -348,7 +207,7 @@ class MainActivity : SimpleActivity() {
                 super.onBackPressed()
             }
         } else if (isSearchActive) {
-            searchHide()
+            closeSearch()
         } else {
             super.onBackPressed()
         }
@@ -453,6 +312,122 @@ class MainActivity : SimpleActivity() {
                 hideKeyboard()
             }
         }
+    }
+
+    private fun setupSearchButtons() {
+        searchQueryET.onTextChangeListener {
+            searchTextChanged(it)
+        }
+
+        searchPrevBtn.setOnClickListener {
+            goToPrevSearchResult()
+        }
+
+        searchNextBtn.setOnClickListener {
+            goToNextSearchResult()
+        }
+
+        searchClearBtn.setOnClickListener {
+            closeSearch()
+        }
+
+        view_pager.onPageChangeListener {
+            currentTextFragment?.removeTextWatcher()
+            currentNotesView()?.let { noteView ->
+                noteView.text.clearSpans()
+            }
+
+            closeSearch()
+            currentTextFragment?.setTextWatcher()
+        }
+
+        searchQueryET.setOnEditorActionListener(TextView.OnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                searchNextBtn.performClick()
+                return@OnEditorActionListener true
+            }
+
+            false
+        })
+    }
+
+    private fun searchTextChanged(text: String) {
+        currentNotesView()?.let { noteView ->
+            currentTextFragment?.removeTextWatcher()
+            noteView.text.clearSpans()
+
+            if (text.isNotBlank() && text.length > 1) {
+                searchMatches = noteView.value.searchMatches(text)
+                noteView.highlightText(text, config.primaryColor)
+            }
+
+            currentTextFragment?.setTextWatcher()
+
+            if (searchMatches.isNotEmpty()) {
+                noteView.requestFocus()
+                noteView.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
+            }
+
+            searchQueryET.postDelayed({
+                searchQueryET.requestFocus()
+            }, 50)
+        }
+    }
+
+    private fun goToPrevSearchResult() {
+        currentNotesView()?.let { noteView ->
+            if (searchIndex > 0) {
+                searchIndex--
+            } else {
+                searchIndex = searchMatches.lastIndex
+            }
+
+            selectSearchMatch(noteView)
+        }
+    }
+
+    private fun goToNextSearchResult() {
+        currentNotesView()?.let { noteView ->
+            if (searchIndex < searchMatches.lastIndex) {
+                searchIndex++
+            } else {
+                searchIndex = 0
+            }
+
+            selectSearchMatch(noteView)
+        }
+    }
+
+    private val currentTextFragment: TextFragment? get() = mAdapter?.textFragment(view_pager.currentItem)
+
+    private fun selectSearchMatch(editText: MyEditText) {
+        if (searchMatches.isNotEmpty()) {
+            editText.requestFocus()
+            editText.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
+        } else {
+            hideKeyboard()
+        }
+    }
+
+    private fun openSearch() {
+        isSearchActive = true
+        search_wrapper.beVisible()
+        showKeyboard(searchQueryET)
+
+        currentNotesView()?.let { noteView ->
+            noteView.requestFocus()
+            noteView.setSelection(0)
+        }
+
+        searchQueryET.postDelayed({
+            searchQueryET.requestFocus()
+        }, 250)
+    }
+
+    private fun closeSearch() {
+        searchQueryET.text?.clear()
+        isSearchActive = false
+        search_wrapper.beGone()
     }
 
     private fun getWantedNoteIndex(wantedNoteId: Long?): Int {
@@ -803,8 +778,7 @@ class MainActivity : SimpleActivity() {
     private fun saveCurrentNote(force: Boolean) {
         getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
         if (mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
-            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem)
-                    ?: ""
+            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
         }
     }
 
@@ -907,7 +881,7 @@ class MainActivity : SimpleActivity() {
     }
 
     fun currentNoteTextChanged(newText: String, showUndo: Boolean, showRedo: Boolean) {
-        if (isSearchActive.not()) {
+        if (!isSearchActive) {
             var shouldRecreateMenu = false
             if (showUndo != showUndoButton) {
                 showUndoButton = showUndo

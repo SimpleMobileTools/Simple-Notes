@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/search_item" />
+    <include
+        android:id="@+id/search_wrapper"
+        layout="@layout/search_bar" />
 
     <com.simplemobiletools.commons.views.MyViewPager
         android:id="@+id/view_pager"
