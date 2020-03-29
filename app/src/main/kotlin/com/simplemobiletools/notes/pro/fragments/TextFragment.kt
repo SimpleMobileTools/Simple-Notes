@@ -130,7 +130,9 @@ class TextFragment : NoteFragment() {
             gravity = config.getTextGravity()
             if (text.toString() != fileContents) {
                 if (!skipTextUpdating) {
+                    removeTextWatcher()
                     setText(fileContents)
+                    setTextWatcher()
                 }
                 skipTextUpdating = false
                 setSelection(if (config.placeCursorToEnd) text.length else 0)
@@ -159,6 +161,7 @@ class TextFragment : NoteFragment() {
     }
 
     fun setTextWatcher() = view.text_note_view.addTextChangedListener(textWatcher)
+
     fun removeTextWatcher() = view.text_note_view.removeTextChangedListener(textWatcher)
 
     fun updateNoteValue(value: String) {
