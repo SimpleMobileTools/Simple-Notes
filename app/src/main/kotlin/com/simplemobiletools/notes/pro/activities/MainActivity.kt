@@ -136,19 +136,20 @@ class MainActivity : SimpleActivity() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
-        val shouldBeVisible = mNotes.size > 1
+        val multipleNotesExist = mNotes.size > 1
         menu.apply {
-            findItem(R.id.rename_note).isVisible = shouldBeVisible
-            findItem(R.id.open_note).isVisible = shouldBeVisible
-            findItem(R.id.delete_note).isVisible = shouldBeVisible
-            findItem(R.id.export_all_notes).isVisible = shouldBeVisible
+            findItem(R.id.rename_note).isVisible = multipleNotesExist
+            findItem(R.id.open_note).isVisible = multipleNotesExist
+            findItem(R.id.delete_note).isVisible = multipleNotesExist
+            findItem(R.id.export_all_notes).isVisible = multipleNotesExist
             findItem(R.id.open_search).isVisible = !currentItemIsCheckList
+            findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
         }
 
-        pager_title_strip.beVisibleIf(shouldBeVisible)
+        pager_title_strip.beVisibleIf(multipleNotesExist)
         return super.onPrepareOptionsMenu(menu)
     }
 
@@ -167,7 +168,7 @@ class MainActivity : SimpleActivity() {
             R.id.rename_note -> displayRenameDialog()
             R.id.share -> shareText()
             R.id.open_file -> tryOpenFile()
-            R.id.import_folder -> tryOpenFolder()
+            R.id.import_folder -> openFolder()
             R.id.export_as_file -> tryExportAsFile()
             R.id.export_all_notes -> tryExportAllNotes()
             R.id.delete_note -> displayDeleteNotePrompt()
@@ -579,14 +580,6 @@ class MainActivity : SimpleActivity() {
                 addNewNote(note)
             } catch (e: Exception) {
                 showErrorToast(e)
-            }
-        }
-    }
-
-    private fun tryOpenFolder() {
-        handlePermission(PERMISSION_READ_STORAGE) {
-            if (it) {
-                openFolder()
             }
         }
     }
