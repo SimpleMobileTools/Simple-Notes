@@ -1,5 +1,6 @@
 package com.simplemobiletools.notes.pro.activities
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -42,7 +43,9 @@ import java.nio.charset.Charset
 class MainActivity : SimpleActivity() {
     private val EXPORT_FILE_SYNC = 1
     private val EXPORT_FILE_NO_SYNC = 2
+
     private val PICK_OPEN_FILE_INTENT = 1
+    private val PICK_EXPORT_FILE_INTENT = 2
 
     private lateinit var mCurrentNote: Note
     private var mNotes = ArrayList<Note>()
@@ -226,6 +229,8 @@ class MainActivity : SimpleActivity() {
         super.onActivityResult(requestCode, resultCode, resultData)
         if (requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null) {
             importUri(resultData.data!!)
+        } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            tryExportNoteValueToFile(resultData.dataString!!, getCurrentNoteText() ?: "", true)
         }
     }
 
@@ -651,9 +656,15 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun tryExportAsFile() {
-        handlePermission(PERMISSION_WRITE_STORAGE) {
-            if (it) {
-                exportAsFile()
+        if (hasPermission(PERMISSION_WRITE_STORAGE)) {
+            exportAsFile()
+        } else {
+            Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                type = "text/*"
+                putExtra(Intent.EXTRA_TITLE, "${mCurrentNote.title.removeSuffix(".txt")}.txt")
+                addCategory(Intent.CATEGORY_OPENABLE)
+
+                startActivityForResult(this, PICK_EXPORT_FILE_INTENT)
             }
         }
     }
@@ -751,9 +762,13 @@ class MainActivity : SimpleActivity() {
     }
 
     fun tryExportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
-        handlePermission(PERMISSION_WRITE_STORAGE) {
-            if (it) {
-                exportNoteValueToFile(path, content, showSuccessToasts, callback)
+        if (path.startsWith("content://")) {
+            exportNoteValueToUri(Uri.parse(path), content)
+        } else {
+            handlePermission(PERMISSION_WRITE_STORAGE) {
+                if (it) {
+                    exportNoteValueToFile(path, content, showSuccessToasts, callback)
+                }
             }
         }
     }
@@ -791,6 +806,7 @@ class MainActivity : SimpleActivity() {
                 file.printWriter().use { out ->
                     out.write(content)
                 }
+
                 if (showSuccessToasts) {
                     noteExportedSuccessfully(path.getFilenameFromPath())
                 }
@@ -799,6 +815,18 @@ class MainActivity : SimpleActivity() {
         } catch (e: Exception) {
             showErrorToast(e)
             callback?.invoke(false)
+        }
+    }
+
+    private fun exportNoteValueToUri(uri: Uri, content: String) {
+        try {
+            val outputStream = contentResolver.openOutputStream(uri)
+            outputStream!!.bufferedWriter().use { out ->
+                out.write(content)
+            }
+            noteExportedSuccessfully(mCurrentNote.title)
+        } catch (e: Exception) {
+            showErrorToast(e)
         }
     }
 
