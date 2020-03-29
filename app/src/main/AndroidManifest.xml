@@ -5,7 +5,10 @@
     package="com.simplemobiletools.notes.pro"
     android:installLocation="auto">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
     <uses-permission
         android:name="android.permission.USE_FINGERPRINT"
         tools:node="remove"/>
