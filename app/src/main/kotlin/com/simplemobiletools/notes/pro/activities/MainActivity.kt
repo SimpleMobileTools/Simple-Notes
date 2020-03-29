@@ -334,7 +334,7 @@ class MainActivity : SimpleActivity() {
         view_pager.onPageChangeListener {
             currentTextFragment?.removeTextWatcher()
             currentNotesView()?.let { noteView ->
-                noteView.text.clearSpans()
+                noteView.text.clearBackgroundSpans()
             }
 
             closeSearch()
@@ -354,7 +354,7 @@ class MainActivity : SimpleActivity() {
     private fun searchTextChanged(text: String) {
         currentNotesView()?.let { noteView ->
             currentTextFragment?.removeTextWatcher()
-            noteView.text.clearSpans()
+            noteView.text.clearBackgroundSpans()
 
             if (text.isNotBlank() && text.length > 1) {
                 searchMatches = noteView.value.searchMatches(text)
