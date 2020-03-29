@@ -497,8 +497,8 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun displayNewNoteDialog(value: String = "") {
-        NewNoteDialog(this) {
+    private fun displayNewNoteDialog(value: String = "", title: String? = null) {
+        NewNoteDialog(this, title) {
             it.value = value
             addNewNote(it)
         }
@@ -545,12 +545,13 @@ class MainActivity : SimpleActivity() {
                     val fileText = it.readText().trim()
                     val checklistItems = fileText.parseChecklistItems()
                     if (checklistItems != null) {
-                        val note = Note(null, it.absolutePath.getFilenameFromPath().substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value)
-                        addNewNote(note)
+                        val title = it.absolutePath.getFilenameFromPath().substringBeforeLast('.')
+                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST.value)
+                        displayNewNoteDialog(note.value, title = title)
                     } else {
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
-                                addNewNote(it)
+                                displayNewNoteDialog(it.value, title = it.title)
                             }
                         }
                     }
