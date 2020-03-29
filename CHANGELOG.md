@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 6.5.0 *(2020-03-29)*
+----------------------------
+
+ * Added Search at plain text notes
+ * Limiting some features on new installs to slowly get rid of the Storage permission
+ * Handling some file related intents with Scoped Storage
+ * Couple translation and UI improvements
+
 Version 6.4.1 *(2020-03-08)*
 ----------------------------
 

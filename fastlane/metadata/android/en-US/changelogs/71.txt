@@ -1,0 +1,4 @@
+ * Added Search at plain text notes
+ * Limiting some features on new installs to slowly get rid of the Storage permission
+ * Handling some file related intents with Scoped Storage
+ * Couple translation and UI improvements
