@@ -143,7 +143,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.delete_note).isVisible = multipleNotesExist
             findItem(R.id.export_all_notes).isVisible = multipleNotesExist
-            findItem(R.id.open_search).isVisible = !currentItemIsCheckList
+            findItem(R.id.open_search).isVisible = mCurrentNote.type == NoteType.TYPE_TEXT.value
             findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
 
             saveNoteButton = findItem(R.id.save_note)
@@ -228,8 +228,6 @@ class MainActivity : SimpleActivity() {
             importUri(resultData.data!!)
         }
     }
-
-    private val currentItemIsCheckList get() = mAdapter?.isChecklistFragment(view_pager.currentItem) ?: false
 
     private fun checkIntents(intent: Intent) {
         intent.apply {
