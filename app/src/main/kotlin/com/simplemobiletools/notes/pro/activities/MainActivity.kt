@@ -230,7 +230,7 @@ class MainActivity : SimpleActivity() {
         if (requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null) {
             importUri(resultData.data!!)
         } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
-            tryExportNoteValueToFile(resultData.dataString!!, getCurrentNoteText() ?: "", true)
+            tryExportNoteValueToFile(resultData.dataString!!, getCurrentNoteValue(), true)
         }
     }
 
@@ -845,6 +845,14 @@ class MainActivity : SimpleActivity() {
     private fun getPagerAdapter() = view_pager.adapter as NotesPagerAdapter
 
     private fun getCurrentNoteText() = getPagerAdapter().getCurrentNoteViewText(view_pager.currentItem)
+
+    private fun getCurrentNoteValue(): String {
+        return if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
+            getCurrentNoteText() ?: ""
+        } else {
+            getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
+        }
+    }
 
     private fun addTextToCurrentNote(text: String) = getPagerAdapter().appendText(view_pager.currentItem, text)
 
