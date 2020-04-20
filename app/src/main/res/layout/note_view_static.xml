@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@null"
     android:freezesText="true"
+    android:hint="@string/insert_text_here"
     android:gravity="top"
     android:inputType="textCapSentences|textMultiLine"
     android:padding="@dimen/activity_margin"
