@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/dialog_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_margin"
+    android:paddingStart="@dimen/activity_margin"
     android:paddingTop="@dimen/activity_margin"
-    android:paddingRight="@dimen/activity_margin">
+    android:paddingEnd="@dimen/activity_margin">
 
     <com.simplemobiletools.commons.views.MyEditText
         android:id="@+id/checklist_item_title"
@@ -17,6 +16,6 @@
         android:layout_marginBottom="@dimen/small_margin"
         android:inputType="textCapSentences"
         android:textCursorDrawable="@null"
-        android:textSize="@dimen/bigger_text_size"/>
+        android:textSize="@dimen/bigger_text_size" />
 
 </LinearLayout>

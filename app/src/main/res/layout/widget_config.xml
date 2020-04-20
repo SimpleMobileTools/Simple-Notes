@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/notes_holder"
     android:layout_width="match_parent"
@@ -19,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/normal_margin"
-            android:text="@string/note_shown_widget"/>
+            android:text="@string/note_shown_widget" />
 
         <com.simplemobiletools.commons.views.MyTextView
             android:id="@+id/notes_picker_value"
@@ -28,7 +27,7 @@
             android:layout_below="@+id/notes_picker_label"
             android:background="@drawable/button_background"
             android:padding="@dimen/normal_margin"
-            android:text="@string/general_note"/>
+            android:text="@string/general_note" />
 
     </RelativeLayout>
 
@@ -42,7 +41,7 @@
         android:background="@null"
         android:gravity="top"
         android:padding="@dimen/activity_margin"
-        android:text="@string/widget_config"/>
+        android:text="@string/widget_config" />
 
     <com.simplemobiletools.commons.views.MyRecyclerView
         android:id="@+id/checklist_note_view"
@@ -55,13 +54,13 @@
         android:overScrollMode="never"
         android:paddingTop="@dimen/small_margin"
         android:visibility="gone"
-        app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager"/>
+        app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager" />
 
     <ImageView
         android:id="@+id/config_bg_color"
         android:layout_width="@dimen/widget_colorpicker_size"
         android:layout_height="@dimen/widget_colorpicker_size"
-        android:layout_above="@+id/config_text_color"/>
+        android:layout_above="@+id/config_text_color" />
 
     <RelativeLayout
         android:id="@+id/config_bg_seekbar_holder"
@@ -70,7 +69,6 @@
         android:layout_alignTop="@+id/config_bg_color"
         android:layout_alignBottom="@+id/config_bg_color"
         android:layout_toEndOf="@+id/config_bg_color"
-        android:layout_toRightOf="@+id/config_bg_color"
         android:background="@android:color/white">
 
         <SeekBar
@@ -78,15 +76,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:paddingLeft="@dimen/activity_margin"
-            android:paddingRight="@dimen/activity_margin"/>
+            android:paddingStart="@dimen/activity_margin"
+            android:paddingEnd="@dimen/activity_margin" />
     </RelativeLayout>
 
     <ImageView
         android:id="@+id/config_text_color"
         android:layout_width="@dimen/widget_colorpicker_size"
         android:layout_height="@dimen/widget_colorpicker_size"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true" />
 
     <Button
         android:id="@+id/config_save"
@@ -95,12 +93,11 @@
         android:layout_alignTop="@+id/config_text_color"
         android:layout_alignBottom="@+id/config_text_color"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:fontFamily="sans-serif-light"
-        android:paddingLeft="@dimen/activity_margin"
-        android:paddingRight="@dimen/activity_margin"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingEnd="@dimen/activity_margin"
         android:text="@string/ok"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/big_text_size"/>
+        android:textSize="@dimen/big_text_size" />
 
 </RelativeLayout>

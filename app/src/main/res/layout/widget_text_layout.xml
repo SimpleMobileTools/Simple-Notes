@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@null"
-        android:gravity="left"
+        android:gravity="start"
         android:padding="@dimen/small_margin"
         android:visibility="gone" />
 
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@null"
-        android:gravity="right"
+        android:gravity="end"
         android:padding="@dimen/small_margin"
         android:visibility="gone" />
 

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.simplemobiletools.commons.views.MyEditText
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.simplemobiletools.commons.views.MyEditText xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/text_note_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@null"
     android:freezesText="true"
-    android:hint="@string/insert_text_here"
     android:gravity="top"
+    android:hint="@string/insert_text_here"
     android:inputType="textCapSentences|textMultiLine"
     android:padding="@dimen/activity_margin"
     android:scrollbars="vertical"
-    android:textCursorDrawable="@null"/>
+    android:textCursorDrawable="@null" />

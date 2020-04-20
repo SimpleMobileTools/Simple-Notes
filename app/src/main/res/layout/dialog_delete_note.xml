@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/delete_note_holder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,20 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/activity_margin"
-        android:textSize="@dimen/bigger_text_size"/>
+        android:textSize="@dimen/bigger_text_size" />
 
     <com.simplemobiletools.commons.views.MyAppCompatCheckbox
         android:id="@+id/delete_note_checkbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_margin"
-        android:layout_marginRight="@dimen/activity_margin"
+        android:layout_marginStart="@dimen/activity_margin"
+        android:layout_marginEnd="@dimen/activity_margin"
         android:checked="false"
-        android:paddingBottom="@dimen/small_margin"
-        android:paddingLeft="@dimen/activity_margin"
-        android:paddingRight="@dimen/activity_margin"
+        android:paddingStart="@dimen/activity_margin"
         android:paddingTop="@dimen/small_margin"
+        android:paddingEnd="@dimen/activity_margin"
+        android:paddingBottom="@dimen/small_margin"
         android:text="@string/delete_file_itself"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </LinearLayout>
