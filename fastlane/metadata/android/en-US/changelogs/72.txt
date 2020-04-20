@@ -1,0 +1,3 @@
+ * Fix showing the keyboard on startup, if selected so
+ * Added rounded corners at the widget
+ * Show a hint at the main screens textview, if empty

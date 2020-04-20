@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.5.1 *(2020-04-20)*
+----------------------------
+
+ * Fix showing the keyboard on startup, if selected so
+ * Added rounded corners at the widget
+ * Show a hint at the main screens textview, if empty
+
 Version 6.5.0 *(2020-03-29)*
 ----------------------------
 
