@@ -16,6 +16,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
+import com.simplemobiletools.commons.dialogs.NewAppDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
@@ -92,6 +93,16 @@ class MainActivity : SimpleActivity() {
 
         checkAppOnSDCard()
         setupSearchButtons()
+
+        // notify some users about the SMS Messenger and Voice Recorder apps
+        if (!config.wasMessengerRecorderShown) {
+            val messengerPackage = "com.simplemobiletools.smsmessenger"
+            val recorderPackage = "com.simplemobiletools.voicerecorder"
+            if (config.appRunCount > 35 && !isPackageInstalled(messengerPackage) && !isPackageInstalled(recorderPackage)) {
+                NewAppDialog(this, messengerPackage, "Simple SMS Messenger", recorderPackage, "Simple Voice Recorder")
+            }
+            config.wasMessengerRecorderShown = true
+        }
     }
 
     override fun onResume() {
