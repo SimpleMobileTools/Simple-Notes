@@ -7,8 +7,8 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.widget.RemoteViews
+import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.getLaunchIntent
-import com.simplemobiletools.commons.extensions.setBackgroundColor
 import com.simplemobiletools.commons.helpers.WIDGET_TEXT_COLOR
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
@@ -31,7 +31,7 @@ class MyWidgetProvider : AppWidgetProvider() {
             for (widgetId in appWidgetIds) {
                 val widget = context.widgetsDB.getWidgetWithWidgetId(widgetId) ?: continue
                 val views = RemoteViews(context.packageName, R.layout.widget)
-                views.setBackgroundColor(R.id.notes_widget_holder, widget.widgetBgColor)
+                views.applyColorFilter(R.id.notes_widget_background, widget.widgetBgColor)
                 setupAppOpenIntent(context, views, R.id.notes_widget_holder, widget)
 
                 Intent(context, WidgetService::class.java).apply {

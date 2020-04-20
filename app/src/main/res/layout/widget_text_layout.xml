@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/widget_text_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -12,7 +11,7 @@
         android:background="@null"
         android:gravity="left"
         android:padding="@dimen/small_margin"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/widget_text_center"
@@ -21,7 +20,7 @@
         android:background="@null"
         android:gravity="center_horizontal"
         android:padding="@dimen/small_margin"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/widget_text_right"
@@ -30,6 +29,6 @@
         android:background="@null"
         android:gravity="right"
         android:padding="@dimen/small_margin"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </RelativeLayout>
