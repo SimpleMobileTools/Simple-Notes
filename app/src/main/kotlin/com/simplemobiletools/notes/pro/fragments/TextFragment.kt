@@ -1,5 +1,6 @@
 package com.simplemobiletools.notes.pro.fragments
 
+import android.content.Context
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Editable
@@ -12,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.MainActivity
@@ -138,8 +140,12 @@ class TextFragment : NoteFragment() {
                 setSelection(if (config.placeCursorToEnd) text.length else 0)
             }
 
-            if (config.showKeyboard) {
-                requestFocus()
+            if (config.showKeyboard && isMenuVisible) {
+                onGlobalLayout {
+                    requestFocus()
+                    val inputManager = activity!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    inputManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
+                }
             }
 
             imeOptions = if (config.useIncognitoMode) {
