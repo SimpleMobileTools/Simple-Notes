@@ -4,7 +4,7 @@
     <string name="widget_config">Ačiū, jog naudojate Simple Notes.\nDaugiau paprastų programų rasite SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Negalima dalintis tuščiu įrašu</string>
     <string name="simple_note">Paprastas užrašas</string>
-    <string name="new_note">Pridėti naujà įrašą</string>
+    <string name="new_note">Pridėti naują įrašą</string>
     <string name="no_title">Įrašo pavadinimas</string>
     <string name="title_taken">Įrašas tokiu pavadinimu jau egzistuoja</string>
     <string name="open_note">Atverti įrašą</string>
@@ -15,13 +15,13 @@
     <string name="general_note">Pagrindinis įrašas</string>
     <string name="create_new_note">Kurti naują įrašą</string>
     <string name="add_to_note">Papildyti įrašą</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="unsaved_changes_warning">Turite neišsaugotų pakeitimų. Ką norite su jais daryti?</string>
+    <string name="note_shown_widget">Užrašas rodomas skydelyje:</string>
+    <string name="new_note_type">Naujo užrašo tipas:</string>
+    <string name="text_note">Tekstinis užrašas</string>
 
     <!-- File notes -->
-    <string name="open_file">Atverti failą</string>
+    <string name="open_file">Atverti bylą</string>
     <string name="export_as_file">Kurti kopiją</string>
     <string name="file_too_large">Failas per didelis, didžiausias leistinas dydis yra 1MB</string>
     <string name="only_import_file_content">Įkelti tik įrašo turinį\n(Įrašant įrašą jis nebus redaguojamas)</string>
@@ -42,7 +42,7 @@
     <string name="left">Kairėje</string>
     <string name="center">Centre</string>
     <string name="right">Dešinėje</string>
-    <string name="widget_note">Įraðas panaudotas šaukinyje</string>
+    <string name="widget_note">Įrašas panaudotas šaukinyje</string>
     <string name="show_note_picker">Rodyti užrašų parinkiklį pajungus programėlę</string>
     <string name="autosave_notes">Automatiškai išsaugoti užrašus</string>
     <string name="enable_line_wrap">naudoti eilutės perkėlimą</string>
@@ -50,15 +50,15 @@
     <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">Kontrolinis sąrašas</string>
+    <string name="add_new_checklist_item">Pridėti naują kontrolinio sąrašo objektą</string>
+    <string name="add_new_checklist_items">Pridėti naujus kontrolinio sąrašo objektus</string>
+    <string name="checklist_is_empty">Kontrolinis sąršas tuščias</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Eksportuoti visus užrašus kaip bylas</string>
     <string name="import_notes">Importuoti keletą bylų, kaip užrašus</string>
-    <string name="import_folder">Import folder</string>
+    <string name="import_folder">Importuoti aplanką</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">How can I change the widgets color?</string>
