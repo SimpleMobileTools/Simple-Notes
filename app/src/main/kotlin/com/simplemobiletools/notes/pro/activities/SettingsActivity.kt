@@ -154,10 +154,10 @@ class SettingsActivity : SimpleActivity() {
         settings_font_size.text = getFontSizeText()
         settings_font_size_holder.setOnClickListener {
             val items = arrayListOf(
-                    RadioItem(FONT_SIZE_SMALL, getString(R.string.small)),
-                    RadioItem(FONT_SIZE_MEDIUM, getString(R.string.medium)),
-                    RadioItem(FONT_SIZE_LARGE, getString(R.string.large)),
-                    RadioItem(FONT_SIZE_EXTRA_LARGE, getString(R.string.extra_large)))
+                    RadioItem(FONT_SIZE_SMALL, getString(R.string.small) + " (${getFontSizeNumber(R.dimen.smaller_text_size)})"),
+                    RadioItem(FONT_SIZE_MEDIUM, getString(R.string.medium) + " (${getFontSizeNumber(R.dimen.bigger_text_size)})"),
+                    RadioItem(FONT_SIZE_LARGE, getString(R.string.large) + " (${getFontSizeNumber(R.dimen.big_text_size)})"),
+                    RadioItem(FONT_SIZE_EXTRA_LARGE, getString(R.string.extra_large) + " (${getFontSizeNumber(R.dimen.extra_big_text_size)})"))
 
             RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
                 config.fontSize = it as Int
@@ -165,6 +165,10 @@ class SettingsActivity : SimpleActivity() {
                 updateWidgets()
             }
         }
+    }
+
+    private fun getFontSizeNumber(fontSizeId: Int): Int {
+        return (resources.getDimension(fontSizeId)/3).toInt()
     }
 
     private fun setupGravity() {
