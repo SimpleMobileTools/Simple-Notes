@@ -151,21 +151,29 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupFontSize() {
-        settings_font_size.text = getFontSizeText()
+        settings_font_size.text = getFontSizePercentText(config.fontSize)
         settings_font_size_holder.setOnClickListener {
             val items = arrayListOf(
-                    RadioItem(FONT_SIZE_SMALL, getString(R.string.small)),
-                    RadioItem(FONT_SIZE_MEDIUM, getString(R.string.medium)),
-                    RadioItem(FONT_SIZE_LARGE, getString(R.string.large)),
-                    RadioItem(FONT_SIZE_EXTRA_LARGE, getString(R.string.extra_large)))
+                    RadioItem(FONT_SIZE_50_PERCENT, getFontSizePercentText(FONT_SIZE_50_PERCENT)),
+                    RadioItem(FONT_SIZE_75_PERCENT, getFontSizePercentText(FONT_SIZE_75_PERCENT)),
+                    RadioItem(FONT_SIZE_100_PERCENT, getFontSizePercentText(FONT_SIZE_100_PERCENT)),
+                    RadioItem(FONT_SIZE_125_PERCENT, getFontSizePercentText(FONT_SIZE_125_PERCENT)),
+                    RadioItem(FONT_SIZE_150_PERCENT, getFontSizePercentText(FONT_SIZE_150_PERCENT)),
+                    RadioItem(FONT_SIZE_175_PERCENT, getFontSizePercentText(FONT_SIZE_175_PERCENT)),
+                    RadioItem(FONT_SIZE_200_PERCENT, getFontSizePercentText(FONT_SIZE_200_PERCENT)),
+                    RadioItem(FONT_SIZE_250_PERCENT, getFontSizePercentText(FONT_SIZE_250_PERCENT)),
+                    RadioItem(FONT_SIZE_300_PERCENT, getFontSizePercentText(FONT_SIZE_300_PERCENT))
+            )
 
             RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
                 config.fontSize = it as Int
-                settings_font_size.text = getFontSizeText()
+                settings_font_size.text = getFontSizePercentText(config.fontSize)
                 updateWidgets()
             }
         }
     }
+
+    private fun getFontSizePercentText(fontSizePercentage: Int): String = "$fontSizePercentage%"
 
     private fun setupGravity() {
         settings_gravity.text = getGravityText()
