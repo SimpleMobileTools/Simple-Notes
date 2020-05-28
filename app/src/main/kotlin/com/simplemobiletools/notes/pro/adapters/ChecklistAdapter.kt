@@ -14,11 +14,11 @@ import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
 import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
-import com.simplemobiletools.commons.extensions.getTextSize
 import com.simplemobiletools.commons.views.MyRecyclerView
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.dialogs.RenameChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.config
+import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
 import com.simplemobiletools.notes.pro.helpers.DONE_CHECKLIST_ITEM_ALPHA
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.interfaces.ItemMoveCallback
@@ -154,7 +154,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
             checklist_title.apply {
                 text = checklistItem.title
                 setTextColor(textColor)
-                setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getTextSize())
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
                 gravity = context.config.getTextGravity()
 
                 if (checklistItem.isDone) {

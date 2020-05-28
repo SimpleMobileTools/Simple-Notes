@@ -79,8 +79,8 @@ class MainActivity : SimpleActivity() {
         searchClearBtn = findViewById(R.id.search_clear)
 
         initViewPager(intent.getLongExtra(OPEN_NOTE_ID, -1L))
-        pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
-        pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2).toInt()
+        pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
+        pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
         checkWhatsNewDialog()
         checkIntents(intent)
 
@@ -113,7 +113,7 @@ class MainActivity : SimpleActivity() {
 
         invalidateOptionsMenu()
         pager_title_strip.apply {
-            setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
+            setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
             setGravity(Gravity.CENTER_VERTICAL)
             setNonPrimaryAlpha(0.4f)
             setTextColor(config.textColor)

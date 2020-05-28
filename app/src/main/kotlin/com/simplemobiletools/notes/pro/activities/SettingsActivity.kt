@@ -4,8 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
-import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.*
+import com.simplemobiletools.commons.extensions.beGone
+import com.simplemobiletools.commons.extensions.beVisibleIf
+import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
+import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
+import com.simplemobiletools.commons.helpers.ensureBackgroundThread
+import com.simplemobiletools.commons.helpers.isOreoPlus
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
@@ -151,23 +156,23 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupFontSize() {
-        settings_font_size.text = getFontSizePercentText(config.fontSize)
+        settings_font_size.text = getFontSizePercentText(config.fontSizePercentage)
         settings_font_size_holder.setOnClickListener {
             val items = arrayListOf(
-                    RadioItem(FONT_SIZE_50_PERCENT, getFontSizePercentText(FONT_SIZE_50_PERCENT)),
-                    RadioItem(FONT_SIZE_75_PERCENT, getFontSizePercentText(FONT_SIZE_75_PERCENT)),
-                    RadioItem(FONT_SIZE_100_PERCENT, getFontSizePercentText(FONT_SIZE_100_PERCENT)),
-                    RadioItem(FONT_SIZE_125_PERCENT, getFontSizePercentText(FONT_SIZE_125_PERCENT)),
-                    RadioItem(FONT_SIZE_150_PERCENT, getFontSizePercentText(FONT_SIZE_150_PERCENT)),
-                    RadioItem(FONT_SIZE_175_PERCENT, getFontSizePercentText(FONT_SIZE_175_PERCENT)),
-                    RadioItem(FONT_SIZE_200_PERCENT, getFontSizePercentText(FONT_SIZE_200_PERCENT)),
-                    RadioItem(FONT_SIZE_250_PERCENT, getFontSizePercentText(FONT_SIZE_250_PERCENT)),
-                    RadioItem(FONT_SIZE_300_PERCENT, getFontSizePercentText(FONT_SIZE_300_PERCENT))
+                RadioItem(FONT_SIZE_50_PERCENT, getFontSizePercentText(FONT_SIZE_50_PERCENT)),
+                RadioItem(FONT_SIZE_75_PERCENT, getFontSizePercentText(FONT_SIZE_75_PERCENT)),
+                RadioItem(FONT_SIZE_100_PERCENT, getFontSizePercentText(FONT_SIZE_100_PERCENT)),
+                RadioItem(FONT_SIZE_125_PERCENT, getFontSizePercentText(FONT_SIZE_125_PERCENT)),
+                RadioItem(FONT_SIZE_150_PERCENT, getFontSizePercentText(FONT_SIZE_150_PERCENT)),
+                RadioItem(FONT_SIZE_175_PERCENT, getFontSizePercentText(FONT_SIZE_175_PERCENT)),
+                RadioItem(FONT_SIZE_200_PERCENT, getFontSizePercentText(FONT_SIZE_200_PERCENT)),
+                RadioItem(FONT_SIZE_250_PERCENT, getFontSizePercentText(FONT_SIZE_250_PERCENT)),
+                RadioItem(FONT_SIZE_300_PERCENT, getFontSizePercentText(FONT_SIZE_300_PERCENT))
             )
 
-            RadioGroupDialog(this@SettingsActivity, items, config.fontSize) {
-                config.fontSize = it as Int
-                settings_font_size.text = getFontSizePercentText(config.fontSize)
+            RadioGroupDialog(this@SettingsActivity, items, config.fontSizePercentage) {
+                config.fontSizePercentage = it as Int
+                settings_font_size.text = getFontSizePercentText(config.fontSizePercentage)
                 updateWidgets()
             }
         }
@@ -179,9 +184,9 @@ class SettingsActivity : SimpleActivity() {
         settings_gravity.text = getGravityText()
         settings_gravity_holder.setOnClickListener {
             val items = arrayListOf(
-                    RadioItem(GRAVITY_LEFT, getString(R.string.left)),
-                    RadioItem(GRAVITY_CENTER, getString(R.string.center)),
-                    RadioItem(GRAVITY_RIGHT, getString(R.string.right)))
+                RadioItem(GRAVITY_LEFT, getString(R.string.left)),
+                RadioItem(GRAVITY_CENTER, getString(R.string.center)),
+                RadioItem(GRAVITY_RIGHT, getString(R.string.right)))
 
             RadioGroupDialog(this@SettingsActivity, items, config.gravity) {
                 config.gravity = it as Int

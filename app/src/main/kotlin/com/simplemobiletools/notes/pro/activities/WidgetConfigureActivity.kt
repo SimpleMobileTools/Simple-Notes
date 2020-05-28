@@ -20,6 +20,7 @@ import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.extensions.config
+import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
 import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.ChecklistItem
@@ -60,7 +61,7 @@ class WidgetConfigureActivity : SimpleActivity() {
 
     override fun onResume() {
         super.onResume()
-        text_note_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, getTextSize())
+        text_note_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

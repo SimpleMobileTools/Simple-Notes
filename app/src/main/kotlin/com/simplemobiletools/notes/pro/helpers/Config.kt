@@ -85,4 +85,8 @@ class Config(context: Context) : BaseConfig(context) {
         GRAVITY_RIGHT -> Gravity.RIGHT
         else -> Gravity.LEFT
     }
+
+    var fontSizePercentage: Int
+        get() = prefs.getInt(FONT_SIZE_PERCENTAGE, 100)
+        set(fontSizePercentage) = prefs.edit().putInt(FONT_SIZE_PERCENTAGE, fontSizePercentage).apply()
 }

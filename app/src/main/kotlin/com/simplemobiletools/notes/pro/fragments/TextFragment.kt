@@ -18,7 +18,7 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.MainActivity
 import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.getEditorFontSize
+import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.MyMovementMethod
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
@@ -127,7 +127,7 @@ class TextFragment : NoteFragment() {
 
             val adjustedPrimaryColor = context.getAdjustedPrimaryColor()
             setColors(config.textColor, adjustedPrimaryColor, config.backgroundColor)
-            setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getEditorFontSize())
+            setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
             highlightColor = adjustedPrimaryColor.adjustAlpha(.4f)
 
             gravity = config.getTextGravity()
