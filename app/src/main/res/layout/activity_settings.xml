@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/bigger_margin"
-            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginTop="@dimen/section_margin"
             android:text="@string/text"
             android:textAllCaps="true"
             android:textSize="@dimen/smaller_text_size" />
@@ -249,7 +249,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/bigger_margin"
-            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginTop="@dimen/section_margin"
             android:text="@string/startup"
             android:textAllCaps="true"
             android:textSize="@dimen/smaller_text_size" />
@@ -351,7 +351,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/bigger_margin"
-            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginTop="@dimen/section_margin"
             android:text="@string/saving_label"
             android:textAllCaps="true"
             android:textSize="@dimen/smaller_text_size" />
@@ -407,7 +407,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/bigger_margin"
-            android:layout_marginTop="@dimen/activity_margin"
+            android:layout_marginTop="@dimen/section_margin"
             android:text="@string/widgets"
             android:textAllCaps="true"
             android:textSize="@dimen/smaller_text_size" />
