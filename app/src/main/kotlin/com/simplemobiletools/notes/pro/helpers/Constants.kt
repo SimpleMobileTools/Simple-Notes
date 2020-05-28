@@ -41,3 +41,14 @@ enum class NoteType(val value: Int) { TYPE_TEXT(0), TYPE_CHECKLIST(1) }
 
 // mime types
 const val MIME_TEXT_PLAIN = "text/plain"
+
+// font size percentage options
+const val FONT_SIZE_50_PERCENT = 50
+const val FONT_SIZE_75_PERCENT = 75
+const val FONT_SIZE_100_PERCENT = 100
+const val FONT_SIZE_125_PERCENT = 125
+const val FONT_SIZE_150_PERCENT = 150
+const val FONT_SIZE_175_PERCENT = 175
+const val FONT_SIZE_200_PERCENT = 200
+const val FONT_SIZE_250_PERCENT = 250
+const val FONT_SIZE_300_PERCENT = 300
