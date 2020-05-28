@@ -8,10 +8,10 @@
         android:id="@+id/notes_widget_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/notes_widget_listview"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:src="@drawable/widget_round_background" />
 
     <ListView
