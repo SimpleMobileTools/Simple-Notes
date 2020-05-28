@@ -143,9 +143,11 @@ class TextFragment : NoteFragment() {
 
             if (config.showKeyboard && isMenuVisible) {
                 onGlobalLayout {
-                    requestFocus()
-                    val inputManager = activity!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                    inputManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
+                    if (activity?.isDestroyed == false) {
+                        requestFocus()
+                        val inputManager = activity!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                        inputManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
+                    }
                 }
             }
 

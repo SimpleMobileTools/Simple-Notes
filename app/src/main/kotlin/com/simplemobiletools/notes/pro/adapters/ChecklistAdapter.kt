@@ -14,6 +14,7 @@ import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
 import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
+import com.simplemobiletools.commons.extensions.removeBit
 import com.simplemobiletools.commons.views.MyRecyclerView
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.dialogs.RenameChecklistItemDialog
@@ -161,7 +162,7 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
                     paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                     alpha = DONE_CHECKLIST_ITEM_ALPHA
                 } else {
-                    paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG - Paint.STRIKE_THRU_TEXT_FLAG
+                    paintFlags = paintFlags.removeBit(Paint.STRIKE_THRU_TEXT_FLAG)
                     alpha = 1f
                 }
             }
