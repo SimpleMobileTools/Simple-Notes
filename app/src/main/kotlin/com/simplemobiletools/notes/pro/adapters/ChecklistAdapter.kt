@@ -158,10 +158,10 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
                 gravity = context.config.getTextGravity()
 
                 if (checklistItem.isDone) {
-                    paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+                    paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                     alpha = DONE_CHECKLIST_ITEM_ALPHA
                 } else {
-                    paintFlags = 0
+                    paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG - Paint.STRIKE_THRU_TEXT_FLAG
                     alpha = 1f
                 }
             }
