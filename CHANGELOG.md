@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 6.5.2 *(2020-05-28)*
+----------------------------
+
+ * Add a bigger range of available font sizes
+ * Use a nicer app icon on older devices
+ * Fix bad looking text on checklist items
+ * A couple other UI, stability and translation improvements
+
 Version 6.5.1 *(2020-04-20)*
 ----------------------------
 

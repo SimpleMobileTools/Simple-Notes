@@ -1,0 +1,4 @@
+ * Add a bigger range of available font sizes
+ * Use a nicer app icon on older devices
+ * Fix bad looking text on checklist items
+ * A couple other UI, stability and translation improvements
