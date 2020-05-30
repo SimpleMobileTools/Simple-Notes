@@ -16,7 +16,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
-import com.simplemobiletools.commons.dialogs.NewAppDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
@@ -93,16 +92,6 @@ class MainActivity : SimpleActivity() {
 
         checkAppOnSDCard()
         setupSearchButtons()
-
-        // notify some users about the SMS Messenger and Voice Recorder apps
-        if (!config.wasMessengerRecorderShown) {
-            val messengerPackage = "com.simplemobiletools.smsmessenger"
-            val recorderPackage = "com.simplemobiletools.voicerecorder"
-            if (config.appRunCount > 35 && !isPackageInstalled(messengerPackage) && !isPackageInstalled(recorderPackage)) {
-                NewAppDialog(this, messengerPackage, "Simple SMS Messenger", recorderPackage, "Simple Voice Recorder")
-            }
-            config.wasMessengerRecorderShown = true
-        }
     }
 
     override fun onResume() {
@@ -507,11 +496,11 @@ class MainActivity : SimpleActivity() {
         val licenses = LICENSE_RTL
 
         val faqItems = arrayListOf(
-                FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
-                FAQItem(R.string.faq_1_title, R.string.faq_1_text),
-                FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons),
-                FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons),
-                FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons)
+            FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
+            FAQItem(R.string.faq_1_title, R.string.faq_1_text),
+            FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons),
+            FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons),
+            FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons)
         )
 
         startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
@@ -695,8 +684,8 @@ class MainActivity : SimpleActivity() {
 
     private fun showExportFilePickUpdateDialog(exportPath: String, textToExport: String) {
         val items = arrayListOf(
-                RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
+            RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
+            RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
@@ -726,8 +715,8 @@ class MainActivity : SimpleActivity() {
     private fun exportAllNotes() {
         ExportFilesDialog(this, mNotes) { parent, extension ->
             val items = arrayListOf(
-                    RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-                    RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
+                RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
+                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
 
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == EXPORT_FILE_SYNC
