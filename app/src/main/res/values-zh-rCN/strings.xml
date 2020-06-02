@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">简约笔记</string>
+    <string name="app_name">简易笔记</string>
     <string name="app_launcher_name">笔记</string>
-    <string name="widget_config">谢谢使用简约笔记.\n想要获取更多的简约app,您可以访问这个SimpleMobileTools.com.</string>
-    <string name="cannot_share_empty_text">没有内容不能分享M</string>
-    <string name="simple_note">简约笔记</string>
+    <string name="widget_config">谢谢使用简易笔记.\n想要获取更多的简易应用程序，您可以访问这个 SimpleMobileTools.com 。</string>
+    <string name="cannot_share_empty_text">没有内容不能分享</string>
+    <string name="simple_note">简易笔记</string>
     <string name="new_note">添加一个新的笔记</string>
     <string name="no_title">请提供笔记名字</string>
     <string name="title_taken">笔记的标题已经存在</string>
@@ -15,21 +15,21 @@
     <string name="general_note">一般笔记</string>
     <string name="create_new_note">创建一个新的笔记</string>
     <string name="add_to_note">添加到笔记</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="unsaved_changes_warning">您有未保存的更改。您对此想如何操作呢？</string>
+    <string name="note_shown_widget">小工具中显示的笔记:</string>
+    <string name="new_note_type">新笔记类型:</string>
+    <string name="text_note">文本笔记</string>
 
     <!-- File notes -->
     <string name="open_file">打开文件</string>
     <string name="export_as_file">以文件的形式导出</string>
-    <string name="file_too_large">文件太大了, 限制只有1MB</string>
+    <string name="file_too_large">文件太大了, 限制只有 1MB</string>
     <string name="only_import_file_content">只要导入文件的内容\n(改变文件不会影响笔记)</string>
     <string name="update_file_at_note">在更新笔记的时侯更新文件本身\n(注意，如果文件被删除或路径更改，将被删除)</string>
     <string name="delete_file_itself">同时删除文件 \"%s\"</string>
     <string name="note_saved_successfully">笔记 \"%s\" 保存成功</string>
     <string name="note_exported_successfully">笔记 \"%s\" 导出成功</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">只导出当前文件内容\n(更改笔记将不会影响文件)</string>
 
     <!-- Settings -->
     <string name="display_success_message">显示保存成功消息</string>
@@ -43,32 +43,32 @@
     <string name="center">中间</string>
     <string name="right">右边</string>
     <string name="widget_note">在小部件中使用笔记</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="show_note_picker">在启动时显示笔记选择器</string>
+    <string name="autosave_notes">自动保存笔记</string>
+    <string name="enable_line_wrap">启用行折叠</string>
+    <string name="use_incognito_mode">对于键盘使用隐私模式</string>
+    <string name="move_undone_checklist_items">移动未完成的清单至顶端</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="checklist">清单</string>
+    <string name="add_new_checklist_item">添加一个新的清单项目</string>
+    <string name="add_new_checklist_items">添加新的清单项目</string>
+    <string name="checklist_is_empty">清单为空</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
-    <string name="import_folder">Import folder</string>
+    <string name="export_all_notes">以文件导出所有笔记</string>
+    <string name="import_notes">导入多个文件为笔记</string>
+    <string name="import_folder">导入文件夹</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">我如何变化小工具颜色？</string>
+    <string name="faq_1_text">如果您仅用一个活动的小工具，您既可以重新创建它，或者使用应用程序设定的按钮来自定义它。如果您拥有多个活动的小工具，应用程序设定中的按钮将不可用。因为应用程序支持小工具分别自定义，您必须要重新创建小工具来自定义它们。</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">简易笔记 Pro: 待办清单管理器和计划工具</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">简易计划工具: 创建笔记，备份 &amp; 待办清单及快速笔记提醒工具</string>
     <string name="app_long_description">
         ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
 
@@ -84,14 +84,14 @@
 
         <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        它遵循质感设计且默认应用黑暗模式，提供便于使用的极佳的用户体验。相对于其他应用，不包含互联网访问给予您更佳的隐私、保密性和稳定性。
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+        不包含广告及非必要的权限，而且完全开放源代码，并提供自定义颜色。
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>于此查看简易工具系列全套:</b>
         https://www.simplemobiletools.com
 
-        <b>Standalone website of Simple Notes Pro:</b>
+        <b>简易笔记 Pro 的独立网站:</b>
         https://www.simplemobiletools.com/notes
 
         <b>Facebook:</b>
