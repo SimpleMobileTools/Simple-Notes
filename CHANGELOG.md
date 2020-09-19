@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.5.4 *(2020-09-19)*
+----------------------------
+
+ * Allow creating a new note from the Open Note dialog
+ * Added some translation and UX improvements
+
 Version 6.5.3 *(2020-05-30)*
 ----------------------------
 
