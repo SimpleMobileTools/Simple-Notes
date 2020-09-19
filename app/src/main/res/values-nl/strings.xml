@@ -37,8 +37,8 @@
     <string name="place_cursor_end">Cursor onderaan notitie plaatsen</string>
     <string name="monospaced_font">Lettertype met vaste breedte gebruiken</string>
     <string name="show_keyboard">Toetsenbord bij start tonen</string>
-    <string name="show_word_count">Aantal woorden weergeven</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_word_count">Het aantal woorden tellen</string>
+    <string name="show_character_count">Het aantal tekens tellen</string>
     <string name="alignment">Uitlijning</string>
     <string name="left">Links</string>
     <string name="center">Midden</string>
