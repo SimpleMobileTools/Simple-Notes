@@ -914,8 +914,12 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun displayOpenNoteDialog() {
-        OpenNoteDialog(this) {
-            updateSelectedNote(it)
+        OpenNoteDialog(this) { noteId, newNote ->
+            if (newNote == null) {
+                updateSelectedNote(noteId)
+            } else {
+                addNewNote(newNote)
+            }
         }
     }
 

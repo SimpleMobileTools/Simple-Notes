@@ -16,13 +16,21 @@ import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_open_note.view.*
 import kotlinx.android.synthetic.main.open_note_item.view.*
 
-class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long) -> Unit) {
+class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long, newNote: Note?) -> Unit) {
     private var dialog: AlertDialog? = null
 
     init {
         val view = activity.layoutInflater.inflate(R.layout.dialog_open_note, null)
         NotesHelper(activity).getNotes {
             initDialog(it, view)
+        }
+
+        view.dialog_open_note_new_radio.setOnClickListener {
+            view.dialog_open_note_new_radio.isChecked = false
+            NewNoteDialog(activity) {
+                callback(0, it)
+                dialog?.dismiss()
+            }
         }
     }
 
@@ -37,7 +45,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long) -> 
                     id = note.id!!.toInt()
 
                     setOnClickListener {
-                        callback(note.id!!)
+                        callback(note.id!!, null)
                         dialog?.dismiss()
                     }
                 }
@@ -53,8 +61,8 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long) -> 
         }
 
         dialog = AlertDialog.Builder(activity)
-                .create().apply {
-                    activity.setupDialogStuff(view, this, R.string.open_note)
-                }
+            .create().apply {
+                activity.setupDialogStuff(view, this, R.string.open_note)
+            }
     }
 }
