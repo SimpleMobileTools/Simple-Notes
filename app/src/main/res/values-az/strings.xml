@@ -38,6 +38,7 @@
     <string name="monospaced_font">Tək aralıqlı şrift işlət</string>
     <string name="show_keyboard">Başlanğıcda klaviaturanı göstər</string>
     <string name="show_word_count">Söz sayını göstər</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Sıra</string>
     <string name="left">Sol</string>
     <string name="center">Mərkəz</string>

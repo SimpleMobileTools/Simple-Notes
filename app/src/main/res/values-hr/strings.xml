@@ -38,6 +38,7 @@
     <string name="monospaced_font">Koristi font jednake širine i visine</string>
     <string name="show_keyboard">Prikažite tipkovnicu prilikom pokretanja</string>
     <string name="show_word_count">Prikaz broja riječi</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Poravnanje</string>
     <string name="left">Lijevo</string>
     <string name="center">Sredina</string>

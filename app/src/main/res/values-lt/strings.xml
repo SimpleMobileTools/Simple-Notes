@@ -38,6 +38,7 @@
     <string name="monospaced_font">Pakeisti šrifto stilių</string>
     <string name="show_keyboard">Rodyti klaviatūrą paleidžiant</string>
     <string name="show_word_count">Rodyti žodžių skaičių</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Įtrauka</string>
     <string name="left">Kairėje</string>
     <string name="center">Centre</string>

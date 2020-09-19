@@ -38,6 +38,7 @@
     <string name="monospaced_font">Χρήση μονοδιάστατης γραμματοσειράς</string>
     <string name="show_keyboard">Εμφάνιση πληκτρολογίου κατά την εκκίνηση</string>
     <string name="show_word_count">Εμφάνιση καταμέτρησης λέξεων</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Στοίχιση</string>
     <string name="left">Αριστερά</string>
     <string name="center">Κέντρο</string>

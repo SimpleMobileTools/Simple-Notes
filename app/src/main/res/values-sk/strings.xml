@@ -38,6 +38,7 @@
     <string name="monospaced_font">Použiť písmo Monospace</string>
     <string name="show_keyboard">Zobraziť klávesnicu po spustení</string>
     <string name="show_word_count">Zobraziť počítadlo slov</string>
+    <string name="show_character_count">Zobraziť počítadlo znakov</string>
     <string name="alignment">Zarovnanie</string>
     <string name="left">Vľavo</string>
     <string name="center">Uprostred</string>

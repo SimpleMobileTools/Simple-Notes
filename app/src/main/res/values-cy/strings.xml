@@ -38,6 +38,7 @@
     <string name="monospaced_font">Defnyddio ffont monofwlch</string>
     <string name="show_keyboard">Dangos y bysellfwrdd wrth ddechrau</string>
     <string name="show_word_count">Dangos cyfrif geiriau</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Aliniad</string>
     <string name="left">Chwith</string>
     <string name="center">Canol</string>

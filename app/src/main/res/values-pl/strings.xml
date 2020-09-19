@@ -38,6 +38,7 @@
     <string name="monospaced_font">Używaj czcionki o stałej szerokości</string>
     <string name="show_keyboard">Pokazuj klawiaturę na starcie</string>
     <string name="show_word_count">Pokazuj liczbę słów</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Wyrównanie tekstu w notatkach</string>
     <string name="left">Do lewej strony</string>
     <string name="center">Do środka</string>

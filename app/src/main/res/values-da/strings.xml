@@ -38,6 +38,7 @@
     <string name="monospaced_font">Brug en monospatieret font</string>
     <string name="show_keyboard">Vis tastatur fra start</string>
     <string name="show_word_count">Vis antal ord</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Justering</string>
     <string name="left">Venstre</string>
     <string name="center">Centreret</string>

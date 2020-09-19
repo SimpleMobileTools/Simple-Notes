@@ -38,6 +38,7 @@
     <string name="monospaced_font">استخدام الخط monospace</string>
     <string name="show_keyboard">عرض لوحة المفاتيح عند بدء التشغيل</string>
     <string name="show_word_count">إظهار عدد الكلمات</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">المحاذاة</string>
     <string name="left">يسار</string>
     <string name="center">وسط</string>

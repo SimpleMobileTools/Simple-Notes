@@ -38,6 +38,7 @@
     <string name="monospaced_font">Gunakan fon monospace</string>
     <string name="show_keyboard">Tampilkan papan ketik saat memulai</string>
     <string name="show_word_count">Tampilkan penghitung huruf</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Kesejajaran</string>
     <string name="left">Kiri</string>
     <string name="center">Tengah</string>

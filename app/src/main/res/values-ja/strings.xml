@@ -38,6 +38,7 @@
     <string name="monospaced_font">等幅フォントを使用する</string>
     <string name="show_keyboard">起動時にキーボードを表示する</string>
     <string name="show_word_count">単語数を表示する</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">配置</string>
     <string name="left">左</string>
     <string name="center">中央</string>

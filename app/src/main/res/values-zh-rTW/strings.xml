@@ -38,6 +38,7 @@
     <string name="monospaced_font">使用等寬字體</string>
     <string name="show_keyboard">啟動時顯示鍵盤</string>
     <string name="show_word_count">顯示字數</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">對齊</string>
     <string name="left">靠左</string>
     <string name="center">置中</string>

@@ -38,6 +38,7 @@
     <string name="monospaced_font">Lettertype met vaste breedte gebruiken</string>
     <string name="show_keyboard">Toetsenbord bij start tonen</string>
     <string name="show_word_count">Aantal woorden weergeven</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Uitlijning</string>
     <string name="left">Links</string>
     <string name="center">Midden</string>

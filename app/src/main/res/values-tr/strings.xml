@@ -38,6 +38,7 @@
     <string name="monospaced_font">Sabit genişlikli yazı tipi kullan</string>
     <string name="show_keyboard">Başlangıçta klavyeyi göster</string>
     <string name="show_word_count">Kelime sayısını göster</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Hizalama</string>
     <string name="left">Sola</string>
     <string name="center">Ortaya</string>

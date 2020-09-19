@@ -38,6 +38,7 @@
     <string name="monospaced_font">Використовувати шрифт в один відступ</string>
     <string name="show_keyboard">Показувати клавіатуру при запуску</string>
     <string name="show_word_count">Рахувати слова</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Вирівнювання</string>
     <string name="left">Зліва</string>
     <string name="center">Центрувати</string>

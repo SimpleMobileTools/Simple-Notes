@@ -38,6 +38,7 @@
     <string name="monospaced_font">Usar letra mono-espaçada</string>
     <string name="show_keyboard">Mostrar teclado ao inciar</string>
     <string name="show_word_count">Mostrar número de palavras</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Gravidade</string>
     <string name="left">Esquerda</string>
     <string name="center">Centro</string>

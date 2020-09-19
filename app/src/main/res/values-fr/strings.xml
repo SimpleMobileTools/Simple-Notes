@@ -38,6 +38,7 @@
     <string name="monospaced_font">Utiliser une police monospace</string>
     <string name="show_keyboard">Afficher le clavier au démarrage</string>
     <string name="show_word_count">Afficher le nombre de mots</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Alignement</string>
     <string name="left">Gauche</string>
     <string name="center">Centre</string>

@@ -38,6 +38,7 @@
     <string name="monospaced_font">Använd ett teckensnitt med fast bredd</string>
     <string name="show_keyboard">Visa tangentbordet vid start</string>
     <string name="show_word_count">Visa antal ord</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Justering</string>
     <string name="left">Vänster</string>
     <string name="center">Centrerad</string>

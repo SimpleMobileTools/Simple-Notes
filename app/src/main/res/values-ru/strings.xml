@@ -38,6 +38,7 @@
     <string name="monospaced_font">Использовать моноширинный шрифт</string>
     <string name="show_keyboard">Показывать клавиатуру при запуске</string>
     <string name="show_word_count">Отображать количество слов</string>
+    <string name="show_character_count">Show character count</string>
     <string name="alignment">Выравнивание</string>
     <string name="left">По левому краю</string>
     <string name="center">По центру</string>
