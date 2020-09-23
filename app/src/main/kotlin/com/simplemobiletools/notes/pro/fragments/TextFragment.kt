@@ -161,7 +161,7 @@ class TextFragment : NoteFragment() {
         if (config.showWordCount) {
             view.notes_counter.beVisible()
             view.notes_counter.setTextColor(config.textColor)
-            setWordCounter(view.text_note_view.text.toString())
+            setCounter(view.text_note_view.text.toString())
         } else {
             view.notes_counter.beGone()
         }
@@ -227,9 +227,11 @@ class TextFragment : NoteFragment() {
 
     fun getCurrentNoteViewText() = view.text_note_view?.text?.toString()
 
-    private fun setWordCounter(text: String) {
-        val words = text.replace("\n", " ").split(" ")
-        view.notes_counter.text = words.count { it.isNotEmpty() }.toString()
+    private fun setCounter(text: String) {
+        val oneline = text.replace("\n", " ")
+        val words = text.split(" ").count { it.isNotEmpty() }.toString()
+        val chars = oneline.replace(" ", "").count().toString()
+        view.notes_counter.text = "${chars} ${getString(R.string.chars)}   ${words} ${getString(R.string.words)}" 
     }
 
     fun undo() {
@@ -305,7 +307,7 @@ class TextFragment : NoteFragment() {
 
         override fun afterTextChanged(editable: Editable) {
             val text = editable.toString()
-            setWordCounter(text)
+            setCounter(text)
             (activity as MainActivity).currentNoteTextChanged(text, isUndoAvailable(), isRedoAvailable())
         }
     }

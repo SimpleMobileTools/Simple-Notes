@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Otevřít soubor</string>
     <string name="export_as_file">Exportovat jako soubor</string>
+    <string name="words">Slova</string>
+    <string name="chars">Postavy</string>
     <string name="file_too_large">Soubor je příliš velký, limit je 1MB</string>
     <string name="only_import_file_content">Pouze importovat obsah souboru\n(úprava souboru nebude mít vliv na poznámku)</string>
     <string name="update_file_at_note">Aktualizovat samotný soubor po úpravě poznámky\n(pokud bude daný soubor vymazán nebo přesunut, bude vymazána i poznámka)</string>

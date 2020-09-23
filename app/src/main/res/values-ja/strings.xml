@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">ファイルを開く</string>
     <string name="export_as_file">ファイルとしてエクスポート</string>
+    <string name="words">ことば</string>
+    <string name="chars">キャラクター</string>
     <string name="file_too_large">ファイルが大きすぎます (最大:1MBまで)</string>
     <string name="only_import_file_content">ファイルの内容のみインポートする\n(メモを編集してもファイルには影響しません)</string>
     <string name="update_file_at_note">メモを更新するとき、ファイル自体も更新する\n(ファイルが削除、またはパスが変更された場合、メモも削除されます)</string>

@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Åbn fil …</string>
     <string name="export_as_file">Eksporter som fil</string>
+    <string name="words">Ord</string>
+    <string name="chars">Tegn</string>
     <string name="file_too_large">Filen er for stor, den må højst fylde 1MB</string>
     <string name="only_import_file_content">Importer kun filindholdet\n(ændring af filen vil ikke berøre noten)</string>
     <string name="update_file_at_note">Opdater selve filen når noten ændres\n(noten slettes hvis filen bliver slettet eller flyttes til en anden placering)</string>

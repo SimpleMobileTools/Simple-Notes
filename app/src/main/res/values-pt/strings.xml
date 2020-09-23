@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
+    <string name="words">Palavras</string>
+    <string name="chars">Personagens</string>
     <string name="file_too_large">Ficheiro muito grande, o limite são 1 MB</string>
     <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro\n(se alterar o ficheiro, a nota fica intacta)</string>
     <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota\n(a nota será removida se apagar o ficheiro ou se mudar a sua localização)</string>

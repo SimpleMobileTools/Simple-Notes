@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Open file</string>
     <string name="export_as_file">Export as file</string>
+    <string name="words">Words</string>
+    <string name="chars">Characters</string>
     <string name="file_too_large">File too large, the limit is 1MB</string>
     <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
     <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>

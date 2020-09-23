@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Buka berkas</string>
     <string name="export_as_file">Ekspor sebagai berkas</string>
+    <string name="words">Kata-kata</string>
+    <string name="chars">Karakter</string>
     <string name="file_too_large">Ukuran berkas terlalu besar, batasnya adalah 1MB</string>
     <string name="only_import_file_content">Hanya impor konten berkas\n(mengubah berkasnya tidak akan berdampak pada catatan)</string>
     <string name="update_file_at_note">Perbarui berkas saat memperbarui catatan\n(catatan akan dihapus jika berkas dihapus, atau jalur berkas berubah)</string>

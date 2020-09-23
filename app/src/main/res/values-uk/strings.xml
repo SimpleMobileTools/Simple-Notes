@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Відкрити файл</string>
     <string name="export_as_file">Експортувати як файл</string>
+    <string name="words">Слова</string>
+    <string name="chars">Персонажі</string>
     <string name="file_too_large">Файл надто великого розміру, ліміт складає 1MB</string>
     <string name="only_import_file_content">Імпортувати лише вміст файлу\n(зміна файлу не змінить нотатку)</string>
     <string name="update_file_at_note">Оновлювати вміст файлу при оновленні нотатки\n(нотатку буде видалено, якщо буде видалено файл або зміниться його розташування)</string>

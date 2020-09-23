@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Άνοιγμα αρχείου</string>
     <string name="export_as_file">Εξαγωγή ως αρχείο</string>
+    <string name="words">Λόγια</string>
+    <string name="chars">Χαρακτήρες</string>
     <string name="file_too_large">Το αρχείο είναι πολύ μεγάλο, το όριο είναι 1MB</string>
     <string name="only_import_file_content">Εισαγωγή μόνο του περιεχομένου του αρχείου\n(η αλλαγή του αρχείου δεν θα επηρεάσει τη σημείωση)</string>
     <string name="update_file_at_note">Ενημέρωση του ίδιου του αρχείου κατά την ενημέρωση της σημείωσης\n(η σημείωση διαγράφεται αν το αρχείο διαγραφεί ή αλλάξει η διαδρομή)</string>

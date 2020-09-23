@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Otvori datoteku</string>
     <string name="export_as_file">Izvezi kao datoteku</string>
+    <string name="words">Riječi</string>
+    <string name="chars">Likovi</string>
     <string name="file_too_large">Datoteka je prevelika, granica je 1 MB</string>
     <string name="only_import_file_content">Uvezi samo sadržaj datoteke\n(promjena datoteke neće utjecati na bilješku)</string>
     <string name="update_file_at_note">Ažurirajte samu datoteku prilikom ažuriranja bilješke\n(bilješka se briše ako se datoteka izbriše ili promjeni putanja)</string>

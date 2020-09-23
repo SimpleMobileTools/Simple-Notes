@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Atverti bylą</string>
     <string name="export_as_file">Kurti kopiją</string>
+    <string name="words">Žodžiai</string>
+    <string name="chars">Personažai</string>
     <string name="file_too_large">Failas per didelis, didžiausias leistinas dydis yra 1MB</string>
     <string name="only_import_file_content">Įkelti tik įrašo turinį\n(Įrašant įrašą jis nebus redaguojamas)</string>
     <string name="update_file_at_note">Atnaujinti failą kai atnaujinamas įrašas\n(Įrašas ištrinamas, jei ištrinamas failas ar pakeičiama įrašymo vieta)</string>

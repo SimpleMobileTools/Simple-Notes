@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Dosya aç</string>
     <string name="export_as_file">Dosya olarak aktar</string>
+    <string name="words">Kelimeler</string>
+    <string name="chars">Karakterler</string>
     <string name="file_too_large">Dosya çok büyük, sınır 1MB</string>
     <string name="only_import_file_content">Sadece dosya içeriğini içe aktar\n(dosyayı değiştirmek notu etkilemez)</string>
     <string name="update_file_at_note">Not güncellenirken orijinal dosyayı da güncelle\n(dosya silinirse veya yol değişirse not silinir)</string>

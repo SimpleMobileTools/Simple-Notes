@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Fájl megnyitása</string>
     <string name="export_as_file">Exportálás fájlba</string>
+    <string name="words">Szavak</string>
+    <string name="chars">Karakterek</string>
     <string name="file_too_large">A fájl túl nagy, legfeljebb 1MB lehet</string>
     <string name="only_import_file_content">Csak a fájl tartalmának importálása\n(a fájl változásai nem látszanak a jegyzetben)</string>
     <string name="update_file_at_note">A jegyzetbe íráskor a fájlba is írás\n(a jegyzet törlődik ha a fájl törlődik, vagy változik az elérési útvonala)</string>

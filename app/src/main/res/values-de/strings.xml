@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">Datei öffnen</string>
     <string name="export_as_file">Als Datei exportieren</string>
+    <string name="words">Wörter</string>
+    <string name="chars">Zeichen</string>
     <string name="file_too_large">Datei ist zu groß. Die maximale Größe beträgt 1 MB.</string>
     <string name="only_import_file_content">Importiere nur den Dateiinhalt.\n(Änderungen an der Datei haben keine Auswirkungen auf die Notiz.)</string>
     <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>

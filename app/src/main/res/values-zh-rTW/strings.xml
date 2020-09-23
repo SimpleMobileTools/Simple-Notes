@@ -23,6 +23,8 @@
     <!-- File notes -->
     <string name="open_file">打開檔案</string>
     <string name="export_as_file">匯出成檔案</string>
+    <string name="words">话</string>
+    <string name="chars">性格</string>
     <string name="file_too_large">檔案太大，上限1MB</string>
     <string name="only_import_file_content">僅匯入檔案內容\n(檔案變更不影響筆記)</string>
     <string name="update_file_at_note">更新筆記時也更新檔案本身\n(如果檔案被刪除或變更路徑，筆記將被刪除)</string>
