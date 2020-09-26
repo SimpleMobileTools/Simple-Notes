@@ -9,16 +9,16 @@
     <string name="title_taken">Une note avec le même titre existe déjà</string>
     <string name="open_note">Ouvrir la note</string>
     <string name="delete_note">Supprimer la note</string>
-    <string name="delete_note_prompt_message">Etes-vous sûr de vouloir supprimer la note \"%s\"?</string>
+    <string name="delete_note_prompt_message">Êtes-vous sûr de vouloir supprimer la note \"%s\"?</string>
     <string name="pick_a_note">Choisir une note</string>
     <string name="rename_note">Renommer la note</string>
     <string name="general_note">Note générale</string>
     <string name="create_new_note">Créer une nouvelle note</string>
     <string name="add_to_note">Ajouter à la note</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
+    <string name="unsaved_changes_warning">Vous avez des changements non sauvegardés. Que voulez-vous faire avec ?</string>
+    <string name="note_shown_widget">Note affichée dans le widget:</string>
+    <string name="new_note_type">Type de la note:</string>
+    <string name="text_note">Texte</string>
 
     <!-- File notes -->
     <string name="open_file">Ouvrir le fichier</string>
@@ -29,7 +29,7 @@
     <string name="delete_file_itself">Supprimer également le fichier \"%s\"</string>
     <string name="note_saved_successfully">Note \"%s\" sauvegardée avec succès</string>
     <string name="note_exported_successfully">Note \"%s\" exportée avec succès</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Exporter seulement le contenu du fichier\n(changer le fichier n\'affectera pas la note)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
@@ -38,7 +38,7 @@
     <string name="monospaced_font">Utiliser une police monospace</string>
     <string name="show_keyboard">Afficher le clavier au démarrage</string>
     <string name="show_word_count">Afficher le nombre de mots</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Afficher le nombre de caractères</string>
     <string name="alignment">Alignement</string>
     <string name="left">Gauche</string>
     <string name="center">Centre</string>
@@ -47,14 +47,14 @@
     <string name="show_note_picker">Choisir une note au démarrage</string>
     <string name="autosave_notes">Sauvegarder automatiquement les notes</string>
     <string name="enable_line_wrap">Activer le retour à la ligne</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="use_incognito_mode">Utiliser le mode incognito des claviers</string>
+    <string name="move_undone_checklist_items">Déplacer les éléments de cheklist inachevés en haut</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
+    <string name="add_new_checklist_item">Ajouter un nouvel élément</string>
+    <string name="add_new_checklist_items">Ajouter de nouveaux éléments</string>
+    <string name="checklist_is_empty">La checklist est vide</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exporter toutes les notes en tant que fichiers</string>
@@ -62,8 +62,8 @@
     <string name="import_folder">Importer depuis un dossier</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Comment puis-je changer la couleur du widget ?</string>
+    <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widget actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
