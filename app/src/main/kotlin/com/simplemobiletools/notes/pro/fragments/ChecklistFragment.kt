@@ -15,7 +15,6 @@ import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
-import com.simplemobiletools.notes.pro.extensions.requiredActivity
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
@@ -55,14 +54,14 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun loadNoteById(noteId: Long) {
-        NotesHelper(requiredActivity).getNoteWithId(noteId) { storedNote ->
+        NotesHelper(activity!!).getNoteWithId(noteId) { storedNote ->
             if (storedNote != null && activity?.isDestroyed == false) {
                 note = storedNote
 
                 try {
                     val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
                     items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.value, checklistItemType)
-                            ?: ArrayList(1)
+                        ?: ArrayList(1)
                 } catch (e: Exception) {
                     migrateCheckListOnFailure(storedNote)
                 }
@@ -71,7 +70,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                     items.sortBy { it.isDone }
                 }
 
-                requiredActivity.updateTextColors(view.checklist_holder)
+                activity?.updateTextColors(view.checklist_holder)
                 setupFragment()
             }
         }
@@ -82,9 +81,9 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
         note.value.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEachIndexed { index, value ->
             items.add(ChecklistItem(
-                    id = index,
-                    title = value,
-                    isDone = false
+                id = index,
+                title = value,
+                isDone = false
             ))
         }
 
@@ -92,19 +91,19 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun setupFragment() {
-        val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus_vector, if (requiredActivity.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
+        val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus_vector, if (activity!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
 
         view.apply {
             with(checklist_fab) {
                 setImageDrawable(plusIcon)
-                background.applyColorFilter(requiredActivity.getAdjustedPrimaryColor())
+                background.applyColorFilter(activity!!.getAdjustedPrimaryColor())
                 setOnClickListener {
                     showNewItemDialog()
                 }
             }
 
             with(fragment_placeholder_2) {
-                setTextColor(requiredActivity.getAdjustedPrimaryColor())
+                setTextColor(activity!!.getAdjustedPrimaryColor())
                 underlineText()
                 setOnClickListener {
                     showNewItemDialog()
@@ -141,11 +140,11 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         }
 
         ChecklistAdapter(
-                activity = activity as SimpleActivity,
-                items = items,
-                listener = this,
-                recyclerView = view.checklist_list,
-                showIcons = true
+            activity = activity as SimpleActivity,
+            items = items,
+            listener = this,
+            recyclerView = view.checklist_list,
+            showIcons = true
         ) { item ->
             val clickedNote = item as ChecklistItem
             clickedNote.isDone = !clickedNote.isDone
