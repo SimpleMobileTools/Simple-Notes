@@ -91,23 +91,25 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun setupFragment() {
+        if (activity == null || activity!!.isFinishing) {
+            return
+        }
+
         val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus_vector, if (activity!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
 
-        view.apply {
-            with(checklist_fab) {
-                setImageDrawable(plusIcon)
-                background.applyColorFilter(activity!!.getAdjustedPrimaryColor())
-                setOnClickListener {
-                    showNewItemDialog()
-                }
+        view.checklist_fab.apply {
+            setImageDrawable(plusIcon)
+            background.applyColorFilter(activity!!.getAdjustedPrimaryColor())
+            setOnClickListener {
+                showNewItemDialog()
             }
+        }
 
-            with(fragment_placeholder_2) {
-                setTextColor(activity!!.getAdjustedPrimaryColor())
-                underlineText()
-                setOnClickListener {
-                    showNewItemDialog()
-                }
+        view.fragment_placeholder_2.apply {
+            setTextColor(activity!!.getAdjustedPrimaryColor())
+            underlineText()
+            setOnClickListener {
+                showNewItemDialog()
             }
         }
 
