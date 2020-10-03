@@ -35,20 +35,20 @@
     <string name="display_success_message">Mostra i messaggi di salvataggio riusciti</string>
     <string name="links_and_emails_clickable">Rendi i link e le email cliccabili</string>
     <string name="place_cursor_end">Posiziona il cursose in fondo alla nota</string>
-    <string name="monospaced_font">Una un font monospace</string>
+    <string name="monospaced_font">Usa un font monospace</string>
     <string name="show_keyboard">Mostra la tastiera all\'avvio</string>
     <string name="show_word_count">Mostra il numero delle parole</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Mostra il conteggio dei caratteri</string>
     <string name="alignment">Allineamento</string>
     <string name="left">A sinistra</string>
     <string name="center">Centrato</string>
     <string name="right">A destra</string>
     <string name="widget_note">Nota usata nel widget</string>
-    <string name="show_note_picker">Mostra un selettore di note all\'avvio</string>
+    <string name="show_note_picker">Mostra il selettore delle note all\'avvio</string>
     <string name="autosave_notes">Salva automaticamente le note</string>
     <string name="enable_line_wrap">Abilita a capo automatico</string>
     <string name="use_incognito_mode">Usa la modalità incognito per le tastiere</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="move_undone_checklist_items">Sposta gli elementi non spuntati in cima</string>
 
     <!-- Checklists -->
     <string name="checklist">Scaletta</string>
@@ -62,37 +62,36 @@
     <string name="import_folder">Importa cartella</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
-
+    <string name="faq_1_title">Come posso cambiare il colore dei widget?</string>
+    <string name="faq_1_text">Se hai un solo widget attivo, puoi ricrearlo oppure usare il pulsante nelle impostazioni dell\'app per personalizzaro. Se hai più di un widget, il pulsante nelle impostazioni dell\'app non sarà disponibile. Dato che l\'app supporta la personalizzazione dei colori per ogni widget, dovrai ricreare il widget che vuoi personalizzare.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro: Elenco attività e planner</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Semplice planner: crea note, backup e elenchi di attività</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★ Devi prendere rapidamente una nota per qualcosa da comprare, un indirizzo o un\'idea di business? Dai allora uno sguardo a questo semplice strumento che hai sempre cercato: Simple Notes: elenco attività e planner! Non sono necessari complicate operazioni per usare l\'app, basta premere lo schermo e scrivere quello che vuoi per creare note, rapide liste, elenchi o trascrizione di idee. Con questo semplice taccuino personale puoi ricordare di qualsiasi cosa rapidamente! Fare un elenco della spesa, trascrivere i propri pensieri e impostare facilmente degli avvisi non è mai stato così facile ★
 
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+        Simple notes è un rapido, straordinario e semplice da utilizzare organizzatore e diventerà uno strumento utile e fondamentale, ti aiuterà a ricordare ogni informazione!
 
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+        Il nostro strumento ti permetterà di tenere traccia degli acquisti, creare degli elenchi di oggetti o idee con una semplicità disarmante, ti farà salvare un sacco di tempo.
 
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+        Le note sono salvata automaticamente, così che non perderai alcuna modifica per errore. Supporta inoltre la creazione di note di testo multiple oppure di liste.
 
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+        Puoi accedere alle note e organizzare gli elenchi rapidamente utilizzando il widget personalizzabile e ridimensionabie, che aprirà l\'applicazione al tocco.
 
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+        L\'app è facile da utilizzare e non contiene pubblicità o permessi non necessari. È completamente open source e permette di utilizzare i colori preferiti come tema dell\'applicazione.
 
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+        <b>Simple Notes: Elenco attività e planner</b> è il miglior organizzatore per le liste che puoi utilizzare senza pubblicità. Se necessiti di un\'organizzatore di alta qualità per un rapido appunto, promemoria affidabili che è davvero semplice da utilizzare, scarica subito l\'app :) Ottieni il tuo personale taccuino nella tua tasca ogni giorno con un organizzatore, così non dovrai preoccuparti di dimenticarti degli impegni importanti e della lista della spesa :).
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        È costruita con il material design e il tema scuro predefinito, fornisce un\'ottima esperienza utente per un semplice uso. La mancanza di connessione Internet è sinonimo di maggiore privacy, sicurezza e stabilità rispetto ad altre applicazioni.
 
         L\'applicazione non contiene pubblicità o permessi non necessari; è completamente opensource e la si può personalizzare con i propri colori preferiti.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Dai un\'occhiata alle altre applicazioni della serie Simple Tools:</b>
         https://www.simplemobiletools.com
 
-        <b>Standalone website of Simple Notes Pro:</b>
+        <b>Sito web dedicato a Simple Notes Pro:</b>
         https://www.simplemobiletools.com/notes
 
         <b>Facebook:</b>
