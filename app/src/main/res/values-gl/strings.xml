@@ -63,7 +63,7 @@
 
     <!-- FAQ -->
     <string name="faq_1_title">Como cambio a cor dos widgets?</string>
-    <string name="faq_1_text">No caso de que teñas só un widget activo, podes crealo de novo ou usar o botón nos axustes do app para personalizalo.
+    <string name="faq_1_text">No caso de que teñas só un widget activo, podes crealo de novo ou usar o botón nos axustes do app para personalizalo.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
