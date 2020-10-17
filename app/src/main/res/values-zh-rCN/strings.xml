@@ -38,7 +38,7 @@
     <string name="monospaced_font">使用等宽字体</string>
     <string name="show_keyboard">在启动时显示键盘</string>
     <string name="show_word_count">显示字数</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">显示字符计数</string>
     <string name="alignment">对准</string>
     <string name="left">左边</string>
     <string name="center">中间</string>
@@ -67,23 +67,23 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">简易笔记 Pro: 待办清单管理器和计划工具</string>
+    <string name="app_title">简易笔记 Pro：待办清单管理器和计划工具</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">简易计划工具: 创建笔记，备份 &amp; 待办清单及快速笔记提醒工具</string>
+    <string name="app_short_description">简易计划工具：创建笔记，备份 &amp; 待办清单及快速笔记提醒工具</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★ 需要快速记录待买物品、地址或者新点子？那么不要错过这个必然符合您所需的便捷管理工具：简易笔记： 待办清单管理器和计划工具！ 无需复杂的设置步骤，仅需要点击屏幕并敲入您所要的笔记、清单、列表或者仅仅时备注一个好点子。使用这个属于您的简易个人记事本，您可以快速记录任何事情！日用品采购、想法记录和备忘提醒笔记从未有如此简单 ★
 
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+        简易笔记计划工具是一个快速且易用的组织和计划工具，它将成为您难以估价的工具和助手，帮助您记录任何必要的信息！
 
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+        我们的提醒工具允许您以前所未有的简单方式记录您所承担的义务及创建每日清单，带来显著和难以匹敌的时间节省价值，快速且便捷的管理您的计划表。
 
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+        该笔记提醒工具包含自动保存功能，所以您不会因失误遗失修改。它也可以快速创建多个独立的纯文本和列表。
 
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+        使用可自定义和缩放小控件，您可以快速访问笔记并管理您的待办清单，单击亦可打开主应用程序。
 
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+        它用户友好且完全不包含不必要的权限，无附加条件。它完全开源，提供可自定义的颜色以供快速便捷的微调。 
 
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+        <b>简易笔记：待办清单管理器和计划工具</b> 是您可以无广告使用的最佳条目组织和清单计划工具。如果您需要一个高质量的组织工具来实现快速和良好的笔记尼禄，一个可靠的且用户友好的提醒，且真正的简便易用，请即刻下载我们的应用:) 在您的口袋中时刻保有个人笔记本，且包含备用的计划表，将使您再也不用担心忘记重要的会议或者您的购物清单 :)。
 
         它遵循质感设计且默认应用黑暗模式，提供便于使用的极佳的用户体验。相对于其他应用，不包含互联网访问给予您更佳的隐私、保密性和稳定性。
 
