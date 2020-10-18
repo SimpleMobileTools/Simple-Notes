@@ -48,7 +48,7 @@
     <string name="autosave_notes">メモを自動保存する</string>
     <string name="enable_line_wrap">行の折り返しを有効にする</string>
     <string name="use_incognito_mode">キーボードのシークレットモードを使用する</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="move_undone_checklist_items">未了のチェックリスト項目を上部に移動する</string>
 
     <!-- Checklists -->
     <string name="checklist">チェックリスト</string>
