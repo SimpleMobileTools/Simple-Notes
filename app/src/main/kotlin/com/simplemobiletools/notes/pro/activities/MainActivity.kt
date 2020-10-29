@@ -1,9 +1,12 @@
 package com.simplemobiletools.notes.pro.activities
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.print.PrintAttributes
+import android.print.PrintManager
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
 import android.util.TypedValue
@@ -12,6 +15,9 @@ import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.inputmethod.EditorInfo
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
@@ -175,6 +181,7 @@ class MainActivity : SimpleActivity() {
             R.id.import_folder -> openFolder()
             R.id.export_as_file -> tryExportAsFile()
             R.id.export_all_notes -> tryExportAllNotes()
+            R.id.print -> printText()
             R.id.delete_note -> displayDeleteNotePrompt()
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
@@ -842,6 +849,32 @@ class MainActivity : SimpleActivity() {
         }
     }
 
+    private fun printText() {
+        try {
+            val webView = WebView(this)
+            webView.webViewClient = object : WebViewClient() {
+                override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest) = false
+
+                override fun onPageFinished(view: WebView, url: String) {
+                    createWebPrintJob(view)
+                }
+            }
+
+            webView.loadData(getPrintableText(), "text/plain", "UTF-8")
+        } catch (e: Exception) {
+            showErrorToast(e)
+        }
+    }
+
+    private fun createWebPrintJob(webView: WebView) {
+        val jobName = mCurrentNote.title
+        val printAdapter = webView.createPrintDocumentAdapter(jobName)
+
+        (getSystemService(Context.PRINT_SERVICE) as? PrintManager)?.apply {
+            print(jobName, printAdapter, PrintAttributes.Builder().build())
+        }
+    }
+
     private fun getPagerAdapter() = view_pager.adapter as NotesPagerAdapter
 
     private fun getCurrentNoteText() = getPagerAdapter().getCurrentNoteViewText(view_pager.currentItem)
@@ -851,6 +884,18 @@ class MainActivity : SimpleActivity() {
             getCurrentNoteText() ?: ""
         } else {
             getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
+        }
+    }
+
+    private fun getPrintableText(): String {
+        return if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
+            getCurrentNoteText() ?: ""
+        } else {
+            var printableText = ""
+            getPagerAdapter().getNoteChecklistRawItems(view_pager.currentItem)?.forEach {
+                printableText += "${it.title}\n\n"
+            }
+            printableText
         }
     }
 

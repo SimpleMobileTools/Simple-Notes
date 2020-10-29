@@ -26,11 +26,11 @@ import kotlinx.android.synthetic.main.fragment_checklist.view.*
 class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private var noteId = 0L
-    private var items = ArrayList<ChecklistItem>()
     private var note: Note? = null
 
     lateinit var view: ViewGroup
 
+    var items = ArrayList<ChecklistItem>()
     val checklistItems get(): String = Gson().toJson(items)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

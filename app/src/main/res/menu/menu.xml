@@ -58,6 +58,10 @@
         android:title="@string/export_all_notes"
         app:showAsAction="never"/>
     <item
+        android:id="@+id/print"
+        android:title="@string/print"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/delete_note"
         android:icon="@drawable/ic_delete_vector"
         android:title="@string/delete_note"
