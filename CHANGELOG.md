@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.5.5 *(2020-10-29)*
+----------------------------
+
+ * Allow printing notes
+ * Added some translation and stability improvements
+
 Version 6.5.4 *(2020-09-19)*
 ----------------------------
 
