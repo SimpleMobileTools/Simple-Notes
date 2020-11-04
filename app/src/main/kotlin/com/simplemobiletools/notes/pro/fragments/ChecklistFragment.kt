@@ -99,7 +99,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
         view.checklist_fab.apply {
             setImageDrawable(plusIcon)
-            background.applyColorFilter(activity!!.getAdjustedPrimaryColor())
+            background?.applyColorFilter(activity!!.getAdjustedPrimaryColor())
             setOnClickListener {
                 showNewItemDialog()
             }

@@ -860,7 +860,7 @@ class MainActivity : SimpleActivity() {
                 }
             }
 
-            webView.loadData(getPrintableText(), "text/plain", "UTF-8")
+            webView.loadData(getPrintableText().replace("#", "%23"), "text/plain", "UTF-8")
         } catch (e: Exception) {
             showErrorToast(e)
         }
