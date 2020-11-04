@@ -1,0 +1,2 @@
+ * Properly handle printing text with hashtag in it
+ * Added some translation and stability improvements

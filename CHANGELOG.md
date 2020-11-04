@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.5.6 *(2020-11-04)*
+----------------------------
+
+ * Properly handle printing text with hashtag in it
+ * Added some translation and stability improvements
+
 Version 6.5.5 *(2020-10-29)*
 ----------------------------
 
