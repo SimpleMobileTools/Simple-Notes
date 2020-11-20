@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>
-    <string name="widget_config">Obrigado por usar o Simple Notes.\nPara mais aplicações Simple, aceda a SimpleMobileTools.com.</string>
+    <string name="widget_config">Obrigado por usar Simple Notes.\nPara mais aplicações Simple, aceda a SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Não pode partilhar texto vazio</string>
     <string name="simple_note">Nota simples</string>
     <string name="new_note">Adicionar uma nota</string>
@@ -38,7 +38,7 @@
     <string name="monospaced_font">Usar letra mono-espaçada</string>
     <string name="show_keyboard">Mostrar teclado ao inciar</string>
     <string name="show_word_count">Mostrar número de palavras</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Mostrar número de caracteres</string>
     <string name="alignment">Gravidade</string>
     <string name="left">Esquerda</string>
     <string name="center">Centro</string>
