@@ -36,9 +36,9 @@
     <string name="links_and_emails_clickable">Mostrar enlaces y direcciones de correo como seleccionables</string>
     <string name="place_cursor_end">Colocar el cursor al final de la nota</string>
     <string name="monospaced_font">Usar fuente monoespaciada</string>
-    <string name="show_keyboard">Mostrar el teclado al incio</string>
-    <string name="show_word_count">Mostrar recuento de palabras</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_keyboard">Mostrar teclado al inciciar</string>
+    <string name="show_word_count">Mostrar conteo de palabras</string>
+    <string name="show_character_count">Mostrar conteo de caracteres</string>
     <string name="alignment">Alineación del texto</string>
     <string name="left">Izquierda</string>
     <string name="center">Centrado</string>
@@ -67,29 +67,27 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Notas Simple Pro: Organiza y planea</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Organizador Simple: Crea notas, respalda y listas de tareas con recordatorios</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★ ¿Necesitas tomar una nota rápida de algo que comprar, una dirección, o idea de lanzamiento? Entonces no búsques más ya que este es la herramienta de organización que estabas buscando: Notas Simple: ¡Organizador y planeador de cosas que hacer! No necesita complicados pasos de instalación, solo toca la pantalla y escribe en lo que vino para crear notas, listas rápidas, listas de verificación o respaldos para cualquier idea. Con tu cuaderno símple y personal ¡puedes recorgar cualquier cosa rápido! Comprar comestibles, memorizar tus pensamientos y programar recordatorios. Tomar notas nunca había sido tan fácil ★
 
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+        Notas Simple es rápido y simple de usar para organizar y planear, y te servirá como una invaluable herramienta y compañía, ¡ayudándote a recordar información necesaria!
 
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+        Nuestra herramienta de recordatorios te permite estar al día con tus deberes, crea listas de tareas diarias para cosas o ideas con una simplicidad sin precedentes, notabilidad y ahorro de tiempo sin rival. Administra tu horario de una manera rápida y simple.
 
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+        Este cuaderno con recordatorios incluye autoguardado, así que no descartarás tus cambios por error. También soporta crear múltiples e independientes notas de texto plano y listas muy rápido.
 
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+        Fácilmente puedes acceder a a tus notas y organizar tus listas de tareas al instante usando el widget personalizable y reescalable, el cual abre la aplicación con un toque.
 
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+        Es amistosa con el usuario y no contiene absolutamente ningún anuncio o permiso innecesario - sin letras pequeñas. 
 
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+        Incluye diseño material y tema obscuro por defecto, provee una gran experiencia de usuario para uso sencillo. La falta del acceso a internet te da más privacidad, seguridad y estabilidad que otras aplicaciones.
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        No contiene anuncios o permisos innecesarios. Es completamente de código abierto, provee colores personalizables.
 
-        No contiene anuncios ni permisos innecesarios. Es completamente OpenSource y además provee un tema oscuro.
-
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Mira la suite completa de herramientas Simples aquí:</b>
         https://www.simplemobiletools.com
 
         <b>Standalone website of Simple Notes Pro:</b>
