@@ -1,5 +1,5 @@
 ﻿<resources>
-    <string name="app_name">Simple Notes</string>
+    <string name="app_name">Simpleメモ</string>
     <string name="app_launcher_name">メモ</string>
     <string name="widget_config">シンプルメモのご利用ありがとうございます。\n他のシンプルアプリは SimpleMobileTools.com をご覧ください。</string>
     <string name="cannot_share_empty_text">空のテキストは共有できません</string>
@@ -38,7 +38,7 @@
     <string name="monospaced_font">等幅フォントを使用する</string>
     <string name="show_keyboard">起動時にキーボードを表示する</string>
     <string name="show_word_count">単語数を表示する</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">文字カウントを表示</string>
     <string name="alignment">配置</string>
     <string name="left">左</string>
     <string name="center">中央</string>
@@ -48,7 +48,7 @@
     <string name="autosave_notes">メモを自動保存する</string>
     <string name="enable_line_wrap">行の折り返しを有効にする</string>
     <string name="use_incognito_mode">キーボードのシークレットモードを使用する</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="move_undone_checklist_items">チェックリストの未完了リストを上に移動</string>
 
     <!-- Checklists -->
     <string name="checklist">チェックリスト</string>
@@ -62,44 +62,42 @@
     <string name="import_folder">フォルダからインポート</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">ウィジェットの色はどうやって変更出来ますか？</string>
+    <string name="faq_1_text">アクティブなウィジェットが一つしかない場合、ウィジェットを再作成するか、アプリ設定内のボタンを押してカスタマイズ出来ます。アクティブなウィジェットが複数ある場合、アプリ設定内のボタンは使用出来ません。アプリはウィジェットごとの色のカスタマイズをサポートしているので、カスタマイズしたいウィジェットは再作成する必要があります。</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">シンプルなメモ To-Doリストプロのオーガナイザーとプランナー</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">あなたのやることリスト：適切なメモを作成し、スマートシートを作成し、日常業務を計画</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★買い物リスト、住所のリマインダー、新しいアイデアを作成するためには簡単なメモが必要ではないですか？ これはあなたが探していたシンプルな整理ツールです。もう他を探す必要はありません。シンプルなメモ：To-doリストの整理とプラン！ 最高の整理アプリとメモ-Android向けの無料の付箋メモ作成アプリ。 複雑な設定は必要ありません。画面をタップして情報を入力し、アイデアのメモ、クイックリスト、チェックリスト、またはバックアップを作成してください。 シンプルなパーソナルノートブックなら、何でもすぐに思い出すことができます！ 食料品の買い物リスト、毎日の議題のTo-Doリスト、会議のリマインダーの設定が簡単に。  ★
 
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+        シンプルなノートプランナーは、使いやすいオーガナイザーとメモ帳です。 必要な情報やショッピングモールでのショッピングリストを思い出すのに役立ちます。
 
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+        リマインダーのメモ帳ツールを使用すると、業務の追跡、アイテムやアイデアに付箋をしたり買い物リストの作成が可能になります。これまでにないシンプルさ、時間節約ができます。 無料の付箋整理アプリでスケジュールを管理
 
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+        <b> シンプルノートプロ：To-doリストの整理とプラン</b>のメモ帳リマインダーツールには自動保存機能が付いているので、誤って変更を破棄することはありません。 複数のメモやリストをすばやく作成することもできます。
 
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+        カスタマイズ可能なウィジェットとサイズ変更可能なウィジェットを使用すると、無料の付箋に簡単にアクセスして、すぐにTo-Doリストのメモ帳を整理することができます。
 
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+        ユーザーフレンドリーで、広告や不要な権限は一切ありません。それは完全にオープンソースの優れたノート作成ウィジェットであり、カラーカスタマイズも可能です。
 
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+        <b> シンプルノートプロ：To-doリスト整理とプラン</b>は、広告なしで使用できる最高のアイテム整理と付箋が付けられる無料アプリです。 迅速かつ信頼性の高い優れたメモ、本当に使いやすいシンプルな買い物リストを通知する高品質のオーガナイザー(整理)が必要な場合は、今すぐアプリをダウンロードしてください。バックアッププランナーが備わっているため、個人用チェックリスト整理アプリとメモ帳を毎日ポケットに入れれば、重要な会議や買い物リストを忘れる心配はありません。
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        広告や不要な権限はありません。 完全にオープンソースで、カラーもカスタマイズ可能。
 
-        広告や不要なアクセス許可は含まれていません。 完全にオープンソースで、ダークテーマも提供しています。
+        <b>シンプルツールの完全なリストはこちらからご確認ください：</b>
+         https://www.simplemobiletools.com
 
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
+        <b>シンプルノートプロのwebサイト：</b>
+         https://www.simplemobiletools.com/notes
 
-        <b>Standalone website of Simple Notes Pro:</b>
-        https://www.simplemobiletools.com/notes
+        <b> Facebook：</b>
+         https://www.facebook.com/simplemobiletools
 
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
+        <b> Reddit：</b>
+         https://www.reddit.com/r/SimpleMobileTools
     </string>
 
     <!--
