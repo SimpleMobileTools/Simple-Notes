@@ -62,8 +62,8 @@
     <string name="import_folder">Імпортувати теку</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Як я можу змінити колір віджета?</string>
+    <string name="faq_1_text">Якщо у вас тільки 1 активний віджет, ви можете або відворити його знову, або використовувати кнопку в налаштуваннях програми. Якщо у вас декілька активних віджетів, кнопка в налаштуваннях буде недоступна. Оскільки додаток підтримує налаштування кольору для кожного віджета, вам доведеться відтворити віджет, який ви хочете налаштувати.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
