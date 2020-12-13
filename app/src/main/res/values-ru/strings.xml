@@ -64,6 +64,7 @@
     <!-- FAQ -->
     <string name="faq_1_title">Как я могу изменить цвет виджета?</string>
     <string name="faq_1_text">Если у вас только 1 активный виджет, вы можете либо пересоздать его, либо использовать кнопку в настройках приложения. Если у вас несколько активных виджетов, кнопка в настройках будет недоступна. Поскольку приложение поддерживает настройку цвета для каждого виджета, вам придется пересоздать виджет, который вы хотите настроить.</string>
+
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
