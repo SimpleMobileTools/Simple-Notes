@@ -36,9 +36,9 @@
     <string name="links_and_emails_clickable">Сделать ссылки и адреса электронной почты активными</string>
     <string name="place_cursor_end">Помещать курсор в конец заметки</string>
     <string name="monospaced_font">Использовать моноширинный шрифт</string>
-    <string name="show_keyboard">Показывать клавиатуру при запуске</string>
+    <string name="show_keyboard">Отображать клавиатуру при запуске</string>
     <string name="show_word_count">Отображать количество слов</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Отображать количество символов</string>
     <string name="alignment">Выравнивание</string>
     <string name="left">По левому краю</string>
     <string name="center">По центру</string>
@@ -67,25 +67,25 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro: Менеджер To-do списков</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Simple planner: Создавайте и сохраняйте заметки &amp; to-do списки с быстрыми напоминаниями</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★ Вам нужно быстро сделать заметку о покупке, адресе или идее стартапа? Тогда можете больше не искать это приложение - то, что вам нужно. Simple Notes: Менеджер To-do списков! Никаких сложных шагов настройки не требуется, просто коснитесь экрана и введите то, что вам нужно. Сохраняйте свои идеи, создвайте заметки, быстрые и контрольные списки. С помощью простого блокнота вы сможете быстро все вспонить! Вы легко можете настраивать напоминания, еще никогда не было так легко далать заметки ★
 
         Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
 
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+        Наше приложение экономит время позволяя отслеживать запланированные дела и составлять ежедневные контрольные списки. Быстро и просто управляйте своим расписанием. 
 
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+        В приложении используется автоматическое сохранение, а также оно поддерживает быстрое создание нескольких независимых простых текстовых заметок и списков. 
 
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+        Вы легко можете получить доступ к заметке и мгновенно организовать свой список дел использую настраиваемый виджет, открывающий приложение одним касанием.
 
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. Приложение имеет полностью открытый исходный код, позволяет быстро и легко настроить цвета интерфейса. 
 
         <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        По умолчанию используется материальный дизайн и темная тема, что обеспечивает хороший  пользовательский опыт и простоту использования. Отсутствие разрешения доступа к интернету дает вам больше конфиденциальности, безопасности и стабильности, чем другие приложения.
 
         Без рекламы и излишних прав доступа. Полностью открытое ПО, а также со встроенной темной темой.
 
