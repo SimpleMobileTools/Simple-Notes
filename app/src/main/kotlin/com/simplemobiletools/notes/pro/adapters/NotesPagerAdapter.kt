@@ -89,4 +89,8 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
         fragments[position] = fragment
         return fragment
     }
+
+    fun removeDoneCheckListItems(position: Int) {
+        (fragments[position] as? ChecklistFragment)?.removeDoneItems()
+    }
 }
