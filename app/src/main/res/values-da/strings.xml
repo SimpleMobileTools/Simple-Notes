@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Føj et nyt punkt til tjeklisten</string>
     <string name="add_new_checklist_items">Føj nye punkter til tjeklisten</string>
     <string name="checklist_is_empty">Tjeklisten er tom</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Eksporter alle noter som filer</string>
@@ -101,7 +102,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="remove_done_items">Remove done items</string>
 
     <!--
         Haven't found some strings? There's more at

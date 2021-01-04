@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Додати нову позицію у списку</string>
     <string name="add_new_checklist_items">Додати нові позиції у списку</string>
     <string name="checklist_is_empty">Список порожній</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Експортувати всі нотатки як файли</string>
@@ -101,7 +102,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="remove_done_items">Remove done items</string>
 
     <!--
         Haven't found some strings? There's more at

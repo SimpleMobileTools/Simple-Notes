@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">新增新的核對清單項目</string>
     <string name="add_new_checklist_items">新增新的核對清單項目</string>
     <string name="checklist_is_empty">核對清單為空白</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">將全部筆記匯出成檔案</string>
@@ -101,7 +102,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="remove_done_items">Remove done items</string>
 
     <!--
         Haven't found some strings? There's more at

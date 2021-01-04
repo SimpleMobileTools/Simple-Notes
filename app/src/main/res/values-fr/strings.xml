@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Ajouter un nouvel élément</string>
     <string name="add_new_checklist_items">Ajouter de nouveaux éléments</string>
     <string name="checklist_is_empty">La checklist est vide</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exporter toutes les notes en tant que fichiers</string>
@@ -101,7 +102,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="remove_done_items">Remove done items</string>
 
     <!--
         Haven't found some strings? There's more at

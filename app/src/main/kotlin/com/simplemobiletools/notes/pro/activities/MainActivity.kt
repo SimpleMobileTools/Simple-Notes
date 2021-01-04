@@ -243,8 +243,7 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun isCurrentItemChecklist() = mAdapter?.isChecklistFragment(view_pager.currentItem)
-            ?: false
+    private fun isCurrentItemChecklist() = mAdapter?.isChecklistFragment(view_pager.currentItem) ?: false
 
     private fun checkIntents(intent: Intent) {
         intent.apply {
@@ -506,11 +505,11 @@ class MainActivity : SimpleActivity() {
         val licenses = LICENSE_RTL
 
         val faqItems = arrayListOf(
-                FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
-                FAQItem(R.string.faq_1_title, R.string.faq_1_text),
-                FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons),
-                FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons),
-                FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons)
+            FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
+            FAQItem(R.string.faq_1_title, R.string.faq_1_text),
+            FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons),
+            FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons),
+            FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons)
         )
 
         startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
@@ -694,8 +693,8 @@ class MainActivity : SimpleActivity() {
 
     private fun showExportFilePickUpdateDialog(exportPath: String, textToExport: String) {
         val items = arrayListOf(
-                RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
+            RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
+            RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
@@ -725,8 +724,8 @@ class MainActivity : SimpleActivity() {
     private fun exportAllNotes() {
         ExportFilesDialog(this, mNotes) { parent, extension ->
             val items = arrayListOf(
-                    RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-                    RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
+                RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
+                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
 
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == EXPORT_FILE_SYNC
@@ -907,8 +906,7 @@ class MainActivity : SimpleActivity() {
     private fun saveCurrentNote(force: Boolean) {
         getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
         if (mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
-            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem)
-                    ?: ""
+            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
         }
     }
 

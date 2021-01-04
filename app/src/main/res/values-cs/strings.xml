@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Přidat do seznamu novou položku</string>
     <string name="add_new_checklist_items">Přidat do seznamu nové položky</string>
     <string name="checklist_is_empty">Seznam položek je prázdný</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovat všechny poznámky jako soubory</string>
@@ -101,7 +102,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="remove_done_items">Remove done items</string>
 
     <!--
         Haven't found some strings? There's more at

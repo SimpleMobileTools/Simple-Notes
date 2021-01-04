@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">إضافة عنصر قائمة تدقيق جديد</string>
     <string name="add_new_checklist_items">إضافة عناصر قائمة تدقيق جديدة</string>
     <string name="checklist_is_empty">قائمة التدقيق فارغة</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">تصدير جميع الملاحظات كملفات</string>
@@ -101,7 +102,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="remove_done_items">Remove done items</string>
 
     <!--
         Haven't found some strings? There's more at

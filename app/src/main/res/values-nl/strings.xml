@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Item toevoegen</string>
     <string name="add_new_checklist_items">Items toevoegen</string>
     <string name="checklist_is_empty">De lijst is leeg</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Alle notities naar bestanden exporteren</string>
@@ -97,7 +98,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="remove_done_items">Remove done items</string>
 
     <!--
         Haven't found some strings? There's more at

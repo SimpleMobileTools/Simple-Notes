@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Yeni bir yapılacak listesi öğesi ekle</string>
     <string name="add_new_checklist_items">Yeni yapılacak listesi öğeleri ekle</string>
     <string name="checklist_is_empty">Yapılacak listesi boş</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
@@ -101,7 +102,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-    <string name="remove_done_items">Remove done items</string>
 
     <!--
         Haven't found some strings? There's more at
