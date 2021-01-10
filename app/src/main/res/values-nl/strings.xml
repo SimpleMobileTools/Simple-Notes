@@ -51,11 +51,11 @@
     <string name="move_undone_checklist_items">Afgewerkte items naar onderen verplaatsen</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
+    <string name="checklist">Lijst</string>
     <string name="add_new_checklist_item">Item toevoegen</string>
     <string name="add_new_checklist_items">Items toevoegen</string>
     <string name="checklist_is_empty">De lijst is leeg</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="remove_done_items">Afgeronde items wissen</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Alle notities naar bestanden exporteren</string>
