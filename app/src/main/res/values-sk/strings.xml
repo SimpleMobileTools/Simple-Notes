@@ -55,7 +55,7 @@
     <string name="add_new_checklist_item">Pridať do zoznamu novú položku</string>
     <string name="add_new_checklist_items">Pridať do zoznamu nové položky</string>
     <string name="checklist_is_empty">Zoznam položiek je prázdny</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="remove_done_items">Odstrániť splnené položky</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovať všetky poznámky ako súbory</string>
