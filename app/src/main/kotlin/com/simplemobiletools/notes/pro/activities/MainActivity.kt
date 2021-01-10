@@ -611,14 +611,23 @@ class MainActivity : SimpleActivity() {
     private fun addNoteFromUri(uri: Uri, filename: String? = null) {
         val noteTitle = if (filename?.isEmpty() == false) {
             filename
+        } else if (uri.toString().startsWith("content://")) {
+            getFilenameFromContentUri(uri) ?: getNewNoteTitle()
         } else {
             getNewNoteTitle()
         }
 
         val inputStream = contentResolver.openInputStream(uri)
         val content = inputStream?.bufferedReader().use { it!!.readText() }
-        val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value, "")
-        addNewNote(note)
+        val checklistItems = content.parseChecklistItems()
+
+        if (checklistItems != null) {
+            val note = Note(null, noteTitle, content, NoteType.TYPE_CHECKLIST.value)
+            addNewNote(note)
+        } else {
+            val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value, "")
+            addNewNote(note)
+        }
     }
 
     private fun openPath(path: String) {
