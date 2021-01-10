@@ -129,8 +129,6 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
             saveNote()
             setupAdapter()
-
-            (view.checklist_list.adapter as? ChecklistAdapter)?.notifyDataSetChanged()
         }
     }
 
@@ -173,14 +171,13 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     fun removeDoneItems() {
-        items.removeIf { it.isDone }
-        updateUIVisibility()
-        view.checklist_list.adapter?.notifyDataSetChanged()
+        items = items.filter { !it.isDone }.toMutableList() as ArrayList<ChecklistItem>
         saveNote()
+        setupAdapter()
     }
 
     private fun updateUIVisibility() {
-        with(view) {
+        view.apply {
             fragment_placeholder.beVisibleIf(items.isEmpty())
             fragment_placeholder_2.beVisibleIf(items.isEmpty())
             checklist_list.beVisibleIf(items.isNotEmpty())
