@@ -564,6 +564,7 @@ class MainActivity : SimpleActivity() {
         val inputStream = try {
             contentResolver.openInputStream(uri) ?: return
         } catch (e: Exception) {
+            showErrorToast(e)
             return
         }
 
