@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.6.0 *(2021-01-10)*
+----------------------------
+
+ * Properly handle importing checklist type of files
+ * Adding a way to quickly remove done checklist items (by tanvir-ahmod)
+ * Some stability, translation and UX improvements
+
 Version 6.5.6 *(2020-11-04)*
 ----------------------------
 

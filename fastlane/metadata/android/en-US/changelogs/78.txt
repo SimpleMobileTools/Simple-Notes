@@ -1,0 +1,3 @@
+ * Properly handle importing checklist type of files
+ * Adding a way to quickly remove done checklist items (by tanvir-ahmod)
+ * Some stability, translation and UX improvements
