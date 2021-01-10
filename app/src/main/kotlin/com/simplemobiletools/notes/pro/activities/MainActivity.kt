@@ -153,6 +153,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.delete_note).isVisible = multipleNotesExist
             findItem(R.id.export_all_notes).isVisible = multipleNotesExist && hasPermission(PERMISSION_WRITE_STORAGE)
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist()
+            findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist()
             findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
 
             saveNoteButton = findItem(R.id.save_note)
@@ -185,6 +186,7 @@ class MainActivity : SimpleActivity() {
             R.id.delete_note -> displayDeleteNotePrompt()
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
+            R.id.remove_done_items -> removeDoneItems()
             else -> return super.onOptionsItemSelected(item)
         }
         return true
@@ -1057,5 +1059,9 @@ class MainActivity : SimpleActivity() {
             add(Release(67, R.string.release_67))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
+    }
+
+    private fun removeDoneItems() {
+        getPagerAdapter().removeDoneCheckListItems(view_pager.currentItem)
     }
 }

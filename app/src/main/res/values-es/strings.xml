@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Añadir un nuevo item a la lista</string>
     <string name="add_new_checklist_items">Añadir nuevos items a la lista</string>
     <string name="checklist_is_empty">La lista está vacía</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas las notas como archivos</string>

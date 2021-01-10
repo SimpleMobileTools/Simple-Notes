@@ -135,11 +135,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun setupAdapter() {
-        with(view) {
-            fragment_placeholder.beVisibleIf(items.isEmpty())
-            fragment_placeholder_2.beVisibleIf(items.isEmpty())
-            checklist_list.beVisibleIf(items.isNotEmpty())
-        }
+        updateUIVisibility()
 
         ChecklistAdapter(
             activity = activity as SimpleActivity,
@@ -173,6 +169,21 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                     ctx.updateWidgets()
                 }
             }
+        }
+    }
+
+    fun removeDoneItems() {
+        items.removeIf { it.isDone }
+        updateUIVisibility()
+        view.checklist_list.adapter?.notifyDataSetChanged()
+        saveNote()
+    }
+
+    private fun updateUIVisibility() {
+        with(view) {
+            fragment_placeholder.beVisibleIf(items.isEmpty())
+            fragment_placeholder_2.beVisibleIf(items.isEmpty())
+            checklist_list.beVisibleIf(items.isNotEmpty())
         }
     }
 

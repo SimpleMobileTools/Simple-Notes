@@ -37,6 +37,11 @@
         android:title="@string/rename_note"
         app:showAsAction="ifRoom"/>
     <item
+        android:id="@+id/remove_done_items"
+        android:title="@string/remove_done_items"
+        android:icon="@drawable/ic_delete_vector"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/share"
         android:icon="@drawable/ic_share_vector"
         android:title="@string/share"

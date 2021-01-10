@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Dodajte novu stavku na spisak</string>
     <string name="add_new_checklist_items">Dodajte nove stavke na spisak</string>
     <string name="checklist_is_empty">Spisak je prazan</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>

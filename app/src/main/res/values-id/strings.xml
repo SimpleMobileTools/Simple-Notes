@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Tambah item checklist baru</string>
     <string name="add_new_checklist_items">Tambah item checklist baru</string>
     <string name="checklist_is_empty">Checklist kosong</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Ekspor semua catatan ke berkas</string>

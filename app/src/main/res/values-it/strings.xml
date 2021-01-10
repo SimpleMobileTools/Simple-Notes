@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Aggiungi un nuovo elemento</string>
     <string name="add_new_checklist_items">Aggiungi nuovi elementi</string>
     <string name="checklist_is_empty">La scaletta è vuota</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Esporta le note come file</string>

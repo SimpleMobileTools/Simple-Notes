@@ -55,6 +55,7 @@
     <string name="add_new_checklist_item">Добавить позицию в список</string>
     <string name="add_new_checklist_items">Добавить позиции в список</string>
     <string name="checklist_is_empty">Список пуст</string>
+    <string name="remove_done_items">Remove done items</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Экспортировать все заметки в файлы</string>
