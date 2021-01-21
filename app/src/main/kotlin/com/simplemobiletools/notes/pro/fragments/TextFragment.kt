@@ -169,7 +169,12 @@ class TextFragment : NoteFragment() {
         setTextWatcher()
     }
 
-    fun setTextWatcher() = view.text_note_view.addTextChangedListener(textWatcher)
+    fun setTextWatcher() {
+        view.text_note_view.apply {
+            removeTextChangedListener(textWatcher)
+            addTextChangedListener(textWatcher)
+        }
+    }
 
     fun removeTextWatcher() = view.text_note_view.removeTextChangedListener(textWatcher)
 
