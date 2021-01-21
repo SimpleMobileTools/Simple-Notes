@@ -56,6 +56,8 @@
     <string name="add_new_checklist_items">新增新的核對清單項目</string>
     <string name="checklist_is_empty">核對清單為空白</string>
     <string name="remove_done_items">Remove done items</string>
+    <string name="move_to_top">Move to top</string>
+    <string name="move_to_bottom">Move to bottom</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">將全部筆記匯出成檔案</string>
