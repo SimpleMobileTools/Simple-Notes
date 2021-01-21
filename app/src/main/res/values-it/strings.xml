@@ -56,6 +56,8 @@
     <string name="add_new_checklist_items">Aggiungi nuovi elementi</string>
     <string name="checklist_is_empty">La scaletta è vuota</string>
     <string name="remove_done_items">Remove done items</string>
+    <string name="move_to_top">Move to top</string>
+    <string name="move_to_bottom">Move to bottom</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Esporta le note come file</string>

@@ -60,6 +60,8 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
         }
 
         when (id) {
+            R.id.cab_move_to_top -> moveSelectedItemsToTop()
+            R.id.cab_move_to_bottom -> moveSelectedItemsToBottom()
             R.id.cab_rename -> renameChecklistItem()
             R.id.cab_delete -> deleteSelection()
         }
@@ -143,6 +145,31 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
         if (items.isEmpty()) {
             listener?.refreshItems()
         }
+    }
+
+    private fun moveSelectedItemsToTop() {
+        selectedKeys.withIndex()
+                .reversed()
+                .forEach { keys ->
+                    val position = items.indexOfFirst { it.id == keys.value }
+                    val tempItem = items[position]
+                    items.removeAt(position)
+                    items.add(0, tempItem)
+                }
+        notifyDataSetChanged()
+        listener?.saveChecklist()
+    }
+
+    private fun moveSelectedItemsToBottom() {
+        selectedKeys.withIndex()
+                .forEach { keys ->
+                    val position = items.indexOfFirst { it.id == keys.value }
+                    val tempItem = items[position]
+                    items.removeAt(position)
+                    items.add(items.size, tempItem)
+                }
+        notifyDataSetChanged()
+        listener?.saveChecklist()
     }
 
     private fun getItemWithKey(key: Int): ChecklistItem? = items.firstOrNull { it.id == key }
