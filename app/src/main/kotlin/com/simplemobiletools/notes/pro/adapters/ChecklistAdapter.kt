@@ -148,26 +148,25 @@ class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<Checkl
     }
 
     private fun moveSelectedItemsToTop() {
-        selectedKeys.withIndex()
-                .reversed()
-                .forEach { keys ->
-                    val position = items.indexOfFirst { it.id == keys.value }
-                    val tempItem = items[position]
-                    items.removeAt(position)
-                    items.add(0, tempItem)
-                }
+        selectedKeys.reversed().forEach { checklistId ->
+            val position = items.indexOfFirst { it.id == checklistId }
+            val tempItem = items[position]
+            items.removeAt(position)
+            items.add(0, tempItem)
+        }
+
         notifyDataSetChanged()
         listener?.saveChecklist()
     }
 
     private fun moveSelectedItemsToBottom() {
-        selectedKeys.withIndex()
-                .forEach { keys ->
-                    val position = items.indexOfFirst { it.id == keys.value }
-                    val tempItem = items[position]
-                    items.removeAt(position)
-                    items.add(items.size, tempItem)
-                }
+        selectedKeys.forEach { checklistId ->
+            val position = items.indexOfFirst { it.id == checklistId }
+            val tempItem = items[position]
+            items.removeAt(position)
+            items.add(items.size, tempItem)
+        }
+
         notifyDataSetChanged()
         listener?.saveChecklist()
     }
