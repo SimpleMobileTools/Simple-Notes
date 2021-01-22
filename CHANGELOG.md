@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 6.6.1 *(2021-01-22)*
+----------------------------
+
+ * Allow quickly moving checklist items at the top or bottom (by tanvir-ahmod)
+ * Fixing a glitch at sharing checklists
+ * Make sure undo/redo work properly
+ * Some translation and stability improvements
+
 Version 6.6.0 *(2021-01-10)*
 ----------------------------
 
