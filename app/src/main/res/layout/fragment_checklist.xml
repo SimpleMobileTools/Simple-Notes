@@ -47,12 +47,77 @@
             android:visibility="gone" />
     </RelativeLayout>
 
-    <com.simplemobiletools.commons.views.MyFloatingActionButton
-        android:id="@+id/checklist_fab"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/activity_margin"
-        android:src="@drawable/ic_plus_vector" />
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/fab_paste_container"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:alpha="0">
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/fab_paste"
+                android:padding="@dimen/activity_margin"
+                android:layout_alignBaseline="@+id/fab_paste"
+                android:text="@string/paste_and_split"
+                android:textSize="@dimen/bigger_text_size" />
+
+            <com.simplemobiletools.commons.views.MyFloatingActionButton
+                android:id="@+id/fab_paste"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_margin"
+                android:src="@drawable/ic_paste_vector"
+                app:fabSize="mini" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fab_add_container"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:alpha="0">
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/fab_add"
+                android:padding="@dimen/activity_margin"
+                android:layout_alignBaseline="@+id/fab_add"
+                android:text="@string/add_new_checklist_items"
+                android:textSize="@dimen/bigger_text_size" />
+
+            <com.simplemobiletools.commons.views.MyFloatingActionButton
+                android:id="@+id/fab_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/activity_margin"
+                android:src="@drawable/ic_plus_vector"
+                app:fabSize="mini" />
+        </RelativeLayout>
+
+        <com.simplemobiletools.commons.views.MyFloatingActionButton
+            android:id="@+id/checklist_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_margin"
+            android:src="@drawable/ic_plus_vector" />
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

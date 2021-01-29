@@ -1,5 +1,7 @@
 package com.simplemobiletools.notes.pro.fragments
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +15,7 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
+import com.simplemobiletools.notes.pro.dialogs.SplitChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
@@ -32,6 +35,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     var items = ArrayList<ChecklistItem>()
     val checklistItems get(): String = Gson().toJson(items)
+
+    private var isRotate = true
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_checklist, container, false) as ViewGroup
@@ -96,8 +101,17 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         }
 
         val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus_vector, if (activity!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
+        val pasteIcon = resources.getColoredDrawableWithColor(R.drawable.ic_paste_vector, if (activity!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
 
         view.checklist_fab.apply {
+            setImageDrawable(plusIcon)
+            background?.applyColorFilter(activity!!.getAdjustedPrimaryColor())
+            setOnClickListener {
+                showHideSubMenu()
+            }
+        }
+
+        view.fab_add.apply {
             setImageDrawable(plusIcon)
             background?.applyColorFilter(activity!!.getAdjustedPrimaryColor())
             setOnClickListener {
@@ -105,18 +119,39 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             }
         }
 
+        view.fab_paste.apply {
+            setImageDrawable(pasteIcon)
+            background?.applyColorFilter(activity!!.getAdjustedPrimaryColor())
+            setOnClickListener {
+                showPasteCheckListDialog()
+            }
+        }
+
         view.fragment_placeholder_2.apply {
             setTextColor(activity!!.getAdjustedPrimaryColor())
             underlineText()
             setOnClickListener {
-                showNewItemDialog()
+                showHideSubMenu()
             }
         }
 
         setupAdapter()
     }
 
+    private fun showHideSubMenu() {
+        isRotate = rotateFab(view.checklist_fab, !isRotate)
+
+        if (isRotate) {
+            showSubMenu(view.fab_paste_container)
+            showSubMenu(view.fab_add_container)
+        } else {
+            hideSubMenu(view.fab_paste_container)
+            hideSubMenu(view.fab_add_container)
+        }
+    }
+
     private fun showNewItemDialog() {
+        showHideSubMenu()
         NewChecklistItemDialog(activity as SimpleActivity) { titles ->
             var currentMaxId = items.maxBy { item -> item.id }?.id ?: 0
 
@@ -127,6 +162,22 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 }
             }
 
+            saveNote()
+            setupAdapter()
+        }
+    }
+
+    private fun showPasteCheckListDialog() {
+        showHideSubMenu()
+        SplitChecklistItemDialog(activity as SimpleActivity) { titles ->
+            var currentMaxId = items.maxBy { item -> item.id }?.id ?: 0
+
+            titles.forEach { title ->
+                title.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
+                    items.add(ChecklistItem(currentMaxId + 1, row, false))
+                    currentMaxId++
+                }
+            }
             saveNote()
             setupAdapter()
         }
@@ -190,5 +241,42 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     override fun refreshItems() {
         setupAdapter()
+    }
+
+    private fun rotateFab(v: View, rotate: Boolean): Boolean {
+        v.animate().setDuration(200).rotation(if (rotate) 135f else 0f)
+        return rotate
+    }
+
+    private fun showSubMenu(v: View) {
+        v.visibility = View.VISIBLE
+        v.alpha = 0f
+        v.translationY = v.height.toFloat()
+        v.animate()
+                .setDuration(200)
+                .translationY(0f)
+                .setListener(object : AnimatorListenerAdapter() {
+                    override fun onAnimationEnd(animation: Animator?) {
+                        super.onAnimationEnd(animation)
+                    }
+                })
+                .alpha(1f)
+                .start()
+    }
+
+    private fun hideSubMenu(v: View) {
+        v.visibility = View.VISIBLE
+        v.alpha = 1f
+        v.translationY = 0f
+        v.animate()
+                .setDuration(200)
+                .translationY(v.height.toFloat())
+                .setListener(object : AnimatorListenerAdapter() {
+                    override fun onAnimationEnd(animation: Animator) {
+                        v.visibility = View.GONE
+                        super.onAnimationEnd(animation)
+                    }
+                }).alpha(0f)
+                .start()
     }
 }

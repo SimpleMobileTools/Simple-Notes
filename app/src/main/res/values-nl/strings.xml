@@ -58,6 +58,8 @@
     <string name="remove_done_items">Afgeronde items wissen</string>
     <string name="move_to_top">Bovenaan zetten</string>
     <string name="move_to_bottom">Onderaan zetten</string>
+    <string name="paste_and_split">Paste and split</string>
+    <string name="split_text_with">Split text with</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Alle notities naar bestanden exporteren</string>
