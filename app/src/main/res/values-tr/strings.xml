@@ -55,9 +55,9 @@
     <string name="add_new_checklist_item">Yeni bir yapılacak listesi öğesi ekle</string>
     <string name="add_new_checklist_items">Yeni yapılacak listesi öğeleri ekle</string>
     <string name="checklist_is_empty">Yapılacak listesi boş</string>
-    <string name="remove_done_items">Remove done items</string>
-    <string name="move_to_top">Move to top</string>
-    <string name="move_to_bottom">Move to bottom</string>
+    <string name="remove_done_items">Tamamlanan öğeleri kaldır</string>
+    <string name="move_to_top">Üste taşı</string>
+    <string name="move_to_bottom">Alta taşı</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
