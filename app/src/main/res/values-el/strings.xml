@@ -38,7 +38,7 @@
     <string name="monospaced_font">Χρήση μονοδιάστατης γραμματοσειράς</string>
     <string name="show_keyboard">Εμφάνιση πληκτρολογίου κατά την εκκίνηση</string>
     <string name="show_word_count">Εμφάνιση καταμέτρησης λέξεων</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Εμφάνιση αριθμού χαρακτήρων</string>
     <string name="alignment">Στοίχιση</string>
     <string name="left">Αριστερά</string>
     <string name="center">Κέντρο</string>
@@ -55,9 +55,9 @@
     <string name="add_new_checklist_item">Προσθήκη νέου στοιχείου λίστας ελέγχου</string>
     <string name="add_new_checklist_items">Προσθήκη νέων στοιχείων λίστας ελέγχου</string>
     <string name="checklist_is_empty">Η λίστα ελέγχου είναι κενή</string>
-    <string name="remove_done_items">Remove done items</string>
-    <string name="move_to_top">Move to top</string>
-    <string name="move_to_bottom">Move to bottom</string>
+    <string name="remove_done_items">Κατάργηση ολοκληρωμένων στοιχείων</string>
+    <string name="move_to_top">Μετακίνηση στην κορυφή</string>
+    <string name="move_to_bottom">Μετακίνηση στο τέλος</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Εξαγωγή όλων των σημειώσεων ως αρχεία</string>
