@@ -38,7 +38,7 @@
     <string name="monospaced_font">Benutze Monospace Schrift</string>
     <string name="show_keyboard">Zeige Tastatur beim Start</string>
     <string name="show_word_count">Zeige Wortanzahl</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Zeige Zeichenanzahl</string>
     <string name="alignment">Ausrichtung</string>
     <string name="left">Linksbündig</string>
     <string name="center">Zentriert</string>
@@ -55,9 +55,9 @@
     <string name="add_new_checklist_item">Einen neuen Checklisteneintrag hinzufügen</string>
     <string name="add_new_checklist_items">Neue Checklisteneinträge hinzufügen</string>
     <string name="checklist_is_empty">Die Checkliste ist leer</string>
-    <string name="remove_done_items">Remove done items</string>
-    <string name="move_to_top">Move to top</string>
-    <string name="move_to_bottom">Move to bottom</string>
+    <string name="remove_done_items">Abgeschlossene Einträge entfernen</string>
+    <string name="move_to_top">Nach oben verschieben</string>
+    <string name="move_to_bottom">Nach unten verschieben</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Alle Notizen als Dateien exportieren</string>
@@ -90,7 +90,7 @@
 
         Enthält keine Werbungen und benötigt keine unnötigen Berechtigungen. Vollständig OpenSource und bietet anpassbare Farben.
 
-        <b>Schau dir die vollständige Serie der Schlichten Apps hier an:</b>
+        <b>Schau dir die vollständige Serie der schlichten Apps hier an:</b>
         https://www.simplemobiletools.com
 
         <b>Webseite von Simple Notes Pro:</b>
