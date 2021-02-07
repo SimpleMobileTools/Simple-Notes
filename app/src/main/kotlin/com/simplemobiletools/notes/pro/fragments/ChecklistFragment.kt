@@ -66,7 +66,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                     migrateCheckListOnFailure(storedNote)
                 }
 
-                if (config?.moveUndoneChecklistItems == true) {
+                if (config?.moveDoneChecklistItems == true) {
                     items.sortBy { it.isDone }
                 }
 

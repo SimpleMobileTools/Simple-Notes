@@ -48,7 +48,7 @@
     <string name="autosave_notes">Otomatis simpan catatan</string>
     <string name="enable_line_wrap">Aktifkan baris berlibat</string>
     <string name="use_incognito_mode">Gunakan mode papan ketik incognito</string>
-    <string name="move_undone_checklist_items">Pindah checklist yang belum selesai ke urutan atas</string>
+    <string name="move_done_checklist_items">Pindah checklist yang belum selesai ke urutan atas</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>

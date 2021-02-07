@@ -48,7 +48,7 @@
     <string name="autosave_notes">Muistiinpanojen automaattinen tallennus</string>
     <string name="enable_line_wrap">Ota käyttöön automaattinen rivitys</string>
     <string name="use_incognito_mode">Käytä näppäimistöjen Incognito-tilaa</string>
-    <string name="move_undone_checklist_items">Siirrä tekemättömät kohdat muistilistasta ylimmäksi</string>
+    <string name="move_done_checklist_items">Siirrä tekemättömät kohdat muistilistasta ylimmäksi</string>
 
     <!-- Checklists -->
     <string name="checklist">Muistilista</string>

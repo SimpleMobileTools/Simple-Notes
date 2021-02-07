@@ -48,7 +48,7 @@
     <string name="autosave_notes">Salva automaticamente le note</string>
     <string name="enable_line_wrap">Abilita a capo automatico</string>
     <string name="use_incognito_mode">Usa la modalità incognito per le tastiere</string>
-    <string name="move_undone_checklist_items">Sposta gli elementi non spuntati in cima</string>
+    <string name="move_done_checklist_items">Sposta gli elementi non spuntati in cima</string>
 
     <!-- Checklists -->
     <string name="checklist">Scaletta</string>

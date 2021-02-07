@@ -48,7 +48,7 @@
     <string name="autosave_notes">自动保存笔记</string>
     <string name="enable_line_wrap">启用行折叠</string>
     <string name="use_incognito_mode">对于键盘使用隐私模式</string>
-    <string name="move_undone_checklist_items">移动未完成的清单至顶端</string>
+    <string name="move_done_checklist_items">移动未完成的清单至顶端</string>
 
     <!-- Checklists -->
     <string name="checklist">清单</string>

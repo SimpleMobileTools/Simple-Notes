@@ -48,7 +48,7 @@
     <string name="autosave_notes">Guardado automático de notas</string>
     <string name="enable_line_wrap">Activar ajuste de línea</string>
     <string name="use_incognito_mode">Usar modo incógnito de los teclados</string>
-    <string name="move_undone_checklist_items">Mover Elementos sin erminar de una lista al inicio</string>
+    <string name="move_done_checklist_items">Mover Elementos sin erminar de una lista al inicio</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista</string>

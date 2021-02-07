@@ -48,7 +48,7 @@
     <string name="autosave_notes">Notları otomatik kaydet</string>
     <string name="enable_line_wrap">Sözcük kaydırmayı etkinleştir</string>
     <string name="use_incognito_mode">Klavyelerin Gizli modunu kullan</string>
-    <string name="move_undone_checklist_items">Tamamlanmamış yapılacak listesi öğelerini en üste taşı</string>
+    <string name="move_done_checklist_items">Tamamlanmamış yapılacak listesi öğelerini en üste taşı</string>
 
     <!-- Checklists -->
     <string name="checklist">Yapılacak listesi</string>

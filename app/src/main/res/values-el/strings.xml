@@ -48,7 +48,7 @@
     <string name="autosave_notes">Αυτόματη αποθήκευση σημειώσεων</string>
     <string name="enable_line_wrap">Ενεργοποίηση αναδίπλωσης γραμμής</string>
     <string name="use_incognito_mode">Χρήση λειτουργίας Incognito πληκτρολόγιου</string>
-    <string name="move_undone_checklist_items">Μετακίνηση ανεπιτυχών λίστας ελέγχου στο επάνω μέρος</string>
+    <string name="move_done_checklist_items">Μετακίνηση ανεπιτυχών λίστας ελέγχου στο επάνω μέρος</string>
 
     <!-- Checklists -->
     <string name="checklist">Λίστα ελέγχου</string>

@@ -48,7 +48,7 @@
     <string name="autosave_notes">Qeydləri avtomatik saxla</string>
     <string name="enable_line_wrap">Cız sarğısını göstər</string>
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_undone_checklist_items">Move undone checklist items at the top</string>
+    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>

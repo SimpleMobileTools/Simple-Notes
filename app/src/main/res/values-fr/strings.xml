@@ -48,7 +48,7 @@
     <string name="autosave_notes">Sauvegarder automatiquement les notes</string>
     <string name="enable_line_wrap">Activer le retour à la ligne</string>
     <string name="use_incognito_mode">Utiliser le mode incognito des claviers</string>
-    <string name="move_undone_checklist_items">Déplacer les éléments de cheklist inachevés en haut</string>
+    <string name="move_done_checklist_items">Déplacer les éléments de cheklist inachevés en haut</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>

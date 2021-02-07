@@ -48,7 +48,7 @@
     <string name="autosave_notes">Guardar nota automaticamente</string>
     <string name="enable_line_wrap">Ativar quebra de linha</string>
     <string name="use_incognito_mode">Utilizar modo incógnito no teclado</string>
-    <string name="move_undone_checklist_items">Mover itens não realizados para o topo</string>
+    <string name="move_done_checklist_items">Mover itens não realizados para o topo</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista de verificação</string>

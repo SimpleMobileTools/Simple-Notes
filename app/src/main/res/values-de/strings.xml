@@ -48,7 +48,7 @@
     <string name="autosave_notes">Notizen automatisch speichern</string>
     <string name="enable_line_wrap">Zeilenumbruch aktivieren</string>
     <string name="use_incognito_mode">Benutze den Inkognitomodus von Tastaturen</string>
-    <string name="move_undone_checklist_items">Verschiebe erledigte Checklisteneinträge nach unten</string>
+    <string name="move_done_checklist_items">Verschiebe erledigte Checklisteneinträge nach unten</string>
 
     <!-- Checklists -->
     <string name="checklist">Checkliste</string>

@@ -48,7 +48,7 @@
     <string name="autosave_notes">Gardado automático</string>
     <string name="enable_line_wrap">Habilitar sangrado de liña</string>
     <string name="use_incognito_mode">Usar o modo incógnito dos teclados</string>
-    <string name="move_undone_checklist_items"> Mover os elementos dunha lista de verificación non rematada a arriba</string>
+    <string name="move_done_checklist_items"> Mover os elementos dunha lista de verificación non rematada a arriba</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista de verificación</string>

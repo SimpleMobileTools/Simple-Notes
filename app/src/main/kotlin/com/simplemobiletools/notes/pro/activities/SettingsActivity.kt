@@ -132,10 +132,10 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupMoveUndoneChecklistItems() {
-        settings_move_undone_checklist_items.isChecked = config.moveUndoneChecklistItems
+        settings_move_undone_checklist_items.isChecked = config.moveDoneChecklistItems
         settings_move_undone_checklist_items_holder.setOnClickListener {
             settings_move_undone_checklist_items.toggle()
-            config.moveUndoneChecklistItems = settings_move_undone_checklist_items.isChecked
+            config.moveDoneChecklistItems = settings_move_undone_checklist_items.isChecked
         }
     }
 

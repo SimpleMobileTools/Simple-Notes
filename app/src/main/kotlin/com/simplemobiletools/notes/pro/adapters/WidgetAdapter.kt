@@ -94,7 +94,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         if (note?.type == NoteType.TYPE_CHECKLIST.value) {
             val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
             checklistItems = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.value, checklistItemType) ?: ArrayList(1)
-            if (context.config.moveUndoneChecklistItems) {
+            if (context.config.moveDoneChecklistItems) {
                 checklistItems.sortBy { it.isDone }
             }
         }

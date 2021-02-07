@@ -75,9 +75,9 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getInt(LAST_CREATED_NOTE_TYPE, NoteType.TYPE_TEXT.value)
         set(lastCreatedNoteType) = prefs.edit().putInt(LAST_CREATED_NOTE_TYPE, lastCreatedNoteType).apply()
 
-    var moveUndoneChecklistItems: Boolean
-        get() = prefs.getBoolean(MOVE_UNDONE_CHECKLIST_ITEMS, false)
-        set(moveUndoneChecklistItems) = prefs.edit().putBoolean(MOVE_UNDONE_CHECKLIST_ITEMS, moveUndoneChecklistItems).apply()
+    var moveDoneChecklistItems: Boolean
+        get() = prefs.getBoolean(MOVE_DONE_CHECKLIST_ITEMS, false)
+        set(moveDoneChecklistItems) = prefs.edit().putBoolean(MOVE_DONE_CHECKLIST_ITEMS, moveDoneChecklistItems).apply()
 
     @SuppressLint("RtlHardcoded")
     fun getTextGravity() = when (gravity) {
