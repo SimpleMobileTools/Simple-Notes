@@ -1,6 +1,5 @@
 package com.simplemobiletools.notes.pro.fragments
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,7 +40,6 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     override fun onResume() {
         super.onResume()
-
         loadNoteById(noteId)
     }
 
@@ -60,8 +58,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
                 try {
                     val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-                    items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.value, checklistItemType)
-                        ?: ArrayList(1)
+                    items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.value, checklistItemType) ?: ArrayList(1)
                 } catch (e: Exception) {
                     migrateCheckListOnFailure(storedNote)
                 }
@@ -70,7 +67,6 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                     items.sortBy { it.isDone }
                 }
 
-                activity?.updateTextColors(view.checklist_holder)
                 setupFragment()
             }
         }
@@ -95,18 +91,22 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             return
         }
 
-        val plusIcon = resources.getColoredDrawableWithColor(R.drawable.ic_plus_vector, if (activity!!.isBlackAndWhiteTheme()) Color.BLACK else Color.WHITE)
-
+        val adjustedPrimaryColor = activity!!.getAdjustedPrimaryColor()
         view.checklist_fab.apply {
-            setImageDrawable(plusIcon)
-            background?.applyColorFilter(activity!!.getAdjustedPrimaryColor())
+            setColors(
+                activity!!.config.textColor,
+                adjustedPrimaryColor,
+                adjustedPrimaryColor.getContrastColor()
+            )
+
             setOnClickListener {
                 showNewItemDialog()
             }
         }
 
+        view.fragment_placeholder.setTextColor(activity!!.config.textColor)
         view.fragment_placeholder_2.apply {
-            setTextColor(activity!!.getAdjustedPrimaryColor())
+            setTextColor(adjustedPrimaryColor)
             underlineText()
             setOnClickListener {
                 showNewItemDialog()
