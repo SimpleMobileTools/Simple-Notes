@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.6.2 *(2021-02-20)*
+----------------------------
+
+ * Added a White theme with special handling
+ * Some stability and translation improvements
+
 Version 6.6.1 *(2021-01-22)*
 ----------------------------
 
