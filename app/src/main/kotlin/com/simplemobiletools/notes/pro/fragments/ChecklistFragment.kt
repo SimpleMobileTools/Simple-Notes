@@ -59,6 +59,9 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 try {
                     val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
                     items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.value, checklistItemType) ?: ArrayList(1)
+
+                    // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
+                    items = items.filter { it.title != null }.toMutableList() as ArrayList<ChecklistItem>
                 } catch (e: Exception) {
                     migrateCheckListOnFailure(storedNote)
                 }
