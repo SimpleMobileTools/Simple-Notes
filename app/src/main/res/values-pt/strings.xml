@@ -3,7 +3,7 @@
     <string name="app_launcher_name">Notas</string>
     <string name="widget_config">Obrigado por usar Simple Notes.\nPara mais aplicações Simple, aceda a SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Não pode partilhar texto vazio</string>
-    <string name="simple_note">Nota simples</string>
+    <string name="simple_note">Nota básica</string>
     <string name="new_note">Adicionar uma nota</string>
     <string name="no_title">Por favor dê um nome à sua nota</string>
     <string name="title_taken">Já existe uma nota com este título</string>
@@ -23,7 +23,7 @@
     <!-- File notes -->
     <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
-    <string name="file_too_large">Ficheiro muito grande, o limite são 1 MB</string>
+    <string name="file_too_large">Ficheiro muito grande, o limite é 1 MB</string>
     <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro\n(se alterar o ficheiro, a nota fica intacta)</string>
     <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota\n(a nota será removida se apagar o ficheiro ou se mudar a sua localização)</string>
     <string name="delete_file_itself">Apagar também o ficheiro \"%s\"</string>
@@ -56,8 +56,8 @@
     <string name="add_new_checklist_items">Adicionar itens à lista de verificação</string>
     <string name="checklist_is_empty">A lista está vazia</string>
     <string name="remove_done_items">Remover itens realizados</string>
-    <string name="move_to_top">Move to top</string>
-    <string name="move_to_bottom">Move to bottom</string>
+    <string name="move_to_top">Mover para cima</string>
+    <string name="move_to_bottom">Mover para baixo</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como ficheiros</string>
