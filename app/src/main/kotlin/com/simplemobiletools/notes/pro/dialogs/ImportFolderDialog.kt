@@ -47,7 +47,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
             when {
                 file.isDirectory -> false
                 filename.isMediaFile() -> false
-                file.length() > 10 * 1000 * 1000 -> false
+                file.length() > 1000 * 1000 -> false
                 activity.notesDB.getNoteIdWithTitle(filename) != null -> false
                 else -> true
             }
