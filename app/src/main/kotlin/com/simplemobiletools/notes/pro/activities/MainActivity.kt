@@ -239,7 +239,7 @@ class MainActivity : SimpleActivity() {
         if (requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null) {
             importUri(resultData.data!!)
         } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null && mNotes.isNotEmpty()) {
-            tryExportNoteValueToFile(resultData.dataString!!, getCurrentNoteValue(), true)
+            showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
         }
     }
 
@@ -752,7 +752,7 @@ class MainActivity : SimpleActivity() {
                         if (!filename.isAValidFilename()) {
                             toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
                         } else {
-                            val noteStoredValue = note.getNoteStoredValue() ?: ""
+                            val noteStoredValue = note.getNoteStoredValue(this) ?: ""
                             tryExportNoteValueToFile(file.absolutePath, note.value, false) {
                                 if (syncFile) {
                                     note.path = file.absolutePath
@@ -786,7 +786,7 @@ class MainActivity : SimpleActivity() {
 
     fun tryExportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
         if (path.startsWith("content://")) {
-            exportNoteValueToUri(Uri.parse(path), content)
+            exportNoteValueToUri(Uri.parse(path), content, callback)
         } else {
             handlePermission(PERMISSION_WRITE_STORAGE) {
                 if (it) {
@@ -841,15 +841,17 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun exportNoteValueToUri(uri: Uri, content: String) {
+    private fun exportNoteValueToUri(uri: Uri, content: String, callback: ((success: Boolean) -> Unit)? = null) {
         try {
             val outputStream = contentResolver.openOutputStream(uri)
             outputStream!!.bufferedWriter().use { out ->
                 out.write(content)
             }
             noteExportedSuccessfully(mCurrentNote.title)
+            callback?.invoke(true)
         } catch (e: Exception) {
             showErrorToast(e)
+            callback?.invoke(false)
         }
     }
 

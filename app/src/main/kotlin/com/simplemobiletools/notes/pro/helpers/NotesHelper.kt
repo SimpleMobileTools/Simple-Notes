@@ -1,6 +1,7 @@
 package com.simplemobiletools.notes.pro.helpers
 
 import android.content.Context
+import android.net.Uri
 import android.os.Handler
 import android.os.Looper
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
@@ -22,9 +23,11 @@ class NotesHelper(val context: Context) {
             val notes = context.notesDB.getNotes() as ArrayList<Note>
             val notesToDelete = ArrayList<Note>(notes.size)
             notes.forEach {
-                if (it.path.isNotEmpty() && !File(it.path).exists()) {
-                    context.notesDB.deleteNote(it)
-                    notesToDelete.add(it)
+                if (it.path.isNotEmpty()) {
+                    if (!it.path.startsWith("content://") && !File(it.path).exists()) {
+                        context.notesDB.deleteNote(it)
+                        notesToDelete.add(it)
+                    }
                 }
             }
 

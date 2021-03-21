@@ -119,7 +119,7 @@ class TextFragment : NoteFragment() {
         view.text_note_view.apply {
             typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
 
-            val fileContents = note!!.getNoteStoredValue()
+            val fileContents = note!!.getNoteStoredValue(context)
             if (fileContents == null) {
                 (activity as MainActivity).deleteNote(false, note!!)
                 return
@@ -193,7 +193,7 @@ class TextFragment : NoteFragment() {
             return
         }
 
-        if (note!!.path.isNotEmpty() && !File(note!!.path).exists()) {
+        if (note!!.path.isNotEmpty() && !note!!.path.startsWith("content://") && !File(note!!.path).exists()) {
             return
         }
 
@@ -202,7 +202,7 @@ class TextFragment : NoteFragment() {
         }
 
         val newText = getCurrentNoteViewText()
-        val oldText = note!!.getNoteStoredValue()
+        val oldText = note!!.getNoteStoredValue(context!!)
         if (newText != null && (newText != oldText || force)) {
             note!!.value = newText
             saveNoteValue(note!!)
@@ -210,7 +210,7 @@ class TextFragment : NoteFragment() {
         }
     }
 
-    fun hasUnsavedChanges() = getCurrentNoteViewText() != note!!.getNoteStoredValue()
+    fun hasUnsavedChanges() = getCurrentNoteViewText() != note!!.getNoteStoredValue(context!!)
 
     fun focusEditText() {
         view.text_note_view.requestFocus()

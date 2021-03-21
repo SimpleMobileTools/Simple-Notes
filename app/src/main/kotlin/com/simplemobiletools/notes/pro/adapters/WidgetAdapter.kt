@@ -56,7 +56,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
             }
         } else {
             remoteView = RemoteViews(context.packageName, R.layout.widget_text_layout).apply {
-                val noteText = note!!.getNoteStoredValue() ?: ""
+                val noteText = note!!.getNoteStoredValue(context) ?: ""
                 for (id in textIds) {
                     setText(id, noteText)
                     setTextColor(id, widgetTextColor)
