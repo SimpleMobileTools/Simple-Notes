@@ -610,12 +610,10 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun addNoteFromUri(uri: Uri, filename: String? = null) {
-        val noteTitle = if (filename?.isEmpty() == false) {
-            filename
-        } else if (uri.toString().startsWith("content://")) {
-            getFilenameFromContentUri(uri) ?: getNewNoteTitle()
-        } else {
-            getNewNoteTitle()
+        val noteTitle = when {
+            filename?.isEmpty() == false -> filename
+            uri.toString().startsWith("content://") -> getFilenameFromContentUri(uri) ?: getNewNoteTitle()
+            else -> getNewNoteTitle()
         }
 
         val inputStream = contentResolver.openInputStream(uri)
