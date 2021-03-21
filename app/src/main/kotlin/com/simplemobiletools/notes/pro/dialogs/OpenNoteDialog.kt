@@ -27,7 +27,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long, new
 
         view.dialog_open_note_new_radio.setOnClickListener {
             view.dialog_open_note_new_radio.isChecked = false
-            NewNoteDialog(activity) {
+            NewNoteDialog(activity, setChecklistAsDefault = false) {
                 callback(0, it)
                 dialog?.dismiss()
             }
