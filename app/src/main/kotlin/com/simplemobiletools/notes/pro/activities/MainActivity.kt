@@ -520,7 +520,7 @@ class MainActivity : SimpleActivity() {
         if (hasPermission(PERMISSION_READ_STORAGE)) {
             openFile()
         } else {
-            Intent(Intent.ACTION_GET_CONTENT).apply {
+            Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
                 type = "text/*"
                 startActivityForResult(this, PICK_OPEN_FILE_INTENT)
@@ -624,8 +624,16 @@ class MainActivity : SimpleActivity() {
             val note = Note(null, noteTitle, content, NoteType.TYPE_CHECKLIST.value)
             displayNewNoteDialog(note.value, title = noteTitle, setChecklistAsDefault = true)
         } else {
-            val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value)
-            displayNewNoteDialog(note.value, title = noteTitle, "")
+            val items = arrayListOf(
+                RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
+                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
+
+            RadioGroupDialog(this, items) {
+                val syncFile = it as Int == EXPORT_FILE_SYNC
+                val path = if (syncFile) uri.toString() else ""
+                val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value)
+                displayNewNoteDialog(note.value, title = noteTitle, path)
+            }
         }
     }
 
