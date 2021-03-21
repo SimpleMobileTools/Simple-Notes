@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.7.0 *(2021-03-21)*
+----------------------------
+
+ * Removed the Storage permission on Android 9+, notes synced to files have to be set up again
+ * Limit file size to 1 MB in all cases
+ * Some design, stability and translation improvements
+
 Version 6.6.2 *(2021-02-20)*
 ----------------------------
 
