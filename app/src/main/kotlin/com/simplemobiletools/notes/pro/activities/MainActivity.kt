@@ -482,9 +482,10 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun displayNewNoteDialog(value: String = "", title: String? = null) {
+    private fun displayNewNoteDialog(value: String = "", title: String? = null, path: String = "") {
         NewNoteDialog(this, title) {
             it.value = value
+            it.path = path
             addNewNote(it)
         }
     }
@@ -540,7 +541,7 @@ class MainActivity : SimpleActivity() {
                     } else {
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
-                                displayNewNoteDialog(it.value, title = it.title)
+                                displayNewNoteDialog(it.value, title = it.title, it.path)
                             }
                         }
                     }
