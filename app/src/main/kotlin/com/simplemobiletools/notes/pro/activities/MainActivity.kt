@@ -237,8 +237,13 @@ class MainActivity : SimpleActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
         if (requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null) {
+            val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+            applicationContext.contentResolver.takePersistableUriPermission(resultData.data!!, takeFlags)
+
             importUri(resultData.data!!)
         } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null && mNotes.isNotEmpty()) {
+            val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+            applicationContext.contentResolver.takePersistableUriPermission(resultData.data!!, takeFlags)
             showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
         }
     }
