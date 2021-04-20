@@ -1,0 +1,2 @@
+ * Fixed some issues related to notes being synced with files
+ * Some stability and translation improvements

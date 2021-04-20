@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.7.1 *(2021-04-20)*
+----------------------------
+
+ * Fixed some issues related to notes being synced with files
+ * Some stability and translation improvements
+
 Version 6.7.0 *(2021-03-21)*
 ----------------------------
 
