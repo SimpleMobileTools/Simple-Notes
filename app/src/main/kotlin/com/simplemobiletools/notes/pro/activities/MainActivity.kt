@@ -237,9 +237,6 @@ class MainActivity : SimpleActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
         if (requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null) {
-            val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-            applicationContext.contentResolver.takePersistableUriPermission(resultData.data!!, takeFlags)
-
             importUri(resultData.data!!)
         } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null && mNotes.isNotEmpty()) {
             val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
@@ -625,9 +622,26 @@ class MainActivity : SimpleActivity() {
         val content = inputStream?.bufferedReader().use { it!!.readText() }
         val checklistItems = content.parseChecklistItems()
 
+        // if we got here by some other app invoking the file open intent, we have no permission for updating the original file itself
+        // we can do it only after using "Export as file" or "Open file" from our app
+        val canSyncNoteWithFile = if (hasPermission(PERMISSION_WRITE_STORAGE)) {
+            true
+        } else {
+            try {
+                val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                applicationContext.contentResolver.takePersistableUriPermission(uri, takeFlags)
+                true
+            } catch (e: Exception) {
+                false
+            }
+        }
+
         if (checklistItems != null) {
             val note = Note(null, noteTitle, content, NoteType.TYPE_CHECKLIST.value)
             displayNewNoteDialog(note.value, title = noteTitle, setChecklistAsDefault = true)
+        } else if (!canSyncNoteWithFile) {
+            val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value)
+            displayNewNoteDialog(note.value, title = noteTitle, "")
         } else {
             val items = arrayListOf(
                 RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
