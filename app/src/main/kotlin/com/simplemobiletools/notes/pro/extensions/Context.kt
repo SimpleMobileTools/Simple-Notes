@@ -18,7 +18,7 @@ val Context.notesDB: NotesDao get() = NotesDatabase.getInstance(applicationConte
 val Context.widgetsDB: WidgetsDao get() = NotesDatabase.getInstance(applicationContext).WidgetsDao()
 
 fun Context.updateWidgets() {
-    val widgetIDs = AppWidgetManager.getInstance(applicationContext).getAppWidgetIds(ComponentName(applicationContext, MyWidgetProvider::class.java))
+    val widgetIDs = AppWidgetManager.getInstance(applicationContext)?.getAppWidgetIds(ComponentName(applicationContext, MyWidgetProvider::class.java)) ?: return
     if (widgetIDs.isNotEmpty()) {
         Intent(applicationContext, MyWidgetProvider::class.java).apply {
             action = AppWidgetManager.ACTION_APPWIDGET_UPDATE

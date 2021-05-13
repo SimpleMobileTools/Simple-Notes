@@ -149,7 +149,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         val views = RemoteViews(packageName, R.layout.activity_main)
         views.setBackgroundColor(R.id.text_note_view, mBgColor)
         views.setBackgroundColor(R.id.checklist_note_view, mBgColor)
-        AppWidgetManager.getInstance(this).updateAppWidget(mWidgetId, views)
+        AppWidgetManager.getInstance(this)?.updateAppWidget(mWidgetId, views) ?: return
 
         val extras = intent.extras
         val id = if (extras?.containsKey(CUSTOMIZED_WIDGET_KEY_ID) == true) extras.getLong(CUSTOMIZED_WIDGET_KEY_ID) else null
