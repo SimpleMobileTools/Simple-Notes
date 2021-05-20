@@ -20,10 +20,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
-import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
-import com.simplemobiletools.commons.dialogs.FilePickerDialog
-import com.simplemobiletools.commons.dialogs.RadioGroupDialog
-import com.simplemobiletools.commons.dialogs.SecurityDialog
+import com.simplemobiletools.commons.dialogs.*
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.FAQItem
@@ -1065,12 +1062,14 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun lockNote() {
-        SecurityDialog(this, "", SHOW_ALL_TABS) { hash, type, success ->
-            if (success) {
-                mCurrentNote.protectionHash = hash
-                mCurrentNote.protectionType = type
-                NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
-                    invalidateOptionsMenu()
+        ConfirmationDialog(this, "", R.string.locking_warning, R.string.ok, R.string.cancel) {
+            SecurityDialog(this, "", SHOW_ALL_TABS) { hash, type, success ->
+                if (success) {
+                    mCurrentNote.protectionHash = hash
+                    mCurrentNote.protectionType = type
+                    NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+                        invalidateOptionsMenu()
+                    }
                 }
             }
         }
