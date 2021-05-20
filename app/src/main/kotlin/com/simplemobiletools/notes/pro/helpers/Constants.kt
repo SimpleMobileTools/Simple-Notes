@@ -45,6 +45,7 @@ const val MIME_TEXT_PLAIN = "text/plain"
 
 // font size percentage options
 const val FONT_SIZE_50_PERCENT = 50
+const val FONT_SIZE_60_PERCENT = 60
 const val FONT_SIZE_75_PERCENT = 75
 const val FONT_SIZE_90_PERCENT = 90
 const val FONT_SIZE_100_PERCENT = 100
