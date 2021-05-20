@@ -1000,6 +1000,10 @@ class MainActivity : SimpleActivity() {
                     }
                 }
             }
+
+            if (it.size == 1 && config.showNotePicker) {
+                config.showNotePicker = false
+            }
         }
     }
 
