@@ -155,6 +155,8 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist()
             findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist()
             findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
+            findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && !mCurrentNote.isLocked()
+            findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && mCurrentNote.isLocked()
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
@@ -178,6 +180,8 @@ class MainActivity : SimpleActivity() {
             R.id.new_note -> displayNewNoteDialog()
             R.id.rename_note -> displayRenameDialog()
             R.id.share -> shareText()
+            R.id.lock_note -> lockNote()
+            R.id.unlock_note -> unlockNote()
             R.id.open_file -> tryOpenFile()
             R.id.import_folder -> openFolder()
             R.id.export_as_file -> tryExportAsFile()
@@ -1057,6 +1061,14 @@ class MainActivity : SimpleActivity() {
             type = "text/plain"
             startActivity(Intent.createChooser(this, shareTitle))
         }
+    }
+
+    private fun lockNote() {
+
+    }
+
+    private fun unlockNote() {
+
     }
 
     fun currentNoteTextChanged(newText: String, showUndo: Boolean, showRedo: Boolean) {

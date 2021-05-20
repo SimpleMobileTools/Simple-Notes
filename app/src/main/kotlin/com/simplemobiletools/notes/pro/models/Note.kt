@@ -6,6 +6,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import java.io.File
 
 @Entity(tableName = "notes", indices = [(Index(value = ["id"], unique = true))])
@@ -34,4 +35,6 @@ data class Note(
             value
         }
     }
+
+    fun isLocked() = protectionType != PROTECTION_NONE
 }

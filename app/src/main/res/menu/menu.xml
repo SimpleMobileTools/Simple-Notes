@@ -47,6 +47,14 @@
         android:title="@string/share"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/lock_note"
+        android:title="@string/lock_note"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/unlock_note"
+        android:title="@string/unlock_note"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/open_file"
         android:title="@string/open_file"
         app:showAsAction="never" />
