@@ -23,6 +23,7 @@
     <string name="unlock_note">Unlock note</string>
     <string name="note_content_locked">The notes\' content is locked.</string>
     <string name="show_content">Show content</string>
+    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
 
     <!-- File notes -->
     <string name="open_file">Apri file</string>

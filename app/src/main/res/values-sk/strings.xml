@@ -23,6 +23,7 @@
     <string name="unlock_note">Odomknúť poznámku</string>
     <string name="note_content_locked">Obsah poznámky je uzamknutý.</string>
     <string name="show_content">Zobraziť obsah</string>
+    <string name="locking_warning">UPOZORNENIE: Ak zabudnete heslo poznámky, nebudete ho môcť obnoviť, ani sa už dostať k obsahu poznámky.</string>
 
     <!-- File notes -->
     <string name="open_file">Otvoriť súbor</string>
