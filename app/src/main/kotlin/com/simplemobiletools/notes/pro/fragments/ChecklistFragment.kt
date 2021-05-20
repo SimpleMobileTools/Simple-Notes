@@ -116,7 +116,16 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             }
         }
 
+        checkLockState()
         setupAdapter()
+    }
+
+    override fun checkLockState() {
+        view.apply {
+            checklist_content_holder.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
+            checklist_fab.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
+            setupLockedViews(this, note!!)
+        }
     }
 
     private fun showNewItemDialog() {

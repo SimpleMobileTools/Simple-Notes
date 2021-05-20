@@ -141,7 +141,7 @@ class TextFragment : NoteFragment() {
                 setSelection(if (config.placeCursorToEnd) text.length else 0)
             }
 
-            if (config.showKeyboard && isMenuVisible) {
+            if (config.showKeyboard && isMenuVisible && (!note!!.isLocked() || shouldShowLockedContent)) {
                 onGlobalLayout {
                     if (activity?.isDestroyed == false) {
                         requestFocus()
@@ -159,13 +159,11 @@ class TextFragment : NoteFragment() {
         }
 
         if (config.showWordCount) {
-            view.notes_counter.beVisible()
             view.notes_counter.setTextColor(config.textColor)
             setWordCounter(view.text_note_view.text.toString())
-        } else {
-            view.notes_counter.beGone()
         }
 
+        checkLockState()
         setTextWatcher()
     }
 
@@ -177,6 +175,14 @@ class TextFragment : NoteFragment() {
     }
 
     fun removeTextWatcher() = view.text_note_view.removeTextChangedListener(textWatcher)
+
+    override fun checkLockState() {
+        view.apply {
+            notes_counter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && config!!.showWordCount)
+            notes_scrollview.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
+            setupLockedViews(this, note!!)
+        }
+    }
 
     fun updateNoteValue(value: String) {
         note?.value = value
