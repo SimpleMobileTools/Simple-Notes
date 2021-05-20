@@ -23,6 +23,7 @@ import android.widget.TextView
 import com.simplemobiletools.commons.dialogs.ConfirmationAdvancedDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
+import com.simplemobiletools.commons.dialogs.SecurityDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.FAQItem
@@ -1064,11 +1065,27 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun lockNote() {
-
+        SecurityDialog(this, "", SHOW_ALL_TABS) { hash, type, success ->
+            if (success) {
+                mCurrentNote.protectionHash = hash
+                mCurrentNote.protectionType = type
+                NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+                    invalidateOptionsMenu()
+                }
+            }
+        }
     }
 
     private fun unlockNote() {
-
+        SecurityDialog(this, mCurrentNote.protectionHash, mCurrentNote.protectionType) { hash, type, success ->
+            if (success) {
+                mCurrentNote.protectionHash = ""
+                mCurrentNote.protectionType = PROTECTION_NONE
+                NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+                    invalidateOptionsMenu()
+                }
+            }
+        }
     }
 
     fun currentNoteTextChanged(newText: String, showUndo: Boolean, showRedo: Boolean) {
