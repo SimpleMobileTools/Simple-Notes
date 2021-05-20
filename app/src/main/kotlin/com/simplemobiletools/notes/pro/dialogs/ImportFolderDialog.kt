@@ -6,6 +6,7 @@ import com.simplemobiletools.commons.extensions.getFilenameFromPath
 import com.simplemobiletools.commons.extensions.humanizePath
 import com.simplemobiletools.commons.extensions.isMediaFile
 import com.simplemobiletools.commons.extensions.setupDialogStuff
+import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
@@ -77,7 +78,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
     }
 
     private fun saveNote(title: String, value: String, type: Int, path: String) {
-        val note = Note(null, title, value, type, path)
+        val note = Note(null, title, value, type, path, PROTECTION_NONE, "")
         NotesHelper(activity).insertOrUpdateNote(note)
     }
 }

@@ -7,6 +7,7 @@ import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.extensions.showKeyboard
 import com.simplemobiletools.commons.extensions.toast
 import com.simplemobiletools.commons.extensions.value
+import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
@@ -44,7 +45,7 @@ class NewNoteDialog(val activity: Activity, title: String? = null, val setCheckl
                                 else -> {
                                     val type = if (view.new_note_type.checkedRadioButtonId == view.type_checklist.id) NoteType.TYPE_CHECKLIST.value else NoteType.TYPE_TEXT.value
                                     activity.config.lastCreatedNoteType = type
-                                    val newNote = Note(null, title, "", type)
+                                    val newNote = Note(null, title, "", type, "", PROTECTION_NONE, "")
                                     callback(newNote)
                                     dismiss()
                                 }

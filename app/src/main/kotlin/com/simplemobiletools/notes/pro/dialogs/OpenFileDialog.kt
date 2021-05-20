@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.extensions.getFilenameFromPath
 import com.simplemobiletools.commons.extensions.humanizePath
 import com.simplemobiletools.commons.extensions.setupDialogStuff
+import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.helpers.NoteType
@@ -45,7 +46,7 @@ class OpenFileDialog(val activity: SimpleActivity, val path: String, val callbac
 
     private fun saveNote(storeContent: String, storePath: String) {
         val filename = path.getFilenameFromPath()
-        val note = Note(null, filename, storeContent, NoteType.TYPE_TEXT.value, storePath)
+        val note = Note(null, filename, storeContent, NoteType.TYPE_TEXT.value, storePath, PROTECTION_NONE, "")
         callback(note)
         dialog.dismiss()
     }

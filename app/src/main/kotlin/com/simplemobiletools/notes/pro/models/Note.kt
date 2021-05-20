@@ -14,7 +14,9 @@ data class Note(
     @ColumnInfo(name = "title") var title: String,
     @ColumnInfo(name = "value") var value: String,
     @ColumnInfo(name = "type") var type: Int,
-    @ColumnInfo(name = "path") var path: String = "") {
+    @ColumnInfo(name = "path") var path: String,
+    @ColumnInfo(name = "protection_type") var protectionType: Int,
+    @ColumnInfo(name = "protection_hash") var protectionHash: String) {
 
     fun getNoteStoredValue(context: Context): String? {
         return if (path.isNotEmpty()) {

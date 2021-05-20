@@ -538,7 +538,7 @@ class MainActivity : SimpleActivity() {
                     val checklistItems = fileText.parseChecklistItems()
                     if (checklistItems != null) {
                         val title = it.absolutePath.getFilenameFromPath().substringBeforeLast('.')
-                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST.value)
+                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
                         displayNewNoteDialog(note.value, title = title, setChecklistAsDefault = true)
                     } else {
                         runOnUiThread {
@@ -637,10 +637,10 @@ class MainActivity : SimpleActivity() {
         }
 
         if (checklistItems != null) {
-            val note = Note(null, noteTitle, content, NoteType.TYPE_CHECKLIST.value)
+            val note = Note(null, noteTitle, content, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
             displayNewNoteDialog(note.value, title = noteTitle, setChecklistAsDefault = true)
         } else if (!canSyncNoteWithFile) {
-            val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value)
+            val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
             displayNewNoteDialog(note.value, title = noteTitle, "")
         } else {
             val items = arrayListOf(
@@ -650,7 +650,7 @@ class MainActivity : SimpleActivity() {
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == EXPORT_FILE_SYNC
                 val path = if (syncFile) uri.toString() else ""
-                val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value)
+                val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
                 displayNewNoteDialog(note.value, title = noteTitle, path)
             }
         }
@@ -663,9 +663,9 @@ class MainActivity : SimpleActivity() {
                 val fileText = it.readText().trim()
                 val checklistItems = fileText.parseChecklistItems()
                 val note = if (checklistItems != null) {
-                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value)
+                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
                 } else {
-                    Note(null, title, "", NoteType.TYPE_TEXT.value, path)
+                    Note(null, title, "", NoteType.TYPE_TEXT.value, path, PROTECTION_NONE, "")
                 }
 
                 if (mNotes.any { it.title.equals(note.title, true) }) {

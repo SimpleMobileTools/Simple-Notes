@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.simplemobiletools.commons.helpers.DEFAULT_WIDGET_BG_COLOR
+import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.helpers.DEFAULT_WIDGET_TEXT_COLOR
 import com.simplemobiletools.notes.pro.helpers.NoteType
@@ -16,7 +17,7 @@ import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import java.util.concurrent.Executors
 
-@Database(entities = [Note::class, Widget::class], version = 2)
+@Database(entities = [Note::class, Widget::class], version = 3)
 abstract class NotesDatabase : RoomDatabase() {
 
     abstract fun NotesDao(): NotesDao
@@ -31,14 +32,15 @@ abstract class NotesDatabase : RoomDatabase() {
                 synchronized(NotesDatabase::class) {
                     if (db == null) {
                         db = Room.databaseBuilder(context.applicationContext, NotesDatabase::class.java, "notes.db")
-                                .addCallback(object : Callback() {
-                                    override fun onCreate(db: SupportSQLiteDatabase) {
-                                        super.onCreate(db)
-                                        insertFirstNote(context)
-                                    }
-                                })
-                                .addMigrations(MIGRATION_1_2)
-                                .build()
+                            .addCallback(object : Callback() {
+                                override fun onCreate(db: SupportSQLiteDatabase) {
+                                    super.onCreate(db)
+                                    insertFirstNote(context)
+                                }
+                            })
+                            .addMigrations(MIGRATION_1_2)
+                            .addMigrations(MIGRATION_2_3)
+                            .build()
                         db!!.openHelper.setWriteAheadLoggingEnabled(true)
                     }
                 }
@@ -53,7 +55,7 @@ abstract class NotesDatabase : RoomDatabase() {
         private fun insertFirstNote(context: Context) {
             Executors.newSingleThreadScheduledExecutor().execute {
                 val generalNote = context.resources.getString(R.string.general_note)
-                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value)
+                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
                 db!!.NotesDao().insertOrUpdate(note)
             }
         }
@@ -63,6 +65,15 @@ abstract class NotesDatabase : RoomDatabase() {
                 database.apply {
                     execSQL("ALTER TABLE widgets ADD COLUMN widget_bg_color INTEGER NOT NULL DEFAULT $DEFAULT_WIDGET_BG_COLOR")
                     execSQL("ALTER TABLE widgets ADD COLUMN widget_text_color INTEGER NOT NULL DEFAULT $DEFAULT_WIDGET_TEXT_COLOR")
+                }
+            }
+        }
+
+        private val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.apply {
+                    execSQL("ALTER TABLE notes ADD COLUMN protection_type INTEGER DEFAULT $PROTECTION_NONE NOT NULL")
+                    execSQL("ALTER TABLE notes ADD COLUMN protection_hash TEXT DEFAULT '' NOT NULL")
                 }
             }
         }

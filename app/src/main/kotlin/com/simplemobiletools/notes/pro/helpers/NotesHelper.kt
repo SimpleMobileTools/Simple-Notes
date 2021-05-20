@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Handler
 import android.os.Looper
+import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
@@ -35,7 +36,7 @@ class NotesHelper(val context: Context) {
 
             if (notes.isEmpty()) {
                 val generalNote = context.resources.getString(R.string.general_note)
-                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value)
+                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
                 context.notesDB.insertOrUpdate(note)
                 notes.add(note)
             }
