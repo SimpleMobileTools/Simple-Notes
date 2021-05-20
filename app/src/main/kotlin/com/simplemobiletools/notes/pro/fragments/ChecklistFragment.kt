@@ -25,7 +25,6 @@ import kotlinx.android.synthetic.main.fragment_checklist.view.*
 class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private var noteId = 0L
-    private var note: Note? = null
 
     lateinit var view: ViewGroup
 

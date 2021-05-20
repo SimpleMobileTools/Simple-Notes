@@ -38,7 +38,6 @@ class TextFragment : NoteFragment() {
     private var isUndoOrRedo = false
     private var skipTextUpdating = false
     private var noteId = 0L
-    private var note: Note? = null
 
     lateinit var view: ViewGroup
 

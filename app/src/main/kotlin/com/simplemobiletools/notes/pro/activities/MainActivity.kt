@@ -169,26 +169,27 @@ class MainActivity : SimpleActivity() {
             saveCurrentNote(false)
         }
 
+        val fragment = getCurrentFragment()
         when (item.itemId) {
-            R.id.open_search -> openSearch()
+            R.id.open_search -> fragment?.handleUnlocking { openSearch() }
             R.id.open_note -> displayOpenNoteDialog()
-            R.id.save_note -> saveNote()
+            R.id.save_note -> fragment?.handleUnlocking { saveNote() }
             R.id.undo -> undo()
             R.id.redo -> redo()
             R.id.new_note -> displayNewNoteDialog()
-            R.id.rename_note -> displayRenameDialog()
-            R.id.share -> shareText()
+            R.id.rename_note -> fragment?.handleUnlocking { displayRenameDialog() }
+            R.id.share -> fragment?.handleUnlocking { shareText() }
             R.id.lock_note -> lockNote()
             R.id.unlock_note -> unlockNote()
             R.id.open_file -> tryOpenFile()
             R.id.import_folder -> openFolder()
-            R.id.export_as_file -> tryExportAsFile()
+            R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
             R.id.export_all_notes -> tryExportAllNotes()
-            R.id.print -> printText()
-            R.id.delete_note -> displayDeleteNotePrompt()
+            R.id.print -> fragment?.handleUnlocking { printText() }
+            R.id.delete_note -> fragment?.handleUnlocking { displayDeleteNotePrompt() }
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
-            R.id.remove_done_items -> removeDoneItems()
+            R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
             else -> return super.onOptionsItemSelected(item)
         }
         return true
@@ -420,6 +421,8 @@ class MainActivity : SimpleActivity() {
             selectSearchMatch(noteView)
         }
     }
+
+    private fun getCurrentFragment() = mAdapter?.getFragment(view_pager.currentItem)
 
     private val currentTextFragment: TextFragment? get() = mAdapter?.textFragment(view_pager.currentItem)
 
@@ -775,7 +778,7 @@ class MainActivity : SimpleActivity() {
                 var failCount = 0
                 NotesHelper(this).getNotes {
                     mNotes = it
-                    mNotes.forEachIndexed { index, note ->
+                    mNotes.filter { !it.isLocked() }.forEachIndexed { index, note ->
                         val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
                         val file = File(parent, filename)
                         if (!filename.isAValidFilename()) {
