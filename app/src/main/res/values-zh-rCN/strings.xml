@@ -19,6 +19,10 @@
     <string name="note_shown_widget">小工具中显示的笔记:</string>
     <string name="new_note_type">新笔记类型:</string>
     <string name="text_note">文本笔记</string>
+    <string name="lock_note">Lock note</string>
+    <string name="unlock_note">Unlock note</string>
+    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="show_content">Show content</string>
 
     <!-- File notes -->
     <string name="open_file">打开文件</string>

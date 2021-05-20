@@ -19,6 +19,10 @@
     <string name="note_shown_widget">Bilješka prikazana u widgetu:</string>
     <string name="new_note_type">Nova vrsta bilješke:</string>
     <string name="text_note">Tekstualna bilješka</string>
+    <string name="lock_note">Lock note</string>
+    <string name="unlock_note">Unlock note</string>
+    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="show_content">Show content</string>
 
     <!-- File notes -->
     <string name="open_file">Otvori datoteku</string>

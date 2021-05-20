@@ -19,6 +19,10 @@
     <string name="note_shown_widget">Im Widget angezeigte Notiz:</string>
     <string name="new_note_type">Neue Notizart:</string>
     <string name="text_note">Textnotiz</string>
+    <string name="lock_note">Lock note</string>
+    <string name="unlock_note">Unlock note</string>
+    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="show_content">Show content</string>
 
     <!-- File notes -->
     <string name="open_file">Datei öffnen</string>

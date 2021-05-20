@@ -19,6 +19,10 @@
     <string name="note_shown_widget">Note shown in the widget:</string>
     <string name="new_note_type">New note type:</string>
     <string name="text_note">Text note</string>
+    <string name="lock_note">Lock note</string>
+    <string name="unlock_note">Unlock note</string>
+    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="show_content">Show content</string>
 
     <!-- File notes -->
     <string name="open_file">Faylı Aç</string>
