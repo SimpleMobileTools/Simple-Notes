@@ -56,8 +56,6 @@
     <string name="add_new_checklist_items">Neue Checklisteneinträge hinzufügen</string>
     <string name="checklist_is_empty">Die Checkliste ist leer</string>
     <string name="remove_done_items">Abgeschlossene Einträge entfernen</string>
-    <string name="move_to_top">Nach oben verschieben</string>
-    <string name="move_to_bottom">Nach unten verschieben</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Alle Notizen als Dateien exportieren</string>

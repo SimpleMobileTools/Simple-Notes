@@ -56,8 +56,6 @@
     <string name="add_new_checklist_items">Lisää uusia kohtia muistilistaan</string>
     <string name="checklist_is_empty">Muistilista on tyhjä</string>
     <string name="remove_done_items">Poista tehdyt kohdat</string>
-    <string name="move_to_top">Siirrä ylimmäksi</string>
-    <string name="move_to_bottom">Siirrä alimmaksi</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Vie kaikki muistiinpanot tiedostoina</string>
