@@ -13,8 +13,10 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.dialogs.ColorPickerDialog
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
+import com.simplemobiletools.commons.dialogs.SecurityDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
+import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
@@ -99,7 +101,8 @@ class WidgetConfigureActivity : SimpleActivity() {
         NotesHelper(this).getNotes {
             mNotes = it
             notes_picker_holder.beVisibleIf(mNotes.size > 1 && !mIsCustomizingColors)
-            updateCurrentNote(mNotes.first())
+            val note = mNotes.firstOrNull { !it.isLocked() } ?: return@getNotes
+            updateCurrentNote(note)
         }
     }
 
@@ -111,7 +114,16 @@ class WidgetConfigureActivity : SimpleActivity() {
 
         RadioGroupDialog(this, items, mCurrentNoteId.toInt()) {
             val selectedId = it as Int
-            updateCurrentNote(mNotes.first { it.id!!.toInt() == selectedId })
+            val note = mNotes.firstOrNull { it.id!!.toInt() == selectedId } ?: return@RadioGroupDialog
+            if (note.protectionType == PROTECTION_NONE) {
+                updateCurrentNote(note)
+            } else {
+                SecurityDialog(this, note.protectionHash, note.protectionType) { hash, type, success ->
+                    if (success) {
+                        updateCurrentNote(note)
+                    }
+                }
+            }
         }
     }
 
@@ -146,6 +158,11 @@ class WidgetConfigureActivity : SimpleActivity() {
     }
 
     private fun saveConfig() {
+        if (mCurrentNoteId == 0L) {
+            finish()
+            return
+        }
+
         val views = RemoteViews(packageName, R.layout.activity_main)
         views.setBackgroundColor(R.id.text_note_view, mBgColor)
         views.setBackgroundColor(R.id.checklist_note_view, mBgColor)
