@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/save_note"
         android:icon="@drawable/ic_save_vector"
         android:title="@string/save"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always" />
     <item
         android:id="@+id/undo"
         android:icon="@drawable/ic_undo_vector"
         android:title="@string/undo"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always" />
     <item
         android:id="@+id/redo"
         android:icon="@drawable/ic_redo_vector"
         android:title="@string/redo"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always" />
     <item
         android:id="@+id/open_search"
         android:icon="@drawable/ic_search_vector"
         android:title="@string/search"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always" />
     <item
         android:id="@+id/open_note"
         android:icon="@drawable/ic_folder_open_vector"
         android:title="@string/open_note"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always" />
     <item
         android:id="@+id/new_note"
         android:icon="@drawable/ic_plus_vector"
         android:title="@string/new_note"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/rename_note"
         android:icon="@drawable/ic_rename_new"
         android:title="@string/rename_note"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/remove_done_items"
-        android:title="@string/remove_done_items"
         android:icon="@drawable/ic_delete_vector"
-        app:showAsAction="ifRoom"/>
+        android:title="@string/remove_done_items"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/share"
         android:icon="@drawable/ic_share_vector"
         android:title="@string/share"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/open_file"
         android:title="@string/open_file"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/import_folder"
         android:title="@string/import_folder"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/export_as_file"
         android:title="@string/export_as_file"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/export_all_notes"
         android:title="@string/export_all_notes"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/print"
         android:title="@string/print"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/delete_note"
         android:icon="@drawable/ic_delete_vector"
         android:title="@string/delete_note"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/settings"
         android:title="@string/settings"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/about"
         android:title="@string/about"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 </menu>
