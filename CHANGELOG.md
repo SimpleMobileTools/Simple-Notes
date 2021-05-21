@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.8.0 *(2021-05-21)*
+----------------------------
+
+ * Allow locking notes with passwords
+ * Adding a 60% and 90% font size
+ * Some stability and translation improvements
+
 Version 6.7.1 *(2021-04-20)*
 ----------------------------
 
