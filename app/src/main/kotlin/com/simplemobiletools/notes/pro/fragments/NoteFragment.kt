@@ -14,8 +14,8 @@ import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.fragment_checklist.view.*
 
 abstract class NoteFragment : Fragment() {
-    protected var shouldShowLockedContent = false
     protected var note: Note? = null
+    var shouldShowLockedContent = false
 
     protected fun setupLockedViews(view: ViewGroup, note: Note) {
         view.apply {

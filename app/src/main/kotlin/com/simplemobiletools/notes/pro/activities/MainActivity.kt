@@ -1084,6 +1084,10 @@ class MainActivity : SimpleActivity() {
                 mCurrentNote.protectionHash = ""
                 mCurrentNote.protectionType = PROTECTION_NONE
                 NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+                    getCurrentFragment()?.apply {
+                        shouldShowLockedContent = true
+                        checkLockState()
+                    }
                     invalidateOptionsMenu()
                 }
             }
