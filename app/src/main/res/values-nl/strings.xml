@@ -19,11 +19,11 @@
     <string name="note_shown_widget">Notitie in widget weergeven:</string>
     <string name="new_note_type">Type notitie:</string>
     <string name="text_note">Tekst</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="lock_note">Notitie vergrendelen</string>
+    <string name="unlock_note">Notitie ontgrendelen</string>
+    <string name="note_content_locked">De inhoud van deze notitie is vergrendeld.</string>
+    <string name="show_content">Inhoud weergeven</string>
+    <string name="locking_warning">WAARSCHUWING: Zonder het wachtwoord kan de inhoud van de notitie niet meer worden hersteld.</string>
 
     <!-- File notes -->
     <string name="open_file">Bestand openen</string>
