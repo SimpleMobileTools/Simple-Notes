@@ -101,8 +101,22 @@ class WidgetConfigureActivity : SimpleActivity() {
         NotesHelper(this).getNotes {
             mNotes = it
             notes_picker_holder.beVisibleIf(mNotes.size > 1 && !mIsCustomizingColors)
-            val note = mNotes.firstOrNull { !it.isLocked() } ?: return@getNotes
-            updateCurrentNote(note)
+            var note = mNotes.firstOrNull { !it.isLocked() }
+
+            if (mNotes.size == 1 && note == null) {
+                note = mNotes.first()
+                SecurityDialog(this, note.protectionHash, note.protectionType) { hash, type, success ->
+                    if (success) {
+                        updateCurrentNote(note)
+                    } else {
+                        finish()
+                    }
+                }
+            } else {
+                if (note != null) {
+                    updateCurrentNote(note)
+                }
+            }
         }
     }
 
