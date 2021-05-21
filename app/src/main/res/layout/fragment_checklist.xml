@@ -22,7 +22,7 @@
                 android:layout_width="@dimen/normal_icon_size"
                 android:layout_height="@dimen/normal_icon_size"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/activity_margin"
                 android:src="@drawable/ic_lock_vector" />
 
             <com.simplemobiletools.commons.views.MyTextView
@@ -32,6 +32,7 @@
                 android:layout_below="@+id/note_locked_image"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/activity_margin"
+                android:paddingTop="@dimen/medium_margin"
                 android:text="@string/note_content_locked" />
 
             <TextView
@@ -40,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/note_locked_label"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin"
                 android:background="?attr/selectableItemBackground"
                 android:padding="@dimen/activity_margin"
                 android:text="@string/show_content" />
