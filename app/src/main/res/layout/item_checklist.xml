@@ -18,21 +18,10 @@
         android:paddingStart="@dimen/activity_margin"
         android:textSize="@dimen/bigger_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/checklist_image"
+        app:layout_constraintEnd_toStartOf="@+id/checklist_drag_handle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Butter" />
-
-    <ImageView
-        android:id="@+id/checklist_image"
-        android:layout_width="@dimen/checklist_image_size"
-        android:layout_height="@dimen/checklist_image_size"
-        android:paddingTop="@dimen/normal_margin"
-        android:paddingBottom="@dimen/normal_margin"
-        android:src="@drawable/ic_cross_vector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/checklist_drag_handle"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/checklist_drag_handle"
@@ -41,7 +30,7 @@
         android:paddingTop="@dimen/normal_margin"
         android:paddingBottom="@dimen/normal_margin"
         android:src="@drawable/ic_drag_handle_vector"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
