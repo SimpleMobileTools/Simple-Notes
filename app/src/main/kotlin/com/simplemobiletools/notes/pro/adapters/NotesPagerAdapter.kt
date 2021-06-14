@@ -95,4 +95,8 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
     fun removeDoneCheckListItems(position: Int) {
         (fragments[position] as? ChecklistFragment)?.removeDoneItems()
     }
+
+    fun sortCheckListItems(position: Int) {
+        (fragments[position] as? ChecklistFragment)?.sortCheckListItems()
+    }
 }

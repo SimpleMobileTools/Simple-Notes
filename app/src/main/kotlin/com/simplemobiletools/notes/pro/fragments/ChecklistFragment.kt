@@ -31,6 +31,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     var items = ArrayList<ChecklistItem>()
     val checklistItems get(): String = Gson().toJson(items)
 
+    private var isSortAsc = true
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_checklist, container, false) as ViewGroup
         noteId = arguments!!.getLong(NOTE_ID, 0L)
@@ -183,6 +185,19 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     fun removeDoneItems() {
         items = items.filter { !it.isDone }.toMutableList() as ArrayList<ChecklistItem>
+        saveNote()
+        setupAdapter()
+    }
+
+    fun sortCheckListItems() {
+        if(isSortAsc) {
+            items.sortBy { it.title }
+            context?.toast(R.string.sorted_ascending_order)
+        } else {
+            items.sortByDescending { it.title }
+            context?.toast(R.string.sorted_descending_order)
+        }
+        isSortAsc = !isSortAsc
         saveNote()
         setupAdapter()
     }

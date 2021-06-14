@@ -27,6 +27,11 @@
         android:title="@string/open_note"
         app:showAsAction="always" />
     <item
+        android:id="@+id/sort_note"
+        android:icon="@drawable/ic_baseline_sort_by_alpha_24"
+        android:title="@string/sort_alphabetically"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/new_note"
         android:icon="@drawable/ic_plus_vector"
         android:title="@string/new_note"

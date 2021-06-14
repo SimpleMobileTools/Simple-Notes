@@ -61,6 +61,9 @@
     <string name="add_new_checklist_items">Add new checklist items</string>
     <string name="checklist_is_empty">The checklist is empty</string>
     <string name="remove_done_items">Remove done items</string>
+    <string name="sort_alphabetically">Sort alphabetically</string>
+    <string name="sorted_ascending_order">Sorted in ascending order</string>
+    <string name="sorted_descending_order">Sorted in descending order</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Export all notes as files</string>
