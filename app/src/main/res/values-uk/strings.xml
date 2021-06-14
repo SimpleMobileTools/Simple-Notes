@@ -19,11 +19,11 @@
     <string name="note_shown_widget">Нотатка, що показується у віджеті:</string>
     <string name="new_note_type">Новий тип нотаток:</string>
     <string name="text_note">Текст нотатки</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="lock_note">Заблокувати нотатку</string>
+    <string name="unlock_note">Розблокувати нотатку</string>
+    <string name="note_content_locked">Нотатку заблоковано.</string>
+    <string name="show_content">Показати нотатку</string>
+    <string name="locking_warning">УВАГА: Якщо ви забудете пароль доступу до нотатки, ви більше не зможете його відновити або прочитати нотатку.</string>
 
     <!-- File notes -->
     <string name="open_file">Відкрити файл</string>
@@ -43,7 +43,7 @@
     <string name="monospaced_font">Використовувати шрифт в один відступ</string>
     <string name="show_keyboard">Показувати клавіатуру при запуску</string>
     <string name="show_word_count">Рахувати слова</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Рахувати знаки</string>
     <string name="alignment">Вирівнювання</string>
     <string name="left">Зліва</string>
     <string name="center">Центрувати</string>
@@ -53,14 +53,14 @@
     <string name="autosave_notes">Автозбереження нотаток</string>
     <string name="enable_line_wrap">Продовжувати друк з нового рядка</string>
     <string name="use_incognito_mode">Використовувати режим Приватності в клавіатурі</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
+    <string name="move_done_checklist_items">Поміщати вкінець виконані позиції у списку</string>
 
     <!-- Checklists -->
     <string name="checklist">Список</string>
     <string name="add_new_checklist_item">Додати нову позицію у списку</string>
     <string name="add_new_checklist_items">Додати нові позиції у списку</string>
     <string name="checklist_is_empty">Список порожній</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="remove_done_items">Вилучати виконані позиції</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Експортувати всі нотатки як файли</string>
@@ -73,32 +73,32 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro: Записник списку завдань і планувальник</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Simple planner: Створюйте нотатки, списки нагадувань &amp; завдань з інструментом для швидких нотаток</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★ Потрібно створити швидку нотатку для покупок, адреси чи ідеї для стартапу? Припиняйте пошуки, адже це є простий органайзер, який ви шукали : Simple Notes: Записник списку завдань і планувальник! Без складних налаштувань, просто натискайте на екрані і друкуйте, що потрібно, створюйте нотатки, швидкі списки, перелік завдань чи нагадувань про будь-який задум. З вашим простим особистим записником ви зможете швидко запам\'ятати будь-що! Покупки в магазині, спомин про ваші наміри чи створення нагадування - занотовування ще ніколи не було таким простим ★
 
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+        Простий нотатник - це швидкий, простий у використанні органайзер і чудовий планувальник, незамінний інструмент, що допоможе вам запам\'ятати необхідну інформацію!
 
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+        Наш додаток дозволить вам слідкувати за ходом ваших справ, створювати списки позицій нащодень або нотувати ідеї з небаченою простотою, значимістю, значно заощаджуючи час. Керуйте вашим розкладом швидко і просто.
 
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+        Цей інструмент для нагадувань містить функцію автозбереження, тому ви не відміните зміни випадково. Ви також зможете швидко створювати численні незалежні прості нотатки та списки.
 
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+        Використовуйте простий змінний віджет, який при натиску відкриває вікно додатка, щоб швидко отримати доступ до нотатки і організувати список завдань.
 
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+        Додаток простий у користуванні, не обтяжений рекламою чи незрозумілими дозволами. Додаток має повністю відкритий програмний код, кольори оформлення можна легко налаштувати.
 
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+        <b>Simple Notes: Записник списку завдань і планувальник</b> - це найкращий записник і планувальник, яким ви зможете користуватися без реклами. Якщо вам потрібен високоякісний органайзер для швидких нотаток, надійний і простий у користуванні нотатник, яким дійсно легко користуватися, завантажте наш додаток негайно :) Тримайте ваш особистий записник у вашій кишені щодня і нотуйте, коли необхідно, так вам не доведеться хвилюватися, що забудете про важливу зустріч чи ваш список покупок :).
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        За замовчуванням використовується матеріальний дизайн та темна тема, що забезпечує зручне використання. Відсутність доступу в інтернет забезпечує вам більшу приватність порівняно з іншими додатками.
 
-        Цей додаток не буде показувати рекламу, потрібні лише найнеобхідніші дозволи. Додаток має повністю відкритий програмний код, кольори оформлення можна легко налаштувати.
+        Цей додаток не буде показувати рекламу, потрібні лише найнеобхідніші дозволи. 
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Ознакомьтеся з повним набором інструментів від Simple Tools тут:</b>
         https://www.simplemobiletools.com
 
-        <b>Standalone website of Simple Notes Pro:</b>
+        <b>Веб-сайт Simple Notes Pro:</b>
         https://www.simplemobiletools.com/notes
 
         <b>Facebook:</b>
