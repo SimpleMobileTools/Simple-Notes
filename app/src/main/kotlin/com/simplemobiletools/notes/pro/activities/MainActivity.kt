@@ -155,7 +155,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
             findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && !mCurrentNote.isLocked()
             findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && mCurrentNote.isLocked()
-
+            findItem(R.id.sort).isVisible = isCurrentItemChecklist()
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
         }
@@ -190,6 +190,7 @@ class MainActivity : SimpleActivity() {
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
             R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
+            R.id.sort -> fragment?.handleUnlocking { sortChecklistItems() }
             else -> return super.onOptionsItemSelected(item)
         }
         return true
@@ -1140,5 +1141,8 @@ class MainActivity : SimpleActivity() {
 
     private fun removeDoneItems() {
         getPagerAdapter().removeDoneCheckListItems(view_pager.currentItem)
+    }
+    private fun sortChecklistItems() {
+        getPagerAdapter().sortChecklistItems(view_pager.currentItem)
     }
 }

@@ -11,6 +11,7 @@ import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
+import com.simplemobiletools.notes.pro.dialogs.ChangeSortingDialog
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
@@ -185,6 +186,17 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         items = items.filter { !it.isDone }.toMutableList() as ArrayList<ChecklistItem>
         saveNote()
         setupAdapter()
+    }
+
+    fun sortChecklistItems() {
+        ChangeSortingDialog(activity as SimpleActivity) {isDescending->
+            val adapter = view.checklist_list.adapter as? ChecklistAdapter ?: return@ChangeSortingDialog
+            val checkListItems = adapter.items
+            ChecklistItem.isSortDescending = isDescending
+            checkListItems.sort()
+            saveNote()
+            setupAdapter()
+        }
     }
 
     private fun updateUIVisibility() {
