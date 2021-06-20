@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Prosty notatnik</string>
-    <string name="app_launcher_name">Notatnik</string>
-    <string name="widget_config">Dziękujemy za korzystanie z aplikacji.\nPo więcej prostych aplikacji, takich jak ta, udaj się na SimpleMobileTools.com.</string>
-    <string name="cannot_share_empty_text">Nie mogę udostępnić pustej notatki</string>
+    <string name="app_name">Proste notatki</string>
+    <string name="app_launcher_name">Notatki</string>
+    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Proste notatki.\nWięcej prostych aplikacji można znaleźć na SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">Nie można udostępnić pustej notatki</string>
     <string name="simple_note">Prosta notatka</string>
     <string name="new_note">Dodaj nową notatkę</string>
     <string name="no_title">Nazwij swoją notatkę</string>
@@ -15,52 +15,52 @@
     <string name="general_note">Notatka ogólna</string>
     <string name="create_new_note">Utwórz nową notatkę</string>
     <string name="add_to_note">Dodaj do notatki</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="unsaved_changes_warning">Masz niezapisane zmiany. Co chcesz z nimi zrobić?</string>
+    <string name="note_shown_widget">Notatka pokazana w widżecie:</string>
+    <string name="new_note_type">Typ nowej notatki:</string>
+    <string name="text_note">Notatka tekstowa</string>
+    <string name="lock_note">Zablokuj notatkę</string>
+    <string name="unlock_note">Odblokuj notatkę</string>
+    <string name="note_content_locked">Treść notatki jest zablokowana.</string>
+    <string name="show_content">Pokaż zawartość</string>
+    <string name="locking_warning">OSTRZEŻENIE: Jeśli zapomnisz hasła do notatki, nie będziesz już mógł/mogła jej odzyskać ani uzyskać dostępu do treści notatki.</string>
 
     <!-- File notes -->
     <string name="open_file">Otwórz plik</string>
     <string name="export_as_file">Wyeksportuj jako plik</string>
     <string name="file_too_large">Plik jest za duży (może mieć co najwyżej 1 MB)</string>
     <string name="only_import_file_content">Zaimportuj tylko zawartość pliku\n(zmiana pliku nie będzie miała wpływu na notatkę)</string>
-    <string name="update_file_at_note">Zaktualizuj plik po zaktualizowaniu notatki\n(notatka zostanie usunięta jeśli plik zostanie usunięty lub zmieni się jego lokalizacja)</string>
+    <string name="update_file_at_note">Zaktualizuj plik po zaktualizowaniu notatki\n(notatka zostanie usunięta, jeśli plik zostanie usunięty lub zmieni się jego lokalizacja)</string>
     <string name="delete_file_itself">Usuń także plik \"%s\"</string>
     <string name="note_saved_successfully">Notatka \"%s\" została zapisana</string>
-    <string name="note_exported_successfully">Notatka \"%s\" została eksportowana</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="note_exported_successfully">Notatka \"%s\" została wyeksportowana</string>
+    <string name="only_export_file_content">Wyeksportuj tylko bieżącą zawartość pliku\n(zmiana notatki nie będzie miała wpływu na plik)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisaniu notatki</string>
-    <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy.</string>
+    <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy</string>
     <string name="place_cursor_end">Umieszczaj kursor na końcu notatki</string>
     <string name="monospaced_font">Używaj czcionki o stałej szerokości</string>
     <string name="show_keyboard">Pokazuj klawiaturę na starcie</string>
     <string name="show_word_count">Pokazuj liczbę słów</string>
-    <string name="show_character_count">Show character count</string>
-    <string name="alignment">Wyrównanie tekstu w notatkach</string>
-    <string name="left">Do lewej strony</string>
+    <string name="show_character_count">Pokazuj liczbę znaków</string>
+    <string name="alignment">Wyrównanie tekstu</string>
+    <string name="left">Do lewej</string>
     <string name="center">Do środka</string>
-    <string name="right">Do prawej strony</string>
+    <string name="right">Do prawej</string>
     <string name="widget_note">Notatka używana w widżecie</string>
     <string name="show_note_picker">Pokazuj wybór notatki po uruchomieniu</string>
     <string name="autosave_notes">Autozapis notatek</string>
     <string name="enable_line_wrap">Zawijanie linii</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
+    <string name="use_incognito_mode">Użyj trybu incognito klawiatury</string>
+    <string name="move_done_checklist_items">Przesuń na dół wykonane elementy listy kontrolnej</string>
 
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="checklist">Lista kontrolna</string>
+    <string name="add_new_checklist_item">Dodaj nowy element listy kontrolnej</string>
+    <string name="add_new_checklist_items">Dodaj nowe elementy listy kontrolnej</string>
+    <string name="checklist_is_empty">Lista kontrolna jest pusta</string>
+    <string name="remove_done_items">Usuń wykonane elementy</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Eksportuj wszystkie notatki jako pliki</string>
@@ -68,37 +68,37 @@
     <string name="import_folder">Importuj folder</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Jak mogę zmienić kolor widżetów?</string>
+    <string name="faq_1_text">W przypadku gdy masz tylko 1 aktywny widżet, możesz go utworzyć na nowo lub użyć przycisku w ustawieniach aplikacji, aby go dostosować. Jeśli masz wiele aktywnych widżetów, przycisk w ustawieniach aplikacji nie będzie dostępny. Ponieważ aplikacja obsługuje dostosowywanie kolorów dla poszczególnych widżetów, konieczne będzie ponowne utworzenie widżetu, który chcesz dostosować.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Proste notatki Pro: Organizer i planer listy zadań</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Prosty planer: Twórz notatki, kopie zapasowe i listy do zrobienia</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★ Chcesz szybko zanotować coś do kupienia, adres lub pomysł na startup? Nie szukaj dalej, ponieważ jest to proste narzędzie do organizowania, którego szukałeś: Proste notatki: Organizator i planer listy zadań do zrobienia! Nie są potrzebne żadne skomplikowane czynności konfiguracyjne - wystarczy, że dotkniesz ekran, wpiszesz to, co planowałeś/aś i tworzysz notatki, szybkie listy, listę kontrolną lub kopię zapasową dowolnego pomysłu. Dzięki prostemu, osobistemu notatnikowi możesz szybko wszystko zapamiętać! Zakupy spożywcze, zapamiętywanie myśli i łatwiejsze konfigurowanie przypomnień; robienie notatek nigdy nie było prostsze ★
 
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+        Planer prostych notatek jest szybkim, prostym w użyciu organizerem i niezwykłym planerem, a także będzie nieocenionym narzędziem i towarzyszem pomagającym zapamiętać potrzebne informacje!
 
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+        Nasze narzędzie do przypominania pozwala śledzić Twoje obowiązki, tworzyć codzienną listę kontrolną dla zadań lub pomysłów z niespotykaną prostotą i niezrównaną oszczędnością czasu. Zarządzaj swoim harmonogramem w szybki i prosty sposób.
 
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+        To narzędzie notatnika jest wyposażone w funkcję automatycznego zapisywania, dzięki czemu nie odrzucisz swoich zmian przez pomyłkę. Obsługuje również bardzo szybkie tworzenie wielu niezależnych notatek i list w postaci zwykłego tekstu.
 
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+        Możesz łatwo uzyskać dostęp do notatki i błyskawicznie uporządkować listę zadań do zrobienia, korzystając z dostosowywanego widżetu o zmiennej wielkości, który otwiera aplikację po dotknięciu. 
 
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+        Jest przyjazny dla użytkownika i nie zawiera żadnych reklam ani zbędnych uprawnień - bez żadnych zobowiązań. Jest w pełni otwartoźródłowy, zapewnia konfigurowalną kolorystykę, którą można dostosować za pomocą szybkiego dostrajania.
 
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+        <b>Proste notatki: Organizer i planer listy zadań do zrobienia</b> jest najlepszym organizerem i planerem list zadań, z którego możesz korzystać bez reklam. Jeśli potrzebujesz wysokiej jakości organizera do szybkich i dobrych notatek, niezawodnych i przyjaznych dla użytkownika przypomnień, które są naprawdę proste w użyciu, pobierz naszą aplikację już teraz :) Miej swój osobisty notes w kieszeni każdego dnia i miej planer kopii zapasowych, abyś nie musiał(a) się martwić, że zapomnisz o ważnym spotkaniu lub liście zakupów :).
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        Domyślnie jest wyposażony w Material Design i ciemny motyw, zapewniając doskonałe doświadczenie użytkownika dla łatwego użytkowania. Brak dostępu do Internetu zapewnia większą prywatność, bezpieczeństwo i stabilność niż inne aplikacje.
 
-        Aplikacja nie zawiera żadnych żadnych reklam i nie potrzebuje masy uprawnień. Jest w pełni otwartoźródłowa. Posiada ciemny motyw dla osób z wrażliwymi oczami.
+        Nie zawiera reklam ani niepotrzebnych uprawnień. Jest w pełni otwartoźródłowy, zapewnia konfigurowalną kolorystykę.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Sprawdź pełen zestaw od Simple Tools tutaj:</b>
         https://www.simplemobiletools.com
 
-        <b>Standalone website of Simple Notes Pro:</b>
+        <b>Strona internetowa Prostych notatek Pro:</b>
         https://www.simplemobiletools.com/notes
 
         <b>Facebook:</b>
