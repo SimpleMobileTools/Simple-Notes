@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">یادداشت آسان</string>
+    <string name="app_launcher_name">یادداشت</string>
+    <string name="widget_config">ممنون که از یادداشت آسان استفاده میکنید.\nبرای داشتن برنامه‌های آسان دیگر از سایت SimpleMobileTools.com دیدن کنید.</string>
+    <string name="cannot_share_empty_text">نمیتوان متن خالی را اشتراک گذاشت</string>
+    <string name="simple_note">یادداشت آسان</string>
+    <string name="new_note">افزودن یادداشت جدید</string>
+    <string name="no_title">لطفا نام یادداشت خود را بنویسید</string>
+    <string name="title_taken">یک یادداشت با این عنوان هم‌اکنون وجود دارد</string>
+    <string name="open_note">بازکردن یادداشت</string>
+    <string name="delete_note">حذف یادداشت</string>
+    <string name="delete_note_prompt_message">آیا از حذف یادداشت \"%s\" مطمئنید؟</string>
+    <string name="pick_a_note">گزینش یک یادداشت</string>
+    <string name="rename_note">تغییر نام یادداشت</string>
+    <string name="general_note">یادداشت عمومی</string>
+    <string name="create_new_note">ایجاد یک یادداشت جدید</string>
+    <string name="add_to_note">افزودن به یادداشت</string>
+    <string name="unsaved_changes_warning">شما مقداری تغییرات ذخیره نشده دارید. می‌خواهید با آنها چکار کنید؟</string>
+    <string name="note_shown_widget">یادداشتی که در ویجت نمایش داده می‌شود:</string>
+    <string name="new_note_type">نوع یادداشت جدید:</string>
+    <string name="text_note">یادداشت متنی</string>
+    <string name="lock_note">قفل کردن یادداشت</string>
+    <string name="unlock_note">باز کردن قفل یادداشت</string>
+    <string name="note_content_locked">محتویات یادداشت، قفل است</string>
+    <string name="show_content">نمایش محتویات</string>
+    <string name="locking_warning">هشدار: اگر گذرواژهٔ یادداشت را فراموش کنید، دیگر قادر به بازیابی آن یا دسترسی به محتویات یادداشت نیستید.</string>
+
+    <!-- File notes -->
+    <string name="open_file">بازکردن پرونده</string>
+    <string name="export_as_file">برون‌ریزی به عنوان پرونده</string>
+    <string name="file_too_large">پرونده بسیاد بزرگ است، محدودیت ۱ مگابایت است</string>
+    <string name="only_import_file_content">فقط محتویات پرونده درون‌ریزی شد\n(تغییر دادن پرونده تاثیری بر یادداشت نخواهد گذاشت)</string>
+    <string name="update_file_at_note">هنگام به‌روز رسانی یادداشت، خود پرونده نیز به‌روز شود\n(اگر پرونده حذف یا مسیر آن تغییر کند، یادداشت نیز حذف خواهد شد)</string>
+    <string name="delete_file_itself">همچنین حذف پروندهٔ \"%s\"</string>
+    <string name="note_saved_successfully">یادداشت \"%s\" با موفقیت ذخیره شد</string>
+    <string name="note_exported_successfully">یادداشت \"%s\" با موفقیت برون‌ریزی شد</string>
+    <string name="only_export_file_content">فقط محتویات پروندهٔ فعلی برون‌ریزی شد\n(تغییر دادن یادداشت تاثیری بر پرونده نخواهد گذاشت)</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">نمایش پیام ذخیره موفق</string>
+    <string name="links_and_emails_clickable">قابل کلیک کردن پیوند‌ها و ایمیل‌ها</string>
+    <string name="place_cursor_end">قرار دادن مکان‌نما به انتهای یادداشت</string>
+    <string name="monospaced_font">استفاده از قلم هم عرض</string>
+    <string name="show_keyboard">نمایش کیبورد در شروع</string>
+    <string name="show_word_count">نمایش شمارشگر کلمه</string>
+    <string name="show_character_count">نمایش شمارشگر نویسه</string>
+    <string name="alignment">چینش</string>
+    <string name="left">چپ</string>
+    <string name="center">وسط</string>
+    <string name="right">راست</string>
+    <string name="widget_note">یادداشت استفاده شده در ویجت</string>
+    <string name="show_note_picker">نمایش یک گزینشگر یادداشت در شروع</string>
+    <string name="autosave_notes">ذخیره خودکار یادداشت‌ها</string>
+    <string name="enable_line_wrap">فعال کردن پیچیدن خط</string>
+    <string name="use_incognito_mode">استفاده از حالت ناشناس کیبورد‌ها</string>
+    <string name="move_done_checklist_items">جابجایی موارد انجام شده فهرست نشان‌دار به پایین</string>
+
+    <!-- Checklists -->
+    <string name="checklist">فهرست نشان‌دار</string>
+    <string name="add_new_checklist_item">افزودن یک مورد به فهرست نشان‌دار</string>
+    <string name="add_new_checklist_items">افزودن موارد به فهرست نشان‌دار</string>
+    <string name="checklist_is_empty">فهرست نشان‌دار خالی است</string>
+    <string name="remove_done_items">پاک کردن موارد انجام شده</string>
+
+    <!-- Import / Export -->
+    <string name="export_all_notes">برون‌ریزی همه یادداشت‌ها به عنوان پرونده</string>
+    <string name="import_notes">درون‌ریزی چندین پرونده به عنوان یادداشت</string>
+    <string name="import_folder">درون‌ریزی پوشه</string>
+
+    <!-- FAQ -->
+    <string name="faq_1_title">چگونه میتوانم رنگ ویجت‌ها را تغییر دهم؟</string>
+    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">یادداشت آسان حرفه‌ای: ایجاد و برنامه‌ریزی فهرست کارها</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">طراحی آسان: ایجاد یادداشت‌ها، پشتیبان گیری و فهرست کارها همراه با ابزار یادآوری سریع</string>
+    <string name="app_long_description">
+        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+
+        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+
+        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+
+        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+
+        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+
+        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+
+        <b>Simple Notes: To-do list organizer and planner </b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+
+        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+
+        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+
+        <b>ابزار‌های آسان دیگر را از اینجا ببینید:</b>
+        https://www.simplemobiletools.com
+
+        <b>سایت مستقل یادداشت آسان حرفه‌ای:</b>
+        https://www.simplemobiletools.com/notes
+
+        <b>فیسبوک:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>رددیت:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
