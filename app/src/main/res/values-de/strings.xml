@@ -19,22 +19,22 @@
     <string name="note_shown_widget">Im Widget angezeigte Notiz:</string>
     <string name="new_note_type">Neue Notizart:</string>
     <string name="text_note">Textnotiz</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="lock_note">Notiz sperren</string>
+    <string name="unlock_note">Notiz entsperren</string>
+    <string name="note_content_locked">Der Inhalt der Notiz ist gesperrt</string>
+    <string name="show_content">Inhalt anzeigen</string>
+    <string name="locking_warning">WARNUNG: Wenn du das Passwort der Notiz vergisst, wirst du nicht mehr in der Lage sein diese wiederherzustellen oder den Notizinhalt zu erreichen.</string>
 
     <!-- File notes -->
     <string name="open_file">Datei öffnen</string>
     <string name="export_as_file">Als Datei exportieren</string>
-    <string name="file_too_large">Datei ist zu groß. Die maximale Größe beträgt 1 MB.</string>
+    <string name="file_too_large">Die Datei ist zu groß. Die maximale Größe beträgt 1 MB.</string>
     <string name="only_import_file_content">Importiere nur den Dateiinhalt.\n(Änderungen an der Datei haben keine Auswirkungen auf die Notiz.)</string>
     <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
     <string name="delete_file_itself">Lösche Datei \"%s\"</string>
     <string name="note_saved_successfully">Notiz \"%s\" erfolgreich gespeichert</string>
     <string name="note_exported_successfully">Notiz \"%s\" erfolgreich exportiert</string>
-    <string name="only_export_file_content">Nur den aktuellen Dateiinhalt exportieren\n(Das Verändern der Notiz wird nicht die Datei beeinflussen)</string>
+    <string name="only_export_file_content">Nur den aktuellen Dateiinhalt exportieren\n(Das Verändern der Notiz wird die Datei nicht beeinflussen)</string>
 
     <!-- Settings -->
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
