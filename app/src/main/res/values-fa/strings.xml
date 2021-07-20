@@ -11,12 +11,12 @@
     <string name="delete_note">حذف یادداشت</string>
     <string name="delete_note_prompt_message">آیا از حذف یادداشت \"%s\" مطمئنید؟</string>
     <string name="pick_a_note">گزینش یک یادداشت</string>
-    <string name="rename_note">تغییر نام یادداشت</string>
+    <string name="rename_note">تغییرنام یادداشت</string>
     <string name="general_note">یادداشت عمومی</string>
     <string name="create_new_note">ایجاد یک یادداشت جدید</string>
     <string name="add_to_note">افزودن به یادداشت</string>
     <string name="unsaved_changes_warning">شما مقداری تغییرات ذخیره نشده دارید. می‌خواهید با آنها چکار کنید؟</string>
-    <string name="note_shown_widget">یادداشتی که در ویجت نمایش داده می‌شود:</string>
+    <string name="note_shown_widget">یادداشتی که در ابزارک نمایش داده می‌شود:</string>
     <string name="new_note_type">نوع یادداشت جدید:</string>
     <string name="text_note">یادداشت متنی</string>
     <string name="lock_note">قفل کردن یادداشت</string>
@@ -39,7 +39,7 @@
     <!-- Settings -->
     <string name="display_success_message">نمایش پیام ذخیره موفق</string>
     <string name="links_and_emails_clickable">قابل کلیک کردن پیوند‌ها و ایمیل‌ها</string>
-    <string name="place_cursor_end">قرار دادن مکان‌نما به انتهای یادداشت</string>
+    <string name="place_cursor_end">قرار دادن مکان‌نما در انتهای یادداشت</string>
     <string name="monospaced_font">استفاده از قلم هم عرض</string>
     <string name="show_keyboard">نمایش کیبورد در شروع</string>
     <string name="show_word_count">نمایش شمارشگر کلمه</string>
@@ -48,12 +48,12 @@
     <string name="left">چپ</string>
     <string name="center">وسط</string>
     <string name="right">راست</string>
-    <string name="widget_note">یادداشت استفاده شده در ویجت</string>
+    <string name="widget_note">یادداشت استفاده شده در ابزارک</string>
     <string name="show_note_picker">نمایش یک گزینشگر یادداشت در شروع</string>
     <string name="autosave_notes">ذخیره خودکار یادداشت‌ها</string>
     <string name="enable_line_wrap">فعال کردن پیچیدن خط</string>
     <string name="use_incognito_mode">استفاده از حالت ناشناس کیبورد‌ها</string>
-    <string name="move_done_checklist_items">جابجایی موارد انجام شده فهرست نشان‌دار به پایین</string>
+    <string name="move_done_checklist_items">جابه‌جایی موارد انجام شده فهرست نشان‌دار به پایین</string>
 
     <!-- Checklists -->
     <string name="checklist">فهرست نشان‌دار</string>
@@ -68,8 +68,8 @@
     <string name="import_folder">درون‌ریزی پوشه</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">چگونه میتوانم رنگ ویجت‌ها را تغییر دهم؟</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">چگونه میتوانم رنگ ابزارک‌ها را تغییر دهم؟</string>
+    <string name="faq_1_text">در این مثال شما فقط یک ابزارک فعال دارید، شما همچنین می‌توانید آن را دوباره بسازید، یا از دکمه درون تنظیمات آن را سفارشی‌سازی کنید. اگر شما چندین ابزارک فعال دارید، دکمه درون تنظیمات در دسترس نخواهد بود. همچنان برنامه از سفارشی‌سازی رنگ برای هر ابزارک پشتیبانی میکند، شما خواهید توانست با ساخت دوبارهٔ ابزارک آن را سفارشی‌سازی کنید.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
@@ -77,23 +77,23 @@
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">طراحی آسان: ایجاد یادداشت‌ها، پشتیبان گیری و فهرست کارها همراه با ابزار یادآوری سریع</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★ نیاز به یادداشت سریع چیزی برای خرید دارید، یک آدرس یا یک ایدهٔ نوآورانه؟ پس بیش از این دنبالش نگردید، این همان ابزار برنامه‌ریزی است که دنبالش هستید : یادداشت آسان: ایجاد و برنامه‌ریزی فهرست کارها! نیاز به گام‌های پیچیده برای راه‌اندازی نیست، کافیست صفحه را لمس کنید و چیزی که دنبالش هستید را بنویسید و یادداشت‌ها، فهرست‌های سریع و فهرست‌های نشان‌دار را ایجاد کنید. با دفترچه یادداشت شخصی خود میتوانید همه چیز را به سرعت به یاد بیاورید! خرید‌های مغازه، حفظ کردن مطالب و تنظیم یادآورها هرگز این آسان‌تر نبوده است ★
 
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+        یادداشت آسان، سریع، با استفادهٔ آسان و برنامه‌ریز و ایجادکننده عالی به همراه ابزارهای فوق العاده گرانبها را برایتان فراهم آورده است. همدمی که به شما برای یادآوری اطلاعات ضروری یاری می‌رساند.
 
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+        ابزار یادآوری ما شما قادر میسازد تا حقوق خود را پیگیری و فهرست نشان‌دار را برای کارها و افکار روزانه خود ایجاد کنید. و همراه با سادگی بی‌نظیر، مقدار قابل توجه‌ای در زمان صرفه‌جویی و زمان خود را به شیوه‌ای آسان مدیریت کنید.
 
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+        ابزار یادآوری این دفترچه یادداشت به همراه قابلیت ذخیرهٔ خودکار عرضه شده است، پس شما تغییراتتان را به اشتباه از دست نخواهید داد. این همچنان از ایجاد یادداشت به صورت متن خام جداگانه و فهرست‌های سریع پشتیبانی میکند.
 
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+        شما به راحتی و بدون صرف زمان با استفاده از ابزارک‌های قابل سفارشی‌سازی و تغییر اندازه، به یادداشت‌ها و فهرست کارهایتان دسترسی دارید، و می‌توانید آنها را مرتب کنید، و هنگامی که ابزارک را لمس کنید، همان یادداشت در برنامه باز می‌شود.
 
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+        این برنامه دوست‌دار کاربر و بدونه هیچ تبلیغات یا مجوز غیرضروری - بدون کلمه‌ای اضافی - است. این برنامه کاملا متن‌باز، به همراه رنگ‌های قابل سفارشی‌سازی که می‌توان به راحتی و سرعت تنظیم شوند.
 
-        <b>Simple Notes: To-do list organizer and planner </b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+        <b>یادداشت آسان: ایجاد و برنامه‌ریزی فهرست کارها</b> بهترین ایجاد کننده و برنامه‌ریز فهرست کارهایی است که میتوانید بدون تبلیغات از آن استفاده کنید. اگر به یک ایجاد کننده باکیفیت برای نوشتن یادداشت‌های سریع و خوب و یک یادآور دوست‌دار کاربر و قابل اطمینان که کار با آن واقعا ساده است، نیاز دارید؛ همین الان برنامه ما را بارگیری کنید :) دفترچه یادداشت شخصی خود را هر روز در جیب خود داشته باشد و یک نقشه پشتبان هم دارید تا دیگر نگران فراموش کردن قرار ملاقات‌های مهم و فهرست خریدتان نباشید :).
 
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+        این برنامه با طراحی متریال و تِم تاریک به عنوان پیش‌گزیده، یک تجربهٔ کاربری عالی برای استفادهٔ راحت را به ارمغان آورده است. عدم استفاده از اینترنت؛ حریم خصوصی، امنیت و پایداری بیشتری نسبت به برنامه‌های دیگر به شما می‌دهد.
 
-        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+        این برنامه کاملا متن‌باز و بدون تبلیغات یا دسترسی‌های غیرضروری است. همچنین قابلیت سفارشی‌سازی رنگ‌ها را هم، فراهم می‌سازد.
 
         <b>ابزار‌های آسان دیگر را از اینجا ببینید:</b>
         https://www.simplemobiletools.com
