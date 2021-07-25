@@ -15,15 +15,15 @@
     <string name="general_note">Nota principal</string>
     <string name="create_new_note">Crear una nota nueva</string>
     <string name="add_to_note">Añadir a la nota</string>
-    <string name="unsaved_changes_warning">Tienes cambios sin guardar. ¿Qué quieres ahcer con ellos?</string>
+    <string name="unsaved_changes_warning">Tienes cambios sin guardar. ¿Qué quieres hacer con ellos?</string>
     <string name="note_shown_widget">Nota mostrada en el widget:</string>
     <string name="new_note_type">Nuevo tipo de nota:</string>
     <string name="text_note">Nota de texto</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="lock_note">Bloquear nota</string>
+    <string name="unlock_note">Desbloquear nota</string>
+    <string name="note_content_locked">El contenido de esta nota está bloqueado.</string>
+    <string name="show_content">Mostrar contenido</string>
+    <string name="locking_warning">ADVERTENCIA: Si olvidas la contraseña de esta nota, ya no podrás recuperar su contenido.</string>
 
     <!-- File notes -->
     <string name="open_file">Abrir archivo</string>
@@ -41,7 +41,7 @@
     <string name="links_and_emails_clickable">Mostrar enlaces y direcciones de correo como seleccionables</string>
     <string name="place_cursor_end">Colocar el cursor al final de la nota</string>
     <string name="monospaced_font">Usar fuente monoespaciada</string>
-    <string name="show_keyboard">Mostrar teclado al inciciar</string>
+    <string name="show_keyboard">Mostrar teclado al iniciar</string>
     <string name="show_word_count">Mostrar conteo de palabras</string>
     <string name="show_character_count">Mostrar conteo de caracteres</string>
     <string name="alignment">Alineación del texto</string>
@@ -53,14 +53,14 @@
     <string name="autosave_notes">Guardado automático de notas</string>
     <string name="enable_line_wrap">Activar ajuste de línea</string>
     <string name="use_incognito_mode">Usar modo incógnito de los teclados</string>
-    <string name="move_done_checklist_items">Mover Elementos sin erminar de una lista al inicio</string>
+    <string name="move_done_checklist_items">Mover ítems completados al final de la lista</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista</string>
-    <string name="add_new_checklist_item">Añadir un nuevo item a la lista</string>
-    <string name="add_new_checklist_items">Añadir nuevos items a la lista</string>
+    <string name="add_new_checklist_item">Añadir un nuevo ítem a la lista</string>
+    <string name="add_new_checklist_items">Añadir nuevos ítems a la lista</string>
     <string name="checklist_is_empty">La lista está vacía</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="remove_done_items">Borrar ítems completados</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas las notas como archivos</string>
@@ -77,7 +77,7 @@
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Organizador Simple: Crea notas, respalda y listas de tareas con recordatorios</string>
     <string name="app_long_description">
-        ★ ¿Necesitas tomar una nota rápida de algo que comprar, una dirección, o idea de lanzamiento? Entonces no búsques más ya que este es la herramienta de organización que estabas buscando: Notas Simple: ¡Organizador y planeador de cosas que hacer! No necesita complicados pasos de instalación, solo toca la pantalla y escribe en lo que vino para crear notas, listas rápidas, listas de verificación o respaldos para cualquier idea. Con tu cuaderno símple y personal ¡puedes recorgar cualquier cosa rápido! Comprar comestibles, memorizar tus pensamientos y programar recordatorios. Tomar notas nunca había sido tan fácil ★
+        ★ ¿Necesitas tomar una nota rápida de algo que comprar, una dirección, o idea de lanzamiento? Entonces no busques más ya que este es la herramienta de organización que estabas buscando: Notas Simple: ¡Organizador y planeador de cosas que hacer! No necesita complicados pasos de instalación, solo toca la pantalla y escribe en lo que vino para crear notas, listas rápidas, listas de verificación o respaldos para cualquier idea. Con tu cuaderno simple y personal ¡puedes recordar cualquier cosa rápido! Comprar comestibles, memorizar tus pensamientos y programar recordatorios. Tomar notas nunca había sido tan fácil ★
 
         Notas Simple es rápido y simple de usar para organizar y planear, y te servirá como una invaluable herramienta y compañía, ¡ayudándote a recordar información necesaria!
 
