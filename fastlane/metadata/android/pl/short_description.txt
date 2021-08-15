@@ -1,1 +1,1 @@
-A beautiful quick note taking app without ads or weird permissions.
+Prosty planer: Twórz notatki, kopie zapasowe i listy zadań do zrobienia
