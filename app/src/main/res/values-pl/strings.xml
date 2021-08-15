@@ -2,21 +2,21 @@
     <string name="app_name">Proste notatki</string>
     <string name="app_launcher_name">Notatki</string>
     <string name="widget_config">Dziękujemy za korzystanie z aplikacji Proste notatki.\nWięcej prostych aplikacji można znaleźć na SimpleMobileTools.com.</string>
-    <string name="cannot_share_empty_text">Nie można udostępnić pustej notatki</string>
+    <string name="cannot_share_empty_text">Nie można udostępnić pustego tekstu</string>
     <string name="simple_note">Prosta notatka</string>
     <string name="new_note">Dodaj nową notatkę</string>
     <string name="no_title">Nazwij swoją notatkę</string>
-    <string name="title_taken">Notatka o tej nazwie już istnieje</string>
+    <string name="title_taken">Notatka o tym tytule już istnieje</string>
     <string name="open_note">Otwórz notatkę</string>
     <string name="delete_note">Usuń notatkę</string>
-    <string name="delete_note_prompt_message">Czy na pewno chcesz usunąć notatkę \"%s\"?</string>
+    <string name="delete_note_prompt_message">Czy na pewno chcesz usunąć notatkę „%s”?</string>
     <string name="pick_a_note">Wybierz notatkę</string>
     <string name="rename_note">Zmień nazwę notatki</string>
     <string name="general_note">Notatka ogólna</string>
     <string name="create_new_note">Utwórz nową notatkę</string>
     <string name="add_to_note">Dodaj do notatki</string>
     <string name="unsaved_changes_warning">Masz niezapisane zmiany. Co chcesz z nimi zrobić?</string>
-    <string name="note_shown_widget">Notatka pokazana w widżecie:</string>
+    <string name="note_shown_widget">Notatka wyświetlona w widżecie:</string>
     <string name="new_note_type">Typ nowej notatki:</string>
     <string name="text_note">Notatka tekstowa</string>
     <string name="lock_note">Zablokuj notatkę</string>
@@ -27,21 +27,21 @@
 
     <!-- File notes -->
     <string name="open_file">Otwórz plik</string>
-    <string name="export_as_file">Wyeksportuj jako plik</string>
-    <string name="file_too_large">Plik jest za duży (może mieć co najwyżej 1 MB)</string>
-    <string name="only_import_file_content">Zaimportuj tylko zawartość pliku\n(zmiana pliku nie będzie miała wpływu na notatkę)</string>
-    <string name="update_file_at_note">Zaktualizuj plik po zaktualizowaniu notatki\n(notatka zostanie usunięta, jeśli plik zostanie usunięty lub zmieni się jego lokalizacja)</string>
-    <string name="delete_file_itself">Usuń także plik \"%s\"</string>
-    <string name="note_saved_successfully">Notatka \"%s\" została zapisana</string>
-    <string name="note_exported_successfully">Notatka \"%s\" została wyeksportowana</string>
-    <string name="only_export_file_content">Wyeksportuj tylko bieżącą zawartość pliku\n(zmiana notatki nie będzie miała wpływu na plik)</string>
+    <string name="export_as_file">Eksportuj jako plik</string>
+    <string name="file_too_large">Plik za duży, limit to 1 MB</string>
+    <string name="only_import_file_content">Zaimportuj tylko zawartość pliku\n(zmiana pliku nie wpłynie na notatkę)</string>
+    <string name="update_file_at_note">Aktualizuj plik podczas aktualizacji notatki\n(notatka zostanie usunięta w przypadku usunięcia pliku lub zmiany ścieżki)</string>
+    <string name="delete_file_itself">Usuń również plik „%s”</string>
+    <string name="note_saved_successfully">Notatka „%s” została zapisana</string>
+    <string name="note_exported_successfully">Notatka „%s” została wyeksportowana</string>
+    <string name="only_export_file_content">Wyeksportuj tylko bieżącą zawartość pliku\n(zmiana notatki nie wpłynie na plik)</string>
 
     <!-- Settings -->
-    <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisaniu notatki</string>
+    <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisie</string>
     <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy</string>
     <string name="place_cursor_end">Umieszczaj kursor na końcu notatki</string>
     <string name="monospaced_font">Używaj czcionki o stałej szerokości</string>
-    <string name="show_keyboard">Pokazuj klawiaturę na starcie</string>
+    <string name="show_keyboard">Pokazuj klawiaturę przy uruchomieniu</string>
     <string name="show_word_count">Pokazuj liczbę słów</string>
     <string name="show_character_count">Pokazuj liczbę znaków</string>
     <string name="alignment">Wyrównanie tekstu</string>
@@ -49,11 +49,11 @@
     <string name="center">Do środka</string>
     <string name="right">Do prawej</string>
     <string name="widget_note">Notatka używana w widżecie</string>
-    <string name="show_note_picker">Pokazuj wybór notatki po uruchomieniu</string>
-    <string name="autosave_notes">Autozapis notatek</string>
-    <string name="enable_line_wrap">Zawijanie linii</string>
-    <string name="use_incognito_mode">Użyj trybu incognito klawiatury</string>
-    <string name="move_done_checklist_items">Przesuń na dół wykonane elementy listy kontrolnej</string>
+    <string name="show_note_picker">Pokazuj wybór notatki przy uruchomieniu</string>
+    <string name="autosave_notes">Automatyczne zapisywanie notatek</string>
+    <string name="enable_line_wrap">Włącz zawijanie linii</string>
+    <string name="use_incognito_mode">Używaj trybu incognito klawiatury</string>
+    <string name="move_done_checklist_items">Przesuwaj na dół wykonane elementy listy kontrolnej</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista kontrolna</string>
@@ -64,20 +64,20 @@
 
     <!-- Import / Export -->
     <string name="export_all_notes">Eksportuj wszystkie notatki jako pliki</string>
-    <string name="import_notes">Importuj pliki jako notatki</string>
+    <string name="import_notes">Importuj wiele plików jako notatki</string>
     <string name="import_folder">Importuj folder</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">Jak mogę zmienić kolor widżetów?</string>
-    <string name="faq_1_text">W przypadku gdy masz tylko 1 aktywny widżet, możesz go utworzyć na nowo lub użyć przycisku w ustawieniach aplikacji, aby go dostosować. Jeśli masz wiele aktywnych widżetów, przycisk w ustawieniach aplikacji nie będzie dostępny. Ponieważ aplikacja obsługuje dostosowywanie kolorów dla poszczególnych widżetów, konieczne będzie ponowne utworzenie widżetu, który chcesz dostosować.</string>
+    <string name="faq_1_text">Jeśli masz tylko 1 aktywny widżet, możesz go odtworzyć lub użyć przycisku w ustawieniach aplikacji, aby go dostosować. Jeśli masz wiele aktywnych widżetów, przycisk w ustawieniach aplikacji nie będzie dostępny. Ponieważ aplikacja obsługuje dostosowywanie kolorów dla poszczególnych widżetów, konieczne będzie ponowne utworzenie widżetu, który chcesz dostosować.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Proste notatki Pro: Organizer i planer listy zadań</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Prosty planer: Twórz notatki, kopie zapasowe i listy do zrobienia</string>
+    <string name="app_short_description">Prosty planer: Twórz notatki, kopie zapasowe i listy zadań do zrobienia</string>
     <string name="app_long_description">
-        ★ Chcesz szybko zanotować coś do kupienia, adres lub pomysł na startup? Nie szukaj dalej, ponieważ jest to proste narzędzie do organizowania, którego szukałeś: Proste notatki: Organizator i planer listy zadań do zrobienia! Nie są potrzebne żadne skomplikowane czynności konfiguracyjne - wystarczy, że dotkniesz ekran, wpiszesz to, co planowałeś/aś i tworzysz notatki, szybkie listy, listę kontrolną lub kopię zapasową dowolnego pomysłu. Dzięki prostemu, osobistemu notatnikowi możesz szybko wszystko zapamiętać! Zakupy spożywcze, zapamiętywanie myśli i łatwiejsze konfigurowanie przypomnień; robienie notatek nigdy nie było prostsze ★
+        ★ Chcesz szybko zanotować coś do kupienia, adres lub pomysł na startup? Nie szukaj dalej, ponieważ jest to proste narzędzie do organizowania, którego szukałeś(-aś) - Proste notatki: Organizator i planer listy zadań do zrobienia! Nie są potrzebne żadne skomplikowane czynności konfiguracyjne - wystarczy, że dotkniesz ekranu, wpiszesz to, co planowałeś(-aś) i tworzysz notatki, szybkie listy, listę kontrolną lub kopię zapasową dowolnego pomysłu. Dzięki prostemu, osobistemu notatnikowi możesz szybko wszystko zapamiętać! Zakupy spożywcze, zapamiętywanie myśli i łatwiejsze konfigurowanie przypomnień; robienie notatek nigdy nie było prostsze ★
 
         Planer prostych notatek jest szybkim, prostym w użyciu organizerem i niezwykłym planerem, a także będzie nieocenionym narzędziem i towarzyszem pomagającym zapamiętać potrzebne informacje!
 
@@ -85,7 +85,7 @@
 
         To narzędzie notatnika jest wyposażone w funkcję automatycznego zapisywania, dzięki czemu nie odrzucisz swoich zmian przez pomyłkę. Obsługuje również bardzo szybkie tworzenie wielu niezależnych notatek i list w postaci zwykłego tekstu.
 
-        Możesz łatwo uzyskać dostęp do notatki i błyskawicznie uporządkować listę zadań do zrobienia, korzystając z dostosowywanego widżetu o zmiennej wielkości, który otwiera aplikację po dotknięciu. 
+        Możesz łatwo uzyskać dostęp do notatki i błyskawicznie uporządkować listę zadań do zrobienia, korzystając z dostosowywanego widżetu o zmiennej wielkości, który otwiera aplikację po naciśnięciu go. 
 
         Jest przyjazny dla użytkownika i nie zawiera żadnych reklam ani zbędnych uprawnień - bez żadnych zobowiązań. Jest w pełni otwartoźródłowy, zapewnia konfigurowalną kolorystykę, którą można dostosować za pomocą szybkiego dostrajania.
 
