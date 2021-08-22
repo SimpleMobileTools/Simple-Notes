@@ -650,7 +650,8 @@ class MainActivity : SimpleActivity() {
         } else {
             val items = arrayListOf(
                 RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
+                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content))
+            )
 
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == EXPORT_FILE_SYNC
@@ -740,7 +741,8 @@ class MainActivity : SimpleActivity() {
     private fun showExportFilePickUpdateDialog(exportPath: String, textToExport: String) {
         val items = arrayListOf(
             RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-            RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
+            RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content))
+        )
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
@@ -771,7 +773,8 @@ class MainActivity : SimpleActivity() {
         ExportFilesDialog(this, mNotes) { parent, extension ->
             val items = arrayListOf(
                 RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content)))
+                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content))
+            )
 
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == EXPORT_FILE_SYNC
@@ -858,9 +861,7 @@ class MainActivity : SimpleActivity() {
                 }
             } else {
                 val file = File(path)
-                file.printWriter().use { out ->
-                    out.write(content)
-                }
+                file.writeText(content)
 
                 if (showSuccessToasts) {
                     noteExportedSuccessfully(path.getFilenameFromPath())
