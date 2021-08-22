@@ -875,7 +875,7 @@ class MainActivity : SimpleActivity() {
 
     private fun exportNoteValueToUri(uri: Uri, content: String, callback: ((success: Boolean) -> Unit)? = null) {
         try {
-            val outputStream = contentResolver.openOutputStream(uri)
+            val outputStream = contentResolver.openOutputStream(uri, "wt")
             outputStream!!.bufferedWriter().use { out ->
                 out.write(content)
             }
