@@ -23,7 +23,7 @@
     <string name="unlock_note">Déverrouiller note</string>
     <string name="note_content_locked">Le contenu de la note est verrouillé.</string>
     <string name="show_content">Montrer le contenu</string>
-    <string name="locking_warning">ATTENTION: Si vous oubliez le mot de passe, vous ne serez pas en mesure de la récupérer ou d'y accéder.</string>
+    <string name="locking_warning">ATTENTION: Si vous oubliez le mot de passe, vous ne serez pas en mesure de la récupérer ou d\'y accéder.</string>
 
     <!-- File notes -->
     <string name="open_file">Ouvrir le fichier</string>
