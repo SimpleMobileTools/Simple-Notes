@@ -1,0 +1,2 @@
+ * Fixed a glitch related to saving notes into files
+ * Some translation improvements

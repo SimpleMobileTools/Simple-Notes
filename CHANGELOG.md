@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.8.1 *(2021-08-23)*
+----------------------------
+
+ * Fixed a glitch related to saving notes into files
+ * Some translation improvements
+
 Version 6.8.0 *(2021-05-21)*
 ----------------------------
 
