@@ -57,7 +57,7 @@ android {
 
 dependencies {
 //    implementation 'com.github.SimpleMobileTools:Simple-Commons:c45f0d662a'
-    implementation 'com.github.qwertyfinger:Simple-Commons:d61a1c0910'
+    implementation 'com.github.qwertyfinger:Simple-Commons:615349768d'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'androidx.documentfile:documentfile:1.0.1'
 
