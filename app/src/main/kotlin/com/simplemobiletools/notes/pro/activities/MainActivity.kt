@@ -83,7 +83,8 @@ class MainActivity : SimpleActivity() {
 
         initViewPager(intent.getLongExtra(OPEN_NOTE_ID, -1L))
         pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
-        pager_title_strip.layoutParams.height = (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
+        pager_title_strip.layoutParams.height =
+            (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
         checkWhatsNewDialog()
         checkIntents(intent)
 
@@ -1080,18 +1081,22 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun unlockNote() {
-        SecurityDialog(this, mCurrentNote.protectionHash, mCurrentNote.protectionType) { hash, type, success ->
-            if (success) {
-                mCurrentNote.protectionHash = ""
-                mCurrentNote.protectionType = PROTECTION_NONE
-                NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
-                    getCurrentFragment()?.apply {
-                        shouldShowLockedContent = true
-                        checkLockState()
-                    }
-                    invalidateOptionsMenu()
-                }
+        performSecurityCheck(
+            protectionType = mCurrentNote.protectionType,
+            requiredHash = mCurrentNote.protectionHash,
+            successCallback = { _, _ -> removeProtection() }
+        )
+    }
+
+    private fun removeProtection() {
+        mCurrentNote.protectionHash = ""
+        mCurrentNote.protectionType = PROTECTION_NONE
+        NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
+            getCurrentFragment()?.apply {
+                shouldShowLockedContent = true
+                checkLockState()
             }
+            invalidateOptionsMenu()
         }
     }
 
