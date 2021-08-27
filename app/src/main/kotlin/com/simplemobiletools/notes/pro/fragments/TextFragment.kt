@@ -176,7 +176,9 @@ class TextFragment : NoteFragment() {
     fun removeTextWatcher() = view.text_note_view.removeTextChangedListener(textWatcher)
 
     override fun checkLockState() {
-        if (note == null) return
+        if (note == null) {
+            return
+        }
 
         view.apply {
             notes_counter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && config!!.showWordCount)

@@ -122,7 +122,9 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     override fun checkLockState() {
-        if (note == null) return
+        if (note == null) {
+            return
+        }
 
         view.apply {
             checklist_content_holder.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
