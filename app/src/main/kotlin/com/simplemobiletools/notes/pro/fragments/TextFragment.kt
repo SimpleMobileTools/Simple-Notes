@@ -176,6 +176,8 @@ class TextFragment : NoteFragment() {
     fun removeTextWatcher() = view.text_note_view.removeTextChangedListener(textWatcher)
 
     override fun checkLockState() {
+        if (note == null) return
+
         view.apply {
             notes_counter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && config!!.showWordCount)
             notes_scrollview.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
@@ -263,11 +265,13 @@ class TextFragment : NoteFragment() {
             text.removeSpan(span)
         }
 
-        Selection.setSelection(text, if (edit.before == null) {
-            start
-        } else {
-            start + edit.before.length
-        })
+        Selection.setSelection(
+            text, if (edit.before == null) {
+                start
+            } else {
+                start + edit.before.length
+            }
+        )
     }
 
     fun redo() {
@@ -285,11 +289,13 @@ class TextFragment : NoteFragment() {
             text.removeSpan(o)
         }
 
-        Selection.setSelection(text, if (edit.after == null) {
-            start
-        } else {
-            start + edit.after.length
-        })
+        Selection.setSelection(
+            text, if (edit.after == null) {
+                start
+            } else {
+                start + edit.after.length
+            }
+        )
     }
 
     fun isUndoAvailable() = textHistory.position > 0

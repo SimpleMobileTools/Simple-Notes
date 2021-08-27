@@ -6,6 +6,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
+import com.simplemobiletools.commons.extensions.isBiometricIdAvailable
+import com.simplemobiletools.commons.helpers.PROTECTION_FINGERPRINT
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import java.io.File
 
@@ -17,7 +19,8 @@ data class Note(
     @ColumnInfo(name = "type") var type: Int,
     @ColumnInfo(name = "path") var path: String,
     @ColumnInfo(name = "protection_type") var protectionType: Int,
-    @ColumnInfo(name = "protection_hash") var protectionHash: String) {
+    @ColumnInfo(name = "protection_hash") var protectionHash: String
+) {
 
     fun getNoteStoredValue(context: Context): String? {
         return if (path.isNotEmpty()) {
@@ -37,4 +40,8 @@ data class Note(
     }
 
     fun isLocked() = protectionType != PROTECTION_NONE
+
+    fun isBiometricLockUnavailable(context: Context): Boolean {
+        return protectionType == PROTECTION_FINGERPRINT && !context.isBiometricIdAvailable()
+    }
 }

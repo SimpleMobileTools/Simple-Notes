@@ -104,16 +104,18 @@ class WidgetConfigureActivity : SimpleActivity() {
 
             if (mNotes.size == 1 && note == null) {
                 note = mNotes.first()
-                performSecurityCheck(
-                    protectionType = note.protectionType,
-                    requiredHash = note.protectionHash,
-                    successCallback = { _, _ -> updateCurrentNote(note) },
-                    failureCallback = { finish() }
-                )
-            } else {
-                if (note != null) {
+                if (note.isBiometricLockUnavailable(this)) {
                     updateCurrentNote(note)
+                } else {
+                    performSecurityCheck(
+                        protectionType = note.protectionType,
+                        requiredHash = note.protectionHash,
+                        successCallback = { _, _ -> updateCurrentNote(note) },
+                        failureCallback = { finish() }
+                    )
                 }
+            } else if (note != null) {
+                updateCurrentNote(note)
             }
         }
     }
@@ -127,7 +129,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         RadioGroupDialog(this, items, mCurrentNoteId.toInt()) {
             val selectedId = it as Int
             val note = mNotes.firstOrNull { it.id!!.toInt() == selectedId } ?: return@RadioGroupDialog
-            if (note.protectionType == PROTECTION_NONE) {
+            if (note.protectionType == PROTECTION_NONE || note.isBiometricLockUnavailable(this)) {
                 updateCurrentNote(note)
             } else {
                 performSecurityCheck(
