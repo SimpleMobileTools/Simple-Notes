@@ -41,7 +41,7 @@ data class Note(
 
     fun isLocked() = protectionType != PROTECTION_NONE
 
-    fun isBiometricLockUnavailable(context: Context): Boolean {
+    fun shouldBeUnlocked(context: Context): Boolean {
         return protectionType == PROTECTION_FINGERPRINT && !context.isBiometricIdAvailable()
     }
 }
