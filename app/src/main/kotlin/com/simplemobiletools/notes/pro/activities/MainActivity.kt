@@ -317,7 +317,7 @@ class MainActivity : SimpleActivity() {
 
     private fun initViewPager(wantedNoteId: Long? = null) {
         NotesHelper(this).getNotes { notes ->
-            notes.filter { it.isBiometricLockUnavailable(this) }
+            notes.filter { it.shouldBeUnlocked(this) }
                 .forEach(::removeProtection)
 
             mNotes = notes
