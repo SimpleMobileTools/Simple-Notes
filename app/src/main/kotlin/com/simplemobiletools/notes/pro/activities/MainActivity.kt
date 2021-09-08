@@ -316,8 +316,11 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun initViewPager(wantedNoteId: Long? = null) {
-        NotesHelper(this).getNotes {
-            mNotes = it
+        NotesHelper(this).getNotes { notes ->
+            notes.filter { it.shouldBeUnlocked(this) }
+                .forEach(::removeProtection)
+
+            mNotes = notes
             invalidateOptionsMenu()
             mCurrentNote = mNotes[0]
             mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
@@ -1084,19 +1087,21 @@ class MainActivity : SimpleActivity() {
         performSecurityCheck(
             protectionType = mCurrentNote.protectionType,
             requiredHash = mCurrentNote.protectionHash,
-            successCallback = { _, _ -> removeProtection() }
+            successCallback = { _, _ -> removeProtection(mCurrentNote) }
         )
     }
 
-    private fun removeProtection() {
-        mCurrentNote.protectionHash = ""
-        mCurrentNote.protectionType = PROTECTION_NONE
-        NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
-            getCurrentFragment()?.apply {
-                shouldShowLockedContent = true
-                checkLockState()
+    private fun removeProtection(note: Note) {
+        note.protectionHash = ""
+        note.protectionType = PROTECTION_NONE
+        NotesHelper(this).insertOrUpdateNote(note) {
+            if (note == mCurrentNote) {
+                getCurrentFragment()?.apply {
+                    shouldShowLockedContent = true
+                    checkLockState()
+                }
+                invalidateOptionsMenu()
             }
-            invalidateOptionsMenu()
         }
     }
 
