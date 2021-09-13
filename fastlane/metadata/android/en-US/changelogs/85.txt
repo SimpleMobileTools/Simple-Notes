@@ -1,0 +1,2 @@
+ * Added biometric protection on Android 11+
+ * Fixed a glitch with note content vanishing on export error
