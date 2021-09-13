@@ -750,17 +750,19 @@ class MainActivity : SimpleActivity() {
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
-            tryExportNoteValueToFile(exportPath, textToExport, true) {
-                if (syncFile) {
-                    mCurrentNote.path = exportPath
-                    mCurrentNote.value = ""
-                } else {
-                    mCurrentNote.path = ""
-                    mCurrentNote.value = textToExport
-                }
+            tryExportNoteValueToFile(exportPath, textToExport, true) { exportedSuccessfully ->
+                if (exportedSuccessfully) {
+                    if (syncFile) {
+                        mCurrentNote.path = exportPath
+                        mCurrentNote.value = ""
+                    } else {
+                        mCurrentNote.path = ""
+                        mCurrentNote.value = textToExport
+                    }
 
-                getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
-                NotesHelper(this).insertOrUpdateNote(mCurrentNote)
+                    getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
+                    NotesHelper(this).insertOrUpdateNote(mCurrentNote)
+                }
             }
         }
     }
@@ -792,23 +794,26 @@ class MainActivity : SimpleActivity() {
                             toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
                         } else {
                             val noteStoredValue = note.getNoteStoredValue(this) ?: ""
-                            tryExportNoteValueToFile(file.absolutePath, note.value, false) {
-                                if (syncFile) {
-                                    note.path = file.absolutePath
-                                    note.value = ""
-                                } else {
-                                    note.path = ""
-                                    note.value = noteStoredValue
+                            tryExportNoteValueToFile(file.absolutePath, note.value, false) { exportedSuccessfully ->
+                                if (exportedSuccessfully) {
+                                    if (syncFile) {
+                                        note.path = file.absolutePath
+                                        note.value = ""
+                                    } else {
+                                        note.path = ""
+                                        note.value = noteStoredValue
+                                    }
+
+                                    NotesHelper(this).insertOrUpdateNote(note)
                                 }
 
-                                NotesHelper(this).insertOrUpdateNote(note)
                                 if (mCurrentNote.id == note.id) {
                                     mCurrentNote.value = note.value
                                     mCurrentNote.path = note.path
                                     getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
                                 }
 
-                                if (!it) {
+                                if (!exportedSuccessfully) {
                                     failCount++
                                 }
 
