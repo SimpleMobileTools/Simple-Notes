@@ -16,8 +16,8 @@ android {
         applicationId "com.simplemobiletools.notes.pro"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 84
-        versionName "6.8.1"
+        versionCode 85
+        versionName "6.8.2"
         setProperty("archivesBaseName", "notes")
     }
 
@@ -56,7 +56,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:dc3f4b619e'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:7c0a8d628e'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'androidx.documentfile:documentfile:1.0.1'
 

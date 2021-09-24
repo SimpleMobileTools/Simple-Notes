@@ -11,8 +11,6 @@
         android:name="android.hardware.faketouch"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-
     <application
         android:name=".App"
         android:allowBackup="true"

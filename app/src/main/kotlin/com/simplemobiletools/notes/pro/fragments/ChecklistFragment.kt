@@ -78,11 +78,13 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         items.clear()
 
         note.value.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEachIndexed { index, value ->
-            items.add(ChecklistItem(
-                id = index,
-                title = value,
-                isDone = false
-            ))
+            items.add(
+                ChecklistItem(
+                    id = index,
+                    title = value,
+                    isDone = false
+                )
+            )
         }
 
         saveChecklist()
@@ -120,6 +122,10 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     override fun checkLockState() {
+        if (note == null) {
+            return
+        }
+
         view.apply {
             checklist_content_holder.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
             checklist_fab.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
