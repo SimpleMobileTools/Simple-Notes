@@ -19,11 +19,11 @@
     <string name="note_shown_widget">Exibir nota em um widget:</string>
     <string name="new_note_type">Novo tipo de nota:</string>
     <string name="text_note">Anotações</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="lock_note">Bloquear anotação</string>
+    <string name="unlock_note">Desbloquear anotação</string>
+    <string name="note_content_locked">O conteúdo da anotação está bloqueado.</string>
+    <string name="show_content">Mostrar conteúdo</string>
+    <string name="locking_warning">AVISO: Caso você esqueça da senha, não conseguirá acessar o conteúdo.</string>
 
     <!-- File notes -->
     <string name="open_file">Abrir arquivo</string>
@@ -43,7 +43,7 @@
     <string name="monospaced_font">Use fonte de mesmo tamanho</string>
     <string name="show_keyboard">Mostrar teclado na inicialização</string>
     <string name="show_word_count">Mostrar contagem de palavras</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Mostrar contagem de caracteres</string>
     <string name="alignment">Gravidade</string>
     <string name="left">Esquerda</string>
     <string name="center">Centro</string>
@@ -53,14 +53,14 @@
     <string name="autosave_notes">Salvar notas automaticamente</string>
     <string name="enable_line_wrap">Ativar quebra de linha</string>
     <string name="use_incognito_mode">Usar o teclado no modo de Navegação Anônima</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
+    <string name="move_done_checklist_items">Mover itens completos da lista de verificação para o final</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista de verificação</string>
-    <string name="add_new_checklist_item">Adicionar novo item de lista de verificação</string>
-    <string name="add_new_checklist_items">Adicionar novos itens de lista de verificação</string>
+    <string name="add_new_checklist_item">Adicionar novo item à lista de verificação</string>
+    <string name="add_new_checklist_items">Adicionar novos itens à lista de verificação</string>
     <string name="checklist_is_empty">A lista de verificação está vazia</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="remove_done_items">Remover itens concluídos</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como arquivo</string>
@@ -68,8 +68,8 @@
     <string name="import_folder">Importar pasta</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Como mudar a cor do widget?</string>
+    <string name="faq_1_text">Caso você possua apenas 1 widget ativo, você poderá recriá-lo, ou usar o botão nas configurações do aplicativo para personalizá-lo. Caso você possua vários widgets ativos, o botão nas configurações do aplicativo não estará disponível. Como o aplicativo suporta personalização de cores por widget, você terá que recriar o widget que deseja personalizar.</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
