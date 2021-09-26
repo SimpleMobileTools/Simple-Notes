@@ -136,8 +136,17 @@ class MainActivity : SimpleActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         menu.apply {
-            findItem(R.id.undo).isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
-            findItem(R.id.redo).isVisible = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+            val areButtonsVisible = (showRedoButton || showUndoButton) && mCurrentNote.type == NoteType.TYPE_TEXT.value
+            findItem(R.id.undo).apply {
+                isVisible = areButtonsVisible
+                isEnabled = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+                icon.alpha = if (isEnabled) 255 else 127
+            }
+            findItem(R.id.redo).apply {
+                isVisible = areButtonsVisible
+                isEnabled = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+                icon.alpha = if (isEnabled) 255 else 127
+            }
         }
 
         updateMenuItemColors(menu)
@@ -505,6 +514,8 @@ class MainActivity : SimpleActivity() {
         NotesHelper(this).insertOrUpdateNote(note) {
             val newNoteId = it
             showSaveButton = false
+            showUndoButton = false
+            showRedoButton = false
             initViewPager(newNoteId)
             updateSelectedNote(newNoteId)
             view_pager.onGlobalLayout {
