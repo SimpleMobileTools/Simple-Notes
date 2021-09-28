@@ -54,6 +54,7 @@
     <string name="enable_line_wrap">Automatische terugloop inschakelen</string>
     <string name="use_incognito_mode">Incognito-modus van toetsenbord gebruiken</string>
     <string name="move_done_checklist_items">Afgewerkte items naar onderen verplaatsen</string>
+    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">Lijst</string>

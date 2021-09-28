@@ -54,6 +54,7 @@
     <string name="enable_line_wrap">Włącz zawijanie linii</string>
     <string name="use_incognito_mode">Używaj trybu incognito klawiatury</string>
     <string name="move_done_checklist_items">Przesuwaj na dół wykonane elementy listy kontrolnej</string>
+    <string name="add_new_checklist_items_top">Dodawaj na górze nowe elementy listy kontrolnej</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista kontrolna</string>

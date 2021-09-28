@@ -54,6 +54,7 @@
     <string name="enable_line_wrap">Povolit zalamování řádků</string>
     <string name="use_incognito_mode">Použít Inkognito mód klávesnic</string>
     <string name="move_done_checklist_items">Přesunout splněné položky seznamu položek nadol</string>
+    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">Seznam položek</string>

@@ -54,6 +54,7 @@
     <string name="enable_line_wrap">Aktifkan baris berlibat</string>
     <string name="use_incognito_mode">Gunakan mode papan ketik incognito</string>
     <string name="move_done_checklist_items">Pindah checklist yang belum selesai ke urutan atas</string>
+    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
