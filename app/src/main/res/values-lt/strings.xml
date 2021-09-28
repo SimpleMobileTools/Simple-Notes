@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Kontrolinis sąrašas</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Pridėti naują kontrolinio sąrašo objektą</string>
     <string name="add_new_checklist_items">Pridėti naujus kontrolinio sąrašo objektus</string>
     <string name="checklist_is_empty">Kontrolinis sąršas tuščias</string>

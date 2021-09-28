@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Tjekliste</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Føj et nyt punkt til tjeklisten</string>
     <string name="add_new_checklist_items">Føj nye punkter til tjeklisten</string>
     <string name="checklist_is_empty">Tjeklisten er tom</string>

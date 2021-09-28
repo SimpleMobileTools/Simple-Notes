@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">فهرست نشان‌دار</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">افزودن یک مورد به فهرست نشان‌دار</string>
     <string name="add_new_checklist_items">افزودن موارد به فهرست نشان‌دار</string>
     <string name="checklist_is_empty">فهرست نشان‌دار خالی است</string>

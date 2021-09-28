@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Scaletta</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Aggiungi un nuovo elemento</string>
     <string name="add_new_checklist_items">Aggiungi nuovi elementi</string>
     <string name="checklist_is_empty">La scaletta è vuota</string>

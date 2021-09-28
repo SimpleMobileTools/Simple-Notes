@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">قائمة تدقيق</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">إضافة عنصر قائمة تدقيق جديد</string>
     <string name="add_new_checklist_items">إضافة عناصر قائمة تدقيق جديدة</string>
     <string name="checklist_is_empty">قائمة التدقيق فارغة</string>

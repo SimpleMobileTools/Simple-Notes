@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Lista de verificación</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Engadir un elemento a unha nova lista de verificación</string>
     <string name="add_new_checklist_items">Engadir elementos a unha nova lista de verificación</string>
     <string name="checklist_is_empty">A lista de verificación está baleira</string>

@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">清单</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">添加一个新的清单项目</string>
     <string name="add_new_checklist_items">添加新的清单项目</string>
     <string name="checklist_is_empty">清单为空</string>

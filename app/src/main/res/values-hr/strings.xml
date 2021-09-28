@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Spisak</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Dodajte novu stavku na spisak</string>
     <string name="add_new_checklist_items">Dodajte nove stavke na spisak</string>
     <string name="checklist_is_empty">Spisak je prazan</string>

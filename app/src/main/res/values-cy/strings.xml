@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Rhestr wirio</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Ychwanegu eitem newydd at restr wirio</string>
     <string name="add_new_checklist_items">Ychwanegu eitemau newydd at restr wirio</string>
     <string name="checklist_is_empty">Mae\'r rhestr wirio yn wag</string>

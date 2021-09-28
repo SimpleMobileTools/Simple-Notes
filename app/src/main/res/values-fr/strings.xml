@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Ajouter un nouvel élément</string>
     <string name="add_new_checklist_items">Ajouter de nouveaux éléments</string>
     <string name="checklist_is_empty">La checklist est vide</string>

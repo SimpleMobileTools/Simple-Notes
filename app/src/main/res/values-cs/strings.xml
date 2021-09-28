@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Seznam položek</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Přidat do seznamu novou položku</string>
     <string name="add_new_checklist_items">Přidat do seznamu nové položky</string>
     <string name="checklist_is_empty">Seznam položek je prázdný</string>

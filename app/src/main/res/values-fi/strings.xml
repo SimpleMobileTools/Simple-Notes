@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Muistilista</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Lisää uusi kohta muistilistaan</string>
     <string name="add_new_checklist_items">Lisää uusia kohtia muistilistaan</string>
     <string name="checklist_is_empty">Muistilista on tyhjä</string>

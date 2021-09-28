@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">チェックリスト</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">新しいチェックリスト項目を追加</string>
     <string name="add_new_checklist_items">新しいチェックリスト項目を追加</string>
     <string name="checklist_is_empty">チェックリストが空です</string>

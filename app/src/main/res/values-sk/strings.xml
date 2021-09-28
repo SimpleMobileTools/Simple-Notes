@@ -54,10 +54,11 @@
     <string name="enable_line_wrap">Povoliť zalamovanie riadkov</string>
     <string name="use_incognito_mode">Použiť Inkognito mód klávesníc</string>
     <string name="move_done_checklist_items">Presunúť splnené položky zo zoznamu položiek na spodok</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="add_new_checklist_items_top">Pridávať nové položky do zoznamov na vrch</string>
 
     <!-- Checklists -->
     <string name="checklist">Zoznam položiek</string>
+    <string name="checklists">Zoznamy položiek</string>
     <string name="add_new_checklist_item">Pridať do zoznamu novú položku</string>
     <string name="add_new_checklist_items">Pridať do zoznamu nové položky</string>
     <string name="checklist_is_empty">Zoznam položiek je prázdny</string>

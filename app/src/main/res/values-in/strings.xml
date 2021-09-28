@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Tambah item checklist baru</string>
     <string name="add_new_checklist_items">Tambah item checklist baru</string>
     <string name="checklist_is_empty">Checklist kosong</string>

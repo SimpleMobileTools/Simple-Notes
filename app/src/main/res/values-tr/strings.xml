@@ -58,6 +58,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Yapılacak listesi</string>
+    <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Yeni bir yapılacak listesi öğesi ekle</string>
     <string name="add_new_checklist_items">Yeni yapılacak listesi öğeleri ekle</string>
     <string name="checklist_is_empty">Yapılacak listesi boş</string>
