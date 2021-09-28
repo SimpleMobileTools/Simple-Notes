@@ -54,6 +54,7 @@
     <string name="enable_line_wrap">Activar ajuste de línea</string>
     <string name="use_incognito_mode">Usar modo incógnito de los teclados</string>
     <string name="move_done_checklist_items">Mover ítems completados al final de la lista</string>
+    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista</string>

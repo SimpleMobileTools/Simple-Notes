@@ -136,12 +136,19 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     private fun showNewItemDialog() {
         NewChecklistItemDialog(activity as SimpleActivity) { titles ->
             var currentMaxId = items.maxBy { item -> item.id }?.id ?: 0
+            val newItems = ArrayList<ChecklistItem>()
 
             titles.forEach { title ->
                 title.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
-                    items.add(ChecklistItem(currentMaxId + 1, row, false))
+                    newItems.add(ChecklistItem(currentMaxId + 1, row, false))
                     currentMaxId++
                 }
+            }
+
+            if (config?.addNewChecklistItemsTop == true) {
+                items.addAll(0, newItems)
+            } else {
+                items.addAll(newItems)
             }
 
             saveNote()

@@ -54,6 +54,7 @@
     <string name="enable_line_wrap">فعال کردن پیچیدن خط</string>
     <string name="use_incognito_mode">استفاده از حالت ناشناس کیبورد‌ها</string>
     <string name="move_done_checklist_items">جابه‌جایی موارد انجام شده فهرست نشان‌دار به پایین</string>
+    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">فهرست نشان‌دار</string>

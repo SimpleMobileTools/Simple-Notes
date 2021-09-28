@@ -54,6 +54,7 @@
     <string name="enable_line_wrap">行の折り返しを有効にする</string>
     <string name="use_incognito_mode">キーボードのシークレットモードを使用する</string>
     <string name="move_done_checklist_items">チェックリストの未完了リストを上に移動</string>
+    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">チェックリスト</string>

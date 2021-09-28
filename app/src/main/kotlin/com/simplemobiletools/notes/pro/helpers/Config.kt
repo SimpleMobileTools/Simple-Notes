@@ -89,4 +89,8 @@ class Config(context: Context) : BaseConfig(context) {
     var fontSizePercentage: Int
         get() = prefs.getInt(FONT_SIZE_PERCENTAGE, 100)
         set(fontSizePercentage) = prefs.edit().putInt(FONT_SIZE_PERCENTAGE, fontSizePercentage).apply()
+
+    var addNewChecklistItemsTop: Boolean
+        get() = prefs.getBoolean(ADD_NEW_CHECKLIST_ITEMS_TOP, false)
+        set(addNewCheckListItemsTop) = prefs.edit().putBoolean(ADD_NEW_CHECKLIST_ITEMS_TOP, addNewCheckListItemsTop).apply()
 }

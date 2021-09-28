@@ -54,6 +54,7 @@
     <string name="enable_line_wrap">Ativar quebra de linha</string>
     <string name="use_incognito_mode">Usar o teclado no modo de Navegação Anônima</string>
     <string name="move_done_checklist_items">Mover itens completos da lista de verificação para o final</string>
+    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista de verificação</string>
