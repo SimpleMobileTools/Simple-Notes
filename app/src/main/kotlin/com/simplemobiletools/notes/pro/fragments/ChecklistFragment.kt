@@ -135,7 +135,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private fun showNewItemDialog() {
         NewChecklistItemDialog(activity as SimpleActivity) { titles ->
-            var currentMaxId = items.maxBy { item -> item.id }?.id ?: 0
+            var currentMaxId = items.maxByOrNull { item -> item.id }?.id ?: 0
 
             titles.forEach { title ->
                 title.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
