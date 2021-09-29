@@ -163,6 +163,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.export_all_notes).isVisible = multipleNotesExist && hasPermission(PERMISSION_WRITE_STORAGE)
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist()
             findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist()
+            findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist()
             findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
             findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && !mCurrentNote.isLocked()
             findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && mCurrentNote.isLocked()
@@ -201,6 +202,7 @@ class MainActivity : SimpleActivity() {
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
             R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
+            R.id.sort_checklist -> fragment?.handleUnlocking { displaySortChecklistDialog() }
             else -> return super.onOptionsItemSelected(item)
         }
         return true
@@ -1168,5 +1170,11 @@ class MainActivity : SimpleActivity() {
 
     private fun removeDoneItems() {
         getPagerAdapter().removeDoneCheckListItems(view_pager.currentItem)
+    }
+
+    private fun displaySortChecklistDialog() {
+        SortChecklistDialog(this) {
+            getPagerAdapter().sortChecklistItems(view_pager.currentItem, it)
+        }
     }
 }

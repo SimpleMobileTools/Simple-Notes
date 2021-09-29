@@ -109,6 +109,9 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
+    <string name="sort_direction">Sort direction</string>
+    <string name="sort_separate_checked_from_unchecked">Separately sort checked from unchecked items</string>
+    <string name="sort_checklist">Sort checklist</string>
 
     <!--
         Haven't found some strings? There's more at

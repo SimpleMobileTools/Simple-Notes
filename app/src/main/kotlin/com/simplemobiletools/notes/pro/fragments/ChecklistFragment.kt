@@ -1,6 +1,7 @@
 package com.simplemobiletools.notes.pro.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,8 +19,7 @@ import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
-import com.simplemobiletools.notes.pro.models.ChecklistItem
-import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.*
 import kotlinx.android.synthetic.main.fragment_checklist.view.*
 
 class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
@@ -140,7 +140,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
             titles.forEach { title ->
                 title.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
-                    newItems.add(ChecklistItem(currentMaxId + 1, row, false))
+                    newItems.add(ChecklistItem(currentMaxId + 1, System.currentTimeMillis(), row, false))
                     currentMaxId++
                 }
             }
@@ -213,6 +213,13 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     override fun refreshItems() {
+        setupAdapter()
+    }
+
+    private val TAG = "ChecklistFragment"
+    fun sortChecklist(sort: ChecklistSort) {
+        Log.d(TAG, "sortChecklist: $sort")
+        items = items.sortedWith(sort.getSortComparator()).toMutableList() as ArrayList<ChecklistItem>
         setupAdapter()
     }
 }
