@@ -23,7 +23,8 @@ import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 
 class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsService.RemoteViewsFactory {
-    private val textIds = arrayOf(R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right)
+    private val textIds = arrayOf(R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right,
+        R.id.widget_text_left_monospace, R.id.widget_text_center_monospace, R.id.widget_text_right_monospace)
     private var widgetTextColor = DEFAULT_WIDGET_TEXT_COLOR
     private var note: Note? = null
     private var checklistItems = ArrayList<ChecklistItem>()
@@ -75,10 +76,18 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         return remoteView
     }
 
-    private fun getProperTextView(context: Context) = when (context.config.gravity) {
-        GRAVITY_CENTER -> R.id.widget_text_center
-        GRAVITY_RIGHT -> R.id.widget_text_right
-        else -> R.id.widget_text_left
+    private fun getProperTextView(context: Context): Int {
+        val gravity = context.config.gravity
+        val isMonospaced = context.config.monospacedFont
+
+        return when {
+            gravity == GRAVITY_CENTER && isMonospaced -> R.id.widget_text_center_monospace
+            gravity == GRAVITY_CENTER -> R.id.widget_text_center
+            gravity == GRAVITY_RIGHT && isMonospaced -> R.id.widget_text_right_monospace
+            gravity == GRAVITY_RIGHT -> R.id.widget_text_right
+            isMonospaced -> R.id.widget_text_left_monospace
+            else -> R.id.widget_text_left
+        }
     }
 
     override fun onCreate() {}
