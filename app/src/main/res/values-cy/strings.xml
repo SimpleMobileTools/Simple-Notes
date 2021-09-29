@@ -63,6 +63,9 @@
     <string name="add_new_checklist_items">Ychwanegu eitemau newydd at restr wirio</string>
     <string name="checklist_is_empty">Mae\'r rhestr wirio yn wag</string>
     <string name="remove_done_items">Remove done items</string>
+    <string name="sort_direction">Sort direction</string>
+    <string name="sort_separate_done_from_undone">Separate done items from undone items</string>
+    <string name="sort_checklist">Sort checklist</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Allforio pob nodyn fel ffeil</string>
