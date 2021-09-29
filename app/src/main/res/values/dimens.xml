@@ -1,3 +1,4 @@
 <resources>
     <dimen name="checklist_image_size">56dp</dimen>
+    <dimen name="checklist_delete_size">36dp</dimen>
 </resources>
