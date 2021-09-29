@@ -7,16 +7,32 @@ import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
+import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.models.ChecklistSort
 import com.simplemobiletools.notes.pro.models.ChecklistSortDirection
 import com.simplemobiletools.notes.pro.models.ChecklistSortField
-import kotlinx.android.synthetic.main.dialog_sort_checklist.view.separate_items_checkbox
-import kotlinx.android.synthetic.main.dialog_sort_checklist.view.sort_direction_type
-import kotlinx.android.synthetic.main.dialog_sort_checklist.view.sort_field_type
+import kotlinx.android.synthetic.main.dialog_sort_checklist.view.*
 
 class SortChecklistDialog(private val activity: SimpleActivity, val callback: (ChecklistSort) -> Unit) {
     init {
-        val view = (activity.layoutInflater.inflate(R.layout.dialog_sort_checklist, null) as ViewGroup)
+        val config = activity.config
+        val view = (activity.layoutInflater.inflate(R.layout.dialog_sort_checklist, null) as ViewGroup).apply {
+            sort_field_type.check(
+                when (config.checklistSortField) {
+                    ChecklistSortField.TITLE -> sort_field_title.id
+                    ChecklistSortField.DATE_CREATED -> sort_field_date_created.id
+                }
+            )
+
+            sort_direction_type.check(
+                when (config.checklistSortDirection) {
+                    ChecklistSortDirection.ASCENDING -> sort_direction_asc.id
+                    ChecklistSortDirection.DESCENDING -> sort_direction_desc.id
+                }
+            )
+
+            separate_done_from_undone.isChecked = config.checklistSeparateDoneFromUndone
+        }
 
         AlertDialog.Builder(activity)
             .setPositiveButton(R.string.ok, null)
@@ -24,13 +40,13 @@ class SortChecklistDialog(private val activity: SimpleActivity, val callback: (C
             .create().apply {
                 activity.setupDialogStuff(view, this, R.string.sort_checklist) {
                     getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
-                        callback.invoke(
-                            ChecklistSort(
-                                field = getSortField(view),
-                                direction = getSortDirection(view),
-                                separateCheckedFromUnchecked = view.separate_items_checkbox.isChecked
-                            )
-                        )
+                        val sortField = getSortField(view)
+                        val sortDirection = getSortDirection(view)
+                        val separateDoneFromUndone = view.separate_done_from_undone.isChecked
+                        config.checklistSortField = sortField
+                        config.checklistSortDirection = sortDirection
+                        config.checklistSeparateDoneFromUndone = separateDoneFromUndone
+                        callback.invoke(ChecklistSort(sortField, sortDirection, separateDoneFromUndone))
                         dismiss()
                     }
                 }

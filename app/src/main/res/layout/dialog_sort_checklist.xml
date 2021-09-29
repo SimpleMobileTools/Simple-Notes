@@ -72,10 +72,10 @@
     </RadioGroup>
 
     <com.simplemobiletools.commons.views.MyAppCompatCheckbox
-        android:id="@+id/separate_items_checkbox"
+        android:id="@+id/separate_done_from_undone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_margin"
-        android:text="@string/sort_separate_checked_from_unchecked" />
+        android:text="@string/sort_separate_done_from_undone" />
 
 </LinearLayout>
