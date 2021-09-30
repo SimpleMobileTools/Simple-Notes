@@ -48,6 +48,9 @@ class MainActivity : SimpleActivity() {
     private val EXPORT_FILE_SYNC = 1
     private val EXPORT_FILE_NO_SYNC = 2
 
+    private val IMPORT_FILE_SYNC = 1
+    private val IMPORT_FILE_NO_SYNC = 2
+
     private val PICK_OPEN_FILE_INTENT = 1
     private val PICK_EXPORT_FILE_INTENT = 2
 
@@ -665,12 +668,12 @@ class MainActivity : SimpleActivity() {
             displayNewNoteDialog(note.value, title = noteTitle, "")
         } else {
             val items = arrayListOf(
-                RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-                RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content))
+                RadioItem(IMPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
+                RadioItem(IMPORT_FILE_NO_SYNC, getString(R.string.only_import_file_content))
             )
 
             RadioGroupDialog(this, items) {
-                val syncFile = it as Int == EXPORT_FILE_SYNC
+                val syncFile = it as Int == IMPORT_FILE_SYNC
                 val path = if (syncFile) uri.toString() else ""
                 val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
                 displayNewNoteDialog(note.value, title = noteTitle, path)
