@@ -109,6 +109,7 @@ class SettingsActivity : SimpleActivity() {
         settings_monospaced_font_holder.setOnClickListener {
             settings_monospaced_font.toggle()
             config.monospacedFont = settings_monospaced_font.isChecked
+            updateWidgets()
         }
     }
 

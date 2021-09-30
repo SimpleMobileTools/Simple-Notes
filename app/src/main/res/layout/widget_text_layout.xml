@@ -31,4 +31,34 @@
         android:padding="@dimen/small_margin"
         android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/widget_text_left_monospace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="start"
+        android:fontFamily="monospace"
+        android:padding="@dimen/small_margin"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/widget_text_center_monospace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="center_horizontal"
+        android:fontFamily="monospace"
+        android:padding="@dimen/small_margin"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/widget_text_right_monospace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="end"
+        android:fontFamily="monospace"
+        android:padding="@dimen/small_margin"
+        android:visibility="gone" />
+
 </RelativeLayout>

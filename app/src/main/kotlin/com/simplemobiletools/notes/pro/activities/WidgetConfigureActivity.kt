@@ -4,6 +4,7 @@ import android.app.Activity
 import android.appwidget.AppWidgetManager
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.TypedValue
@@ -166,6 +167,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         } else {
             val sampleValue = if (note.value.isEmpty() || mIsCustomizingColors) getString(R.string.widget_config) else note.value
             text_note_view.text = sampleValue
+            text_note_view.typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
             text_note_view.beVisible()
             checklist_note_view.beGone()
         }
