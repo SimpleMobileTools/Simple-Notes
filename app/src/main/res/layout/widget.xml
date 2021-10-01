@@ -14,10 +14,22 @@
         android:layout_alignParentBottom="true"
         android:src="@drawable/widget_round_background" />
 
+    <TextView
+        android:id="@+id/widget_note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="@dimen/tiny_margin"
+        android:textSize="@dimen/smaller_text_size" />
+
     <ListView
         android:id="@+id/notes_widget_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/widget_note_title"
         android:divider="@null" />
 
 </RelativeLayout>

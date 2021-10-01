@@ -17,6 +17,7 @@
     <string name="add_to_note">Dodaj do notatki</string>
     <string name="unsaved_changes_warning">Masz niezapisane zmiany. Co chcesz z nimi zrobić?</string>
     <string name="note_shown_widget">Notatka wyświetlona w widżecie:</string>
+    <string name="show_note_title">Pokazuj tytuł notatki</string>
     <string name="new_note_type">Typ nowej notatki:</string>
     <string name="text_note">Notatka tekstowa</string>
     <string name="lock_note">Zablokuj notatkę</string>

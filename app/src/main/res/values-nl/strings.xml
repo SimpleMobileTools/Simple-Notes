@@ -17,6 +17,7 @@
     <string name="add_to_note">Aan notitie toevoegen</string>
     <string name="unsaved_changes_warning">Wijzigingen zijn nog niet opgeslagen</string>
     <string name="note_shown_widget">Notitie in widget weergeven:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Type notitie:</string>
     <string name="text_note">Tekst</string>
     <string name="lock_note">Notitie vergrendelen</string>

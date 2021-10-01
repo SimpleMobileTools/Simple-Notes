@@ -17,6 +17,7 @@
     <string name="add_to_note">Føj til note</string>
     <string name="unsaved_changes_warning">Du har ændringer der ikke er gemt. Hvad skal der ske med dem?</string>
     <string name="note_shown_widget">Note vist i widget\'en:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Ny type note:</string>
     <string name="text_note">Tekstnote</string>
     <string name="lock_note">Lock note</string>

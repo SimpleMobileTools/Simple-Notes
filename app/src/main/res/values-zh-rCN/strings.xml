@@ -17,6 +17,7 @@
     <string name="add_to_note">添加到笔记</string>
     <string name="unsaved_changes_warning">您有未保存的更改。您对此想如何操作呢？</string>
     <string name="note_shown_widget">小工具中显示的笔记:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">新笔记类型:</string>
     <string name="text_note">文本笔记</string>
     <string name="lock_note">Lock note</string>

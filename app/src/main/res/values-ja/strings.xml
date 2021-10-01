@@ -17,6 +17,7 @@
     <string name="add_to_note">メモに追加</string>
     <string name="unsaved_changes_warning">未保存の変更があります。どのように対応しますか？</string>
     <string name="note_shown_widget">ウィジェットに表示中のメモ:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">新しいメモの種類:</string>
     <string name="text_note">テキストメモ</string>
     <string name="lock_note">Lock note</string>

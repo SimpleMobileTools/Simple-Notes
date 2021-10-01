@@ -10,6 +10,7 @@ const val CUSTOMIZED_WIDGET_KEY_ID = "customized_widget_key_id"
 const val CUSTOMIZED_WIDGET_NOTE_ID = "customized_widget_note_id"
 const val CUSTOMIZED_WIDGET_BG_COLOR = "customized_widget_bg_color"
 const val CUSTOMIZED_WIDGET_TEXT_COLOR = "customized_widget_text_color"
+const val CUSTOMIZED_WIDGET_SHOW_TITLE = "customized_widget_show_title"
 val DEFAULT_WIDGET_TEXT_COLOR = Color.parseColor("#FFF57C00")
 
 // shared preferences

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/notes_holder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -13,10 +15,29 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/activity_margin">
 
+         <RelativeLayout
+             android:id="@+id/show_note_title_holder"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="?attr/selectableItemBackground"
+             android:paddingBottom="@dimen/activity_margin">
+
+             <com.simplemobiletools.commons.views.MySwitchCompat
+                 android:id="@+id/show_note_title"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:background="@null"
+                 android:clickable="false"
+                 android:text="@string/show_note_title"
+                 app:switchPadding="@dimen/medium_margin"/>
+
+         </RelativeLayout>
+
         <com.simplemobiletools.commons.views.MyTextView
             android:id="@+id/notes_picker_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/show_note_title_holder"
             android:layout_marginBottom="@dimen/normal_margin"
             android:text="@string/note_shown_widget" />
 
@@ -31,12 +52,25 @@
 
     </RelativeLayout>
 
+    <com.simplemobiletools.commons.views.MyTextView
+        android:id="@+id/text_note_view_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notes_picker_holder"
+        android:background="@null"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:lines="1"
+        android:padding="@dimen/tiny_margin"
+        android:textSize="@dimen/smaller_text_size"
+        android:text="@string/title"/>
+
     <TextView
         android:id="@+id/text_note_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/config_bg_color"
-        android:layout_below="@+id/notes_picker_holder"
+        android:layout_below="@id/text_note_view_title"
         android:layout_marginBottom="@dimen/activity_margin"
         android:background="@null"
         android:gravity="top"
@@ -48,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/config_bg_color"
-        android:layout_below="@+id/notes_picker_holder"
+        android:layout_below="@id/text_note_view_title"
         android:layout_marginBottom="@dimen/activity_margin"
         android:clipToPadding="false"
         android:overScrollMode="never"

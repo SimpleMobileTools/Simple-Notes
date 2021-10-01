@@ -17,6 +17,7 @@
     <string name="add_to_note">Προσθήκη στη σημείωση</string>
     <string name="unsaved_changes_warning">Έχετε ορισμένες μη αποθηκευμένες αλλαγές. Τι θέλετε να κάνετε με αυτές;</string>
     <string name="note_shown_widget">Σημείωση που εμφανίζεται στο widget:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Νέος τύπος σημείωσης:</string>
     <string name="text_note">Σημείωση κειμένου</string>
     <string name="lock_note">Κλείδωμα Σημείωσης</string>

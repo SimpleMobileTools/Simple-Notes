@@ -17,6 +17,7 @@
     <string name="add_to_note">Ajouter à la note</string>
     <string name="unsaved_changes_warning">Vous avez des changements non sauvegardés. Que voulez-vous faire avec ?</string>
     <string name="note_shown_widget">Note affichée dans le widget:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Type de la note:</string>
     <string name="text_note">Texte</string>
     <string name="lock_note">Verrouiller la note</string>

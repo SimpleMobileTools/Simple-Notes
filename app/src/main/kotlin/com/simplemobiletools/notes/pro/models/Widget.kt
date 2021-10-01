@@ -11,4 +11,5 @@ data class Widget(
         @ColumnInfo(name = "widget_id") var widgetId: Int,
         @ColumnInfo(name = "note_id") var noteId: Long,
         @ColumnInfo(name = "widget_bg_color") var widgetBgColor: Int,
-        @ColumnInfo(name = "widget_text_color") var widgetTextColor: Int)
+        @ColumnInfo(name = "widget_text_color") var widgetTextColor: Int,
+        @ColumnInfo(name = "widget_show_title") var widgetShowTitle: Boolean)

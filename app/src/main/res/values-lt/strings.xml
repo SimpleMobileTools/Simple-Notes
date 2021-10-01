@@ -17,6 +17,7 @@
     <string name="add_to_note">Papildyti įrašą</string>
     <string name="unsaved_changes_warning">Turite neišsaugotų pakeitimų. Ką norite su jais daryti?</string>
     <string name="note_shown_widget">Užrašas rodomas skydelyje:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Naujo užrašo tipas:</string>
     <string name="text_note">Tekstinis užrašas</string>
     <string name="lock_note">Lock note</string>

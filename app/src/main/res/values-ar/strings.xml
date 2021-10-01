@@ -17,6 +17,7 @@
     <string name="add_to_note">إضافة الى ملاحظة</string>
     <string name="unsaved_changes_warning">لديك بعض التعديلات غير محفظة. ماذا تريد أن تفعل بها؟</string>
     <string name="note_shown_widget">ملاحظة معروضة في widget:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">نوع ملاحظة جديد:</string>
     <string name="text_note">ملاحظة نصية</string>
     <string name="lock_note">Lock note</string>

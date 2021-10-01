@@ -17,6 +17,7 @@
     <string name="add_to_note">Добавить к заметке</string>
     <string name="unsaved_changes_warning">Есть несохраненные изменения. Что вы хотите с ними сделать?</string>
     <string name="note_shown_widget">Заметка, показываемая в виджете:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Тип новой заметки:</string>
     <string name="text_note">Текстовая заметка</string>
     <string name="lock_note">Lock note</string>

@@ -17,7 +17,7 @@ import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import java.util.concurrent.Executors
 
-@Database(entities = [Note::class, Widget::class], version = 3)
+@Database(entities = [Note::class, Widget::class], version = 4)
 abstract class NotesDatabase : RoomDatabase() {
 
     abstract fun NotesDao(): NotesDao
@@ -40,6 +40,7 @@ abstract class NotesDatabase : RoomDatabase() {
                             })
                             .addMigrations(MIGRATION_1_2)
                             .addMigrations(MIGRATION_2_3)
+                            .addMigrations(MIGRATION_3_4)
                             .build()
                         db!!.openHelper.setWriteAheadLoggingEnabled(true)
                     }
@@ -74,6 +75,14 @@ abstract class NotesDatabase : RoomDatabase() {
                 database.apply {
                     execSQL("ALTER TABLE notes ADD COLUMN protection_type INTEGER DEFAULT $PROTECTION_NONE NOT NULL")
                     execSQL("ALTER TABLE notes ADD COLUMN protection_hash TEXT DEFAULT '' NOT NULL")
+                }
+            }
+        }
+
+        private val MIGRATION_3_4 = object : Migration(3, 4) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.apply {
+                    execSQL("ALTER TABLE widgets ADD COLUMN widget_show_title INTEGER NOT NULL DEFAULT 0")
                 }
             }
         }
