@@ -16,8 +16,8 @@
     <string name="create_new_note">Nieuwe notitie maken</string>
     <string name="add_to_note">Aan notitie toevoegen</string>
     <string name="unsaved_changes_warning">Wijzigingen zijn nog niet opgeslagen</string>
-    <string name="note_shown_widget">Notitie in widget weergeven:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="note_shown_widget">Notitie in widget tonen:</string>
+    <string name="show_note_title">Titel van notitie tonen</string>
     <string name="new_note_type">Type notitie:</string>
     <string name="text_note">Tekst</string>
     <string name="lock_note">Notitie vergrendelen</string>
@@ -38,19 +38,19 @@
     <string name="only_export_file_content">Alleen de huidige bestandsinhoud exporteren\n(wijzigingen in de notitie zullen niet in het bestand doorgevoerd worden)</string>
 
     <!-- Settings -->
-    <string name="display_success_message">Bevestigingen weergeven</string>
+    <string name="display_success_message">Bevestigingen tonen</string>
     <string name="links_and_emails_clickable">Links en e-mailadressen aanklikbaar maken</string>
     <string name="place_cursor_end">Cursor onderaan notitie plaatsen</string>
     <string name="monospaced_font">Lettertype met vaste breedte gebruiken</string>
     <string name="show_keyboard">Toetsenbord bij start tonen</string>
     <string name="show_word_count">Het aantal woorden tellen</string>
-    <string name="show_character_count">Teller voor het aantal tekens weergeven</string>
+    <string name="show_character_count">Teller voor het aantal tekens tonen</string>
     <string name="alignment">Uitlijning</string>
     <string name="left">Links</string>
     <string name="center">Midden</string>
     <string name="right">Rechts</string>
     <string name="widget_note">Notitie in widget</string>
-    <string name="show_note_picker">Bij opstarten een keuzescherm met notities weergeven</string>
+    <string name="show_note_picker">Bij opstarten een keuzescherm met notities tonen</string>
     <string name="autosave_notes">Notities automatisch opslaan</string>
     <string name="enable_line_wrap">Automatische terugloop inschakelen</string>
     <string name="use_incognito_mode">Incognito-modus van toetsenbord gebruiken</string>
