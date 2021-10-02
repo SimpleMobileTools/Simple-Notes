@@ -17,6 +17,7 @@
     <string name="add_to_note">Lisää muistiinpanoon</string>
     <string name="unsaved_changes_warning">Sinulla on joitain tallentamattomia muutoksia. Miten haluat toimia?</string>
     <string name="note_shown_widget">Pienoissovelluksessa näkyvä muistiinpano:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Uusi muistiinpanotyyppi:</string>
     <string name="text_note">Tekstimuistiinpano</string>
     <string name="lock_note">Lock note</string>

@@ -17,6 +17,7 @@
     <string name="add_to_note">Zu Notiz hinzufügen</string>
     <string name="unsaved_changes_warning">Du hast ungespeicherte Notizen. Was soll mit ihnen geschehen?</string>
     <string name="note_shown_widget">Im Widget angezeigte Notiz:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Neue Notizart:</string>
     <string name="text_note">Textnotiz</string>
     <string name="lock_note">Notiz sperren</string>

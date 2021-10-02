@@ -17,6 +17,7 @@
     <string name="add_to_note">افزودن به یادداشت</string>
     <string name="unsaved_changes_warning">شما مقداری تغییرات ذخیره نشده دارید. می‌خواهید با آنها چکار کنید؟</string>
     <string name="note_shown_widget">یادداشتی که در ابزارک نمایش داده می‌شود:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">نوع یادداشت جدید:</string>
     <string name="text_note">یادداشت متنی</string>
     <string name="lock_note">قفل کردن یادداشت</string>

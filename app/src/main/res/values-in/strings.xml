@@ -17,6 +17,7 @@
     <string name="add_to_note">Tambahkan ke catatan</string>
     <string name="unsaved_changes_warning">Anda memiliki perubahan yang belum disimpan. Apa yang ingin anda lakukan?</string>
     <string name="note_shown_widget">Catatan yang ditampilkan di widget:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Tipe catatan baru:</string>
     <string name="text_note">Catatan teks</string>
     <string name="lock_note">Lock note</string>

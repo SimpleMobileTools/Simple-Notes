@@ -9,10 +9,13 @@ import android.net.Uri
 import android.widget.RemoteViews
 import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.getLaunchIntent
+import com.simplemobiletools.commons.extensions.setText
+import com.simplemobiletools.commons.extensions.setVisibleIf
 import com.simplemobiletools.commons.helpers.WIDGET_TEXT_COLOR
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SplashActivity
+import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.models.Widget
 import com.simplemobiletools.notes.pro.services.WidgetService
@@ -31,7 +34,11 @@ class MyWidgetProvider : AppWidgetProvider() {
             for (widgetId in appWidgetIds) {
                 val widget = context.widgetsDB.getWidgetWithWidgetId(widgetId) ?: continue
                 val views = RemoteViews(context.packageName, R.layout.widget)
+                val note = context.notesDB.getNoteWithId(widget.noteId)
                 views.applyColorFilter(R.id.notes_widget_background, widget.widgetBgColor)
+                views.setTextColor(R.id.widget_note_title, widget.widgetTextColor)
+                views.setText(R.id.widget_note_title, note?.title ?: "")
+                views.setVisibleIf(R.id.widget_note_title, widget.widgetShowTitle)
                 setupAppOpenIntent(context, views, R.id.notes_widget_holder, widget)
 
                 Intent(context, WidgetService::class.java).apply {

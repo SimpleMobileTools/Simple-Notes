@@ -38,6 +38,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mTextColor = 0
     private var mCurrentNoteId = 0L
     private var mIsCustomizingColors = false
+    private var mShowTitle = false
     private var mNotes = ArrayList<Note>()
 
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +60,10 @@ class WidgetConfigureActivity : SimpleActivity() {
         config_text_color.setOnClickListener { pickTextColor() }
         notes_picker_value.setOnClickListener { showNoteSelector() }
         notes_picker_holder.background = ColorDrawable(config.backgroundColor)
+        show_note_title_holder.setOnClickListener {
+            show_note_title.toggle()
+            handleNoteTitleDisplay()
+        }
     }
 
     override fun onResume() {
@@ -73,12 +78,13 @@ class WidgetConfigureActivity : SimpleActivity() {
 
     private fun initVariables() {
         val extras = intent.extras
-        if (extras?.getLong(CUSTOMIZED_WIDGET_ID, 0L) == 0L) {
+        if (extras?.getInt(CUSTOMIZED_WIDGET_ID, 0) == 0) {
             mBgColor = config.widgetBgColor
             mTextColor = config.widgetTextColor
         } else {
             mBgColor = extras?.getInt(CUSTOMIZED_WIDGET_BG_COLOR) ?: config.widgetBgColor
             mTextColor = extras?.getInt(CUSTOMIZED_WIDGET_TEXT_COLOR) ?: config.widgetTextColor
+            mShowTitle = extras?.getBoolean(CUSTOMIZED_WIDGET_SHOW_TITLE) ?: false
         }
 
         mBgAlpha = Color.alpha(mBgColor) / 255.toFloat()
@@ -97,6 +103,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         updateTextColor()
         mIsCustomizingColors = extras?.getBoolean(IS_CUSTOMIZING_COLORS) ?: false
         notes_picker_holder.beVisibleIf(!mIsCustomizingColors)
+        text_note_view_title.beGoneIf(!mShowTitle)
 
         NotesHelper(this).getNotes {
             mNotes = it
@@ -145,6 +152,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private fun updateCurrentNote(note: Note) {
         mCurrentNoteId = note.id!!
         notes_picker_value.text = note.title
+        text_note_view_title.text = note.title
         if (note.type == NoteType.TYPE_CHECKLIST.value) {
             val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
             val items = Gson().fromJson<ArrayList<ChecklistItem>>(note.value, checklistItemType) ?: ArrayList(1)
@@ -188,7 +196,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         val id = if (extras?.containsKey(CUSTOMIZED_WIDGET_KEY_ID) == true) extras.getLong(CUSTOMIZED_WIDGET_KEY_ID) else null
         mWidgetId = extras?.getInt(CUSTOMIZED_WIDGET_ID, mWidgetId) ?: mWidgetId
         mCurrentNoteId = extras?.getLong(CUSTOMIZED_WIDGET_NOTE_ID, mCurrentNoteId) ?: mCurrentNoteId
-        val widget = Widget(id, mWidgetId, mCurrentNoteId, mBgColor, mTextColor)
+        val widget = Widget(id, mWidgetId, mCurrentNoteId, mBgColor, mTextColor, mShowTitle)
         ensureBackgroundThread {
             widgetsDB.insertOrUpdate(widget)
         }
@@ -222,12 +230,14 @@ class WidgetConfigureActivity : SimpleActivity() {
         text_note_view.setBackgroundColor(mBgColor)
         checklist_note_view.setBackgroundColor(mBgColor)
         config_save.setBackgroundColor(mBgColor)
+        text_note_view_title.setBackgroundColor(mBgColor)
         config_bg_color.setFillWithStroke(mBgColor, Color.BLACK)
     }
 
     private fun updateTextColor() {
         config_save.setTextColor(mTextColor)
         text_note_view.setTextColor(mTextColor)
+        text_note_view_title.setTextColor(mTextColor)
         (checklist_note_view.adapter as? ChecklistAdapter)?.updateTextColor(mTextColor)
         config_text_color.setFillWithStroke(mTextColor, Color.BLACK)
     }
@@ -248,5 +258,11 @@ class WidgetConfigureActivity : SimpleActivity() {
                 updateTextColor()
             }
         }
+    }
+
+    private fun handleNoteTitleDisplay() {
+        val showTitle = show_note_title.isChecked
+        text_note_view_title.beGoneIf(!showTitle)
+        mShowTitle = showTitle
     }
 }

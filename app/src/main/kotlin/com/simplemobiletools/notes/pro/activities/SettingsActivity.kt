@@ -227,6 +227,7 @@ class SettingsActivity : SimpleActivity() {
                     putExtra(CUSTOMIZED_WIDGET_NOTE_ID, noteId)
                     putExtra(CUSTOMIZED_WIDGET_BG_COLOR, widgetBgColor)
                     putExtra(CUSTOMIZED_WIDGET_TEXT_COLOR, widgetTextColor)
+                    putExtra(CUSTOMIZED_WIDGET_SHOW_TITLE, widgetShowTitle)
                 }
 
                 startActivity(this)

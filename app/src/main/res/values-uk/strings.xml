@@ -17,6 +17,7 @@
     <string name="add_to_note">Додати до нотатки</string>
     <string name="unsaved_changes_warning">Ви внесли деякі зміни. Що ви бажаєте з ними зробити?</string>
     <string name="note_shown_widget">Нотатка, що показується у віджеті:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Новий тип нотаток:</string>
     <string name="text_note">Текст нотатки</string>
     <string name="lock_note">Заблокувати нотатку</string>

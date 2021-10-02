@@ -17,6 +17,7 @@
     <string name="add_to_note">Ychwanegu at nodyn</string>
     <string name="unsaved_changes_warning">Mae gennyt rai newidiadau heb eu cadw. Beth wyt ti am wneud gyda nhw?</string>
     <string name="note_shown_widget">Nodyn a ddangosir yn y teclyn:</string>
+    <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Math y nodyn newydd:</string>
     <string name="text_note">Nodyn testun</string>
     <string name="lock_note">Lock note</string>
