@@ -34,7 +34,6 @@ const val FONT_SIZE_PERCENTAGE = "font_size_percentage"
 const val ADD_NEW_CHECKLIST_ITEMS_TOP = "add_new_checklist_items_top"
 const val CHECKLIST_SORT_FIELD = "checklist_sort_field"
 const val CHECKLIST_SORT_DIRECTION = "checklist_sort_direction"
-const val CHECKLIST_SEPARATE_DONE_FROM_UNDONE = "checklist_done_from_undone"
 
 // gravity
 const val GRAVITY_LEFT = 0
