@@ -44,7 +44,7 @@
     <item
         android:id="@+id/sort_checklist"
         android:icon="@drawable/ic_sort_vector"
-        android:title="@string/sort_checklist"
+        android:title="@string/sort_by"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/share"

@@ -63,9 +63,6 @@
     <string name="add_new_checklist_items">Adicionar novos itens à lista de verificação</string>
     <string name="checklist_is_empty">A lista de verificação está vazia</string>
     <string name="remove_done_items">Remover itens concluídos</string>
-    <string name="sort_direction">Sort direction</string>
-    <string name="sort_separate_done_from_undone">Separate done items from undone items</string>
-    <string name="sort_checklist">Sort checklist</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como arquivo</string>

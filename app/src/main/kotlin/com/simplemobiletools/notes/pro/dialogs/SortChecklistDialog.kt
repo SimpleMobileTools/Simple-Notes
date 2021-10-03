@@ -30,23 +30,19 @@ class SortChecklistDialog(private val activity: SimpleActivity, val callback: (C
                     ChecklistSortDirection.DESCENDING -> sort_direction_desc.id
                 }
             )
-
-            separate_done_from_undone.isChecked = config.checklistSeparateDoneFromUndone
         }
 
         AlertDialog.Builder(activity)
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
             .create().apply {
-                activity.setupDialogStuff(view, this, R.string.sort_checklist) {
+                activity.setupDialogStuff(view, this, R.string.sort_by) {
                     getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
                         val sortField = getSortField(view)
                         val sortDirection = getSortDirection(view)
-                        val separateDoneFromUndone = view.separate_done_from_undone.isChecked
                         config.checklistSortField = sortField
                         config.checklistSortDirection = sortDirection
-                        config.checklistSeparateDoneFromUndone = separateDoneFromUndone
-                        callback.invoke(ChecklistSort(sortField, sortDirection, separateDoneFromUndone))
+                        callback.invoke(ChecklistSort(sortField, sortDirection))
                         dismiss()
                     }
                 }

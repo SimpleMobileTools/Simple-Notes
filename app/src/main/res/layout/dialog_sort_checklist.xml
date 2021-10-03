@@ -8,17 +8,11 @@
     android:paddingTop="@dimen/small_margin"
     android:paddingEnd="@dimen/activity_margin">
 
-    <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/sort_field_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/medium_margin"
-        android:text="@string/sort_by" />
-
     <RadioGroup
         android:id="@+id/sort_field_type"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium_margin">
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/sort_field_title"
@@ -39,18 +33,14 @@
 
     </RadioGroup>
 
-    <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/sort_direction_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_margin"
-        android:paddingTop="@dimen/medium_margin"
-        android:text="@string/sort_direction" />
+
+    <include layout="@layout/divider" />
 
     <RadioGroup
         android:id="@+id/sort_direction_type"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin">
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/sort_direction_asc"
@@ -70,12 +60,4 @@
             android:text="@string/descending" />
 
     </RadioGroup>
-
-    <com.simplemobiletools.commons.views.MyAppCompatCheckbox
-        android:id="@+id/separate_done_from_undone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_margin"
-        android:text="@string/sort_separate_done_from_undone" />
-
 </LinearLayout>

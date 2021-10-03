@@ -63,9 +63,6 @@
     <string name="add_new_checklist_items">Add new checklist items</string>
     <string name="checklist_is_empty">The checklist is empty</string>
     <string name="remove_done_items">Remove done items</string>
-    <string name="sort_direction">Sort direction</string>
-    <string name="sort_separate_done_from_undone">Separate done items from undone items</string>
-    <string name="sort_checklist">Sort checklist</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Bütün qeydləri fayl şəklində çıxar</string>

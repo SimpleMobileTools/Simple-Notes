@@ -3,7 +3,6 @@ package com.simplemobiletools.notes.pro.models
 data class ChecklistSort(
     val field: ChecklistSortField,
     val direction: ChecklistSortDirection,
-    val separateDoneFromUndone: Boolean,
 ) {
 
     fun getSortComparator(): Comparator<ChecklistItem> {
@@ -15,10 +14,8 @@ data class ChecklistSort(
 
     private fun compareWithSortDirection(compareFunc: (ChecklistItem) -> Comparable<*>): Comparator<ChecklistItem> {
         return when (direction) {
-            ChecklistSortDirection.ASCENDING -> if (separateDoneFromUndone) compareBy({ it.isDone }, compareFunc) else compareBy(compareFunc)
-            ChecklistSortDirection.DESCENDING -> if (separateDoneFromUndone) compareByDescending<ChecklistItem> { it.isDone }.thenByDescending(compareFunc) else compareByDescending(
-                compareFunc
-            )
+            ChecklistSortDirection.ASCENDING -> compareBy(compareFunc)
+            ChecklistSortDirection.DESCENDING -> compareByDescending(compareFunc)
         }
     }
 }

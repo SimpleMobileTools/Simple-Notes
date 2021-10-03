@@ -63,9 +63,6 @@
     <string name="add_new_checklist_items">Dodaj nowe elementy listy kontrolnej</string>
     <string name="checklist_is_empty">Lista kontrolna jest pusta</string>
     <string name="remove_done_items">Usuń wykonane elementy</string>
-    <string name="sort_direction">Sort direction</string>
-    <string name="sort_separate_done_from_undone">Separate done items from undone items</string>
-    <string name="sort_checklist">Sort checklist</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Eksportuj wszystkie notatki jako pliki</string>
