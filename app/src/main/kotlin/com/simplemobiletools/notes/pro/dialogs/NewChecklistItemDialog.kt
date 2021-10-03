@@ -15,7 +15,6 @@ import com.simplemobiletools.notes.pro.R
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.add_item
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.checklist_holder
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.dialog_holder
-import kotlinx.android.synthetic.main.item_add_checklist.view.delete_item
 import kotlinx.android.synthetic.main.item_add_checklist.view.title_edit_text
 
 class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayList<String>) -> Unit) {
@@ -56,12 +55,6 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
                 } else {
                     false
                 }
-            }
-
-            val currentIndex = titles.size
-            delete_item.setOnClickListener {
-                view.checklist_holder.removeViewAt(currentIndex)
-                titles.removeAt(currentIndex)
             }
             titles.add(title_edit_text)
             view.checklist_holder.addView(this)

@@ -1,32 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<com.simplemobiletools.commons.views.MyEditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title_edit_text"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <com.simplemobiletools.commons.views.MyEditText
-        android:id="@+id/title_edit_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/medium_margin"
-        android:layout_marginBottom="@dimen/medium_margin"
-        android:inputType="textCapSentences"
-        android:maxLength="500"
-        android:textCursorDrawable="@null"
-        android:textSize="@dimen/normal_text_size"
-        app:layout_constraintEnd_toStartOf="@id/delete_item"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/delete_item"
-        android:layout_width="@dimen/checklist_delete_size"
-        android:layout_height="@dimen/checklist_delete_size"
-        android:background="?selectableItemBackgroundBorderless"
-        android:padding="@dimen/medium_margin"
-        android:src="@drawable/ic_delete_vector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_height="wrap_content"
+    android:inputType="textCapSentences"
+    android:maxLength="500"
+    android:textCursorDrawable="@null"
+    android:textSize="@dimen/normal_text_size" />
