@@ -33,7 +33,6 @@
 
     </RadioGroup>
 
-
     <include layout="@layout/divider" />
 
     <RadioGroup
