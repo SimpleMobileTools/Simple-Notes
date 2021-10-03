@@ -156,14 +156,16 @@ class MainActivity : SimpleActivity() {
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         val multipleNotesExist = mNotes.size > 1
+        val isCurrentItemChecklist = isCurrentItemChecklist()
+
         menu.apply {
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.delete_note).isVisible = multipleNotesExist
             findItem(R.id.export_all_notes).isVisible = multipleNotesExist && hasPermission(PERMISSION_WRITE_STORAGE)
-            findItem(R.id.open_search).isVisible = !isCurrentItemChecklist()
-            findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist()
-            findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist()
+            findItem(R.id.open_search).isVisible = !isCurrentItemChecklist
+            findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
+            findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
             findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
             findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && !mCurrentNote.isLocked()
             findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && mCurrentNote.isLocked()
