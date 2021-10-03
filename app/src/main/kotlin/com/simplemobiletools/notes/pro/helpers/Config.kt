@@ -103,8 +103,4 @@ class Config(context: Context) : BaseConfig(context) {
     var checklistSortDirection: ChecklistSortDirection
         get() = ChecklistSortDirection.valueOf(prefs.getString(CHECKLIST_SORT_DIRECTION, ChecklistSortDirection.ASCENDING.name)!!)
         set(sortDirection) = prefs.edit().putString(CHECKLIST_SORT_DIRECTION, sortDirection.name).apply()
-
-    var checklistSeparateDoneFromUndone: Boolean
-        get() = prefs.getBoolean(CHECKLIST_SEPARATE_DONE_FROM_UNDONE, false)
-        set(separate) = prefs.edit().putBoolean(CHECKLIST_SEPARATE_DONE_FROM_UNDONE, separate).apply()
 }
