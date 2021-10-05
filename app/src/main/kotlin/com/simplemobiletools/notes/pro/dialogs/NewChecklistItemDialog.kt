@@ -5,13 +5,13 @@ import android.content.DialogInterface.BUTTON_POSITIVE
 import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
-import com.simplemobiletools.commons.extensions.setupDialogStuff
-import com.simplemobiletools.commons.extensions.showKeyboard
-import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.extensions.config
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.add_item
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.checklist_holder
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.dialog_holder
@@ -19,10 +19,13 @@ import kotlinx.android.synthetic.main.item_add_checklist.view.title_edit_text
 
 class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayList<String>) -> Unit) {
     private val titles = mutableListOf<EditText>()
+    private val textColor = activity.config.textColor
     private val view: ViewGroup = activity.layoutInflater.inflate(R.layout.dialog_new_checklist_item, null) as ViewGroup
 
     init {
         addNewEditText()
+        view.add_item.applyColorFilter(activity.getAdjustedPrimaryColor())
+        view.add_item.background.applyColorFilter(textColor)
         view.add_item.setOnClickListener {
             addNewEditText()
         }
@@ -32,6 +35,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             .create().apply {
                 activity.setupDialogStuff(view, this, R.string.add_new_checklist_items, cancelOnTouchOutside = false) {
                     activity.showKeyboard(titles.first())
+                    window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
                     getButton(BUTTON_POSITIVE).setOnClickListener {
                         when {
                             titles.all { it.text.isEmpty() } -> activity.toast(R.string.empty_name)
@@ -58,6 +62,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             }
             titles.add(title_edit_text)
             view.checklist_holder.addView(this)
+            activity.updateTextColors(view.checklist_holder)
             view.dialog_holder.post {
                 view.dialog_holder.fullScroll(View.FOCUS_DOWN)
                 activity.showKeyboard(title_edit_text)
