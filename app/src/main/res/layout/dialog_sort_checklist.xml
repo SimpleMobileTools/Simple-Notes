@@ -9,13 +9,13 @@
     android:paddingEnd="@dimen/activity_margin">
 
     <RadioGroup
-        android:id="@+id/sort_field_type"
+        android:id="@+id/sorting_dialog_radio_sorting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/medium_margin">
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
-            android:id="@+id/sort_field_title"
+            android:id="@+id/sorting_dialog_radio_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
@@ -24,7 +24,7 @@
             android:text="@string/title" />
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
-            android:id="@+id/sort_field_date_created"
+            android:id="@+id/sorting_dialog_radio_date_created"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/normal_margin"
@@ -36,13 +36,13 @@
     <include layout="@layout/divider" />
 
     <RadioGroup
-        android:id="@+id/sort_direction_type"
+        android:id="@+id/sorting_dialog_radio_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_margin">
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
-            android:id="@+id/sort_direction_asc"
+            android:id="@+id/sorting_dialog_radio_ascending"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
@@ -51,7 +51,7 @@
             android:text="@string/ascending" />
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
-            android:id="@+id/sort_direction_desc"
+            android:id="@+id/sorting_dialog_radio_descending"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/normal_margin"

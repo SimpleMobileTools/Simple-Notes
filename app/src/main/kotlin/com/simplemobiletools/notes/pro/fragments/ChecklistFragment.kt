@@ -19,7 +19,6 @@ import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
-import com.simplemobiletools.notes.pro.models.ChecklistSort
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.fragment_checklist.view.*
 
@@ -159,7 +158,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private fun setupAdapter() {
         updateUIVisibility()
-
+        ChecklistItem.sorting = requireContext().config.sorting
+        items.sort()
         ChecklistAdapter(
             activity = activity as SimpleActivity,
             items = items,
@@ -214,11 +214,6 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     override fun refreshItems() {
-        setupAdapter()
-    }
-
-    fun sortChecklist(sort: ChecklistSort) {
-        items = items.sortedWith(sort.getSortComparator()).toMutableList() as ArrayList<ChecklistItem>
         setupAdapter()
     }
 }

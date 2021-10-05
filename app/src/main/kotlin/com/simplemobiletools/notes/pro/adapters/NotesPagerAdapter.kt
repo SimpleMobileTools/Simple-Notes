@@ -11,7 +11,6 @@ import com.simplemobiletools.notes.pro.fragments.NoteFragment
 import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NoteType
-import com.simplemobiletools.notes.pro.models.ChecklistSort
 import com.simplemobiletools.notes.pro.models.Note
 
 class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity: Activity) : FragmentStatePagerAdapter(fm) {
@@ -97,7 +96,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
         (fragments[position] as? ChecklistFragment)?.removeDoneItems()
     }
 
-    fun sortChecklistItems(position: Int, sort:ChecklistSort){
-        (fragments[position] as? ChecklistFragment)?.sortChecklist(sort)
+    fun refreshChecklist(position: Int){
+        (fragments[position] as? ChecklistFragment)?.refreshItems()
     }
 }

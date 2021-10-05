@@ -5,8 +5,6 @@ import android.content.Context
 import android.os.Environment
 import android.view.Gravity
 import com.simplemobiletools.commons.helpers.BaseConfig
-import com.simplemobiletools.notes.pro.models.ChecklistSortDirection
-import com.simplemobiletools.notes.pro.models.ChecklistSortField
 
 class Config(context: Context) : BaseConfig(context) {
     companion object {
@@ -95,12 +93,4 @@ class Config(context: Context) : BaseConfig(context) {
     var addNewChecklistItemsTop: Boolean
         get() = prefs.getBoolean(ADD_NEW_CHECKLIST_ITEMS_TOP, false)
         set(addNewCheckListItemsTop) = prefs.edit().putBoolean(ADD_NEW_CHECKLIST_ITEMS_TOP, addNewCheckListItemsTop).apply()
-
-    var checklistSortField: ChecklistSortField
-        get() = ChecklistSortField.valueOf(prefs.getString(CHECKLIST_SORT_FIELD, ChecklistSortField.TITLE.name)!!)
-        set(sortField) = prefs.edit().putString(CHECKLIST_SORT_FIELD, sortField.name).apply()
-
-    var checklistSortDirection: ChecklistSortDirection
-        get() = ChecklistSortDirection.valueOf(prefs.getString(CHECKLIST_SORT_DIRECTION, ChecklistSortDirection.ASCENDING.name)!!)
-        set(sortDirection) = prefs.edit().putString(CHECKLIST_SORT_DIRECTION, sortDirection.name).apply()
 }

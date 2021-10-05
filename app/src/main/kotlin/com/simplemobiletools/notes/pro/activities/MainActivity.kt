@@ -40,9 +40,9 @@ import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.nio.charset.Charset
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : SimpleActivity() {
     private val EXPORT_FILE_SYNC = 1
@@ -1176,7 +1176,7 @@ class MainActivity : SimpleActivity() {
 
     private fun displaySortChecklistDialog() {
         SortChecklistDialog(this) {
-            getPagerAdapter().sortChecklistItems(view_pager.currentItem, it)
+            getPagerAdapter().refreshChecklist(view_pager.currentItem)
         }
     }
 }

@@ -32,8 +32,6 @@ const val LAST_CREATED_NOTE_TYPE = "last_created_note_type"
 const val MOVE_DONE_CHECKLIST_ITEMS = "move_undone_checklist_items"     // it has been replaced from moving undone items at the top to moving done to bottom
 const val FONT_SIZE_PERCENTAGE = "font_size_percentage"
 const val ADD_NEW_CHECKLIST_ITEMS_TOP = "add_new_checklist_items_top"
-const val CHECKLIST_SORT_FIELD = "checklist_sort_field"
-const val CHECKLIST_SORT_DIRECTION = "checklist_sort_direction"
 
 // gravity
 const val GRAVITY_LEFT = 0
