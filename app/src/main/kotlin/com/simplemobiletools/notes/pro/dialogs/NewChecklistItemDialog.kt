@@ -5,7 +5,6 @@ import android.content.DialogInterface.BUTTON_POSITIVE
 import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
@@ -34,8 +33,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             .setNegativeButton(R.string.cancel, null)
             .create().apply {
                 activity.setupDialogStuff(view, this, R.string.add_new_checklist_items, cancelOnTouchOutside = false) {
-                    activity.showKeyboard(titles.first())
-                    window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
+                    showKeyboard(titles.first())
                     getButton(BUTTON_POSITIVE).setOnClickListener {
                         when {
                             titles.all { it.text.isEmpty() } -> activity.toast(R.string.empty_name)
