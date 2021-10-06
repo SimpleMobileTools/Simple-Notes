@@ -11,10 +11,8 @@ import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
-import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.add_item
-import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.checklist_holder
-import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.dialog_holder
-import kotlinx.android.synthetic.main.item_add_checklist.view.title_edit_text
+import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.*
+import kotlinx.android.synthetic.main.item_add_checklist.view.*
 
 class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayList<String>) -> Unit) {
     private val titles = mutableListOf<EditText>()
