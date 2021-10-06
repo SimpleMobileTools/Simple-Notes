@@ -12,10 +12,8 @@ import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
-import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.add_item
-import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.checklist_holder
-import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.dialog_holder
-import kotlinx.android.synthetic.main.item_add_checklist.view.title_edit_text
+import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.*
+import kotlinx.android.synthetic.main.item_add_checklist.view.*
 
 class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayList<String>) -> Unit) {
     private val titles = mutableListOf<EditText>()
@@ -33,7 +31,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
             .create().apply {
-                activity.setupDialogStuff(view, this, R.string.add_new_checklist_items, cancelOnTouchOutside = false) {
+                activity.setupDialogStuff(view, this, R.string.add_new_checklist_items) {
                     activity.showKeyboard(titles.first())
                     window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
                     getButton(BUTTON_POSITIVE).setOnClickListener {
