@@ -32,7 +32,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
             .create().apply {
-                activity.setupDialogStuff(view, this, R.string.add_new_checklist_items, cancelOnTouchOutside = false) {
+                activity.setupDialogStuff(view, this, R.string.add_new_checklist_items) {
                     showKeyboard(titles.first())
                     getButton(BUTTON_POSITIVE).setOnClickListener {
                         when {
