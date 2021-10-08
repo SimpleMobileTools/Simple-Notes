@@ -3,6 +3,7 @@
     <string name="package_name">com.simplemobiletools.notes.pro</string>
 
     <!-- Release notes -->
+    <string name="release_86">Allow changing checklist item sorting</string>
     <string name="release_81">Notes linked to files have been reset, please set them up again</string>
     <string name="release_67">
         Allow reordering checklist items by dragging, once selection mode by long pressing is activated\n

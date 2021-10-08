@@ -1169,6 +1169,7 @@ class MainActivity : SimpleActivity() {
             add(Release(64, R.string.release_64))
             add(Release(67, R.string.release_67))
             add(Release(81, R.string.release_81))
+            add(Release(86, R.string.release_86))
             checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }
