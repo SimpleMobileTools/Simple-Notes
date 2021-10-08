@@ -158,11 +158,11 @@ class WidgetConfigureActivity : SimpleActivity() {
             val items = Gson().fromJson<ArrayList<ChecklistItem>>(note.value, checklistItemType) ?: ArrayList(1)
             items.apply {
                 if (isEmpty()) {
-                    add(ChecklistItem(0, "Milk", true))
-                    add(ChecklistItem(1, "Butter", true))
-                    add(ChecklistItem(2, "Salt", false))
-                    add(ChecklistItem(3, "Water", false))
-                    add(ChecklistItem(4, "Meat", true))
+                    add(ChecklistItem(0, System.currentTimeMillis(), "Milk", true))
+                    add(ChecklistItem(1, System.currentTimeMillis(), "Butter", true))
+                    add(ChecklistItem(2, System.currentTimeMillis(), "Salt", false))
+                    add(ChecklistItem(3, System.currentTimeMillis(), "Water", false))
+                    add(ChecklistItem(4, System.currentTimeMillis(), "Meat", true))
                 }
             }
 

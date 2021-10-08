@@ -40,9 +40,9 @@ import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.nio.charset.Charset
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : SimpleActivity() {
     private val EXPORT_FILE_SYNC = 1
@@ -159,13 +159,16 @@ class MainActivity : SimpleActivity() {
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         val multipleNotesExist = mNotes.size > 1
+        val isCurrentItemChecklist = isCurrentItemChecklist()
+
         menu.apply {
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.delete_note).isVisible = multipleNotesExist
             findItem(R.id.export_all_notes).isVisible = multipleNotesExist && hasPermission(PERMISSION_WRITE_STORAGE)
-            findItem(R.id.open_search).isVisible = !isCurrentItemChecklist()
-            findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist()
+            findItem(R.id.open_search).isVisible = !isCurrentItemChecklist
+            findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
+            findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
             findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
             findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && !mCurrentNote.isLocked()
             findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && mCurrentNote.isLocked()
@@ -204,6 +207,7 @@ class MainActivity : SimpleActivity() {
             R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
             R.id.about -> launchAbout()
             R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
+            R.id.sort_checklist -> fragment?.handleUnlocking { displaySortChecklistDialog() }
             else -> return super.onOptionsItemSelected(item)
         }
         return true
@@ -1171,5 +1175,11 @@ class MainActivity : SimpleActivity() {
 
     private fun removeDoneItems() {
         getPagerAdapter().removeDoneCheckListItems(view_pager.currentItem)
+    }
+
+    private fun displaySortChecklistDialog() {
+        SortChecklistDialog(this) {
+            getPagerAdapter().refreshChecklist(view_pager.currentItem)
+        }
     }
 }

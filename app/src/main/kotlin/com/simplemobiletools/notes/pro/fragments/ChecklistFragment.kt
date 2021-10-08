@@ -140,7 +140,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
             titles.forEach { title ->
                 title.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEach { row ->
-                    newItems.add(ChecklistItem(currentMaxId + 1, row, false))
+                    newItems.add(ChecklistItem(currentMaxId + 1, System.currentTimeMillis(), row, false))
                     currentMaxId++
                 }
             }
@@ -158,7 +158,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private fun setupAdapter() {
         updateUIVisibility()
-
+        ChecklistItem.sorting = requireContext().config.sorting
+        items.sort()
         ChecklistAdapter(
             activity = activity as SimpleActivity,
             items = items,
