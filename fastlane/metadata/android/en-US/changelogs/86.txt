@@ -1,0 +1,3 @@
+ * Allow changing checklist item sorting
+ * Make it easier to add multiple checklist items at once
+ * Some stability, translation and UX improvements

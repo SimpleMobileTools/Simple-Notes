@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.9.0 *(2021-10-08)*
+----------------------------
+
+ * Allow changing checklist item sorting
+ * Make it easier to add multiple checklist items at once
+ * Some stability, translation and UX improvements
+
 Version 6.8.2 *(2021-09-13)*
 ----------------------------
 
