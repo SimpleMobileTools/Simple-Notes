@@ -40,7 +40,8 @@
         android:id="@+id/sorting_dialog_radio_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_margin">
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin">
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/sorting_dialog_radio_ascending"
@@ -61,14 +62,14 @@
 
     </RadioGroup>
 
+    <include layout="@layout/divider" />
+
     <RelativeLayout
         android:id="@+id/settings_move_undone_checklist_items_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_margin"
-        android:background="?attr/selectableItemBackground"
-        android:paddingTop="@dimen/activity_margin"
-        android:paddingBottom="@dimen/activity_margin">
+        android:background="?attr/selectableItemBackground">
 
         <com.simplemobiletools.commons.views.MyAppCompatCheckbox
             android:id="@+id/settings_move_undone_checklist_items"
