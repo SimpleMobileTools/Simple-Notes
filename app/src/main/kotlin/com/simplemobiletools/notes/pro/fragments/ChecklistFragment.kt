@@ -160,6 +160,9 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         updateUIVisibility()
         ChecklistItem.sorting = requireContext().config.sorting
         items.sort()
+        if (context?.config?.moveDoneChecklistItems == true) {
+            items.sortBy { it.isDone }
+        }
         ChecklistAdapter(
             activity = activity as SimpleActivity,
             items = items,

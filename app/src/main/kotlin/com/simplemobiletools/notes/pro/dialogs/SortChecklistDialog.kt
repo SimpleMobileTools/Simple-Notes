@@ -18,6 +18,7 @@ class SortChecklistDialog(private val activity: SimpleActivity, private val call
     init {
         setupSortRadio()
         setupOrderRadio()
+        setupMoveUndoneChecklistItems()
         AlertDialog.Builder(activity)
             .setPositiveButton(R.string.ok) { _, _ -> dialogConfirmed() }
             .setNegativeButton(R.string.cancel, null)
@@ -48,6 +49,13 @@ class SortChecklistDialog(private val activity: SimpleActivity, private val call
         orderBtn.isChecked = true
     }
 
+    private fun setupMoveUndoneChecklistItems() {
+        view.settings_move_undone_checklist_items.isChecked = config.moveDoneChecklistItems
+        view.settings_move_undone_checklist_items_holder.setOnClickListener {
+            view.settings_move_undone_checklist_items.toggle()
+        }
+    }
+
     private fun dialogConfirmed() {
         val sortingRadio = view.sorting_dialog_radio_sorting
         var sorting = when (sortingRadio.checkedRadioButtonId) {
@@ -61,7 +69,9 @@ class SortChecklistDialog(private val activity: SimpleActivity, private val call
 
         if (currSorting != sorting) {
             config.sorting = sorting
-            callback()
         }
+
+        config.moveDoneChecklistItems = view.settings_move_undone_checklist_items.isChecked
+        callback()
     }
 }
