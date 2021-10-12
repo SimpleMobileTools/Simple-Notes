@@ -32,9 +32,19 @@
             android:paddingBottom="@dimen/normal_margin"
             android:text="@string/date_created" />
 
+        <com.simplemobiletools.commons.views.MyCompatRadioButton
+            android:id="@+id/sorting_dialog_radio_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/normal_margin"
+            android:paddingBottom="@dimen/normal_margin"
+            android:text="@string/custom" />
+
     </RadioGroup>
 
-    <include layout="@layout/divider" />
+    <include
+        android:id="@+id/sorting_dialog_order_divider"
+        layout="@layout/divider" />
 
     <RadioGroup
         android:id="@+id/sorting_dialog_radio_order"
@@ -62,7 +72,9 @@
 
     </RadioGroup>
 
-    <include layout="@layout/divider" />
+    <include
+        android:id="@+id/move_undone_checklist_items_divider"
+        layout="@layout/divider" />
 
     <RelativeLayout
         android:id="@+id/settings_move_undone_checklist_items_holder"
