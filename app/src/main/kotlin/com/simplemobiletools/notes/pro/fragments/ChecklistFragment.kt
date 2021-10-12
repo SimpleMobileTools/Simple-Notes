@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.helpers.SORT_BY_CUSTOM
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
@@ -65,7 +66,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                     migrateCheckListOnFailure(storedNote)
                 }
 
-                if (config?.moveDoneChecklistItems == true) {
+                val sorting = config?.sorting ?: 0
+                if (sorting and SORT_BY_CUSTOM == 0 && config?.moveDoneChecklistItems == true) {
                     items.sortBy { it.isDone }
                 }
 
@@ -159,9 +161,11 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     private fun setupAdapter() {
         updateUIVisibility()
         ChecklistItem.sorting = requireContext().config.sorting
-        items.sort()
-        if (context?.config?.moveDoneChecklistItems == true) {
-            items.sortBy { it.isDone }
+        if (ChecklistItem.sorting and SORT_BY_CUSTOM == 0) {
+            items.sort()
+            if (context?.config?.moveDoneChecklistItems == true) {
+                items.sortBy { it.isDone }
+            }
         }
         ChecklistAdapter(
             activity = activity as SimpleActivity,
@@ -217,6 +221,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     override fun refreshItems() {
+        loadNoteById(noteId)
         setupAdapter()
     }
 }
