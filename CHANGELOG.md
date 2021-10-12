@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 6.9.1 *(2021-10-12)*
+----------------------------
+
+ * Fixed some sorting related glitches
+
 Version 6.9.0 *(2021-10-08)*
 ----------------------------
 
