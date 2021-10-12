@@ -69,7 +69,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_margin"
-        android:background="?attr/selectableItemBackground">
+        android:background="?attr/selectableItemBackground"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin">
 
         <com.simplemobiletools.commons.views.MyAppCompatCheckbox
             android:id="@+id/settings_move_undone_checklist_items"
