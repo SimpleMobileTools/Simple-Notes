@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/dialog_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -39,7 +40,8 @@
         android:id="@+id/sorting_dialog_radio_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/medium_margin">
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin">
 
         <com.simplemobiletools.commons.views.MyCompatRadioButton
             android:id="@+id/sorting_dialog_radio_ascending"
@@ -59,4 +61,26 @@
             android:text="@string/descending" />
 
     </RadioGroup>
+
+    <include layout="@layout/divider" />
+
+    <RelativeLayout
+        android:id="@+id/settings_move_undone_checklist_items_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:background="?attr/selectableItemBackground"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin">
+
+        <com.simplemobiletools.commons.views.MyAppCompatCheckbox
+            android:id="@+id/settings_move_undone_checklist_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:clickable="false"
+            android:text="@string/move_done_checklist_items"
+            app:switchPadding="@dimen/medium_margin" />
+
+    </RelativeLayout>
 </LinearLayout>
