@@ -59,7 +59,7 @@
 
     <!-- Checklists -->
     <string name="checklist">Lista kontrolna</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">Listy kontrolne</string>
     <string name="add_new_checklist_item">Dodaj nowy element listy kontrolnej</string>
     <string name="add_new_checklist_items">Dodaj nowe elementy listy kontrolnej</string>
     <string name="checklist_is_empty">Lista kontrolna jest pusta</string>
