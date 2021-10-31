@@ -17,14 +17,14 @@
     <string name="add_to_note">Adicionar a uma nota</string>
     <string name="unsaved_changes_warning">Existem alterações não guardadas. O que deseja fazer?</string>
     <string name="note_shown_widget">Nota mostrada no widget:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">Mostrar título da nota</string>
     <string name="new_note_type">Tipo da nova nota:</string>
     <string name="text_note">Nota de texto</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="lock_note">Bloquear nota</string>
+    <string name="unlock_note">Desbloquear nota</string>
+    <string name="note_content_locked">O conteúdo da nota está bloqueado.</string>
+    <string name="show_content">Mostrar conteúdo</string>
+    <string name="locking_warning">AVISO: se esquecer a palavra-passe, não conseguirá aceder à nota nem recuperar o seu conteúdo.</string>
 
     <!-- File notes -->
     <string name="open_file">Abrir ficheiro</string>
@@ -39,7 +39,7 @@
 
     <!-- Settings -->
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
-    <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>
+    <string name="links_and_emails_clickable">Ativar toque em ligações e endereços de e-mail</string>
     <string name="place_cursor_end">Colocar cursor no fim da nota</string>
     <string name="monospaced_font">Usar letra mono-espaçada</string>
     <string name="show_keyboard">Mostrar teclado ao inciar</string>
@@ -55,11 +55,11 @@
     <string name="enable_line_wrap">Ativar quebra de linha</string>
     <string name="use_incognito_mode">Utilizar modo incógnito no teclado</string>
     <string name="move_done_checklist_items">Mover itens não realizados para o topo</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="add_new_checklist_items_top">Adicionar novos itens à parte superior da lista de verificação</string>
 
     <!-- Checklists -->
     <string name="checklist">Lista de verificação</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">Listas de verificação</string>
     <string name="add_new_checklist_item">Adicionar item à lista de verificações</string>
     <string name="add_new_checklist_items">Adicionar itens à lista de verificação</string>
     <string name="checklist_is_empty">A lista está vazia</string>
@@ -76,9 +76,9 @@
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro: Organização e planeamento de notas</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Simple planner: crie notas, listas de verificação a lembretes com esta aplicação</string>
     <string name="app_long_description">
         ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
 
@@ -98,10 +98,10 @@
 
         Não contém anúncios nem permissões desnecessárias. Disponibiliza um tema escuro e é totalmente \'open source\'.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Verifique o conjunto completo de aplicações Simple Tools aqui:</b>
         https://www.simplemobiletools.com
 
-        <b>Standalone website of Simple Notes Pro:</b>
+        <b>Site da aplicação Simple Notes Pro:</b>
         https://www.simplemobiletools.com/notes
 
         <b>Facebook:</b>
