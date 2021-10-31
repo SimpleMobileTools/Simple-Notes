@@ -16,15 +16,15 @@
     <string name="create_new_note">Créer une nouvelle note</string>
     <string name="add_to_note">Ajouter à la note</string>
     <string name="unsaved_changes_warning">Vous avez des changements non sauvegardés. Que voulez-vous faire avec ?</string>
-    <string name="note_shown_widget">Note affichée dans le widget:</string>
-    <string name="show_note_title">Show note title</string>
-    <string name="new_note_type">Type de la note:</string>
+    <string name="note_shown_widget">Note affichée dans le widget :</string>
+    <string name="show_note_title">Afficher le titre de la note</string>
+    <string name="new_note_type">Type de la note :</string>
     <string name="text_note">Texte</string>
     <string name="lock_note">Verrouiller la note</string>
-    <string name="unlock_note">Déverrouiller note</string>
+    <string name="unlock_note">Déverrouiller la note</string>
     <string name="note_content_locked">Le contenu de la note est verrouillé.</string>
     <string name="show_content">Montrer le contenu</string>
-    <string name="locking_warning">ATTENTION: Si vous oubliez le mot de passe, vous ne serez pas en mesure de la récupérer ou d\'y accéder.</string>
+    <string name="locking_warning">ATTENTION : si vous oubliez le mot de passe, vous ne serez pas en mesure de la récupérer ou d\'y accéder.</string>
 
     <!-- File notes -->
     <string name="open_file">Ouvrir le fichier</string>
@@ -53,9 +53,9 @@
     <string name="show_note_picker">Choisir une note au démarrage</string>
     <string name="autosave_notes">Sauvegarder automatiquement les notes</string>
     <string name="enable_line_wrap">Activer le retour à la ligne</string>
-    <string name="use_incognito_mode">Utiliser le mode incognito des claviers</string>
+    <string name="use_incognito_mode">Utiliser le mode incognito du claviers</string>
     <string name="move_done_checklist_items">Déplacer les éléments de cheklist inachevés en haut</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="add_new_checklist_items_top">Ajouter un élément de checklist en haut</string>
 
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
@@ -72,15 +72,15 @@
 
     <!-- FAQ -->
     <string name="faq_1_title">Comment puis-je changer la couleur du widget ?</string>
-    <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widget actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser</string>
+    <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widgets actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser</string>
 
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Simple planner : créez des notes, des sauvegardes et des to-do lists avec outil de rappel rapide</string>
     <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+        ★ Besoin de prendre en note quelque chose à acheter, une adresse, ou une idée d\'entreprise ? Alors n\'allez pas plus loin : voici l\'outil que vous cherchiez : Simple Notes : organiseur et plannificateur ! Aucune configuration compliquée n'est nécessaire, écrivez simplement ce que vous voulez et créez des notes, des listes, checklists ou sauvegardes pour vos idées. Avec votre bloc-note personnel, vous pouvez vous souvenir de tout rapidement ! Votre liste de courses, vous souvenir de vos pensées ou configurer des rappels pour prendre des notes n'a jamais été aussi simple ★
 
         Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
 
@@ -96,18 +96,18 @@
 
         It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
 
-        Ne contient ni publicités, ni autorisations inutiles. Complétement opensource, fournit un thème sombre également.
+        Ne contient ni publicités, ni autorisations inutiles. Complètement opensource, fournit un thème sombre également.
 
-        <b>Check out the full suite of Simple Tools here:</b>
+        <b>Découvrez la suite complète des applications Simple Mobile Tools ici :</b>
         https://www.simplemobiletools.com
 
-        <b>Standalone website of Simple Notes Pro:</b>
+        <b>Site web de Simple Notes Pro :</b>
         https://www.simplemobiletools.com/notes
 
-        <b>Facebook:</b>
+        <b>Facebook :</b>
         https://www.facebook.com/simplemobiletools
 
-        <b>Reddit:</b>
+        <b>Reddit :</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
 
