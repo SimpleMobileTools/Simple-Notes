@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Proste notatki</string>
     <string name="app_launcher_name">Notatki</string>
@@ -25,7 +26,6 @@
     <string name="note_content_locked">Treść notatki jest zablokowana.</string>
     <string name="show_content">Pokaż zawartość</string>
     <string name="locking_warning">OSTRZEŻENIE: Jeśli zapomnisz hasła do notatki, nie będziesz już mógł/mogła jej odzyskać ani uzyskać dostępu do treści notatki.</string>
-
     <!-- File notes -->
     <string name="open_file">Otwórz plik</string>
     <string name="export_as_file">Eksportuj jako plik</string>
@@ -36,7 +36,6 @@
     <string name="note_saved_successfully">Notatka „%s” została zapisana</string>
     <string name="note_exported_successfully">Notatka „%s” została wyeksportowana</string>
     <string name="only_export_file_content">Wyeksportuj tylko bieżącą zawartość pliku\n(zmiana notatki nie wpłynie na plik)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisie</string>
     <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy</string>
@@ -56,7 +55,6 @@
     <string name="use_incognito_mode">Używaj trybu incognito klawiatury</string>
     <string name="move_done_checklist_items">Przesuwaj na dół wykonane elementy listy kontrolnej</string>
     <string name="add_new_checklist_items_top">Dodawaj na górze nowe elementy listy kontrolnej</string>
-
     <!-- Checklists -->
     <string name="checklist">Lista kontrolna</string>
     <string name="checklists">Listy kontrolne</string>
@@ -64,16 +62,13 @@
     <string name="add_new_checklist_items">Dodaj nowe elementy listy kontrolnej</string>
     <string name="checklist_is_empty">Lista kontrolna jest pusta</string>
     <string name="remove_done_items">Usuń wykonane elementy</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Eksportuj wszystkie notatki jako pliki</string>
     <string name="import_notes">Importuj wiele plików jako notatki</string>
     <string name="import_folder">Importuj folder</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">Jak mogę zmienić kolor widżetów?</string>
+    <string name="faq_1_title">Jak mogę zmienić kolor widżetów\?</string>
     <string name="faq_1_text">Jeśli masz tylko 1 aktywny widżet, możesz go odtworzyć lub użyć przycisku w ustawieniach aplikacji, aby go dostosować. Jeśli masz wiele aktywnych widżetów, przycisk w ustawieniach aplikacji nie będzie dostępny. Ponieważ aplikacja obsługuje dostosowywanie kolorów dla poszczególnych widżetów, konieczne będzie ponowne utworzenie widżetu, który chcesz dostosować.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Proste notatki Pro: Organizer i planer listy zadań</string>
@@ -110,7 +105,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
