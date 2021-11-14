@@ -1,2 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="title_taken">Et notat med det navnet finnes allerede</string>
+    <string name="delete_note">Slett notat</string>
+    <string name="simple_note">Enkelt notat</string>
+    <string name="new_note">Legg til nytt notat</string>
+    <string name="open_note">Åpne notat</string>
+    <string name="rename_note">Gi notatet nytt navn</string>
+    <string name="general_note">Generelt notat</string>
+    <string name="create_new_note">Opprett et nytt notat</string>
+    <string name="add_to_note">Legg til i notat</string>
+    <string name="unsaved_changes_warning">Du har ulagrede endringer. Hva vil du gjøre med dem\?</string>
+    <string name="new_note_type">Ny notattype:</string>
+    <string name="show_content">Vis innhold</string>
+    <string name="open_file">Åpne fil</string>
+    <string name="export_as_file">Eksporter som fil</string>
+    <string name="widget_config">Takk for at du bruker Enkle notater
+\nFlere enkle programmer er å finne på SimpleMobileTools.com</string>
+    <string name="cannot_share_empty_text">Kan ikke dele tom tekst</string>
+    <string name="pick_a_note">Velg et notat</string>
+    <string name="note_shown_widget">Notat vist i miniprogrammet:</string>
+    <string name="show_note_title">Vis notattittel</string>
+    <string name="note_content_locked">Notatinnholdet er låst.</string>
+    <string name="checklist">Sjekkliste</string>
+    <string name="checklists">Sjekklister</string>
+    <string name="add_new_checklist_items">Legg til nye sjekklisteelementer</string>
+    <string name="export_all_notes">Eksporter alle notater som filer</string>
+    <string name="import_notes">Importer flere filer som notater</string>
+    <string name="import_folder">Importer mappe</string>
+    <string name="faq_1_title">Hvordan endrer jeg miniprogramsfargen\?</string>
+    <string name="app_short_description">Enkel planlegger: Opprett notater, sikkerhetskopi- og gjøremålslister med et enkelt påminnelsesverktøy</string>
+    <string name="left">Venstre</string>
+    <string name="center">Sentrert</string>
+    <string name="app_name">Enkle notater</string>
+    <string name="app_launcher_name">Notater</string>
+    <string name="no_title">Gi ditt notat et navn</string>
+    <string name="delete_note_prompt_message">Slett «%s»-notatet\?</string>
+    <string name="remove_done_items">Fjern utførte elementer</string>
+    <string name="right">Høyre</string>
+    <string name="add_new_checklist_item">Legg til nytt sjekklisteelement</string>
+    <string name="text_note">Tekstnotat</string>
+    <string name="lock_note">Lås notat</string>
+    <string name="unlock_note">Lås opp notat</string>
+    <string name="widget_note">Notat brukt i miniprogram</string>
+    <string name="checklist_is_empty">Sjekklisten er tom</string>
+</resources>
