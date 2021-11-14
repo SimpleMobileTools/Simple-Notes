@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Basit Notlar</string>
     <string name="app_launcher_name">Notlar</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">Bu başlığa sahip bir not zaten mevcut</string>
     <string name="open_note">Notu aç</string>
     <string name="delete_note">Notu sil</string>
-    <string name="delete_note_prompt_message">\"%s\" notunu silmek istediğinizden emin misiniz?</string>
+    <string name="delete_note_prompt_message">\"%s\" notu silinsin mi\?</string>
     <string name="pick_a_note">Not seç</string>
     <string name="rename_note">Notu yeniden adlandır</string>
     <string name="general_note">Genel not</string>
@@ -22,10 +23,9 @@
     <string name="text_note">Metin notu</string>
     <string name="lock_note">Notu kilitle</string>
     <string name="unlock_note">Notun kilidini aç</string>
-    <string name="note_content_locked">Notların içeriği kilitlendi.</string>
+    <string name="note_content_locked">Not içeriği kilitlendi.</string>
     <string name="show_content">İçeriği göster</string>
     <string name="locking_warning">UYARI: Notların parolasını unutursanız, onu kurtaramaz veya notların içeriğine artık erişemezsiniz.</string>
-
     <!-- File notes -->
     <string name="open_file">Dosya aç</string>
     <string name="export_as_file">Dosya olarak aktar</string>
@@ -33,10 +33,9 @@
     <string name="only_import_file_content">Sadece dosya içeriğini içe aktar\n(dosyayı değiştirmek notu etkilemez)</string>
     <string name="update_file_at_note">Not güncellenirken orijinal dosyayı da güncelle\n(dosya silinirse veya yol değişirse not silinir)</string>
     <string name="delete_file_itself">\"%s\" dosyasını da sil</string>
-    <string name="note_saved_successfully">\"%s\" notu başarıyla kaydedildi</string>
-    <string name="note_exported_successfully">\"%s\" notu başarıyla dışa aktarıldı</string>
+    <string name="note_saved_successfully">\"%s\" notu kaydedildi</string>
+    <string name="note_exported_successfully">\"%s\" notu dışa aktarıldı</string>
     <string name="only_export_file_content">Sadece geçerli dosya içeriğini dışa aktar\n(notu değiştirmek dosyayı etkilemez)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Başarıyla kaydedildi mesajlarını görüntüle</string>
     <string name="links_and_emails_clickable">Bağlantıları ve e-postaları tıklanabilir yap</string>
@@ -56,7 +55,6 @@
     <string name="use_incognito_mode">Klavyelerin Gizli modunu kullan</string>
     <string name="move_done_checklist_items">Tamamlanan yapılacak listesi ögelerini en alta taşı</string>
     <string name="add_new_checklist_items_top">Yeni yapılacak listesi ögelerini en üste taşı</string>
-
     <!-- Checklists -->
     <string name="checklist">Yapılacak listesi</string>
     <string name="checklists">Yapılacak listeleri</string>
@@ -64,16 +62,13 @@
     <string name="add_new_checklist_items">Yeni yapılacak listesi ögeleri ekle</string>
     <string name="checklist_is_empty">Yapılacak listesi boş</string>
     <string name="remove_done_items">Tamamlanan ögeleri kaldır</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
     <string name="import_notes">Birden çok dosyayı not olarak içe aktar</string>
     <string name="import_folder">Klasörü içe aktar</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">Widget\'ların rengini nasıl değiştirebilirim?</string>
+    <string name="faq_1_title">Widget rengini nasıl değiştirebilirim\?</string>
     <string name="faq_1_text">Yalnızca 1 etkin widget\'ınız varsa, yeniden oluşturabilir veya özelleştirmek için uygulama ayarlarındaki düğmeyi kullanabilirsiniz. Birden fazla etkin widget\'ınız varsa, uygulama ayarlarındaki düğme kullanılamaz. Uygulama, widget başına renk özelleştirmeyi desteklediğinden, özelleştirmek istediğiniz widget\'ı yeniden oluşturmanız gerekir.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Basit Notlar Pro: Yapılacak düzenleyici/planlayıcı</string>
@@ -110,7 +105,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
