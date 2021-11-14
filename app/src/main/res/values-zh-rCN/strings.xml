@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">简易笔记</string>
     <string name="app_launcher_name">笔记</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">笔记的标题已经存在</string>
     <string name="open_note">打开笔记</string>
     <string name="delete_note">删除笔记</string>
-    <string name="delete_note_prompt_message">您确定要删除这个笔记吗\"%s\"?</string>
+    <string name="delete_note_prompt_message">删除这则笔记\"%s\"吗？</string>
     <string name="pick_a_note">选择一个笔记</string>
     <string name="rename_note">重命名笔记</string>
     <string name="general_note">一般笔记</string>
@@ -17,15 +18,14 @@
     <string name="add_to_note">添加到笔记</string>
     <string name="unsaved_changes_warning">您有未保存的更改。您对此想如何操作呢？</string>
     <string name="note_shown_widget">小工具中显示的笔记:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">显示笔记标题</string>
     <string name="new_note_type">新笔记类型:</string>
     <string name="text_note">文本笔记</string>
     <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-
+    <string name="unlock_note">解锁笔记</string>
+    <string name="note_content_locked">笔记的内容被锁定。</string>
+    <string name="show_content">显示内容</string>
+    <string name="locking_warning">警告：如果您忘记了笔记的密码，您将无法恢复或访问笔记的内容。</string>
     <!-- File notes -->
     <string name="open_file">打开文件</string>
     <string name="export_as_file">以文件的形式导出</string>
@@ -33,10 +33,9 @@
     <string name="only_import_file_content">只要导入文件的内容\n(改变文件不会影响笔记)</string>
     <string name="update_file_at_note">在更新笔记的时侯更新文件本身\n(注意，如果文件被删除或路径更改，将被删除)</string>
     <string name="delete_file_itself">同时删除文件 \"%s\"</string>
-    <string name="note_saved_successfully">笔记 \"%s\" 保存成功</string>
-    <string name="note_exported_successfully">笔记 \"%s\" 导出成功</string>
+    <string name="note_saved_successfully">已保存笔记 \"%s\"</string>
+    <string name="note_exported_successfully">已导出笔记 \"%s\"</string>
     <string name="only_export_file_content">只导出当前文件内容\n(更改笔记将不会影响文件)</string>
-
     <!-- Settings -->
     <string name="display_success_message">显示保存成功消息</string>
     <string name="links_and_emails_clickable">使链接和电子邮件可点击</string>
@@ -55,25 +54,21 @@
     <string name="enable_line_wrap">启用行折叠</string>
     <string name="use_incognito_mode">对于键盘使用隐私模式</string>
     <string name="move_done_checklist_items">移动未完成的清单至顶端</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
+    <string name="add_new_checklist_items_top">在顶部添加新的清单项目</string>
     <!-- Checklists -->
     <string name="checklist">清单</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">清单</string>
     <string name="add_new_checklist_item">添加一个新的清单项目</string>
     <string name="add_new_checklist_items">添加新的清单项目</string>
     <string name="checklist_is_empty">清单为空</string>
-    <string name="remove_done_items">Remove done items</string>
-
+    <string name="remove_done_items">删除完成的项目</string>
     <!-- Import / Export -->
     <string name="export_all_notes">以文件导出所有笔记</string>
     <string name="import_notes">导入多个文件为笔记</string>
     <string name="import_folder">导入文件夹</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">我如何变化小工具颜色？</string>
+    <string name="faq_1_title">我如何更改小工具颜色？</string>
     <string name="faq_1_text">如果您仅用一个活动的小工具，您既可以重新创建它，或者使用应用程序设定的按钮来自定义它。如果您拥有多个活动的小工具，应用程序设定中的按钮将不可用。因为应用程序支持小工具分别自定义，您必须要重新创建小工具来自定义它们。</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">简易笔记 Pro：待办清单管理器和计划工具</string>
@@ -110,7 +105,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
