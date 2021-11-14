@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Enkle notater</string>
     <string name="app_launcher_name">Notater</string>
-    <string name="widget_config">Takk for at du bruker Enkle notater\nFlere enkle programmer er å finne på SimpleMobileTools.com</string>
+    <string name="widget_config">Takk for at du bruker Enkle notater
+\nFlere enkle programmer er å finne på SimpleMobileTools.com</string>
     <string name="cannot_share_empty_text">Kan ikke dele tom tekst</string>
     <string name="simple_note">Enkelt notat</string>
     <string name="new_note">Legg til nytt notat</string>
@@ -28,11 +29,12 @@
     <string name="locking_warning">Advarsel: Hvis du glemmer notatpassordet vil du ikke kunne gjenopprette det eller innholdet.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
-    <!-- File notes -->    
+    <!-- File notes -->
     <string name="open_file">Åpne fil</string>
     <string name="export_as_file">Eksporter som fil</string>
     <string name="file_too_large">Filen er er større enn grensen på 1 MB</string>
-    <string name="only_import_file_content">Kun importer filinnholdet\n(endringen av filen vil ikke ha innvirkning på notatet)</string>
+    <string name="only_import_file_content">Kun importer filinnholdet
+\n(endringen av filen vil ikke ha innvirkning på notatet)</string>
     <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
     <string name="delete_file_itself">Also delete file \"%s\"</string>
     <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
@@ -64,7 +66,7 @@
     <string name="add_new_checklist_items">Legg til nye sjekklisteelementer</string>
     <string name="checklist_is_empty">Sjekklisten er tom</string>
     <string name="remove_done_items">Fjern utførte elementer</string>
-    <!-- Import / Export -->    
+    <!-- Import / Export -->
     <string name="export_all_notes">Eksporter alle notater som filer</string>
     <string name="import_folder">Importer mappe</string>
     <string name="export_notes">Export all notes</string>
@@ -109,7 +111,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
