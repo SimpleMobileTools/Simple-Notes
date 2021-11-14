@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">A note with that title already exists</string>
     <string name="open_note">Open note</string>
     <string name="delete_note">Delete note</string>
-    <string name="delete_note_prompt_message">Are you sure you want to delete note \"%s\"?</string>
+    <string name="delete_note_prompt_message">Delete the \"%s\" note\?</string>
     <string name="pick_a_note">Pick a note</string>
     <string name="rename_note">Rename note</string>
     <string name="general_note">General note</string>
@@ -22,10 +23,9 @@
     <string name="text_note">Text note</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="note_content_locked">The note content is locked.</string>
     <string name="show_content">Show content</string>
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-
     <!-- File notes -->
     <string name="open_file">Open file</string>
     <string name="export_as_file">Export as file</string>
@@ -33,14 +33,13 @@
     <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
     <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
     <string name="delete_file_itself">Also delete file \"%s\"</string>
-    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
+    <string name="note_saved_successfully">Saved the \"%s\" note</string>
+    <string name="note_exported_successfully">Exported the \"%s\" note</string>
     <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Display save success messages</string>
     <string name="links_and_emails_clickable">Make links and emails clickable</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
+    <string name="place_cursor_end">Place cursor at the end of the note</string>
     <string name="monospaced_font">Use monospaced font</string>
     <string name="show_keyboard">Show keyboard on startup</string>
     <string name="show_word_count">Show word count</string>
@@ -56,7 +55,6 @@
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
     <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
     <string name="checklists">Checklists</string>
@@ -64,16 +62,13 @@
     <string name="add_new_checklist_items">Add new checklist items</string>
     <string name="checklist_is_empty">The checklist is empty</string>
     <string name="remove_done_items">Remove done items</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Export all notes as files</string>
     <string name="import_notes">Import multiple files as notes</string>
     <string name="import_folder">Import folder</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
+    <string name="faq_1_title">How can I change the widget color\?</string>
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
@@ -110,7 +105,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
