@@ -43,4 +43,21 @@
     <string name="unlock_note">Lås opp notat</string>
     <string name="widget_note">Notat brukt i miniprogram</string>
     <string name="checklist_is_empty">Sjekklisten er tom</string>
+    <string name="note_exported_successfully">Eksporterte «%s»-notatet</string>
+    <string name="only_import_file_content">Kun importer filinnholdet
+\n(endringen av filen vil ikke ha innvirkning på notatet)</string>
+    <string name="links_and_emails_clickable">Gjør lenker og e-poster klikkbare</string>
+    <string name="place_cursor_end">Plasser pekeren på slutten av notatet</string>
+    <string name="monospaced_font">Bruk fastbreddeskrift</string>
+    <string name="show_keyboard">Vis tastatur ved programstart</string>
+    <string name="locking_warning">Advarsel: Hvis du glemmer notatpassordet vil du ikke kunne gjenopprette det eller innholdet.</string>
+    <string name="file_too_large">Filen er er større enn grensen på 1 MB</string>
+    <string name="add_new_checklist_items_top">Legg til nye sjekklisteelementer på toppen</string>
+    <string name="move_done_checklist_items">Flytt utførte sjekklisteelementer til bunnen</string>
+    <string name="show_word_count">Vis antall ord</string>
+    <string name="show_character_count">Vis antall tegn</string>
+    <string name="alignment">Justering</string>
+    <string name="enable_line_wrap">Skru på linjebryting</string>
+    <string name="autosave_notes">Lagre notater automatisk</string>
+    <string name="show_note_picker">Vis en notatvelger ved programstart</string>
 </resources>
