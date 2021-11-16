@@ -10,7 +10,7 @@
     <string name="title_taken">Notatka o tym tytule już istnieje</string>
     <string name="open_note">Otwórz notatkę</string>
     <string name="delete_note">Usuń notatkę</string>
-    <string name="delete_note_prompt_message">Czy na pewno chcesz usunąć notatkę „%s”?</string>
+    <string name="delete_note_prompt_message">Czy usunąć notatkę „%s”\?</string>
     <string name="pick_a_note">Wybierz notatkę</string>
     <string name="rename_note">Zmień nazwę notatki</string>
     <string name="general_note">Notatka ogólna</string>
@@ -74,37 +74,7 @@
     <string name="app_title">Proste notatki Pro: Organizer i planer listy zadań</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Prosty planer: Twórz notatki, kopie zapasowe i listy zadań do zrobienia</string>
-    <string name="app_long_description">
-        ★ Chcesz szybko zanotować coś do kupienia, adres lub pomysł na startup? Nie szukaj dalej, ponieważ jest to proste narzędzie do organizowania, którego szukałeś(-aś) - Proste notatki: Organizator i planer listy zadań do zrobienia! Nie są potrzebne żadne skomplikowane czynności konfiguracyjne - wystarczy, że dotkniesz ekranu, wpiszesz to, co planowałeś(-aś) i tworzysz notatki, szybkie listy, listę kontrolną lub kopię zapasową dowolnego pomysłu. Dzięki prostemu, osobistemu notatnikowi możesz szybko wszystko zapamiętać! Zakupy spożywcze, zapamiętywanie myśli i łatwiejsze konfigurowanie przypomnień; robienie notatek nigdy nie było prostsze ★
-
-        Planer prostych notatek jest szybkim, prostym w użyciu organizerem i niezwykłym planerem, a także będzie nieocenionym narzędziem i towarzyszem pomagającym zapamiętać potrzebne informacje!
-
-        Nasze narzędzie do przypominania pozwala śledzić Twoje obowiązki, tworzyć codzienną listę kontrolną dla zadań lub pomysłów z niespotykaną prostotą i niezrównaną oszczędnością czasu. Zarządzaj swoim harmonogramem w szybki i prosty sposób.
-
-        To narzędzie notatnika jest wyposażone w funkcję automatycznego zapisywania, dzięki czemu nie odrzucisz swoich zmian przez pomyłkę. Obsługuje również bardzo szybkie tworzenie wielu niezależnych notatek i list w postaci zwykłego tekstu.
-
-        Możesz łatwo uzyskać dostęp do notatki i błyskawicznie uporządkować listę zadań do zrobienia, korzystając z dostosowywanego widżetu o zmiennej wielkości, który otwiera aplikację po naciśnięciu go. 
-
-        Jest przyjazny dla użytkownika i nie zawiera żadnych reklam ani zbędnych uprawnień - bez żadnych zobowiązań. Jest w pełni otwartoźródłowy, zapewnia konfigurowalną kolorystykę, którą można dostosować za pomocą szybkiego dostrajania.
-
-        <b>Proste notatki: Organizer i planer listy zadań do zrobienia</b> jest najlepszym organizerem i planerem list zadań, z którego możesz korzystać bez reklam. Jeśli potrzebujesz wysokiej jakości organizera do szybkich i dobrych notatek, niezawodnych i przyjaznych dla użytkownika przypomnień, które są naprawdę proste w użyciu, pobierz naszą aplikację już teraz :) Miej swój osobisty notes w kieszeni każdego dnia i miej planer kopii zapasowych, abyś nie musiał(a) się martwić, że zapomnisz o ważnym spotkaniu lub liście zakupów :).
-
-        Domyślnie jest wyposażony w Material Design i ciemny motyw, zapewniając doskonałe doświadczenie użytkownika dla łatwego użytkowania. Brak dostępu do Internetu zapewnia większą prywatność, bezpieczeństwo i stabilność niż inne aplikacje.
-
-        Nie zawiera reklam ani niepotrzebnych uprawnień. Jest w pełni otwartoźródłowy, zapewnia konfigurowalną kolorystykę.
-
-        <b>Sprawdź pełen zestaw od Simple Tools tutaj:</b>
-        https://www.simplemobiletools.com
-
-        <b>Strona internetowa Prostych notatek Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_long_description">★ Chcesz szybko zanotować coś do kupienia, adres lub pomysł na startup\? Nie szukaj dalej, ponieważ jest to proste narzędzie do organizowania, którego szukałeś(-aś) - Proste notatki: Organizator i planer listy zadań do zrobienia! Nie są potrzebne żadne skomplikowane czynności konfiguracyjne - wystarczy, że dotkniesz ekranu, wpiszesz to, co planowałeś(-aś) i tworzysz notatki, szybkie listy, listę kontrolną lub kopię zapasową dowolnego pomysłu. Dzięki prostemu, osobistemu notatnikowi możesz szybko wszystko zapamiętać! Zakupy spożywcze, zapamiętywanie myśli i łatwiejsze konfigurowanie przypomnień; robienie notatek nigdy nie było prostsze ★ Planer prostych notatek jest szybkim, prostym w użyciu organizerem i niezwykłym planerem, a także będzie nieocenionym narzędziem i towarzyszem pomagającym zapamiętać potrzebne informacje! Nasze narzędzie do przypominania pozwala śledzić Twoje obowiązki, tworzyć codzienną listę kontrolną dla zadań lub pomysłów z niespotykaną prostotą i niezrównaną oszczędnością czasu. Zarządzaj swoim harmonogramem w szybki i prosty sposób. To narzędzie notatnika jest wyposażone w funkcję automatycznego zapisywania, dzięki czemu nie odrzucisz swoich zmian przez pomyłkę. Obsługuje również bardzo szybkie tworzenie wielu niezależnych notatek i list w postaci zwykłego tekstu. Możesz łatwo uzyskać dostęp do notatki i błyskawicznie uporządkować listę zadań do zrobienia, korzystając z dostosowywanego widżetu o zmiennej wielkości, który otwiera aplikację po naciśnięciu go. Jest przyjazny dla użytkownika i nie zawiera żadnych reklam ani zbędnych uprawnień - bez żadnych zobowiązań. Jest w pełni otwartoźródłowy, zapewnia konfigurowalną kolorystykę, którą można dostosować za pomocą szybkiego dostrajania. <b>Proste notatki: Organizer i planer listy zadań do zrobienia</b> jest najlepszym organizerem i planerem list zadań, z którego możesz korzystać bez reklam. Jeśli potrzebujesz wysokiej jakości organizera do szybkich i dobrych notatek, niezawodnych i przyjaznych dla użytkownika przypomnień, które są naprawdę proste w użyciu, pobierz naszą aplikację już teraz :) Miej swój osobisty notes w kieszeni każdego dnia i miej planer kopii zapasowych, abyś nie musiał(a) się martwić, że zapomnisz o ważnym spotkaniu lub liście zakupów :). Domyślnie jest wyposażony w Material Design i ciemny motyw, zapewniając doskonałe doświadczenie użytkownika dla łatwego użytkowania. Brak dostępu do Internetu zapewnia większą prywatność, bezpieczeństwo i stabilność niż inne aplikacje. Nie zawiera reklam ani niepotrzebnych uprawnień. Jest w pełni otwartoźródłowy, zapewnia konfigurowalną kolorystykę. <b>Sprawdź pełen zestaw od Simple Tools tutaj:</b> https://www.simplemobiletools.com <b>Strona internetowa Prostych notatek Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
