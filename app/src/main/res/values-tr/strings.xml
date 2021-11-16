@@ -25,11 +25,11 @@
     <string name="unlock_note">Notun kilidini aç</string>
     <string name="note_content_locked">Not içeriği kilitlendi.</string>
     <string name="show_content">İçeriği göster</string>
-    <string name="locking_warning">UYARI: Notların parolasını unutursanız, onu kurtaramaz veya notların içeriğine artık erişemezsiniz.</string>
+    <string name="locking_warning">Uyarı: Notun parolasını unutursanız, onu kurtaramazsınız ve ona erişiminizi kaybedersiniz</string>
     <!-- File notes -->
     <string name="open_file">Dosya aç</string>
     <string name="export_as_file">Dosya olarak aktar</string>
-    <string name="file_too_large">Dosya çok büyük, sınır 1MB</string>
+    <string name="file_too_large">Dosya 1 MB sınırından büyük</string>
     <string name="only_import_file_content">Sadece dosya içeriğini içe aktar\n(dosyayı değiştirmek notu etkilemez)</string>
     <string name="update_file_at_note">Not güncellenirken orijinal dosyayı da güncelle\n(dosya silinirse veya yol değişirse not silinir)</string>
     <string name="delete_file_itself">\"%s\" dosyasını da sil</string>
@@ -71,40 +71,17 @@
     <string name="faq_1_text">Yalnızca 1 etkin widget\'ınız varsa, yeniden oluşturabilir veya özelleştirmek için uygulama ayarlarındaki düğmeyi kullanabilirsiniz. Birden fazla etkin widget\'ınız varsa, uygulama ayarlarındaki düğme kullanılamaz. Uygulama, widget başına renk özelleştirmeyi desteklediğinden, özelleştirmek istediğiniz widget\'ı yeniden oluşturmanız gerekir.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Basit Notlar Pro: Yapılacak düzenleyici/planlayıcı</string>
+    <string name="app_title">Basit Notlar Pro — Yapılacak düzenleyici/planlayıcı</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Hızlı not hatırlatıcıyla notlar, yedekleme ve yapılacaklar listeleri oluşturun</string>
-    <string name="app_long_description">
-        ★ Satın almak istediğiniz bir şeyi, bir adresi veya bir başlangıç fikrini hızlıca not almanız mı gerekiyor? O halde, aradığınız basit düzenleyici araç olduğundan başka yere bakmayın: Basit Notlar: Yapılacaklar listesi düzenleyici ve planlayıcı! Karmaşık kurulum adımlarına gerek yoktur, sadece ekrana dokunun ve aradığınız şeyi yazın ve herhangi bir fikir için notlar, hızlı listeler, kontrol listesi veya yedek oluşturun. Basit kişisel not defterinizle her şeyi hızlı bir şekilde hatırlayabilirsiniz! Market alışverişi yapmak, düşüncelerinizi ezberlemek ve daha kolay hatırlatıcılar ayarlamak not almak hiç bu kadar kolay olmamıştı ★
-
-        Basit not planlayıcı hızlıdır, kullanımı basittir, düzenleyici ve dikkate değer bir planlayıcıdır ve paha biçilmez bir araç ve yardımcı olarak hizmet eder, gerekli bilgi parçasını hatırlamanıza yardımcı olur!
-
-        Hatırlatma aracımız, görevlerinizi takip etmenize, benzeri görülmemiş basitlik, dikkat çekicilik ve rakipsiz zaman tasarrufu değeri ile ögeler veya fikirler için günlük yapılacaklar listesi oluşturmanıza olanak tanır. Programınızı hızlı ve basit bir şekilde yönetin.
-
-        Bu not defteri hatırlatma aracı, otomatik kaydetme özelliğiyle birlikte gelir, böylece değişikliklerinizi yanlışlıkla atmazsınız. Aynı zamanda birden çok bağımsız düz metin notu ve çok hızlı listeler oluşturmayı destekler.
-
-        Uygulamayı dokunulduğunda açan özelleştirilebilir ve yeniden boyutlandırılabilir widget kullanarak nota kolayca erişebilir ve yapılacaklar listenizi hemen düzenleyebilirsiniz.
-
-        Kullanıcı dostudur ve kesinlikle hiçbir reklam veya gereksiz izinler içermez - hiçbir koşul yoktur. Tamamen açık kaynaklıdır, hızlı ve çabuk ince ayarlarla ayarlanabilen özelleştirilebilir renkler sağlar.
-
-        <b>Basit Notlar: Yapılacaklar listesi düzenleyici ve planlayıcı</b> reklamsız kullanabileceğiniz en iyi öge düzenleyici ve liste planlayıcıdır. Hızlı ve iyi notlar için yüksek kaliteli bir düzenleyiciye, kullanımı gerçekten basit olan güvenilir ve kullanıcı dostu bir hatırlatıcıya ihtiyacınız varsa, hemen uygulamamızı indirin :) Her gün cebinizde kendi kişisel not defteriniz olsun ve bir yedekleme planlayıcınız olsun önemli bir toplantıyı veya alışveriş listenizi unutmak için endişelenmenize gerek kalmayacak :).
-
-        Varsayılan olarak materyal tasarım ve koyu tema ile birlikte gelir, kolay kullanım için harika bir kullanıcı deneyimi sağlar. İnternet erişiminin olmaması size diğer uygulamalardan daha fazla gizlilik, güvenlik ve istikrar sağlar.
-
-        Reklam veya gereksiz izinler içermez. Tamamen açık kaynaktır, özelleştirilebilir renkler sunar.
-
-        <b>Basit Araçlar paketinin tamamını buradan inceleyin:</b>
-        https://www.simplemobiletools.com
-
-        <b>Basit Notlar Pro\'nun bağımsız web sitesi:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_long_description">Süslü özellikler, reklamlar veya gereksiz izinleri olmayan, kolay erişilebilir bir düzenleyici.
+\nYazmak için ekrana dokunarak bir adresi, fikri veya alışveriş listesini hızlıca not edin.
+\nGirdiklerinizi otomatik olarak kaydederek notlarınızı ve yapılacak listelerinizi ezberleyen kişisel bir defter.
+\nHatırlatma işlevi görevlerinizi, toplantılarınızı ve yapılacaklar listelerinizi takip etmenize yardımcı olur.
+\nÖzelleştirilebilir renklere ve varsayılan olarak koyu bir temaya sahip material tasarımı.
+\nCopyleft özgür yazılım, GPLv3+ altında lisanslandı.
+\n<b>Simple Notes Pro\'ya:</b> https://www.simplemobiletools.com/notes
+\nveya https://www.simplemobiletools.com adresinde <b>Basit Araçlar paketinin tamamına göz atın.</b></string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
