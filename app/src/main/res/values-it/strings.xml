@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Semplice Note</string>
     <string name="app_launcher_name">Note</string>
@@ -23,24 +24,22 @@
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Unlock note</string>
     <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
+    <string name="show_content">Mostra il contenuto</string>
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-
     <!-- File notes -->
     <string name="open_file">Apri file</string>
     <string name="export_as_file">Esporta come file</string>
-    <string name="file_too_large">File troppo grande, il limite è di 1MB</string>
+    <string name="file_too_large">File troppo grande, il limite è di 1 MB</string>
     <string name="only_import_file_content">Importa solo il contenuto del file\n(modificare il file non influenzerà la nota)</string>
     <string name="update_file_at_note">Aggiorna il file quando si aggiorna una nota\n(la nota viene eliminata se il file viene eliminato, oppure cambia il percorso)</string>
     <string name="delete_file_itself">Elimina anche il file \"%s\"</string>
     <string name="note_saved_successfully">La nota \"%s\" è stata salvata correttamente</string>
     <string name="note_exported_successfully">La nota \"%s\" è stata esportata correttamente</string>
     <string name="only_export_file_content">Esporta solamente il contenuto attuale del file\n(modificando la nota non influenzerà il file)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Mostra i messaggi di salvataggio riusciti</string>
-    <string name="links_and_emails_clickable">Rendi i link e le email cliccabili</string>
-    <string name="place_cursor_end">Posiziona il cursose in fondo alla nota</string>
+    <string name="links_and_emails_clickable">Rendi i collegamenti e le e-mail cliccabili</string>
+    <string name="place_cursor_end">Posiziona il cursore alla fine della nota</string>
     <string name="monospaced_font">Usa un font monospace</string>
     <string name="show_keyboard">Mostra la tastiera all\'avvio</string>
     <string name="show_word_count">Mostra il numero delle parole</string>
@@ -56,7 +55,6 @@
     <string name="use_incognito_mode">Usa la modalità incognito per le tastiere</string>
     <string name="move_done_checklist_items">Sposta gli elementi non spuntati in cima</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">Scaletta</string>
     <string name="checklists">Checklists</string>
@@ -64,12 +62,10 @@
     <string name="add_new_checklist_items">Aggiungi nuovi elementi</string>
     <string name="checklist_is_empty">La scaletta è vuota</string>
     <string name="remove_done_items">Remove done items</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Esporta le note come file</string>
     <string name="import_notes">Importa file multipli come note</string>
     <string name="import_folder">Importa cartella</string>
-
     <!-- FAQ -->
     <string name="faq_1_title">Come posso cambiare il colore dei widget?</string>
     <string name="faq_1_text">Se hai un solo widget attivo, puoi ricrearlo oppure usare il pulsante nelle impostazioni dell\'app per personalizzaro. Se hai più di un widget, il pulsante nelle impostazioni dell\'app non sarà disponibile. Dato che l\'app supporta la personalizzazione dei colori per ogni widget, dovrai ricreare il widget che vuoi personalizzare.</string>
@@ -109,7 +105,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
