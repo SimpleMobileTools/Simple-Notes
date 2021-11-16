@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Заметки</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">Заметка с таким названием уже существует</string>
     <string name="open_note">Открыть заметку</string>
     <string name="delete_note">Удалить заметку</string>
-    <string name="delete_note_prompt_message">Вы действительно хотите удалить заметку \"%s\"?</string>
+    <string name="delete_note_prompt_message">Удалить \"%s\" заметку\?</string>
     <string name="pick_a_note">Выберите заметку</string>
     <string name="rename_note">Переименовать заметку</string>
     <string name="general_note">Общая заметка</string>
@@ -22,10 +23,9 @@
     <string name="text_note">Текстовая заметка</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="note_content_locked">Содержимое заметки заблокировано.</string>
     <string name="show_content">Show content</string>
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-
     <!-- File notes -->
     <string name="open_file">Открыть файл</string>
     <string name="export_as_file">Экспортировать в файл</string>
@@ -36,7 +36,6 @@
     <string name="note_saved_successfully">Заметка \"%s\" сохранена</string>
     <string name="note_exported_successfully">Заметка \"%s\" экспортирована</string>
     <string name="only_export_file_content">Экспортировать только текущее содержимое файла\n(изменение заметки не затронет файл)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Уведомлять, что файл успешно сохранен</string>
     <string name="links_and_emails_clickable">Сделать ссылки и адреса электронной почты активными</string>
@@ -56,7 +55,6 @@
     <string name="use_incognito_mode">Использовать режим инкогнито для клавиатур</string>
     <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">Список</string>
     <string name="checklists">Checklists</string>
@@ -64,16 +62,13 @@
     <string name="add_new_checklist_items">Добавить позиции в список</string>
     <string name="checklist_is_empty">Список пуст</string>
     <string name="remove_done_items">Remove done items</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Экспортировать все заметки в файлы</string>
     <string name="import_notes">Импортировать несколько файлов в заметки</string>
     <string name="import_folder">Импортировать папку</string>
-
     <!-- FAQ -->
     <string name="faq_1_title">Как я могу изменить цвет виджета?</string>
     <string name="faq_1_text">Если у вас только 1 активный виджет, вы можете либо пересоздать его, либо использовать кнопку в настройках приложения. Если у вас несколько активных виджетов, кнопка в настройках будет недоступна. Поскольку приложение поддерживает настройку цвета для каждого виджета, вам придется пересоздать виджет, который вы хотите настроить.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: Менеджер To-do списков</string>
@@ -110,7 +105,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
