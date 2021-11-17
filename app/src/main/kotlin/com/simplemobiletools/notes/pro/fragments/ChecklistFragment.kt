@@ -62,16 +62,15 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
                     // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
                     items = items.filter { it.title != null }.toMutableList() as ArrayList<ChecklistItem>
+                    val sorting = config?.sorting ?: 0
+                    if (sorting and SORT_BY_CUSTOM == 0 && config?.moveDoneChecklistItems == true) {
+                        items.sortBy { it.isDone }
+                    }
+
+                    setupFragment()
                 } catch (e: Exception) {
                     migrateCheckListOnFailure(storedNote)
                 }
-
-                val sorting = config?.sorting ?: 0
-                if (sorting and SORT_BY_CUSTOM == 0 && config?.moveDoneChecklistItems == true) {
-                    items.sortBy { it.isDone }
-                }
-
-                setupFragment()
             }
         }
     }
