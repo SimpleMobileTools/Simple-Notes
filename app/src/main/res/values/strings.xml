@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
@@ -10,7 +9,7 @@
     <string name="title_taken">A note with that title already exists</string>
     <string name="open_note">Open note</string>
     <string name="delete_note">Delete note</string>
-    <string name="delete_note_prompt_message">Delete the \"%s\" note\?</string>
+    <string name="delete_note_prompt_message">Are you sure you want to delete note \"%s\"?</string>
     <string name="pick_a_note">Pick a note</string>
     <string name="rename_note">Rename note</string>
     <string name="general_note">General note</string>
@@ -23,23 +22,25 @@
     <string name="text_note">Text note</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The note content is locked.</string>
+    <string name="note_content_locked">The notes\' content is locked.</string>
     <string name="show_content">Show content</string>
-    <string name="locking_warning">Warning: If you forget the note password, it can not be recovered and you will lose access to it</string>
+    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+
     <!-- File notes -->
     <string name="open_file">Open file</string>
     <string name="export_as_file">Export as file</string>
-    <string name="file_too_large">The file is bigger than the limit of 1 MB</string>
+    <string name="file_too_large">File too large, the limit is 1MB</string>
     <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
     <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
     <string name="delete_file_itself">Also delete file \"%s\"</string>
-    <string name="note_saved_successfully">Saved the \"%s\" note</string>
-    <string name="note_exported_successfully">Exported the \"%s\" note</string>
+    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
+    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
     <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+
     <!-- Settings -->
     <string name="display_success_message">Display save success messages</string>
     <string name="links_and_emails_clickable">Make links and emails clickable</string>
-    <string name="place_cursor_end">Place cursor at the end of the note</string>
+    <string name="place_cursor_end">Place cursor to the end of note</string>
     <string name="monospaced_font">Use monospaced font</string>
     <string name="show_keyboard">Show keyboard on startup</string>
     <string name="show_word_count">Show word count</string>
@@ -55,6 +56,7 @@
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
     <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
     <string name="checklists">Checklists</string>
@@ -62,26 +64,53 @@
     <string name="add_new_checklist_items">Add new checklist items</string>
     <string name="checklist_is_empty">The checklist is empty</string>
     <string name="remove_done_items">Remove done items</string>
+
     <!-- Import / Export -->
     <string name="export_all_notes">Export all notes as files</string>
     <string name="import_notes">Import multiple files as notes</string>
     <string name="import_folder">Import folder</string>
+
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widget color\?</string>
+    <string name="faq_1_title">How can I change the widgets color?</string>
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro — To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner — Create notes, backup and to-do lists with a quick note-reminder tool</string>
-    <string name="app_long_description">An easily accessible organizer with no fancy features, ads or unneeded permissions.
-\nNote down an address, idea, or shopping list quickly by tapping the screen to type away.
-\nIt is a personal notebook memorizing your notes and checklists by autosaving what you enter.
-\nThe reminder function helps keep track of your duties, meetings and to-do lists.
-\nMaterial design with customizable colors and a dark theme by default.
-\nCopylefted libre software, licensed GPLv3+.
-\n<b>Check out Simple Notes Pro:</b> https://www.simplemobiletools.com/notes
-\nor <b>the full suite of Simple Tools</b> at https://www.simplemobiletools.com</string>
+    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_long_description">
+        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+
+        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+
+        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+
+        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+
+        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+
+        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+
+        <b>Simple Notes: To-do list organizer and planner </b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+
+        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+
+        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+
+        <b>Check out the full suite of Simple Tools here:</b>
+        https://www.simplemobiletools.com
+
+        <b>Standalone website of Simple Notes Pro:</b>
+        https://www.simplemobiletools.com/notes
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
+
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
