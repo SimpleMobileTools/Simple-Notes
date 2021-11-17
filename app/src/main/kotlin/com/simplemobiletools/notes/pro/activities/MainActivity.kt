@@ -266,7 +266,7 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun isCurrentItemChecklist() = mAdapter?.isChecklistFragment(view_pager.currentItem) ?: false
+    private fun isCurrentItemChecklist() = if (this::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST.value else false
 
     private fun checkIntents(intent: Intent) {
         intent.apply {

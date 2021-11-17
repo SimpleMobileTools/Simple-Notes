@@ -21,11 +21,14 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
 
     init {
         addNewEditText()
-        view.add_item.applyColorFilter(activity.getAdjustedPrimaryColor())
-        view.add_item.background.applyColorFilter(textColor)
-        view.add_item.setOnClickListener {
-            addNewEditText()
+        view.apply {
+            add_item.applyColorFilter(activity.getAdjustedPrimaryColor())
+            add_item.background.applyColorFilter(textColor)
+            add_item.setOnClickListener {
+                addNewEditText()
+            }
         }
+
         AlertDialog.Builder(activity)
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)

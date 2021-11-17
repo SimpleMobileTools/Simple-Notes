@@ -4,10 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
-import com.simplemobiletools.commons.extensions.beGone
-import com.simplemobiletools.commons.extensions.beVisibleIf
-import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
-import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.commons.helpers.isOreoPlus
@@ -46,21 +43,32 @@ class SettingsActivity : SimpleActivity() {
         setupIncognitoMode()
         setupCustomizeWidgetColors()
         updateTextColors(settings_scrollview)
-        setupSectionColors()
-        setupAddNewChecklistItemsTop()
         invalidateOptionsMenu()
+
+        arrayOf(
+            settings_color_customization_label,
+            settings_general_settings_label,
+            settings_text_label,
+            settings_startup_label,
+            settings_saving_label
+        ).forEach {
+            it.setTextColor(getAdjustedPrimaryColor())
+        }
+
+        arrayOf(
+            settings_color_customization_holder,
+            settings_general_settings_holder,
+            settings_text_holder,
+            settings_startup_holder,
+            settings_saving_holder
+        ).forEach {
+            it.background.applyColorFilter(baseConfig.backgroundColor.getContrastColor())
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         updateMenuItemColors(menu)
         return super.onCreateOptionsMenu(menu)
-    }
-
-    private fun setupSectionColors() {
-        val adjustedPrimaryColor = getAdjustedPrimaryColor()
-        arrayListOf(text_label, startup_label, saving_label, widgets_label).forEach {
-            it.setTextColor(adjustedPrimaryColor)
-        }
     }
 
     private fun setupCustomizeColors() {
@@ -72,6 +80,11 @@ class SettingsActivity : SimpleActivity() {
     private fun setupUseEnglish() {
         settings_use_english_holder.beVisibleIf(config.wasUseEnglishToggled || Locale.getDefault().language != "en")
         settings_use_english.isChecked = config.useEnglish
+
+        if (settings_use_english_holder.isGone()) {
+            settings_font_size_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
+        }
+
         settings_use_english_holder.setOnClickListener {
             settings_use_english.toggle()
             config.useEnglish = settings_use_english.isChecked
@@ -123,6 +136,10 @@ class SettingsActivity : SimpleActivity() {
     private fun setupShowNotePicker() {
         NotesHelper(this).getNotes {
             settings_show_note_picker_holder.beVisibleIf(it.size > 1)
+
+            if (settings_show_note_picker_holder.isGone()) {
+                settings_show_keyboard_holder.background = resources.getDrawable(R.drawable.ripple_bottom_corners, theme)
+            }
         }
 
         settings_show_note_picker.isChecked = config.showNotePicker
@@ -181,7 +198,8 @@ class SettingsActivity : SimpleActivity() {
             val items = arrayListOf(
                 RadioItem(GRAVITY_LEFT, getString(R.string.left)),
                 RadioItem(GRAVITY_CENTER, getString(R.string.center)),
-                RadioItem(GRAVITY_RIGHT, getString(R.string.right)))
+                RadioItem(GRAVITY_RIGHT, getString(R.string.right))
+            )
 
             RadioGroupDialog(this@SettingsActivity, items, config.gravity) {
                 config.gravity = it as Int
@@ -191,11 +209,13 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun getGravityText() = getString(when (config.gravity) {
-        GRAVITY_LEFT -> R.string.left
-        GRAVITY_CENTER -> R.string.center
-        else -> R.string.right
-    })
+    private fun getGravityText() = getString(
+        when (config.gravity) {
+            GRAVITY_LEFT -> R.string.left
+            GRAVITY_CENTER -> R.string.center
+            else -> R.string.right
+        }
+    )
 
     private fun setupCursorPlacement() {
         settings_cursor_placement.isChecked = config.placeCursorToEnd
@@ -230,9 +250,8 @@ class SettingsActivity : SimpleActivity() {
             if (widgets.size == 1) {
                 widgetToCustomize = widgets.first()
             } else if (widgets.size > 1) {
-                arrayListOf(widgets_label, settings_customize_widget_colors_holder).forEach {
-                    it.beGone()
-                }
+                settings_customize_widget_colors_holder.beGone()
+                settings_customize_colors_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
             }
         }
     }
@@ -243,14 +262,6 @@ class SettingsActivity : SimpleActivity() {
         settings_use_incognito_mode_holder.setOnClickListener {
             settings_use_incognito_mode.toggle()
             config.useIncognitoMode = settings_use_incognito_mode.isChecked
-        }
-    }
-
-    private fun setupAddNewChecklistItemsTop() {
-        settings_add_checklist_top.isChecked = config.addNewChecklistItemsTop
-        settings_add_checklist_top_holder.setOnClickListener {
-            settings_add_checklist_top.toggle()
-            config.addNewChecklistItemsTop = settings_add_checklist_top.isChecked
         }
     }
 }

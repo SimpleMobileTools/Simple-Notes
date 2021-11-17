@@ -16,17 +16,20 @@ class DeleteNoteDialog(val activity: SimpleActivity, val note: Note, val callbac
         val view = activity.layoutInflater.inflate(R.layout.dialog_delete_note, null).apply {
             if (note.path.isNotEmpty()) {
                 delete_note_checkbox.text = String.format(activity.getString(R.string.delete_file_itself), note.path)
-                delete_note_checkbox.beVisible()
+                delete_note_checkbox_holder.beVisible()
+                delete_note_checkbox_holder.setOnClickListener {
+                    delete_note_checkbox.toggle()
+                }
             }
             delete_note_description.text = message
         }
 
         AlertDialog.Builder(activity)
-                .setPositiveButton(R.string.ok) { dialog, which -> dialogConfirmed(view.delete_note_checkbox.isChecked) }
-                .setNegativeButton(R.string.cancel, null)
-                .create().apply {
-                    activity.setupDialogStuff(view, this)
-                }
+            .setPositiveButton(R.string.ok) { dialog, which -> dialogConfirmed(view.delete_note_checkbox.isChecked) }
+            .setNegativeButton(R.string.cancel, null)
+            .create().apply {
+                activity.setupDialogStuff(view, this)
+            }
     }
 
     private fun dialogConfirmed(deleteFile: Boolean) {
