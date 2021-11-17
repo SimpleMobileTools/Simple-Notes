@@ -33,5 +33,4 @@
             android:src="@drawable/ic_plus_vector" />
 
     </LinearLayout>
-
 </ScrollView>

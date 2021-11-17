@@ -147,12 +147,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 }
             }
 
-            if (config?.addNewChecklistItemsTop == true) {
-                items.addAll(0, newItems)
-            } else {
-                items.addAll(newItems)
-            }
-
+            items.addAll(newItems)
             saveNote()
             setupAdapter()
         }
