@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">Une note avec le même titre existe déjà</string>
     <string name="open_note">Ouvrir la note</string>
     <string name="delete_note">Supprimer la note</string>
-    <string name="delete_note_prompt_message">Êtes-vous sûr de vouloir supprimer la note \"%s\"?</string>
+    <string name="delete_note_prompt_message">Supprimer la note «  %s » \?</string>
     <string name="pick_a_note">Choisir une note</string>
     <string name="rename_note">Renommer la note</string>
     <string name="general_note">Note générale</string>
@@ -24,23 +25,21 @@
     <string name="unlock_note">Déverrouiller la note</string>
     <string name="note_content_locked">Le contenu de la note est verrouillé.</string>
     <string name="show_content">Montrer le contenu</string>
-    <string name="locking_warning">ATTENTION : si vous oubliez le mot de passe, vous ne serez pas en mesure de la récupérer ou d\'y accéder.</string>
-
+    <string name="locking_warning">Avertissement : Si vous oubliez le mot de passe de la note, il ne pourra pas être récupéré et vous perdrez l\'accès à celle-ci</string>
     <!-- File notes -->
     <string name="open_file">Ouvrir le fichier</string>
     <string name="export_as_file">Exporter dans un fichier</string>
-    <string name="file_too_large">Taille du fichier trop importante, la limite est de 1MB</string>
+    <string name="file_too_large">Le fichier est plus grand que la limite de 1 Mo</string>
     <string name="only_import_file_content">Importer seulement le contenu du fichier\n(changer le fichier n\'affectera pas la note)</string>
     <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note\n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
-    <string name="delete_file_itself">Supprimer également le fichier \"%s\"</string>
-    <string name="note_saved_successfully">Note \"%s\" sauvegardée avec succès</string>
-    <string name="note_exported_successfully">Note \"%s\" exportée avec succès</string>
+    <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
+    <string name="note_saved_successfully">Sauvegarde de la note « %s »</string>
+    <string name="note_exported_successfully">La note « %s » a été exportée</string>
     <string name="only_export_file_content">Exporter seulement le contenu du fichier\n(changer le fichier n\'affectera pas la note)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
-    <string name="links_and_emails_clickable">Rendre les liens et les emails cliquables</string>
-    <string name="place_cursor_end">Placer le curseur à la fin de la note</string>
+    <string name="links_and_emails_clickable">Rendre les liens et les courriels cliquables</string>
+    <string name="place_cursor_end">Placez le curseur à la fin de la note</string>
     <string name="monospaced_font">Utiliser une police monospace</string>
     <string name="show_keyboard">Afficher le clavier au démarrage</string>
     <string name="show_word_count">Afficher le nombre de mots</string>
@@ -54,63 +53,35 @@
     <string name="autosave_notes">Sauvegarder automatiquement les notes</string>
     <string name="enable_line_wrap">Activer le retour à la ligne</string>
     <string name="use_incognito_mode">Utiliser le mode incognito du claviers</string>
-    <string name="move_done_checklist_items">Déplacer les éléments de cheklist inachevés en haut</string>
-    <string name="add_new_checklist_items_top">Ajouter un élément de checklist en haut</string>
-
+    <string name="move_done_checklist_items">Déplacer les éléments de liste de contrôle inachevés en-bas</string>
+    <string name="add_new_checklist_items_top">Ajouter un élément de liste de contrôle en-haut</string>
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklist">Liste de contrôle</string>
+    <string name="checklists">Listes de contrôle</string>
     <string name="add_new_checklist_item">Ajouter un nouvel élément</string>
     <string name="add_new_checklist_items">Ajouter de nouveaux éléments</string>
-    <string name="checklist_is_empty">La checklist est vide</string>
-    <string name="remove_done_items">Supprimer les items cochés</string>
-
+    <string name="checklist_is_empty">La liste de contrôle est vide</string>
+    <string name="remove_done_items">Supprimer les éléments cochés</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Exporter toutes les notes en tant que fichiers</string>
     <string name="import_notes">Importer plusieurs fichiers en tant que notes</string>
     <string name="import_folder">Importer depuis un dossier</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">Comment puis-je changer la couleur du widget ?</string>
-    <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widgets actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser</string>
-
+    <string name="faq_1_title">Comment puis-je changer la couleur du widget \?</string>
+    <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widgets actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro – Organisateur et planificateur de listes de tâches</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner : créez des notes, des sauvegardes et des to-do lists avec outil de rappel rapide</string>
-    <string name="app_long_description">
-        ★ Besoin de prendre en note quelque chose à acheter, une adresse, ou une idée d\'entreprise ? Alors n\'allez pas plus loin : voici l\'outil que vous cherchiez : Simple Notes : organiseur et plannificateur ! Aucune configuration compliquée n\'est nécessaire, écrivez simplement ce que vous voulez et créez des notes, des listes, checklists ou sauvegardes pour vos idées. Avec votre bloc-note personnel, vous pouvez vous souvenir de tout rapidement ! Votre liste de courses, vous souvenir de vos pensées ou configurer des rappels pour prendre des notes n\'a jamais été aussi simple ★
-
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
-
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
-
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
-
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
-
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
-
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-
-        Ne contient ni publicités, ni autorisations inutiles. Complètement opensource, fournit un thème sombre également.
-
-        <b>Découvrez la suite complète des applications Simple Mobile Tools ici :</b>
-        https://www.simplemobiletools.com
-
-        <b>Site web de Simple Notes Pro :</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook :</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit :</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
+    <string name="app_short_description">Planificateur simple – Créez des notes, des sauvegardes et des listes de tâches avec un outil de rappel rapide des notes</string>
+    <string name="app_long_description">Un organiseur facile d\'accès, sans fonctions sophistiquées, publicités ou autorisations inutiles.
+\nNotez rapidement une adresse, une idée ou une liste de courses en touchant l\'écran pour taper.
+\nC\'est un carnet de notes personnel qui mémorise vos notes et vos listes de contrôle en enregistrant automatiquement ce que vous saisissez.
+\nLa fonction de rappel vous aide à garder une trace de vos tâches, réunions et listes de choses à faire.
+\nMaterial design avec des couleurs personnalisables et un thème sombre par défaut.
+\nLogiciel libre copylefté, sous licence GPLv3+.
+\n<b>Découvrez Simple Notes Pro : </b> https://www.simplemobiletools.com/notes
+\nou <b>la suite complète de Simple Tools</b> sur https://www.simplemobiletools.com</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

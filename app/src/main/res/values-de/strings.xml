@@ -1,15 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Schlichte Notizen</string>
     <string name="app_launcher_name">Notizen</string>
     <string name="widget_config">Vielen Dank, dass du Simple Notes benutzt.\nWeitere einfache Apps findest du auf SimpleMobileTools.com.</string>
-    <string name="cannot_share_empty_text">Eine leere Notiz kann nicht geteilt werden.</string>
+    <string name="cannot_share_empty_text">Eine leere Notiz kann nicht geteilt werden</string>
     <string name="simple_note">Einfache Notiz</string>
     <string name="new_note">Neue Notiz hinzufügen</string>
     <string name="no_title">Bitte benenne deine Notiz</string>
     <string name="title_taken">Es existiert bereits eine Notiz mit diesem Namen</string>
     <string name="open_note">Notiz öffnen</string>
     <string name="delete_note">Notiz löschen</string>
-    <string name="delete_note_prompt_message">Bist du sicher, dass du die Notiz \"%s\" löschen willst?</string>
+    <string name="delete_note_prompt_message">Die Notiz „%s“ löschen\?</string>
     <string name="pick_a_note">Notiz auswählen</string>
     <string name="rename_note">Notiz umbenennen</string>
     <string name="general_note">Hauptnotiz</string>
@@ -17,30 +18,28 @@
     <string name="add_to_note">Zu Notiz hinzufügen</string>
     <string name="unsaved_changes_warning">Du hast ungespeicherte Notizen. Was soll mit ihnen geschehen?</string>
     <string name="note_shown_widget">Im Widget angezeigte Notiz:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">Titel der Notiz anzeigen</string>
     <string name="new_note_type">Neue Notizart:</string>
     <string name="text_note">Textnotiz</string>
     <string name="lock_note">Notiz sperren</string>
     <string name="unlock_note">Notiz entsperren</string>
-    <string name="note_content_locked">Der Inhalt der Notiz ist gesperrt</string>
+    <string name="note_content_locked">Der Inhalt der Notiz ist gesperrt.</string>
     <string name="show_content">Inhalt anzeigen</string>
-    <string name="locking_warning">WARNUNG: Wenn du das Passwort der Notiz vergisst, wirst du nicht mehr in der Lage sein diese wiederherzustellen oder den Notizinhalt zu erreichen.</string>
-
+    <string name="locking_warning">Achtung: Wenn Sie das Passwort für die Notiz vergessen, kann es nicht wiederhergestellt werden und Sie verlieren den Zugriff darauf</string>
     <!-- File notes -->
     <string name="open_file">Datei öffnen</string>
     <string name="export_as_file">Als Datei exportieren</string>
-    <string name="file_too_large">Die Datei ist zu groß. Die maximale Größe beträgt 1 MB.</string>
+    <string name="file_too_large">Die Datei ist größer als das Limit von 1 MB</string>
     <string name="only_import_file_content">Importiere nur den Dateiinhalt.\n(Änderungen an der Datei haben keine Auswirkungen auf die Notiz.)</string>
     <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
     <string name="delete_file_itself">Lösche Datei \"%s\"</string>
-    <string name="note_saved_successfully">Notiz \"%s\" erfolgreich gespeichert</string>
-    <string name="note_exported_successfully">Notiz \"%s\" erfolgreich exportiert</string>
+    <string name="note_saved_successfully">Speichern der Notiz „%s“</string>
+    <string name="note_exported_successfully">Exportiert die Notiz „%s“</string>
     <string name="only_export_file_content">Nur den aktuellen Dateiinhalt exportieren\n(Das Verändern der Notiz wird die Datei nicht beeinflussen)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
     <string name="links_and_emails_clickable">Links und E-Mail-Adressen anklickbar</string>
-    <string name="place_cursor_end">Platziere Cursor am Ende der Notiz</string>
+    <string name="place_cursor_end">Cursor am Ende der Notiz platzieren</string>
     <string name="monospaced_font">Benutze Monospace Schrift</string>
     <string name="show_keyboard">Zeige Tastatur beim Start</string>
     <string name="show_word_count">Zeige Wortanzahl</string>
@@ -55,60 +54,34 @@
     <string name="enable_line_wrap">Zeilenumbruch aktivieren</string>
     <string name="use_incognito_mode">Benutze den Inkognitomodus von Tastaturen</string>
     <string name="move_done_checklist_items">Verschiebe erledigte Checklisteneinträge nach unten</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
+    <string name="add_new_checklist_items_top">Neue Checklistenpunkte am Anfang hinzufügen</string>
     <!-- Checklists -->
     <string name="checklist">Checkliste</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">Checklisten</string>
     <string name="add_new_checklist_item">Einen neuen Checklisteneintrag hinzufügen</string>
     <string name="add_new_checklist_items">Neue Checklisteneinträge hinzufügen</string>
     <string name="checklist_is_empty">Die Checkliste ist leer</string>
     <string name="remove_done_items">Abgeschlossene Einträge entfernen</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Alle Notizen als Dateien exportieren</string>
     <string name="import_notes">Mehrere Dateien als Notizen importieren</string>
     <string name="import_folder">Ordner importieren</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">Wie kann ich die Farbe der Widgets ändern?</string>
+    <string name="faq_1_title">Wie kann ich die Farbe des Widgets ändern\?</string>
     <string name="faq_1_text">Wenn nur ein Widget aktiv ist, kann die Farbe über die Einstellungen unter dem Punkt Widgets angepasst werden, ansonsten muss es neu erstellt werden.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-Do Liste und Organizer</string>
+    <string name="app_title">Simple Notes Pro – Organizer und Planer für Aufgabenlisten</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Schlichte Notizen: Erstelle Notizen und To-Do Listen</string>
-    <string name="app_long_description">
-        ★ Müssen Sie kurz etwas zum Kaufen, eine Adresse oder eine Startup-Idee notieren? Dann suchen Sie nicht weiter, denn dies ist das einfache Organizer-Tool, nach dem Sie gesucht haben: Erstellen Sie einfach eine Notiz oder eine To-Do Liste. Keine komplizierten Einrichtungsschritte erforderlich. Tippen Sie einfach auf den Bildschirm und geben Sie ein, was Sie nicht vergessen wollen. Erstellen Sie Notizen, To-Do Listen oder Checklisten für jede Idee. Mit Ihrem einfachen persönlichen Notizbuch können Sie sich schnell an alles erinnern, es war noch nie so einfach ★
-
-        Schnell, einfach zu bedienen und ein bemerkenswerter Planer. Er dient als unschätzbares Werkzeug und Begleiter und hilft Ihnen, sich an die erforderlichen Informationen zu erinnern!
-
-        Mit unserem Erinnerungstool können Sie Ihre Aufgaben verfolgen, eine tägliche Checkliste für Artikel oder Ideen erstellen. Verwalten Sie Ihren Zeitplan schnell und einfach.
-
-        Unterstützt die automatische Speicherung, damit Ihre Änderungen nicht versehentlich verloren gehen. Es unterstützt auch das schnelle Erstellen mehrerer unabhängiger Klartextnotizen und Listen.
-
-        Mit dem anpassbaren Widget, mit dem die App sofort geöffnet wird, können Sie in kürzester Zeit problemlos auf die Notiz zugreifen und Ihre Aufgabenliste organisieren.
-
-        <b>Simple Notes Pro: To-Do Liste und Organizer</b> ist der beste Organizer und Planer ohne Werbung. Wenn Sie einen hochwertigen Organizer für schnelle Notizen benötigen, laden Sie jetzt unsere App herunter :) Halten Sie jeden Tag Ihr persönliches Notizbuch in der Tasche und machen Sie sich keine Sorgen mehr, ein wichtiges Meeting oder Ihre Einkaufsliste zu vergessen :).
-
-        Weiter unterstützt die App standardmässig das Materialdesign und Dark-Theme und bietet eine hervorragende Benutzererfahrung für eine einfache Verwendung. Keine Internetverbindung nötig, dadurch mehr Privatsphäre, Sicherheit und Stabilität als andere Apps.
-
-        Enthält keine Werbungen und benötigt keine unnötigen Berechtigungen. Vollständig OpenSource und bietet anpassbare Farben.
-
-        <b>Schau dir die vollständige Serie der schlichten Apps hier an:</b>
-        https://www.simplemobiletools.com
-
-        <b>Webseite von Simple Notes Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
+    <string name="app_short_description">Einfacher Planer – Erstellen Sie Notizen, Sicherungskopien und Aufgabenlisten mit einem Werkzeug zur schnellen Erinnerung an Notizen</string>
+    <string name="app_long_description">Ein leicht zugänglicher Organizer ohne ausgefallene Funktionen, Werbung oder überflüssige Berechtigungen.
+\nNotieren Sie sich schnell eine Adresse, eine Idee oder eine Einkaufsliste, indem Sie einfach auf den Bildschirm tippen und losschreiben.
+\nEs ist ein persönliches Notizbuch, das sich Ihre Notizen und Checklisten merkt, indem es automatisch speichert, was Sie eingeben.
+\nDie Erinnerungsfunktion hilft Ihnen, den Überblick über Ihre Aufgaben, Besprechungen und Aufgabenlisten zu behalten.
+\nMaterial Design mit anpassbaren Farben und einem dunklen Thema als Standard.
+\nFreie Software mit Copyleft, lizenziert GPLv3+.
+\n<b>Probieren Sie Simple Notes Pro aus:</b> https://www.simplemobiletools.com/notes
+\noder <b>die komplette Suite der Einfachen Werkzeuge</b> unter https://www.simplemobiletools.com</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
