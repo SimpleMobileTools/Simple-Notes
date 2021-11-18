@@ -10,7 +10,7 @@
     <string name="title_taken">笔记的标题已经存在</string>
     <string name="open_note">打开笔记</string>
     <string name="delete_note">删除笔记</string>
-    <string name="delete_note_prompt_message">删除这则笔记\"%s\"吗？</string>
+    <string name="delete_note_prompt_message">确定删除笔记\"%s\"吗？</string>
     <string name="pick_a_note">选择一个笔记</string>
     <string name="rename_note">重命名笔记</string>
     <string name="general_note">一般笔记</string>
@@ -25,7 +25,7 @@
     <string name="unlock_note">解锁笔记</string>
     <string name="note_content_locked">笔记的内容被锁定。</string>
     <string name="show_content">显示内容</string>
-    <string name="locking_warning">警告:如果您忘记了提示密码，它将无法恢复，您将失去访问它的权限</string>
+    <string name="locking_warning">警告：如果您忘记了笔记的密码，您将无法恢复或访问笔记的内容。</string>
     <!-- File notes -->
     <string name="open_file">打开文件</string>
     <string name="export_as_file">以文件的形式导出</string>
@@ -33,8 +33,8 @@
     <string name="only_import_file_content">只要导入文件的内容\n(改变文件不会影响笔记)</string>
     <string name="update_file_at_note">在更新笔记的时侯更新文件本身\n(注意，如果文件被删除或路径更改，将被删除)</string>
     <string name="delete_file_itself">同时删除文件 \"%s\"</string>
-    <string name="note_saved_successfully">已保存笔记 \"%s\"</string>
-    <string name="note_exported_successfully">已导出笔记 \"%s\"</string>
+    <string name="note_saved_successfully">已成功保存笔记 \"%s\"</string>
+    <string name="note_exported_successfully">已成功导出笔记 \"%s\"</string>
     <string name="only_export_file_content">只导出当前文件内容\n(更改笔记将不会影响文件)</string>
     <!-- Settings -->
     <string name="display_success_message">显示保存成功消息</string>
@@ -73,15 +73,8 @@
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">简易笔记 Pro：待办事项列表组织和计划工具</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">简易计划工具：创建笔记，备份 &amp; 待办清单及快速笔记提醒工具</string>
-    <string name="app_long_description">一个容易访问的组织工具，没有花哨的功能，广告或不必要的权限。
-\n快速记下一个地址，想法，或者购物清单，通过敲击屏幕来打字。
-\n它是一个个人笔记本，通过自动保存你输入的内容来记忆你的笔记和清单。
-\n提醒功能有助于跟踪你的职责、会议和待办事项列表。
-\n可定制颜色的 Material Design 风格,默认使用深色主题。
-\nCopylefted 自由软件，许可证 GPLv3+。
-\n<b> Simple Notes Pro：</b>https://www.simplemobiletools.com/notes
-\n或<b>全套 Simple Tools </b>https://www.simplemobiletools.com</string>
+    <string name="app_short_description">简易计划工具：创建笔记、备份 &amp; 带快速笔记提醒工具的待办清单</string>
+    <string name="app_long_description"> ★ 需要快速记录待买物品、地址或者新点子？那么不要错过这个必然符合您所需的便捷管理工具：简易笔记： 待办清单管理器和计划工具！ 无需复杂的设置步骤，仅需要点击屏幕并敲入您所要的笔记、清单、列表或者仅仅时备注一个好点子。使用这个属于您的简易个人记事本，您可以快速记录任何事情！日用品采购、想法记录和备忘提醒笔记从未有如此简单 ★ 简易笔记计划工具是一个快速且易用的组织和计划工具，它将成为您难以估价的工具和助手，帮助您记录任何必要的信息！ 我们的提醒工具允许您以前所未有的简单方式记录您所承担的义务及创建每日清单，带来显著和难以匹敌的时间节省价值，快速且便捷的管理您的计划表。 该笔记提醒工具包含自动保存功能，所以您不会因失误遗失修改。它也可以快速创建多个独立的纯文本和列表。 使用可自定义和缩放小控件，您可以快速访问笔记并管理您的待办清单，单击亦可打开主应用程序。 它用户友好且完全不包含不必要的权限，无附加条件。它完全开源，提供可自定义的颜色以供快速便捷的微调。 <b>简易笔记：待办清单管理器和计划工具</b> 是您可以无广告使用的最佳条目组织和清单计划工具。如果您需要一个高质量的组织工具来实现快速和良好的笔记尼禄，一个可靠的且用户友好的提醒，且真正的简便易用，请即刻下载我们的应用:) 在您的口袋中时刻保有个人笔记本，且包含备用的计划表，将使您再也不用担心忘记重要的会议或者您的购物清单 :)。 它遵循质感设计且默认应用黑暗模式，提供便于使用的极佳的用户体验。相对于其他应用，不包含互联网访问给予您更佳的隐私、保密性和稳定性。 不包含广告及非必要的权限，而且完全开放源代码，并提供自定义颜色。 <b>于此查看简易工具系列全套:</b> https://www.simplemobiletools.com <b>简易笔记 Pro 的独立网站:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
