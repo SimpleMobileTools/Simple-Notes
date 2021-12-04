@@ -10,7 +10,7 @@
     <string name="title_taken">Es existiert bereits eine Notiz mit diesem Namen</string>
     <string name="open_note">Notiz öffnen</string>
     <string name="delete_note">Notiz löschen</string>
-    <string name="delete_note_prompt_message">Die Notiz „%s“ löschen\?</string>
+    <string name="delete_note_prompt_message">Sind Sie sicher, dass Sie die Notiz „%s“ löschen wollen\?</string>
     <string name="pick_a_note">Notiz auswählen</string>
     <string name="rename_note">Notiz umbenennen</string>
     <string name="general_note">Hauptnotiz</string>
@@ -23,23 +23,23 @@
     <string name="text_note">Textnotiz</string>
     <string name="lock_note">Notiz sperren</string>
     <string name="unlock_note">Notiz entsperren</string>
-    <string name="note_content_locked">Der Inhalt der Notiz ist gesperrt.</string>
+    <string name="note_content_locked">Der Inhalt der Notizen ist gesperrt.</string>
     <string name="show_content">Inhalt anzeigen</string>
-    <string name="locking_warning">Achtung: Wenn Sie das Passwort für die Notiz vergessen, kann es nicht wiederhergestellt werden und Sie verlieren den Zugriff darauf</string>
+    <string name="locking_warning">ACHTUNG: Wenn Sie das Kennwort für die Notizen vergessen, können Sie es nicht mehr wiederherstellen oder auf den Inhalt der Notizen zugreifen.</string>
     <!-- File notes -->
     <string name="open_file">Datei öffnen</string>
     <string name="export_as_file">Als Datei exportieren</string>
-    <string name="file_too_large">Die Datei ist größer als das Limit von 1 MB</string>
+    <string name="file_too_large">Die Datei ist zu groß, die Grenze liegt bei 1 MB</string>
     <string name="only_import_file_content">Importiere nur den Dateiinhalt.\n(Änderungen an der Datei haben keine Auswirkungen auf die Notiz.)</string>
     <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
     <string name="delete_file_itself">Lösche Datei \"%s\"</string>
-    <string name="note_saved_successfully">Speichern der Notiz „%s“</string>
-    <string name="note_exported_successfully">Exportiert die Notiz „%s“</string>
+    <string name="note_saved_successfully">Hinweis „%s“ erfolgreich gespeichert</string>
+    <string name="note_exported_successfully">Die Notiz „%s“ wurde erfolgreich exportiert</string>
     <string name="only_export_file_content">Nur den aktuellen Dateiinhalt exportieren\n(Das Verändern der Notiz wird die Datei nicht beeinflussen)</string>
     <!-- Settings -->
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
     <string name="links_and_emails_clickable">Links und E-Mail-Adressen anklickbar</string>
-    <string name="place_cursor_end">Cursor am Ende der Notiz platzieren</string>
+    <string name="place_cursor_end">Cursor an das Ende der Notiz setzen</string>
     <string name="monospaced_font">Benutze Monospace Schrift</string>
     <string name="show_keyboard">Zeige Tastatur beim Start</string>
     <string name="show_word_count">Zeige Wortanzahl</string>
@@ -67,21 +67,14 @@
     <string name="import_notes">Mehrere Dateien als Notizen importieren</string>
     <string name="import_folder">Ordner importieren</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Wie kann ich die Farbe des Widgets ändern\?</string>
+    <string name="faq_1_title">Wie kann ich die Farbe der Widgets ändern\?</string>
     <string name="faq_1_text">Wenn nur ein Widget aktiv ist, kann die Farbe über die Einstellungen unter dem Punkt Widgets angepasst werden, ansonsten muss es neu erstellt werden.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro – Organizer und Planer für Aufgabenlisten</string>
+    <string name="app_title">Simple Notes Pro: Organizer und Planer für Aufgabenlisten</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Einfacher Planer – Erstellen Sie Notizen, Sicherungskopien und Aufgabenlisten mit einem Werkzeug zur schnellen Erinnerung an Notizen</string>
-    <string name="app_long_description">Ein leicht zugänglicher Organizer ohne ausgefallene Funktionen, Werbung oder überflüssige Berechtigungen.
-\nNotieren Sie sich schnell eine Adresse, eine Idee oder eine Einkaufsliste, indem Sie einfach auf den Bildschirm tippen und losschreiben.
-\nEs ist ein persönliches Notizbuch, das sich Ihre Notizen und Checklisten merkt, indem es automatisch speichert, was Sie eingeben.
-\nDie Erinnerungsfunktion hilft Ihnen, den Überblick über Ihre Aufgaben, Besprechungen und Aufgabenlisten zu behalten.
-\nMaterial Design mit anpassbaren Farben und einem dunklen Thema als Standard.
-\nFreie Software mit Copyleft, lizenziert GPLv3+.
-\n<b>Probieren Sie Simple Notes Pro aus:</b> https://www.simplemobiletools.com/notes
-\noder <b>die komplette Suite der Einfachen Werkzeuge</b> unter https://www.simplemobiletools.com</string>
+    <string name="app_short_description">Schlichter Planer: Erstellen Sie Notizen, Sicherungskopien und Aufgabenlisten mit dem Schnellnotiz-Erinnerungswerkzeug</string>
+    <string name="app_long_description"> ★ Musst du dir schnell etwas zum Kaufen, eine Adresse oder eine Geschäftsidee notieren\? Dann suchen Sie nicht weiter, denn dies ist das einfache Organizer-Werkzeug, nach dem Sie schon lange gesucht haben: Simple Notes: Organizer und Planer für Aufgabelisten! Es sind keine komplizierten Einrichtungsschritte erforderlich, tippen Sie einfach auf den Bildschirm und geben Sie ein, was Sie suchen, und erstellen Sie Notizen, kurze Listen, Checklisten oder Backups für jede Idee. Mit Ihrem einfachen persönlichen Notizbuch können Sie sich alles schnell merken! Noch nie war es so einfach, sich Notizen zu machen, Lebensmittel einzukaufen, sich Gedanken zu merken und Erinnerungen zu erstellen ★ Der Simple Notes Planner ist ein schneller, einfach zu bedienender Organizer und bemerkenswerter Planer, der Ihnen als unschätzbares Werkzeug und Begleiter dienen wird und Ihnen hilft, sich an wichtige Informationen zu erinnern! Unser Erinnerungswerkzeug ermöglicht es Ihnen, Ihre Aufgaben im Auge zu behalten, tägliche Checklisten für Dinge oder Ideen mit beispielloser Einfachheit, Notierbarkeit und unübertroffenem zeitsparendem Wert zu erstellen. Verwalten Sie Ihren Terminkalender auf schnelle und einfache Weise. Dieses Notizbuch-Erinnerungswerkzeug verfügt über eine automatische Speicherung, damit Sie Ihre Änderungen nicht versehentlich verwerfen. Es unterstützt auch die schnelle Erstellung mehrerer unabhängiger Textnotizen und Listen. Mit dem anpassbaren und größenveränderbaren Widget, das die Anwendung auf Knopfdruck öffnet, können Sie im Handumdrehen auf die Notizen zugreifen und Ihre Aufgabenliste organisieren. Die Anwendung ist benutzerfreundlich und enthält keinerlei Werbung oder unnötige Berechtigungen – keine Bedingungen. Es ist vollständig quelloffen und bietet anpassbare Farben, die schnell und einfach eingestellt werden können. <b>Simple Notes: To-do list organizer and planner </b> ist der beste Organizer und Listenplaner, den Sie ohne Werbung verwenden können. Wenn Sie einen hochwertigen Organizer für schnelle und gute Notizen brauchen, eine zuverlässige und benutzerfreundliche Erinnerung, die wirklich einfach zu bedienen ist, laden Sie unsere Anwendung jetzt herunter :) Haben Sie Ihr persönliches Notizbuch jeden Tag in der Tasche und haben Sie einen Backup-Planer, damit Sie sich keine Sorgen machen müssen, dass Sie ein wichtiges Meeting oder Ihre Einkaufsliste vergessen :). Die Anwendung ist standardmäßig im Material Design und mit einem dunklen Thema ausgestattet, was die Bedienung sehr einfach macht. Der fehlende Internetzugang bietet Ihnen mehr Privatsphäre, Sicherheit und Stabilität als andere Anwendungen. Enthält keine Werbung oder unnötige Berechtigungen. Es ist vollständig quelloffen, bietet anpassbare Farben. <b>Sehen Sie sich die vollständige Suite von Simple Tools hier an:</b> https://www.simplemobiletools.com <b>Website von Simple Notes Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
