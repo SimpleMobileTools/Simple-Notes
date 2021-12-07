@@ -10,7 +10,7 @@
     <string name="title_taken">Una nota con lo stesso titolo è già esistente</string>
     <string name="open_note">Apri nota</string>
     <string name="delete_note">Elimina nota</string>
-    <string name="delete_note_prompt_message">Eliminare la nota «%s»\?</string>
+    <string name="delete_note_prompt_message">Sei sicuro/a di voler eliminare la nota «%s»\?</string>
     <string name="pick_a_note">Scegli una nota</string>
     <string name="rename_note">Rinomina una nota</string>
     <string name="general_note">Nota generale</string>
@@ -23,18 +23,18 @@
     <string name="text_note">Nota di testo</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Sblocca la nota</string>
-    <string name="note_content_locked">Il contenuto della nota è bloccato.</string>
+    <string name="note_content_locked">Il contenuto delle note è bloccato.</string>
     <string name="show_content">Mostra il contenuto</string>
-    <string name="locking_warning">Attenzione: Se si dimentica la password della nota, non può essere recuperata e si perde l\'accesso ad essa</string>
+    <string name="locking_warning">ATTENZIONE: Se dimentichi la password delle note, non sarai più in grado di recuperarla o di accedere al contenuto delle note.</string>
     <!-- File notes -->
     <string name="open_file">Apri file</string>
     <string name="export_as_file">Esporta come file</string>
-    <string name="file_too_large">Il file è più grande del limite di 1 MB</string>
+    <string name="file_too_large">File troppo grande, il limite è 1 MB</string>
     <string name="only_import_file_content">Importa solo il contenuto del file\n(modificare il file non influenzerà la nota)</string>
     <string name="update_file_at_note">Aggiorna il file quando si aggiorna una nota\n(la nota viene eliminata se il file viene eliminato, oppure cambia il percorso)</string>
     <string name="delete_file_itself">Elimina anche il file \"%s\"</string>
-    <string name="note_saved_successfully">La nota %s è stata salvata</string>
-    <string name="note_exported_successfully">La nota «%s» è stata esportata</string>
+    <string name="note_saved_successfully">Nota «%s» salvata con successo</string>
+    <string name="note_exported_successfully">Nota «%s» esportato con successo</string>
     <string name="only_export_file_content">Esporta solamente il contenuto attuale del file\n(modificando la nota non influenzerà il file)</string>
     <!-- Settings -->
     <string name="display_success_message">Mostra i messaggi di salvataggio riusciti</string>
@@ -67,21 +67,14 @@
     <string name="import_notes">Importa file multipli come note</string>
     <string name="import_folder">Importa cartella</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Come posso cambiare il colore del widget\?</string>
+    <string name="faq_1_title">Come posso cambiare il colore dei widget\?</string>
     <string name="faq_1_text">Se hai un solo widget attivo, puoi ricrearlo oppure usare il pulsante nelle impostazioni dell\'app per personalizzaro. Se hai più di un widget, il pulsante nelle impostazioni dell\'app non sarà disponibile. Dato che l\'app supporta la personalizzazione dei colori per ogni widget, dovrai ricreare il widget che vuoi personalizzare.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro – Organizzatore e pianificatore di liste di cose da fare</string>
+    <string name="app_title">Simple Notes Pro: Organizzatore e pianificatore di liste di cose da fare</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Pianificatore semplice – Crea note, backup e liste di cose da fare con uno strumento di richiamo rapido delle note</string>
-    <string name="app_long_description">Un organizzatore facilmente accessibile senza caratteristiche fantasiose, pubblicità o permessi non necessari.
-\nAnnota un indirizzo, un\'idea o una lista della spesa rapidamente toccando lo schermo per digitare.
-\nÈ un quaderno personale che memorizza le tue note e liste di controllo salvando automaticamente ciò che inserisci.
-\nLa funzione di promemoria aiuta a tenere traccia dei tuoi doveri, riunioni e liste di cose da fare.
-\nMaterial design con colori personalizzabili e un tema scuro di default.
-\nSoftware libero con copyleft, licenza GPLv3+.
-\n<b>Controlla Simple Notes Pro:</b> https://www.simplemobiletools.com/notes
-\no <b>la suite completa di Simple Tools</b> su https://www.simplemobiletools.com</string>
+    <string name="app_short_description">Pianificatore semplice: Crea note, backup e liste di cose da fare con lo strumento di promemoria delle note rapide</string>
+    <string name="app_long_description"> Hai bisogno di prendere una nota veloce di qualcosa da comprare, un indirizzo o un\'idea di azienda\? Allora non cercate oltre, perché questo è lo strumento semplice organizzatore che stavate cercando: Note semplici: lista di cose da fare e pianificatore! Non c\'è bisogno di complicati passaggi di configurazione, basta toccare lo schermo e digitare ciò che è venuto per e creare note, liste veloci, lista di controllo o di backup per qualsiasi idea. Con il tuo semplice taccuino personale puoi ricordare qualsiasi cosa velocemente! Fare la spesa, memorizzare i tuoi pensieri e impostare più facilmente i promemoria prendendo appunti non è mai stato così facile ★ Simple notes planner è veloce, semplice da usare organizzatore e pianificatore notevole e servirà come uno strumento prezioso e compagno, aiutandoti a ricordare pezzo necessario di informazioni! Il nostro strumento di promemoria ti permette di tenere traccia dei tuoi doveri, creare una lista di controllo giornaliera per oggetti o idee con una semplicità senza precedenti, notabilità e un impareggiabile valore di risparmio di tempo. Gestite il vostro programma in modo semplice e veloce. Questo strumento di promemoria per notebook è dotato di salvataggio automatico in modo da non scartare le modifiche per errore. Supporta anche la creazione di più note di testo indipendenti e liste molto velocemente. È possibile accedere facilmente alla nota e organizzare la vostra lista di cose da fare in poco tempo utilizzando il widget personalizzabile e ridimensionabile, che apre l\'applicazione al tocco. È facile da usare e non contiene assolutamente pubblicità o permessi inutili — nessun vincolo. È completamente opensource, fornisce colori personalizzabili che possono essere regolati con un\'impostazione rapida e veloce. <b>Simple Notes: To-do list organizer e planner </b> è il miglior organizzatore di articoli e pianificatore di liste che puoi usare senza pubblicità. Se hai bisogno di un organizzatore di alta qualità per una rapida e buona nota, un promemoria affidabile e facile da usare che è veramente semplice da usare, scarica subito la nostra app :) Avere il proprio taccuino personale in tasca ogni giorno e avere un pianificatore di backup in modo da non doversi preoccupare di dimenticare una riunione importante o la lista della spesa :). Viene fornito con material design e tema scuro per impostazione predefinita, fornisce una grande esperienza utente per un facile utilizzo. La mancanza di accesso a internet ti dà più riservatezza, sicurezza e stabilità rispetto ad altre applicazioni. Non contiene annunci o permessi inutili. Codice completamente aperto, fornisce colori personalizzabili. <b>Controlla la suite completa di Simple Tools qui:</b> https://www.simplemobiletools.com <b> Sito web standalone di Simple Notes Pro:</b> https://www.simplemobiletools.com/notes <b> Facebook:</b> https://www.facebook.com/simplemobiletools <b> Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
