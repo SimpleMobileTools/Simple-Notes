@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_launcher_name">Märkmik</string>
+    <string name="cannot_share_empty_text">Tühja sisu ei saa jagada</string>
+    <string name="simple_note">Lihtne märge</string>
+    <string name="new_note">Lisa uus märge</string>
+    <string name="title_taken">Sellise nimega märge on juba olemas</string>
+    <string name="open_note">Ava märge</string>
+    <string name="delete_note">Kustuta märge</string>
+    <string name="open_file">Ava fail</string>
+    <string name="app_name">Lihtne märkmik</string>
+    <string name="delete_note_prompt_message">Kas sa oled kindel, et soovid kustutada „%s“ märget\?</string>
+    <string name="widget_config">Täname et kasutad Lihtsat märkmikku.
+\nTeise rakendusi meie Lihtsate tarvikute seeriast leiad SimpleMobileTools.com saidist.</string>
+    <string name="no_title">Palun pane oma märkele nimi</string>
+</resources>
