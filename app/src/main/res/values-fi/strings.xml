@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Muistikirja</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">Tämän niminen muistiinpano on jo olemassa</string>
     <string name="open_note">Avaa muistiinpano</string>
     <string name="delete_note">Poista muistiinpano</string>
-    <string name="delete_note_prompt_message">Haluatko varmasti poistaa muistiinpanon \"%s\"?</string>
+    <string name="delete_note_prompt_message">Haluatko varmasti poistaa muistiinpanon \"%s\"\?</string>
     <string name="pick_a_note">Valitse muistiinpano</string>
     <string name="rename_note">Nimeä muistiinpano uudelleen</string>
     <string name="general_note">Yleinen muistiinpano</string>
@@ -17,15 +18,14 @@
     <string name="add_to_note">Lisää muistiinpanoon</string>
     <string name="unsaved_changes_warning">Sinulla on joitain tallentamattomia muutoksia. Miten haluat toimia?</string>
     <string name="note_shown_widget">Pienoissovelluksessa näkyvä muistiinpano:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">Näytä muistiinpanon otsikko</string>
     <string name="new_note_type">Uusi muistiinpanotyyppi:</string>
     <string name="text_note">Tekstimuistiinpano</string>
     <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-
+    <string name="unlock_note">Avaa muistiinpanon lukitus</string>
+    <string name="note_content_locked">Muistiinpanon sisältö on lukittu.</string>
+    <string name="show_content">Näytä sisältö</string>
+    <string name="locking_warning">VAROITUS: Jos unohdat muistiinpanon salasanan, sitä ei ole mahdollista palauttaa etkä pääse enää käsiksi muistiinpanoon.</string>
     <!-- File notes -->
     <string name="open_file">Avaa tiedosto</string>
     <string name="export_as_file">Vie tiedostona</string>
@@ -36,7 +36,6 @@
     <string name="note_saved_successfully">Muistiinpano \"%s\" tallennettu onnistuneesti</string>
     <string name="note_exported_successfully">Muistiinpano \"%s\" vietiin onnistuneesti</string>
     <string name="only_export_file_content">Vie vain nykyinen tiedostosisältö\n (muistiinpanon muuttaminen ei vaikuta tiedostoon)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Näytä tallennus onnistunut viestit</string>
     <string name="links_and_emails_clickable">Tee linkit ja sähköpostit klikattavaksi</string>
@@ -55,28 +54,24 @@
     <string name="enable_line_wrap">Ota käyttöön automaattinen rivitys</string>
     <string name="use_incognito_mode">Käytä näppäimistöjen Incognito-tilaa</string>
     <string name="move_done_checklist_items">Siirrä tekemättömät kohdat muistilistasta ylimmäksi</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
+    <string name="add_new_checklist_items_top">Lisää uusia merkattavia tehtäviä alkuun</string>
     <!-- Checklists -->
     <string name="checklist">Muistilista</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">Merkattavat listat</string>
     <string name="add_new_checklist_item">Lisää uusi kohta muistilistaan</string>
     <string name="add_new_checklist_items">Lisää uusia kohtia muistilistaan</string>
     <string name="checklist_is_empty">Muistilista on tyhjä</string>
     <string name="remove_done_items">Poista tehdyt kohdat</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Vie kaikki muistiinpanot tiedostoina</string>
     <string name="import_notes">Tuo useita tiedostoja muistiinpanoina</string>
     <string name="import_folder">Tuo kansio</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">Kuinka voin vaihtaa pienoissovelluksen väriä?</string>
+    <string name="faq_1_title">Kuinka voin vaihtaa pienoissovelluksen väriä\?</string>
     <string name="faq_1_text">Jos sinulla on vain yksi aktiivinen pienoissovellus, voit joko luoda sen uudelleen tai mukauttaa sitä sovelluksen asetukset-painikkeella. Jos sinulla on useita aktiivisia pienoissovelluksia, sovelluksessa oleva asetukset-painike ei ole käytettävissä. Koska sovellus tukee värien mukauttamista pienoissovellusta kohti, sinun on luotava uudelleen pienoissovellus, jonka haluat muokata.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro: Tehtävälistan organisointi</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
     <string name="app_long_description">
@@ -110,7 +105,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

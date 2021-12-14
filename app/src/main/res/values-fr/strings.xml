@@ -10,7 +10,7 @@
     <string name="title_taken">Une note avec le même titre existe déjà</string>
     <string name="open_note">Ouvrir la note</string>
     <string name="delete_note">Supprimer la note</string>
-    <string name="delete_note_prompt_message">Supprimer la note «  %s » \?</string>
+    <string name="delete_note_prompt_message">Voulez-vous vraiment supprimer la note « %s » \?</string>
     <string name="pick_a_note">Choisir une note</string>
     <string name="rename_note">Renommer la note</string>
     <string name="general_note">Note générale</string>
@@ -23,18 +23,18 @@
     <string name="text_note">Texte</string>
     <string name="lock_note">Verrouiller la note</string>
     <string name="unlock_note">Déverrouiller la note</string>
-    <string name="note_content_locked">Le contenu de la note est verrouillé.</string>
+    <string name="note_content_locked">Le contenu des notes est verrouillé.</string>
     <string name="show_content">Montrer le contenu</string>
-    <string name="locking_warning">Avertissement : Si vous oubliez le mot de passe de la note, il ne pourra pas être récupéré et vous perdrez l\'accès à celle-ci</string>
+    <string name="locking_warning">AVERTISSEMENT : Si vous oubliez le mot de passe des notes, vous ne pourrez plus le récupérer ni accéder au contenu des notes.</string>
     <!-- File notes -->
     <string name="open_file">Ouvrir le fichier</string>
     <string name="export_as_file">Exporter dans un fichier</string>
-    <string name="file_too_large">Le fichier est plus grand que la limite de 1 Mo</string>
+    <string name="file_too_large">Fichier trop volumineux, la limite est de 1 Mo</string>
     <string name="only_import_file_content">Importer seulement le contenu du fichier\n(changer le fichier n\'affectera pas la note)</string>
     <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note\n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
     <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
-    <string name="note_saved_successfully">Sauvegarde de la note « %s »</string>
-    <string name="note_exported_successfully">La note « %s » a été exportée</string>
+    <string name="note_saved_successfully">La note « %s » a été sauvegardée avec succès</string>
+    <string name="note_exported_successfully">La note « %s » a été exportée avec succès</string>
     <string name="only_export_file_content">Exporter seulement le contenu du fichier\n(changer le fichier n\'affectera pas la note)</string>
     <!-- Settings -->
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
@@ -67,21 +67,14 @@
     <string name="import_notes">Importer plusieurs fichiers en tant que notes</string>
     <string name="import_folder">Importer depuis un dossier</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Comment puis-je changer la couleur du widget \?</string>
+    <string name="faq_1_title">Comment puis-je changer la couleur des widgets \?</string>
     <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widgets actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro – Organisateur et planificateur de listes de tâches</string>
+    <string name="app_title">Simple Notes Pro : Organisateur et planificateur de listes de tâches</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Planificateur simple – Créez des notes, des sauvegardes et des listes de tâches avec un outil de rappel rapide des notes</string>
-    <string name="app_long_description">Un organiseur facile d\'accès, sans fonctions sophistiquées, publicités ou autorisations inutiles.
-\nNotez rapidement une adresse, une idée ou une liste de courses en touchant l\'écran pour taper.
-\nC\'est un carnet de notes personnel qui mémorise vos notes et vos listes de contrôle en enregistrant automatiquement ce que vous saisissez.
-\nLa fonction de rappel vous aide à garder une trace de vos tâches, réunions et listes de choses à faire.
-\nMaterial design avec des couleurs personnalisables et un thème sombre par défaut.
-\nLogiciel libre copylefté, sous licence GPLv3+.
-\n<b>Découvrez Simple Notes Pro : </b> https://www.simplemobiletools.com/notes
-\nou <b>la suite complète de Simple Tools</b> sur https://www.simplemobiletools.com</string>
+    <string name="app_short_description">Planificateur simple : Créez des notes, des sauvegardes et des listes de choses à faire avec l\'outil de rappel rapide des notes</string>
+    <string name="app_long_description"> ★ Vous avez besoin de prendre rapidement en note un objet à acheter, une adresse ou une idée d\'entreprise \? Alors ne cherchez plus car voici l\'outil d\'organisation simple que vous recherchiez : Simple Notes : Organisateur de liste de tâches et planificateur ! Aucune étape de configuration compliquée n\'est nécessaire, il suffit d\'appuyer sur l\'écran et de taper ce que vous êtes venu chercher et de créer des notes, des listes rapides, une liste de contrôle ou de sauvegarde pour toute idée. Avec votre simple carnet personnel, vous pouvez vous souvenir de tout rapidement ! Faire les courses, mémoriser vos pensées et plus facilement mettre en place des rappels prendre des notes n\'a jamais été aussi facile ★ Simple notes planner est rapide, simple à utiliser organisateur et remarquable planificateur et il servira comme un outil précieux et compagnon, vous aidant à se souvenir de la pièce nécessaire de l\'information ! Notre outil de rappel vous permet de garder une trace de vos tâches,créer une liste de contrôle quotidienne pour les éléments ou les idées avec une simplicité sans précédent, notabilité et une valeur inégalée de gain de temps. Gérez votre emploi du temps de manière simple et rapide. Cet outil de rappel de bloc-notes est doté d\'une fonction d\'enregistrement automatique afin que vous ne supprimiez pas vos modifications par erreur. Il permet également de créer très rapidement plusieurs notes et listes indépendantes en texte brut. Vous pouvez facilement accéder à la note et organiser votre liste de choses à faire en un rien de temps en utilisant le widget personnalisable et redimensionnable, qui ouvre l\'application sur simple pression. L\'application est conviviale et ne contient absolument aucune publicité ou autorisation inutile. Il est entièrement open source, fournit des couleurs personnalisables qui peuvent être ajustées avec des réglages rapides et rapides. <b>Simple Notes : Organiseur et planificateur de listes de tâches </b> est le meilleur organisateur d\'articles et planificateur de liste que vous pouvez utiliser sans publicité. Si vous avez besoin d\'un organisateur de haute qualité pour une note rapide et bonne, un rappel fiable et convivial qui est vraiment simple à utiliser, téléchargez notre application dès maintenant :) Ayez votre carnet personnel dans votre poche tous les jours et ayez un planificateur de secours pour ne pas avoir à vous inquiéter d\'oublier une réunion importante ou votre liste de courses :). Il est livré avec un design matériel et un thème sombre par défaut, offrant une grande expérience utilisateur pour une utilisation facile. L\'absence d\'accès à Internet vous donne plus de confidentialité, de sécurité et de stabilité que les autres applications. Ne contient pas de publicités ou de permissions inutiles. Il est entièrement opensource, fournit des couleurs personnalisables. <b>Découvrez la suite complète de Simple Tools ici :</b> https://www.simplemobiletools.com <b>Site Web autonome de Simple Notes Pro :</b> https://www.simplemobiletools.com/notes <b>Facebook :</b> https://www.facebook.com/simplemobiletools <b>Reddit :</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
