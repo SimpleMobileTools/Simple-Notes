@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_launcher_name">Notoj</string>
+    <string name="app_name">Simplaj Notoj</string>
+    <string name="open_note">Malfermi noton</string>
+    <string name="delete_note_prompt_message">Ĉu vi certe volas forviŝi la noton «%s»\?</string>
+    <string name="general_note">Ĝenerala noto</string>
+    <string name="rename_note">Ŝanĝi la nomon de noto</string>
+    <string name="unlock_note">Malŝlosi noton</string>
+    <string name="open_file">Malfermi dosieron</string>
+    <string name="delete_note">Forviŝi noton</string>
+    <string name="lock_note">Ŝlosi noton</string>
+    <string name="text_note">Teksta noto</string>
+</resources>
