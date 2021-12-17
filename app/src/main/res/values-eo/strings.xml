@@ -11,4 +11,16 @@
     <string name="delete_note">Forviŝi noton</string>
     <string name="lock_note">Ŝlosi noton</string>
     <string name="text_note">Teksta noto</string>
+    <string name="show_note_title">Montri titolo de noto</string>
+    <string name="simple_note">Simpla noto</string>
+    <string name="new_note">Krei novan noton</string>
+    <string name="pick_a_note">Elekti noton</string>
+    <string name="create_new_note">Krei novan noton</string>
+    <string name="new_note_type">Speco de nova noto:</string>
+    <string name="show_content">Montri enhavon</string>
+    <string name="left">Maldekstro</string>
+    <string name="center">Centro</string>
+    <string name="show_word_count">Montri nombron de vortoj</string>
+    <string name="show_character_count">Montri nombron de skribsignoj</string>
+    <string name="right">Dekstro</string>
 </resources>
