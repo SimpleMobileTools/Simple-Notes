@@ -56,8 +56,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:6cc19172f0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:7e0240b1e3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'androidx.documentfile:documentfile:1.0.1'
 
     kapt 'androidx.room:room-compiler:2.3.0'

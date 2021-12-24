@@ -21,19 +21,19 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val current
         view.note_title.setText(note.title)
 
         AlertDialog.Builder(activity)
-                .setPositiveButton(R.string.ok, null)
-                .setNegativeButton(R.string.cancel, null)
-                .create().apply {
-                    activity.setupDialogStuff(view, this, R.string.rename_note) {
-                        showKeyboard(view.note_title)
-                        getButton(BUTTON_POSITIVE).setOnClickListener {
-                            val title = view.note_title.value
-                            ensureBackgroundThread {
-                                newTitleConfirmed(title, this)
-                            }
+            .setPositiveButton(R.string.ok, null)
+            .setNegativeButton(R.string.cancel, null)
+            .create().apply {
+                activity.setupDialogStuff(view, this, R.string.rename_note) {
+                    showKeyboard(view.note_title)
+                    getButton(BUTTON_POSITIVE).setOnClickListener {
+                        val title = view.note_title.value
+                        ensureBackgroundThread {
+                            newTitleConfirmed(title, this)
                         }
                     }
                 }
+            }
     }
 
     private fun newTitleConfirmed(title: String, dialog: AlertDialog) {
@@ -66,8 +66,8 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val current
                         return
                     }
 
-                    activity.renameFile(file.absolutePath, newFile.absolutePath) {
-                        if (it) {
+                    activity.renameFile(file.absolutePath, newFile.absolutePath, false) { success, useAndroid30Way ->
+                        if (success) {
                             note.path = newFile.absolutePath
                             NotesHelper(activity).insertOrUpdateNote(note) {
                                 dialog.dismiss()

@@ -30,9 +30,11 @@ import com.simplemobiletools.notes.pro.models.ChecklistItem
 import kotlinx.android.synthetic.main.item_checklist.view.*
 import java.util.*
 
-class ChecklistAdapter(activity: BaseSimpleActivity, var items: ArrayList<ChecklistItem>, val listener: ChecklistItemsListener?,
-                       recyclerView: MyRecyclerView, val showIcons: Boolean, itemClick: (Any) -> Unit) :
-        MyRecyclerViewAdapter(activity, recyclerView, null, itemClick), ItemTouchHelperContract {
+class ChecklistAdapter(
+    activity: BaseSimpleActivity, var items: ArrayList<ChecklistItem>, val listener: ChecklistItemsListener?,
+    recyclerView: MyRecyclerView, val showIcons: Boolean, itemClick: (Any) -> Unit
+) :
+    MyRecyclerViewAdapter(activity, recyclerView, itemClick), ItemTouchHelperContract {
 
     private lateinit var crossDrawable: Drawable
     private lateinit var checkDrawable: Drawable
