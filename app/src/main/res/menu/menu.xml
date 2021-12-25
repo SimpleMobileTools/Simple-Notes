@@ -38,9 +38,8 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/remove_done_items"
-        android:icon="@drawable/ic_delete_vector"
         android:title="@string/remove_done_items"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
     <item
         android:id="@+id/sort_checklist"
         android:icon="@drawable/ic_sort_vector"
