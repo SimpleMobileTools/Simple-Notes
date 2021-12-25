@@ -47,8 +47,6 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
 
     fun getFragment(position: Int) = fragments[position]
 
-    fun isChecklistFragment(position: Int): Boolean = (fragments[position] is ChecklistFragment)
-
     fun textFragment(position: Int): TextFragment? = (fragments[position] as? TextFragment)
 
     fun getCurrentNotesView(position: Int) = (fragments[position] as? TextFragment)?.getNotesView()
