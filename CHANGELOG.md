@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.10.1 *(2021-12-25)*
+----------------------------
+
+ * Do not show the "Remove done items" checklist menu button as an icon
+ * Added many translation improvements
+
 Version 6.10.0 *(2021-11-18)*
 ----------------------------
 

@@ -1,0 +1,2 @@
+ * Do not show the "Remove done items" checklist menu button as an icon
+ * Added many translation improvements
