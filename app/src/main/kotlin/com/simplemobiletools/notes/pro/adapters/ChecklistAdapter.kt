@@ -151,6 +151,7 @@ class ChecklistAdapter(
     }
 
     private fun moveSelectedItemsToTop() {
+        activity.config.sorting = SORT_BY_CUSTOM
         selectedKeys.reversed().forEach { checklistId ->
             val position = items.indexOfFirst { it.id == checklistId }
             val tempItem = items[position]
@@ -163,6 +164,7 @@ class ChecklistAdapter(
     }
 
     private fun moveSelectedItemsToBottom() {
+        activity.config.sorting = SORT_BY_CUSTOM
         selectedKeys.forEach { checklistId ->
             val position = items.indexOfFirst { it.id == checklistId }
             val tempItem = items[position]
