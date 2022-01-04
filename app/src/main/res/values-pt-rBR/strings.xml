@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>
@@ -25,7 +26,6 @@
     <string name="note_content_locked">O conteúdo da anotação está bloqueado.</string>
     <string name="show_content">Mostrar conteúdo</string>
     <string name="locking_warning">AVISO: Caso você esqueça a senha, não conseguirá acessar o conteúdo.</string>
-
     <!-- File notes -->
     <string name="open_file">Abrir arquivo</string>
     <string name="export_as_file">Exportar como arquivo</string>
@@ -36,7 +36,6 @@
     <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
     <string name="only_export_file_content">Exportar apenas o conteúdo atual do arquivo\n(alterar a nota não afetará o arquivo)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
     <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>
@@ -56,7 +55,6 @@
     <string name="use_incognito_mode">Usar o teclado no modo de Navegação Anônima</string>
     <string name="move_done_checklist_items">Mover itens completos da lista de verificação para o final</string>
     <string name="add_new_checklist_items_top">Adicionar novos itens da lista de verificação na parte superior</string>
-
     <!-- Checklists -->
     <string name="checklist">Lista de verificação</string>
     <string name="checklists">Listas de verificação</string>
@@ -64,21 +62,18 @@
     <string name="add_new_checklist_items">Adicionar novos itens à lista de verificação</string>
     <string name="checklist_is_empty">A lista de verificação está vazia</string>
     <string name="remove_done_items">Remover itens concluídos</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como arquivo</string>
     <string name="import_notes">Importar múltiplos arquivos como notas</string>
     <string name="import_folder">Importar pasta</string>
-
     <!-- FAQ -->
     <string name="faq_1_title">Como mudar a cor do widget?</string>
     <string name="faq_1_text">Caso você possua apenas 1 widget ativo, você poderá recriá-lo, ou usar o botão nas configurações do aplicativo para personalizá-lo. Caso você possua vários widgets ativos, o botão nas configurações do aplicativo não estará disponível. Como o aplicativo suporta personalização de cores por widget, você terá que recriar o widget que deseja personalizar.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: Organizador e planejador de listas de tarefas</string>
+    <string name="app_title">Notas Simples Pro: Planeje e organize tarefas</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Planejador simples: Crie notas, backup e listas de tarefas com o lembrete rápido</string>
     <string name="app_long_description">
         ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
 
@@ -110,10 +105,8 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
     -->
 </resources>
-
