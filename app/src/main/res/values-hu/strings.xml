@@ -1,81 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
+    <string name="app_name">Egyszerű jegyzetek</string>
     <string name="app_launcher_name">Jegyzetek</string>
-    <string name="widget_config">Köszönjük, hogy a Simple Notes alkalmazást használja.
+    <string name="widget_config">Köszönjük, hogy az Egyszerű jegyzetek alkalmazást használja.
 \nTovábbi egyszerű alkalmazásokért keresse fel a SimpleMobileTools.com weboldalt.</string>
-    <string name="cannot_share_empty_text">Nem létező szöveget nem lehet megosztani</string>
-    <string name="simple_note">Egyszerű Jegyzet</string>
+    <string name="cannot_share_empty_text">Üres szöveget nem lehet megosztani</string>
+    <string name="simple_note">Egyszerű jegyzet</string>
     <string name="new_note">Új jegyzet hozzáadása</string>
-    <string name="no_title">Nevezd el a jegyzetet</string>
-    <string name="title_taken">Ilyen nevű jegyzet már van</string>
+    <string name="no_title">Adjon nevet a jegyzetnek</string>
+    <string name="title_taken">Már van ilyen nevű jegyzet</string>
     <string name="open_note">Jegyzet megnyitása</string>
     <string name="delete_note">Jegyzet törlése</string>
     <string name="delete_note_prompt_message">Valóban törli a(z) „%s” jegyzetet\?</string>
     <string name="pick_a_note">Jegyzetválasztás</string>
     <string name="rename_note">Jegyzet átnevezése</string>
     <string name="general_note">Alapértelmezett jegyzet</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="show_note_title">Show note title</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
+    <string name="create_new_note">Új jegyzet létrehozása</string>
+    <string name="add_to_note">Hozzáadás a jegyzethez</string>
+    <string name="unsaved_changes_warning">Mentetlen változtatásai vannak. Mit tesz velük\?</string>
+    <string name="note_shown_widget">A modulban megjelenített jegyzet:</string>
+    <string name="show_note_title">Jegyzet címének megjelenítése</string>
+    <string name="new_note_type">Új jegyzettípus:</string>
+    <string name="text_note">Szöveges jegyzet</string>
+    <string name="lock_note">Jegyzet zárolása</string>
+    <string name="unlock_note">Jegyzet feloldása</string>
     <string name="note_content_locked">A jegyzet tartalma zárolva van.</string>
-    <string name="show_content">Show content</string>
+    <string name="show_content">Tartalom megjelenítése</string>
     <string name="locking_warning">FIGYELMEZTETÉS: Ha elfelejti a jegyzetek jelszavát, akkor többé nem fogja tudni helyreállítani vagy elérni a jegyzetek tartalmát.</string>
     <!-- File notes -->
     <string name="open_file">Fájl megnyitása</string>
-    <string name="export_as_file">Exportálás fájlba</string>
+    <string name="export_as_file">Exportálás fájlként</string>
     <string name="file_too_large">A fájl túl nagy, legfeljebb 1 MB-os lehet</string>
-    <string name="only_import_file_content">Csak a fájl tartalmának importálása\n(a fájl változásai nem látszanak a jegyzetben)</string>
-    <string name="update_file_at_note">A jegyzetbe íráskor a fájlba is írás\n(a jegyzet törlődik ha a fájl törlődik, vagy változik az elérési útvonala)</string>
-    <string name="delete_file_itself">\"%s\" fájl is törlődjön</string>
-    <string name="note_saved_successfully">„%s” jegyzet elmentve</string>
-    <string name="note_exported_successfully">„%s” jegyzet sikeresen exportálva</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_import_file_content">Csak a fájl tartalmának importálása
+\n(a fájl változásai nem változtatnak a jegyzeten)</string>
+    <string name="update_file_at_note">A fájl frissítése a jegyzet frissítésekor
+\n(a jegyzet törlődik, ha a fájl törlődik, vagy változik az elérési útvonala)</string>
+    <string name="delete_file_itself">A(z) „%s” fájl is törlődjön</string>
+    <string name="note_saved_successfully">A(z) „%s” jegyzet sikeresen mentve</string>
+    <string name="note_exported_successfully">A(z) „%s” jegyzet sikeresen exportálva</string>
+    <string name="only_export_file_content">Csak a jelenlegi fájltartalom exportálása
+\n(a jegyzet módosítása nem változtat a fájlon)</string>
     <!-- Settings -->
-    <string name="display_success_message">Sikeres mentés üzenetek megjelenítése</string>
-    <string name="links_and_emails_clickable">Hivatkozások és e-mail címek felismerése</string>
+    <string name="display_success_message">Sikeres mentési üzenetek megjelenítése</string>
+    <string name="links_and_emails_clickable">Hivatkozások és e-mail-címek kattinthatóvá tétele</string>
     <string name="place_cursor_end">Kurzor a jegyzet végére helyezése</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
-    <string name="show_word_count">Show word count</string>
-    <string name="show_character_count">Show character count</string>
-    <string name="alignment">Igazítottság</string>
-    <string name="left">Bal</string>
-    <string name="center">Közép</string>
-    <string name="right">Jobb</string>
-    <string name="widget_note">Widgetben használt jegyzet</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="monospaced_font">Fix szélességű betűkészlet használata</string>
+    <string name="show_keyboard">Billentyűzet megjelenítése indításkor</string>
+    <string name="show_word_count">Szószám megjelenítése</string>
+    <string name="show_character_count">Karakterszám megjelenítése</string>
+    <string name="alignment">Igazítás</string>
+    <string name="left">Balra</string>
+    <string name="center">Középre</string>
+    <string name="right">Jobbra</string>
+    <string name="widget_note">Modulban használt jegyzet</string>
+    <string name="show_note_picker">Jegyzetválasztó megjelenítése indításkor</string>
+    <string name="autosave_notes">Jegyzetek automatikus mentése</string>
+    <string name="enable_line_wrap">Sortörés engedélyezése</string>
+    <string name="use_incognito_mode">A billentyűzetek inkognitó módjának használata</string>
+    <string name="move_done_checklist_items">Kész ellenőrzőlista-elemek alulra helyezése</string>
+    <string name="add_new_checklist_items_top">Új ellenőrzőlista-elemek felülre helyezése</string>
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="checklists">Checklists</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="checklist">Ellenőrzőlista</string>
+    <string name="checklists">Ellenőrzőlisták</string>
+    <string name="add_new_checklist_item">Új ellenőrzőlista-elem hozzáadása</string>
+    <string name="add_new_checklist_items">Új ellenőrzőlista-elemek hozzáadása</string>
+    <string name="checklist_is_empty">Az ellenőrzőlista üres</string>
+    <string name="remove_done_items">Kész elemek eltávolítása</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
-    <string name="import_folder">Import folder</string>
+    <string name="export_all_notes">Összes jegyzet exportálása fájlként</string>
+    <string name="import_notes">Több fájl importálása jegyzetként</string>
+    <string name="import_folder">Mappa importálása</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hogyan módosíthatom a modulok színét\?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_text">Ha csak 1 aktív modulja van, akkor vagy újra létrehozhatja, vagy használja az alkalmazásbeállításokban lévő gombot, hogy testreszabja. Ha több modulja van, akkor az alkalmazásbeállításokban nem lesz elérhető a gomb. Mivel az alkalmazás támogatja szín modulonkénti testreszabását, azért a módosítandó modult újra létre kell hoznia.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: Teendőlista-szervező és tervező</string>
+    <string name="app_title">Egyszerű jegyzetek Pro: Teendőszervező és tervező</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Egyszerű tervező: Hozzon létre jegyzeteket, biztonsági mentéseket és teendőlistákat egy gyors jegyzetemlékeztető eszközzel</string>
-    <string name="app_long_description"></string>
+    <string name="app_short_description">Egyszerű tervező: jegyzetek, teendők létrehozása, gyors jegyzetemlékeztetők</string>
+    <string name="app_long_description"> ★ Szüksége van egy gyors jegyzetre, hogy felírja a bevásárlólistáját, egy címet vagy a startup ötletét\? Ne keressen tovább, ez az egyszerű szervező eszköz, amit keresett: Egyszerű jegyzetek: teendőlista-szervező és -szervező! Nincs szükség összetett beállításra, csak koppintson a képernyőre, és írja be, amit szeretne, és hozzon létre jegyzeteket, gyors listákat, ellenőrzőlistákat vagy biztonsági mentéseket. Az egyszerű személyes jegyzetfüzettel mindent gyorsan megjegyezhet! A bevásárlás, a gondolatainak lejegyzése és az emlékeztetők beállítása sosem volt egyszerűbb ★ Az Egyszerű jegyzettervező gyors és könnyedén használható, és felbecsülhetetlen értékű eszköz és útitárs, amely segít megjegyezni a szükséges információkat! Az emlékeztető eszközünk segít nyomon követni a feladatait, hozzon létre napi ellenőrzőlistákat sosem látott egyszerűséggel. Kezelje a napirendjét gyorsan és egyszerűen. Az emlékeztető eszköz automatikus értesítéssel érkezik, így nem fogja véletlenül elveszíteni a módosításait. Több különböző egyszerű szöveges jegyzet és lista létrehozását is támogatja. Könnyedén elérheti a jegyezetet, és pillanatok alatt szerkesztheti a teendőlistáját a testreszabható és átméretezhető modul segítségével. Felhasználóbarát és egyáltalán nem tartalmaz reklámokat és felesleges engedélyeket. Teljesen nyílt forráskódú, testreszabható színeket biztosít, amely gyorsan beállítható. Az <b>Egyszerű jegyzetek: teendőlista-szervező és -tervező</b> a legjobb reklámmentes szervező és listatervező. Ha magas minőségű szervezőre van szüksége gyors jegyzeteléshez, megbízható és felhasználóbarát emlékeztetőkkel, amely tényleg könnyedén használható, akkor most töltse le az alkalmazásunkat :) Legyen minden nap a zsebében a személyes jegyzetfüzete, és legyen egy tervezője, így nem felejti el a fontos találkozóit és a bevásárlólistáját :). Material dizájnnal, és alapértelmezetten sötét témával érkezik, így kiváló felhasználói élményt nyújt. Az internetelérés hiánya miatt nagyobb adatvédelmet, biztonságot és stabilitást nyújt, mint más alkalmazások. Reklámmentes és nem tartalmaz reklámokat vagy szükségtelen engedélyeket. Teljesen nyílt forráskódú, és testreszabható színeket kínál. <b>Nézze meg a teljes Simple Tools csomagot itt:</b> https://www.simplemobiletools.com <b>Standalone website of Simple Notes Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
