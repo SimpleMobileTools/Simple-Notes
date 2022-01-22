@@ -25,6 +25,8 @@
     <string name="note_content_locked">O conteúdo da anotação está bloqueado.</string>
     <string name="show_content">Mostrar conteúdo</string>
     <string name="locking_warning">AVISO: Caso você esqueça a senha, não conseguirá acessar o conteúdo.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
 
     <!-- File notes -->
     <string name="open_file">Abrir arquivo</string>

@@ -27,6 +27,8 @@
     <string name="note_content_locked">محتوى الملاحظات مؤمن.</string>
     <string name="show_content">إظهار المحتوى</string>
     <string name="locking_warning">تحذير: إذا نسيت كلمة مرور الملاحظات، فلن تتمكن من استعادتها أو الوصول إلى محتوى الملاحظات بعد الآن.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
     <!-- File notes -->
     <string name="open_file">فتح ملف</string>
     <string name="export_as_file">تصدير كملف</string>

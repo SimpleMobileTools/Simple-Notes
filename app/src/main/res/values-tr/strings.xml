@@ -26,6 +26,8 @@
     <string name="note_content_locked">Notların içeriği kilitlendi.</string>
     <string name="show_content">İçeriği göster</string>
     <string name="locking_warning">UYARI: Notların parolasını unutursanız, onu kurtaramaz veya notların içeriğine artık erişemezsiniz.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
     <!-- File notes -->
     <string name="open_file">Dosya aç</string>
     <string name="export_as_file">Dosya olarak aktar</string>
