@@ -197,7 +197,7 @@ class ChecklistAdapter(
             }
 
             checklist_image.setImageDrawable(if (checklistItem.isDone) checkDrawable else crossDrawable)
-            checklist_image.beVisibleIf(showIcons)
+            checklist_image.beVisibleIf(showIcons && selectedKeys.isEmpty())
             checklist_holder.isSelected = isSelected
 
             checklist_drag_handle.beVisibleIf(selectedKeys.isNotEmpty())
