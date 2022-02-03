@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/checklist_title"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/checklist_text_holder"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerVertical="true"
-    android:layout_toStartOf="@+id/checklist_image"
-    android:paddingStart="@dimen/activity_margin"
-    android:paddingTop="@dimen/medium_margin"
-    android:paddingEnd="@dimen/medium_margin"
-    android:paddingBottom="@dimen/medium_margin"
-    android:textSize="@dimen/bigger_text_size"
-    tools:text="Butter" />
+    android:layout_height="match_parent"
+    android:layout_toStartOf="@+id/checklist_image">
+
+    <TextView
+        android:id="@+id/checklist_text_left"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="start"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingEnd="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/checklist_text_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="center_horizontal"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingEnd="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/checklist_text_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:gravity="end"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingEnd="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/checklist_text_left_monospace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:fontFamily="monospace"
+        android:gravity="start"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingEnd="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/checklist_text_center_monospace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:fontFamily="monospace"
+        android:gravity="center_horizontal"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingEnd="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/checklist_text_right_monospace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingEnd="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin"
+        android:visibility="gone" />
+
+</RelativeLayout>

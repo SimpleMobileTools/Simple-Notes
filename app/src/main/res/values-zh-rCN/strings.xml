@@ -21,7 +21,7 @@
     <string name="show_note_title">显示笔记标题</string>
     <string name="new_note_type">新笔记类型:</string>
     <string name="text_note">文本笔记</string>
-    <string name="lock_note">Lock note</string>
+    <string name="lock_note">锁定笔记</string>
     <string name="unlock_note">解锁笔记</string>
     <string name="note_content_locked">笔记的内容被锁定。</string>
     <string name="show_content">显示内容</string>

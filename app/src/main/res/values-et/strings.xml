@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Lihtne märkmik</string>
     <string name="app_launcher_name">Märkmik</string>
-    <string name="widget_config">Täname et kasutad Lihtsat märkmikku.\nTeise rakendusi meie Lihtsate tarvikute seeriast leiad SimpleMobileTools.com saidist.</string>
+    <string name="widget_config">Täname et kasutad Lihtsat märkmikku.\nTeisi rakendusi meie Lihtsate tarvikute seeriast leiad SimpleMobileTools.com saidist.</string>
     <string name="cannot_share_empty_text">Tühja sisu ei saa jagada</string>
     <string name="simple_note">Lihtne märge</string>
     <string name="new_note">Lisa uus märge</string>
@@ -11,78 +11,71 @@
     <string name="open_note">Ava märge</string>
     <string name="delete_note">Kustuta märge</string>
     <string name="delete_note_prompt_message">Kas sa oled kindel, et soovid kustutada „%s“ märget\?</string>
-
-    <string name="pick_a_note">Pick a note</string>
-    <string name="rename_note">Rename note</string>
-    <string name="general_note">General note</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="show_note_title">Show note title</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="pick_a_note">Vali märge</string>
+    <string name="rename_note">Muuda märkme nime</string>
+    <string name="general_note">Üldine märge</string>
+    <string name="create_new_note">Loo uus märge</string>
+    <string name="add_to_note">Lisa märkmele</string>
+    <string name="unsaved_changes_warning">Sul on salvestamata muudatusi. Mida sa tahad nendega teha\?</string>
+    <string name="note_shown_widget">Vidinas näidatav märge:</string>
+    <string name="show_note_title">Näita märkme pealkirja</string>
+    <string name="new_note_type">Uue märkme tüüp:</string>
+    <string name="text_note">Tekstimärge</string>
+    <string name="lock_note">Lukusta märge</string>
+    <string name="unlock_note">Eemalda märkme lukustus</string>
+    <string name="note_content_locked">Märkme sisu on lukustatud.</string>
+    <string name="show_content">Näita sisu</string>
+    <string name="locking_warning">HOIATUS: Kui sa unustad märkme salasõna, siis sa ei saa seda märget avada ega tema sisu lugeda.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
-
     <!-- File notes -->
     <string name="open_file">Ava fail</string>
     <string name="export_as_file">Export as file</string>
-    <string name="file_too_large">File too large, the limit is 1MB</string>
-    <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%s\"</string>
-    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
-
+    <string name="file_too_large">Faili suurus ületab lubatud 1MB piiri</string>
+    <string name="only_import_file_content">Impordi vaid faili sisu\n(faili vahetamine ei mõjuta märget)</string>
+    <string name="update_file_at_note">Märkme uuendamisel uuenda ka faili\n(faili kustutamisel või asukoha muutumisel kustub ka märge)</string>
+    <string name="delete_file_itself">Samuti kustuta „%s“ fail</string>
+    <string name="note_saved_successfully">„%s“ märkme salvestamine õnnestus</string>
+    <string name="note_exported_successfully">„%s“ märkme eksportimine õnnestus</string>
+    <string name="only_export_file_content">Ekspordi vaid praeguse faili sisu\n(märkme muutmine ei mõjuta faili)</string>
     <!-- Settings -->
-    <string name="display_success_message">Display save success messages</string>
-    <string name="links_and_emails_clickable">Make links and emails clickable</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
-    <string name="show_word_count">Show word count</string>
-    <string name="show_character_count">Show character count</string>
-    <string name="alignment">Alignment</string>
-    <string name="left">Left</string>
-    <string name="center">Center</string>
+    <string name="display_success_message">Näita teateid salvestamise õnnestumise kohta</string>
+    <string name="links_and_emails_clickable">Tee lingid ja e-posti aadressid klikatavaks</string>
+    <string name="place_cursor_end">Aseta kursor märkme lõppu</string>
+    <string name="monospaced_font">Kasuta fikseeritud laiusega kirjatüüpi</string>
+    <string name="show_keyboard">Käivitamisel näita klahvistikku</string>
+    <string name="show_word_count">Näita sõnade arvu</string>
+    <string name="show_character_count">Näita tähemärkide arvu</string>
+    <string name="alignment">Joondumine</string>
+    <string name="left">Vasakule</string>
+    <string name="center">Keskele</string>
     <string name="right">Right</string>
-    <string name="widget_note">Note used in widget</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
+    <string name="widget_note">Märge on kasutusel rakenduse vidinas</string>
+    <string name="show_note_picker">Rakenduse käivitamisel näita märkmete valijat</string>
+    <string name="autosave_notes">Salvesta märkmed automaatselt</string>
+    <string name="enable_line_wrap">Kasuta ridade murdmist</string>
+    <string name="use_incognito_mode">Kasuta klaviatuuride inkognito-režiimi</string>
+    <string name="move_done_checklist_items">Tööde loendis liiguta täidetud ülesanded loendi lõppu</string>
+    <string name="add_new_checklist_items_top">Lisa uued kirjed tööde loendi algusesse</string>
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="checklists">Checklists</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
-    <string name="remove_done_items">Remove done items</string>
-
+    <string name="checklist">Tööde loend</string>
+    <string name="checklists">Tööde loendid</string>
+    <string name="add_new_checklist_item">Lisa tööde loendisse uus kirje</string>
+    <string name="add_new_checklist_items">Lisa tööde loendisse uued kirjed</string>
+    <string name="checklist_is_empty">Tööde loend on tühi</string>
+    <string name="remove_done_items">Kustuta tehtuks märgitud kirjed</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_notes">Import multiple files as notes</string>
-    <string name="import_folder">Import folder</string>
-
+    <string name="export_all_notes">Ekspordi kõik märkmed failidena</string>
+    <string name="import_notes">Impordi mitu faili märkmeteks</string>
+    <string name="import_folder">Impordi kaust</string>
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
-
+    <string name="faq_1_title">Kuidas ma saan muuta vidinate värvi\?</string>
+    <string name="faq_1_text">Kui sa kasutad vaid üht vidinat, siis kas saad ta uuesti luua või kasutada rakenduse seadistusi värvide kohandamiseks. Kui sul on pidevas kasutuses mitu vidinat, siis rakenduste seadistuste nupp ei toimi. Kuna rakendus võimaldab eri vidinatele määrata erinevaid värve, siis sa pead muudetava vidina uuesti looma.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Lihtne märkmik pro: märkmete ja loendite ülestähendaja</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Lihtne märkmik: koosta märkmeid, tegevuste loendeid ja muud olulist oma plaanide jaoks</string>
     <string name="app_long_description">
         ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
 
@@ -114,9 +107,8 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
-    -->    
+    -->
 </resources>

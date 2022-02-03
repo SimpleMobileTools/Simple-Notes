@@ -13,7 +13,6 @@ import com.simplemobiletools.commons.extensions.setText
 import com.simplemobiletools.commons.extensions.setTextSize
 import com.simplemobiletools.commons.helpers.WIDGET_TEXT_COLOR
 import com.simplemobiletools.notes.pro.R
-import com.simplemobiletools.notes.pro.R.id.checklist_title
 import com.simplemobiletools.notes.pro.R.id.widget_text_holder
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
@@ -23,8 +22,14 @@ import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 
 class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsService.RemoteViewsFactory {
-    private val textIds = arrayOf(R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right,
-        R.id.widget_text_left_monospace, R.id.widget_text_center_monospace, R.id.widget_text_right_monospace)
+    private val textIds = arrayOf(
+        R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right,
+        R.id.widget_text_left_monospace, R.id.widget_text_center_monospace, R.id.widget_text_right_monospace
+    )
+    private val checklistIds = arrayOf(
+        R.id.checklist_text_left, R.id.checklist_text_center, R.id.checklist_text_right,
+        R.id.checklist_text_left_monospace, R.id.checklist_text_center_monospace, R.id.checklist_text_right_monospace
+    )
     private var widgetTextColor = DEFAULT_WIDGET_TEXT_COLOR
     private var note: Note? = null
     private var checklistItems = ArrayList<ChecklistItem>()
@@ -41,18 +46,22 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         if (note!!.type == NoteType.TYPE_CHECKLIST.value) {
             remoteView = RemoteViews(context.packageName, R.layout.item_checklist_widget).apply {
                 val checklistItem = checklistItems.getOrNull(position) ?: return@apply
-                setText(checklist_title, checklistItem.title)
-
                 val widgetNewTextColor = if (checklistItem.isDone) widgetTextColor.adjustAlpha(DONE_CHECKLIST_ITEM_ALPHA) else widgetTextColor
-                setTextColor(checklist_title, widgetNewTextColor)
-                setTextSize(checklist_title, textSize)
-
                 val paintFlags = if (checklistItem.isDone) Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG else Paint.ANTI_ALIAS_FLAG
-                setInt(checklist_title, "setPaintFlags", paintFlags)
+
+                for (id in checklistIds) {
+                    setText(id, checklistItem.title)
+                    setTextColor(id, widgetNewTextColor)
+                    setTextSize(id, textSize)
+                    setInt(id, "setPaintFlags", paintFlags)
+                    setViewVisibility(id, View.GONE)
+                }
+
+                setViewVisibility(getProperChecklistTextView(context), View.VISIBLE)
 
                 Intent().apply {
                     putExtra(OPEN_NOTE_ID, noteId)
-                    setOnClickFillInIntent(checklist_title, this)
+                    setOnClickFillInIntent(R.id.checklist_text_holder, this)
                 }
             }
         } else {
@@ -87,6 +96,20 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
             gravity == GRAVITY_RIGHT -> R.id.widget_text_right
             isMonospaced -> R.id.widget_text_left_monospace
             else -> R.id.widget_text_left
+        }
+    }
+
+    private fun getProperChecklistTextView(context: Context): Int {
+        val gravity = context.config.gravity
+        val isMonospaced = context.config.monospacedFont
+
+        return when {
+            gravity == GRAVITY_CENTER && isMonospaced -> R.id.checklist_text_center_monospace
+            gravity == GRAVITY_CENTER -> R.id.checklist_text_center
+            gravity == GRAVITY_RIGHT && isMonospaced -> R.id.checklist_text_right_monospace
+            gravity == GRAVITY_RIGHT -> R.id.checklist_text_right
+            isMonospaced -> R.id.checklist_text_left_monospace
+            else -> R.id.checklist_text_left
         }
     }
 

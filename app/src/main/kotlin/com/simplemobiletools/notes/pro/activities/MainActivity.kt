@@ -187,7 +187,7 @@ class MainActivity : SimpleActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (config.autosaveNotes) {
+        if (config.autosaveNotes && item.itemId != R.id.undo && item.itemId != R.id.redo) {
             saveCurrentNote(false)
         }
 

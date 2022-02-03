@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>
@@ -5,17 +6,17 @@
     <string name="cannot_share_empty_text">Não pode partilhar texto vazio</string>
     <string name="simple_note">Nota básica</string>
     <string name="new_note">Adicionar uma nota</string>
-    <string name="no_title">Por favor dê um nome à sua nota</string>
+    <string name="no_title">Queira dar um nome à sua nota</string>
     <string name="title_taken">Já existe uma nota com este título</string>
     <string name="open_note">Abrir nota</string>
     <string name="delete_note">Apagar nota</string>
-    <string name="delete_note_prompt_message">Deseja mesmo apagar a nota \"%s\"?</string>
+    <string name="delete_note_prompt_message">Pretende mesmo apagar a nota \"%s\"\?</string>
     <string name="pick_a_note">Selecione uma nota</string>
     <string name="rename_note">Renomear nota</string>
     <string name="general_note">Nota genérica</string>
     <string name="create_new_note">Criar uma nota</string>
     <string name="add_to_note">Adicionar a uma nota</string>
-    <string name="unsaved_changes_warning">Existem alterações não guardadas. O que deseja fazer?</string>
+    <string name="unsaved_changes_warning">Existem alterações não guardadas. O que pretende fazer\?</string>
     <string name="note_shown_widget">Nota mostrada no widget:</string>
     <string name="show_note_title">Mostrar título da nota</string>
     <string name="new_note_type">Tipo da nova nota:</string>
@@ -27,27 +28,26 @@
     <string name="locking_warning">AVISO: se esquecer a palavra-passe, não conseguirá aceder à nota nem recuperar o seu conteúdo.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
-
     <!-- File notes -->
     <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
-    <string name="file_too_large">Ficheiro muito grande, o limite é 1 MB</string>
+    <string name="file_too_large">Ficheiro demasiado grande, o limite é 1 MB</string>
     <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro\n(se alterar o ficheiro, a nota fica intacta)</string>
     <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota\n(a nota será removida se apagar o ficheiro ou se mudar a sua localização)</string>
     <string name="delete_file_itself">Apagar também o ficheiro \"%s\"</string>
-    <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
-    <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
-    <string name="only_export_file_content">Exportar apenas o conteúdo do ficheiro atual\n(a alteração da nota não afeta não afeta o ficheiro)</string>
-
+    <string name="note_saved_successfully">Nota \"%s\" guardada com êxito</string>
+    <string name="note_exported_successfully">Nota \"%s\" exportada com êxito</string>
+    <string name="only_export_file_content">Exportar apenas o conteúdo do ficheiro atual
+\n(a alteração da nota não afeta o ficheiro)</string>
     <!-- Settings -->
-    <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
+    <string name="display_success_message">Mostrar mensagem de Guardada com êxito</string>
     <string name="links_and_emails_clickable">Ativar toque em ligações e endereços de e-mail</string>
-    <string name="place_cursor_end">Colocar cursor no fim da nota</string>
+    <string name="place_cursor_end">Colocar cursor no final da nota</string>
     <string name="monospaced_font">Usar letra mono-espaçada</string>
     <string name="show_keyboard">Mostrar teclado ao inciar</string>
     <string name="show_word_count">Mostrar número de palavras</string>
     <string name="show_character_count">Mostrar número de caracteres</string>
-    <string name="alignment">Gravidade</string>
+    <string name="alignment">Alinhamento</string>
     <string name="left">Esquerda</string>
     <string name="center">Centro</string>
     <string name="right">Direita</string>
@@ -56,63 +56,28 @@
     <string name="autosave_notes">Guardar nota automaticamente</string>
     <string name="enable_line_wrap">Ativar quebra de linha</string>
     <string name="use_incognito_mode">Utilizar modo incógnito no teclado</string>
-    <string name="move_done_checklist_items">Mover itens não realizados para o topo</string>
-    <string name="add_new_checklist_items_top">Adicionar novos itens à parte superior da lista de verificação</string>
-
+    <string name="move_done_checklist_items">Mover itens não concluídos para o fundo da lista de verificação</string>
+    <string name="add_new_checklist_items_top">Adicionar novos itens ao topo da lista de verificação</string>
     <!-- Checklists -->
     <string name="checklist">Lista de verificação</string>
     <string name="checklists">Listas de verificação</string>
-    <string name="add_new_checklist_item">Adicionar item à lista de verificações</string>
+    <string name="add_new_checklist_item">Adicionar item à lista de verificação</string>
     <string name="add_new_checklist_items">Adicionar itens à lista de verificação</string>
     <string name="checklist_is_empty">A lista está vazia</string>
-    <string name="remove_done_items">Remover itens realizados</string>
-
+    <string name="remove_done_items">Remover itens concluídos</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como ficheiros</string>
     <string name="import_notes">Importar ficheiros para notas</string>
     <string name="import_folder">Importar pasta</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">Como posso alterar a cor do widget?</string>
+    <string name="faq_1_title">Como posso alterar a cor do widget\?</string>
     <string name="faq_1_text">Se apenas tiver um widget ativo, pode recriá-lo ou utilizar o botão nas definições o personalizar. Se tiver vários widgets, este botão não estará disponível. Como cada um dos widgets pode ser personalizado, terá que os recriar sempre que o quiser personalizar.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: Organização e planeamento de notas</string>
+    <string name="app_title">Simple Notes Pro – Organização e planeamento de notas</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: crie notas, listas de verificação a lembretes com esta aplicação</string>
-    <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
-
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
-
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
-
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
-
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
-
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
-
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-
-        Não contém anúncios nem permissões desnecessárias. Disponibiliza um tema escuro e é totalmente \'open source\'.
-
-        <b>Verifique o conjunto completo de aplicações Simple Tools aqui:</b>
-        https://www.simplemobiletools.com
-
-        <b>Site da aplicação Simple Notes Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
+    <string name="app_short_description">Simple planner – Crie notas, listas de verificação e lembretes</string>
+    <string name="app_long_description"> ★ Com o Simple Notes organize notas, confira listas e planeie tarefas facilmente. Descomplicado, basta tocar no ecrã e começar a escrever. Anote ideias e crie listas de consulta rápida ou de verificação. Um verdadeiro bloco de notas com práticos lembretes para nunca se esquecer de nada! ★ <b>Simple Notes </b> é uma ferramenta indispensável para organizar e planear com simplicicidade, já que funciona também como agenda. Os lembretes mantêm-no a par dos seus afazeres diários para assim, o ajudar a gerir de forma mais eficiente o seu tempo. Guarda automaticamente as suas alterações para que não as perca por descuido. Aceita e gere múltiplas entradas independentes em texto simples. Num instante, aceda às suas notas ou listas através de um widget personalizável e redimensionável que abre a aplicação directamente a partir do ecrã inicial. Com design material num tema escuro por definição. Não requer acesso à internet o que lhe confere mais privacidade, segurança e estabilidade. Não contém anúncios nem permissões desnecessárias. É totalmente open source e oferece cores personalizáveis a gosto. <b>Consulte a gama completa de aplicações Simple Tools aqui:</b> https://www.simplemobiletools.com <b>Site da aplicação Simple Notes Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Não encontrou todas as cadeias a traduzir? Existem mais algumas em:
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
