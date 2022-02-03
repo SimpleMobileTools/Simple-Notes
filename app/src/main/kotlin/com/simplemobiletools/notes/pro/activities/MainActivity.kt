@@ -1,8 +1,12 @@
 package com.simplemobiletools.notes.pro.activities
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ShortcutInfo
+import android.graphics.drawable.Icon
+import android.graphics.drawable.LayerDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.print.PrintAttributes
@@ -35,14 +39,13 @@ import com.simplemobiletools.notes.pro.databases.NotesDatabase
 import com.simplemobiletools.notes.pro.dialogs.*
 import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.fragments.TextFragment
-import com.simplemobiletools.notes.pro.helpers.MIME_TEXT_PLAIN
-import com.simplemobiletools.notes.pro.helpers.NoteType
-import com.simplemobiletools.notes.pro.helpers.NotesHelper
-import com.simplemobiletools.notes.pro.helpers.OPEN_NOTE_ID
+import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
 import java.io.File
 import java.nio.charset.Charset
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : SimpleActivity() {
     private val EXPORT_FILE_SYNC = 1
@@ -116,6 +119,8 @@ class MainActivity : SimpleActivity() {
             setTextColor(config.textColor)
         }
         updateTextColors(view_pager)
+
+        checkShortcuts()
 
         search_wrapper.setBackgroundColor(config.primaryColor)
         val contrastColor = config.primaryColor.getContrastColor()
@@ -268,6 +273,59 @@ class MainActivity : SimpleActivity() {
 
     private fun isCurrentItemChecklist() = if (this::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST.value else false
 
+    @SuppressLint("NewApi")
+    private fun checkShortcuts() {
+        val appIconColor = config.appIconColor
+        if (isNougatMR1Plus() && config.lastHandledShortcutColor != appIconColor) {
+            val newTextNote = getNewTextNoteShortcut(appIconColor)
+            val newChecklist = getNewChecklistShortcut(appIconColor)
+
+            try {
+                shortcutManager.dynamicShortcuts = Arrays.asList(newTextNote, newChecklist)
+                config.lastHandledShortcutColor = appIconColor
+            } catch (ignored: Exception) {
+            }
+        }
+    }
+
+    @SuppressLint("NewApi")
+    private fun getNewTextNoteShortcut(appIconColor: Int): ShortcutInfo {
+        val shortLabel = getString(R.string.text_note)
+        val longLabel = getString(R.string.new_text_note)
+        val drawable = resources.getDrawable(R.drawable.shortcut_plus)
+        (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background).applyColorFilter(appIconColor)
+        val bmp = drawable.convertToBitmap()
+
+        val intent = Intent(this, MainActivity::class.java)
+        intent.action = Intent.ACTION_VIEW
+        intent.putExtra(NEW_TEXT_NOTE, true)
+        return ShortcutInfo.Builder(this, SHORTCUT_NEW_TEXT_NOTE)
+            .setShortLabel(shortLabel)
+            .setLongLabel(longLabel)
+            .setIcon(Icon.createWithBitmap(bmp))
+            .setIntent(intent)
+            .build()
+    }
+
+    @SuppressLint("NewApi")
+    private fun getNewChecklistShortcut(appIconColor: Int): ShortcutInfo {
+        val shortLabel = getString(R.string.checklist)
+        val longLabel = getString(R.string.new_checklist)
+        val drawable = resources.getDrawable(R.drawable.shortcut_check)
+        (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background).applyColorFilter(appIconColor)
+        val bmp = drawable.convertToBitmap()
+
+        val intent = Intent(this, MainActivity::class.java)
+        intent.action = Intent.ACTION_VIEW
+        intent.putExtra(NEW_CHECKLIST, true)
+        return ShortcutInfo.Builder(this, SHORTCUT_NEW_CHECKLIST)
+            .setShortLabel(shortLabel)
+            .setLongLabel(longLabel)
+            .setIcon(Icon.createWithBitmap(bmp))
+            .setIntent(intent)
+            .build()
+    }
+
     private fun checkIntents(intent: Intent) {
         intent.apply {
             if (action == Intent.ACTION_SEND && type == MIME_TEXT_PLAIN) {
@@ -282,6 +340,12 @@ class MainActivity : SimpleActivity() {
                 if (realPath != null && hasPermission(PERMISSION_READ_STORAGE)) {
                     val file = File(realPath)
                     handleUri(Uri.fromFile(file))
+                } else if (intent.getBooleanExtra(NEW_TEXT_NOTE, false)) {
+                    val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                    addNewNote(newTextNote)
+                } else if (intent.getBooleanExtra(NEW_CHECKLIST, false)) {
+                    val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                    addNewNote(newChecklist)
                 } else {
                     handleUri(data!!)
                 }

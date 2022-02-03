@@ -25,6 +25,8 @@
     <string name="note_content_locked">The notes\' content is locked.</string>
     <string name="show_content">Show content</string>
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
 
     <!-- File notes -->
     <string name="open_file">Åbn fil …</string>

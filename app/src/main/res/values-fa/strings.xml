@@ -25,6 +25,8 @@
     <string name="note_content_locked">محتویات یادداشت، قفل است</string>
     <string name="show_content">نمایش محتویات</string>
     <string name="locking_warning">هشدار: اگر گذرواژهٔ یادداشت را فراموش کنید، دیگر قادر به بازیابی آن یا دسترسی به محتویات یادداشت نیستید.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
 
     <!-- File notes -->
     <string name="open_file">بازکردن پرونده</string>

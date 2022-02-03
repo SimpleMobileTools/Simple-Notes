@@ -26,6 +26,8 @@
     <string name="note_content_locked">Le contenu des notes est verrouillé.</string>
     <string name="show_content">Montrer le contenu</string>
     <string name="locking_warning">AVERTISSEMENT : Si vous oubliez le mot de passe des notes, vous ne pourrez plus le récupérer ni accéder au contenu des notes.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
     <!-- File notes -->
     <string name="open_file">Ouvrir le fichier</string>
     <string name="export_as_file">Exporter dans un fichier</string>

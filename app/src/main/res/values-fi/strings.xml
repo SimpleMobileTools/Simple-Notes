@@ -26,6 +26,8 @@
     <string name="note_content_locked">Muistiinpanon sisältö on lukittu.</string>
     <string name="show_content">Näytä sisältö</string>
     <string name="locking_warning">VAROITUS: Jos unohdat muistiinpanon salasanan, sitä ei ole mahdollista palauttaa etkä pääse enää käsiksi muistiinpanoon.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
     <!-- File notes -->
     <string name="open_file">Avaa tiedosto</string>
     <string name="export_as_file">Vie tiedostona</string>

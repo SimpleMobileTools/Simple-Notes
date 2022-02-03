@@ -26,6 +26,8 @@
     <string name="note_content_locked">Treść notatki jest zablokowana.</string>
     <string name="show_content">Pokaż zawartość</string>
     <string name="locking_warning">OSTRZEŻENIE: Jeśli zapomnisz hasła do notatki, nie będziesz już mógł/mogła jej odzyskać ani uzyskać dostępu do treści notatki.</string>
+    <string name="new_text_note">Nowa notatka tekstowa</string>
+    <string name="new_checklist">Nowa lista kontrolna</string>
     <!-- File notes -->
     <string name="open_file">Otwórz plik</string>
     <string name="export_as_file">Eksportuj jako plik</string>

@@ -26,6 +26,8 @@
     <string name="note_content_locked">Sadržaj bilješke je zaključan.</string>
     <string name="show_content">Prikaži sadržaj</string>
     <string name="locking_warning">UPOZORENJE: Ako zaboravite lozinku za bilješke, više je nećete moći oporaviti niti pristupiti sadržaju bilješke.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
     <!-- File notes -->
     <string name="open_file">Otvori datoteku</string>
     <string name="export_as_file">Izvezi kao datoteku</string>

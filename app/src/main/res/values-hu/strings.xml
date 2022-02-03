@@ -27,6 +27,8 @@
     <string name="note_content_locked">A jegyzet tartalma zárolva van.</string>
     <string name="show_content">Tartalom megjelenítése</string>
     <string name="locking_warning">FIGYELMEZTETÉS: Ha elfelejti a jegyzetek jelszavát, akkor többé nem fogja tudni helyreállítani vagy elérni a jegyzetek tartalmát.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
     <!-- File notes -->
     <string name="open_file">Fájl megnyitása</string>
     <string name="export_as_file">Exportálás fájlként</string>

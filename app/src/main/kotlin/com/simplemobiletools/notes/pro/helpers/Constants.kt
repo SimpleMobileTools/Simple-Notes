@@ -11,6 +11,10 @@ const val CUSTOMIZED_WIDGET_NOTE_ID = "customized_widget_note_id"
 const val CUSTOMIZED_WIDGET_BG_COLOR = "customized_widget_bg_color"
 const val CUSTOMIZED_WIDGET_TEXT_COLOR = "customized_widget_text_color"
 const val CUSTOMIZED_WIDGET_SHOW_TITLE = "customized_widget_show_title"
+const val SHORTCUT_NEW_TEXT_NOTE = "shortcut_new_text_note"
+const val SHORTCUT_NEW_CHECKLIST = "shortcut_new_checklist"
+const val NEW_TEXT_NOTE = "new_text_note"
+const val NEW_CHECKLIST = "new_checklist"
 val DEFAULT_WIDGET_TEXT_COLOR = Color.parseColor("#FFF57C00")
 
 // shared preferences

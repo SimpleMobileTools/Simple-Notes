@@ -25,6 +25,8 @@
     <string name="note_content_locked">Нотатку заблоковано.</string>
     <string name="show_content">Показати нотатку</string>
     <string name="locking_warning">УВАГА: Якщо ви забудете пароль доступу до нотатки, ви більше не зможете його відновити або прочитати нотатку.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
 
     <!-- File notes -->
     <string name="open_file">Відкрити файл</string>

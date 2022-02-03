@@ -26,6 +26,8 @@
     <string name="note_content_locked">Notatinnholdet er låst.</string>
     <string name="show_content">Vis innhold</string>
     <string name="locking_warning">Advarsel: Hvis du glemmer notatpassordet vil du ikke kunne gjenopprette det eller innholdet.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
     <!-- File notes -->    
     <string name="open_file">Åpne fil</string>
     <string name="export_as_file">Eksporter som fil</string>
