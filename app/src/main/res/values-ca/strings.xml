@@ -26,6 +26,8 @@
     <string name="note_content_locked">El contingut de la nota està bloquejat.</string>
     <string name="show_content">Mostra el contingut</string>
     <string name="locking_warning">AVÍS: Si oblideu la contrasenya de la nota, ja no podreu recuperar-la ni accedir al contingut de les notes.</string>
+    <string name="new_text_note">New text note</string>
+    <string name="new_checklist">New checklist</string>
     <!-- File notes -->
     <string name="open_file">Obre un fitxer</string>
     <string name="export_as_file">Exporta com a fitxer</string>
