@@ -13,7 +13,6 @@ import com.simplemobiletools.commons.extensions.setText
 import com.simplemobiletools.commons.extensions.setTextSize
 import com.simplemobiletools.commons.helpers.WIDGET_TEXT_COLOR
 import com.simplemobiletools.notes.pro.R
-import com.simplemobiletools.notes.pro.R.id.checklist_title
 import com.simplemobiletools.notes.pro.R.id.widget_text_holder
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
@@ -23,10 +22,14 @@ import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 
 class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsService.RemoteViewsFactory {
-    private val textIds = arrayOf(R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right,
-        R.id.widget_text_left_monospace, R.id.widget_text_center_monospace, R.id.widget_text_right_monospace)
-    private val checklistIds = arrayOf(R.id.checklist_text_left, R.id.checklist_text_center, R.id.checklist_text_right,
-        R.id.checklist_text_left_monospace, R.id.checklist_text_center_monospace, R.id.checklist_text_right_monospace)
+    private val textIds = arrayOf(
+        R.id.widget_text_left, R.id.widget_text_center, R.id.widget_text_right,
+        R.id.widget_text_left_monospace, R.id.widget_text_center_monospace, R.id.widget_text_right_monospace
+    )
+    private val checklistIds = arrayOf(
+        R.id.checklist_text_left, R.id.checklist_text_center, R.id.checklist_text_right,
+        R.id.checklist_text_left_monospace, R.id.checklist_text_center_monospace, R.id.checklist_text_right_monospace
+    )
     private var widgetTextColor = DEFAULT_WIDGET_TEXT_COLOR
     private var note: Note? = null
     private var checklistItems = ArrayList<ChecklistItem>()
