@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Jednostavne bilješke</string>
     <string name="app_launcher_name">Bilješke</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">Bilješka s tim naslovom već postoji</string>
     <string name="open_note">Otvori bilješku</string>
     <string name="delete_note">Izbriši bilješku</string>
-    <string name="delete_note_prompt_message">Jeste li sigurni da želite izbrisati bilješku \"%s\"?</string>
+    <string name="delete_note_prompt_message">Jeste li sigurni da želite izbrisati bilješku \"%s\"\?</string>
     <string name="pick_a_note">Odaberi bilješku</string>
     <string name="rename_note">Preimenuj bilješku</string>
     <string name="general_note">Opća bilješka</string>
@@ -17,15 +18,14 @@
     <string name="add_to_note">Dodaj u bilješku</string>
     <string name="unsaved_changes_warning">Imate neke nespremljene izmjene. Što želite učiniti s njima??</string>
     <string name="note_shown_widget">Bilješka prikazana u widgetu:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">Prikaži naslov bilješke</string>
     <string name="new_note_type">Nova vrsta bilješke:</string>
     <string name="text_note">Tekstualna bilješka</string>
     <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-
+    <string name="unlock_note">Otključaj bilješku</string>
+    <string name="note_content_locked">Sadržaj bilješke je zaključan.</string>
+    <string name="show_content">Prikaži sadržaj</string>
+    <string name="locking_warning">UPOZORENJE: Ako zaboravite lozinku za bilješke, više je nećete moći oporaviti niti pristupiti sadržaju bilješke.</string>
     <!-- File notes -->
     <string name="open_file">Otvori datoteku</string>
     <string name="export_as_file">Izvezi kao datoteku</string>
@@ -36,15 +36,14 @@
     <string name="note_saved_successfully">Bilješka \"%s\" uspješno spremljena</string>
     <string name="note_exported_successfully">Bilješka \"%s\" uspješno izvezena</string>
     <string name="only_export_file_content">Izvoz samo trenutnog sadržaja datoteke\n(mijenjanje bilješke neće utjecati na datoteku)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Prikaži poruke kada je spremanje uspješno</string>
     <string name="links_and_emails_clickable">Napravite veze i e-poruke koje se mogu kliknuti</string>
-    <string name="place_cursor_end">Postavite pokazivač do kraja napomene</string>
+    <string name="place_cursor_end">Postavite pokazivač na kraj bilješke</string>
     <string name="monospaced_font">Koristi font jednake širine i visine</string>
     <string name="show_keyboard">Prikažite tipkovnicu prilikom pokretanja</string>
     <string name="show_word_count">Prikaz broja riječi</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Prikaži broj znakova</string>
     <string name="alignment">Poravnanje</string>
     <string name="left">Lijevo</string>
     <string name="center">Sredina</string>
@@ -53,32 +52,28 @@
     <string name="show_note_picker">Prikaži odabir bilješke prilikom pokretanja</string>
     <string name="autosave_notes">Automatsko spremanje bilješki</string>
     <string name="enable_line_wrap">Omogući omotavanje linije</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
+    <string name="use_incognito_mode">Koristi anonimni način tipkovnica</string>
+    <string name="move_done_checklist_items">Premjesti gotove stavke popisa na kraj</string>
+    <string name="add_new_checklist_items_top">Dodaj nove stavke na vrh popisa</string>
     <!-- Checklists -->
     <string name="checklist">Spisak</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">Spiskovi</string>
     <string name="add_new_checklist_item">Dodajte novu stavku na spisak</string>
     <string name="add_new_checklist_items">Dodajte nove stavke na spisak</string>
     <string name="checklist_is_empty">Spisak je prazan</string>
-    <string name="remove_done_items">Remove done items</string>
-
+    <string name="remove_done_items">Ukloni gotove stavke</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
     <string name="import_notes">Uvezi više datoteka kao bilješke</string>
     <string name="import_folder">Mapa za uvoz</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
+    <string name="faq_1_title">Kako mogu promijeniti boju widgeta\?</string>
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro: Popis zadataka i planer</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Jednostavan planer: Bilješke, sigurnosne kopije i popisi zadataka s podsjetnikom</string>
     <string name="app_long_description">
         ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
 
@@ -110,7 +105,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

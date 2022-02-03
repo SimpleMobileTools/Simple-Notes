@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Anteckningar</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">Det finns redan en anteckning med samma titel</string>
     <string name="open_note">Öppna anteckning</string>
     <string name="delete_note">Ta bort anteckning</string>
-    <string name="delete_note_prompt_message">Är du säker på att du vill ta bort anteckningen \"%s\"?</string>
+    <string name="delete_note_prompt_message">Är du säker på att du vill ta bort anteckningen \"%s\"\?</string>
     <string name="pick_a_note">Välj en anteckning</string>
     <string name="rename_note">Byt namn på anteckning</string>
     <string name="general_note">Allmän anteckning</string>
@@ -22,21 +23,19 @@
     <string name="text_note">Textanteckning</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="note_content_locked">Anteckningarnas \'innehåll\' är låst.</string>
     <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-
+    <string name="locking_warning">VARNING: Om du glömmer anteckningarnas\' lösenord kommer du inte att kunna återställa det eller komma åt anteckningarnas\' innehåll längre.</string>
     <!-- File notes -->
     <string name="open_file">Öppna fil</string>
     <string name="export_as_file">Exportera som fil</string>
-    <string name="file_too_large">Filen är för stor, gränsen är 1 MB</string>
+    <string name="file_too_large">Filen är för stor, gränsen är 1MB</string>
     <string name="only_import_file_content">Importera bara innehållet i filen\n(anteckningen påverkas inte om filen ändras)</string>
     <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
     <string name="delete_file_itself">Ta även bort filen \"%s\"</string>
     <string name="note_saved_successfully">Anteckningen \"%s\" har sparats</string>
-    <string name="note_exported_successfully">Anteckningen \"%s\" har exporterats</string>
+    <string name="note_exported_successfully">Anteckningen \"%s\" har exporterats framgångsrikt</string>
     <string name="only_export_file_content">Exportera bara det aktuella innehållet i filen\n(filen påverkas inte om anteckningen ändras)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
     <string name="links_and_emails_clickable">Gör länkar och e-postadresser tryckbara</string>
@@ -56,7 +55,6 @@
     <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
     <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">Checklista</string>
     <string name="checklists">Checklists</string>
@@ -64,16 +62,13 @@
     <string name="add_new_checklist_items">Lägg till nya checklisteobjekt</string>
     <string name="checklist_is_empty">Checklistan är tom</string>
     <string name="remove_done_items">Remove done items</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Exportera alla anteckningar som filer</string>
     <string name="import_notes">Importera flera filer som anteckningar</string>
     <string name="import_folder">Importera mapp</string>
-
     <!-- FAQ -->
     <string name="faq_1_title">How can I change the widgets color?</string>
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
@@ -110,7 +105,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
