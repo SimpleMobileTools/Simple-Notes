@@ -25,8 +25,8 @@
     <string name="note_content_locked">De inhoud van deze notitie is vergrendeld.</string>
     <string name="show_content">Inhoud weergeven</string>
     <string name="locking_warning">WAARSCHUWING: Zonder het wachtwoord kan de inhoud van de notitie niet meer worden hersteld.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Nieuwe notitie</string>
+    <string name="new_checklist">Nieuwe lijst</string>
 
     <!-- File notes -->
     <string name="open_file">Bestand openen</string>
