@@ -209,7 +209,7 @@ class MainActivity : SimpleActivity() {
             R.id.export_all_notes -> tryExportAllNotes()
             R.id.print -> fragment?.handleUnlocking { printText() }
             R.id.delete_note -> fragment?.handleUnlocking { displayDeleteNotePrompt() }
-            R.id.settings -> startActivity(Intent(applicationContext, SettingsActivity::class.java))
+            R.id.settings -> launchSettings()
             R.id.about -> launchAbout()
             R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
             R.id.sort_checklist -> fragment?.handleUnlocking { displaySortChecklistDialog() }
@@ -594,6 +594,11 @@ class MainActivity : SimpleActivity() {
                 mAdapter?.focusEditText(getNoteIndexWithId(newNoteId))
             }
         }
+    }
+
+    private fun launchSettings() {
+        hideKeyboard()
+        startActivity(Intent(applicationContext, SettingsActivity::class.java))
     }
 
     private fun launchAbout() {
