@@ -26,8 +26,8 @@
     <string name="note_content_locked">笔记的内容被锁定。</string>
     <string name="show_content">显示内容</string>
     <string name="locking_warning">警告：如果您忘记了笔记的密码，您将无法恢复或访问笔记的内容。</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">新建文本笔记</string>
+    <string name="new_checklist">新建清单</string>
     <!-- File notes -->
     <string name="open_file">打开文件</string>
     <string name="export_as_file">以文件的形式导出</string>

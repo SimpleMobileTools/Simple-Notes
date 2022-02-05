@@ -26,8 +26,8 @@
     <string name="note_content_locked">El contingut de la nota està bloquejat.</string>
     <string name="show_content">Mostra el contingut</string>
     <string name="locking_warning">AVÍS: Si oblideu la contrasenya de la nota, ja no podreu recuperar-la ni accedir al contingut de les notes.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Nota de text nova</string>
+    <string name="new_checklist">Llista de comprovació nova</string>
     <!-- File notes -->
     <string name="open_file">Obre un fitxer</string>
     <string name="export_as_file">Exporta com a fitxer</string>
@@ -41,7 +41,7 @@
     <!-- Settings -->
     <string name="display_success_message">Mostra els missatges de desament correcte</string>
     <string name="links_and_emails_clickable">Fes que els enllaços i correus electrònics s\'hi pugui fer clic</string>
-    <string name="place_cursor_end">Col·loca el cursor al final de la nota</string>    
+    <string name="place_cursor_end">Col·loca el cursor al final de la nota</string>
     <string name="monospaced_font">Utilitza una lletra monoespaiada</string>
     <string name="show_keyboard">Mostra el teclat a l\'inici</string>
     <string name="show_word_count">Mostra el comptador de paraules</string>
