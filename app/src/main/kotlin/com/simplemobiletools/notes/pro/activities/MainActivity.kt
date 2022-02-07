@@ -2,6 +2,7 @@ package com.simplemobiletools.notes.pro.activities
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ShortcutInfo
@@ -41,9 +42,9 @@ import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
+import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.nio.charset.Charset
-import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -623,7 +624,12 @@ class MainActivity : SimpleActivity() {
             Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
                 type = "text/*"
-                startActivityForResult(this, PICK_OPEN_FILE_INTENT)
+
+                try {
+                    startActivityForResult(this, PICK_OPEN_FILE_INTENT)
+                } catch (e: ActivityNotFoundException) {
+                    toast(R.string.no_app_found)
+                }
             }
         }
     }
@@ -814,7 +820,11 @@ class MainActivity : SimpleActivity() {
                 putExtra(Intent.EXTRA_TITLE, "${mCurrentNote.title.removeSuffix(".txt")}.txt")
                 addCategory(Intent.CATEGORY_OPENABLE)
 
-                startActivityForResult(this, PICK_EXPORT_FILE_INTENT)
+                try {
+                    startActivityForResult(this, PICK_EXPORT_FILE_INTENT)
+                } catch (e: ActivityNotFoundException) {
+                    toast(R.string.no_app_found)
+                }
             }
         }
     }
