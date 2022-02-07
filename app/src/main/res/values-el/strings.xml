@@ -17,7 +17,7 @@
     <string name="add_to_note">Προσθήκη στη σημείωση</string>
     <string name="unsaved_changes_warning">Έχετε ορισμένες μη αποθηκευμένες αλλαγές. Τι θέλετε να κάνετε με αυτές;</string>
     <string name="note_shown_widget">Σημείωση που εμφανίζεται στο widget:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">Εμφάνιση τίτλου σημείωσης</string>
     <string name="new_note_type">Νέος τύπος σημείωσης:</string>
     <string name="text_note">Σημείωση κειμένου</string>
     <string name="lock_note">Κλείδωμα Σημείωσης</string>
@@ -25,8 +25,8 @@
     <string name="note_content_locked">Το περιεχόμενο των Σημειώσεων είναι κλειδωμένο.</string>
     <string name="show_content">Εμφάνιση περιεχομένου</string>
     <string name="locking_warning">ΠΡΟΣΟΧΗ: Εάν ξεχάσετε τον κωδικό των σημειώσεων, δεν θα μπορείτε πλέον να τον ανακτήσετε ή να αποκτήσετε πρόσβαση στο περιεχόμενο τους.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Νέα σημείωση κειμένου</string>
+    <string name="new_checklist">Νέα λίστα ελέγχου</string>
 
     <!-- File notes -->
     <string name="open_file">Άνοιγμα αρχείου</string>
@@ -55,9 +55,9 @@
     <string name="show_note_picker">Εμφάνιση επιλογής σημείωσης στην εκκίνηση</string>
     <string name="autosave_notes">Αυτόματη αποθήκευση σημειώσεων</string>
     <string name="enable_line_wrap">Ενεργοποίηση αναδίπλωσης γραμμής</string>
-    <string name="use_incognito_mode">Χρήση λειτουργίας Incognito πληκτρολόγιου</string>
-    <string name="move_done_checklist_items">Μετακίνηση ανεπιτυχών λίστας ελέγχου στο επάνω μέρος</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="use_incognito_mode">Χρήση λειτουργίας πληκτ/γιου Incognito</string>
+    <string name="move_done_checklist_items">Μετακίνηση ανεπιτυχών λίστας ελέγχου στην κορυφή</string>
+    <string name="add_new_checklist_items_top">Προσθήκη νέων στοιχείων λίστας ελέγχου στην κορυφή</string>
 
     <!-- Checklists -->
     <string name="checklist">Λίστα ελέγχου</string>
