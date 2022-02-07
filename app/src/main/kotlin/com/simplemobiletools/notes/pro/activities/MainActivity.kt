@@ -616,6 +616,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun tryOpenFile() {
+        hideKeyboard()
         if (hasPermission(PERMISSION_READ_STORAGE)) {
             openFile()
         } else {
@@ -804,6 +805,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun tryExportAsFile() {
+        hideKeyboard()
         if (hasPermission(PERMISSION_WRITE_STORAGE)) {
             exportAsFile()
         } else {
