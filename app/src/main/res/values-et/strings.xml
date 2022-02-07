@@ -26,11 +26,11 @@
     <string name="note_content_locked">Märkme sisu on lukustatud.</string>
     <string name="show_content">Näita sisu</string>
     <string name="locking_warning">HOIATUS: Kui sa unustad märkme salasõna, siis sa ei saa seda märget avada ega tema sisu lugeda.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Uus tekstimärge</string>
+    <string name="new_checklist">Uus tööde loend</string>
     <!-- File notes -->
     <string name="open_file">Ava fail</string>
-    <string name="export_as_file">Export as file</string>
+    <string name="export_as_file">Ekspordi failina</string>
     <string name="file_too_large">Faili suurus ületab lubatud 1MB piiri</string>
     <string name="only_import_file_content">Impordi vaid faili sisu\n(faili vahetamine ei mõjuta märget)</string>
     <string name="update_file_at_note">Märkme uuendamisel uuenda ka faili\n(faili kustutamisel või asukoha muutumisel kustub ka märge)</string>
