@@ -106,6 +106,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
             setOnClickListener {
                 showNewItemDialog()
+                (view.checklist_list.adapter as? ChecklistAdapter)?.finishActMode()
             }
         }
 
