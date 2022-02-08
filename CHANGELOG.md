@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.10.2 *(2022-02-08)*
+----------------------------
+
+ * Allow quick note creation from homescreen shortcuts (by Aga-C)
+ * Added some translation, stability and UX improvements
+
 Version 6.10.1 *(2021-12-25)*
 ----------------------------
 
