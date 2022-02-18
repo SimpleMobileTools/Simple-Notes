@@ -60,6 +60,7 @@
                 android:clipToPadding="false"
                 android:overScrollMode="never"
                 android:visibility="gone"
+                android:paddingBottom="@dimen/secondary_fab_bottom_margin"
                 app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager" />
 
             <com.simplemobiletools.commons.views.MyTextView
