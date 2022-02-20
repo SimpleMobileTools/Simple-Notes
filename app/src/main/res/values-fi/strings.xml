@@ -66,8 +66,9 @@
     <string name="remove_done_items">Poista tehdyt kohdat</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Vie kaikki muistiinpanot tiedostoina</string>
-    <string name="import_notes">Tuo useita tiedostoja muistiinpanoina</string>
     <string name="import_folder">Tuo kansio</string>
+    <string name="export_notes">Export notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kuinka voin vaihtaa pienoissovelluksen väriä\?</string>
     <string name="faq_1_text">Jos sinulla on vain yksi aktiivinen pienoissovellus, voit joko luoda sen uudelleen tai mukauttaa sitä sovelluksen asetukset-painikkeella. Jos sinulla on useita aktiivisia pienoissovelluksia, sovelluksessa oleva asetukset-painike ei ole käytettävissä. Koska sovellus tukee värien mukauttamista pienoissovellusta kohti, sinun on luotava uudelleen pienoissovellus, jonka haluat muokata.</string>

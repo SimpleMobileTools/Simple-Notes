@@ -67,12 +67,20 @@
         android:title="@string/import_folder"
         app:showAsAction="never" />
     <item
+        android:id="@+id/import_notes"
+        android:title="@string/import_notes"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/export_as_file"
         android:title="@string/export_as_file"
         app:showAsAction="never" />
     <item
         android:id="@+id/export_all_notes"
         android:title="@string/export_all_notes"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/export_notes"
+        android:title="@string/export_notes"
         app:showAsAction="never" />
     <item
         android:id="@+id/print"

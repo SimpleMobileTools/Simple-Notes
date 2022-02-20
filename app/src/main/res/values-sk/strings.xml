@@ -69,8 +69,9 @@
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovať všetky poznámky ako súbory</string>
-    <string name="import_notes">Importovať viacero súborov ako poznámky</string>
     <string name="import_folder">Importovať priečinok</string>
+    <string name="export_notes">Export notes</string>
+    <string name="import_notes">Import notes</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">Ako viem zmeniť farby widgetu?</string>

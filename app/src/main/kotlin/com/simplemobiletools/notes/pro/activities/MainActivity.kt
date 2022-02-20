@@ -44,6 +44,8 @@ import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
+import java.io.FileOutputStream
+import java.io.OutputStream
 import java.nio.charset.Charset
 import java.util.*
 import kotlin.collections.ArrayList
@@ -57,6 +59,9 @@ class MainActivity : SimpleActivity() {
 
     private val PICK_OPEN_FILE_INTENT = 1
     private val PICK_EXPORT_FILE_INTENT = 2
+
+    private val PICK_IMPORT_NOTES_INTENT = 3
+    private val PICK_EXPORT_NOTES_INTENT = 4
 
     private lateinit var mCurrentNote: Note
     private var mNotes = ArrayList<Note>()
@@ -72,6 +77,7 @@ class MainActivity : SimpleActivity() {
     private var searchIndex = 0
     private var searchMatches = emptyList<Int>()
     private var isSearchActive = false
+    private val notesExporter by lazy { NotesExporter(this) }
 
     private lateinit var searchQueryET: MyEditText
     private lateinit var searchPrevBtn: ImageView
@@ -171,11 +177,13 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.delete_note).isVisible = multipleNotesExist
-            findItem(R.id.export_all_notes).isVisible = multipleNotesExist && hasPermission(PERMISSION_WRITE_STORAGE)
+            findItem(R.id.export_all_notes).isVisible = multipleNotesExist && !isQPlus()
+            findItem(R.id.export_notes).isVisible = multipleNotesExist && isQPlus()
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist
             findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
             findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
-            findItem(R.id.import_folder).isVisible = hasPermission(PERMISSION_READ_STORAGE)
+            findItem(R.id.import_folder).isVisible = !isQPlus()
+            findItem(R.id.import_notes).isVisible = isQPlus()
             findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && !mCurrentNote.isLocked()
             findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && mCurrentNote.isLocked()
 
@@ -208,6 +216,8 @@ class MainActivity : SimpleActivity() {
             R.id.import_folder -> openFolder()
             R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
             R.id.export_all_notes -> tryExportAllNotes()
+            R.id.export_notes -> tryExportNotes()
+            R.id.import_notes -> tryImportNotes()
             R.id.print -> fragment?.handleUnlocking { printText() }
             R.id.delete_note -> fragment?.handleUnlocking { displayDeleteNotePrompt() }
             R.id.settings -> launchSettings()
@@ -269,6 +279,11 @@ class MainActivity : SimpleActivity() {
             val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
             applicationContext.contentResolver.takePersistableUriPermission(resultData.data!!, takeFlags)
             showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
+        } else if (requestCode == PICK_EXPORT_NOTES_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            val outputStream = contentResolver.openOutputStream(resultData.data!!)
+            exportNotesTo(outputStream)
+        } else if (requestCode == PICK_IMPORT_NOTES_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
+            importNotesFrom(resultData.data!!)
         }
     }
 
@@ -785,15 +800,21 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun openFolder() {
-        FilePickerDialog(this, pickFile = false, canAddShowHiddenButton = true) {
-            openFolder(it) {
-                ImportFolderDialog(this, it.path) {
-                    NotesHelper(this).getNotes {
-                        mNotes = it
-                        showSaveButton = false
-                        initViewPager()
+        handlePermission(PERMISSION_READ_STORAGE) { hasPermission ->
+            if (hasPermission) {
+                FilePickerDialog(this, pickFile = false, canAddShowHiddenButton = true) {
+                    openFolder(it) {
+                        ImportFolderDialog(this, it.path) {
+                            NotesHelper(this).getNotes {
+                                mNotes = it
+                                showSaveButton = false
+                                initViewPager()
+                            }
+                        }
                     }
                 }
+            } else {
+                toast(R.string.no_storage_permissions)
             }
         }
     }
@@ -842,6 +863,77 @@ class MainActivity : SimpleActivity() {
         }
     }
 
+    private fun tryExportNotes() {
+        val fileName = "${getString(R.string.notes)}_${getCurrentFormattedDateTime()}"
+        Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+            type = EXPORT_MIME_TYPE
+            putExtra(Intent.EXTRA_TITLE, fileName)
+            addCategory(Intent.CATEGORY_OPENABLE)
+            startActivityForResult(this, PICK_EXPORT_NOTES_INTENT)
+        }
+    }
+
+    private fun exportNotesTo(outputStream: OutputStream?) {
+        toast(R.string.exporting)
+        ensureBackgroundThread {
+            notesExporter.exportNotes(outputStream) {
+                val toastId = when (it) {
+                    NotesExporter.ExportResult.EXPORT_OK -> R.string.exporting_successful
+                    else -> R.string.exporting_failed
+                }
+
+                toast(toastId)
+            }
+        }
+    }
+
+    private fun tryImportNotes() {
+        Intent(Intent.ACTION_GET_CONTENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type = EXPORT_MIME_TYPE
+            startActivityForResult(this, PICK_IMPORT_NOTES_INTENT)
+        }
+    }
+
+    private fun importNotes(path: String) {
+        toast(R.string.importing)
+        ensureBackgroundThread {
+            NotesImporter(this).importNotes(path) {
+                toast(
+                    when (it) {
+                        NotesImporter.ImportResult.IMPORT_OK -> R.string.importing_successful
+                        NotesImporter.ImportResult.IMPORT_PARTIAL -> R.string.importing_some_entries_failed
+                        else -> R.string.no_items_found
+                    }
+                )
+                initViewPager()
+            }
+        }
+    }
+
+    private fun importNotesFrom(uri: Uri) {
+        when (uri.scheme) {
+            "file" -> importNotes(uri.path!!)
+            "content" -> {
+                val tempFile = getTempFile("messages", "backup.json")
+                if (tempFile == null) {
+                    toast(R.string.unknown_error_occurred)
+                    return
+                }
+
+                try {
+                    val inputStream = contentResolver.openInputStream(uri)
+                    val out = FileOutputStream(tempFile)
+                    inputStream!!.copyTo(out)
+                    importNotes(tempFile.absolutePath)
+                } catch (e: Exception) {
+                    showErrorToast(e)
+                }
+            }
+            else -> toast(R.string.invalid_file_format)
+        }
+    }
+
     private fun showExportFilePickUpdateDialog(exportPath: String, textToExport: String) {
         val items = arrayListOf(
             RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
@@ -871,6 +963,8 @@ class MainActivity : SimpleActivity() {
         handlePermission(PERMISSION_WRITE_STORAGE) {
             if (it) {
                 exportAllNotes()
+            } else {
+                toast(R.string.no_storage_permissions)
             }
         }
     }

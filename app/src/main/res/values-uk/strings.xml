@@ -69,8 +69,9 @@
 
     <!-- Import / Export -->
     <string name="export_all_notes">Експортувати всі нотатки як файли</string>
-    <string name="import_notes">Імпортувати файли як нотатки</string>
     <string name="import_folder">Імпортувати теку</string>
+    <string name="export_notes">Export notes</string>
+    <string name="import_notes">Import notes</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">Як я можу змінити колір віджета?</string>

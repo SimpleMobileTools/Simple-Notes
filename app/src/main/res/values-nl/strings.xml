@@ -69,8 +69,9 @@
 
     <!-- Import / Export -->
     <string name="export_all_notes">Alle notities naar bestanden exporteren</string>
-    <string name="import_notes">Bestanden als notitites importeren</string>
     <string name="import_folder">Map importeren</string>
+    <string name="export_notes">Export notes</string>
+    <string name="import_notes">Import notes</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">Hoe verander ik de kleuren van de widgets?</string>

@@ -67,8 +67,9 @@
     <string name="remove_done_items">إزالة العناصر التي تم إنجازها</string>
     <!-- Import / Export -->
     <string name="export_all_notes">تصدير جميع الملاحظات كملفات</string>
-    <string name="import_notes">استيراد ملفات متعددة كملاحظات</string>
     <string name="import_folder">مجلد الاستيراد</string>
+    <string name="export_notes">Export notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">كيف يمكنني تغيير لون القطع؟</string>
     <string name="faq_1_text">في حال كان لديك عنصر واجهة مستخدم نشط واحد فقط، يمكنك إما إعادة إنشائه، أو استخدام الزر في إعدادات التطبيق لتخصيصه. إذا كان لديك العديد من الحاجيات النشطة، لن يكون الزر الموجود في إعدادات التطبيق متاحا. بما أن التطبيق يدعم تخصيص الألوان لكل عنصر واجهة مستخدم ، سيكون عليك إعادة إنشاء القطعة التي تريد تخصيصها.</string>

@@ -66,8 +66,9 @@
     <string name="remove_done_items">Fjern utførte elementer</string>
     <!-- Import / Export -->    
     <string name="export_all_notes">Eksporter alle notater som filer</string>
-    <string name="import_notes">Importer flere filer som notater</string>
     <string name="import_folder">Importer mappe</string>
+    <string name="export_notes">Export notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hvordan endrer jeg miniprogramsfargen\?</string>
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>

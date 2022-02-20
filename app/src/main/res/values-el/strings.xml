@@ -69,8 +69,9 @@
 
     <!-- Import / Export -->
     <string name="export_all_notes">Εξαγωγή όλων των σημειώσεων ως αρχεία</string>
-    <string name="import_notes">Εισαγωγή πολλών αρχείων ως σημειώσεις</string>
     <string name="import_folder">Εισαγωγή φακέλου</string>
+    <string name="export_notes">Export notes</string>
+    <string name="import_notes">Import notes</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">Πώς μπορώ να αλλάξω το χρώμα των Γραφικών στοιχείων;</string>

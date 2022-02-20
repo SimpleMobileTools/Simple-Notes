@@ -66,8 +66,9 @@
     <string name="remove_done_items">Удалить выполненные позиции</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Экспортировать все заметки в файлы</string>
-    <string name="import_notes">Импортировать несколько файлов в заметки</string>
     <string name="import_folder">Импортировать папку</string>
+    <string name="export_notes">Export notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Как я могу изменить цвет виджета\?</string>
     <string name="faq_1_text">Если у вас только 1 активный виджет, вы можете либо пересоздать его, либо использовать кнопку в настройках приложения. Если у вас несколько активных виджетов, кнопка в настройках будет недоступна. Поскольку приложение поддерживает настройку цвета для каждого виджета, вам придётся пересоздать виджет, который вы хотите настроить.</string>
