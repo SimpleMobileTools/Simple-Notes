@@ -338,20 +338,25 @@ class MainActivity : SimpleActivity() {
 
             if (action == Intent.ACTION_VIEW) {
                 val realPath = intent.getStringExtra(REAL_FILE_PATH)
-                if (realPath != null && hasPermission(PERMISSION_READ_STORAGE)) {
-                    val file = File(realPath)
-                    handleUri(Uri.fromFile(file))
-                } else if (intent.getBooleanExtra(NEW_TEXT_NOTE, false)) {
-                    val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
-                    addNewNote(newTextNote)
-                } else if (intent.getBooleanExtra(NEW_CHECKLIST, false)) {
-                    val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
-                    addNewNote(newChecklist)
-                } else {
-                    handleUri(data!!)
+                val isFromHistory = intent.flags and Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY != 0
+                if (!isFromHistory) {
+                    if (realPath != null && hasPermission(PERMISSION_READ_STORAGE)) {
+                        val file = File(realPath)
+                        handleUri(Uri.fromFile(file))
+                    } else if (intent.getBooleanExtra(NEW_TEXT_NOTE, false)) {
+                        val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                        addNewNote(newTextNote)
+                    } else if (intent.getBooleanExtra(NEW_CHECKLIST, false)) {
+                        val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                        addNewNote(newChecklist)
+                    } else {
+                        handleUri(data!!)
+                    }
                 }
                 intent.removeCategory(Intent.CATEGORY_DEFAULT)
                 intent.action = null
+                intent.removeExtra(NEW_CHECKLIST)
+                intent.removeExtra(NEW_TEXT_NOTE)
             }
         }
     }
