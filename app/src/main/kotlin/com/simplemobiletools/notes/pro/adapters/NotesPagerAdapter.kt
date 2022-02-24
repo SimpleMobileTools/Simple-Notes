@@ -39,7 +39,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
     override fun getPageTitle(position: Int) = notes[position].title
 
     fun updateCurrentNoteData(position: Int, path: String, value: String) {
-        (fragments[position] as? TextFragment)?.apply {
+        (fragments[position])?.apply {
             updateNotePath(path)
             updateNoteValue(value)
         }

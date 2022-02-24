@@ -14,7 +14,6 @@ import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
@@ -22,6 +21,7 @@ import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.fragment_checklist.view.*
+import java.io.File
 
 class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
@@ -58,7 +58,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
                 try {
                     val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-                    items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.value, checklistItemType) ?: ArrayList(1)
+                    items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.getNoteStoredValue(activity!!), checklistItemType) ?: ArrayList(1)
 
                     // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
                     items = items.filter { it.title != null }.toMutableList() as ArrayList<ChecklistItem>
@@ -78,7 +78,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     private fun migrateCheckListOnFailure(note: Note) {
         items.clear()
 
-        note.value.split("\n").map { it.trim() }.filter { it.isNotBlank() }.forEachIndexed { index, value ->
+        note.getNoteStoredValue(activity!!)?.split("\n")?.map { it.trim() }?.filter { it.isNotBlank() }?.forEachIndexed { index, value ->
             items.add(
                 ChecklistItem(
                     id = index,
@@ -180,6 +180,18 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun saveNote(refreshIndex: Int = -1) {
+        if (note == null) {
+            return
+        }
+
+        if (note!!.path.isNotEmpty() && !note!!.path.startsWith("content://") && !File(note!!.path).exists()) {
+            return
+        }
+
+        if (context == null || activity == null) {
+            return
+        }
+
         ensureBackgroundThread {
             context?.let { ctx ->
                 note?.let { currentNote ->
@@ -190,7 +202,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                     }
 
                     currentNote.value = checklistItems
-                    ctx.notesDB.insertOrUpdate(currentNote)
+                    saveNoteValue(note!!, currentNote.value)
                     ctx.updateWidgets()
                 }
             }

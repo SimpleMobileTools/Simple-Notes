@@ -643,7 +643,11 @@ class MainActivity : SimpleActivity() {
                     if (checklistItems != null) {
                         val title = it.absolutePath.getFilenameFromPath().substringBeforeLast('.')
                         val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
-                        displayNewNoteDialog(note.value, title = title, setChecklistAsDefault = true)
+                        runOnUiThread {
+                            OpenFileDialog(this, it.path) {
+                                displayNewNoteDialog(note.value, title = it.title, it.path, setChecklistAsDefault = true)
+                            }
+                        }
                     } else {
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
@@ -740,11 +744,9 @@ class MainActivity : SimpleActivity() {
             }
         }
 
-        if (checklistItems != null) {
-            val note = Note(null, noteTitle, content, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
-            displayNewNoteDialog(note.value, title = noteTitle, setChecklistAsDefault = true)
-        } else if (!canSyncNoteWithFile) {
-            val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+        val noteType = if (checklistItems != null) NoteType.TYPE_CHECKLIST.value else NoteType.TYPE_TEXT.value
+        if (!canSyncNoteWithFile) {
+            val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
             displayNewNoteDialog(note.value, title = noteTitle, "")
         } else {
             val items = arrayListOf(
@@ -755,7 +757,7 @@ class MainActivity : SimpleActivity() {
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == IMPORT_FILE_SYNC
                 val path = if (syncFile) uri.toString() else ""
-                val note = Note(null, noteTitle, content, NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
                 displayNewNoteDialog(note.value, title = noteTitle, path)
             }
         }
