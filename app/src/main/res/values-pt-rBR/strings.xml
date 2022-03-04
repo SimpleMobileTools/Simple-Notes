@@ -24,9 +24,9 @@
     <string name="text_note">Anotações</string>
     <string name="lock_note">Bloquear anotação</string>
     <string name="unlock_note">Desbloquear anotação</string>
-    <string name="note_content_locked">O conteúdo da anotação está bloqueado.</string>
+    <string name="note_content_locked">O conteúdo da nota está bloqueado.</string>
     <string name="show_content">Mostrar conteúdo</string>
-    <string name="locking_warning">AVISO: Caso você esqueça a senha, não conseguirá acessar o conteúdo.</string>
+    <string name="locking_warning">AVISO: Caso você esqueça a senha, não conseguirá recuperá-la ou acessar o conteúdo da nota.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
     <!-- File notes -->
@@ -36,7 +36,7 @@
     <string name="only_import_file_content">Importe apenas o conteúdo do arquivo\n(modificar o arquivo não afetará a nota)</string>
     <string name="update_file_at_note">Atualize o próprio arquivo ao atualizar a nota\n(a nota será excluída se o arquivo for excluído ou o caminho alterado)</string>
     <string name="delete_file_itself">Apagar também o arquivo \"%s\"</string>
-    <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
+    <string name="note_saved_successfully">Nota \"%s\" salva com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
     <string name="only_export_file_content">Exportar apenas o conteúdo atual do arquivo\n(alterar a nota não afetará o arquivo)</string>
     <!-- Settings -->
