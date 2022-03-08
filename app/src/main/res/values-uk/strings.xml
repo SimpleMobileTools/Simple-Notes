@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Простий Нотатник</string>
     <string name="app_launcher_name">Нотатник</string>
@@ -22,23 +23,21 @@
     <string name="text_note">Текст нотатки</string>
     <string name="lock_note">Заблокувати нотатку</string>
     <string name="unlock_note">Розблокувати нотатку</string>
-    <string name="note_content_locked">Нотатку заблоковано.</string>
+    <string name="note_content_locked">Вміст нотатки заблоковано.</string>
     <string name="show_content">Показати нотатку</string>
-    <string name="locking_warning">УВАГА: Якщо ви забудете пароль доступу до нотатки, ви більше не зможете його відновити або прочитати нотатку.</string>
+    <string name="locking_warning">ЗАСТЕРЕЖЕННЯ: Якщо ви забудете пароль, то більше не зможете його відновити або отримати доступ до вмісту нотаток.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
-
     <!-- File notes -->
     <string name="open_file">Відкрити файл</string>
     <string name="export_as_file">Експортувати як файл</string>
-    <string name="file_too_large">Файл надто великого розміру, ліміт складає 1MB</string>
+    <string name="file_too_large">Файл надто великий, ліміт 1MB</string>
     <string name="only_import_file_content">Імпортувати лише вміст файлу\n(зміна файлу не змінить нотатку)</string>
     <string name="update_file_at_note">Оновлювати вміст файлу при оновленні нотатки\n(нотатку буде видалено, якщо буде видалено файл або зміниться його розташування)</string>
     <string name="delete_file_itself">Також видалити файл \"%s\"</string>
     <string name="note_saved_successfully">Нотатка \"%s\" успішно збережена</string>
     <string name="note_exported_successfully">Нотатка \"%s\" успішно експортована</string>
     <string name="only_export_file_content">Експортувати лише поточний вміст файлу\n(зміна нотатки не вплине на файл)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Повідомляти, що файл успішно збережено</string>
     <string name="links_and_emails_clickable">Зробити активними посилання та адреси електронної пошти</string>
@@ -58,7 +57,6 @@
     <string name="use_incognito_mode">Використовувати режим Приватності в клавіатурі</string>
     <string name="move_done_checklist_items">Поміщати вкінець виконані позиції у списку</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">Список</string>
     <string name="checklists">Checklists</string>
@@ -66,22 +64,19 @@
     <string name="add_new_checklist_items">Додати нові позиції у списку</string>
     <string name="checklist_is_empty">Список порожній</string>
     <string name="remove_done_items">Вилучати виконані позиції</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Експортувати всі нотатки як файли</string>
     <string name="import_folder">Імпортувати теку</string>
     <string name="export_notes">Export notes</string>
     <string name="import_notes">Import notes</string>
-
     <!-- FAQ -->
     <string name="faq_1_title">Як я можу змінити колір віджета?</string>
     <string name="faq_1_text">Якщо у вас тільки 1 активний віджет, ви можете або відворити його знову, або використовувати кнопку в налаштуваннях програми. Якщо у вас декілька активних віджетів, кнопка в налаштуваннях буде недоступна. Оскільки додаток підтримує налаштування кольору для кожного віджета, вам доведеться відтворити віджет, який ви хочете налаштувати.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: Записник списку завдань і планувальник</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Створюйте нотатки, списки нагадувань &amp; завдань з інструментом для швидких нотаток</string>
+    <string name="app_short_description">Simple planner: Зберігайте нотатки та to-do списки з швидкими нагадуваннями</string>
     <string name="app_long_description">
         ★ Потрібно створити швидку нотатку для покупок, адреси чи ідеї для стартапу? Припиняйте пошуки, адже це є простий органайзер, який ви шукали : Simple Notes: Записник списку завдань і планувальник! Без складних налаштувань, просто натискайте на екрані і друкуйте, що потрібно, створюйте нотатки, швидкі списки, перелік завдань чи нагадувань про будь-який задум. З вашим простим особистим записником ви зможете швидко запам\'ятати будь-що! Покупки в магазині, спомин про ваші наміри чи створення нагадування - занотовування ще ніколи не було таким простим ★
 
@@ -113,7 +108,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

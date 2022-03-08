@@ -1,7 +1,23 @@
-Har du brug for hurtigt at notere noget, fx en huskeseddel, en adresse eller en ide, så er denne app lige noget for dig! Der er ingen komplicerede opsætninger, gå bare i gang med at notere med det samme. Indeholder automatisk gemmefunktion, så du mister ikke dine ændringer ved en fejltagelse. Understøtter oprettelse af flere uafhængige noter.
+ ★ Har du brug for at tage en hurtig note af noget at købe, en adresse eller en startidé\? Så kig ikke længere, da dette er den enkle arrangør værktøj, du har ledt efter: Simple Noter: To-do liste arrangør og planner! Ingen komplicerede opsætning trin er nødvendige, bare trykke på skærmen og indtaste, hvad du kom til og oprette noter, hurtige lister, tjekliste eller backup for enhver idé. Med din enkle personlige notesbog kan du huske alt hurtigt! Shopping for dagligvarer, huske dine tanker og lettere at oprette påmindelser tage noter har aldrig været nemmere 
 
-Du kan tilgå en note på ingen tid ved at bruge appens widget, som kan tilpasses og skaleres og åbnes med et enkelt klik.
+★ Simple noter planner er hurtig, enkel at bruge arrangør og bemærkelsesværdige planner, og det vil tjene som et uvurderligt værktøj og følgesvend, hjælper dig med at huske nødvendige stykke information! Vores påmindelsesværktøj giver dig mulighed for at holde styr på dine opgaver, oprette en daglig tjekliste for varer eller ideer med hidtil uset enkelhed, notabilitet og uovertruffen tidsbesparende værdi. Administrer din tidsplan på en hurtig og enkel måde. Dette værktøj til påmindelse om notesbog leveres med automatisk lagring, så du ikke sletter dine ændringer ved en fejltagelse. 
 
-Uden reklamer og unødvendige tilladelser. Den er helt igennem open source, og du kan selv bestemme farverne.
+Det understøtter også oprettelse af flere uafhængige almindelige tekstnoter og lister meget hurtigt. Du kan nemt få adgang til noten og organisere din opgaveliste på ingen tid ved hjælp af den tilpassede og videresizable widget, som åbner appen på tryk. Det er brugervenligt og indeholder absolut ingen annoncer eller unødvendige tilladelser - ingen bindinger. 
 
-Denne app er en del af en større serie. Du kan finde dem alle på siden https://www.simplemobiletools.com
+Det er fuldt opensource, giver tilpassede farver, som kan justeres med hurtig og hurtig tweaking. <b> Enkle noter: Opgavelistearrangør og planlægger </b> er den bedste varearrangør og listeplanlægger, du kan bruge uden annoncer. Hvis du har brug for en arrangør af høj kvalitet til en hurtig og god pris, en pålidelig og brugervenlig påmindelse, der virkelig er enkel at bruge, kan du downloade vores app lige nu :) 
+
+Har din egen personlige notesbog i lommen hver dag og har en backup planner, så du ikke behøver at bekymre dig om at glemme et vigtigt møde eller din indkøbsliste :). Det leveres med materialedesign og mørkt tema som standard giver stor brugeroplevelse for nem brug. Manglen på internetadgang giver dig mere privatliv, sikkerhed og stabilitet end andre apps. 
+
+Indeholder ingen annoncer eller unødvendige tilladelser. Det er fuldt opensource, giver tilpassede farver. 
+
+<b>Se hele pakken med simple værktøjer her:</b> 
+https://www.simplemobiletools.com
+
+<b>Enkeltstående websted for Simple Notes Pro:</b>
+https://www.simplemobiletools.com/notes
+
+<b>Facebook:</b>
+https://www.facebook.com/simplemobiletools
+
+<b>Reddit:</b>
+https://www.reddit.com/r/SimpleMobileTools

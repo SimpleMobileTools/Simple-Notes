@@ -49,6 +49,7 @@ android {
     productFlavors {
         core {}
         fdroid {}
+        prepaid {}
     }
 
     sourceSets {
@@ -62,7 +63,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:078f353fce'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:b3416c828f'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.documentfile:documentfile:1.0.1'
 

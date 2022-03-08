@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Eenvoudige Notities</string>
     <string name="app_launcher_name">Notities</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">Notitie met deze naam bestaat reeds</string>
     <string name="open_note">Notitie openen</string>
     <string name="delete_note">Notitie verwijderen</string>
-    <string name="delete_note_prompt_message">De notitie \"%s\" verwijderen?</string>
+    <string name="delete_note_prompt_message">De notitie \"%s\" verwijderen\?</string>
     <string name="pick_a_note">Kies een notitie</string>
     <string name="rename_note">Naam wijzigen</string>
     <string name="general_note">Algemeen</string>
@@ -27,7 +28,6 @@
     <string name="locking_warning">WAARSCHUWING: Zonder het wachtwoord kan de inhoud van de notitie niet meer worden hersteld.</string>
     <string name="new_text_note">Nieuwe notitie</string>
     <string name="new_checklist">Nieuwe lijst</string>
-
     <!-- File notes -->
     <string name="open_file">Bestand openen</string>
     <string name="export_as_file">Als bestand exporteren</string>
@@ -38,7 +38,6 @@
     <string name="note_saved_successfully">Notitie \"%s\" opgeslagen</string>
     <string name="note_exported_successfully">Notitie \"%s\" geëxporteerd</string>
     <string name="only_export_file_content">Alleen de huidige bestandsinhoud exporteren\n(wijzigingen in de notitie zullen niet in het bestand doorgevoerd worden)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Bevestigingen tonen</string>
     <string name="links_and_emails_clickable">Links en e-mailadressen aanklikbaar maken</string>
@@ -58,7 +57,6 @@
     <string name="use_incognito_mode">Incognito-modus van toetsenbord gebruiken</string>
     <string name="move_done_checklist_items">Afgewerkte items naar onderen verplaatsen</string>
     <string name="add_new_checklist_items_top">Nieuwe items boven aan de lijst toevoegen</string>
-
     <!-- Checklists -->
     <string name="checklist">Lijst</string>
     <string name="checklists">Lijsten</string>
@@ -66,50 +64,20 @@
     <string name="add_new_checklist_items">Items toevoegen</string>
     <string name="checklist_is_empty">De lijst is leeg</string>
     <string name="remove_done_items">Afgeronde items wissen</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Alle notities naar bestanden exporteren</string>
     <string name="import_folder">Map importeren</string>
     <string name="export_notes">Export notes</string>
     <string name="import_notes">Import notes</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">Hoe verander ik de kleuren van de widgets?</string>
+    <string name="faq_1_title">Hoe verander ik de kleuren van de widgets\?</string>
     <string name="faq_1_text">Gebruik de optie in de instellingen van de app om de kleuren aan te passen, of maak de widget opnieuw aan. Indien er meerdere widgets van deze app actief zijn, zal deze optie niet beschikbaar zijn. De kleuren zijn dan alleen aan te passen door de widget opnieuw aan te maken.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Eenvoudige Notities Pro: Takenlijst en memo\'s</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Eenvoudige planner: maak notities, takenlijsten en herinneringen</string>
-    <string name="app_long_description">
-        ★ Deze app is uiterst geschikt voor alle soorten notities, of het nu een lijstje boodschappen is, een adres of een idee voor een start-up. De app kan ook funguren als takenlijst en planner! Geen moeilijke stappen, gewoon intypen en de notitie, (afvink)lijst of herinnering staat veilig. Zo vergeet u nooit iets meer! ★
-
-        Deze app is snelle en eenvoudig te gebruiken organizer en gebruiksvriendelijke planner. Het zal dienen als een onmisbaar hulpmiddel om allerlei zaken bij te houden!
-
-        De notities met herinneringen zullen automatisch worden opgeslagen; gegevens zullen dus nooit plotseling verdwenen zijn. Het is ook mogelijk om meerdere aparate notities en lijsten te maken.
-
-        Met een aan te passen widget is een notitie of takenlijst onmiddellijk ter beschikking en zal deze direct geopend worden in de app met een simpele klik.
-
-        <b>Eenvoudige Notities Pro: Takenlijst en memo\'s</b> is het beste notitieblok om in de broekzak mee te dragen en een app voor herinneringen aan afspraken en boodschappen, helemaal zonder advertenties.
-
-        De app is ontworpen volgens material design en heeft standaard een donker thema. De app heeft geen toegang tot het internet nodig en voorziet van meer privacy, veiligheid en stabiliteit dan andere apps.
-
-        Bevat geen advertenties of onnodige permissies. Volledig open-source. Kleuren van de app kunnen worden aangepast.
-
-        <b>Probeer ook eens de andere apps van Simple Tools:</b>
-        https://www.simplemobiletools.com
-
-        <b>Website voor Eenvoudige Notities Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
+    <string name="app_long_description"> ★ Deze app is uiterst geschikt voor alle soorten notities, of het nu een lijstje boodschappen is, een adres of een idee voor een start-up. De app kan ook funguren als takenlijst en planner! Geen moeilijke stappen, gewoon intypen en de notitie, (afvink)lijst of herinnering staat veilig. Zo vergeet u nooit iets meer! ★ Deze app is snelle en eenvoudig te gebruiken organizer en gebruiksvriendelijke planner. Het zal dienen als een onmisbaar hulpmiddel om allerlei zaken bij te houden! De notities met herinneringen zullen automatisch worden opgeslagen; gegevens zullen dus nooit plotseling verdwenen zijn. Het is ook mogelijk om meerdere aparate notities en lijsten te maken. Met een aan te passen widget is een notitie of takenlijst onmiddellijk ter beschikking en zal deze direct geopend worden in de app met een simpele klik. <b>Eenvoudige Notities Pro: Takenlijst en memo\'s</b> is het beste notitieblok om in de broekzak mee te dragen en een app voor herinneringen aan afspraken en boodschappen, helemaal zonder advertenties. De app is ontworpen volgens material design en heeft standaard een donker thema. De app heeft geen toegang tot het internet nodig en voorziet van meer privacy, veiligheid en stabiliteit dan andere apps. Bevat geen advertenties of onnodige permissies. Volledig open-source. Kleuren van de app kunnen worden aangepast. <b>Probeer ook eens de andere apps van Simple Tools:</b> https://www.simplemobiletools.com <b>Website voor Eenvoudige Notities Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
