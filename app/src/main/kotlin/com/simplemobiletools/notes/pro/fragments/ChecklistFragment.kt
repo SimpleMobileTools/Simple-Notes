@@ -30,11 +30,10 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     lateinit var view: ViewGroup
 
     var items = ArrayList<ChecklistItem>()
-    val checklistItems get(): String = Gson().toJson(items)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_checklist, container, false) as ViewGroup
-        noteId = arguments!!.getLong(NOTE_ID, 0L)
+        noteId = requireArguments().getLong(NOTE_ID, 0L)
         return view
     }
 
@@ -52,13 +51,13 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun loadNoteById(noteId: Long) {
-        NotesHelper(activity!!).getNoteWithId(noteId) { storedNote ->
+        NotesHelper(requireActivity()).getNoteWithId(noteId) { storedNote ->
             if (storedNote != null && activity?.isDestroyed == false) {
                 note = storedNote
 
                 try {
                     val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-                    items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.getNoteStoredValue(activity!!), checklistItemType) ?: ArrayList(1)
+                    items = Gson().fromJson<ArrayList<ChecklistItem>>(storedNote.getNoteStoredValue(requireActivity()), checklistItemType) ?: ArrayList(1)
 
                     // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
                     items = items.filter { it.title != null }.toMutableList() as ArrayList<ChecklistItem>
@@ -78,7 +77,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     private fun migrateCheckListOnFailure(note: Note) {
         items.clear()
 
-        note.getNoteStoredValue(activity!!)?.split("\n")?.map { it.trim() }?.filter { it.isNotBlank() }?.forEachIndexed { index, value ->
+        note.getNoteStoredValue(requireActivity())?.split("\n")?.map { it.trim() }?.filter { it.isNotBlank() }?.forEachIndexed { index, value ->
             items.add(
                 ChecklistItem(
                     id = index,
@@ -92,14 +91,14 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun setupFragment() {
-        if (activity == null || activity!!.isFinishing) {
+        if (activity == null || requireActivity().isFinishing) {
             return
         }
 
-        val adjustedPrimaryColor = activity!!.getAdjustedPrimaryColor()
+        val adjustedPrimaryColor = requireActivity().getAdjustedPrimaryColor()
         view.checklist_fab.apply {
             setColors(
-                activity!!.config.textColor,
+                requireActivity().config.textColor,
                 adjustedPrimaryColor,
                 adjustedPrimaryColor.getContrastColor()
             )
@@ -110,7 +109,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             }
         }
 
-        view.fragment_placeholder.setTextColor(activity!!.config.textColor)
+        view.fragment_placeholder.setTextColor(requireActivity().config.textColor)
         view.fragment_placeholder_2.apply {
             setTextColor(adjustedPrimaryColor)
             underlineText()
@@ -201,7 +200,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                         }
                     }
 
-                    currentNote.value = checklistItems
+                    currentNote.value = getChecklistItems()
                     saveNoteValue(note!!, currentNote.value)
                     ctx.updateWidgets()
                 }
@@ -222,6 +221,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             checklist_list.beVisibleIf(items.isNotEmpty())
         }
     }
+
+    fun getChecklistItems() = Gson().toJson(items)
 
     override fun saveChecklist() {
         saveNote()

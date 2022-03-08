@@ -42,7 +42,7 @@ class TextFragment : NoteFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_text, container, false) as ViewGroup
-        noteId = arguments!!.getLong(NOTE_ID, 0L)
+        noteId = requireArguments().getLong(NOTE_ID, 0L)
         retainInstance = true
 
         val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
@@ -65,7 +65,7 @@ class TextFragment : NoteFragment() {
     override fun onResume() {
         super.onResume()
 
-        NotesHelper(activity!!).getNoteWithId(noteId) {
+        NotesHelper(requireActivity()).getNoteWithId(noteId) {
             if (it != null) {
                 note = it
                 setupFragment()
@@ -143,7 +143,7 @@ class TextFragment : NoteFragment() {
                 onGlobalLayout {
                     if (activity?.isDestroyed == false) {
                         requestFocus()
-                        val inputManager = activity!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                        val inputManager = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                         inputManager.showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
                     }
                 }
@@ -202,15 +202,15 @@ class TextFragment : NoteFragment() {
         }
 
         val newText = getCurrentNoteViewText()
-        val oldText = note!!.getNoteStoredValue(context!!)
+        val oldText = note!!.getNoteStoredValue(requireContext())
         if (newText != null && (newText != oldText || force)) {
             note!!.value = newText
             saveNoteValue(note!!, newText)
-            context!!.updateWidgets()
+            requireContext().updateWidgets()
         }
     }
 
-    fun hasUnsavedChanges() = getCurrentNoteViewText() != note!!.getNoteStoredValue(context!!)
+    fun hasUnsavedChanges() = getCurrentNoteViewText() != note!!.getNoteStoredValue(requireContext())
 
     fun focusEditText() {
         view.text_note_view.requestFocus()

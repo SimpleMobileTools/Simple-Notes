@@ -37,7 +37,7 @@ abstract class NoteFragment : Fragment() {
 
     protected fun saveNoteValue(note: Note, content: String?) {
         if (note.path.isEmpty()) {
-            NotesHelper(activity!!).insertOrUpdateNote(note) {
+            NotesHelper(requireActivity()).insertOrUpdateNote(note) {
                 (activity as? MainActivity)?.noteSavedSuccessfully(note.title)
             }
         } else {
