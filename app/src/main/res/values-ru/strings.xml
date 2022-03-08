@@ -26,8 +26,8 @@
     <string name="note_content_locked">Содержимое заметки заблокировано.</string>
     <string name="show_content">Показывать содержание</string>
     <string name="locking_warning">ПРЕДУПРЕЖДЕНИЕ: если вы забудете пароль, то не сможете восстановить его или получить доступ к содержимому заметок.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Новая заметка</string>
+    <string name="new_checklist">Новый список</string>
     <!-- File notes -->
     <string name="open_file">Открыть файл</string>
     <string name="export_as_file">Экспортировать в файл</string>
@@ -73,7 +73,7 @@
     <string name="faq_1_text">Если у вас только 1 активный виджет, вы можете либо пересоздать его, либо использовать кнопку в настройках приложения. Если у вас несколько активных виджетов, кнопка в настройках будет недоступна. Поскольку приложение поддерживает настройку цвета для каждого виджета, вам придётся пересоздать виджет, который вы хотите настроить.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: Менеджер To-do списков</string>
+    <string name="app_title">Simple Notes Pro: списки дел и планировщик</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Simple planner: создавайте и сохраняйте заметки и to-do списки с быстрыми напоминаниями</string>
     <string name="app_long_description">

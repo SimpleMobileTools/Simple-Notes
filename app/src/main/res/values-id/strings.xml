@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Catatan</string>
@@ -27,7 +28,6 @@
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
-
     <!-- File notes -->
     <string name="open_file">Buka berkas</string>
     <string name="export_as_file">Ekspor sebagai berkas</string>
@@ -38,7 +38,6 @@
     <string name="note_saved_successfully">Catatan \"%s\" berhasil disimpan</string>
     <string name="note_exported_successfully">Catatan \"%s\" berhasil diekspor</string>
     <string name="only_export_file_content">Hanya ekspor konten berkas ini\n(mengubah catatan tidak akan berdampak pada berkas)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Tampilkan pesan jika berhasil disimpan</string>
     <string name="links_and_emails_clickable">Buat tautan dan email bisa diklik</string>
@@ -58,7 +57,6 @@
     <string name="use_incognito_mode">Gunakan mode papan ketik incognito</string>
     <string name="move_done_checklist_items">Pindah checklist yang belum selesai ke urutan atas</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">Checklist</string>
     <string name="checklists">Checklists</string>
@@ -66,53 +64,33 @@
     <string name="add_new_checklist_items">Tambah item checklist baru</string>
     <string name="checklist_is_empty">Checklist kosong</string>
     <string name="remove_done_items">Remove done items</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Ekspor semua catatan ke berkas</string>
     <string name="import_notes">Impor beberapa berkas ke catatan</string>
     <string name="import_folder">Impor folder</string>
-
     <!-- FAQ -->
     <string name="faq_1_title">Bagaimana caranya mengubah warna widget?</string>
     <string name="faq_1_text">Jika anda hanya memiliki 1 widget aktif, anda bisa menambahkan ulang, atau gunakan tombol di dalam pengaturan aplikasi untuk mengubahnya. Jika anda memiliki banyak widget aktif, tombol di dalam pengaturan aplikasi tidak akan tersedia. Karena aplikasi mendukung penyesuaian warna per-widget, anda harus menghapus dan menambahkan ulang widget yang ingin anda ubah warnanya.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
-    <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
-
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
-
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
-
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
-
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
-
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
-
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-
-        Sama sekali tidak berisi iklan dan tidak membutuhkan perizinan yang tidak perlu. Sepenuhnya bersumber terbuka, dengan warna yang bisa disesuaikan.
-
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
-
-        <b>Standalone website of Simple Notes Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
+    <string name="app_long_description"> ★ Perlu mencatat sesuatu untuk dibeli, alamat, atau ide startup\? Maka tidak perlu mencari lagi karena ini adalah alat pengatur sederhana yang Anda cari: Simple Notes: Agenda dan perencana daftar tugas!
+\nTidak perlu langkah penyiapan yang rumit, cukup ketuk layar dan ketik tujuan Anda dan buat catatan, daftar cepat, daftar periksa, atau cadangan untuk ide apa pun. Dengan buku catatan pribadi Anda yang sederhana, Anda dapat mengingat apa saja dengan cepat! Berbelanja bahan makanan, menghafal pikiran Anda dan lebih mudah mengatur pengingat membuat catatan tidak pernah semudah ini.
+\n
+\n★ Perencana catatan sederhana cepat, mudah digunakan organizer dan perencana yang luar biasa dan itu akan berfungsi sebagai alat dan pendamping yang tak ternilai, membantu Anda mengingat bagian penting dari informasi! Alat pengingat kami memungkinkan Anda untuk melacak tugas Anda, membuat daftar periksa harian untuk item atau ide dengan kesederhanaan yang belum pernah terjadi sebelumnya, ketenaran dan nilai hemat waktu yang tak tertandingi. Kelola jadwal Anda dengan cepat dan sederhana. Alat pengingat buku catatan ini dilengkapi dengan penyimpanan otomatis sehingga Anda tidak akan membuang perubahan Anda secara tidak sengaja. Ini juga mendukung pembuatan beberapa catatan dan daftar teks biasa yang independen dengan sangat cepat. Anda dapat dengan mudah mengakses catatan dan mengatur daftar tugas Anda dalam waktu singkat dengan menggunakan widget yang dapat disesuaikan dan dapat diubah ukurannya, yang membuka aplikasi dengan ketukan. Ini ramah pengguna dan sama sekali tidak mengandung iklan atau izin yang tidak perlu - tanpa pamrih. Ini sepenuhnya opensource, menyediakan warna yang dapat disesuaikan yang dapat disesuaikan dengan tweaker cepat dan cepat.
+\n
+\n<b>Simple Notes: Pengatur dan perencana daftar agenda </b> adalah pengatur item dan perencana daftar terbaik yang dapat Anda gunakan tanpa iklan. Jika Anda membutuhkan organizer berkualitas tinggi untuk catatan yang cepat dan baik, pengingat yang andal dan ramah pengguna yang benar-benar mudah digunakan, unduh aplikasi kami sekarang :)
+\n
+\nMiliki buku catatan pribadi Anda di saku Anda setiap hari dan miliki perencana cadangan sehingga Anda tidak perlu khawatir melupakan pertemuan penting atau daftar belanja Anda :).
+\n
+\nMuncul dengan desain material dan tema gelap secara default, memberikan pengalaman pengguna yang luar biasa untuk penggunaan yang mudah. Kurangnya akses internet memberi Anda lebih banyak privasi, keamanan, dan stabilitas daripada aplikasi lain. Tidak mengandung iklan atau izin yang tidak perlu. Ini sepenuhnya sumber-terbuka, menyediakan warna yang dapat disesuaikan.
+\n
+\n<b>Lihat rangkaian lengkap Simple Tools di sini:</b> https://www.simplemobiletools.com
+\n<b>Situs web mandiri Simple Notes Pro:</b> https://www.simplemobiletools.com/notes
+\n<b>Facebook:</b> https://www.facebook.com/simplemobiletools
+\n<b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
