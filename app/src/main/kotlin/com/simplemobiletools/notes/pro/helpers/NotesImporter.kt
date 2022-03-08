@@ -18,7 +18,7 @@ class NotesImporter(private val context: Context) {
     private var notesImported = 0
     private var notesFailed = 0
 
-    fun importNotes(path: String, onProgress: (total: Int, current: Int) -> Unit = { _, _ -> }, callback: (result: ImportResult) -> Unit) {
+    fun importNotes(path: String, callback: (result: ImportResult) -> Unit) {
         ensureBackgroundThread {
             try {
                 val inputStream = if (path.contains("/")) {
@@ -37,13 +37,11 @@ class NotesImporter(private val context: Context) {
                         return@ensureBackgroundThread
                     }
 
-                    onProgress.invoke(totalNotes, notesImported)
                     for (note in notes) {
                         val exists = context.notesDB.getNoteIdWithTitle(note.title) != null
                         if (!exists) {
                             context.notesDB.insertOrUpdate(note)
                             notesImported++
-                            onProgress.invoke(totalNotes, notesImported)
                         }
                     }
                 }

@@ -16,7 +16,7 @@ class NotesExporter(private val context: Context) {
 
     private val gson = Gson()
 
-    fun exportNotes(outputStream: OutputStream?, onProgress: (total: Int, current: Int) -> Unit = { _, _ -> }, callback: (result: ExportResult) -> Unit) {
+    fun exportNotes(outputStream: OutputStream?, callback: (result: ExportResult) -> Unit) {
         ensureBackgroundThread {
             if (outputStream == null) {
                 callback.invoke(ExportResult.EXPORT_FAIL)
@@ -28,13 +28,11 @@ class NotesExporter(private val context: Context) {
                     var written = 0
                     writer.beginArray()
                     val notes = context.notesDB.getNotes() as ArrayList<Note>
-                    val totalNotes = notes.size
                     for (note in notes) {
                         if (note.protectionType === PROTECTION_NONE) {
                             val noteToSave = getNoteToExport(note)
                             writer.jsonValue(gson.toJson(noteToSave))
                             written++
-                            onProgress.invoke(totalNotes, written)
                         }
                     }
                     writer.endArray()
