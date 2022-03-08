@@ -77,7 +77,6 @@ class MainActivity : SimpleActivity() {
     private var searchIndex = 0
     private var searchMatches = emptyList<Int>()
     private var isSearchActive = false
-    private val notesExporter by lazy { NotesExporter(this) }
 
     private lateinit var searchQueryET: MyEditText
     private lateinit var searchPrevBtn: ImageView
@@ -883,6 +882,7 @@ class MainActivity : SimpleActivity() {
     private fun exportNotesTo(outputStream: OutputStream?) {
         toast(R.string.exporting)
         ensureBackgroundThread {
+            val notesExporter = NotesExporter(this)
             notesExporter.exportNotes(outputStream) {
                 val toastId = when (it) {
                     NotesExporter.ExportResult.EXPORT_OK -> R.string.exporting_successful
