@@ -210,7 +210,7 @@ class TextFragment : NoteFragment() {
         }
     }
 
-    fun hasUnsavedChanges() = getCurrentNoteViewText() != note!!.getNoteStoredValue(requireContext())
+    fun hasUnsavedChanges() = note != null && getCurrentNoteViewText() != note!!.getNoteStoredValue(requireContext())
 
     fun focusEditText() {
         view.text_note_view.requestFocus()
