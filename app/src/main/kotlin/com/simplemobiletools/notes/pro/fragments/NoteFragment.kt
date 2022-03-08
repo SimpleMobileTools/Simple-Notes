@@ -8,8 +8,10 @@ import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
 import com.simplemobiletools.commons.extensions.performSecurityCheck
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
+import com.simplemobiletools.notes.pro.activities.MainActivity
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
+import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.fragment_checklist.view.*
 
@@ -33,6 +35,19 @@ abstract class NoteFragment : Fragment() {
         }
     }
 
+    protected fun saveNoteValue(note: Note, content: String?) {
+        if (note.path.isEmpty()) {
+            NotesHelper(activity!!).insertOrUpdateNote(note) {
+                (activity as? MainActivity)?.noteSavedSuccessfully(note.title)
+            }
+        } else {
+            if (content != null) {
+                val displaySuccess = activity?.config?.displaySuccess ?: false
+                (activity as? MainActivity)?.tryExportNoteValueToFile(note.path, content, displaySuccess)
+            }
+        }
+    }
+
     fun handleUnlocking(callback: (() -> Unit)? = null) {
         if (callback != null && (note!!.protectionType == PROTECTION_NONE || shouldShowLockedContent)) {
             callback()
@@ -48,6 +63,14 @@ abstract class NoteFragment : Fragment() {
                 callback?.invoke()
             }
         )
+    }
+
+    fun updateNoteValue(value: String) {
+        note?.value = value
+    }
+
+    fun updateNotePath(path: String) {
+        note?.path = path
     }
 
     abstract fun checkLockState()

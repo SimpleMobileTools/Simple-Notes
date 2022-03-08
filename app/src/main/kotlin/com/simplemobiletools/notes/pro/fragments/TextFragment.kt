@@ -23,7 +23,6 @@ import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.MyMovementMethod
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
-import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.TextHistory
 import com.simplemobiletools.notes.pro.models.TextHistoryItem
 import kotlinx.android.synthetic.main.fragment_text.view.*
@@ -187,14 +186,6 @@ class TextFragment : NoteFragment() {
         }
     }
 
-    fun updateNoteValue(value: String) {
-        note?.value = value
-    }
-
-    fun updateNotePath(path: String) {
-        note?.path = path
-    }
-
     fun getNotesView() = view.text_note_view
 
     fun saveText(force: Boolean) {
@@ -214,7 +205,7 @@ class TextFragment : NoteFragment() {
         val oldText = note!!.getNoteStoredValue(context!!)
         if (newText != null && (newText != oldText || force)) {
             note!!.value = newText
-            saveNoteValue(note!!)
+            saveNoteValue(note!!, newText)
             context!!.updateWidgets()
         }
     }
@@ -223,20 +214,6 @@ class TextFragment : NoteFragment() {
 
     fun focusEditText() {
         view.text_note_view.requestFocus()
-    }
-
-    private fun saveNoteValue(note: Note) {
-        if (note.path.isEmpty()) {
-            NotesHelper(activity!!).insertOrUpdateNote(note) {
-                (activity as? MainActivity)?.noteSavedSuccessfully(note.title)
-            }
-        } else {
-            val currentText = getCurrentNoteViewText()
-            if (currentText != null) {
-                val displaySuccess = activity?.config?.displaySuccess ?: false
-                (activity as? MainActivity)?.tryExportNoteValueToFile(note.path, currentText, displaySuccess)
-            }
-        }
     }
 
     fun getCurrentNoteViewText() = view.text_note_view?.text?.toString()
