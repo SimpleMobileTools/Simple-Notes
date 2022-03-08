@@ -43,7 +43,7 @@ abstract class NoteFragment : Fragment() {
         } else {
             if (content != null) {
                 val displaySuccess = activity?.config?.displaySuccess ?: false
-                (activity as? MainActivity)?.tryExportNoteValueToFile(note.path, content, displaySuccess)
+                (activity as? MainActivity)?.tryExportNoteValueToFile(note.path, note.title, content, displaySuccess)
             }
         }
     }

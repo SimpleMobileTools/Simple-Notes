@@ -864,7 +864,7 @@ class MainActivity : SimpleActivity() {
             } else if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
                 showExportFilePickUpdateDialog(it, textToExport)
             } else {
-                tryExportNoteValueToFile(it, textToExport, true)
+                tryExportNoteValueToFile(it, mCurrentNote.title, textToExport, true)
             }
         }
     }
@@ -949,7 +949,7 @@ class MainActivity : SimpleActivity() {
 
         RadioGroupDialog(this, items) {
             val syncFile = it as Int == EXPORT_FILE_SYNC
-            tryExportNoteValueToFile(exportPath, textToExport, true) { exportedSuccessfully ->
+            tryExportNoteValueToFile(exportPath, mCurrentNote.title, textToExport, true) { exportedSuccessfully ->
                 if (exportedSuccessfully) {
                     if (syncFile) {
                         mCurrentNote.path = exportPath
@@ -995,7 +995,7 @@ class MainActivity : SimpleActivity() {
                             toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
                         } else {
                             val noteStoredValue = note.getNoteStoredValue(this) ?: ""
-                            tryExportNoteValueToFile(file.absolutePath, note.value, false) { exportedSuccessfully ->
+                            tryExportNoteValueToFile(file.absolutePath, mCurrentNote.title, note.value, false) { exportedSuccessfully ->
                                 if (exportedSuccessfully) {
                                     if (syncFile) {
                                         note.path = file.absolutePath
@@ -1029,9 +1029,9 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    fun tryExportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
+    fun tryExportNoteValueToFile(path: String, title: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
         if (path.startsWith("content://")) {
-            exportNoteValueToUri(Uri.parse(path), content, callback)
+            exportNoteValueToUri(Uri.parse(path), title, content, showSuccessToasts, callback)
         } else {
             handlePermission(PERMISSION_WRITE_STORAGE) {
                 if (it) {
@@ -1084,13 +1084,15 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun exportNoteValueToUri(uri: Uri, content: String, callback: ((success: Boolean) -> Unit)? = null) {
+    private fun exportNoteValueToUri(uri: Uri, title: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
         try {
             val outputStream = contentResolver.openOutputStream(uri, "rwt")
             outputStream!!.bufferedWriter().use { out ->
                 out.write(content)
             }
-            noteExportedSuccessfully(mCurrentNote.title)
+            if (showSuccessToasts) {
+                noteExportedSuccessfully(title)
+            }
             callback?.invoke(true)
         } catch (e: Exception) {
             showErrorToast(e)
