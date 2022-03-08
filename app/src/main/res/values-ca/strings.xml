@@ -66,8 +66,9 @@
     <string name="remove_done_items">Elimina els elements fets</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Exporta totes les notes com a fitxers</string>
-    <string name="import_notes">Importa diversos fitxers com a notes</string>
     <string name="import_folder">Importa una carpeta</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Com puc canviar el color dels ginys\?</string>
     <string name="faq_1_text">En cas que només tingueu 1 giny actiu, podeu tornar-lo a crear o utilitzar el botó de configuració de l\'aplicació per personalitzar-lo. Si teniu diversos ginys actius, el botó de configuració de l\'aplicació no estarà disponible. Com que l\'aplicació admet la personalització del color per giny, haureu de tornar a crear el giny que vulgueu personalitzar.</string>

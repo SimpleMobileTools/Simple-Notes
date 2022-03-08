@@ -69,8 +69,9 @@
 
     <!-- Import / Export -->
     <string name="export_all_notes">將全部筆記匯出成檔案</string>
-    <string name="import_notes">將多個檔案匯入成筆記</string>
     <string name="import_folder">匯入資料夾</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">我如何變更小工具的顏色?</string>

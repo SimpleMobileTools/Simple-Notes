@@ -66,8 +66,9 @@
     <string name="remove_done_items">Afgeronde items wissen</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Alle notities naar bestanden exporteren</string>
-    <string name="import_notes">Bestanden als notitites importeren</string>
     <string name="import_folder">Map importeren</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hoe verander ik de kleuren van de widgets\?</string>
     <string name="faq_1_text">Gebruik de optie in de instellingen van de app om de kleuren aan te passen, of maak de widget opnieuw aan. Indien er meerdere widgets van deze app actief zijn, zal deze optie niet beschikbaar zijn. De kleuren zijn dan alleen aan te passen door de widget opnieuw aan te maken.</string>

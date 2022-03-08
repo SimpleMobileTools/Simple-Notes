@@ -68,8 +68,9 @@
     <string name="remove_done_items">Tamamlanan ögeleri kaldır</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
-    <string name="import_notes">Birden çok dosyayı not olarak içe aktar</string>
     <string name="import_folder">Klasörü içe aktar</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Widget rengini nasıl değiştirebilirim\?</string>
     <string name="faq_1_text">Yalnızca 1 etkin widget\'ınız varsa, yeniden oluşturabilir veya özelleştirmek için uygulama ayarlarındaki düğmeyi kullanabilirsiniz. Birden fazla etkin widget\'ınız varsa, uygulama ayarlarındaki düğme kullanılamaz. Uygulama, widget başına renk özelleştirmeyi desteklediğinden, özelleştirmek istediğiniz widget\'ı yeniden oluşturmanız gerekir.</string>

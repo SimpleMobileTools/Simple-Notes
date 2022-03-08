@@ -66,8 +66,9 @@
     <string name="remove_done_items">Вилучати виконані позиції</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Експортувати всі нотатки як файли</string>
-    <string name="import_notes">Імпортувати файли як нотатки</string>
     <string name="import_folder">Імпортувати теку</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Як я можу змінити колір віджета?</string>
     <string name="faq_1_text">Якщо у вас тільки 1 активний віджет, ви можете або відворити його знову, або використовувати кнопку в налаштуваннях програми. Якщо у вас декілька активних віджетів, кнопка в налаштуваннях буде недоступна. Оскільки додаток підтримує налаштування кольору для кожного віджета, вам доведеться відтворити віджет, який ви хочете налаштувати.</string>

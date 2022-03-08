@@ -69,8 +69,9 @@
 
     <!-- Import / Export -->
     <string name="export_all_notes">Allforio pob nodyn fel ffeil</string>
-    <string name="import_notes">Mewnforio nifer o ffeiliau fel nodiadau</string>
     <string name="import_folder">Mewnforio ffolder</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">How can I change the widgets color?</string>

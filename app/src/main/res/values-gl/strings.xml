@@ -69,8 +69,9 @@
 
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como ficheiros</string>
-    <string name="import_notes">Importar varios ficheiros como notas</string>
     <string name="import_folder">Importar cartafoles</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">Como cambio a cor dos widgets?</string>

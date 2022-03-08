@@ -66,8 +66,9 @@
     <string name="remove_done_items">Rimuovi gli elementi finiti</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Esporta le note come file</string>
-    <string name="import_notes">Importa file multipli come note</string>
     <string name="import_folder">Importa cartella</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Come posso cambiare il colore dei widget\?</string>
     <string name="faq_1_text">Se hai un solo widget attivo, puoi ricrearlo oppure usare il pulsante nelle impostazioni dell\'app per personalizzaro. Se hai più di un widget, il pulsante nelle impostazioni dell\'app non sarà disponibile. Dato che l\'app supporta la personalizzazione dei colori per ogni widget, dovrai ricreare il widget che vuoi personalizzare.</string>

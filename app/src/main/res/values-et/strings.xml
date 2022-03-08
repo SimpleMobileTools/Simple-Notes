@@ -66,8 +66,9 @@
     <string name="remove_done_items">Kustuta tehtuks märgitud kirjed</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Ekspordi kõik märkmed failidena</string>
-    <string name="import_notes">Impordi mitu faili märkmeteks</string>
     <string name="import_folder">Impordi kaust</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kuidas ma saan muuta vidinate värvi\?</string>
     <string name="faq_1_text">Kui sa kasutad vaid üht vidinat, siis kas saad ta uuesti luua või kasutada rakenduse seadistusi värvide kohandamiseks. Kui sul on pidevas kasutuses mitu vidinat, siis rakenduste seadistuste nupp ei toimi. Kuna rakendus võimaldab eri vidinatele määrata erinevaid värve, siis sa pead muudetava vidina uuesti looma.</string>

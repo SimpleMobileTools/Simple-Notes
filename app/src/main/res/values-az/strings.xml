@@ -69,8 +69,9 @@
 
     <!-- Import / Export -->
     <string name="export_all_notes">Bütün qeydləri fayl şəklində çıxar</string>
-    <string name="import_notes">Toplu faylları qeyd şəklində daxil et</string>
     <string name="import_folder">Qovluq daxil et</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">How can I change the widgets color?</string>

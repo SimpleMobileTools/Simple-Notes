@@ -66,8 +66,9 @@
     <string name="remove_done_items">Remove done items</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Ekspor semua catatan ke berkas</string>
-    <string name="import_notes">Impor beberapa berkas ke catatan</string>
     <string name="import_folder">Impor folder</string>
+    <string name="export_notes">Export all notes</string>
+    <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Bagaimana caranya mengubah warna widget?</string>
     <string name="faq_1_text">Jika anda hanya memiliki 1 widget aktif, anda bisa menambahkan ulang, atau gunakan tombol di dalam pengaturan aplikasi untuk mengubahnya. Jika anda memiliki banyak widget aktif, tombol di dalam pengaturan aplikasi tidak akan tersedia. Karena aplikasi mendukung penyesuaian warna per-widget, anda harus menghapus dan menambahkan ulang widget yang ingin anda ubah warnanya.</string>
