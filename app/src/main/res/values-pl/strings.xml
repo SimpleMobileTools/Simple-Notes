@@ -67,7 +67,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Eksportuj wszystkie notatki jako pliki</string>
     <string name="import_folder">Importuj folder</string>
-    <string name="export_notes">Eksportuj notatki</string>
+    <string name="export_notes">Eksportuj wszystkie notatki</string>
     <string name="import_notes">Importuj notatki</string>
     <!-- FAQ -->
     <string name="faq_1_title">Jak mogę zmienić kolor widżetów\?</string>

@@ -67,7 +67,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
     <string name="import_folder">Mapa za uvoz</string>
-    <string name="export_notes">Export notes</string>
+    <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kako mogu promijeniti boju widgeta\?</string>

@@ -68,7 +68,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">تصدير جميع الملاحظات كملفات</string>
     <string name="import_folder">مجلد الاستيراد</string>
-    <string name="export_notes">Export notes</string>
+    <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">كيف يمكنني تغيير لون القطع؟</string>

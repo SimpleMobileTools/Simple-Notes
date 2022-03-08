@@ -70,7 +70,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Eksportuoti visus užrašus kaip bylas</string>
     <string name="import_folder">Importuoti aplanką</string>
-    <string name="export_notes">Export notes</string>
+    <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
 
     <!-- FAQ -->

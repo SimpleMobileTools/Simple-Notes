@@ -71,7 +71,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Összes jegyzet exportálása fájlként</string>
     <string name="import_folder">Mappa importálása</string>
-    <string name="export_notes">Export notes</string>
+    <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hogyan módosíthatom a modulok színét\?</string>
