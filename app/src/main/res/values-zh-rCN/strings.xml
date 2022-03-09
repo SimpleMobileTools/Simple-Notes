@@ -67,8 +67,8 @@
     <!-- Import / Export -->
     <string name="export_all_notes">以文件导出所有笔记</string>
     <string name="import_folder">导入文件夹</string>
-    <string name="export_notes">Export all notes</string>
-    <string name="import_notes">Import notes</string>
+    <string name="export_notes">导出所有笔记</string>
+    <string name="import_notes">导入笔记</string>
     <!-- FAQ -->
     <string name="faq_1_title">我如何更改小工具颜色？</string>
     <string name="faq_1_text">如果您仅用一个活动的小工具，您既可以重新创建它，或者使用应用程序设定的按钮来自定义它。如果您拥有多个活动的小工具，应用程序设定中的按钮将不可用。因为应用程序支持小工具分别自定义，您必须要重新创建小工具来自定义它们。</string>
