@@ -27,7 +27,9 @@
             android:layout_below="@+id/note_locked_image"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/activity_margin"
+            android:paddingStart="@dimen/bigger_margin"
             android:paddingTop="@dimen/medium_margin"
+            android:paddingEnd="@dimen/bigger_margin"
             android:text="@string/note_content_locked" />
 
         <TextView
