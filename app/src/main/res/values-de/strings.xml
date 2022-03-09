@@ -67,8 +67,8 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Alle Notizen als Dateien exportieren</string>
     <string name="import_folder">Ordner importieren</string>
-    <string name="export_notes">Export all notes</string>
-    <string name="import_notes">Import notes</string>
+    <string name="export_notes">Alle Notizen exportieren</string>
+    <string name="import_notes">Notizen importieren</string>
     <!-- FAQ -->
     <string name="faq_1_title">Wie kann ich die Farbe der Widgets ändern\?</string>
     <string name="faq_1_text">Wenn nur ein Widget aktiv ist, kann die Farbe über die Einstellungen unter dem Punkt Widgets angepasst werden, ansonsten muss es neu erstellt werden.</string>
