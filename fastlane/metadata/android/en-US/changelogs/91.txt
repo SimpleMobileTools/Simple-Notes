@@ -1,0 +1,4 @@
+ * Allow exporting and importing all notes at once on Android 10+ (by Aga-C)
+ * Fix checklist file synchronization (by Aga-C)
+ * Added a Privacy policy
+ * Added some translation, UX and stability improvements
