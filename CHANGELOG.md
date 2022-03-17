@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.11.1 *(2022-03-17)*
+----------------------------
+
+ * Fixed synced checklist item visibility at widgets (by Aga-C)
+ * Added some translation and stability improvements
+
 Version 6.11.0 *(2022-03-10)*
 ----------------------------
 
