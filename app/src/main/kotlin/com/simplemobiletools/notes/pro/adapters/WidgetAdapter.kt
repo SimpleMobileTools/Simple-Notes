@@ -125,7 +125,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         note = context.notesDB.getNoteWithId(noteId)
         if (note?.type == NoteType.TYPE_CHECKLIST.value) {
             val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-            checklistItems = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.value, checklistItemType) ?: ArrayList(1)
+            checklistItems = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.getNoteStoredValue(context), checklistItemType) ?: ArrayList(1)
 
             // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
             checklistItems = checklistItems.filter { it.title != null }.toMutableList() as ArrayList<ChecklistItem>
