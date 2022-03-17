@@ -191,19 +191,18 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             return
         }
 
-        ensureBackgroundThread {
-            context?.let { ctx ->
-                note?.let { currentNote ->
-                    if (refreshIndex != -1) {
-                        view.checklist_list.post {
-                            view.checklist_list.adapter?.notifyItemChanged(refreshIndex)
-                        }
-                    }
-
-                    currentNote.value = getChecklistItems()
-                    saveNoteValue(note!!, currentNote.value)
-                    ctx.updateWidgets()
+        if (note != null) {
+            if (refreshIndex != -1) {
+                view.checklist_list.post {
+                    view.checklist_list.adapter?.notifyItemChanged(refreshIndex)
                 }
+            }
+
+            note!!.value = getChecklistItems()
+
+            ensureBackgroundThread {
+                saveNoteValue(note!!, note!!.value)
+                context?.updateWidgets()
             }
         }
     }
