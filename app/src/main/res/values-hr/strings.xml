@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jednostavne bilješke</string>
+    <string name="app_name">Jednostavne Bilješke</string>
     <string name="app_launcher_name">Bilješke</string>
     <string name="widget_config">Hvala što koristite Jednostavne bilješke.\nZa više jednostavnih aplikacija posjetite SimpleMobileTools.com..</string>
     <string name="cannot_share_empty_text">Nije moguće dijeliti prazan tekst</string>
@@ -67,47 +67,17 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
     <string name="import_folder">Mapa za uvoz</string>
-    <string name="export_notes">Export all notes</string>
+    <string name="export_notes">Izvezi sve bilješke</string>
     <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kako mogu promijeniti boju widgeta\?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_text">U slučaju da imate samo jedan aktivan widget, možete ga ponovno izraditi ili upotrijebiti gumb u postavkama aplikacije za njegovu prilagodbu. Ako imate više aktivnih widgeta, gumb u postavkama aplikacije neće biti dostupan. Kako aplikacija podržava prilagodbu boja po widgetu, morat ćete ponovno izraditi widget koji želite prilagoditi.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: Popis zadataka i planer</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Jednostavan planer: Bilješke, sigurnosne kopije i popisi zadataka s podsjetnikom</string>
-    <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
-
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
-
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
-
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
-
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
-
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
-
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-
-        Ne sadrži oglase ili nepotrebne dozvole. Aplikacije je otvorenog koda, pruža prilagodljive boje.
-
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
-
-        <b>Standalone website of Simple Notes Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_long_description"> ★ Trebate brzo zabilježiti nešto za kupiti, adresu ili ideju za pokretanje\? Onda ne tražite dalje, jer je ovo jednostavan alat za organizatore koji ste tražili: Jednostavne napomene: Organizator i planer popisa obaveza! Nisu potrebni komplicirani koraci za postavljanje, samo dodirnite zaslon i upišite ono po što ste došli i stvorite bilješke, brze popise, popise za provjeru ili sigurnosnu kopiju za bilo koju ideju. Sa svojom jednostavnom osobnom bilježnicom možete brzo zapamtiti sve! Kupnja namirnica, pamćenje vaših misli i lakše postavljanje podsjetnika bilježenje nikada nije bilo lakše ★ Jednostavan planer bilješki je brz, jednostavan za korištenje i izvanredan planer. Te će poslužiti kao neprocjenjiv alat i pratilac, pomažući vam da zapamtite potreban dio informacija! Naš alat za podsjetnike omogućuje vam da pratite svoje dužnosti, kreirate dnevni kontrolni popis za stavke ili ideje uz neviđenu jednostavnost, uočljivost i vrijednost koja štedi vrijeme bez premca. Upravljajte svojim rasporedom na brz i jednostavan način. Ovaj alat za podsjetnike bilježnice dolazi s automatskim spremanjem tako da nećete greškom odbaciti svoje promjene. Također podržava stvaranje više neovisnih bilješki i popisa u običnom tekstu vrlo brzo. Možete jednostavno pristupiti bilješci i organizirati svoj popis zadataka u tren oka pomoću prilagodljivog widgeta i widgeta za promjenu veličine, koji otvara aplikaciju na dodir. Jednostavan je za korisnika i ne sadrži apsolutno nikakve oglase ili nepotrebna dopuštenja - nema priloženih stringova. Potpuno je otvorenog koda, nudi prilagodljive boje koje se mogu prilagoditi brzim i brzim podešavanjem. <b> Jednostavne napomene: Organizator i planer popisa obaveza </b> najbolji je organizator stavki i planer popisa koji možete koristiti bez oglasa. Ako vam je potreban visokokvalitetan organizator za brze i dobre bilješke, pouzdan i korisniku prikladan podsjetnik koji je uistinu jednostavan za korištenje, preuzmite našu aplikaciju odmah :) Svaki dan imajte svoju osobnu bilježnicu u džepu i rezervni planer kako biste mogli nećete morati brinuti da ćete zaboraviti važan sastanak ili popis za kupovinu :). Dolazi s materijalnim dizajnom i tamnom temom prema zadanim postavkama, pruža izvrsno korisničko iskustvo za jednostavnu upotrebu. Nedostatak pristupa internetu daje vam više privatnosti, sigurnosti i stabilnosti od drugih aplikacija. Ne sadrži oglase niti nepotrebna dopuštenja. Potpuno je otvorenog koda, pruža prilagodljive boje. <b> Ovdje pogledajte cijeli paket Jednostavni Alati: </b> https://www.simplemobiletools.com <b> Samostalna web stranica Jednostavne Bilješke Pro: </b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

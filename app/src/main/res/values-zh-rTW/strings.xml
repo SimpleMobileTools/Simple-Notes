@@ -1,7 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">簡易筆記</string>
     <string name="app_launcher_name">簡易筆記</string>
-    <string name="widget_config">感謝您使用簡易筆記\n更多[簡易]系列應用程式請拜訪 SimpleMobileTools.com</string>
+    <string name="widget_config">感謝您使用簡易筆記。
+\n歡迎造訪 SimpleMobileTools.com 了解更多簡易 app。</string>
     <string name="cannot_share_empty_text">無法分享空白內容</string>
     <string name="simple_note">簡易筆記</string>
     <string name="new_note">新增筆記</string>
@@ -17,17 +19,16 @@
     <string name="add_to_note">添加到筆記</string>
     <string name="unsaved_changes_warning">你有一些尚未儲存的變更。你想對他們怎麼處理?</string>
     <string name="note_shown_widget">在小工具顯示的筆記:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">顯示筆記標題</string>
     <string name="new_note_type">新筆記類型:</string>
     <string name="text_note">文字筆記</string>
     <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
+    <string name="unlock_note">解鎖筆記</string>
     <string name="note_content_locked">The notes\' content is locked.</string>
     <string name="show_content">Show content</string>
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-    <string name="new_text_note">New text note</string>
+    <string name="new_text_note">新文字筆記</string>
     <string name="new_checklist">New checklist</string>
-
     <!-- File notes -->
     <string name="open_file">打開檔案</string>
     <string name="export_as_file">匯出成檔案</string>
@@ -38,7 +39,6 @@
     <string name="note_saved_successfully">筆記 \"%s\" 儲存成功</string>
     <string name="note_exported_successfully">筆記 \"%s\" 匯出成功</string>
     <string name="only_export_file_content">只匯出目前的檔案內容\n(修改筆記不影響檔案)</string>
-
     <!-- Settings -->
     <string name="display_success_message">顯示儲存成功的訊息</string>
     <string name="links_and_emails_clickable">使連結和信箱可點擊</string>
@@ -46,7 +46,7 @@
     <string name="monospaced_font">使用等寬字體</string>
     <string name="show_keyboard">啟動時顯示鍵盤</string>
     <string name="show_word_count">顯示字數</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">顯示字元數統計</string>
     <string name="alignment">對齊</string>
     <string name="left">靠左</string>
     <string name="center">置中</string>
@@ -58,25 +58,21 @@
     <string name="use_incognito_mode">使用無痕模式的鍵盤</string>
     <string name="move_done_checklist_items">將未完成的核對清單項目移動至頂端</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">核對清單</string>
     <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">新增新的核對清單項目</string>
     <string name="add_new_checklist_items">新增新的核對清單項目</string>
     <string name="checklist_is_empty">核對清單為空白</string>
-    <string name="remove_done_items">Remove done items</string>
-
+    <string name="remove_done_items">移除已完成的項目</string>
     <!-- Import / Export -->
     <string name="export_all_notes">將全部筆記匯出成檔案</string>
     <string name="import_folder">匯入資料夾</string>
-    <string name="export_notes">Export all notes</string>
+    <string name="export_notes">匯出所有筆記</string>
     <string name="import_notes">Import notes</string>
-
     <!-- FAQ -->
     <string name="faq_1_title">我如何變更小工具的顏色?</string>
     <string name="faq_1_text">要是你只有1個現行的小工具，你可以重新建立，或者使用程式設定中的按鈕來自訂。如果你有多個現行的小工具，程式設定中的按鈕會沒作用。你必須將想要自訂的小工具重新建立，如此一來程式便能支援每個小工具自訂顏色。</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
@@ -113,7 +109,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
