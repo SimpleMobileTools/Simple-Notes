@@ -487,7 +487,7 @@ class MainActivity : SimpleActivity() {
 
             if (text.isNotBlank() && text.length > 1) {
                 searchMatches = noteView.value.searchMatches(text)
-                noteView.highlightText(text, config.primaryColor)
+                noteView.highlightText(text, getAdjustedPrimaryColor())
             }
 
             currentTextFragment?.setTextWatcher()
