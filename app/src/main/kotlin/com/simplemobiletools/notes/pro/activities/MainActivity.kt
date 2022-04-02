@@ -25,6 +25,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.simplemobiletools.commons.dialogs.*
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
@@ -649,7 +650,9 @@ class MainActivity : SimpleActivity() {
                 try {
                     startActivityForResult(this, PICK_OPEN_FILE_INTENT)
                 } catch (e: ActivityNotFoundException) {
-                    toast(R.string.no_app_found)
+                    toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                } catch (e: Exception) {
+                    showErrorToast(e)
                 }
             }
         }
@@ -852,7 +855,9 @@ class MainActivity : SimpleActivity() {
                 try {
                     startActivityForResult(this, PICK_EXPORT_FILE_INTENT)
                 } catch (e: ActivityNotFoundException) {
-                    toast(R.string.no_app_found)
+                    toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                } catch (e: Exception) {
+                    showErrorToast(e)
                 }
             }
         }
@@ -877,7 +882,14 @@ class MainActivity : SimpleActivity() {
             type = EXPORT_MIME_TYPE
             putExtra(Intent.EXTRA_TITLE, fileName)
             addCategory(Intent.CATEGORY_OPENABLE)
-            startActivityForResult(this, PICK_EXPORT_NOTES_INTENT)
+
+            try {
+                startActivityForResult(this, PICK_EXPORT_NOTES_INTENT)
+            } catch (e: ActivityNotFoundException) {
+                toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+            } catch (e: Exception) {
+                showErrorToast(e)
+            }
         }
     }
 
@@ -900,7 +912,14 @@ class MainActivity : SimpleActivity() {
         Intent(Intent.ACTION_GET_CONTENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = EXPORT_MIME_TYPE
-            startActivityForResult(this, PICK_IMPORT_NOTES_INTENT)
+
+            try {
+                startActivityForResult(this, PICK_IMPORT_NOTES_INTENT)
+            } catch (e: ActivityNotFoundException) {
+                toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+            } catch (e: Exception) {
+                showErrorToast(e)
+            }
         }
     }
 
