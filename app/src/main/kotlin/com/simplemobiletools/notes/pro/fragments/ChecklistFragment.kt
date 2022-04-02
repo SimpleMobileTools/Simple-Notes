@@ -95,7 +95,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             return
         }
 
-        val adjustedPrimaryColor = requireActivity().getAdjustedPrimaryColor()
+        val adjustedPrimaryColor = requireActivity().getProperPrimaryColor()
         view.checklist_fab.apply {
             setColors(
                 requireActivity().config.textColor,

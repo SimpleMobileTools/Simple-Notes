@@ -52,7 +52,7 @@ class SettingsActivity : SimpleActivity() {
             settings_startup_label,
             settings_saving_label
         ).forEach {
-            it.setTextColor(getAdjustedPrimaryColor())
+            it.setTextColor(getProperPrimaryColor())
         }
 
         arrayOf(
@@ -62,7 +62,7 @@ class SettingsActivity : SimpleActivity() {
             settings_startup_holder,
             settings_saving_holder
         ).forEach {
-            it.background.applyColorFilter(baseConfig.backgroundColor.getContrastColor())
+            it.background.applyColorFilter(getProperBackgroundColor().getContrastColor())
         }
     }
 

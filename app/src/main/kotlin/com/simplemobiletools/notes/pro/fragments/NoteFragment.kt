@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.beVisibleIf
-import com.simplemobiletools.commons.extensions.getAdjustedPrimaryColor
+import com.simplemobiletools.commons.extensions.getProperPrimaryColor
 import com.simplemobiletools.commons.extensions.performSecurityCheck
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.notes.pro.activities.MainActivity
@@ -27,7 +27,7 @@ abstract class NoteFragment : Fragment() {
             note_locked_label.setTextColor(requireContext().config.textColor)
             note_locked_label.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
 
-            note_locked_show.setTextColor(requireContext().getAdjustedPrimaryColor())
+            note_locked_show.setTextColor(requireContext().getProperPrimaryColor())
             note_locked_show.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
             note_locked_show.setOnClickListener {
                 handleUnlocking()

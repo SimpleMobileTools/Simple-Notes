@@ -10,12 +10,12 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.simplemobiletools.notes.pro"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 92
         versionName "6.11.1"
         setProperty("archivesBaseName", "notes")
@@ -63,7 +63,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:47f816b35e'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:a6fa9c19ac'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.documentfile:documentfile:1.0.1'
 

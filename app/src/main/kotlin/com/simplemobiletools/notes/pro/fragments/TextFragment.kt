@@ -123,7 +123,7 @@ class TextFragment : NoteFragment() {
                 return
             }
 
-            val adjustedPrimaryColor = context.getAdjustedPrimaryColor()
+            val adjustedPrimaryColor = context.getProperPrimaryColor()
             setColors(config.textColor, adjustedPrimaryColor, config.backgroundColor)
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
             highlightColor = adjustedPrimaryColor.adjustAlpha(.4f)

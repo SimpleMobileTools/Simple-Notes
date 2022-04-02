@@ -22,7 +22,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
     init {
         addNewEditText()
         view.apply {
-            add_item.applyColorFilter(activity.getAdjustedPrimaryColor())
+            add_item.applyColorFilter(activity.getProperPrimaryColor())
             add_item.background.applyColorFilter(textColor)
             add_item.setOnClickListener {
                 addNewEditText()
