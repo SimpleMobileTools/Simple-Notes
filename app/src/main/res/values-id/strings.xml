@@ -10,7 +10,7 @@
     <string name="title_taken">Catatan dengan nama sama sudah ada</string>
     <string name="open_note">Buka catatan</string>
     <string name="delete_note">Hapus catatan</string>
-    <string name="delete_note_prompt_message">Apakah anda yakin ingin menghapus catatan \"%s\"?</string>
+    <string name="delete_note_prompt_message">Apakah Anda yakin ingin menghapus catatan \"%s\"\?</string>
     <string name="pick_a_note">Pilih catatan</string>
     <string name="rename_note">Ubah nama catatan</string>
     <string name="general_note">Catatan umum</string>
@@ -18,20 +18,20 @@
     <string name="add_to_note">Tambahkan ke catatan</string>
     <string name="unsaved_changes_warning">Anda memiliki perubahan yang belum disimpan. Apa yang ingin anda lakukan?</string>
     <string name="note_shown_widget">Catatan yang ditampilkan di widget:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">Tampilkan judul catatan</string>
     <string name="new_note_type">Tipe catatan baru:</string>
     <string name="text_note">Catatan teks</string>
     <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="unlock_note">Buka kunci kota</string>
+    <string name="note_content_locked">Konten catatan terkunci.</string>
+    <string name="show_content">Tampilkan konten</string>
+    <string name="locking_warning">PERINGATAN: Jika Anda lupa kata sandi catatan, Anda tidak akan dapat memulihkan atau mengakses konten catatan.</string>
+    <string name="new_text_note">Catatan teks baru</string>
+    <string name="new_checklist">Daftar periksa baru</string>
     <!-- File notes -->
     <string name="open_file">Buka berkas</string>
     <string name="export_as_file">Ekspor sebagai berkas</string>
-    <string name="file_too_large">Ukuran berkas terlalu besar, batasnya adalah 1MB</string>
+    <string name="file_too_large">Berkas terlalu besar, batasnya adalah 1MB</string>
     <string name="only_import_file_content">Hanya impor konten berkas\n(mengubah berkasnya tidak akan berdampak pada catatan)</string>
     <string name="update_file_at_note">Perbarui berkas saat memperbarui catatan\n(catatan akan dihapus jika berkas dihapus, atau jalur berkas berubah)</string>
     <string name="delete_file_itself">Hapus juga berkas \"%s\"</string>
@@ -45,7 +45,7 @@
     <string name="monospaced_font">Gunakan fon monospace</string>
     <string name="show_keyboard">Tampilkan papan ketik saat memulai</string>
     <string name="show_word_count">Tampilkan penghitung huruf</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Tampilkan jumlah karakter</string>
     <string name="alignment">Kesejajaran</string>
     <string name="left">Kiri</string>
     <string name="center">Tengah</string>
@@ -56,27 +56,27 @@
     <string name="enable_line_wrap">Aktifkan baris berlibat</string>
     <string name="use_incognito_mode">Gunakan mode papan ketik incognito</string>
     <string name="move_done_checklist_items">Pindah checklist yang belum selesai ke urutan atas</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="add_new_checklist_items_top">Tambahkan item daftar periksa baru pada atas</string>
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklist">Daftar periksa</string>
+    <string name="checklists">Daftar periksa</string>
     <string name="add_new_checklist_item">Tambah item checklist baru</string>
     <string name="add_new_checklist_items">Tambah item checklist baru</string>
     <string name="checklist_is_empty">Checklist kosong</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="remove_done_items">Hapus item yang sudah</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Ekspor semua catatan ke berkas</string>
     <string name="import_folder">Impor folder</string>
-    <string name="export_notes">Export all notes</string>
+    <string name="export_notes">Ekspor semua nota</string>
     <string name="import_notes">Import notes</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Bagaimana caranya mengubah warna widget?</string>
+    <string name="faq_1_title">Bagaimana cara mengubah warna widget\?</string>
     <string name="faq_1_text">Jika anda hanya memiliki 1 widget aktif, anda bisa menambahkan ulang, atau gunakan tombol di dalam pengaturan aplikasi untuk mengubahnya. Jika anda memiliki banyak widget aktif, tombol di dalam pengaturan aplikasi tidak akan tersedia. Karena aplikasi mendukung penyesuaian warna per-widget, anda harus menghapus dan menambahkan ulang widget yang ingin anda ubah warnanya.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro: Pengatur dan perencana daftar tugas</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Perencana sederhana: Buat catatan, cadangan &amp; daftar tugas dengan alat pengingat catatan cepat</string>
     <string name="app_long_description"> ★ Perlu mencatat sesuatu untuk dibeli, alamat, atau ide startup\? Maka tidak perlu mencari lagi karena ini adalah alat pengatur sederhana yang Anda cari: Simple Notes: Agenda dan perencana daftar tugas!
 \nTidak perlu langkah penyiapan yang rumit, cukup ketuk layar dan ketik tujuan Anda dan buat catatan, daftar cepat, daftar periksa, atau cadangan untuk ide apa pun. Dengan buku catatan pribadi Anda yang sederhana, Anda dapat mengingat apa saja dengan cepat! Berbelanja bahan makanan, menghafal pikiran Anda dan lebih mudah mengatur pengingat membuat catatan tidak pernah semudah ini.
 \n
