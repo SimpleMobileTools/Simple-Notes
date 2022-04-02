@@ -48,7 +48,6 @@ import java.io.FileOutputStream
 import java.io.OutputStream
 import java.nio.charset.Charset
 import java.util.*
-import kotlin.collections.ArrayList
 
 class MainActivity : SimpleActivity() {
     private val EXPORT_FILE_SYNC = 1
@@ -122,14 +121,14 @@ class MainActivity : SimpleActivity() {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
             setGravity(Gravity.CENTER_VERTICAL)
             setNonPrimaryAlpha(0.4f)
-            setTextColor(config.textColor)
+            setTextColor(getProperTextColor())
         }
         updateTextColors(view_pager)
 
         checkShortcuts()
 
-        search_wrapper.setBackgroundColor(config.primaryColor)
-        val contrastColor = config.primaryColor.getContrastColor()
+        search_wrapper.setBackgroundColor(getProperPrimaryColor())
+        val contrastColor = getProperPrimaryColor().getContrastColor()
         arrayListOf(searchPrevBtn, searchNextBtn, searchClearBtn).forEach {
             it.applyColorFilter(contrastColor)
         }

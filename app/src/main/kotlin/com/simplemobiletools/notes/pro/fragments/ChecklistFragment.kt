@@ -98,7 +98,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         val adjustedPrimaryColor = requireActivity().getProperPrimaryColor()
         view.checklist_fab.apply {
             setColors(
-                requireActivity().config.textColor,
+                requireActivity().getProperTextColor(),
                 adjustedPrimaryColor,
                 adjustedPrimaryColor.getContrastColor()
             )
@@ -109,7 +109,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             }
         }
 
-        view.fragment_placeholder.setTextColor(requireActivity().config.textColor)
+        view.fragment_placeholder.setTextColor(requireActivity().getProperTextColor())
         view.fragment_placeholder_2.apply {
             setTextColor(adjustedPrimaryColor)
             underlineText()

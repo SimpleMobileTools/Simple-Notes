@@ -5,10 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioGroup
 import androidx.appcompat.app.AlertDialog
-import com.simplemobiletools.commons.extensions.applyColorFilter
-import com.simplemobiletools.commons.extensions.beVisibleIf
-import com.simplemobiletools.commons.extensions.setupDialogStuff
-import com.simplemobiletools.commons.extensions.toast
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
@@ -35,7 +32,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long, new
     }
 
     private fun initDialog(notes: ArrayList<Note>, view: View) {
-        val textColor = activity.config.textColor
+        val textColor = activity.getProperTextColor()
         notes.forEach {
             activity.layoutInflater.inflate(R.layout.open_note_item, null).apply {
                 val note = it

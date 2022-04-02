@@ -59,7 +59,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         config_bg_color.setOnClickListener { pickBackgroundColor() }
         config_text_color.setOnClickListener { pickTextColor() }
         notes_picker_value.setOnClickListener { showNoteSelector() }
-        notes_picker_holder.background = ColorDrawable(config.backgroundColor)
+        notes_picker_holder.background = ColorDrawable(getProperBackgroundColor())
         show_note_title_holder.setOnClickListener {
             show_note_title.toggle()
             handleNoteTitleDisplay()

@@ -124,7 +124,7 @@ class TextFragment : NoteFragment() {
             }
 
             val adjustedPrimaryColor = context.getProperPrimaryColor()
-            setColors(config.textColor, adjustedPrimaryColor, config.backgroundColor)
+            setColors(context.getProperTextColor(), adjustedPrimaryColor, context.getProperBackgroundColor())
             setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
             highlightColor = adjustedPrimaryColor.adjustAlpha(.4f)
 
@@ -157,7 +157,7 @@ class TextFragment : NoteFragment() {
         }
 
         if (config.showWordCount) {
-            view.notes_counter.setTextColor(config.textColor)
+            view.notes_counter.setTextColor(context!!.getProperTextColor())
             setWordCounter(view.text_note_view.text.toString())
         }
 

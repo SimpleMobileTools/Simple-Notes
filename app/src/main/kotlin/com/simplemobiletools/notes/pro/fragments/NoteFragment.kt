@@ -3,10 +3,7 @@ package com.simplemobiletools.notes.pro.fragments
 import android.util.TypedValue
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.simplemobiletools.commons.extensions.applyColorFilter
-import com.simplemobiletools.commons.extensions.beVisibleIf
-import com.simplemobiletools.commons.extensions.getProperPrimaryColor
-import com.simplemobiletools.commons.extensions.performSecurityCheck
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.notes.pro.activities.MainActivity
 import com.simplemobiletools.notes.pro.extensions.config
@@ -22,9 +19,9 @@ abstract class NoteFragment : Fragment() {
     protected fun setupLockedViews(view: ViewGroup, note: Note) {
         view.apply {
             note_locked_layout.beVisibleIf(note.isLocked() && !shouldShowLockedContent)
-            note_locked_image.applyColorFilter(config!!.textColor)
+            note_locked_image.applyColorFilter(requireContext().getProperTextColor())
 
-            note_locked_label.setTextColor(requireContext().config.textColor)
+            note_locked_label.setTextColor(requireContext().getProperTextColor())
             note_locked_label.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
 
             note_locked_show.setTextColor(requireContext().getProperPrimaryColor())
