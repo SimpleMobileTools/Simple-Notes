@@ -1,0 +1,2 @@
+ * Added Material You support on Android 12+
+ * Added some translation and stability improvements

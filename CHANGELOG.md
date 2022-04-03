@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.12.0 *(2022-04-03)*
+----------------------------
+
+ * Added Material You support on Android 12+
+ * Added some translation and stability improvements
+
 Version 6.11.1 *(2022-03-17)*
 ----------------------------
 
