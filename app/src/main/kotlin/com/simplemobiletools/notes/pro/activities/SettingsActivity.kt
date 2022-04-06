@@ -250,8 +250,10 @@ class SettingsActivity : SimpleActivity() {
             if (widgets.size == 1) {
                 widgetToCustomize = widgets.first()
             } else if (widgets.size > 1) {
-                settings_customize_widget_colors_holder.beGone()
-                settings_customize_colors_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
+                runOnUiThread {
+                    settings_customize_widget_colors_holder.beGone()
+                    settings_customize_colors_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
+                }
             }
         }
     }
