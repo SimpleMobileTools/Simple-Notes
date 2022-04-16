@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>
@@ -27,7 +28,6 @@
     <string name="locking_warning">ADVERTENCIA: Si olvidas la contraseña de esta nota, ya no podrás recuperar su contenido.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
-
     <!-- File notes -->
     <string name="open_file">Abrir archivo</string>
     <string name="export_as_file">Exportar como archivo</string>
@@ -38,7 +38,6 @@
     <string name="note_saved_successfully">Nota \"%s\" guardada con éxito</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada con éxito</string>
     <string name="only_export_file_content">Solo exportar el contenido del archivo actual\n(Modificar la nota no afectará el archivo)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Mostrar mensajes de guardado con éxito</string>
     <string name="links_and_emails_clickable">Mostrar enlaces y direcciones de correo como seleccionables</string>
@@ -58,7 +57,6 @@
     <string name="use_incognito_mode">Usar modo incógnito de los teclados</string>
     <string name="move_done_checklist_items">Mover ítems completados al final de la lista</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">Lista</string>
     <string name="checklists">Checklists</string>
@@ -66,17 +64,14 @@
     <string name="add_new_checklist_items">Añadir nuevos ítems a la lista</string>
     <string name="checklist_is_empty">La lista está vacía</string>
     <string name="remove_done_items">Borrar ítems completados</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas las notas como archivos</string>
     <string name="import_folder">Importar carpeta</string>
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">¿Cómo puedo cambiar los colores del widget?</string>
+    <string name="faq_1_title">¿Cómo puedo cambiar los colores del widget\?</string>
     <string name="faq_1_text">En caso de que solo tengas un widget activo, Puedes volverlo a crear, o usar el botón en los ajustes de la aplicación para personalziarlo. Si tienes múltiples widgets activos, el botón en los ajustes de la aplicación no estará disponible. Ya que la aplicación soporta personalización de color por widget, tendrás que volver a crear el widget tque quieres personalizar.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Notas Simple Pro: Organiza y planea</string>
@@ -111,7 +106,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
