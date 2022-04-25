@@ -55,7 +55,7 @@
     <string name="autosave_notes">Spara anteckningar automatiskt</string>
     <string name="enable_line_wrap">Aktivera radbrytning</string>
     <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
+    <string name="move_done_checklist_items">Flytta färdiga checklistor till botten</string>
     <string name="add_new_checklist_items_top">Lägg nya kryssrutor överst</string>
     <!-- Checklists -->
     <string name="checklist">Checklista</string>
@@ -71,7 +71,7 @@
     <string name="import_notes">Importera</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hur ändrar jag färgen på widgetarna\?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_text">Om du bara har 1 aktiv widget kan du antingen återskapa den eller använda knappen i appinställningarna för att anpassa den. Om du har flera aktiva widgetar är knappen i appinställningarna inte tillgänglig. Eftersom appen stöder färganpassning per widget måste du återskapa den widget som du vill anpassa.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simpla anteckningar proffesionell: Att göra lista organisatör och planerare</string>
