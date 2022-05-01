@@ -22,6 +22,15 @@
         android:title="@string/search"
         app:showAsAction="always" />
     <item
+        android:id="@+id/sort_checklist"
+        android:icon="@drawable/ic_sort_vector"
+        android:title="@string/sort_by"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/remove_done_items"
+        android:title="@string/remove_done_items"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/open_note"
         android:icon="@drawable/ic_folder_open_vector"
         android:title="@string/open_note"
@@ -35,15 +44,6 @@
         android:id="@+id/rename_note"
         android:icon="@drawable/ic_rename_vector"
         android:title="@string/rename_note"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/remove_done_items"
-        android:title="@string/remove_done_items"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/sort_checklist"
-        android:icon="@drawable/ic_sort_vector"
-        android:title="@string/sort_by"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/share"
