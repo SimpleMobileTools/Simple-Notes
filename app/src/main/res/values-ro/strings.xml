@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Note</string>
+    <string name="widget_config">Vă mulțumim că ați folosit Simple Notes.\nPentru mai multe aplicații simple, vă rugăm să vizitați SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nu se poate distribui text gol</string>
     <string name="simple_note">Notă simplă</string>
     <string name="new_note">Adăugați o nouă notă</string>
     <string name="no_title">Vă rugăm să denumiți nota dumneavoastră</string>
+    <string name="title_taken">O notă cu acest titlu există deja</string>
+    <string name="open_note">Deschideţi nota</string>
+    <string name="delete_note">Ștergeți nota</string>
+    <string name="delete_note_prompt_message">Sunteți sigur că doriți să ștergeți nota \"%s\"\?</string>
+    <string name="pick_a_note">Alegeți o notă</string>
+    <string name="rename_note">Redenumiți nota</string>
+    <string name="general_note">Notă generală</string>
+    <string name="create_new_note">Creați o nouă notă</string>
+    <string name="add_to_note">Adăugați la notă</string>
+    <string name="unsaved_changes_warning">Aveți unele modificări nesalvate. Ce doriți să faceți cu ele\?</string>
+    <string name="note_shown_widget">Notă afișată în widget:</string>
     <string name="show_note_title">Arată titlul notei</string>
     <string name="new_note_type">Un nou tip de notă:</string>
     <string name="text_note">Notă text</string>
@@ -15,61 +28,89 @@
     <string name="locking_warning">ATENȚIE: Dacă uitați parola notelor, nu o veți mai putea recupera și nici nu veți mai putea accesa conținutul notelor.</string>
     <string name="new_text_note">Noua notă de text</string>
     <string name="new_checklist">O nouă listă de verificare</string>
+    <!-- File notes -->
     <string name="open_file">Deschideți fișierul</string>
     <string name="export_as_file">Exportați ca fișier</string>
     <string name="file_too_large">Fișier prea mare, limita este de 1MB</string>
-    <string name="only_import_file_content">Importați numai conținutul fișierului
-\n(modificarea fișierului nu va afecta nota)</string>
-    <string name="update_file_at_note">Actualizarea fișierului în sine la actualizarea notei
-\n(nota este ștearsă dacă fișierul este șters sau dacă se schimbă calea de acces)</string>
+    <string name="only_import_file_content">Importați numai conținutul fișierului\n(modificarea fișierului nu va afecta nota)</string>
+    <string name="update_file_at_note">Actualizarea fișierului în sine la actualizarea notei\n(nota este ștearsă dacă fișierul este șters sau dacă se schimbă calea de acces)</string>
     <string name="delete_file_itself">Ștergeți și fișierul \"%s\"</string>
     <string name="note_saved_successfully">Nota \"%s\" salvată cu succes</string>
     <string name="note_exported_successfully">Nota \"%s\" a fost exportată cu succes</string>
-    <string name="only_export_file_content">Exportați numai conținutul curent al fișierului
-\n(modificarea notei nu va afecta fișierul)</string>
+    <string name="only_export_file_content">Exportați numai conținutul curent al fișierului\n(modificarea notei nu va afecta fișierul)</string>
+    <!-- Settings -->
     <string name="display_success_message">Afișaţi mesajele de salvare cu succes</string>
     <string name="links_and_emails_clickable">Faceți link-urile și e-mailurile accesibile</string>
     <string name="place_cursor_end">Așezați cursorul la sfârșitul notei</string>
     <string name="monospaced_font">Utilizați un font monospațiat</string>
     <string name="show_keyboard">Afișare tastatură la pornire</string>
+    <string name="show_word_count">Arată numărul de cuvinte</string>
     <string name="show_character_count">Arată numărul de caractere</string>
     <string name="alignment">Aliniere</string>
     <string name="left">Stânga</string>
     <string name="center">Centru</string>
     <string name="right">Dreapta</string>
     <string name="widget_note">Notă utilizată în widget</string>
+    <string name="show_note_picker">Afișați un selector de note la pornire</string>
     <string name="autosave_notes">Salvare automată a notelor</string>
+    <string name="enable_line_wrap">Enable line wrap</string>
     <string name="use_incognito_mode">Utilizați modul Incognito al tastaturilor</string>
     <string name="move_done_checklist_items">Mutați elementele realizate din lista de verificare în partea de jos</string>
+    <string name="add_new_checklist_items_top">Adăugați noi elemente ale listei de verificare în partea de sus</string>
+    <!-- Checklists -->
     <string name="checklist">Listă de verificare</string>
     <string name="checklists">Liste de verificare</string>
     <string name="add_new_checklist_item">Adăugați un nou element în lista de verificare</string>
     <string name="add_new_checklist_items">Adăugați noi elemente în lista de verificare</string>
     <string name="checklist_is_empty">Lista de verificare este goală</string>
     <string name="remove_done_items">Elimină elementele realizate</string>
+    <!-- Import / Export -->
+    <string name="export_all_notes">Exportați toate notele ca fișiere</string>
+    <string name="import_folder">Importare dosar</string>
     <string name="export_notes">Exportați toate notele</string>
     <string name="import_notes">Importaţi note</string>
-    <string name="import_folder">Importare dosar</string>
-    <string name="app_title">Simple Notes Pro: Organizator de liste</string>
-    <string name="app_short_description">Planificator simplu: Creați notițe, liste de rezervă și liste de sarcini</string>
-    <string name="title_taken">O notă cu acest titlu există deja</string>
-    <string name="delete_note">Ștergeți nota</string>
-    <string name="delete_note_prompt_message">Sunteți sigur că doriți să ștergeți nota \"%s\"\?</string>
-    <string name="rename_note">Redenumiți nota</string>
-    <string name="app_name">Simple Notes</string>
-    <string name="widget_config">Vă mulțumim că ați folosit Simple Notes.
-\nPentru mai multe aplicații simple, vă rugăm să vizitați SimpleMobileTools.com.</string>
-    <string name="general_note">Notă generală</string>
-    <string name="create_new_note">Creați o nouă notă</string>
-    <string name="open_note">Deschideţi nota</string>
-    <string name="pick_a_note">Alegeți o notă</string>
-    <string name="add_to_note">Adăugați la notă</string>
-    <string name="unsaved_changes_warning">Aveți unele modificări nesalvate. Ce doriți să faceți cu ele\?</string>
-    <string name="note_shown_widget">Notă afișată în widget:</string>
-    <string name="show_note_picker">Afișați un selector de note la pornire</string>
-    <string name="show_word_count">Arată numărul de cuvinte</string>
-    <string name="add_new_checklist_items_top">Adăugați noi elemente ale listei de verificare în partea de sus</string>
-    <string name="export_all_notes">Exportați toate notele ca fișiere</string>
+    <!-- FAQ -->
     <string name="faq_1_title">Cum pot schimba culoarea widget-urilor\?</string>
     <string name="faq_1_text">În cazul în care aveți doar un singur widget activ, îl puteți fie recrea, fie puteți utiliza butonul din setările aplicației pentru a-l personaliza. În cazul în care aveți mai multe widgeturi active, butonul din setările aplicației nu va fi disponibil. Deoarece aplicația acceptă personalizarea culorilor pentru fiecare widget în parte, va trebui să recreați widgetul pe care doriți să îl personalizați.</string>
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_short_description">Planificator simplu: Creați notițe, liste de rezervă și liste de sarcini</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_title">Simple Notes Pro: Organizator de liste</string>
+    <string name="app_long_description">
+        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
+
+        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
+
+        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
+
+        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
+
+        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
+
+        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
+
+        <b>Simple Notes: To-do list organizer and planner </b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
+
+        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
+
+        Contains no ads or unnecessary permissions. It is fully opensource, provides customizable colors.
+
+        <b>Check out the full suite of Simple Tools here:</b>
+        https://www.simplemobiletools.com
+
+        <b>Standalone website of Simple Notes Pro:</b>
+        https://www.simplemobiletools.com/notes
+
+        <b>Facebook:</b>
+        https://www.facebook.com/simplemobiletools
+
+        <b>Reddit:</b>
+        https://www.reddit.com/r/SimpleMobileTools
+    </string>
+
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
 </resources>
