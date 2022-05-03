@@ -633,6 +633,7 @@ class MainActivity : SimpleActivity() {
             faqItems.add(FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons))
             faqItems.add(FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons))
             faqItems.add(FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons))
+            faqItems.add(FAQItem(R.string.faq_10_title_commons, R.string.faq_10_text_commons))
         }
 
         startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
