@@ -5,38 +5,38 @@
     <string name="widget_config">Tack för att du använder Simple Notes.\nDu hittar fler enkla appar på simplemobiletools.com.</string>
     <string name="cannot_share_empty_text">Det går inte att dela en tom anteckning</string>
     <string name="simple_note">Enkel anteckning</string>
-    <string name="new_note">Lägg till en ny anteckning</string>
+    <string name="new_note">Ny anteckning</string>
     <string name="no_title">Namnge din anteckning</string>
     <string name="title_taken">Det finns redan en anteckning med samma titel</string>
     <string name="open_note">Öppna anteckning</string>
-    <string name="delete_note">Ta bort anteckning</string>
+    <string name="delete_note">Ta bort</string>
     <string name="delete_note_prompt_message">Är du säker på att du vill ta bort anteckningen \"%s\"\?</string>
     <string name="pick_a_note">Välj en anteckning</string>
-    <string name="rename_note">Byt namn på anteckning</string>
+    <string name="rename_note">Byt namn</string>
     <string name="general_note">Allmän anteckning</string>
     <string name="create_new_note">Skapa en ny anteckning</string>
     <string name="add_to_note">Lägg till i anteckning</string>
     <string name="unsaved_changes_warning">Det finns några ändringar som inte har sparats. Vad vill du göra med dem?</string>
     <string name="note_shown_widget">Anteckning som visas i widgeten:</string>
-    <string name="show_note_title">Show note title</string>
-    <string name="new_note_type">Anteckningstyp:</string>
-    <string name="text_note">Textanteckning</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">Anteckningarnas \'innehåll\' är låst.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">VARNING: Om du glömmer anteckningarnas\' lösenord kommer du inte att kunna återställa det eller komma åt anteckningarnas\' innehåll längre.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="show_note_title">Visa anteckningstitel</string>
+    <string name="new_note_type">Format:</string>
+    <string name="text_note">Anteckning</string>
+    <string name="lock_note">Lås</string>
+    <string name="unlock_note">Lås upp</string>
+    <string name="note_content_locked">Anteckningens innehåll är låst.</string>
+    <string name="show_content">Visa innehåll</string>
+    <string name="locking_warning">VARNING: Om du glömmer anteckningens lösenord så finns ingen möjlighet att återställa detta och du kommer således förlora åtkomsten till anteckningens innehåll.</string>
+    <string name="new_text_note">Ny textnot</string>
+    <string name="new_checklist">Ny checklista</string>
     <!-- File notes -->
     <string name="open_file">Öppna fil</string>
-    <string name="export_as_file">Exportera som fil</string>
+    <string name="export_as_file">Exportera</string>
     <string name="file_too_large">Filen är för stor, gränsen är 1MB</string>
     <string name="only_import_file_content">Importera bara innehållet i filen\n(anteckningen påverkas inte om filen ändras)</string>
     <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
     <string name="delete_file_itself">Ta även bort filen \"%s\"</string>
-    <string name="note_saved_successfully">Anteckningen \"%s\" har sparats</string>
-    <string name="note_exported_successfully">Anteckningen \"%s\" har exporterats framgångsrikt</string>
+    <string name="note_saved_successfully">Anteckning \"%s\" sparades framgångsrikt</string>
+    <string name="note_exported_successfully">Anteckningen \"%s\" har exporterats</string>
     <string name="only_export_file_content">Exportera bara det aktuella innehållet i filen\n(filen påverkas inte om anteckningen ändras)</string>
     <!-- Settings -->
     <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
@@ -45,7 +45,7 @@
     <string name="monospaced_font">Använd ett teckensnitt med fast bredd</string>
     <string name="show_keyboard">Visa tangentbordet vid start</string>
     <string name="show_word_count">Visa antal ord</string>
-    <string name="show_character_count">Show character count</string>
+    <string name="show_character_count">Visa antal tecken</string>
     <string name="alignment">Justering</string>
     <string name="left">Vänster</string>
     <string name="center">Centrerad</string>
@@ -55,59 +55,29 @@
     <string name="autosave_notes">Spara anteckningar automatiskt</string>
     <string name="enable_line_wrap">Aktivera radbrytning</string>
     <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="move_done_checklist_items">Flytta färdiga checklistor till botten</string>
+    <string name="add_new_checklist_items_top">Lägg nya kryssrutor överst</string>
     <!-- Checklists -->
     <string name="checklist">Checklista</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">Checklistor</string>
     <string name="add_new_checklist_item">Lägg till ett nytt checklisteobjekt</string>
     <string name="add_new_checklist_items">Lägg till nya checklisteobjekt</string>
     <string name="checklist_is_empty">Checklistan är tom</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="remove_done_items">Ta bort slutförda</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Exportera alla anteckningar som filer</string>
     <string name="import_folder">Importera mapp</string>
-    <string name="export_notes">Export all notes</string>
-    <string name="import_notes">Import notes</string>
+    <string name="export_notes">Exportera allt</string>
+    <string name="import_notes">Importera</string>
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Hur ändrar jag färgen på widgetarna\?</string>
+    <string name="faq_1_text">Om du bara har 1 aktiv widget kan du antingen återskapa den eller använda knappen i appinställningarna för att anpassa den. Om du har flera aktiva widgetar är knappen i appinställningarna inte tillgänglig. Eftersom appen stöder färganpassning per widget måste du återskapa den widget som du vill anpassa.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simpla anteckningar proffesionell: Att göra lista organisatör och planerare</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
-    <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
-
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
-
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
-
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
-
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
-
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
-
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-
-        Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger.
-
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
-
-        <b>Standalone website of Simple Notes Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_short_description">Simpel planerare: Skapa noteringar, backup &amp; att göra listor med snabb noterings påminnelse verktyg</string>
+    <string name="app_long_description"> ★ Behöver du anteckna något att köpa, en adress eller en idé för en ny verksamhet\? Då behöver du inte leta längre, för det här är det enkla organisatörsverktyget som du har letat efter: Simpla anteckningar: Att-göra-lista, organiserare och planerare! Inga komplicerade installationssteg behövs, tryck bara på skärmen och skriv in vad du kom för och skapa anteckningar, snabba listor, checklista eller backup för varje idé. Med din enkla personliga anteckningsbok kan du komma ihåg vad som helst snabbt! Handla för matvaror, memorera dina tankar och enklare ställa in påminnelser ta anteckningar har aldrig varit enklare ★ Simpel plannerare är snabb, enkel att använda organisatör och anmärkningsvärd planerare och det kommer att fungera som ett ovärderligt verktyg och följeslagare, hjälper dig att komma ihåg nödvändig information! Vårt påminnelseverktyg låter dig hålla reda på dina uppgifter, skapa dagliga checklistor för objekt eller idéer med oöverträffad enkelhet, notabilitet och oöverträffat tidsbesparande värde. Hantera ditt schema på ett snabbt och enkelt sätt. Detta påminnelseverktyg för anteckningsbok kommer med automatisksparande så att du inte kommer att kasta dina ändringar av misstag. Det stöder också att skapa flera oberoende anteckningar och listor i vanlig text mycket snabbt. Du kan enkelt komma åt anteckningen och organisera din att-göra-lista på nolltid med hjälp av den anpassningsbara och storleksanpassningsbara widgeten, som öppnar appen på tryck. Den är användarvänlig och innehåller absolut inga annonser eller onödiga behörigheter - inga villkor. Den är helt öppen källkod, ger anpassningsbara färger som kan justeras med snabb och snabb justering. <b>Simpla anteckningar: Att-göra-lista organisatlör och planläggare</b> är den bästa sakorganisatören och planeraren du kan hitta utan annonser. Om du behöver en högkvalitativ organisatör för snabba och bra anteckningar, en pålitlig och användarvänlig påminnelse som är riktigt enkel att använda, ladda ner vår app nu :) Ha din egen personliga anteckningsbok i fickan varje dag och ha en backup-planerare så att du inte behöver oroa dig för att glömma ett viktigt möte eller din inköpslista :). Den kommer med materialdesign och mörkt tema som standard, ger bra användarupplevelse för enkel användning. Avsaknaden av internetåtkomst ger dig mer integritet, säkerhet och stabilitet än andra appar. Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger. <b>Kika på hela samlingen av Simpla verktyg här:</b> https://www.simplemobiletools.com <b>Standalone website of Simple Notes Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

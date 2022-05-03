@@ -18,7 +18,7 @@
     <string name="add_to_note">Додати до нотатки</string>
     <string name="unsaved_changes_warning">Ви внесли деякі зміни. Що ви бажаєте з ними зробити?</string>
     <string name="note_shown_widget">Нотатка, що показується у віджеті:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">Показувати назву нотатки</string>
     <string name="new_note_type">Новий тип нотаток:</string>
     <string name="text_note">Текст нотатки</string>
     <string name="lock_note">Заблокувати нотатку</string>
@@ -26,8 +26,8 @@
     <string name="note_content_locked">Вміст нотатки заблоковано.</string>
     <string name="show_content">Показати нотатку</string>
     <string name="locking_warning">ЗАСТЕРЕЖЕННЯ: Якщо ви забудете пароль, то більше не зможете його відновити або отримати доступ до вмісту нотаток.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Нова текстова нотатка</string>
+    <string name="new_checklist">Новий список</string>
     <!-- File notes -->
     <string name="open_file">Відкрити файл</string>
     <string name="export_as_file">Експортувати як файл</string>
@@ -55,11 +55,11 @@
     <string name="autosave_notes">Автозбереження нотаток</string>
     <string name="enable_line_wrap">Продовжувати друк з нового рядка</string>
     <string name="use_incognito_mode">Використовувати режим Приватності в клавіатурі</string>
-    <string name="move_done_checklist_items">Поміщати вкінець виконані позиції у списку</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="move_done_checklist_items">Поміщати виконані позиції в кінець списку</string>
+    <string name="add_new_checklist_items_top">Додавати нові елементи на початку списку</string>
     <!-- Checklists -->
     <string name="checklist">Список</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">Списки</string>
     <string name="add_new_checklist_item">Додати нову позицію у списку</string>
     <string name="add_new_checklist_items">Додати нові позиції у списку</string>
     <string name="checklist_is_empty">Список порожній</string>
@@ -67,7 +67,7 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Експортувати всі нотатки як файли</string>
     <string name="import_folder">Імпортувати теку</string>
-    <string name="export_notes">Export all notes</string>
+    <string name="export_notes">Експортувати всі нотатки</string>
     <string name="import_notes">Import notes</string>
     <!-- FAQ -->
     <string name="faq_1_title">Як я можу змінити колір віджета?</string>
