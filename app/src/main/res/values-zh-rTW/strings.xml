@@ -11,7 +11,7 @@
     <string name="title_taken">已經存在這標題的筆記</string>
     <string name="open_note">打開筆記</string>
     <string name="delete_note">刪除筆記</string>
-    <string name="delete_note_prompt_message">你確定要刪除筆記 \"%s\"嗎?</string>
+    <string name="delete_note_prompt_message">確定要刪除筆記「%s」嗎？</string>
     <string name="pick_a_note">選擇筆記</string>
     <string name="rename_note">重新命名筆記</string>
     <string name="general_note">一般筆記</string>
@@ -32,17 +32,17 @@
     <!-- File notes -->
     <string name="open_file">打開檔案</string>
     <string name="export_as_file">匯出成檔案</string>
-    <string name="file_too_large">檔案太大，上限1MB</string>
+    <string name="file_too_large">檔案太大，上限為 1MB</string>
     <string name="only_import_file_content">僅匯入檔案內容\n(檔案變更不影響筆記)</string>
     <string name="update_file_at_note">更新筆記時也更新檔案本身\n(如果檔案被刪除或變更路徑，筆記將被刪除)</string>
     <string name="delete_file_itself">也刪除檔案 \"%s\"</string>
-    <string name="note_saved_successfully">筆記 \"%s\" 儲存成功</string>
-    <string name="note_exported_successfully">筆記 \"%s\" 匯出成功</string>
+    <string name="note_saved_successfully">筆記「%s」儲存成功</string>
+    <string name="note_exported_successfully">筆記「%s」匯出成功</string>
     <string name="only_export_file_content">只匯出目前的檔案內容\n(修改筆記不影響檔案)</string>
     <!-- Settings -->
     <string name="display_success_message">顯示儲存成功的訊息</string>
     <string name="links_and_emails_clickable">使連結和信箱可點擊</string>
-    <string name="place_cursor_end">將游標放置於筆記尾端</string>
+    <string name="place_cursor_end">將游標置於筆記末尾</string>
     <string name="monospaced_font">使用等寬字體</string>
     <string name="show_keyboard">啟動時顯示鍵盤</string>
     <string name="show_word_count">顯示字數</string>
@@ -71,7 +71,7 @@
     <string name="export_notes">匯出所有筆記</string>
     <string name="import_notes">Import notes</string>
     <!-- FAQ -->
-    <string name="faq_1_title">我如何變更小工具的顏色?</string>
+    <string name="faq_1_title">要怎麼變更小工具的顏色？</string>
     <string name="faq_1_text">要是你只有1個現行的小工具，你可以重新建立，或者使用程式設定中的按鈕來自訂。如果你有多個現行的小工具，程式設定中的按鈕會沒作用。你必須將想要自訂的小工具重新建立，如此一來程式便能支援每個小工具自訂顏色。</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
