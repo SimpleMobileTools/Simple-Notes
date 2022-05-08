@@ -10,7 +10,7 @@
     <string name="title_taken">Нотатка з таким ім\'ям вже існує</string>
     <string name="open_note">Відкрити нотатку</string>
     <string name="delete_note">Видалити нотатку</string>
-    <string name="delete_note_prompt_message">Ви впевнені, що бажаєте видалити нотатку \"%s\"?</string>
+    <string name="delete_note_prompt_message">Ви впевнені, що хочете видалити нотатку \"%s\"\?</string>
     <string name="pick_a_note">Оберіть нотатку</string>
     <string name="rename_note">Перейменуйте нотатку</string>
     <string name="general_note">Звичайна нотатка</string>
@@ -41,7 +41,7 @@
     <!-- Settings -->
     <string name="display_success_message">Повідомляти, що файл успішно збережено</string>
     <string name="links_and_emails_clickable">Зробити активними посилання та адреси електронної пошти</string>
-    <string name="place_cursor_end">Поміщати курсор вкінці нотатки</string>
+    <string name="place_cursor_end">Розташувати курсор в кінці нотатки</string>
     <string name="monospaced_font">Використовувати шрифт в один відступ</string>
     <string name="show_keyboard">Показувати клавіатуру при запуску</string>
     <string name="show_word_count">Рахувати слова</string>
@@ -70,11 +70,11 @@
     <string name="export_notes">Експортувати всі нотатки</string>
     <string name="import_notes">Import notes</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Як я можу змінити колір віджета?</string>
+    <string name="faq_1_title">Як я можу змінити колір віджетів\?</string>
     <string name="faq_1_text">Якщо у вас тільки 1 активний віджет, ви можете або відворити його знову, або використовувати кнопку в налаштуваннях програми. Якщо у вас декілька активних віджетів, кнопка в налаштуваннях буде недоступна. Оскільки додаток підтримує налаштування кольору для кожного віджета, вам доведеться відтворити віджет, який ви хочете налаштувати.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: Записник списку завдань і планувальник</string>
+    <string name="app_title">Simple Notes Pro: Списки завдань і планувальник</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Simple planner: Зберігайте нотатки та to-do списки з швидкими нагадуваннями</string>
     <string name="app_long_description">
