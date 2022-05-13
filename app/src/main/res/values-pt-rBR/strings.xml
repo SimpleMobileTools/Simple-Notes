@@ -71,7 +71,7 @@
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Como mudar a cor do widget?</string>
+    <string name="faq_1_title">Como mudar a cor dos widgets\?</string>
     <string name="faq_1_text">Caso você possua apenas 1 widget ativo, você poderá recriá-lo, ou usar o botão nas configurações do aplicativo para personalizá-lo. Caso você possua vários widgets ativos, o botão nas configurações do aplicativo não estará disponível. Como o aplicativo suporta personalização de cores por widget, você terá que recriar o widget que deseja personalizar.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
