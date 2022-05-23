@@ -59,7 +59,11 @@ class WidgetConfigureActivity : SimpleActivity() {
         config_bg_color.setOnClickListener { pickBackgroundColor() }
         config_text_color.setOnClickListener { pickTextColor() }
         notes_picker_value.setOnClickListener { showNoteSelector() }
+
+        val primaryColor = getProperPrimaryColor()
+        config_bg_seekbar.setColors(mTextColor, primaryColor, primaryColor)
         notes_picker_holder.background = ColorDrawable(getProperBackgroundColor())
+
         show_note_title_holder.setOnClickListener {
             show_note_title.toggle()
             handleNoteTitleDisplay()
@@ -229,17 +233,15 @@ class WidgetConfigureActivity : SimpleActivity() {
         mBgColor = mBgColorWithoutTransparency.adjustAlpha(mBgAlpha)
         text_note_view.setBackgroundColor(mBgColor)
         checklist_note_view.setBackgroundColor(mBgColor)
-        config_save.setBackgroundColor(mBgColor)
         text_note_view_title.setBackgroundColor(mBgColor)
-        config_bg_color.setFillWithStroke(mBgColor, Color.BLACK)
+        config_bg_color.setFillWithStroke(mBgColor, mBgColor)
     }
 
     private fun updateTextColor() {
-        config_save.setTextColor(mTextColor)
         text_note_view.setTextColor(mTextColor)
         text_note_view_title.setTextColor(mTextColor)
         (checklist_note_view.adapter as? ChecklistAdapter)?.updateTextColor(mTextColor)
-        config_text_color.setFillWithStroke(mTextColor, Color.BLACK)
+        config_text_color.setFillWithStroke(mTextColor, mTextColor)
     }
 
     private fun pickBackgroundColor() {

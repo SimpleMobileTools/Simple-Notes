@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.simplemobiletools.commons.helpers.DEFAULT_WIDGET_BG_COLOR
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.helpers.DEFAULT_WIDGET_TEXT_COLOR
@@ -26,8 +25,10 @@ abstract class NotesDatabase : RoomDatabase() {
 
     companion object {
         private var db: NotesDatabase? = null
+        private var defaultWidgetBgColor = 0
 
         fun getInstance(context: Context): NotesDatabase {
+            defaultWidgetBgColor = context.resources.getInteger(R.integer.default_widget_bg_color)
             if (db == null) {
                 synchronized(NotesDatabase::class) {
                     if (db == null) {
@@ -64,7 +65,7 @@ abstract class NotesDatabase : RoomDatabase() {
         private val MIGRATION_1_2 = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.apply {
-                    execSQL("ALTER TABLE widgets ADD COLUMN widget_bg_color INTEGER NOT NULL DEFAULT $DEFAULT_WIDGET_BG_COLOR")
+                    execSQL("ALTER TABLE widgets ADD COLUMN widget_bg_color INTEGER NOT NULL DEFAULT $defaultWidgetBgColor")
                     execSQL("ALTER TABLE widgets ADD COLUMN widget_text_color INTEGER NOT NULL DEFAULT $DEFAULT_WIDGET_TEXT_COLOR")
                 }
             }
