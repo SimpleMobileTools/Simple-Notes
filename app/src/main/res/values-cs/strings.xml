@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Jednoduché poznámky</string>
     <string name="app_launcher_name">Poznámky</string>
@@ -27,7 +28,6 @@
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
-
     <!-- File notes -->
     <string name="open_file">Otevřít soubor</string>
     <string name="export_as_file">Exportovat jako soubor</string>
@@ -38,7 +38,6 @@
     <string name="note_saved_successfully">Poznámka \"%s\" byla úspěšně uložena</string>
     <string name="note_exported_successfully">Poznámka \"%s\" byla úspěšně exportována</string>
     <string name="only_export_file_content">Pouze exportovat současný obsah souboru\n(úprava poznámky nebude mít vliv na soubor)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Zobrazit zprávu o úspěšném uložení poznámky</string>
     <string name="links_and_emails_clickable">Dělat odkazy a e-maily kliknutelnými</string>
@@ -58,7 +57,6 @@
     <string name="use_incognito_mode">Použít Inkognito mód klávesnic</string>
     <string name="move_done_checklist_items">Přesunout splněné položky seznamu položek nadol</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">Seznam položek</string>
     <string name="checklists">Checklists</string>
@@ -66,22 +64,19 @@
     <string name="add_new_checklist_items">Přidat do seznamu nové položky</string>
     <string name="checklist_is_empty">Seznam položek je prázdný</string>
     <string name="remove_done_items">Remove done items</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovat všechny poznámky jako soubory</string>
     <string name="import_folder">Importovat složku</string>
-    <string name="export_notes">Export all notes</string>
-    <string name="import_notes">Import notes</string>
-
+    <string name="export_notes">Exportovat všechny poznámky</string>
+    <string name="import_notes">Importovat poznámky</string>
     <!-- FAQ -->
     <string name="faq_1_title">Jak mohu změnit barvy widgetu?</string>
     <string name="faq_1_text">V případě, že máte pouze 1 aktivní widget, můžete jej buď znovu vytvořit, nebo použít tlačítko v nastavení apky na změnu barvy. Pokud máte widgetů víc, tlačítko v nastavení apky zmizí. Protože apka podporuje různé barvy pro každý widget, budete muset znovu vytvořit ten widget, jehož barvy chcete změnit.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
+    <string name="app_title">Simple Notes Pro: Organizátor a plánovač seznamu úkolů</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">"Jednoduchý plánovač: Vytvářejte poznámky, zálohujte  &amp;  seznamy úkolů pomocí nástroje pro rychlé připomenutí poznámek"</string>
     <string name="app_long_description">
         ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
 
@@ -113,7 +108,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
