@@ -10,7 +10,7 @@
     <string name="title_taken">Poznámka s týmto názvom už existuje</string>
     <string name="open_note">Otvoriť poznámku</string>
     <string name="delete_note">Odstrániť poznámku</string>
-    <string name="delete_note_prompt_message">Ste si istý, že chcete odstrániť poznámku \"%s\"\?</string>
+    <string name="delete_note_prompt_message">Ste si istý, že chcete odstrániť poznámku \"%s\"?</string>
     <string name="pick_a_note">Zvoľte si poznámku</string>
     <string name="rename_note">Premenovať poznámku</string>
     <string name="general_note">Všeobecná poznámka</string>
