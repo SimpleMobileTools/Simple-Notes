@@ -1,7 +1,33 @@
-Potrebujete si rýchlo poznačiť niečo na nákup, adresu, alebo nápad na startup? Ak áno, táto apka je pre vás ako stvorená! Nieje potrebné žiadne zdĺhavé nastavovanie, iba zapíšte, čo chcete. Poznámky sa ukladajú automaticky, čiže ich ani náhodou nestratíte. Poskytuje možnosť vytvorenia viacerých nezávislých poznámok.
+★ Potrebujete si vytvoriť rýchlu poznámku, aby ste nezabudli niečo kúpiť, adresu, alebo startupový nápad? Práve ste našli najlepŠí organizér, ktorí ste hľadali: Jednoduché poznámky.
 
-Ku poznámkam viete rýchlo pristupovať cez upraviteľný widget, ktorý kliknutím otvorí apku.
+Nie sú potrebné žiadne nastavenia, iba začnite písať, čo ste chceli, rýchle zoznamy, zoznamy položiek, zálohy atď. S týmto nástrojom na poznámky nezabudnete na nič. Ani pri nákupoch, ani myšlienkach.
+
+Jednoduché poznámky sú rýchlym  jednoduchým organizérom a plánovačom, bude pre vás nenahraditeľným nástrojom a pomocníkom pri pamätaní si všetkého dôležitého.!
+
+Náš pripomienkovač vám umožní pamätať si vaše povinnosti, vytvárať denné zoznamy úloh, alebo nápadov. Ide o bezkonkurenčnú jednoduchosť a šetrič času. Spravujte svoj deň týmto jednoduchým spôsobom.
+
+Nachádza sa tu aj automatické ukladanie poznámok, nemôže sa teda stať, že niečo zabudnete, alebo neuložíte. Podporuje vytváranie viacerých nezávislých poznámok a zoznamov.
+
+Ku poznámkam sa viete dostať jednoducho pomocou prispôsobiteľného widgetu s meniteľnou veľkosťou a farbami, ktorý otvorí po kliknutí apku.
+
+Obsahuje prívetivé používateľské prostredie úplne bez reklám a nepotrebných oprávnení. Je open source, obsahuje meniteľné farby, pomocou ktorých si viete rýchlo prispôsobiť apku.
+
+<b>Jednoduché poznámky</b> sú najlepším organizérom a plánovačom bez reklám. Ak potrebujete vysoko kvalitný organizér pre rýchlu tvorbu poznámok s príjemným používateľským prostredím, stiahnite si túto apku teraz.
+
+Majte váš vlastný súkromný poznámkový blok vo vrecku na každodenné použitie, aby ste nezabudli na nič dôležité.
+
+Táto apka je založená na Material dizajne a má prednastavenú tmavú tému, poskytuje výbornú používateľskú skúsenosť pre ľahké používanie. Chýbajúci prístup k internetu garantuje lepšie súkromie, bezpečnosť a stabilitu ako ostatné apky.
 
 Neobsahuje žiadne reklamy a nepotrebné oprávnenia. Je opensource, poskytuje možnosť zmeny farieb.
 
-Táto aplikácia je iba jednou zo skupiny aplikácií. Ostatné viete nájsť na https://www.simplemobiletools.com
+<b>Pozrite si celú sadu aplikácií na:</b>
+https://www.simplemobiletools.com
+
+<b>Vlastná stránka Jednoduchých Poznámok Pro:</b>
+https://www.simplemobiletools.com/notes
+
+<b>Facebook:</b>
+https://www.facebook.com/simplemobiletools
+
+<b>Reddit:</b>
+https://www.reddit.com/r/SimpleMobileTools
