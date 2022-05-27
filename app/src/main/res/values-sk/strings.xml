@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Jednoduché poznámky</string>
     <string name="app_launcher_name">Poznámky</string>
@@ -9,7 +10,7 @@
     <string name="title_taken">Poznámka s týmto názvom už existuje</string>
     <string name="open_note">Otvoriť poznámku</string>
     <string name="delete_note">Odstrániť poznámku</string>
-    <string name="delete_note_prompt_message">Ste si istý, že chcete odstrániť poznámku \"%s\"?</string>
+    <string name="delete_note_prompt_message">Ste si istý, že chcete odstrániť poznámku \"%s\"\?</string>
     <string name="pick_a_note">Zvoľte si poznámku</string>
     <string name="rename_note">Premenovať poznámku</string>
     <string name="general_note">Všeobecná poznámka</string>
@@ -27,7 +28,6 @@
     <string name="locking_warning">UPOZORNENIE: Ak zabudnete heslo poznámky, nebudete ho môcť obnoviť, ani sa už dostať k obsahu poznámky.</string>
     <string name="new_text_note">Nová textová poznámka</string>
     <string name="new_checklist">Nový zoznam položiek</string>
-
     <!-- File notes -->
     <string name="open_file">Otvoriť súbor</string>
     <string name="export_as_file">Exportovať ako súbor</string>
@@ -38,7 +38,6 @@
     <string name="note_saved_successfully">Poznámka \"%s\" bola úspešne uložená</string>
     <string name="note_exported_successfully">Poznámka \"%s\" bola úspešne exportovaná</string>
     <string name="only_export_file_content">Iba exportovať súčasný obsah súboru\n(úprava poznámky nebude mať vplyv na súbor)</string>
-
     <!-- Settings -->
     <string name="display_success_message">Zobraziť správu o úspešnom uložení poznámky</string>
     <string name="links_and_emails_clickable">Spraviť odkazy a emaily klikateľnými</string>
@@ -58,7 +57,6 @@
     <string name="use_incognito_mode">Použiť Inkognito mód klávesníc</string>
     <string name="move_done_checklist_items">Presunúť splnené položky zo zoznamu položiek na spodok</string>
     <string name="add_new_checklist_items_top">Pridávať nové položky do zoznamov na vrch</string>
-
     <!-- Checklists -->
     <string name="checklist">Zoznam položiek</string>
     <string name="checklists">Zoznamy položiek</string>
@@ -66,17 +64,14 @@
     <string name="add_new_checklist_items">Pridať do zoznamu nové položky</string>
     <string name="checklist_is_empty">Zoznam položiek je prázdny</string>
     <string name="remove_done_items">Odstrániť splnené položky</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Exportovať všetky poznámky ako súbory</string>
     <string name="import_folder">Importovať priečinok</string>
     <string name="export_notes">Exportovať všetky poznámky</string>
     <string name="import_notes">Importovať poznámky</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">Ako viem zmeniť farby widgetu?</string>
+    <string name="faq_1_title">Ako viem zmeniť farby widgetu\?</string>
     <string name="faq_1_text">V prípade, že máte iba 1 aktívny widget, ho môžete buď znova vytvoriť, alebo použiť tlačidlo v nastaveniach apky na zmenu farby. Ak máte widgetov viacero, tlačidlo v nastaveniach apky zmizne. Keďže apka podporuje rôzne farby pre každý widget, budete musieť znovu vytvoriť ten widget, ktorého farby chcete zmeniť.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Jednoduché poznámky Pro: Plánovač a organizér</string>
@@ -117,7 +112,6 @@
         <b>Reddit:</b>
         https://www.reddit.com/r/SimpleMobileTools
     </string>
-
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
