@@ -10,7 +10,7 @@
     <string name="title_taken">Ya existe una nota con ese nombre</string>
     <string name="open_note">Abrir nota</string>
     <string name="delete_note">Eliminar nota</string>
-    <string name="delete_note_prompt_message">¿Está seguro de querer eliminar la nota \"%s\"?</string>
+    <string name="delete_note_prompt_message">¿Está seguro de querer eliminar la nota \"%s\"\?</string>
     <string name="pick_a_note">Seleccione una nota</string>
     <string name="rename_note">Renombrar nota</string>
     <string name="general_note">Nota principal</string>
@@ -74,7 +74,7 @@
     <string name="faq_1_text">En caso de que solo tengas un widget activo, Puedes volverlo a crear, o usar el botón en los ajustes de la aplicación para personalziarlo. Si tienes múltiples widgets activos, el botón en los ajustes de la aplicación no estará disponible. Ya que la aplicación soporta personalización de color por widget, tendrás que volver a crear el widget tque quieres personalizar.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Notas Simple Pro: Organiza y planea</string>
+    <string name="app_title">Notas Simple Pro: Organizador de lista de quehaceres y planeador</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Organizador Simple: Crea notas, respalda y listas de tareas con recordatorios</string>
     <string name="app_long_description">
