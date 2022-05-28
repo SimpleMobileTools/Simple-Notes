@@ -10,7 +10,7 @@
     <string name="title_taken">Poznámka s tímto názvem již existuje</string>
     <string name="open_note">Otevřít poznámku</string>
     <string name="delete_note">Odstranit poznámku</string>
-    <string name="delete_note_prompt_message">Opravdu chcete smazat poznámku \"%s\"?</string>
+    <string name="delete_note_prompt_message">Opravdu chcete smazat poznámku \"%s\"\?</string>
     <string name="pick_a_note">Zvolte poznámku</string>
     <string name="rename_note">Přejmenovat poznámku</string>
     <string name="general_note">Všeobecná poznámka</string>
@@ -23,9 +23,9 @@
     <string name="text_note">Textová poznámka</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="note_content_locked">Obsah této poznámky je uzamčen.</string>
     <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="locking_warning">UPOZORNĚNÍ: Pokud zapomenete heslo k poznámce, už ji nebudete schopni obnovit nebo získat přístup k jejímu obsahu.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
     <!-- File notes -->
@@ -70,7 +70,7 @@
     <string name="export_notes">Exportovat všechny poznámky</string>
     <string name="import_notes">Importovat poznámky</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Jak mohu změnit barvy widgetu?</string>
+    <string name="faq_1_title">Jak mohu změnit barvy widgetu\?</string>
     <string name="faq_1_text">V případě, že máte pouze 1 aktivní widget, můžete jej buď znovu vytvořit, nebo použít tlačítko v nastavení apky na změnu barvy. Pokud máte widgetů víc, tlačítko v nastavení apky zmizí. Protože apka podporuje různé barvy pro každý widget, budete muset znovu vytvořit ten widget, jehož barvy chcete změnit.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
