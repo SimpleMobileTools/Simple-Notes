@@ -33,12 +33,15 @@
     <string name="open_file">Отвори файл</string>
     <string name="export_as_file">Export as file</string>
     <string name="file_too_large">File too large, the limit is 1MB</string>
-    <string name="only_import_file_content">Only import the file content\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note\n(note gets deleted if file gets deleted, or path changes)</string>
+    <string name="only_import_file_content">Only import the file content
+\n(changing the file will not affect the note)</string>
+    <string name="update_file_at_note">Update the file itself at updating the note
+\n(note gets deleted if file gets deleted, or path changes)</string>
     <string name="delete_file_itself">Also delete file \"%s\"</string>
     <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
     <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
-    <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Only export the current file content
+\n(changing the note will not affect the file)</string>
     <!-- Settings -->
     <string name="display_success_message">Display save success messages</string>
     <string name="links_and_emails_clickable">Make links and emails clickable</string>
