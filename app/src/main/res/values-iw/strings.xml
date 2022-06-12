@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">הערות פשוטות</string>
+    <string name="app_launcher_name">הערות</string>
+    <string name="widget_config">תודה על השימוש ב-Simple Notes.\n לאפליקציות פשוטות נוספות, בקר ב- SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">לא ניתן לשתף טקסט ריק</string>
+    <string name="simple_note">הערה פשוטה</string>
+    <string name="new_note">הוסף הערה חדשה</string>
+    <string name="no_title">נא לתת שם להערה שלך</string>
+    <string name="title_taken">הערה עם הכותרת הזו כבר קיימת</string>
+    <string name="open_note">פתח פתק</string>
+    <string name="delete_note">מחק פתק</string>
+    <string name="delete_note_prompt_message">האם אתה בטוח שברצונך למחוק את הפתק \"%s\"\?</string>
+    <string name="pick_a_note">בחר פתק</string>
+    <string name="rename_note">שנה שם פתק</string>
+    <string name="general_note">פתק כללי</string>
+    <string name="create_new_note">צור פתק חדש</string>
+    <string name="add_to_note">הוסף לפתק</string>
+    <string name="unsaved_changes_warning">יש לך כמה שינויים שלא נשמרו. מה אתה רוצה לעשות איתם\?</string>
+    <string name="note_shown_widget">פתק המוצג בווידג\'ט:</string>
+    <string name="show_note_title">הצג את כותרת הפתק</string>
+    <string name="new_note_type">סוג פתק חדש:</string>
+    <string name="text_note">פתק טקסט</string>
+    <string name="lock_note">נעל פתק</string>
+    <string name="unlock_note">בטל נעילת פתק</string>
+    <string name="note_content_locked">תוכן הפתקים נעול.</string>
+    <string name="show_content">הראה תוכן</string>
+    <string name="locking_warning">אזהרה: אם תשכח את הסיסמה של הפתקים, לא תוכל לשחזר אותה או לגשת לתוכן הפתקים יותר.</string>
+    <string name="new_text_note">פתק טקסט חדש</string>
+    <string name="new_checklist">רשימת בדיקה חדשה</string>
+    <!-- File notes -->
+    <string name="open_file">Open file</string>
+    <string name="export_as_file">ייצא כקובץ</string>
+    <string name="file_too_large">הקובץ גדול מדי, המגבלה היא 1MB</string>
+    <string name="only_import_file_content">ייבא רק את תוכן הקובץ\n (שינוי הקובץ לא ישפיע על ההערה)</string>
+    <string name="update_file_at_note">עדכן את הקובץ עצמו בעת עדכון ההערה\n (הערה נמחקת אם הקובץ נמחק, או נתיב משתנה)</string>
+    <string name="delete_file_itself">מחק גם את הקובץ \"%s\"</string>
+    <string name="note_saved_successfully">הפתק \"%s\" נשמר בהצלחה</string>
+    <string name="note_exported_successfully">הפתק \"%s\" יוצא בהצלחה</string>
+    <string name="only_export_file_content">ייצא רק את תוכן הקובץ הנוכחי\n (שינוי ההערה לא ישפיע על הקובץ)</string>
+    <!-- Settings -->
+    <string name="display_success_message">הצג הודעות נשמר בהצלחה</string>
+    <string name="links_and_emails_clickable">הפוך קישורים ומיילים לניתנים ללחיצה</string>
+    <string name="place_cursor_end">מקם את הסמן לסוף הפתק</string>
+    <string name="monospaced_font">השתמש בגופן מונו-רווח</string>
+    <string name="show_keyboard">הצג מקלדת בעת ההפעלה</string>
+    <string name="show_word_count">הצג ספירת מילים</string>
+    <string name="show_character_count">הצג ספירת תווים</string>
+    <string name="alignment">יישור</string>
+    <string name="left">שמאל</string>
+    <string name="center">מרכז</string>
+    <string name="right">ימין</string>
+    <string name="widget_note">הפתק בשימוש בווידג\'ט</string>
+    <string name="show_note_picker">הצג בוחר הפתקים בעת ההפעלה</string>
+    <string name="autosave_notes">שמירה אוטומטית של פתקים</string>
+    <string name="enable_line_wrap">אפשר גלישת שורה</string>
+    <string name="use_incognito_mode">השתמש במצב גלישה בסתר של מקלדות</string>
+    <string name="move_done_checklist_items">העבר את פריטי רשימת הבדיקה שבוצעו לתחתית</string>
+    <string name="add_new_checklist_items_top">הוסף פריטים חדשים ברשימת הבדיקה בראש</string>
+    <!-- Checklists -->
+    <string name="checklist">רשימת תיוג</string>
+    <string name="checklists">רשימות תיוגים</string>
+    <string name="add_new_checklist_item">הוסף פריט רשימת תיוג חדש</string>
+    <string name="add_new_checklist_items">הוסף פריטי רשימת בדיקה חדשים</string>
+    <string name="checklist_is_empty">רשימת התיוגים ריקה</string>
+    <string name="remove_done_items">הסר פריטים שבוצעו</string>
+    <!-- Import / Export -->
+    <string name="export_all_notes">ייצא את כל הפתקים כקבצים</string>
+    <string name="import_folder">ייבא תקיות</string>
+    <string name="export_notes">ייצא את כל הפתקים</string>
+    <string name="import_notes">ייבא פתקים</string>
+    <!-- FAQ -->
+    <string name="faq_1_title">כיצד אוכל לשנות את צבע הווידג\'טים\?</string>
+    <string name="faq_1_text">במקרה שיש לך רק ווידג\'ט פעיל אחד, תוכל ליצור אותו מחדש או להשתמש בכפתור בהגדרות האפליקציה כדי להתאים אותו. אם יש לך מספר ווידג\'טים פעילים, הכפתור בהגדרות האפליקציה לא יהיה זמין. מכיוון שהאפליקציה תומכת בהתאמה אישית של צבע לכל ווידג\'ט, תצטרך ליצור מחדש את הווידג\'ט שברצונך להתאים אישית.</string>
+    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
+    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
+    <string name="app_title">Simple Notes Pro: מארגן ומתכנן רשימת מטלות</string>
+    <!-- Short description has to have less than 80 chars -->
+    <string name="app_short_description">מתכנן פשוט: צור הערות, גיבוי ורשימות מטלות עם כלי מהיר לתזכורת הערות</string>
+    <string name="app_long_description"> ★ צריך לרשום במהירות משהו לקנות, כתובת או רעיון לסטארט-אפ\? אז אל תחפשו רחוק יותר מכיוון שזהו כלי המארגן הפשוט שחיפשתם: הערות פשוטות: מארגן ומתכנן רשימת מטלות! אין צורך בצעדי הגדרה מסובכים, פשוט הקש על המסך והקלד את מה שבאת בשבילו וצור הערות, רשימות מהירות, רשימת בדיקה או גיבוי לכל רעיון. עם המחברת האישית הפשוטה שלך תוכל לזכור כל דבר מהר! קניות של מצרכים, שינון מחשבותיך והגדרה קלה יותר של תזכורות. מֵידָע! כלי התזכורת שלנו מאפשר לך לעקוב אחר החובות שלך, ליצור רשימת צ\'ק יומית לפריטים או רעיונות עם פשטות חסרת תקדים, בולטות וערך חיסכון ללא תחרות בזמן. נהל את לוח הזמנים שלך בצורה מהירה ופשוטה. כלי תזכורת למחברת זה מגיע עם שמירה אוטומטית כך שלא תבטל את השינויים בטעות.\nזה גם תומך ביצירת הערות ורשימות עצמאיות של טקסט רגיל במהירות רבה. אתה יכול לגשת בקלות להערה ולארגן את רשימת המטלות שלך תוך זמן קצר על ידי שימוש בווידג\'ט הניתן להתאמה אישית ולשינוי גודל, שפותח את האפליקציה בהקשה. הוא ידידותי למשתמש ואינו מכיל פרסומות או הרשאות מיותרות - ללא תנאים מצורפים. זה קוד פתוח לחלוטין, מספק צבעים הניתנים להתאמה אישית הניתנים להתאמה עם התאמה מהירה ומהירה. <b>הערות פשוטות: מארגן ומתכנן רשימות מטלות </b> הוא מארגן הפריטים ומתכנן הרשימות הטובים ביותר שתוכל להשתמש בו ללא מודעות. אם אתה צריך ארגונית באיכות גבוהה להערות מהירה וטובה, תזכורת אמינה וידידותית למשתמש שבאמת פשוטה לשימוש, הורד את האפליקציה שלנו כבר עכשיו :) יש לך מחברת אישית משלך בכיס כל יום ותהיה לך מתכנן גיבוי כדי שתוכל לא תצטרך לדאוג לשכוח פגישה חשובה או את רשימת הקניות שלך :). זה מגיע עם עיצוב חומר וערכת נושא כהה כברירת מחדל, מספק חווית משתמש נהדרת לשימוש קל. היעדר גישה לאינטרנט נותן לך יותר פרטיות, אבטחה ויציבות מאשר אפליקציות אחרות. אינו מכיל פרסומות או הרשאות מיותרות. זה קוד פתוח לחלוטין, מספק צבעים הניתנים להתאמה אישית. <b>בדוק את החבילה המלאה של כלים פשוטים כאן:</b> https://www.simplemobiletools.com <b>אתר עצמאי של Simple Notes Pro:</b> https://www.simplemobiletools.com/ הערות <b>פייסבוק:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
