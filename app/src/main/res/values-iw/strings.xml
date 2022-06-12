@@ -24,7 +24,7 @@
     <string name="show_content">הראה תוכן</string>
     <string name="new_text_note">פתק טקסט חדש</string>
     <string name="new_checklist">רשימת בדיקה חדשה</string>
-    <string name="open_file">פתח קובץ</string>
+    <string name="open_file">Open file</string>
     <string name="export_as_file">ייצא כקובץ</string>
     <string name="file_too_large">הקובץ גדול מדי, המגבלה היא 1MB</string>
     <string name="only_import_file_content">ייבא רק את תוכן הקובץ
