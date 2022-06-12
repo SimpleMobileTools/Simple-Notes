@@ -76,7 +76,7 @@
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: Tehtävälistan organisointi</string>
     <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
+    <string name="app_short_description">Yksinkertainen suunnittelija: Luo muistiinpanoja, varmuuskopioita ja varmuuskopioi; tehtävälistat nopealla muistutustyökalulla.</string>
     <string name="app_long_description">
         ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
 
