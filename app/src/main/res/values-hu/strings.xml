@@ -73,6 +73,7 @@
     <string name="import_folder">Mappa importálása</string>
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
+    <string name="import_notes_pro">Import notes (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hogyan módosíthatom a modulok színét\?</string>
     <string name="faq_1_text">Ha csak 1 aktív modulja van, akkor vagy újra létrehozhatja, vagy használja az alkalmazásbeállításokban lévő gombot, hogy testreszabja. Ha több modulja van, akkor az alkalmazásbeállításokban nem lesz elérhető a gomb. Mivel az alkalmazás támogatja szín modulonkénti testreszabását, azért a módosítandó modult újra létre kell hoznia.</string>

@@ -69,6 +69,7 @@
     <string name="import_folder">Importer mappe</string>
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
+    <string name="import_notes_pro">Import notes (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hvordan kan jeg ændre widgets farve\?</string>
     <string name="faq_1_text">Hvis du kun har 1 aktiv widget, kan du enten genskabe den eller bruge knappen i appindstillingerne til at tilpasse den. Hvis du har flere aktive widgets, er knappen i appindstillingerne ikke tilgængelig. Da appen understøtter farvetilpasning pr. widget, skal du genskabe den widget, som du vil tilpasse.</string>

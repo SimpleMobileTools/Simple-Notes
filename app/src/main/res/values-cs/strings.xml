@@ -69,6 +69,7 @@
     <string name="import_folder">Importovat složku</string>
     <string name="export_notes">Exportovat všechny poznámky</string>
     <string name="import_notes">Importovat poznámky</string>
+    <string name="import_notes_pro">Importovat poznámky (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Jak mohu změnit barvy widgetu\?</string>
     <string name="faq_1_text">V případě, že máte pouze 1 aktivní widget, můžete jej buď znovu vytvořit, nebo použít tlačítko v nastavení apky na změnu barvy. Pokud máte widgetů víc, tlačítko v nastavení apky zmizí. Protože apka podporuje různé barvy pro každý widget, budete muset znovu vytvořit ten widget, jehož barvy chcete změnit.</string>

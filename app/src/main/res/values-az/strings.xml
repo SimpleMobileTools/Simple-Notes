@@ -72,6 +72,7 @@
     <string name="import_folder">Qovluq daxil et</string>
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
+    <string name="import_notes_pro">Import notes (Pro)</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">How can I change the widgets color?</string>

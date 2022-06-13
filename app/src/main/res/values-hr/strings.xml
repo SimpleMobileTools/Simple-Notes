@@ -69,6 +69,7 @@
     <string name="import_folder">Mapa za uvoz</string>
     <string name="export_notes">Izvezi sve bilješke</string>
     <string name="import_notes">Import notes</string>
+    <string name="import_notes_pro">Import notes (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kako mogu promijeniti boju widgeta\?</string>
     <string name="faq_1_text">U slučaju da imate samo jedan aktivan widget, možete ga ponovno izraditi ili upotrijebiti gumb u postavkama aplikacije za njegovu prilagodbu. Ako imate više aktivnih widgeta, gumb u postavkama aplikacije neće biti dostupan. Kako aplikacija podržava prilagodbu boja po widgetu, morat ćete ponovno izraditi widget koji želite prilagoditi.</string>

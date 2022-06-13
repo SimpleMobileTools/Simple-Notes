@@ -69,6 +69,7 @@
     <string name="import_folder">Importa cartella</string>
     <string name="export_notes">Esporta tutte le note</string>
     <string name="import_notes">Importa note</string>
+    <string name="import_notes_pro">Importa note (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Come posso cambiare il colore dei widget\?</string>
     <string name="faq_1_text">Se hai un solo widget attivo, puoi ricrearlo oppure usare il pulsante nelle impostazioni dell\'app per personalizzaro. Se hai più di un widget, il pulsante nelle impostazioni dell\'app non sarà disponibile. Dato che l\'app supporta la personalizzazione dei colori per ogni widget, dovrai ricreare il widget che vuoi personalizzare.</string>

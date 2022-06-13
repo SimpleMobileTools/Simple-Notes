@@ -69,6 +69,7 @@
     <string name="import_folder">Tuo kansio</string>
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
+    <string name="import_notes_pro">Import notes (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kuinka voin vaihtaa pienoissovelluksen väriä\?</string>
     <string name="faq_1_text">Jos sinulla on vain yksi aktiivinen pienoissovellus, voit joko luoda sen uudelleen tai mukauttaa sitä sovelluksen asetukset-painikkeella. Jos sinulla on useita aktiivisia pienoissovelluksia, sovelluksessa oleva asetukset-painike ei ole käytettävissä. Koska sovellus tukee värien mukauttamista pienoissovellusta kohti, sinun on luotava uudelleen pienoissovellus, jonka haluat muokata.</string>
