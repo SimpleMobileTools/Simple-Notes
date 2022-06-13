@@ -29,7 +29,7 @@ class NotesExporter(private val context: Context) {
                     writer.beginArray()
                     val notes = context.notesDB.getNotes() as ArrayList<Note>
                     for (note in notes) {
-                        if (note.protectionType === PROTECTION_NONE) {
+                        if (note.protectionType == PROTECTION_NONE) {
                             val noteToSave = getNoteToExport(note)
                             writer.jsonValue(gson.toJson(noteToSave))
                             written++

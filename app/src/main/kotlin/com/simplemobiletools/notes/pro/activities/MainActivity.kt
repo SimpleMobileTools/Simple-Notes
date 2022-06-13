@@ -878,6 +878,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun tryExportNotes() {
+        hideKeyboard()
         val fileName = "${getString(R.string.notes)}_${getCurrentFormattedDateTime()}"
         Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
             type = EXPORT_MIME_TYPE
@@ -910,6 +911,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun tryImportNotes() {
+        hideKeyboard()
         Intent(Intent.ACTION_GET_CONTENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type = EXPORT_MIME_TYPE
