@@ -1,0 +1,2 @@
+ * Change batch note exporting from json to txt
+ * Added some stability, UX and translation improvements

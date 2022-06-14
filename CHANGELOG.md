@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.12.2 *(2022-06-14)*
+----------------------------
+
+ * Change batch note exporting from json to txt
+ * Added some stability, UX and translation improvements
+
 Version 6.12.1 *(2022-05-23)*
 ----------------------------
 
