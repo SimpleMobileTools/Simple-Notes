@@ -23,9 +23,9 @@
     <string name="text_note">Nota de texto</string>
     <string name="lock_note">Bloquear nota</string>
     <string name="unlock_note">Desbloquear nota</string>
-    <string name="note_content_locked">El contenido de esta nota está bloqueado.</string>
+    <string name="note_content_locked">El contenido de la nota está bloqueado.</string>
     <string name="show_content">Mostrar contenido</string>
-    <string name="locking_warning">ADVERTENCIA: Si olvidas la contraseña de esta nota, ya no podrás recuperar su contenido.</string>
+    <string name="locking_warning">ADVERTENCIA: Si olvidas la contraseña de la nota, ya no podrás recuperar su contenido.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
     <!-- File notes -->
