@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
-    <string name="widget_config">Gràcies per utilitzar Simple Notes.\nPer obtenir més aplicacions Simples, visiteu SimpleMobileTools.com.</string>
+    <string name="widget_config">Gràcies per utilitzar Simple Notes.
+\nPer obtenir més aplicacions Simples, visiteu SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">No es pot compartir un text buit</string>
     <string name="simple_note">Nota senzilla</string>
     <string name="new_note">Afegeix una nota nova</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Obre un fitxer</string>
     <string name="export_as_file">Exporta com a fitxer</string>
     <string name="file_too_large">El fitxer és massa gran, el límit és d\'1 MB</string>
-    <string name="only_import_file_content">Importa només el contingut del fitxer\n(canviar el fitxer no afectarà la nota)</string>
-    <string name="update_file_at_note">Actualitza el fitxer en actualitzar la nota\n(la nota se suprimirà si se suprimeix el fitxer o canvia el camí)</string>
+    <string name="only_import_file_content">Importa només el contingut del fitxer
+\n(canviar el fitxer no afectarà la nota)</string>
+    <string name="update_file_at_note">Actualitza el fitxer en actualitzar la nota
+\n(la nota se suprimirà si se suprimeix el fitxer o canvia el camí)</string>
     <string name="delete_file_itself">Suprimeix també el fitxer «%s»</string>
     <string name="note_saved_successfully">La nota «%s» s\'ha desat correctament</string>
     <string name="note_exported_successfully">La nota «%s» s\'ha exportat correctament</string>
-    <string name="only_export_file_content">Exporta només el contingut del fitxer actual\n(canviar la nota no afectarà el fitxer)</string>
+    <string name="only_export_file_content">Exporta només el contingut del fitxer actual
+\n(canviar la nota no afectarà el fitxer)</string>
     <!-- Settings -->
     <string name="display_success_message">Mostra els missatges de desament correcte</string>
     <string name="links_and_emails_clickable">Fes que els enllaços i correus electrònics s\'hi pugui fer clic</string>
