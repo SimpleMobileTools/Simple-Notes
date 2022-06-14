@@ -18,16 +18,16 @@
     <string name="add_to_note">Añadir a la nota</string>
     <string name="unsaved_changes_warning">Tienes cambios sin guardar. ¿Qué quieres hacer con ellos?</string>
     <string name="note_shown_widget">Nota mostrada en el widget:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">Mostrar el título de la nota</string>
     <string name="new_note_type">Nuevo tipo de nota:</string>
     <string name="text_note">Nota de texto</string>
     <string name="lock_note">Bloquear nota</string>
     <string name="unlock_note">Desbloquear nota</string>
     <string name="note_content_locked">El contenido de la nota está bloqueado.</string>
     <string name="show_content">Mostrar contenido</string>
-    <string name="locking_warning">ADVERTENCIA: Si olvidas la contraseña de la nota, ya no podrás recuperar su contenido.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="locking_warning">ADVERTENCIA: Si olvidas la contraseña de la nota, ya no podrás recuperarla o acceder a su contenido.</string>
+    <string name="new_text_note">Nueva nota de texto</string>
+    <string name="new_checklist">Nueva lista de tareas</string>
     <!-- File notes -->
     <string name="open_file">Abrir archivo</string>
     <string name="export_as_file">Exportar como archivo</string>
@@ -56,10 +56,10 @@
     <string name="enable_line_wrap">Activar ajuste de línea</string>
     <string name="use_incognito_mode">Usar modo incógnito de los teclados</string>
     <string name="move_done_checklist_items">Mover ítems completados al final de la lista</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="add_new_checklist_items_top">Añade nuevos elementos a la parte superior de la lista de control</string>
     <!-- Checklists -->
     <string name="checklist">Lista</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">Listas de control</string>
     <string name="add_new_checklist_item">Añadir un nuevo ítem a la lista</string>
     <string name="add_new_checklist_items">Añadir nuevos ítems a la lista</string>
     <string name="checklist_is_empty">La lista está vacía</string>
@@ -67,9 +67,9 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas las notas como archivos</string>
     <string name="import_folder">Importar carpeta</string>
-    <string name="export_notes">Export all notes</string>
+    <string name="export_notes">Exportar todas las notas</string>
     <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="import_notes_pro">Importar notas (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">¿Cómo puedo cambiar los colores del widget\?</string>
     <string name="faq_1_text">En caso de que solo tengas un widget activo, Puedes volverlo a crear, o usar el botón en los ajustes de la aplicación para personalziarlo. Si tienes múltiples widgets activos, el botón en los ajustes de la aplicación no estará disponible. Ya que la aplicación soporta personalización de color por widget, tendrás que volver a crear el widget tque quieres personalizar.</string>
