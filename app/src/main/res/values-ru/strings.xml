@@ -69,7 +69,7 @@
     <string name="import_folder">Импортировать папку</string>
     <string name="export_notes">Экспортировать все заметки</string>
     <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="import_notes_pro">Импортировать заметки (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Как я могу изменить цвет виджета\?</string>
     <string name="faq_1_text">Если у вас только 1 активный виджет, вы можете либо пересоздать его, либо использовать кнопку в настройках приложения. Если у вас несколько активных виджетов, кнопка в настройках будет недоступна. Поскольку приложение поддерживает настройку цвета для каждого виджета, вам придётся пересоздать виджет, который вы хотите настроить.</string>
@@ -78,37 +78,7 @@
     <string name="app_title">Simple Notes Pro: списки дел и планировщик</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Simple planner: создавайте и сохраняйте заметки и to-do списки с быстрыми напоминаниями</string>
-    <string name="app_long_description">
-        ★ Вам нужно быстро сделать заметку о покупке, адресе или идее стартапа? Тогда можете больше не искать это приложение - то, что вам нужно. Simple Notes: Менеджер To-do списков! Никаких сложных шагов настройки не требуется, просто коснитесь экрана и введите то, что вам нужно. Сохраняйте свои идеи, создвайте заметки, быстрые и контрольные списки. С помощью простого блокнота вы сможете быстро все вспонить! Вы легко можете настраивать напоминания, еще никогда не было так легко далать заметки ★
-
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
-
-        Наше приложение экономит время позволяя отслеживать запланированные дела и составлять ежедневные контрольные списки. Быстро и просто управляйте своим расписанием. 
-
-        В приложении используется автоматическое сохранение, а также оно поддерживает быстрое создание нескольких независимых простых текстовых заметок и списков. 
-
-        Вы легко можете получить доступ к заметке и мгновенно организовать свой список дел использую настраиваемый виджет, открывающий приложение одним касанием.
-
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. Приложение имеет полностью открытый исходный код, позволяет быстро и легко настроить цвета интерфейса. 
-
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
-
-        По умолчанию используется материальный дизайн и темная тема, что обеспечивает хороший  пользовательский опыт и простоту использования. Отсутствие разрешения доступа к интернету дает вам больше конфиденциальности, безопасности и стабильности, чем другие приложения.
-
-        Без рекламы и излишних прав доступа. Полностью открытое ПО, а также со встроенной темной темой.
-
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
-
-        <b>Standalone website of Simple Notes Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_long_description"> ★ Вам нужно быстро сделать заметку о покупке, адресе или идее стартапа\? Тогда можете больше не искать это приложение - то, что вам нужно. Simple Notes: Менеджер To-do списков! Никаких сложных шагов настройки не требуется, просто коснитесь экрана и введите то, что вам нужно. Сохраняйте свои идеи, создавайте заметки, быстрые и контрольные списки. С помощью простого блокнота вы сможете быстро все вспомнить! Вы легко можете настраивать напоминания, еще никогда не было так легко делать заметки ★ Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information! Наше приложение экономит время позволяя отслеживать запланированные дела и составлять ежедневные контрольные списки. Быстро и просто управляйте своим расписанием. В приложении используется автоматическое сохранение, а также оно поддерживает быстрое создание нескольких независимых простых текстовых заметок и списков. Вы легко можете получить доступ к заметке и мгновенно организовать свой список дел использую настраиваемый виджет, открывающий приложение одним касанием. It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. Приложение имеет полностью открытый исходный код, позволяет быстро и легко настроить цвета интерфейса. <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :). По умолчанию используется материальный дизайн и темная тема, что обеспечивает хороший пользовательский опыт и простоту использования. Отсутствие разрешения доступа к интернету дает вам больше конфиденциальности, безопасности и стабильности, чем другие приложения. Без рекламы и излишних прав доступа. Полностью открытое ПО, а также со встроенной темной темой. <b>Check out the full suite of Simple Tools here:</b> https://www.simplemobiletools.com <b>Standalone website of Simple Notes Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
