@@ -1,3 +1,0 @@
- * Removed the Storage permission on Android 9+, notes synced to files have to be set up again
- * Limit file size to 1 MB in all cases
- * Some design, stability and translation improvements

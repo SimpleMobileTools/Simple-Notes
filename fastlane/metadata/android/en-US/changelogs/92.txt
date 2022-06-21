@@ -1,2 +1,0 @@
- * Fixed synced checklist item visibility at widgets (by Aga-C)
- * Added some translation and stability improvements

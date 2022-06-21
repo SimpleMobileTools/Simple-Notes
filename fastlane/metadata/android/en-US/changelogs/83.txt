@@ -1,3 +1,0 @@
- * Allow locking notes with passwords
- * Adding a 60% and 90% font size
- * Some stability and translation improvements

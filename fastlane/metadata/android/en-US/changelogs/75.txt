@@ -1,2 +1,0 @@
- * Allow creating a new note from the Open Note dialog
- * Added some translation and UX improvements

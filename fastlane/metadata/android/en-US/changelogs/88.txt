@@ -1,2 +1,0 @@
- * Redesigned some screens, added an Auto theme
- * Added many translation, stability and UX improvements

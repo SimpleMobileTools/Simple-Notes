@@ -1,2 +1,0 @@
- * Allow printing notes
- * Added some translation and stability improvements

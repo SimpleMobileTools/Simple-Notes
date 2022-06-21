@@ -1,4 +1,0 @@
- * Allow quickly moving checklist items at the top or bottom (by tanvir-ahmod)
- * Fixing a glitch at sharing checklists
- * Make sure undo/redo work properly
- * Some translation and stability improvements

@@ -1,3 +1,0 @@
- * Allow importing text as checklist items split at new lines
- * Fixed some crashes at importing text with special characters
- * Other stability and translation improvements

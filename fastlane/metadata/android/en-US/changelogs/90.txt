@@ -1,2 +1,0 @@
- * Allow quick note creation from homescreen shortcuts (by Aga-C)
- * Added some translation, stability and UX improvements
