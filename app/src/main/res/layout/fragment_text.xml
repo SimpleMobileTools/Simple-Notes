@@ -39,7 +39,7 @@
             android:layout_below="@+id/note_locked_label"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/medium_margin"
-            android:background="?attr/selectableItemBackground"
+            android:background="@drawable/ripple_all_corners"
             android:padding="@dimen/activity_margin"
             android:text="@string/show_content" />
 

@@ -44,7 +44,7 @@
                 android:layout_below="@+id/note_locked_label"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:background="?attr/selectableItemBackground"
+                android:background="@drawable/ripple_all_corners"
                 android:padding="@dimen/activity_margin"
                 android:text="@string/show_content" />
 
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/fragment_placeholder"
                 android:layout_centerHorizontal="true"
-                android:background="?attr/selectableItemBackground"
+                android:background="@drawable/ripple_all_corners"
                 android:gravity="center"
                 android:padding="@dimen/activity_margin"
                 android:text="@string/add_new_checklist_items"
