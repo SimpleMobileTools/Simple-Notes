@@ -926,10 +926,10 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun importNotes(path: String) {
+    private fun importNotes(path: String, filename: String) {
         toast(R.string.importing)
         ensureBackgroundThread {
-            NotesImporter(this).importNotes(path) {
+            NotesImporter(this).importNotes(path, filename) {
                 toast(
                     when (it) {
                         NotesImporter.ImportResult.IMPORT_OK -> R.string.importing_successful
@@ -944,19 +944,20 @@ class MainActivity : SimpleActivity() {
 
     private fun importNotesFrom(uri: Uri) {
         when (uri.scheme) {
-            "file" -> importNotes(uri.path!!)
+            "file" -> importNotes(uri.path!!, uri.path!!.getFilenameFromPath())
             "content" -> {
-                val tempFile = getTempFile("messages", "backup.json")
+                val tempFile = getTempFile("messages", "backup.txt")
                 if (tempFile == null) {
                     toast(R.string.unknown_error_occurred)
                     return
                 }
 
                 try {
+                    val filename = getFilenameFromUri(uri)
                     val inputStream = contentResolver.openInputStream(uri)
                     val out = FileOutputStream(tempFile)
                     inputStream!!.copyTo(out)
-                    importNotes(tempFile.absolutePath)
+                    importNotes(tempFile.absolutePath, filename)
                 } catch (e: Exception) {
                     showErrorToast(e)
                 }
