@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>
-    <string name="widget_config">Obrigado por usar Simple Notes.\nPara mais aplicações Simple, aceda a SimpleMobileTools.com.</string>
+    <string name="widget_config">Obrigado por usar Simple Notes.
+\nPara mais aplicações Simple, aceda a SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Não pode partilhar texto vazio</string>
     <string name="simple_note">Nota básica</string>
     <string name="new_note">Adicionar uma nota</string>
@@ -32,8 +33,10 @@
     <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
     <string name="file_too_large">Ficheiro demasiado grande, o limite é 1 MB</string>
-    <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro\n(se alterar o ficheiro, a nota fica intacta)</string>
-    <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota\n(a nota será removida se apagar o ficheiro ou se mudar a sua localização)</string>
+    <string name="only_import_file_content">Importar apenas o conteúdo do ficheiro
+\n(se alterar o ficheiro, a nota fica intacta)</string>
+    <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota
+\n(a nota será removida se apagar o ficheiro ou se mudar a sua localização)</string>
     <string name="delete_file_itself">Apagar também o ficheiro \"%s\"</string>
     <string name="note_saved_successfully">Nota \"%s\" guardada com êxito</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com êxito</string>
