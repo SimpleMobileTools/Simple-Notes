@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Schlichte Notizen</string>
     <string name="app_launcher_name">Notizen</string>
-    <string name="widget_config">Vielen Dank, dass du Simple Notes benutzt.\nWeitere einfache Apps findest du auf SimpleMobileTools.com.</string>
+    <string name="widget_config">Vielen Dank, dass du Simple Notes benutzt.
+\nWeitere einfache Apps findest du auf SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Eine leere Notiz kann nicht geteilt werden</string>
     <string name="simple_note">Einfache Notiz</string>
     <string name="new_note">Neue Notiz hinzufügen</string>
@@ -16,7 +17,7 @@
     <string name="general_note">Hauptnotiz</string>
     <string name="create_new_note">Neue Notiz erstellen</string>
     <string name="add_to_note">Zu Notiz hinzufügen</string>
-    <string name="unsaved_changes_warning">Du hast ungespeicherte Notizen. Was soll mit ihnen geschehen?</string>
+    <string name="unsaved_changes_warning">Du hast ungespeicherte Notizen. Was soll mit ihnen geschehen\?</string>
     <string name="note_shown_widget">Im Widget angezeigte Notiz:</string>
     <string name="show_note_title">Titel der Notiz anzeigen</string>
     <string name="new_note_type">Neue Notizart:</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Datei öffnen</string>
     <string name="export_as_file">Als Datei exportieren</string>
     <string name="file_too_large">Die Datei ist zu groß, die Grenze liegt bei 1 MB</string>
-    <string name="only_import_file_content">Importiere nur den Dateiinhalt.\n(Änderungen an der Datei haben keine Auswirkungen auf die Notiz.)</string>
-    <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
+    <string name="only_import_file_content">Importiere nur den Dateiinhalt.
+\n(Änderungen an der Datei haben keine Auswirkungen auf die Notiz.)</string>
+    <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei
+\n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
     <string name="delete_file_itself">Lösche Datei \"%s\"</string>
     <string name="note_saved_successfully">Hinweis „%s“ erfolgreich gespeichert</string>
     <string name="note_exported_successfully">Die Notiz „%s“ wurde erfolgreich exportiert</string>
-    <string name="only_export_file_content">Nur den aktuellen Dateiinhalt exportieren\n(Das Verändern der Notiz wird die Datei nicht beeinflussen)</string>
+    <string name="only_export_file_content">Nur den aktuellen Dateiinhalt exportieren
+\n(Das Verändern der Notiz wird die Datei nicht beeinflussen)</string>
     <!-- Settings -->
     <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
     <string name="links_and_emails_clickable">Links und E-Mail-Adressen anklickbar</string>
