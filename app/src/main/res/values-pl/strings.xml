@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Proste notatki</string>
     <string name="app_launcher_name">Notatki</string>
-    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Proste notatki.\nWięcej prostych aplikacji można znaleźć na SimpleMobileTools.com.</string>
+    <string name="widget_config">Dziękujemy za korzystanie z aplikacji Proste notatki.
+\nWięcej prostych aplikacji można znaleźć na SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nie można udostępnić pustego tekstu</string>
     <string name="simple_note">Prosta notatka</string>
     <string name="new_note">Dodaj nową notatkę</string>
@@ -16,7 +17,7 @@
     <string name="general_note">Notatka ogólna</string>
     <string name="create_new_note">Utwórz nową notatkę</string>
     <string name="add_to_note">Dodaj do notatki</string>
-    <string name="unsaved_changes_warning">Masz niezapisane zmiany. Co chcesz z nimi zrobić?</string>
+    <string name="unsaved_changes_warning">Masz niezapisane zmiany. Co chcesz z nimi zrobić\?</string>
     <string name="note_shown_widget">Notatka wyświetlana w widżecie:</string>
     <string name="show_note_title">Pokazuj tytuł notatki</string>
     <string name="new_note_type">Typ nowej notatki:</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Otwórz plik</string>
     <string name="export_as_file">Eksportuj jako plik</string>
     <string name="file_too_large">Plik za duży, limit to 1 MB</string>
-    <string name="only_import_file_content">Zaimportuj tylko zawartość pliku\n(zmiana pliku nie wpłynie na notatkę)</string>
-    <string name="update_file_at_note">Aktualizuj plik podczas aktualizacji notatki\n(notatka zostanie usunięta w przypadku usunięcia pliku lub zmiany ścieżki)</string>
+    <string name="only_import_file_content">Zaimportuj tylko zawartość pliku
+\n(zmiana pliku nie wpłynie na notatkę)</string>
+    <string name="update_file_at_note">Aktualizuj plik podczas aktualizacji notatki
+\n(notatka zostanie usunięta w przypadku usunięcia pliku lub zmiany ścieżki)</string>
     <string name="delete_file_itself">Usuń również plik „%s”</string>
     <string name="note_saved_successfully">Notatka „%s” została zapisana</string>
     <string name="note_exported_successfully">Notatka „%s” została wyeksportowana</string>
-    <string name="only_export_file_content">Wyeksportuj tylko bieżącą zawartość pliku\n(zmiana notatki nie wpłynie na plik)</string>
+    <string name="only_export_file_content">Wyeksportuj tylko bieżącą zawartość pliku
+\n(zmiana notatki nie wpłynie na plik)</string>
     <!-- Settings -->
     <string name="display_success_message">Wyświetlaj informacje o pomyślnym zapisie</string>
     <string name="links_and_emails_clickable">Przetwarzaj linki i adresy e-mail do klikalnej formy</string>
