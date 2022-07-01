@@ -17,7 +17,7 @@
     <string name="general_note">一般筆記</string>
     <string name="create_new_note">建立新筆記</string>
     <string name="add_to_note">添加到筆記</string>
-    <string name="unsaved_changes_warning">你有一些尚未儲存的變更。你想對他們怎麼處理?</string>
+    <string name="unsaved_changes_warning">你有一些尚未儲存的變更。你想對他們怎麼處理\?</string>
     <string name="note_shown_widget">在小工具顯示的筆記:</string>
     <string name="show_note_title">顯示筆記標題</string>
     <string name="new_note_type">新筆記類型:</string>
@@ -33,12 +33,15 @@
     <string name="open_file">打開檔案</string>
     <string name="export_as_file">匯出成檔案</string>
     <string name="file_too_large">檔案太大，上限為 1MB</string>
-    <string name="only_import_file_content">僅匯入檔案內容\n(檔案變更不影響筆記)</string>
-    <string name="update_file_at_note">更新筆記時也更新檔案本身\n(如果檔案被刪除或變更路徑，筆記將被刪除)</string>
+    <string name="only_import_file_content">僅匯入檔案內容
+\n(檔案變更不影響筆記)</string>
+    <string name="update_file_at_note">更新筆記時也更新檔案本身
+\n(如果檔案被刪除或變更路徑，筆記將被刪除)</string>
     <string name="delete_file_itself">也刪除檔案 \"%s\"</string>
     <string name="note_saved_successfully">筆記「%s」儲存成功</string>
     <string name="note_exported_successfully">筆記「%s」匯出成功</string>
-    <string name="only_export_file_content">只匯出目前的檔案內容\n(修改筆記不影響檔案)</string>
+    <string name="only_export_file_content">只匯出目前的檔案內容
+\n(修改筆記不影響檔案)</string>
     <!-- Settings -->
     <string name="display_success_message">顯示儲存成功的訊息</string>
     <string name="links_and_emails_clickable">使連結和信箱可點擊</string>
@@ -79,37 +82,7 @@
     <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
-    <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
-
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
-
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
-
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
-
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
-
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
-
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-		
-        不包含廣告及非必要的權限，而且完全開放原始碼，並提供自訂顏色。
-		
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
-
-        <b>Standalone website of Simple Notes Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_long_description"> ★ Need to take a quick note of something to buy, an address, or a startup idea\? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★ Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information! Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner. This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast. You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap. It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking. <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :). It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps. 不包含廣告及非必要的權限，而且完全開放原始碼，並提供自訂顏色。 <b>Check out the full suite of Simple Tools here:</b> https://www.simplemobiletools.com <b>Standalone website of Simple Notes Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

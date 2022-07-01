@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Заметки</string>
     <string name="app_launcher_name">Заметки</string>
-    <string name="widget_config">Благодарим вас за использование Simple Notes.\nБольше простых приложений вы можете найти на SimpleMobileTools.com.</string>
+    <string name="widget_config">Благодарим вас за использование Simple Notes.
+\nБольше простых приложений вы можете найти на SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Нельзя поделиться пустым текстом</string>
     <string name="simple_note">Простая заметка</string>
     <string name="new_note">Добавить новую заметку</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Открыть файл</string>
     <string name="export_as_file">Экспортировать в файл</string>
     <string name="file_too_large">Файл слишком большой, лимит 1 МБ</string>
-    <string name="only_import_file_content">Только импортировать содержимое файла\n(изменение файла не изменит заметку)</string>
-    <string name="update_file_at_note">Обновлять содержимое файла при обновлении заметки\n(заметка удалится, если удалить файл или изменить путь к нему)</string>
+    <string name="only_import_file_content">Только импортировать содержимое файла
+\n(изменение файла не изменит заметку)</string>
+    <string name="update_file_at_note">Обновлять содержимое файла при обновлении заметки
+\n(заметка удалится, если удалить файл или изменить путь к нему)</string>
     <string name="delete_file_itself">Также удалить файл \"%s\"</string>
     <string name="note_saved_successfully">Заметка \"%s\" сохранена</string>
     <string name="note_exported_successfully">Заметка \"%s\" экспортирована</string>
-    <string name="only_export_file_content">Экспортировать только текущее содержимое файла\n(изменение заметки не затронет файл)</string>
+    <string name="only_export_file_content">Экспортировать только текущее содержимое файла
+\n(изменение заметки не затронет файл)</string>
     <!-- Settings -->
     <string name="display_success_message">Уведомлять об успешном сохранении файла</string>
     <string name="links_and_emails_clickable">Активные ссылки и адреса электронной почты</string>

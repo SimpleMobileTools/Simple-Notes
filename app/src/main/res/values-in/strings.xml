@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Catatan</string>
-    <string name="widget_config">Terima kasih sudah menggunakan Simple Notes.\nUntuk aplikasi lainnya silakan kunjungi SimpleMobileTools.com.</string>
+    <string name="widget_config">Terima kasih sudah menggunakan Simple Notes.
+\nUntuk aplikasi lainnya silakan kunjungi SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Tidak bisa membagikan teks kosong</string>
     <string name="simple_note">Catatan</string>
     <string name="new_note">Tambah catatan baru</string>
@@ -16,7 +17,7 @@
     <string name="general_note">Catatan umum</string>
     <string name="create_new_note">Buat catatan baru</string>
     <string name="add_to_note">Tambahkan ke catatan</string>
-    <string name="unsaved_changes_warning">Anda memiliki perubahan yang belum disimpan. Apa yang ingin anda lakukan?</string>
+    <string name="unsaved_changes_warning">Anda memiliki perubahan yang belum disimpan. Apa yang ingin anda lakukan\?</string>
     <string name="note_shown_widget">Catatan yang ditampilkan di widget:</string>
     <string name="show_note_title">Tampilkan judul catatan</string>
     <string name="new_note_type">Tipe catatan baru:</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Buka berkas</string>
     <string name="export_as_file">Ekspor sebagai berkas</string>
     <string name="file_too_large">Berkas terlalu besar, batasnya adalah 1MB</string>
-    <string name="only_import_file_content">Hanya impor konten berkas\n(mengubah berkasnya tidak akan berdampak pada catatan)</string>
-    <string name="update_file_at_note">Perbarui berkas saat memperbarui catatan\n(catatan akan dihapus jika berkas dihapus, atau jalur berkas berubah)</string>
+    <string name="only_import_file_content">Hanya impor konten berkas
+\n(mengubah berkasnya tidak akan berdampak pada catatan)</string>
+    <string name="update_file_at_note">Perbarui berkas saat memperbarui catatan
+\n(catatan akan dihapus jika berkas dihapus, atau jalur berkas berubah)</string>
     <string name="delete_file_itself">Hapus juga berkas \"%s\"</string>
     <string name="note_saved_successfully">Catatan \"%s\" berhasil disimpan</string>
     <string name="note_exported_successfully">Catatan \"%s\" berhasil diekspor</string>
-    <string name="only_export_file_content">Hanya ekspor konten berkas ini\n(mengubah catatan tidak akan berdampak pada berkas)</string>
+    <string name="only_export_file_content">Hanya ekspor konten berkas ini
+\n(mengubah catatan tidak akan berdampak pada berkas)</string>
     <!-- Settings -->
     <string name="display_success_message">Tampilkan pesan jika berhasil disimpan</string>
     <string name="links_and_emails_clickable">Buat tautan dan email bisa diklik</string>

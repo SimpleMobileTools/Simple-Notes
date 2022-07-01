@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
-    <string name="widget_config">Merci d\'utiliser Simple Notes.\nPour plus d\'applications simples merci de visiter SimpleMobileTools.com.</string>
+    <string name="widget_config">Merci d\'utiliser Simple Notes.
+\nPour plus d\'applications simples merci de visiter SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Impossible de partager un texte vide</string>
     <string name="simple_note">Simple Note</string>
     <string name="new_note">Ajouter une nouvelle note</string>
@@ -16,7 +17,7 @@
     <string name="general_note">Note générale</string>
     <string name="create_new_note">Créer une nouvelle note</string>
     <string name="add_to_note">Ajouter à la note</string>
-    <string name="unsaved_changes_warning">Vous avez des changements non sauvegardés. Que voulez-vous faire avec ?</string>
+    <string name="unsaved_changes_warning">Vous avez des changements non sauvegardés. Que voulez-vous faire avec \?</string>
     <string name="note_shown_widget">Note affichée dans le widget :</string>
     <string name="show_note_title">Afficher le titre de la note</string>
     <string name="new_note_type">Type de la note :</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Ouvrir le fichier</string>
     <string name="export_as_file">Exporter dans un fichier</string>
     <string name="file_too_large">Fichier trop volumineux, la limite est de 1 Mo</string>
-    <string name="only_import_file_content">Importer seulement le contenu du fichier\n(changer le fichier n\'affectera pas la note)</string>
-    <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note\n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
+    <string name="only_import_file_content">Importer seulement le contenu du fichier
+\n(changer le fichier n\'affectera pas la note)</string>
+    <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note
+\n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
     <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
     <string name="note_saved_successfully">La note « %s » a été sauvegardée avec succès</string>
     <string name="note_exported_successfully">La note « %s » a été exportée avec succès</string>
-    <string name="only_export_file_content">Exporter seulement le contenu du fichier\n(changer le fichier n\'affectera pas la note)</string>
+    <string name="only_export_file_content">Exporter seulement le contenu du fichier
+\n(changer le fichier n\'affectera pas la note)</string>
     <!-- Settings -->
     <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
     <string name="links_and_emails_clickable">Rendre les liens et les courriels cliquables</string>

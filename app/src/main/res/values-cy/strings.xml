@@ -1,7 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Nodiadau</string>
-    <string name="widget_config">Diolch am ddefnyddio Simple Notes.\nAm ragor o apiau syml, gweler SimpleMobileTools.com.</string>
+    <string name="widget_config">Diolch am ddefnyddio Simple Notes.
+\nAm ragor o apiau syml, gweler SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Methu rhannu testun gwag</string>
     <string name="simple_note">Nodyn Syml</string>
     <string name="new_note">Ychwanegu nodyn newydd</string>
@@ -9,13 +11,13 @@
     <string name="title_taken">Mae eisoes nodyn gyda\'r teitl yna</string>
     <string name="open_note">Agor nodyn</string>
     <string name="delete_note">Dileu nodyn</string>
-    <string name="delete_note_prompt_message">Wyt ti\'n bendant eisiau dileu\'r nodyn \"%s\"?</string>
+    <string name="delete_note_prompt_message">Wyt ti\'n bendant eisiau dileu\'r nodyn \"%s\"\?</string>
     <string name="pick_a_note">Dewisa nodyn</string>
     <string name="rename_note">Ailenwi\'r nodyn</string>
     <string name="general_note">Nodyn cyffredinol</string>
     <string name="create_new_note">Creu nodyn newydd</string>
     <string name="add_to_note">Ychwanegu at nodyn</string>
-    <string name="unsaved_changes_warning">Mae gennyt rai newidiadau heb eu cadw. Beth wyt ti am wneud gyda nhw?</string>
+    <string name="unsaved_changes_warning">Mae gennyt rai newidiadau heb eu cadw. Beth wyt ti am wneud gyda nhw\?</string>
     <string name="note_shown_widget">Nodyn a ddangosir yn y teclyn:</string>
     <string name="show_note_title">Show note title</string>
     <string name="new_note_type">Math y nodyn newydd:</string>
@@ -27,18 +29,19 @@
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
-
     <!-- File notes -->
     <string name="open_file">Agor ffeil</string>
     <string name="export_as_file">Allforio fel ffeil</string>
     <string name="file_too_large">Ffeil yn rhy fawr. Ni all fod yn fwy na 1MB</string>
-    <string name="only_import_file_content">Mewnforio cynnwys y ffeil yn unig\n(ni fydd newid y ffeil yn addasu\'r nodyn)</string>
-    <string name="update_file_at_note">Diweddaru\'r ffeil ei hun wrth ddiweddaru\'r nodyn\n(caiff y nodyn ei ddileu os yw\'r ffeil yn cael ei dileu neu ei leoliad yn newid)</string>
+    <string name="only_import_file_content">Mewnforio cynnwys y ffeil yn unig
+\n(ni fydd newid y ffeil yn addasu\'r nodyn)</string>
+    <string name="update_file_at_note">Diweddaru\'r ffeil ei hun wrth ddiweddaru\'r nodyn
+\n(caiff y nodyn ei ddileu os yw\'r ffeil yn cael ei dileu neu ei leoliad yn newid)</string>
     <string name="delete_file_itself">Hefyd dileu\'r ffeil \"%s\"</string>
     <string name="note_saved_successfully">Cadwyd nodyn \"%s\" yn llwyddiannus</string>
     <string name="note_exported_successfully">Allforiwyd nodyn \"%s\" yn llwyddiannus</string>
-    <string name="only_export_file_content">Allforio cynnwys y ffeil cyfredol yn unig\n(ni fydd newid y nodyn yn effeithio ar y ffeil)</string>
-
+    <string name="only_export_file_content">Allforio cynnwys y ffeil cyfredol yn unig
+\n(ni fydd newid y nodyn yn effeithio ar y ffeil)</string>
     <!-- Settings -->
     <string name="display_success_message">Dangos negeseuon yn cadarnhau cadw\'n llwyddiannus</string>
     <string name="links_and_emails_clickable">Gwneud dolenni a chyfeiriadau ebost yn glicadwy</string>
@@ -58,7 +61,6 @@
     <string name="use_incognito_mode">Defnyddio modd cyfrinachol bysellfyrddau</string>
     <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
-
     <!-- Checklists -->
     <string name="checklist">Rhestr wirio</string>
     <string name="checklists">Checklists</string>
@@ -66,55 +68,21 @@
     <string name="add_new_checklist_items">Ychwanegu eitemau newydd at restr wirio</string>
     <string name="checklist_is_empty">Mae\'r rhestr wirio yn wag</string>
     <string name="remove_done_items">Remove done items</string>
-
     <!-- Import / Export -->
     <string name="export_all_notes">Allforio pob nodyn fel ffeil</string>
     <string name="import_folder">Mewnforio ffolder</string>
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Import notes (Pro)</string>
-
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color?</string>
+    <string name="faq_1_title">How can I change the widgets color\?</string>
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
-
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
     <string name="app_title">Simple Notes Pro: To-do list organizer and planner</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Simple planner: Create notes, backup &amp; to-do lists with quick note reminder tool</string>
-    <string name="app_long_description">
-        ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
-
-        Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information!
-
-        Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner.
-
-        This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast.
-
-        You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap.
-
-        It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking.
-
-        <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :).
-
-        It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps.
-
-        Gyda dim hysbysebion a dim eisiau unrhyw ganiatâd di-angen. Mae\'n gyfan gwbl god agored a gellir addasu lliwiau\'r ap.
-
-        <b>Check out the full suite of Simple Tools here:</b>
-        https://www.simplemobiletools.com
-
-        <b>Standalone website of Simple Notes Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
-
+    <string name="app_long_description"> ★ Need to take a quick note of something to buy, an address, or a startup idea\? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★ Simple notes planner is quick, simple to use organizer and remarkable planner and it will serve as an invaluable tool and companion, helping you to remember necessary piece of information! Our reminder tool allows you to keep track of your duties,create daily checklist for items or ideas with unprecedented simplicity, notability and unrivaled time-saving value. Manage your schedule in a quick and simple manner. This notebook reminder tool comes with autosave so you will not discard your changes by mistake. It also supports creating multiple independent plain text notes and lists very fast. You can easily access the note and organize your to-do list in no time by using the customizable and resizable widget, which opens the app on tap. It is user friendly and contains absolutely no ads or unnecessary permissions - no strings attached. It is fully opensource, provides customizable colors which can be adjusted with quick and fast tweaking. <b>Simple Notes: To-do list organizer and planner</b> is the best item organizer and list planner you can use with no ads. If you need a high quality organizer for a quick and goodnotes, a reliable and user friendly reminder that is truly simple to use, download our app right now :) Have your own personal notebook in your pocket every day and have a backup planner so you will not have to worry about forgetting an important meeting or your shopping list :). It comes with material design and dark theme by default, provides great user experience for easy usage. The lack of internet access gives you more privacy, security and stability than other apps. Gyda dim hysbysebion a dim eisiau unrhyw ganiatâd di-angen. Mae\'n gyfan gwbl god agored a gellir addasu lliwiau\'r ap. <b>Check out the full suite of Simple Tools here:</b> https://www.simplemobiletools.com <b>Standalone website of Simple Notes Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

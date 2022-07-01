@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Jednostavne Bilješke</string>
     <string name="app_launcher_name">Bilješke</string>
-    <string name="widget_config">Hvala što koristite Jednostavne bilješke.\nZa više jednostavnih aplikacija posjetite SimpleMobileTools.com..</string>
+    <string name="widget_config">Hvala što koristite Jednostavne bilješke.
+\nZa više jednostavnih aplikacija posjetite SimpleMobileTools.com..</string>
     <string name="cannot_share_empty_text">Nije moguće dijeliti prazan tekst</string>
     <string name="simple_note">Jednostavna bilješka</string>
     <string name="new_note">Dodaj novu bilješku</string>
@@ -16,7 +17,7 @@
     <string name="general_note">Opća bilješka</string>
     <string name="create_new_note">Stvori novu bilješku</string>
     <string name="add_to_note">Dodaj u bilješku</string>
-    <string name="unsaved_changes_warning">Imate neke nespremljene izmjene. Što želite učiniti s njima??</string>
+    <string name="unsaved_changes_warning">Imate neke nespremljene izmjene. Što želite učiniti s njima\?\?</string>
     <string name="note_shown_widget">Bilješka prikazana u widgetu:</string>
     <string name="show_note_title">Prikaži naslov bilješke</string>
     <string name="new_note_type">Nova vrsta bilješke:</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Otvori datoteku</string>
     <string name="export_as_file">Izvezi kao datoteku</string>
     <string name="file_too_large">Datoteka je prevelika, granica je 1 MB</string>
-    <string name="only_import_file_content">Uvezi samo sadržaj datoteke\n(promjena datoteke neće utjecati na bilješku)</string>
-    <string name="update_file_at_note">Ažurirajte samu datoteku prilikom ažuriranja bilješke\n(bilješka se briše ako se datoteka izbriše ili promjeni putanja)</string>
+    <string name="only_import_file_content">Uvezi samo sadržaj datoteke
+\n(promjena datoteke neće utjecati na bilješku)</string>
+    <string name="update_file_at_note">Ažurirajte samu datoteku prilikom ažuriranja bilješke
+\n(bilješka se briše ako se datoteka izbriše ili promjeni putanja)</string>
     <string name="delete_file_itself">Također izbriši datoteku \"%s\"</string>
     <string name="note_saved_successfully">Bilješka \"%s\" uspješno spremljena</string>
     <string name="note_exported_successfully">Bilješka \"%s\" uspješno izvezena</string>
-    <string name="only_export_file_content">Izvoz samo trenutnog sadržaja datoteke\n(mijenjanje bilješke neće utjecati na datoteku)</string>
+    <string name="only_export_file_content">Izvoz samo trenutnog sadržaja datoteke
+\n(mijenjanje bilješke neće utjecati na datoteku)</string>
     <!-- Settings -->
     <string name="display_success_message">Prikaži poruke kada je spremanje uspješno</string>
     <string name="links_and_emails_clickable">Napravite veze i e-poruke koje se mogu kliknuti</string>

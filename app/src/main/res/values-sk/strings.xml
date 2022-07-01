@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Jednoduché poznámky</string>
     <string name="app_launcher_name">Poznámky</string>
-    <string name="widget_config">Ďakujeme za používanie Jednoduchých poznámok.\nPre viac jednoduchých apiek prosím navštívte SimpleMobileTools.com.</string>
+    <string name="widget_config">Ďakujeme za používanie Jednoduchých poznámok.
+\nPre viac jednoduchých apiek prosím navštívte SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nedá sa zdieľať prázdny text</string>
     <string name="simple_note">Jednoduchá poznámka</string>
     <string name="new_note">Pridať novú poznámku</string>
@@ -10,13 +11,13 @@
     <string name="title_taken">Poznámka s týmto názvom už existuje</string>
     <string name="open_note">Otvoriť poznámku</string>
     <string name="delete_note">Odstrániť poznámku</string>
-    <string name="delete_note_prompt_message">Ste si istý, že chcete odstrániť poznámku \"%s\"?</string>
+    <string name="delete_note_prompt_message">Ste si istý, že chcete odstrániť poznámku \"%s\"\?</string>
     <string name="pick_a_note">Zvoľte si poznámku</string>
     <string name="rename_note">Premenovať poznámku</string>
     <string name="general_note">Všeobecná poznámka</string>
     <string name="create_new_note">Vytvoriť novú poznámku</string>
     <string name="add_to_note">Pridať k poznámke</string>
-    <string name="unsaved_changes_warning">Máte nejaké neuložené zmeny. Čo s nimi chcete spraviť?</string>
+    <string name="unsaved_changes_warning">Máte nejaké neuložené zmeny. Čo s nimi chcete spraviť\?</string>
     <string name="note_shown_widget">Poznámka zobrazená vo widgete:</string>
     <string name="show_note_title">Zobraziť názov poznámky</string>
     <string name="new_note_type">Typ novej poznámky:</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Otvoriť súbor</string>
     <string name="export_as_file">Exportovať ako súbor</string>
     <string name="file_too_large">Súbor je príliš veľký, maximálny limit je 1MB</string>
-    <string name="only_import_file_content">Iba importovať obsah súboru\n(úprava súboru nebude mať vplyv na poznámku)</string>
-    <string name="update_file_at_note">Aktualizovať samotný súbor po úprave poznámky\n(ak bude daný súbor presunutý, alebo vymazaný, bude vymazaná aj poznámka)</string>
+    <string name="only_import_file_content">Iba importovať obsah súboru
+\n(úprava súboru nebude mať vplyv na poznámku)</string>
+    <string name="update_file_at_note">Aktualizovať samotný súbor po úprave poznámky
+\n(ak bude daný súbor presunutý, alebo vymazaný, bude vymazaná aj poznámka)</string>
     <string name="delete_file_itself">Odstrániť aj súbor \"%s\"</string>
     <string name="note_saved_successfully">Poznámka \"%s\" bola úspešne uložená</string>
     <string name="note_exported_successfully">Poznámka \"%s\" bola úspešne exportovaná</string>
-    <string name="only_export_file_content">Iba exportovať súčasný obsah súboru\n(úprava poznámky nebude mať vplyv na súbor)</string>
+    <string name="only_export_file_content">Iba exportovať súčasný obsah súboru
+\n(úprava poznámky nebude mať vplyv na súbor)</string>
     <!-- Settings -->
     <string name="display_success_message">Zobraziť správu o úspešnom uložení poznámky</string>
     <string name="links_and_emails_clickable">Spraviť odkazy a emaily klikateľnými</string>
@@ -78,41 +82,7 @@
     <string name="app_title">Jednoduché poznámky Pro: Plánovač a organizér</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Plánovač - vytvárajte poznámky, zálohy, zoznamy úloh použitím pripomienok</string>
-    <string name="app_long_description">
-        ★ Potrebujete si vytvoriť rýchlu poznámku, aby ste nezabudli niečo kúpiť, adresu, alebo startupový nápad? Práve ste našli najlepŠí organizér, ktorí ste hľadali: Jednoduché poznámky.
-
-        Nie sú potrebné žiadne nastavenia, iba začnite písať, čo ste chceli, rýchle zoznamy, zoznamy položiek, zálohy atď. S týmto nástrojom na poznámky nezabudnete na nič. Ani pri nákupoch, ani myšlienkach.
-
-        Jednoduché poznámky sú rýchlym  jednoduchým organizérom a plánovačom, bude pre vás nenahraditeľným nástrojom a pomocníkom pri pamätaní si všetkého dôležitého.!
-
-        Náš pripomienkovač vám umožní pamätať si vaše povinnosti, vytvárať denné zoznamy úloh, alebo nápadov. Ide o bezkonkurenčnú jednoduchosť a šetrič času. Spravujte svoj deň týmto jednoduchým spôsobom.
-
-        Nachádza sa tu aj automatické ukladanie poznámok, nemôže sa teda stať, že niečo zabudnete, alebo neuložíte. Podporuje vytváranie viacerých nezávislých poznámok a zoznamov.
-
-        Ku poznámkam sa viete dostať jednoducho pomocou prispôsobiteľného widgetu s meniteľnou veľkosťou a farbami, ktorý otvorí po kliknutí apku.
-
-        Obsahuje prívetivé používateľské prostredie úplne bez reklám a nepotrebných oprávnení. Je open source, obsahuje meniteľné farby, pomocou ktorých si viete rýchlo prispôsobiť apku.
-
-        <b>Jednoduché poznámky</b> sú najlepším organizérom a plánovačom bez reklám. Ak potrebujete vysoko kvalitný organizér pre rýchlu tvorbu poznámok s príjemným používateľským prostredím, stiahnite si túto apku teraz.
-
-        Majte váš vlastný súkromný poznámkový blok vo vrecku na každodenné použitie, aby ste nezabudli na nič dôležité.
-
-        Táto apka je založená na Material dizajne a má prednastavenú tmavú tému, poskytuje výbornú používateľskú skúsenosť pre ľahké používanie. Chýbajúci prístup k internetu garantuje lepšie súkromie, bezpečnosť a stabilitu ako ostatné apky.
-
-        Neobsahuje žiadne reklamy a nepotrebné oprávnenia. Je opensource, poskytuje možnosť zmeny farieb.
-
-        <b>Pozrite si celú sadu aplikácií na:</b>
-        https://www.simplemobiletools.com
-
-        <b>Vlastná stránka Jednoduchých Poznámok Pro:</b>
-        https://www.simplemobiletools.com/notes
-
-        <b>Facebook:</b>
-        https://www.facebook.com/simplemobiletools
-
-        <b>Reddit:</b>
-        https://www.reddit.com/r/SimpleMobileTools
-    </string>
+    <string name="app_long_description"> ★ Potrebujete si vytvoriť rýchlu poznámku, aby ste nezabudli niečo kúpiť, adresu, alebo startupový nápad\? Práve ste našli najlepŠí organizér, ktorí ste hľadali: Jednoduché poznámky. Nie sú potrebné žiadne nastavenia, iba začnite písať, čo ste chceli, rýchle zoznamy, zoznamy položiek, zálohy atď. S týmto nástrojom na poznámky nezabudnete na nič. Ani pri nákupoch, ani myšlienkach. Jednoduché poznámky sú rýchlym jednoduchým organizérom a plánovačom, bude pre vás nenahraditeľným nástrojom a pomocníkom pri pamätaní si všetkého dôležitého.! Náš pripomienkovač vám umožní pamätať si vaše povinnosti, vytvárať denné zoznamy úloh, alebo nápadov. Ide o bezkonkurenčnú jednoduchosť a šetrič času. Spravujte svoj deň týmto jednoduchým spôsobom. Nachádza sa tu aj automatické ukladanie poznámok, nemôže sa teda stať, že niečo zabudnete, alebo neuložíte. Podporuje vytváranie viacerých nezávislých poznámok a zoznamov. Ku poznámkam sa viete dostať jednoducho pomocou prispôsobiteľného widgetu s meniteľnou veľkosťou a farbami, ktorý otvorí po kliknutí apku. Obsahuje prívetivé používateľské prostredie úplne bez reklám a nepotrebných oprávnení. Je open source, obsahuje meniteľné farby, pomocou ktorých si viete rýchlo prispôsobiť apku. <b>Jednoduché poznámky</b> sú najlepším organizérom a plánovačom bez reklám. Ak potrebujete vysoko kvalitný organizér pre rýchlu tvorbu poznámok s príjemným používateľským prostredím, stiahnite si túto apku teraz. Majte váš vlastný súkromný poznámkový blok vo vrecku na každodenné použitie, aby ste nezabudli na nič dôležité. Táto apka je založená na Material dizajne a má prednastavenú tmavú tému, poskytuje výbornú používateľskú skúsenosť pre ľahké používanie. Chýbajúci prístup k internetu garantuje lepšie súkromie, bezpečnosť a stabilitu ako ostatné apky. Neobsahuje žiadne reklamy a nepotrebné oprávnenia. Je opensource, poskytuje možnosť zmeny farieb. <b>Pozrite si celú sadu aplikácií na:</b> https://www.simplemobiletools.com <b>Vlastná stránka Jednoduchých Poznámok Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

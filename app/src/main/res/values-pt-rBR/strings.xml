@@ -17,7 +17,7 @@
     <string name="general_note">Nota geral</string>
     <string name="create_new_note">Criar uma nova nota</string>
     <string name="add_to_note">Adicionar à nota</string>
-    <string name="unsaved_changes_warning">Você tem algumas alterações que ainda não foram salvas. O que você gostaria de fazer com elas?</string>
+    <string name="unsaved_changes_warning">Você tem algumas alterações que ainda não foram salvas. O que você gostaria de fazer com elas\?</string>
     <string name="note_shown_widget">Exibir nota no widget:</string>
     <string name="show_note_title">Mostrar título da nota</string>
     <string name="new_note_type">Novo tipo de nota:</string>
@@ -33,12 +33,15 @@
     <string name="open_file">Abrir arquivo</string>
     <string name="export_as_file">Exportar como arquivo</string>
     <string name="file_too_large">Arquivo muito grande, o limite é 1 MB</string>
-    <string name="only_import_file_content">Importe apenas o conteúdo do arquivo\n(modificar o arquivo não afetará a nota)</string>
-    <string name="update_file_at_note">Atualize o próprio arquivo ao atualizar a nota\n(a nota será excluída se o arquivo for excluído ou o caminho alterado)</string>
+    <string name="only_import_file_content">Importe apenas o conteúdo do arquivo
+\n(modificar o arquivo não afetará a nota)</string>
+    <string name="update_file_at_note">Atualize o próprio arquivo ao atualizar a nota
+\n(a nota será excluída se o arquivo for excluído ou o caminho alterado)</string>
     <string name="delete_file_itself">Apagar também o arquivo \"%s\"</string>
     <string name="note_saved_successfully">Nota \"%s\" salva com sucesso</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
-    <string name="only_export_file_content">Exportar apenas o conteúdo atual do arquivo\n(alterar a nota não afetará o arquivo)</string>
+    <string name="only_export_file_content">Exportar apenas o conteúdo atual do arquivo
+\n(alterar a nota não afetará o arquivo)</string>
     <!-- Settings -->
     <string name="display_success_message">Mostrar mensagens de gravação com sucesso</string>
     <string name="links_and_emails_clickable">Ativar clique em ligações e endereços de e-mail</string>

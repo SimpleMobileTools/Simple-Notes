@@ -32,12 +32,15 @@
     <string name="open_file">Bestand openen</string>
     <string name="export_as_file">Als bestand exporteren</string>
     <string name="file_too_large">Bestand is te groot: limiet is 1MB</string>
-    <string name="only_import_file_content">Alleen de bestandsinhoud importeren\n(wijzigingen aan het bestand zullen de notitie niet beïnvloeden)</string>
-    <string name="update_file_at_note">Bestand aanpassen bij wijzigingen in de notitie\n(de notitie wordt gewist als het bestand wordt verplaatst of verwijderd)</string>
+    <string name="only_import_file_content">Alleen de bestandsinhoud importeren
+\n(wijzigingen aan het bestand zullen de notitie niet beïnvloeden)</string>
+    <string name="update_file_at_note">Bestand aanpassen bij wijzigingen in de notitie
+\n(de notitie wordt gewist als het bestand wordt verplaatst of verwijderd)</string>
     <string name="delete_file_itself">Bestand \"%s\" ook verwijderen</string>
     <string name="note_saved_successfully">Notitie \"%s\" opgeslagen</string>
     <string name="note_exported_successfully">Notitie \"%s\" geëxporteerd</string>
-    <string name="only_export_file_content">Alleen de huidige bestandsinhoud exporteren\n(wijzigingen in de notitie zullen niet in het bestand doorgevoerd worden)</string>
+    <string name="only_export_file_content">Alleen de huidige bestandsinhoud exporteren
+\n(wijzigingen in de notitie zullen niet in het bestand doorgevoerd worden)</string>
     <!-- Settings -->
     <string name="display_success_message">Bevestigingen tonen</string>
     <string name="links_and_emails_clickable">Links en e-mailadressen aanklikbaar maken</string>
