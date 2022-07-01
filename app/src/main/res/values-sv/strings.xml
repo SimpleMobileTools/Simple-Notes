@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Anteckningar</string>
-    <string name="widget_config">Tack för att du använder Simple Notes.\nDu hittar fler enkla appar på simplemobiletools.com.</string>
+    <string name="widget_config">Tack för att du använder Simple Notes.
+\nDu hittar fler enkla appar på simplemobiletools.com.</string>
     <string name="cannot_share_empty_text">Det går inte att dela en tom anteckning</string>
     <string name="simple_note">Enkel anteckning</string>
     <string name="new_note">Ny anteckning</string>
@@ -16,7 +17,7 @@
     <string name="general_note">Allmän anteckning</string>
     <string name="create_new_note">Skapa en ny anteckning</string>
     <string name="add_to_note">Lägg till i anteckning</string>
-    <string name="unsaved_changes_warning">Det finns några ändringar som inte har sparats. Vad vill du göra med dem?</string>
+    <string name="unsaved_changes_warning">Det finns några ändringar som inte har sparats. Vad vill du göra med dem\?</string>
     <string name="note_shown_widget">Anteckning som visas i widgeten:</string>
     <string name="show_note_title">Visa anteckningstitel</string>
     <string name="new_note_type">Format:</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Öppna fil</string>
     <string name="export_as_file">Exportera</string>
     <string name="file_too_large">Filen är för stor, gränsen är 1MB</string>
-    <string name="only_import_file_content">Importera bara innehållet i filen\n(anteckningen påverkas inte om filen ändras)</string>
-    <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
+    <string name="only_import_file_content">Importera bara innehållet i filen
+\n(anteckningen påverkas inte om filen ändras)</string>
+    <string name="update_file_at_note">Uppdatera själva filen när anteckningen uppdateras
+\n(anteckningen tas bort om filen tas bort eller sökvägen ändras)</string>
     <string name="delete_file_itself">Ta även bort filen \"%s\"</string>
     <string name="note_saved_successfully">Anteckning \"%s\" sparades framgångsrikt</string>
     <string name="note_exported_successfully">Anteckningen \"%s\" har exporterats</string>
-    <string name="only_export_file_content">Exportera bara det aktuella innehållet i filen\n(filen påverkas inte om anteckningen ändras)</string>
+    <string name="only_export_file_content">Exportera bara det aktuella innehållet i filen
+\n(filen påverkas inte om anteckningen ändras)</string>
     <!-- Settings -->
     <string name="display_success_message">Visa ett meddelande när en anteckning har sparats</string>
     <string name="links_and_emails_clickable">Gör länkar och e-postadresser tryckbara</string>
