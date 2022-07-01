@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">简易笔记</string>
     <string name="app_launcher_name">笔记</string>
-    <string name="widget_config">谢谢使用简易笔记.\n想要获取更多的简易应用程序，您可以访问这个 SimpleMobileTools.com 。</string>
+    <string name="widget_config">谢谢使用简易笔记.
+\n想要获取更多的简易应用程序，您可以访问这个 SimpleMobileTools.com 。</string>
     <string name="cannot_share_empty_text">没有内容不能分享</string>
     <string name="simple_note">简易笔记</string>
     <string name="new_note">添加一个新的笔记</string>
@@ -32,12 +33,15 @@
     <string name="open_file">打开文件</string>
     <string name="export_as_file">以文件的形式导出</string>
     <string name="file_too_large">文件太大了, 上限为 1MB</string>
-    <string name="only_import_file_content">只要导入文件的内容\n(改变文件不会影响笔记)</string>
-    <string name="update_file_at_note">在更新笔记的时侯更新文件本身\n(注意，如果文件被删除或路径更改，将被删除)</string>
+    <string name="only_import_file_content">只要导入文件的内容
+\n(改变文件不会影响笔记)</string>
+    <string name="update_file_at_note">在更新笔记的时侯更新文件本身
+\n(注意，如果文件被删除或路径更改，将被删除)</string>
     <string name="delete_file_itself">同时删除文件 \"%s\"</string>
     <string name="note_saved_successfully">已成功保存笔记 \"%s\"</string>
     <string name="note_exported_successfully">已成功导出笔记 \"%s\"</string>
-    <string name="only_export_file_content">只导出当前文件内容\n(更改笔记将不会影响文件)</string>
+    <string name="only_export_file_content">只导出当前文件内容
+\n(更改笔记将不会影响文件)</string>
     <!-- Settings -->
     <string name="display_success_message">显示保存成功消息</string>
     <string name="links_and_emails_clickable">使链接和电子邮件可点击</string>
