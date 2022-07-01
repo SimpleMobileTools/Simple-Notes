@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>
-    <string name="widget_config">Gracias por usar Simple Notes.\nPara más aplicaciones simples, por favor visite SimpleMobileTools.com.</string>
+    <string name="widget_config">Gracias por usar Simple Notes.
+\nPara más aplicaciones simples, por favor visite SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">No se puede compartir una nota vacía</string>
     <string name="simple_note">Nota simple</string>
     <string name="new_note">Añadir una nueva nota</string>
@@ -16,7 +17,7 @@
     <string name="general_note">Nota principal</string>
     <string name="create_new_note">Crear una nota nueva</string>
     <string name="add_to_note">Añadir a la nota</string>
-    <string name="unsaved_changes_warning">Tienes cambios sin guardar. ¿Qué quieres hacer con ellos?</string>
+    <string name="unsaved_changes_warning">Tienes cambios sin guardar. ¿Qué quieres hacer con ellos\?</string>
     <string name="note_shown_widget">Nota mostrada en el widget:</string>
     <string name="show_note_title">Mostrar el título de la nota</string>
     <string name="new_note_type">Nuevo tipo de nota:</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Abrir archivo</string>
     <string name="export_as_file">Exportar como archivo</string>
     <string name="file_too_large">Archivo demasiado grande, el límite es 1MB</string>
-    <string name="only_import_file_content">Solo importar el contenido del archivo\n(Cambiar el archivo no afectará a la nota)</string>
-    <string name="update_file_at_note">Actualizar el propio archivo cuando se actualice la nota\n(La nota se borrará si el archivo se elimina, o la ruta cambia)</string>
+    <string name="only_import_file_content">Solo importar el contenido del archivo
+\n(Cambiar el archivo no afectará a la nota)</string>
+    <string name="update_file_at_note">Actualizar el propio archivo cuando se actualice la nota
+\n(La nota se borrará si el archivo se elimina, o la ruta cambia)</string>
     <string name="delete_file_itself">También borrar el archivo \"%s\"</string>
     <string name="note_saved_successfully">Nota \"%s\" guardada con éxito</string>
     <string name="note_exported_successfully">Nota \"%s\" exportada con éxito</string>
-    <string name="only_export_file_content">Solo exportar el contenido del archivo actual\n(Modificar la nota no afectará el archivo)</string>
+    <string name="only_export_file_content">Solo exportar el contenido del archivo actual
+\n(Modificar la nota no afectará el archivo)</string>
     <!-- Settings -->
     <string name="display_success_message">Mostrar mensajes de guardado con éxito</string>
     <string name="links_and_emails_clickable">Mostrar enlaces y direcciones de correo como seleccionables</string>
