@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Semplice Note</string>
     <string name="app_launcher_name">Note</string>
-    <string name="widget_config">Grazie per avere scelto Semplice Note.\nPer altre semplici app visita SimpleMobileTools.com.</string>
+    <string name="widget_config">Grazie per avere scelto Semplice Note.
+\nPer altre semplici app visita SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Impossibile condividere un testo vuoto</string>
     <string name="simple_note">Nota semplice</string>
     <string name="new_note">Aggiungi una nuova nota</string>
@@ -16,7 +17,7 @@
     <string name="general_note">Nota generale</string>
     <string name="create_new_note">Crea una nuova nota</string>
     <string name="add_to_note">Aggiunta alla nota</string>
-    <string name="unsaved_changes_warning">Ci sono delle modifiche non salvate. Cosa fare?</string>
+    <string name="unsaved_changes_warning">Ci sono delle modifiche non salvate. Cosa fare\?</string>
     <string name="note_shown_widget">Nota mostrata nel widget:</string>
     <string name="show_note_title">Mostra il titolo della nota</string>
     <string name="new_note_type">Nuovo tipo di nota:</string>
@@ -32,12 +33,15 @@
     <string name="open_file">Apri file</string>
     <string name="export_as_file">Esporta come file</string>
     <string name="file_too_large">File troppo grande, il limite è 1 MB</string>
-    <string name="only_import_file_content">Importa solo il contenuto del file\n(modificare il file non influenzerà la nota)</string>
-    <string name="update_file_at_note">Aggiorna il file quando si aggiorna una nota\n(la nota viene eliminata se il file viene eliminato, oppure cambia il percorso)</string>
+    <string name="only_import_file_content">Importa solo il contenuto del file
+\n(modificare il file non influenzerà la nota)</string>
+    <string name="update_file_at_note">Aggiorna il file quando si aggiorna una nota
+\n(la nota viene eliminata se il file viene eliminato, oppure cambia il percorso)</string>
     <string name="delete_file_itself">Elimina anche il file \"%s\"</string>
     <string name="note_saved_successfully">Nota «%s» salvata con successo</string>
     <string name="note_exported_successfully">Nota «%s» esportato con successo</string>
-    <string name="only_export_file_content">Esporta solamente il contenuto attuale del file\n(modificando la nota non influenzerà il file)</string>
+    <string name="only_export_file_content">Esporta solamente il contenuto attuale del file
+\n(modificando la nota non influenzerà il file)</string>
     <!-- Settings -->
     <string name="display_success_message">Mostra i messaggi di salvataggio riusciti</string>
     <string name="links_and_emails_clickable">Rendi i collegamenti e le e-mail cliccabili</string>
