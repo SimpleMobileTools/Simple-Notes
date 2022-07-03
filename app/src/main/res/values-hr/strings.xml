@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jednostavne Bilješke</string>
+    <string name="app_name">Jednostavne bilješke</string>
     <string name="app_launcher_name">Bilješke</string>
-    <string name="widget_config">Hvala što koristite Jednostavne bilješke.
-\nZa više jednostavnih aplikacija posjetite SimpleMobileTools.com..</string>
+    <string name="widget_config">Hvala što koristiš „Jednostavne bilješke”.
+\nZa daljnje jednostavne aplikacije posjeti SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nije moguće dijeliti prazan tekst</string>
     <string name="simple_note">Jednostavna bilješka</string>
     <string name="new_note">Dodaj novu bilješku</string>
-    <string name="no_title">Nazovite svoju bilješku</string>
+    <string name="no_title">Zadaj ime za tvoju bilješku</string>
     <string name="title_taken">Bilješka s tim naslovom već postoji</string>
     <string name="open_note">Otvori bilješku</string>
     <string name="delete_note">Izbriši bilješku</string>
-    <string name="delete_note_prompt_message">Jeste li sigurni da želite izbrisati bilješku \"%s\"\?</string>
+    <string name="delete_note_prompt_message">Stvarno želiš izbrisati bilješku „%s”\?</string>
     <string name="pick_a_note">Odaberi bilješku</string>
     <string name="rename_note">Preimenuj bilješku</string>
     <string name="general_note">Opća bilješka</string>
     <string name="create_new_note">Stvori novu bilješku</string>
     <string name="add_to_note">Dodaj u bilješku</string>
-    <string name="unsaved_changes_warning">Imate neke nespremljene izmjene. Što želite učiniti s njima\?\?</string>
+    <string name="unsaved_changes_warning">Imaš nespremljene promjene. Što želiš učiniti s njima\?</string>
     <string name="note_shown_widget">Bilješka prikazana u widgetu:</string>
     <string name="show_note_title">Prikaži naslov bilješke</string>
     <string name="new_note_type">Nova vrsta bilješke:</string>
     <string name="text_note">Tekstualna bilješka</string>
-    <string name="lock_note">Lock note</string>
+    <string name="lock_note">Zaključaj bilješku</string>
     <string name="unlock_note">Otključaj bilješku</string>
     <string name="note_content_locked">Sadržaj bilješke je zaključan.</string>
     <string name="show_content">Prikaži sadržaj</string>
-    <string name="locking_warning">UPOZORENJE: Ako zaboravite lozinku za bilješke, više je nećete moći oporaviti niti pristupiti sadržaju bilješke.</string>
+    <string name="locking_warning">UPOZORENJE: Ako zaboraviš lozinku bilješke, više je nećeš moći obnoviti niti pristupiti njenom sadržaju.</string>
     <string name="new_text_note">Nova tekstualna bilješka</string>
     <string name="new_checklist">Novi popis zadataka</string>
     <!-- File notes -->
@@ -34,55 +34,55 @@
     <string name="export_as_file">Izvezi kao datoteku</string>
     <string name="file_too_large">Datoteka je prevelika, granica je 1 MB</string>
     <string name="only_import_file_content">Uvezi samo sadržaj datoteke
-\n(promjena datoteke neće utjecati na bilješku)</string>
-    <string name="update_file_at_note">Ažurirajte samu datoteku prilikom ažuriranja bilješke
-\n(bilješka se briše ako se datoteka izbriše ili promjeni putanja)</string>
-    <string name="delete_file_itself">Također izbriši datoteku \"%s\"</string>
-    <string name="note_saved_successfully">Bilješka \"%s\" uspješno spremljena</string>
-    <string name="note_exported_successfully">Bilješka \"%s\" uspješno izvezena</string>
-    <string name="only_export_file_content">Izvoz samo trenutnog sadržaja datoteke
+\n(mijenjanje datoteke neće utjecati na bilješku)</string>
+    <string name="update_file_at_note">Ažuriraj datoteku prilikom ažuriranja bilješke
+\n(bilješka se briše ako se datoteka izbriše ili ako se promjeni putanja)</string>
+    <string name="delete_file_itself">Također izbriši datoteku „%s”</string>
+    <string name="note_saved_successfully">Bilješka „%s” uspješno spremljena</string>
+    <string name="note_exported_successfully">Bilješka „%s” uspješno izvezena</string>
+    <string name="only_export_file_content">Izvezi samo aktualni sadržaj datoteke
 \n(mijenjanje bilješke neće utjecati na datoteku)</string>
     <!-- Settings -->
-    <string name="display_success_message">Prikaži poruke kada je spremanje uspješno</string>
-    <string name="links_and_emails_clickable">Napravite veze i e-poruke koje se mogu kliknuti</string>
-    <string name="place_cursor_end">Postavite pokazivač na kraj bilješke</string>
-    <string name="monospaced_font">Koristi font jednake širine i visine</string>
-    <string name="show_keyboard">Prikažite tipkovnicu prilikom pokretanja</string>
-    <string name="show_word_count">Prikaz broja riječi</string>
+    <string name="display_success_message">Prikaži poruke uspješnog spremanja</string>
+    <string name="links_and_emails_clickable">Omogući pritiskanje poveznica i e-mail adresa</string>
+    <string name="place_cursor_end">Postavi pokazivač na kraj bilješke</string>
+    <string name="monospaced_font">Koristi font fiksne širine</string>
+    <string name="show_keyboard">Prikaži tipkovnicu prilikom pokretanja</string>
+    <string name="show_word_count">Prikaži broj riječi</string>
     <string name="show_character_count">Prikaži broj znakova</string>
     <string name="alignment">Poravnanje</string>
     <string name="left">Lijevo</string>
-    <string name="center">Sredina</string>
+    <string name="center">Centrirano</string>
     <string name="right">Desno</string>
     <string name="widget_note">Bilješka korištena u widgetu</string>
-    <string name="show_note_picker">Prikaži odabir bilješke prilikom pokretanja</string>
-    <string name="autosave_notes">Automatsko spremanje bilješki</string>
-    <string name="enable_line_wrap">Omogući omotavanje linije</string>
+    <string name="show_note_picker">Prikaži birač bilješki prilikom pokretanja</string>
+    <string name="autosave_notes">Automatski spremi bilješke</string>
+    <string name="enable_line_wrap">Uključi prijelom teksta</string>
     <string name="use_incognito_mode">Koristi anonimni način tipkovnica</string>
     <string name="move_done_checklist_items">Premjesti gotove stavke popisa na kraj</string>
     <string name="add_new_checklist_items_top">Dodaj nove stavke na vrh popisa</string>
     <!-- Checklists -->
-    <string name="checklist">Spisak</string>
-    <string name="checklists">Spiskovi</string>
-    <string name="add_new_checklist_item">Dodajte novu stavku na spisak</string>
-    <string name="add_new_checklist_items">Dodajte nove stavke na spisak</string>
-    <string name="checklist_is_empty">Spisak je prazan</string>
+    <string name="checklist">Popis zadataka</string>
+    <string name="checklists">Popisi zadataka</string>
+    <string name="add_new_checklist_item">Dodaj novu stavku u popis zadataka</string>
+    <string name="add_new_checklist_items">Dodaj novu stavku u popis zadataka</string>
+    <string name="checklist_is_empty">Popis zadataka je prazan</string>
     <string name="remove_done_items">Ukloni gotove stavke</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
-    <string name="import_folder">Mapa za uvoz</string>
+    <string name="import_folder">Uvezi mapu</string>
     <string name="export_notes">Izvezi sve bilješke</string>
-    <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="import_notes">Uvezi bilješke</string>
+    <string name="import_notes_pro">Uvezi bilješke (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kako mogu promijeniti boju widgeta\?</string>
-    <string name="faq_1_text">U slučaju da imate samo jedan aktivan widget, možete ga ponovno izraditi ili upotrijebiti gumb u postavkama aplikacije za njegovu prilagodbu. Ako imate više aktivnih widgeta, gumb u postavkama aplikacije neće biti dostupan. Kako aplikacija podržava prilagodbu boja po widgetu, morat ćete ponovno izraditi widget koji želite prilagoditi.</string>
+    <string name="faq_1_text">U slučaju da imaš samo jedan aktivan widget, možeš ga ponovno izraditi ili upotrijebiti gumb u postavkama aplikacije za njegovu prilagođavanje. Ako imaš više aktivnih widgeta, gumb u postavkama aplikacije neće biti dostupan. Budući da aplikacija podržava prilagođavanje boja po widgetu, morat ćeš ponovo izraditi widget koji želiš prilagoditi.</string>
     <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
     <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro: Popis zadataka i planer</string>
+    <string name="app_title">Jednostavne bilješke Pro: Popis zadataka i planer</string>
     <!-- Short description has to have less than 80 chars -->
     <string name="app_short_description">Jednostavan planer: Bilješke, sigurnosne kopije i popisi zadataka s podsjetnikom</string>
-    <string name="app_long_description"> ★ Trebate brzo zabilježiti nešto za kupiti, adresu ili ideju za pokretanje\? Onda ne tražite dalje, jer je ovo jednostavan alat za organizatore koji ste tražili: Jednostavne napomene: Organizator i planer popisa obaveza! Nisu potrebni komplicirani koraci za postavljanje, samo dodirnite zaslon i upišite ono po što ste došli i stvorite bilješke, brze popise, popise za provjeru ili sigurnosnu kopiju za bilo koju ideju. Sa svojom jednostavnom osobnom bilježnicom možete brzo zapamtiti sve! Kupnja namirnica, pamćenje vaših misli i lakše postavljanje podsjetnika bilježenje nikada nije bilo lakše ★ Jednostavan planer bilješki je brz, jednostavan za korištenje i izvanredan planer. Te će poslužiti kao neprocjenjiv alat i pratilac, pomažući vam da zapamtite potreban dio informacija! Naš alat za podsjetnike omogućuje vam da pratite svoje dužnosti, kreirate dnevni kontrolni popis za stavke ili ideje uz neviđenu jednostavnost, uočljivost i vrijednost koja štedi vrijeme bez premca. Upravljajte svojim rasporedom na brz i jednostavan način. Ovaj alat za podsjetnike bilježnice dolazi s automatskim spremanjem tako da nećete greškom odbaciti svoje promjene. Također podržava stvaranje više neovisnih bilješki i popisa u običnom tekstu vrlo brzo. Možete jednostavno pristupiti bilješci i organizirati svoj popis zadataka u tren oka pomoću prilagodljivog widgeta i widgeta za promjenu veličine, koji otvara aplikaciju na dodir. Jednostavan je za korisnika i ne sadrži apsolutno nikakve oglase ili nepotrebna dopuštenja - nema priloženih stringova. Potpuno je otvorenog koda, nudi prilagodljive boje koje se mogu prilagoditi brzim i brzim podešavanjem. <b> Jednostavne napomene: Organizator i planer popisa obaveza </b> najbolji je organizator stavki i planer popisa koji možete koristiti bez oglasa. Ako vam je potreban visokokvalitetan organizator za brze i dobre bilješke, pouzdan i korisniku prikladan podsjetnik koji je uistinu jednostavan za korištenje, preuzmite našu aplikaciju odmah :) Svaki dan imajte svoju osobnu bilježnicu u džepu i rezervni planer kako biste mogli nećete morati brinuti da ćete zaboraviti važan sastanak ili popis za kupovinu :). Dolazi s materijalnim dizajnom i tamnom temom prema zadanim postavkama, pruža izvrsno korisničko iskustvo za jednostavnu upotrebu. Nedostatak pristupa internetu daje vam više privatnosti, sigurnosti i stabilnosti od drugih aplikacija. Ne sadrži oglase niti nepotrebna dopuštenja. Potpuno je otvorenog koda, pruža prilagodljive boje. <b> Ovdje pogledajte cijeli paket Jednostavni Alati: </b> https://www.simplemobiletools.com <b> Samostalna web stranica Jednostavne Bilješke Pro: </b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
+    <string name="app_long_description"> ★ Trebate brzo zabilježiti nešto za kupiti, adresu ili ideju za pokretanje\? Onda ne tražite dalje, jer je ovo jednostavan alat za organizatore koji ste tražili: Jednostavne napomene: Organizator i planer popisa obaveza! Nisu potrebni komplicirani koraci za postavljanje, samo dodirnite zaslon i upišite ono po što ste došli i stvorite bilješke, brze popise, popise za provjeru ili sigurnosnu kopiju za bilo koju ideju. Sa svojom jednostavnom osobnom bilježnicom možete brzo zapamtiti sve! Kupnja namirnica, pamćenje vaših misli i lakše postavljanje podsjetnika bilježenje nikada nije bilo lakše ★ Jednostavan planer bilješki je brz, jednostavan za korištenje i izvanredan planer. Te će poslužiti kao neprocjenjiv alat i pratilac, pomažući vam da zapamtite potreban dio informacija! Naš alat za podsjetnike omogućuje vam da pratite svoje dužnosti, kreirate dnevni kontrolni popis za stavke ili ideje uz neviđenu jednostavnost, uočljivost i vrijednost koja štedi vrijeme bez premca. Upravljajte svojim rasporedom na brz i jednostavan način. Ovaj alat za podsjetnike bilježnice dolazi s automatskim spremanjem tako da nećete greškom odbaciti svoje promjene. Također podržava stvaranje više neovisnih bilješki i popisa u običnom tekstu vrlo brzo. Možete jednostavno pristupiti bilješci i organizirati svoj popis zadataka u tren oka pomoću prilagodljivog widgeta i widgeta za promjenu veličine, koji otvara aplikaciju na dodir. Jednostavan je za korisnika i ne sadrži apsolutno nikakve oglase ili nepotrebna dopuštenja - nema priloženih stringova. Potpuno je otvorenog koda, nudi prilagodljive boje koje se mogu prilagoditi brzim i brzim podešavanjem. <b> Jednostavne napomene: Organizator i planer popisa obaveza </b> najbolji je organizator stavki i planer popisa koji možete koristiti bez oglasa. Ako vam je potreban visokokvalitetan organizator za brze i dobre bilješke, pouzdan i korisniku prikladan podsjetnik koji je uistinu jednostavan za korištenje, preuzmite našu aplikaciju odmah :) Svaki dan imajte svoju osobnu bilježnicu u džepu i rezervni planer kako biste mogli nećete morati brinuti da ćete zaboraviti važan sastanak ili popis za kupovinu :). Aplikacija je izrađena u material-dizajnu i standardno koristi tamnu temu, pruža izvrsno korisničko iskustvo za jednostavnu upotrebu. Nedostatak pristupa internetu pruža bolju privatnost, sigurnost i stabilnost od drugih aplikacija. Ne sadrži oglase niti nepotrebne dozvole. Potpuno je otvorenog koda, pruža prilagodljive boje. <b>Pogledaj cijeli paket „Jednostavni alati” ovdje:</b> https://www.simplemobiletools.com <b>Zasebna stranica za „Jednostavan upravljač datoteka Pro”:</b> https://www.simplemobiletools.com/filemanager <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
