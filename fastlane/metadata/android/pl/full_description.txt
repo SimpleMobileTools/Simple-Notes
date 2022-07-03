@@ -4,21 +4,18 @@ Planer prostych notatek jest szybkim, prostym w użyciu organizerem z niesamowit
 
 Nasze narzędzie do przypominania pozwala śledzić Twoje obowiązki, tworzyć codzienną listę pomysłów oraz listę zakupów rzeczy do nich z niespotykaną prostotą i niezrównaną oszczędnością czasu. Zarządzaj swoim harmonogramem z odpowiednimi, dobrymi notatkami – użyj jednej z naszych aplikacji do robienia notatek: Proste notatki albo Proste notatki Pro :)
 
-<b>Proste notatki Pro: Organizer i planer listy zadań do zrobienia</b> – narzędzie notatnika jest wyposażone w funkcję automatycznego zapisywania, dzięki czemu nie odrzucisz swoich zmian przez pomyłkę. Obsługuje również bardzo szybkie tworzenie wielu niezależnych od siebie notatek i list w postaci zwykłego tekstu.
+Proste notatki Pro: Organizer i planer listy zadań do zrobienia – narzędzie notatnika jest wyposażone w funkcję automatycznego zapisywania, dzięki czemu nie odrzucisz swoich zmian przez pomyłkę. Obsługuje również bardzo szybkie tworzenie wielu niezależnych od siebie notatek i list w postaci zwykłego tekstu.
 
 Możesz łatwo uzyskać dostęp do notatki i błyskawicznie uporządkować listę zadań do zrobienia, korzystając z dostosowywanego widżetu o zmiennej wielkości, który otwiera aplikację po naciśnięciu go.
 
-<b>Proste notatki: Organizer i planer listy zadań do zrobienia</b> jest najlepszym organizerem i aplikacją do robienia notatek, z której możesz korzystać bez reklam. Jeśli potrzebujesz wysokiej jakości organizera do szybkich i dobrych notatek, prostej przypominajki zakupowej, która jest naprawdę łatwa w użyciu, pobierz naszą aplikację już teraz :) Miej swój osobisty notes w kieszeni każdego dnia oraz planer kopii zapasowych, abyś nie musiał(a) się martwić, że zapomnisz o ważnym spotkaniu lub liście zakupów :)
+Proste notatki: Organizer i planer listy zadań do zrobienia jest najlepszym organizerem i aplikacją do robienia notatek, z której możesz korzystać bez reklam. Jeśli potrzebujesz wysokiej jakości organizera do szybkich i dobrych notatek, prostej przypominajki zakupowej, która jest naprawdę łatwa w użyciu, pobierz naszą aplikację już teraz :) Miej swój osobisty notes w kieszeni każdego dnia oraz planer kopii zapasowych, abyś nie musiał(a) się martwić, że zapomnisz o ważnym spotkaniu lub liście zakupów :)
 
 Domyślnie jest wyposażony w Material Design i ciemny motyw, zapewniając doskonałe doświadczenie użytkownika dla łatwego użytkowania. Brak dostępu do Internetu zapewnia większą prywatność, bezpieczeństwo i stabilność niż inne aplikacje.
 
 Nie zawiera reklam ani niepotrzebnych uprawnień. Jest w pełni otwartoźródłowy, zapewnia konfigurowalną kolorystykę.
 
-<b>Sprawdź pełen zestaw od Simple Tools tutaj:</b>
+Sprawdź pełen zestaw od Simple Tools tutaj:
 https://www.simplemobiletools.com
-
-<b>Strona internetowa Prostych notatek Pro:</b>
-https://www.simplemobiletools.com/notes
 
 Facebook:
 https://www.facebook.com/simplemobiletools
@@ -28,3 +25,6 @@ https://www.reddit.com/r/SimpleMobileTools
 
 Telegram:
 https://t.me/SimpleMobileTools
+
+Strona internetowa Prostych notatek Pro:
+https://www.simplemobiletools.com/notes
