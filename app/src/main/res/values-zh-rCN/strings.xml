@@ -77,12 +77,6 @@
     <!-- FAQ -->
     <string name="faq_1_title">我如何更改小工具颜色？</string>
     <string name="faq_1_text">如果您仅用一个活动的小工具，您既可以重新创建它，或者使用应用程序设定的按钮来自定义它。如果您拥有多个活动的小工具，应用程序设定中的按钮将不可用。因为应用程序支持小工具分别自定义，您必须要重新创建小工具来自定义它们。</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">简易笔记 Pro：待办事项列表组织和计划工具</string>
-    <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">简易计划工具：创建笔记、备份 &amp; 带快速笔记提醒工具的待办清单</string>
-    <string name="app_long_description"> ★ 需要快速记录待买物品、地址或者新点子？那么不要错过这个必然符合您所需的便捷管理工具：简易笔记： 待办清单管理器和计划工具！ 无需复杂的设置步骤，仅需要点击屏幕并敲入您所要的笔记、清单、列表或者仅仅时备注一个好点子。使用这个属于您的简易个人记事本，您可以快速记录任何事情！日用品采购、想法记录和备忘提醒笔记从未有如此简单 ★ 简易笔记计划工具是一个快速且易用的组织和计划工具，它将成为您难以估价的工具和助手，帮助您记录任何必要的信息！ 我们的提醒工具允许您以前所未有的简单方式记录您所承担的义务及创建每日清单，带来显著和难以匹敌的时间节省价值，快速且便捷的管理您的计划表。 该笔记提醒工具包含自动保存功能，所以您不会因失误遗失修改。它也可以快速创建多个独立的纯文本和列表。 使用可自定义和缩放小控件，您可以快速访问笔记并管理您的待办清单，单击亦可打开主应用程序。 它用户友好且完全不包含不必要的权限，无附加条件。它完全开源，提供可自定义的颜色以供快速便捷的微调。 <b>简易笔记：待办清单管理器和计划工具</b> 是您可以无广告使用的最佳条目组织和清单计划工具。如果您需要一个高质量的组织工具来实现快速和良好的笔记尼禄，一个可靠的且用户友好的提醒，且真正的简便易用，请即刻下载我们的应用:) 在您的口袋中时刻保有个人笔记本，且包含备用的计划表，将使您再也不用担心忘记重要的会议或者您的购物清单 :)。 它遵循质感设计且默认应用黑暗模式，提供便于使用的极佳的用户体验。相对于其他应用，不包含互联网访问给予您更佳的隐私、保密性和稳定性。 不包含广告及非必要的权限，而且完全开放源代码，并提供自定义颜色。 <b>于此查看简易工具系列全套:</b> https://www.simplemobiletools.com <b>简易笔记 Pro 的独立网站:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

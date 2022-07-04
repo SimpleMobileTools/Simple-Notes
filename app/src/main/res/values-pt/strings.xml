@@ -77,12 +77,6 @@
     <!-- FAQ -->
     <string name="faq_1_title">Como posso alterar a cor do widget\?</string>
     <string name="faq_1_text">Se apenas tiver um widget ativo, pode recriá-lo ou utilizar o botão nas definições o personalizar. Se tiver vários widgets, este botão não estará disponível. Como cada um dos widgets pode ser personalizado, terá que os recriar sempre que o quiser personalizar.</string>
-    <!-- Strings displayed only on Google Playstore. Optional, but good to have -->
-    <!-- App title has to have less than 50 characters. If you cannot squeeze it, just remove a part of it -->
-    <string name="app_title">Simple Notes Pro – Organização e planeamento de notas</string>
-    <!-- Short description has to have less than 80 chars -->
-    <string name="app_short_description">Simple planner – Crie notas, listas de verificação e lembretes</string>
-    <string name="app_long_description"> ★ Com o Simple Notes organize notas, confira listas e planeie tarefas facilmente. Descomplicado, basta tocar no ecrã e começar a escrever. Anote ideias e crie listas de consulta rápida ou de verificação. Um verdadeiro bloco de notas com práticos lembretes para nunca se esquecer de nada! ★ <b>Simple Notes </b> é uma ferramenta indispensável para organizar e planear com simplicicidade, já que funciona também como agenda. Os lembretes mantêm-no a par dos seus afazeres diários para assim, o ajudar a gerir de forma mais eficiente o seu tempo. Guarda automaticamente as suas alterações para que não as perca por descuido. Aceita e gere múltiplas entradas independentes em texto simples. Num instante, aceda às suas notas ou listas através de um widget personalizável e redimensionável que abre a aplicação directamente a partir do ecrã inicial. Com design material num tema escuro por definição. Não requer acesso à internet o que lhe confere mais privacidade, segurança e estabilidade. Não contém anúncios nem permissões desnecessárias. É totalmente open source e oferece cores personalizáveis a gosto. <b>Consulte a gama completa de aplicações Simple Tools aqui:</b> https://www.simplemobiletools.com <b>Site da aplicação Simple Notes Pro:</b> https://www.simplemobiletools.com/notes <b>Facebook:</b> https://www.facebook.com/simplemobiletools <b>Reddit:</b> https://www.reddit.com/r/SimpleMobileTools </string>
     <!--
         Não encontrou todas as cadeias a traduzir? Existem mais algumas em:
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
