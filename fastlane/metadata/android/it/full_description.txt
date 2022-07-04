@@ -4,15 +4,15 @@ Semplice Note è un veloce organizzatore, semplice da usare widget colorato e se
 
 Il nostro strumento di pianificazione dell'agenda di promemoria ti consente di tenere traccia delle tue mansioni, creare idee sticky quotidiane e liste della spesa per articoli o idee con semplicità, notabilità e valore senza pari che consente di risparmiare tempo. Gestisci il tuo programma con note corrette e buone - usa una delle nostre app per prendere appunti - Semplice Note o Semplice Note Pro :)
 
-<b>Semplice Note Pro: l'organizzatore della lista delle cose da fare</b>   e lo strumento di promemoria per prendere appunti del pianificatore sono dotati di un salvataggio automatico in modo da non scartare le modifiche per errore. Supporta anche la creazione di più note ed elenchi di testo semplice indipendenti molto velocemente.
+Semplice Note Pro: l'organizzatore della lista delle cose da fare e lo strumento di promemoria per prendere appunti del pianificatore sono dotati di un salvataggio automatico in modo da non scartare le modifiche per errore. Supporta anche la creazione di più note ed elenchi di testo semplice indipendenti molto velocemente.
 
 Puoi accedere facilmente alle tue liste e organizzare la tua lista di cose da fare in pochissimo tempo utilizzando il widget personalizzabile e ridimensionabile, che apre le app dell'organizzazione goodnotes al tocco.
 
 È facile da usare e non contiene assolutamente annunci o autorizzazioni inutili. È completamente opensource il widget goodnotes, fornisce colori personalizzabili che possono essere regolati con un ritocco veloce.
 
-<b>Semplice Note Pro: l'organizzatore e il pianificatore di elenchi di cose da fare </b> è la migliore app per l'organizzazione di oggetti e per prendere appunti che puoi utilizzare senza pubblicità. Se hai bisogno di un organizzatore di alta qualità per un blocco note rapido, affidabile e buono, un semplice promemoria della lista della spesa che è davvero facile da usare. Scarica subito le nostre app   per prendere appunti :) Tieni le tue app di memo personali in tasca ogni giorno e hai un pianificatore di salvataggio in modo da non doverti preoccupare di dimenticare una riunione importante o la tua lista della spesa :)
+Semplice Note Pro: l'organizzatore e il pianificatore di elenchi di cose da fare è la migliore app per l'organizzazione di oggetti e per prendere appunti che puoi utilizzare senza pubblicità. Se hai bisogno di un organizzatore di alta qualità per un blocco note rapido, affidabile e buono, un semplice promemoria della lista della spesa che è davvero facile da usare. Scarica subito le nostre app  per prendere appunti :) Tieni le tue app di memo personali in tasca ogni giorno e hai un pianificatore di salvataggio in modo da non doverti preoccupare di dimenticare una riunione importante o la tua lista della spesa :)
 
-<b>Scopri la suite completa di Simple Tools qui:</b>
+Scopri la suite completa di Simple Tools qui:
 https://www.simplemobiletools.com
 
 Facebook:
@@ -21,5 +21,8 @@ https://www.facebook.com/simplemobiletools
 Reddit:
 https://www.reddit.com/r/SimpleMobileTools
 
-<b>Sito web indipendente di Semplice Note Pro:</b>
+Telegram:
+https://t.me/SimpleMobileTools
+
+Sito web indipendente di Semplice Note Pro:
 https://www.simplemobiletools.com/notes
