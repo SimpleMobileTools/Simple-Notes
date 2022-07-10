@@ -17,8 +17,8 @@
     <string name="create_new_note">Стварыць новую нататку</string>
     <string name="add_to_note">Дадаць да нататкі</string>
     <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them\?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="note_shown_widget">Нататка, якая адлюстроўваецца ў віджэце:</string>
+    <string name="show_note_title">Паказваць назву нататкі</string>
     <string name="new_note_type">Тып новай нататкі:</string>
     <string name="text_note">Тэкставая нататка</string>
     <string name="lock_note">Блакаваць нататку</string>
