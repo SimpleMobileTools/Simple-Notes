@@ -73,6 +73,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
         text_note_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
+        setupToolbar(config_toolbar)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

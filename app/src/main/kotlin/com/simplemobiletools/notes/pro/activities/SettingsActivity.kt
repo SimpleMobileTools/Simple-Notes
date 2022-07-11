@@ -6,6 +6,7 @@ import android.view.Menu
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
+import com.simplemobiletools.commons.helpers.NavigationIcon
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.commons.helpers.isOreoPlus
 import com.simplemobiletools.commons.models.RadioItem
@@ -26,6 +27,7 @@ class SettingsActivity : SimpleActivity() {
 
     override fun onResume() {
         super.onResume()
+        setupToolbar(settings_toolbar, NavigationIcon.Arrow)
 
         setupCustomizeColors()
         setupUseEnglish()
@@ -42,8 +44,7 @@ class SettingsActivity : SimpleActivity() {
         setupCursorPlacement()
         setupIncognitoMode()
         setupCustomizeWidgetColors()
-        updateTextColors(settings_scrollview)
-        invalidateOptionsMenu()
+        updateTextColors(settings_nested_scrollview)
 
         arrayOf(
             settings_color_customization_label,

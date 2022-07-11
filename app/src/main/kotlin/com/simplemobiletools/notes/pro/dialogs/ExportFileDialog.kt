@@ -27,33 +27,33 @@ class ExportFileDialog(val activity: SimpleActivity, val note: Note, val callbac
             }
         }
 
-        AlertDialog.Builder(activity)
-                .setPositiveButton(R.string.ok, null)
-                .setNegativeButton(R.string.cancel, null)
-                .create().apply {
-                    activity.setupDialogStuff(view, this, R.string.export_as_file) {
-                        showKeyboard(view.file_name)
-                        getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                            val filename = view.file_name.value
-                            val extension = view.file_extension.value
+        activity.getAlertDialogBuilder()
+            .setPositiveButton(R.string.ok, null)
+            .setNegativeButton(R.string.cancel, null)
+            .apply {
+                activity.setupDialogStuff(view, this, R.string.export_as_file) { alertDialog ->
+                    alertDialog.showKeyboard(view.file_name)
+                    alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+                        val filename = view.file_name.value
+                        val extension = view.file_extension.value
 
-                            if (filename.isEmpty()) {
-                                activity.toast(R.string.filename_cannot_be_empty)
-                                return@setOnClickListener
-                            }
-
-                            val fullFilename = if (extension.isEmpty()) filename else "$filename.$extension"
-                            if (!fullFilename.isAValidFilename()) {
-                                activity.toast(String.format(activity.getString(R.string.filename_invalid_characters_placeholder, fullFilename)))
-                                return@setOnClickListener
-                            }
-
-                            activity.config.lastUsedExtension = extension
-                            activity.config.lastUsedSavePath = realPath
-                            callback("$realPath/$fullFilename")
-                            dismiss()
+                        if (filename.isEmpty()) {
+                            activity.toast(R.string.filename_cannot_be_empty)
+                            return@setOnClickListener
                         }
+
+                        val fullFilename = if (extension.isEmpty()) filename else "$filename.$extension"
+                        if (!fullFilename.isAValidFilename()) {
+                            activity.toast(String.format(activity.getString(R.string.filename_invalid_characters_placeholder, fullFilename)))
+                            return@setOnClickListener
+                        }
+
+                        activity.config.lastUsedExtension = extension
+                        activity.config.lastUsedSavePath = realPath
+                        callback("$realPath/$fullFilename")
+                        alertDialog.dismiss()
                     }
                 }
+            }
     }
 }

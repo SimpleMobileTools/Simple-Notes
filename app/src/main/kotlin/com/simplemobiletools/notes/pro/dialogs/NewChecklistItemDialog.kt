@@ -6,15 +6,14 @@ import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.AppCompatEditText
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.*
 import kotlinx.android.synthetic.main.item_add_checklist.view.*
 
 class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayList<String>) -> Unit) {
-    private val titles = mutableListOf<EditText>()
+    private val titles = mutableListOf<AppCompatEditText>()
     private val textColor = activity.getProperTextColor()
     private val view: ViewGroup = activity.layoutInflater.inflate(R.layout.dialog_new_checklist_item, null) as ViewGroup
 
@@ -28,19 +27,19 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             }
         }
 
-        AlertDialog.Builder(activity)
+        activity.getAlertDialogBuilder()
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
-            .create().apply {
-                activity.setupDialogStuff(view, this, R.string.add_new_checklist_items) {
-                    showKeyboard(titles.first())
-                    getButton(BUTTON_POSITIVE).setOnClickListener {
+            .apply {
+                activity.setupDialogStuff(view, this, R.string.add_new_checklist_items) { alertDialog ->
+                    alertDialog.showKeyboard(titles.first())
+                    alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
                         when {
-                            titles.all { it.text.isEmpty() } -> activity.toast(R.string.empty_name)
+                            titles.all { it.text!!.isEmpty() } -> activity.toast(R.string.empty_name)
                             else -> {
                                 val titles = titles.map { it.text.toString() }.filter { it.isNotEmpty() }.toMutableList() as ArrayList<String>
                                 callback(titles)
-                                dismiss()
+                                alertDialog.dismiss()
                             }
                         }
                     }

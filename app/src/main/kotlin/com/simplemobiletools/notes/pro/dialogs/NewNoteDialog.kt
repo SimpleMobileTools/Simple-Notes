@@ -2,11 +2,7 @@ package com.simplemobiletools.notes.pro.dialogs
 
 import android.app.Activity
 import android.content.DialogInterface.BUTTON_POSITIVE
-import androidx.appcompat.app.AlertDialog
-import com.simplemobiletools.commons.extensions.setupDialogStuff
-import com.simplemobiletools.commons.extensions.showKeyboard
-import com.simplemobiletools.commons.extensions.toast
-import com.simplemobiletools.commons.extensions.value
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
@@ -30,24 +26,29 @@ class NewNoteDialog(val activity: Activity, title: String? = null, val setCheckl
 
         view.note_title.setText(title)
 
-        AlertDialog.Builder(activity)
+        activity.getAlertDialogBuilder()
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
-            .create().apply {
-                activity.setupDialogStuff(view, this, R.string.new_note) {
-                    showKeyboard(view.note_title)
-                    getButton(BUTTON_POSITIVE).setOnClickListener {
-                        val title = view.note_title.value
+            .apply {
+                activity.setupDialogStuff(view, this, R.string.new_note) { alertDialog ->
+                    alertDialog.showKeyboard(view.note_title)
+                    alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
+                        val newTitle = view.note_title.value
                         ensureBackgroundThread {
                             when {
-                                title.isEmpty() -> activity.toast(R.string.no_title)
-                                activity.notesDB.getNoteIdWithTitle(title) != null -> activity.toast(R.string.title_taken)
+                                newTitle.isEmpty() -> activity.toast(R.string.no_title)
+                                activity.notesDB.getNoteIdWithTitle(newTitle) != null -> activity.toast(R.string.title_taken)
                                 else -> {
-                                    val type = if (view.new_note_type.checkedRadioButtonId == view.type_checklist.id) NoteType.TYPE_CHECKLIST.value else NoteType.TYPE_TEXT.value
+                                    val type = if (view.new_note_type.checkedRadioButtonId == view.type_checklist.id) {
+                                        NoteType.TYPE_CHECKLIST.value
+                                    } else {
+                                        NoteType.TYPE_TEXT.value
+                                    }
+
                                     activity.config.lastCreatedNoteType = type
-                                    val newNote = Note(null, title, "", type, "", PROTECTION_NONE, "")
+                                    val newNote = Note(null, newTitle, "", type, "", PROTECTION_NONE, "")
                                     callback(newNote)
-                                    dismiss()
+                                    alertDialog.dismiss()
                                 }
                             }
                         }

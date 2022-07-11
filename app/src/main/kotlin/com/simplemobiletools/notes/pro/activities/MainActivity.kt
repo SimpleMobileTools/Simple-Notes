@@ -87,6 +87,8 @@ class MainActivity : SimpleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         appLaunched(BuildConfig.APPLICATION_ID)
+        setupOptionsMenu()
+        refreshMenuItems()
 
         searchQueryET = findViewById(R.id.search_query)
         searchPrevBtn = findViewById(R.id.search_previous)
@@ -113,11 +115,12 @@ class MainActivity : SimpleActivity() {
 
     override fun onResume() {
         super.onResume()
+        setupToolbar(main_toolbar)
         if (storedEnableLineWrap != config.enableLineWrap) {
             initViewPager()
         }
 
-        invalidateOptionsMenu()
+        refreshMenuItems()
         pager_title_strip.apply {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
             setGravity(Gravity.CENTER_VERTICAL)
@@ -168,11 +171,26 @@ class MainActivity : SimpleActivity() {
         return true
     }
 
-    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+    private fun refreshMenuItems() {
         val multipleNotesExist = mNotes.size > 1
         val isCurrentItemChecklist = isCurrentItemChecklist()
 
-        menu.apply {
+        main_toolbar.menu.apply {
+            val areButtonsVisible = (showRedoButton || showUndoButton) && mCurrentNote.type == NoteType.TYPE_TEXT.value
+            findItem(R.id.undo).apply {
+                isVisible = areButtonsVisible
+                isEnabled = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+                icon.alpha = if (isEnabled) 255 else 127
+            }
+
+            findItem(R.id.redo).apply {
+                isVisible = areButtonsVisible
+                isEnabled = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+                icon.alpha = if (isEnabled) 255 else 127
+            }
+        }
+
+        main_toolbar.menu.apply {
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.delete_note).isVisible = multipleNotesExist
@@ -183,49 +201,51 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
             findItem(R.id.import_folder).isVisible = !isQPlus()
             findItem(R.id.import_notes).isVisible = isQPlus()
-            findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && !mCurrentNote.isLocked()
-            findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && mCurrentNote.isLocked()
+            findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && !mCurrentNote.isLocked())
+            findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
 
             saveNoteButton = findItem(R.id.save_note)
-            saveNoteButton!!.isVisible = !config.autosaveNotes && showSaveButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+            saveNoteButton!!.isVisible =
+                !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT.value)
         }
 
         pager_title_strip.beVisibleIf(multipleNotesExist)
-        return super.onPrepareOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (config.autosaveNotes && item.itemId != R.id.undo && item.itemId != R.id.redo) {
-            saveCurrentNote(false)
-        }
+    private fun setupOptionsMenu() {
+        main_toolbar.setOnMenuItemClickListener { menuItem ->
+            if (config.autosaveNotes && menuItem.itemId != R.id.undo && menuItem.itemId != R.id.redo) {
+                saveCurrentNote(false)
+            }
 
-        val fragment = getCurrentFragment()
-        when (item.itemId) {
-            R.id.open_search -> fragment?.handleUnlocking { openSearch() }
-            R.id.open_note -> displayOpenNoteDialog()
-            R.id.save_note -> fragment?.handleUnlocking { saveNote() }
-            R.id.undo -> undo()
-            R.id.redo -> redo()
-            R.id.new_note -> displayNewNoteDialog()
-            R.id.rename_note -> fragment?.handleUnlocking { displayRenameDialog() }
-            R.id.share -> fragment?.handleUnlocking { shareText() }
-            R.id.lock_note -> lockNote()
-            R.id.unlock_note -> unlockNote()
-            R.id.open_file -> tryOpenFile()
-            R.id.import_folder -> openFolder()
-            R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
-            R.id.export_all_notes -> tryExportAllNotes()
-            R.id.export_notes -> tryExportNotes()
-            R.id.import_notes -> tryImportNotes()
-            R.id.print -> fragment?.handleUnlocking { printText() }
-            R.id.delete_note -> fragment?.handleUnlocking { displayDeleteNotePrompt() }
-            R.id.settings -> launchSettings()
-            R.id.about -> launchAbout()
-            R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
-            R.id.sort_checklist -> fragment?.handleUnlocking { displaySortChecklistDialog() }
-            else -> return super.onOptionsItemSelected(item)
+            val fragment = getCurrentFragment()
+            when (menuItem.itemId) {
+                R.id.open_search -> fragment?.handleUnlocking { openSearch() }
+                R.id.open_note -> displayOpenNoteDialog()
+                R.id.save_note -> fragment?.handleUnlocking { saveNote() }
+                R.id.undo -> undo()
+                R.id.redo -> redo()
+                R.id.new_note -> displayNewNoteDialog()
+                R.id.rename_note -> fragment?.handleUnlocking { displayRenameDialog() }
+                R.id.share -> fragment?.handleUnlocking { shareText() }
+                R.id.lock_note -> lockNote()
+                R.id.unlock_note -> unlockNote()
+                R.id.open_file -> tryOpenFile()
+                R.id.import_folder -> openFolder()
+                R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
+                R.id.export_all_notes -> tryExportAllNotes()
+                R.id.export_notes -> tryExportNotes()
+                R.id.import_notes -> tryImportNotes()
+                R.id.print -> fragment?.handleUnlocking { printText() }
+                R.id.delete_note -> fragment?.handleUnlocking { displayDeleteNotePrompt() }
+                R.id.settings -> launchSettings()
+                R.id.about -> launchAbout()
+                R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
+                R.id.sort_checklist -> fragment?.handleUnlocking { displaySortChecklistDialog() }
+                else -> return@setOnMenuItemClickListener false
+            }
+            return@setOnMenuItemClickListener true
         }
-        return true
     }
 
     // https://code.google.com/p/android/issues/detail?id=191430 quickfix
@@ -286,7 +306,7 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun isCurrentItemChecklist() = if (this::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST.value else false
+    private fun isCurrentItemChecklist() = if (::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST.value else false
 
     @SuppressLint("NewApi")
     private fun checkShortcuts() {
@@ -422,7 +442,7 @@ class MainActivity : SimpleActivity() {
                 .forEach(::removeProtection)
 
             mNotes = notes
-            invalidateOptionsMenu()
+            refreshMenuItems()
             mCurrentNote = mNotes[0]
             mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
             view_pager.apply {
@@ -433,7 +453,7 @@ class MainActivity : SimpleActivity() {
                 onPageChangeListener {
                     mCurrentNote = mNotes[it]
                     config.currentNoteId = mCurrentNote.id!!
-                    invalidateOptionsMenu()
+                    refreshMenuItems()
                 }
             }
 
@@ -463,7 +483,7 @@ class MainActivity : SimpleActivity() {
         view_pager.onPageChangeListener {
             currentTextFragment?.removeTextWatcher()
             currentNotesView()?.let { noteView ->
-                noteView.text.clearBackgroundSpans()
+                noteView.text!!.clearBackgroundSpans()
             }
 
             closeSearch()
@@ -483,7 +503,7 @@ class MainActivity : SimpleActivity() {
     private fun searchTextChanged(text: String) {
         currentNotesView()?.let { noteView ->
             currentTextFragment?.removeTextWatcher()
-            noteView.text.clearBackgroundSpans()
+            noteView.text!!.clearBackgroundSpans()
 
             if (text.isNotBlank() && text.length > 1) {
                 searchMatches = noteView.value.searchMatches(text)
@@ -1263,7 +1283,7 @@ class MainActivity : SimpleActivity() {
     private fun saveNote() {
         saveCurrentNote(true)
         showSaveButton = false
-        invalidateOptionsMenu()
+        refreshMenuItems()
     }
 
     private fun undo() {
@@ -1309,7 +1329,7 @@ class MainActivity : SimpleActivity() {
                     mCurrentNote.protectionHash = hash
                     mCurrentNote.protectionType = type
                     NotesHelper(this).insertOrUpdateNote(mCurrentNote) {
-                        invalidateOptionsMenu()
+                        refreshMenuItems()
                     }
                 }
             }
@@ -1333,7 +1353,7 @@ class MainActivity : SimpleActivity() {
                     shouldShowLockedContent = true
                     checkLockState()
                 }
-                invalidateOptionsMenu()
+                refreshMenuItems()
             }
         }
     }
@@ -1359,7 +1379,7 @@ class MainActivity : SimpleActivity() {
             }
 
             if (shouldRecreateMenu) {
-                invalidateOptionsMenu()
+                refreshMenuItems()
             }
         }
     }

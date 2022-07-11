@@ -136,7 +136,7 @@ class TextFragment : NoteFragment() {
                     setTextWatcher()
                 }
                 skipTextUpdating = false
-                setSelection(if (config.placeCursorToEnd) text.length else 0)
+                setSelection(if (config.placeCursorToEnd) text!!.length else 0)
             }
 
             if (config.showKeyboard && isMenuVisible && (!note!!.isLocked() || shouldShowLockedContent)) {

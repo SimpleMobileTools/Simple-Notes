@@ -3,7 +3,8 @@
     android:id="@+id/open_note_item_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/normal_margin">
+    android:paddingStart="@dimen/normal_margin"
+    android:paddingEnd="@dimen/normal_margin">
 
     <com.simplemobiletools.commons.views.MyCompatRadioButton
         android:id="@+id/open_note_item_radio_button"

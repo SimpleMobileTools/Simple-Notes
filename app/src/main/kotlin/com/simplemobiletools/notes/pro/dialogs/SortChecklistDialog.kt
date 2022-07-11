@@ -1,7 +1,7 @@
 package com.simplemobiletools.notes.pro.dialogs
 
-import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.extensions.beGoneIf
+import com.simplemobiletools.commons.extensions.getAlertDialogBuilder
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.commons.helpers.SORT_BY_CUSTOM
 import com.simplemobiletools.commons.helpers.SORT_BY_DATE_CREATED
@@ -21,10 +21,11 @@ class SortChecklistDialog(private val activity: SimpleActivity, private val call
         setupSortRadio()
         setupOrderRadio()
         setupMoveUndoneChecklistItems()
-        AlertDialog.Builder(activity)
+
+        activity.getAlertDialogBuilder()
             .setPositiveButton(R.string.ok) { _, _ -> dialogConfirmed() }
             .setNegativeButton(R.string.cancel, null)
-            .create().apply {
+            .apply {
                 activity.setupDialogStuff(view, this, R.string.sort_by)
             }
     }

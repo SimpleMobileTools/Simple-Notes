@@ -1,144 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/notes_holder"
+    android:id="@+id/config_coordinator"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_margin="@dimen/activity_margin">
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/config_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/config_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/color_primary"
+            app:title="@string/app_launcher_name"
+            app:titleTextAppearance="@style/AppTheme.ActionBar.TitleTextStyle" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
-        android:id="@+id/notes_picker_holder"
+        android:id="@+id/config_relative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_margin">
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/activity_margin"
+        android:paddingBottom="@dimen/activity_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
-            android:id="@+id/show_note_title_holder"
+            android:id="@+id/notes_picker_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:padding="@dimen/activity_margin">
+            android:paddingBottom="@dimen/activity_margin">
 
-            <com.simplemobiletools.commons.views.MyAppCompatCheckbox
-                android:id="@+id/show_note_title"
+            <RelativeLayout
+                android:id="@+id/show_note_title_holder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:clickable="false"
-                android:layoutDirection="rtl"
-                android:text="@string/show_note_title"
-                app:switchPadding="@dimen/medium_margin" />
+                android:background="?attr/selectableItemBackground"
+                android:padding="@dimen/activity_margin">
+
+                <com.simplemobiletools.commons.views.MyAppCompatCheckbox
+                    android:id="@+id/show_note_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:clickable="false"
+                    android:layoutDirection="rtl"
+                    android:text="@string/show_note_title"
+                    app:switchPadding="@dimen/medium_margin" />
+
+            </RelativeLayout>
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/notes_picker_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/show_note_title_holder"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:paddingStart="@dimen/activity_margin"
+                android:text="@string/note_shown_widget" />
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/notes_picker_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notes_picker_label"
+                android:layout_marginStart="@dimen/activity_margin"
+                android:background="@drawable/button_background"
+                android:padding="@dimen/normal_margin"
+                android:text="@string/general_note" />
 
         </RelativeLayout>
 
         <com.simplemobiletools.commons.views.MyTextView
-            android:id="@+id/notes_picker_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/show_note_title_holder"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:layout_marginBottom="@dimen/normal_margin"
-            android:paddingStart="@dimen/activity_margin"
-            android:text="@string/note_shown_widget" />
-
-        <com.simplemobiletools.commons.views.MyTextView
-            android:id="@+id/notes_picker_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/notes_picker_label"
-            android:layout_marginStart="@dimen/activity_margin"
-            android:background="@drawable/button_background"
-            android:padding="@dimen/normal_margin"
-            android:text="@string/general_note" />
-
-    </RelativeLayout>
-
-    <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/text_note_view_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/notes_picker_holder"
-        android:background="@null"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:lines="1"
-        android:padding="@dimen/tiny_margin"
-        android:text="@string/title"
-        android:textSize="@dimen/smaller_text_size" />
-
-    <TextView
-        android:id="@+id/text_note_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/config_bg_color"
-        android:layout_below="@+id/text_note_view_title"
-        android:layout_marginBottom="@dimen/activity_margin"
-        android:background="@null"
-        android:gravity="top"
-        android:padding="@dimen/activity_margin"
-        android:text="@string/widget_config" />
-
-    <com.simplemobiletools.commons.views.MyRecyclerView
-        android:id="@+id/checklist_note_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/config_bg_color"
-        android:layout_below="@+id/text_note_view_title"
-        android:layout_marginBottom="@dimen/activity_margin"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
-        android:paddingTop="@dimen/small_margin"
-        android:visibility="gone"
-        app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager" />
-
-    <ImageView
-        android:id="@+id/config_bg_color"
-        android:layout_width="@dimen/widget_colorpicker_size"
-        android:layout_height="@dimen/widget_colorpicker_size"
-        android:layout_above="@+id/config_text_color"
-        android:layout_margin="@dimen/tiny_margin" />
-
-    <RelativeLayout
-        android:id="@+id/config_bg_seekbar_holder"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignTop="@+id/config_bg_color"
-        android:layout_alignBottom="@+id/config_bg_color"
-        android:layout_marginStart="@dimen/medium_margin"
-        android:layout_toEndOf="@+id/config_bg_color"
-        android:background="@drawable/widget_config_seekbar_background">
-
-        <com.simplemobiletools.commons.views.MySeekBar
-            android:id="@+id/config_bg_seekbar"
+            android:id="@+id/text_note_view_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:paddingStart="@dimen/activity_margin"
-            android:paddingEnd="@dimen/activity_margin" />
+            android:layout_below="@+id/notes_picker_holder"
+            android:background="@null"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:padding="@dimen/tiny_margin"
+            android:text="@string/title"
+            android:textSize="@dimen/smaller_text_size" />
+
+        <TextView
+            android:id="@+id/text_note_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/config_bg_color"
+            android:layout_below="@+id/text_note_view_title"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:background="@null"
+            android:gravity="top"
+            android:padding="@dimen/activity_margin"
+            android:text="@string/widget_config" />
+
+        <com.simplemobiletools.commons.views.MyRecyclerView
+            android:id="@+id/checklist_note_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/config_bg_color"
+            android:layout_below="@+id/text_note_view_title"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingTop="@dimen/small_margin"
+            android:visibility="gone"
+            app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager" />
+
+        <ImageView
+            android:id="@+id/config_bg_color"
+            android:layout_width="@dimen/widget_colorpicker_size"
+            android:layout_height="@dimen/widget_colorpicker_size"
+            android:layout_above="@+id/config_text_color"
+            android:layout_margin="@dimen/tiny_margin" />
+
+        <RelativeLayout
+            android:id="@+id/config_bg_seekbar_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/config_bg_color"
+            android:layout_alignBottom="@+id/config_bg_color"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_toEndOf="@+id/config_bg_color"
+            android:background="@drawable/widget_config_seekbar_background">
+
+            <com.simplemobiletools.commons.views.MySeekBar
+                android:id="@+id/config_bg_seekbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingStart="@dimen/activity_margin"
+                android:paddingEnd="@dimen/activity_margin" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/config_text_color"
+            android:layout_width="@dimen/widget_colorpicker_size"
+            android:layout_height="@dimen/widget_colorpicker_size"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/tiny_margin" />
+
+        <Button
+            android:id="@+id/config_save"
+            style="@style/MyWidgetConfigSaveStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/ok" />
 
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/config_text_color"
-        android:layout_width="@dimen/widget_colorpicker_size"
-        android:layout_height="@dimen/widget_colorpicker_size"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/tiny_margin" />
-
-    <Button
-        android:id="@+id/config_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/widget_config_seekbar_background"
-        android:fontFamily="sans-serif-light"
-        android:paddingStart="@dimen/activity_margin"
-        android:paddingEnd="@dimen/activity_margin"
-        android:text="@string/ok"
-        android:textColor="@color/dark_grey"
-        android:textFontWeight="400"
-        android:textSize="@dimen/big_text_size" />
-
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
