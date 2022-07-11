@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Обикновени бележки</string>
+    <string name="app_name">Обикновени Бележки</string>
     <string name="app_launcher_name">Бележки</string>
-    <string name="widget_config">Благодарим, че използвате Обикновени бележки.
+    <string name="widget_config">Благодарим, че използвате Обикновени Бележки.
 \nЗа още обикновени приложения посетете SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Не може да се споделя празен текст</string>
-    <string name="simple_note">Обикновени бележки</string>
-    <string name="new_note">Add a new note</string>
+    <string name="simple_note">Обикновени Бележки</string>
+    <string name="new_note">Добави нова бележка</string>
     <string name="no_title">Please name your note</string>
     <string name="title_taken">A note with that title already exists</string>
     <string name="open_note">Open note</string>

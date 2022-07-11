@@ -4,30 +4,30 @@
     <string name="app_launcher_name">Нататкі</string>
     <string name="widget_config">Thank you for using Simple Notes.\nFor more simple apps please visit SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Cannot share empty text</string>
-    <string name="simple_note">Simple Note</string>
+    <string name="simple_note">Простая нататка</string>
     <string name="new_note">Дадаць новую нататку</string>
     <string name="no_title">Please name your note</string>
     <string name="title_taken">Нататка з такой назвай ужо існуе</string>
     <string name="open_note">Адкрыць нататку</string>
     <string name="delete_note">Выдаліць нататку</string>
-    <string name="delete_note_prompt_message">Are you sure you want to delete note \"%s\"\?</string>
+    <string name="delete_note_prompt_message">Выдаліць нататку \"%s\"\?</string>
     <string name="pick_a_note">Pick a note</string>
     <string name="rename_note">Перайменаваць нататку</string>
-    <string name="general_note">General note</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
+    <string name="general_note">Звычайная нататка</string>
+    <string name="create_new_note">Стварыць новую нататку</string>
+    <string name="add_to_note">Дадаць да нататкі</string>
     <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them\?</string>
-    <string name="note_shown_widget">Note shown in the widget:</string>
-    <string name="show_note_title">Show note title</string>
-    <string name="new_note_type">New note type:</string>
+    <string name="note_shown_widget">Нататка, якая адлюстроўваецца ў віджэце:</string>
+    <string name="show_note_title">Паказваць назву нататкі</string>
+    <string name="new_note_type">Тып новай нататкі:</string>
     <string name="text_note">Тэкставая нататка</string>
     <string name="lock_note">Блакаваць нататку</string>
     <string name="unlock_note">Разблакаваць нататку</string>
     <string name="note_content_locked">Змесціва нататкі заблакавана</string>
     <string name="show_content">Show content</string>
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Новая тэкставая нататка</string>
+    <string name="new_checklist">Новы кантрольны спіс</string>
     <!-- File notes -->
     <string name="open_file">Адкрыць файл</string>
     <string name="export_as_file">Export as file</string>
@@ -40,8 +40,8 @@
     <string name="only_export_file_content">Only export the current file content\n(changing the note will not affect the file)</string>
     <!-- Settings -->
     <string name="display_success_message">Display save success messages</string>
-    <string name="links_and_emails_clickable">Make links and emails clickable</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
+    <string name="links_and_emails_clickable">Рабіць спасылкі і адрасы электроннай пошты націскальнымі</string>
+    <string name="place_cursor_end">Змяшчаць курсор у канец нататкі</string>
     <string name="monospaced_font">Выкарыстоўваць монашырынны шрыфт</string>
     <string name="show_keyboard">Паказваць клавіятуру пры запуску</string>
     <string name="show_word_count">Паказваць колькасць слоў</string>
@@ -55,8 +55,8 @@
     <string name="autosave_notes">Аўтаматычна захоўваць нататкі</string>
     <string name="enable_line_wrap">Пераносіць радкі</string>
     <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="move_done_checklist_items">Перамяшчаць выкананыя пункты ў канец кантрольнага спіса</string>
+    <string name="add_new_checklist_items_top">Дадаваць новыя пункты ў пачатак кантрольнага спіса</string>
     <!-- Checklists -->
     <string name="checklist">Кантрольны спіс</string>
     <string name="checklists">Кантрольныя спісы</string>
