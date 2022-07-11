@@ -47,9 +47,9 @@
     <string name="show_word_count">Паказваць колькасць слоў</string>
     <string name="show_character_count">Паказваць колькасць сімвалаў</string>
     <string name="alignment">Выраўноўванне</string>
-    <string name="left">Left</string>
-    <string name="center">Center</string>
-    <string name="right">Right</string>
+    <string name="left">Па левым баку</string>
+    <string name="center">Па цэнтру</string>
+    <string name="right">Па правым баку</string>
     <string name="widget_note">Note used in widget</string>
     <string name="show_note_picker">Show a note picker on startup</string>
     <string name="autosave_notes">Аўтаматычна захоўваць нататкі</string>
