@@ -3,7 +3,7 @@
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Нататкі</string>
     <string name="widget_config">Thank you for using Simple Notes.\nFor more simple apps please visit SimpleMobileTools.com.</string>
-    <string name="cannot_share_empty_text">Cannot share empty text</string>
+    <string name="cannot_share_empty_text">Немагчыма абагуліць пусты тэкст</string>
     <string name="simple_note">Простая нататка</string>
     <string name="new_note">Дадаць новую нататку</string>
     <string name="no_title">Please name your note</string>
@@ -23,9 +23,9 @@
     <string name="text_note">Тэкставая нататка</string>
     <string name="lock_note">Блакаваць нататку</string>
     <string name="unlock_note">Разблакаваць нататку</string>
-    <string name="note_content_locked">Змесціва нататкі заблакавана</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="note_content_locked">Змесціва нататкі заблакавана.</string>
+    <string name="show_content">Паказаць змесціва</string>
+    <string name="locking_warning">ПАПЯРЭДЖАННЕ: Калі вы забудзеце пароль, вы больш не зможаце аднавіць яго альбо атрымаць доступ да змесціва нататак.</string>
     <string name="new_text_note">Новая тэкставая нататка</string>
     <string name="new_checklist">Новы кантрольны спіс</string>
     <!-- File notes -->
