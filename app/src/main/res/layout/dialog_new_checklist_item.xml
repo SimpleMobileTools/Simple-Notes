@@ -21,11 +21,11 @@
 
         <ImageView
             android:id="@+id/add_item"
+            style="@style/ColoredButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:layout_marginBottom="@dimen/medium_margin"
-            android:background="@drawable/button_background"
             android:paddingStart="@dimen/activity_margin"
             android:paddingTop="@dimen/medium_margin"
             android:paddingEnd="@dimen/activity_margin"

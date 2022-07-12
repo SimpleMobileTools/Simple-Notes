@@ -8,14 +8,21 @@
     android:paddingTop="@dimen/activity_margin"
     android:paddingEnd="@dimen/activity_margin">
 
-    <com.simplemobiletools.commons.views.MyEditText
-        android:id="@+id/checklist_item_title"
+    <com.simplemobiletools.commons.views.MyTextInputLayout
+        android:id="@+id/checklist_item_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/small_margin"
-        android:layout_marginBottom="@dimen/small_margin"
-        android:inputType="textCapSentences"
-        android:textCursorDrawable="@null"
-        android:textSize="@dimen/bigger_text_size" />
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:hint="@string/label">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/checklist_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/bigger_text_size" />
+
+    </com.simplemobiletools.commons.views.MyTextInputLayout>
 </LinearLayout>

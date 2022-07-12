@@ -20,7 +20,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
 
     init {
         val view = (activity.layoutInflater.inflate(R.layout.dialog_import_folder, null) as ViewGroup).apply {
-            open_file_filename.text = activity.humanizePath(path)
+            open_file_filename.setText(activity.humanizePath(path))
         }
 
         activity.getAlertDialogBuilder()

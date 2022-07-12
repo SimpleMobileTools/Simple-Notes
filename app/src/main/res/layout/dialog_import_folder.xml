@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/open_file_holder"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,22 +8,20 @@
     android:paddingTop="@dimen/activity_margin"
     android:paddingEnd="@dimen/activity_margin">
 
-    <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/open_file_filename_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/folder"
-        android:textSize="@dimen/smaller_text_size" />
-
-    <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/open_file_filename"
+    <com.simplemobiletools.commons.views.MyTextInputLayout
+        android:id="@+id/open_file_filename_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_margin"
         android:layout_marginBottom="@dimen/activity_margin"
-        android:paddingTop="@dimen/small_margin"
-        android:paddingEnd="@dimen/small_margin"
-        tools:text="myfile.txt" />
+        android:hint="@string/folder">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/open_file_filename"
+            style="@style/UnclickableEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.simplemobiletools.commons.views.MyTextInputLayout>
 
     <RadioGroup
         android:id="@+id/open_file_type"

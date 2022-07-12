@@ -19,7 +19,7 @@ class OpenFileDialog(val activity: SimpleActivity, val path: String, val callbac
 
     init {
         val view = (activity.layoutInflater.inflate(R.layout.dialog_open_file, null) as ViewGroup).apply {
-            open_file_filename.text = activity.humanizePath(path)
+            open_file_filename.setText(activity.humanizePath(path))
         }
 
         activity.getAlertDialogBuilder()

@@ -15,13 +15,13 @@ class ExportFileDialog(val activity: SimpleActivity, val note: Note, val callbac
     init {
         var realPath = File(note.path).parent ?: activity.config.lastUsedSavePath
         val view = activity.layoutInflater.inflate(R.layout.dialog_export_file, null).apply {
-            file_path.text = activity.humanizePath(realPath)
+            file_path.setText(activity.humanizePath(realPath))
 
             file_name.setText(note.title)
-            file_extension.setText(activity.config.lastUsedExtension)
+            extension.setText(activity.config.lastUsedExtension)
             file_path.setOnClickListener {
                 FilePickerDialog(activity, realPath, false, false, true, true) {
-                    file_path.text = activity.humanizePath(it)
+                    file_path.setText(activity.humanizePath(it))
                     realPath = it
                 }
             }
@@ -35,7 +35,7 @@ class ExportFileDialog(val activity: SimpleActivity, val note: Note, val callbac
                     alertDialog.showKeyboard(view.file_name)
                     alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                         val filename = view.file_name.value
-                        val extension = view.file_extension.value
+                        val extension = view.extension.value
 
                         if (filename.isEmpty()) {
                             activity.toast(R.string.filename_cannot_be_empty)

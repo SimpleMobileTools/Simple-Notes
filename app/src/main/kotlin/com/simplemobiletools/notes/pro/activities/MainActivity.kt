@@ -442,8 +442,8 @@ class MainActivity : SimpleActivity() {
                 .forEach(::removeProtection)
 
             mNotes = notes
-            refreshMenuItems()
             mCurrentNote = mNotes[0]
+            refreshMenuItems()
             mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
             view_pager.apply {
                 adapter = mAdapter

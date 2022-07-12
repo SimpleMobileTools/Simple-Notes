@@ -13,12 +13,12 @@ class ExportFilesDialog(val activity: SimpleActivity, val notes: ArrayList<Note>
     init {
         var realPath = activity.config.lastUsedSavePath
         val view = activity.layoutInflater.inflate(R.layout.dialog_export_files, null).apply {
-            folder_path.text = activity.humanizePath(realPath)
+            folder_path.setText(activity.humanizePath(realPath))
 
-            file_extension.setText(activity.config.lastUsedExtension)
+            extension.setText(activity.config.lastUsedExtension)
             folder_path.setOnClickListener {
                 FilePickerDialog(activity, realPath, false, false, true, true) {
-                    folder_path.text = activity.humanizePath(it)
+                    folder_path.setText(activity.humanizePath(it))
                     realPath = it
                 }
             }
@@ -29,10 +29,10 @@ class ExportFilesDialog(val activity: SimpleActivity, val notes: ArrayList<Note>
             .setNegativeButton(R.string.cancel, null)
             .apply {
                 activity.setupDialogStuff(view, this, R.string.export_as_file) { alertDialog ->
-                    alertDialog.showKeyboard(view.file_extension)
+                    alertDialog.showKeyboard(view.extension)
                     alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                         activity.handleSAFDialog(realPath) {
-                            val extension = view.file_extension.value
+                            val extension = view.extension.value
                             activity.config.lastUsedExtension = extension
                             activity.config.lastUsedSavePath = realPath
                             callback(realPath, extension)

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.appcompat.widget.AppCompatEditText
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.helpers.DARK_GREY
 import com.simplemobiletools.notes.pro.R
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.*
 import kotlinx.android.synthetic.main.item_add_checklist.view.*
@@ -19,9 +20,14 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
 
     init {
         addNewEditText()
+        val plusTextColor = if (activity.isWhiteTheme()) {
+            DARK_GREY
+        } else {
+            activity.getProperPrimaryColor().getContrastColor()
+        }
+
         view.apply {
-            add_item.applyColorFilter(activity.getProperPrimaryColor())
-            add_item.background.applyColorFilter(textColor)
+            add_item.applyColorFilter(plusTextColor)
             add_item.setOnClickListener {
                 addNewEditText()
             }
