@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.13.0 *(2022-07-12)*
+----------------------------
+
+ * Adding some more materialish design, especially for System theme users
+ * Added some translation and stability improvements
+
 Version 6.12.3 *(2022-06-26)*
 ----------------------------
 
