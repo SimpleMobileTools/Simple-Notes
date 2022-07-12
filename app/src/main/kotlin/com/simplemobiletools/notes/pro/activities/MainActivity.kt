@@ -17,7 +17,6 @@ import android.text.method.LinkMovementMethod
 import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
-import android.view.Menu
 import android.view.MenuItem
 import android.view.inputmethod.EditorInfo
 import android.webkit.WebResourceRequest
@@ -148,27 +147,6 @@ class MainActivity : SimpleActivity() {
         if (!isChangingConfigurations) {
             NotesDatabase.destroyInstance()
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        menu.apply {
-            val areButtonsVisible = (showRedoButton || showUndoButton) && mCurrentNote.type == NoteType.TYPE_TEXT.value
-            findItem(R.id.undo).apply {
-                isVisible = areButtonsVisible
-                isEnabled = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
-                icon.alpha = if (isEnabled) 255 else 127
-            }
-
-            findItem(R.id.redo).apply {
-                isVisible = areButtonsVisible
-                isEnabled = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
-                icon.alpha = if (isEnabled) 255 else 127
-            }
-        }
-
-        updateMenuItemColors(menu)
-        return true
     }
 
     private fun refreshMenuItems() {
@@ -443,7 +421,6 @@ class MainActivity : SimpleActivity() {
 
             mNotes = notes
             mCurrentNote = mNotes[0]
-            refreshMenuItems()
             mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
             view_pager.apply {
                 adapter = mAdapter
@@ -460,6 +437,7 @@ class MainActivity : SimpleActivity() {
             if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
                 hideKeyboard()
             }
+            refreshMenuItems()
         }
     }
 
