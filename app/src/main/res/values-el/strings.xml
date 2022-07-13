@@ -24,9 +24,9 @@
     <string name="text_note">Σημείωση κειμένου</string>
     <string name="lock_note">Κλείδωμα Σημείωσης</string>
     <string name="unlock_note">Ξεκλείδωμα Σημείωσης</string>
-    <string name="note_content_locked">Το περιεχόμενο των Σημειώσεων είναι κλειδωμένο.</string>
+    <string name="note_content_locked">Το περιεχόμενο των σημειώσεων είναι κλειδωμένο.</string>
     <string name="show_content">Εμφάνιση περιεχομένου</string>
-    <string name="locking_warning">ΠΡΟΣΟΧΗ: Εάν ξεχάσετε τον κωδικό των σημειώσεων, δεν θα μπορείτε πλέον να τον ανακτήσετε ή να αποκτήσετε πρόσβαση στο περιεχόμενο τους.</string>
+    <string name="locking_warning">ΠΡΟΣΟΧΗ: Εάν ξεχάσετε τον κωδικό των σημειώσεων, δεν θα μπορείτε πλέον να τον ανακτήσετε ή να αποκτήσετε πρόσβαση στο περιεχόμενό τους.</string>
     <string name="new_text_note">Νέα σημείωση κειμένου</string>
     <string name="new_checklist">Νέα λίστα ελέγχου</string>
     <!-- File notes -->
@@ -38,7 +38,7 @@
     <string name="update_file_at_note">Ενημέρωση του ίδιου του αρχείου κατά την ενημέρωση της σημείωσης
 \n(η σημείωση διαγράφεται αν το αρχείο διαγραφεί ή αλλάξει η διαδρομή)</string>
     <string name="delete_file_itself">Διαγραφή επίσης του αρχείου \"%s\"</string>
-    <string name="note_saved_successfully">Η Σημείωση \"%s\" αποθηκεύτηκε με επιτυχία</string>
+    <string name="note_saved_successfully">Η σημείωση \"%s\" αποθηκεύτηκε με επιτυχία</string>
     <string name="note_exported_successfully">Η εξαγωγή \"%s\" ολοκληρώθηκε με επιτυχία</string>
     <string name="only_export_file_content">Εξαγωγή μόνο του περιεχομένου του τρέχοντος αρχείου
 \n(η αλλαγή της σημείωσης δεν θα επηρεάσει το αρχείο)</string>
@@ -75,7 +75,7 @@
     <string name="import_notes">Εισαγωγή σημειώσεων</string>
     <string name="import_notes_pro">Εισαγωγή σημειώσεων (Pro)</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Πώς μπορώ να αλλάξω το χρώμα των Γραφικών στοιχείων;</string>
+    <string name="faq_1_title">Πώς μπορώ να αλλάξω το χρώμα των γραφικών στοιχείων;</string>
     <string name="faq_1_text">Σε περίπτωση που έχετε μόνο 1 ενεργό Γραφικό στοιχείο, μπορείτε να το δημιουργήσετε εκ νέου ή να χρησιμοποιήσετε το κουμπί στις ρυθμίσεις της εφαρμογής για να το προσαρμόσετε. Αν έχετε πολλά ενεργά , το κουμπί στις ρυθμίσεις της εφαρμογής δεν θα είναι διαθέσιμο. Καθώς η εφαρμογή υποστηρίζει προσαρμογή χρώματος ανά Γραφικό στοιχείο, θα πρέπει να το δημιουργήσετε ξανά αυτό που θέλετε να προσαρμόσετε.</string>
     <!--
         Haven't found some strings? There's more at
