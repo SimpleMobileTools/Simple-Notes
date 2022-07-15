@@ -5,3 +5,20 @@
 Цей додаток не буде показувати рекламу, потрібні лише найнеобхідніші дозволи. Додаток має повністю відкритий програмний код, кольори оформлення можна легко налаштувати.
 
 Простий Нотатник є лише одним із ряду додатків від Simple Mobile Tools. Ви знайдете інші за адресою https://www.simplemobiletools.com
+
+Пам'ятайте: якщо ви видалите будь-який платний додаток протягом 2 годин, вам буде автоматично повернена сума покупки. Якщо ви захочете повернути гроші пізніше, сконтактуйте з нами за адресою hello@simplemobiletools.com і ви їх отримаєте. Таким чином ви можете легко спробувати додаток :)
+
+Check out the full suite of Simple Tools here:
+https://www.simplemobiletools.com
+
+Standalone website of Simple Notes Pro:
+https://www.simplemobiletools.com/notes
+
+Facebook:
+https://www.facebook.com/simplemobiletools
+
+Reddit:
+https://www.reddit.com/r/SimpleMobileTools
+
+Telegram:
+https://t.me/SimpleMobileTools

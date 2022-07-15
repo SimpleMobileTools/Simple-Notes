@@ -1,1 +1,1 @@
-A beautiful quick note taking app without ads or weird permissions.
+Jednostavno tekstno polje za brzo dodavanje bilješki, bez oglasa.

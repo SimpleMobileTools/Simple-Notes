@@ -12,7 +12,7 @@ Ku poznámkam sa viete dostať jednoducho pomocou prispôsobiteľného widgetu s
 
 Obsahuje prívetivé používateľské prostredie úplne bez reklám a nepotrebných oprávnení. Je open source, obsahuje meniteľné farby, pomocou ktorých si viete rýchlo prispôsobiť apku.
 
-<b>Jednoduché poznámky</b> sú najlepším organizérom a plánovačom bez reklám. Ak potrebujete vysoko kvalitný organizér pre rýchlu tvorbu poznámok s príjemným používateľským prostredím, stiahnite si túto apku teraz.
+Jednoduché poznámky sú najlepším organizérom a plánovačom bez reklám. Ak potrebujete vysoko kvalitný organizér pre rýchlu tvorbu poznámok s príjemným používateľským prostredím, stiahnite si túto apku teraz.
 
 Majte váš vlastný súkromný poznámkový blok vo vrecku na každodenné použitie, aby ste nezabudli na nič dôležité.
 
@@ -20,14 +20,17 @@ Táto apka je založená na Material dizajne a má prednastavenú tmavú tému, 
 
 Neobsahuje žiadne reklamy a nepotrebné oprávnenia. Je opensource, poskytuje možnosť zmeny farieb.
 
-<b>Pozrite si celú sadu aplikácií na:</b>
+Pozrite si celú sadu aplikácií na:
 https://www.simplemobiletools.com
 
-<b>Vlastná stránka Jednoduchých Poznámok Pro:</b>
+Vlastná stránka Jednoduchých Poznámok Pro:
 https://www.simplemobiletools.com/notes
 
-<b>Facebook:</b>
+Facebook:
 https://www.facebook.com/simplemobiletools
 
-<b>Reddit:</b>
+Reddit:
 https://www.reddit.com/r/SimpleMobileTools
+
+Telegram:
+https://t.me/SimpleMobileTools

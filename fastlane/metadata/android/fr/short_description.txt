@@ -1,1 +1,0 @@
-A beautiful quick note taking app without ads or weird permissions.

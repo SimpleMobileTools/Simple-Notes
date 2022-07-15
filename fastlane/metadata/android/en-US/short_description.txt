@@ -1,1 +1,0 @@
-To do list widget with a notebook organizer, checklist, simple shopping list

@@ -1,1 +1,1 @@
-A beautiful quick note taking app without ads or weird permissions.
+Простий текстовий редактор для додавання швидких нотаток, без реклами.

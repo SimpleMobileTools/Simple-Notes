@@ -1,5 +1,5 @@
 # Simple Notes
-<img alt="Logo" src="fastlane/metadata/android/en-US/images/icon.png" width="120" />
+<img alt="Logo" src="graphics/icon.png" width="120" />
 
 ★ Need to take a quick note of something to buy, an address, or a startup idea? Then look no further as this is the simple organizer tool you\'ve been looking for : Simple Notes: To-do list organizer and planner! No complicated setup steps needed, just tap the screen and type in what you came for and create notes, quick lists, checklist or backup for any idea. With your simple personal notebook you can remember anything fast! Shopping for groceries, memorizing your thoughts and easier setting up reminders taking notes has never been easier ★
 
@@ -35,7 +35,7 @@ https://www.reddit.com/r/SimpleMobileTools
 <a href='https://f-droid.org/packages/com.simplemobiletools.notes.pro'><img src='https://simplemobiletools.com/images/button-f-droid.png' alt='Get it on F-Droid' height=45 ></a>
 
 <div style="display:flex;">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" width="30%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" width="30%">
+<img alt="App image" src="fastlane/metadata/android/en-GB/images/phoneScreenshots/1_en-GB.jpeg" width="30%">
+<img alt="App image" src="fastlane/metadata/android/en-GB/images/phoneScreenshots/2_en-GB.jpeg" width="30%">
+<img alt="App image" src="fastlane/metadata/android/en-GB/images/phoneScreenshots/3_en-GB.jpeg" width="30%">
 </div>

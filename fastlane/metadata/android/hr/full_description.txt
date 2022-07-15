@@ -4,20 +4,23 @@ Sa svojom jednostavnom osobnom bilježnicom možete brzo zapamtiti sve! Kupnja n
 
 Upravljajte svojim rasporedom na brz i jednostavan način. Ovaj alat za podsjetnike bilježnice dolazi s automatskim spremanjem tako da nećete greškom odbaciti svoje promjene. Također podržava stvaranje više neovisnih bilješki i popisa u običnom tekstu vrlo brzo. Možete jednostavno pristupiti bilješci i organizirati svoj popis zadataka u tren oka pomoću prilagodljivog widgeta i widgeta za promjenu veličine, koji otvara aplikaciju na dodir. Jednostavan je za korisnika i ne sadrži apsolutno nikakve oglase ili nepotrebna dopuštenja - nema priloženih stringova.
 
-Potpuno je otvorenog koda, nudi prilagodljive boje koje se mogu prilagoditi brzim i brzim podešavanjem. <b> Jednostavne napomene: Organizator i planer popisa obaveza </b> najbolji je organizator stavki i planer popisa koji možete koristiti bez oglasa. Ako vam je potreban visokokvalitetan organizator za brze i dobre bilješke, pouzdan i korisniku prikladan podsjetnik koji je uistinu jednostavan za korištenje, preuzmite našu aplikaciju odmah :)
+Potpuno je otvorenog koda, nudi prilagodljive boje koje se mogu prilagoditi brzim i brzim podešavanjem. Jednostavne napomene: Organizator i planer popisa obaveza najbolji je organizator stavki i planer popisa koji možete koristiti bez oglasa. Ako vam je potreban visokokvalitetan organizator za brze i dobre bilješke, pouzdan i korisniku prikladan podsjetnik koji je uistinu jednostavan za korištenje, preuzmite našu aplikaciju odmah :)
 
 Svaki dan imajte svoju osobnu bilježnicu u džepu i rezervni planer kako biste mogli nećete morati brinuti da ćete zaboraviti važan sastanak ili popis za kupovinu :). Dolazi s materijalnim dizajnom i tamnom temom prema zadanim postavkama, pruža izvrsno korisničko iskustvo za jednostavnu upotrebu. 
 
 Nedostatak pristupa internetu daje vam više privatnosti, sigurnosti i stabilnosti od drugih aplikacija. Ne sadrži oglase niti nepotrebna dopuštenja. Potpuno je otvorenog koda, pruža prilagodljive boje. 
 
-<b> Ovdje pogledajte cijeli paket Jednostavni Alati: </b>
+Ovdje pogledajte cijeli paket Jednostavni Alati:
 https://www.simplemobiletools.com
 
-<b> Samostalna web stranica Jednostavne Bilješke Pro: </b>
+Samostalna web stranica Jednostavne Bilješke Pro:
 https://www.simplemobiletools.com/notes
 
-<b>Facebook:</b>
+Facebook:
 https://www.facebook.com/simplemobiletools
 
-<b>Reddit:</b>
+Reddit:
 https://www.reddit.com/r/SimpleMobileTools
+
+Telegram:
+https://t.me/SimpleMobileTools
