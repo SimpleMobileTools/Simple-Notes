@@ -2,12 +2,14 @@ Behöver du snabbt anteckna något att köpa, en adress eller en företagsidé? 
 
 Du kan komma åt anteckningen på nolltid genom att använda den anpassningsbara och justerbara widgeten, som öppnar appen när du trycker på den.
 
+Den levereras med Material Design och mörkt tema som standard, och ger en bra användarupplevelse för enkel användning. Avsaknaden av internetåtkomst ger dig mer integritet, säkerhet och stabilitet än andra appar.
+
 Innehåller ingen reklam eller onödiga behörigheter. Den har helt öppen källkod och anpassningsbara färger.
 
-Check out the full suite of Simple Tools here:
+Kolla in hela uppsättningen enkla verktyg här:
 https://www.simplemobiletools.com
 
-Standalone website of Simple Notes Pro:
+Fristående webbplats för Simple Notes Pro:
 https://www.simplemobiletools.com/notes
 
 Facebook:
