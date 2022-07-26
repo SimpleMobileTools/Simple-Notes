@@ -3,9 +3,9 @@
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notas</string>
     <string name="widget_config">Obrigado por usar Simple Notes.
-\nPara mais aplicações Simple, aceda a SimpleMobileTools.com.</string>
+\nPara mais aplicações Simple, visite SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Não pode partilhar texto vazio</string>
-    <string name="simple_note">Nota básica</string>
+    <string name="simple_note">Nota Simples</string>
     <string name="new_note">Adicionar uma nota</string>
     <string name="no_title">Queira dar um nome à sua nota</string>
     <string name="title_taken">Já existe uma nota com este título</string>
