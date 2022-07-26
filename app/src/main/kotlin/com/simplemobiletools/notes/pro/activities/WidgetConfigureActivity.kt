@@ -3,12 +3,12 @@ package com.simplemobiletools.notes.pro.activities
 import android.app.Activity
 import android.appwidget.AppWidgetManager
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.TypedValue
-import android.view.Menu
 import android.widget.RemoteViews
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -74,11 +74,6 @@ class WidgetConfigureActivity : SimpleActivity() {
         super.onResume()
         text_note_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
         setupToolbar(config_toolbar)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        updateMenuItemColors(menu)
-        return super.onCreateOptionsMenu(menu)
     }
 
     private fun initVariables() {
@@ -236,6 +231,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         checklist_note_view.setBackgroundColor(mBgColor)
         text_note_view_title.setBackgroundColor(mBgColor)
         config_bg_color.setFillWithStroke(mBgColor, mBgColor)
+        config_save.backgroundTintList = ColorStateList.valueOf(getProperPrimaryColor())
     }
 
     private fun updateTextColor() {
@@ -243,6 +239,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         text_note_view_title.setTextColor(mTextColor)
         (checklist_note_view.adapter as? ChecklistAdapter)?.updateTextColor(mTextColor)
         config_text_color.setFillWithStroke(mTextColor, mTextColor)
+        config_save.setTextColor(getProperPrimaryColor().getContrastColor())
     }
 
     private fun pickBackgroundColor() {
