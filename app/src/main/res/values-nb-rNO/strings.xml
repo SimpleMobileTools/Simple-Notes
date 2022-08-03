@@ -11,7 +11,7 @@
     <string name="title_taken">Et notat med det navnet finnes allerede</string>
     <string name="open_note">Åpne notat</string>
     <string name="delete_note">Slett notat</string>
-    <string name="delete_note_prompt_message">Slett «%s»-notatet\?</string>
+    <string name="delete_note_prompt_message">Er du sikker på at du vil slette notatet \"%s\"\?</string>
     <string name="pick_a_note">Velg et notat</string>
     <string name="rename_note">Gi notatet nytt navn</string>
     <string name="general_note">Generelt notat</string>
@@ -27,23 +27,23 @@
     <string name="note_content_locked">Notatinnholdet er låst.</string>
     <string name="show_content">Vis innhold</string>
     <string name="locking_warning">Advarsel: Hvis du glemmer notatpassordet vil du ikke kunne gjenopprette det eller innholdet.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Ny tekstnotat</string>
+    <string name="new_checklist">Ny sjekkliste</string>
     <!-- File notes -->
     <string name="open_file">Åpne fil</string>
     <string name="export_as_file">Eksporter som fil</string>
     <string name="file_too_large">Filen er er større enn grensen på 1 MB</string>
     <string name="only_import_file_content">Kun importer filinnholdet
 \n(endringen av filen vil ikke ha innvirkning på notatet)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note
-\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%s\"</string>
-    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
+    <string name="update_file_at_note">Oppdatere selve filen ved oppdatering av notatet
+\n(notatet slettes hvis filen slettes, eller banen endres)</string>
+    <string name="delete_file_itself">Slett også fil \"%s\"</string>
+    <string name="note_saved_successfully">Notatet \"%s\" er lagret</string>
     <string name="note_exported_successfully">Eksporterte «%s»-notatet</string>
-    <string name="only_export_file_content">Only export the current file content
-\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Eksporter bare gjeldende filinnhold
+\n(hvis du endrer notatet, påvirkes ikke filen)</string>
     <!-- Settings -->
-    <string name="display_success_message">Display save success messages</string>
+    <string name="display_success_message">Vis meldinger om vellykket lagring</string>
     <string name="links_and_emails_clickable">Gjør lenker og e-poster klikkbare</string>
     <string name="place_cursor_end">Plasser pekeren på slutten av notatet</string>
     <string name="monospaced_font">Bruk fastbreddeskrift</string>
@@ -58,7 +58,7 @@
     <string name="show_note_picker">Vis en notatvelger ved programstart</string>
     <string name="autosave_notes">Lagre notater automatisk</string>
     <string name="enable_line_wrap">Skru på linjebryting</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="use_incognito_mode">Bruke inkognitomodus på tastaturer</string>
     <string name="move_done_checklist_items">Flytt utførte sjekklisteelementer til bunnen</string>
     <string name="add_new_checklist_items_top">Legg til nye sjekklisteelementer på toppen</string>
     <!-- Checklists -->
@@ -71,12 +71,12 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Eksporter alle notater som filer</string>
     <string name="import_folder">Importer mappe</string>
-    <string name="export_notes">Export all notes</string>
-    <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="export_notes">Eksportere alle notater</string>
+    <string name="import_notes">Importere notater</string>
+    <string name="import_notes_pro">Importere notater (Pro)</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Hvordan endrer jeg miniprogramsfargen\?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_title">Hvordan endrer jeg widgetfargen\?</string>
+    <string name="faq_1_text">Hvis du bare har ett aktivt kontrollprogram, kan du enten opprette det på nytt eller bruke knappen i appinnstillingene for å tilpasse den. Hvis du har flere aktive kontrollprogrammer, vil ikke knappen i appinnstillingene være tilgjengelig. Siden appen støtter fargetilpasning per kontrollprogram, må du opprette kontrollprogrammet du vil tilpasse, på nytt.</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
