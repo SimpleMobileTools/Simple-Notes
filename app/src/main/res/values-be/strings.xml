@@ -37,7 +37,7 @@
 \n(changing the file will not affect the note)</string>
     <string name="update_file_at_note">Update the file itself at updating the note
 \n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%s\"</string>
+    <string name="delete_file_itself">Таксама выдаліць файл \"%s\"</string>
     <string name="note_saved_successfully">Нататка \"%s\" паспяхова захавана</string>
     <string name="note_exported_successfully">Нататка \"%s\" паспяхова экспартавана</string>
     <string name="only_export_file_content">Only export the current file content
@@ -55,10 +55,10 @@
     <string name="center">Па цэнтру</string>
     <string name="right">Па правым баку</string>
     <string name="widget_note">Note used in widget</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
+    <string name="show_note_picker">Паказваць спіс нататак пры запуску</string>
     <string name="autosave_notes">Аўтаматычна захоўваць нататкі</string>
     <string name="enable_line_wrap">Пераносіць радкі</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
+    <string name="use_incognito_mode">Выкарыстоўваць рэжым інкогніта для клавіятуры</string>
     <string name="move_done_checklist_items">Перамяшчаць выкананыя пункты ў канец кантрольнага спіса</string>
     <string name="add_new_checklist_items_top">Дадаваць новыя пункты ў пачатак кантрольнага спіса</string>
     <!-- Checklists -->
@@ -70,10 +70,10 @@
     <string name="remove_done_items">Выдаліць выкананыя пункты</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_folder">Import folder</string>
-    <string name="export_notes">Export all notes</string>
-    <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="import_folder">Імпартаваць папку</string>
+    <string name="export_notes">Экспартаваць усе нататкі</string>
+    <string name="import_notes">Імпартаваць нататкі</string>
+    <string name="import_notes_pro">Імпартаваць нататкі (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Як змяніць колер віджэта\?</string>
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
