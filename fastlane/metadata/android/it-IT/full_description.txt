@@ -12,6 +12,10 @@ Puoi accedere facilmente ai tuoi elenchi e organizzare il blocco note della tua 
 
 Note semplici: organizzatore e pianificatore di elenchi di cose da fare è il miglior organizzatore di oggetti e app per prendere appunti che puoi utilizzare senza pubblicità. Se hai bisogno di un organizer di alta qualità per un blocco note veloce, affidabile e di buona qualità, un semplice promemoria della lista della spesa che è veramente facile da usare. Scarica subito le nostre app per prendere appunti :) Tieni le tue app per appunti personali in tasca ogni giorno e disponi di un pianificatore di backup in modo da non doverti preoccupare di dimenticare una riunione importante o la tua lista della spesa :)
 
+È dotato di Material Design e tema scuro, per un'ottima esperienza utente dal facile utilizzo. L'assenza di accesso a Internet offre maggiore privacy, sicurezza e stabilità rispetto ad altre applicazioni.
+
+Non contiene pubblicità o autorizzazioni non necessarie. Il codice sorgente è completamente aperto, offre colori personalizzabili.
+
 Dai un'occhiata alla suite completa di Simple Tools qui:
 https://www.simplemobiletools.com
 

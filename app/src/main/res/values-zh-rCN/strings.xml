@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">简易笔记</string>
+    <string name="app_name">简单笔记</string>
     <string name="app_launcher_name">笔记</string>
-    <string name="widget_config">谢谢使用简易笔记.
-\n想要获取更多的简易应用程序，您可以访问这个 SimpleMobileTools.com 。</string>
+    <string name="widget_config">谢谢使用简单笔记.
+\n想要获取更多的简单应用程序，您可以访问这个 SimpleMobileTools.com 。</string>
     <string name="cannot_share_empty_text">没有内容不能分享</string>
-    <string name="simple_note">简易笔记</string>
+    <string name="simple_note">简单笔记</string>
     <string name="new_note">添加一个新的笔记</string>
     <string name="no_title">请提供笔记名字</string>
     <string name="title_taken">笔记的标题已经存在</string>

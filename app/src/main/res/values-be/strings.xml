@@ -2,22 +2,22 @@
 <resources>
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Нататкі</string>
-    <string name="widget_config">Thank you for using Simple Notes.
-\nFor more simple apps please visit SimpleMobileTools.com.</string>
+    <string name="widget_config">Дзякуй за выкарыстанне Simple Notes. 
+\nДля атрымання больш простых праграм наведайце SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Немагчыма абагуліць пусты тэкст</string>
     <string name="simple_note">Простая нататка</string>
     <string name="new_note">Дадаць новую нататку</string>
-    <string name="no_title">Please name your note</string>
+    <string name="no_title">Назавіце нататку</string>
     <string name="title_taken">Нататка з такой назвай ужо існуе</string>
     <string name="open_note">Адкрыць нататку</string>
     <string name="delete_note">Выдаліць нататку</string>
     <string name="delete_note_prompt_message">Выдаліць нататку \"%s\"\?</string>
-    <string name="pick_a_note">Pick a note</string>
+    <string name="pick_a_note">Выберыце запіску</string>
     <string name="rename_note">Перайменаваць нататку</string>
     <string name="general_note">Звычайная нататка</string>
     <string name="create_new_note">Стварыць новую нататку</string>
     <string name="add_to_note">Дадаць да нататкі</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them\?</string>
+    <string name="unsaved_changes_warning">У вас ёсць некаторыя незахаваныя змены. Што вы хочаце з імі зрабіць\?</string>
     <string name="note_shown_widget">Нататка, якая адлюстроўваецца ў віджэце:</string>
     <string name="show_note_title">Паказваць назву нататкі</string>
     <string name="new_note_type">Тып новай нататкі:</string>
@@ -31,19 +31,19 @@
     <string name="new_checklist">Новы кантрольны спіс</string>
     <!-- File notes -->
     <string name="open_file">Адкрыць файл</string>
-    <string name="export_as_file">Export as file</string>
-    <string name="file_too_large">File too large, the limit is 1MB</string>
-    <string name="only_import_file_content">Only import the file content
-\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note
-\n(note gets deleted if file gets deleted, or path changes)</string>
+    <string name="export_as_file">Экспарт у файл</string>
+    <string name="file_too_large">Файл занадта вялікі, абмежаванне складае 1 МБ</string>
+    <string name="only_import_file_content">Імпартуйце толькі змесціва файла 
+\n(змена файла не паўплывае на нататку)</string>
+    <string name="update_file_at_note">Абнавіць сам файл пры абнаўленні нататкі 
+\n(нататка выдаляецца, калі файл выдаляецца або змяняецца шлях)</string>
     <string name="delete_file_itself">Таксама выдаліць файл \"%s\"</string>
     <string name="note_saved_successfully">Нататка \"%s\" паспяхова захавана</string>
     <string name="note_exported_successfully">Нататка \"%s\" паспяхова экспартавана</string>
-    <string name="only_export_file_content">Only export the current file content
-\n(changing the note will not affect the file)</string>
+    <string name="only_export_file_content">Экспартаваць толькі бягучае змесціва файла 
+\n(змена нататкі не паўплывае на файл)</string>
     <!-- Settings -->
-    <string name="display_success_message">Display save success messages</string>
+    <string name="display_success_message">Паказаць паведамленні аб паспяховым захаванні</string>
     <string name="links_and_emails_clickable">Рабіць спасылкі і адрасы электроннай пошты націскальнымі</string>
     <string name="place_cursor_end">Змяшчаць курсор у канец нататкі</string>
     <string name="monospaced_font">Выкарыстоўваць монашырынны шрыфт</string>
@@ -54,7 +54,7 @@
     <string name="left">Па левым баку</string>
     <string name="center">Па цэнтру</string>
     <string name="right">Па правым баку</string>
-    <string name="widget_note">Note used in widget</string>
+    <string name="widget_note">Заўвага выкарыстоўваецца ў віджэце</string>
     <string name="show_note_picker">Паказваць спіс нататак пры запуску</string>
     <string name="autosave_notes">Аўтаматычна захоўваць нататкі</string>
     <string name="enable_line_wrap">Пераносіць радкі</string>
@@ -69,14 +69,14 @@
     <string name="checklist_is_empty">Кантрольны спіс пусты</string>
     <string name="remove_done_items">Выдаліць выкананыя пункты</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
+    <string name="export_all_notes">Экспартаваць усе нататкі ў выглядзе файлаў</string>
     <string name="import_folder">Імпартаваць папку</string>
     <string name="export_notes">Экспартаваць усе нататкі</string>
     <string name="import_notes">Імпартаваць нататкі</string>
     <string name="import_notes_pro">Імпартаваць нататкі (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Як змяніць колер віджэта\?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_text">Калі ў вас ёсць толькі 1 Актыўны віджэт, вы можаце альбо ўзнавіць яго зноўку, альбо выкарыстоўваць кнопку ў наладах прыкладання для яго Налады. Калі ў вас некалькі актыўных віджэтаў, кнопка ў наладах прыкладання будзе недаступная. Паколькі прыкладанне падтрымлівае наладу колеру для кожнага фішкі, вам прыйдзецца ўзнавіць віджэт, які вы хочаце наладзіць.</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
