@@ -12,6 +12,10 @@ Es ist benutzerfreundlich und enthält absolut keine Anzeigen oder unnötigen Be
 
 Einfache Notizen: Organisator und Planer von Aufgabenlisten ist der beste Organizer für Elemente und Notizen, den Sie ohne Werbung verwenden können. Wenn Sie einen hochwertigen Organizer für einen schnellen, zuverlässigen und guten Notizblock benötigen, eine einfache Erinnerung an eine Einkaufsliste, die wirklich einfach zu bedienen ist. Laden Sie jetzt unsere Notizen-Apps herunter :) Haben Sie jeden Tag Ihre persönlichen Memo-Apps in der Tasche und einen Backup-Planer, damit Sie sich keine Sorgen machen müssen, ein wichtiges Meeting oder Ihre Einkaufsliste zu vergessen :)
 
+Es kommt mit Material-Design und einem dunklen Thema standardmäßig, bietet eine großartige Benutzererfahrung für die einfache Verwendung. Der fehlende Internetzugang bietet Ihnen mehr Privatsphäre, Sicherheit und Stabilität als andere Apps.
+
+Enthält keine Anzeigen oder unnötige Berechtigungen. Es ist vollständig Open-Source und bietet anpassbare Farben.
+
 Sehen Sie sich hier die vollständige Suite der einfachen Tools an:
 https://www.simplemobiletools.com
 
