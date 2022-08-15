@@ -1,13 +1,25 @@
-Gyorsan le kell jegyezned valami tennivalót, egy címet, vagy egy ötletet egy új startup-ra? Akkor ez a Neked való alkalmazás! Semmi bonyonyolult beállítást nem igényel, csak írd le, ami eszedbe jut. Automatikusan ment, hogy biztosan ne felejtsd el a leírtakat elmenteni. Több, egymástól független jegyzetet is kezelhetsz. 
+★ Szüksége van egy gyors jegyzetre, hogy bevásárlólistát, emlékeztetőt készítsen egy címre vagy egy induló ötletre? Akkor ne keressen tovább, hiszen ez az az egyszerű szervezőeszköz, amit keresett: Egyszerű jegyzetek: To-do lista szervező és tervező! A legjobb jegyzetelő alkalmazások és öntapadós jegyzetek ingyenesek androidos mobiltelefonokra. Nincs szükség bonyolult beállítási lépésekre, csak koppints a képernyőre, és írd be, amiért jöttél, és készíts jegyzeteket, gyorslistákat, ellenőrzőlistát vagy biztonsági mentést bármilyen ötlethez. Az egyszerű személyes jegyzetfüzeteddel bármit gyorsan megjegyezhetsz! Bevásárlólista a bevásárláshoz, teendőlista a napi napirendhez, és egyszerűbb jegyzetelés, hogy a megbeszélések beállítása sétagalopp legyen ★ 
 
-Láthatod és gyorsan elérheted a jegyzetedet egy személyre szabható és átméretezhető widget-tel, ami megnyomásra megnyitja az alkalmazást.
+Az Egyszerű jegyzetek tervezője egy gyors, egyszerűen használható szervező és figyelemre méltó jegyzetelő színes kütyü, és felbecsülhetetlen értékű eszközként fog szolgálni, amely segít emlékezni a szükséges információkra vagy a bevásárlóközpontban a bevásárlólistára!
 
-Nem mutat reklámokat, és nem igényel hozzáféréseket. Teljesen nyílt forráskódú, és sötét téma is beállítható.
+Emlékeztető napirend tervező eszközünk lehetővé teszi, hogy nyomon kövesse a feladatokat, és napi ragadós ötleteket és bevásárlólistákat hozzon létre a tételekhez vagy ötletekhez, példátlan egyszerűséggel, jegyzetelhetőséggel és páratlan időtakarékossági értékkel. Kezelje napirendjét megfelelő és jó jegyzetekkel - használja jegyzetelő alkalmazásaink egyikét - Simple Notes vagy Simple Notes Pro :)
 
-Check out the full suite of Simple Tools here:
+Simple Notes Pro: To-do lista szervező és tervező jegyzetelő emlékeztető eszköz jön egy automatikus mentés, így nem fogja eldobni a módosításokat véletlenül. Azt is támogatja, hogy több független sima szöveges jegyzeteket és listákat hozzon létre nagyon gyorsan.
+
+Könnyen hozzáférhet a listákhoz és a to-do lista jegyzetfüzetének megszervezéséhez pillanatok alatt a testreszabható és átméretezhető widget segítségével, amely megnyitja a jó jegyzetszervező alkalmazásokat csapolásra.
+
+Felhasználóbarát, és egyáltalán nem tartalmaz hirdetéseket vagy felesleges engedélyeket - nincs kötöttség. Ez egy teljesen nyílt forráskódú jó jegyzetek widget, és testreszabható színeket biztosít, amelyek gyors és gyors finomhangolással állíthatók be.
+
+Egyszerű jegyzetek: To-do list szervező és tervező a legjobb tételszervező és jegyzetelő alkalmazások, amelyeket hirdetések nélkül használhat. Ha szüksége van egy kiváló minőségű szervező gyors, megbízható és jó jegyzetfüzetre, egyszerű bevásárlólista emlékeztetőre, amely valóban könnyen használható. Töltse le jegyzetelő alkalmazásainkat most azonnal :) Legyen minden nap a zsebedben a saját személyes jegyzetelő alkalmazásod, és legyen egy tartalék terved, hogy ne kelljen aggódnod, hogy elfelejtesz egy fontos megbeszélést vagy a bevásárlólistádat :)
+
+Alapértelmezés szerint anyagi dizájnnal és sötét témával rendelkezik, így nagyszerű felhasználói élményt nyújt a könnyű használathoz. Az internet-hozzáférés hiánya nagyobb magánéletet, biztonságot és stabilitást biztosít, mint más alkalmazások.
+
+Nem tartalmaz hirdetéseket vagy felesleges engedélyeket. Teljesen nyílt forráskódú és testreszabható színeket biztosít.
+
+Tekintse meg a Simple Tools teljes csomagját itt:
 https://www.simplemobiletools.com
 
-Standalone website of Simple Notes Pro:
+A Simple Notes Pro önálló weboldala:
 https://www.simplemobiletools.com/notes
 
 Facebook:
