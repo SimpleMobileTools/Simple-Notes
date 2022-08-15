@@ -12,6 +12,10 @@ Ini ramah pengguna dan sama sekali tidak mengandung iklan atau izin yang tidak p
 
 Catatan Sederhana: Agenda dan agenda daftar tugas adalah pengelola item dan aplikasi pencatatan terbaik yang dapat Anda gunakan tanpa iklan. Jika Anda membutuhkan organizer berkualitas tinggi untuk notepad cepat, andal & bagus, pengingat daftar belanjaan sederhana yang benar-benar mudah digunakan. Unduh aplikasi pencatatan kami sekarang juga :) Miliki aplikasi memo pribadi Anda sendiri di saku Anda setiap hari dan miliki perencana cadangan sehingga Anda tidak perlu khawatir melupakan pertemuan penting atau daftar belanja Anda :)
 
+It comes with material design and a dark theme by default, providing a great user experience for easy usage. The lack of internet access gives you more privacy, security, and stability than other apps.
+
+Contains no ads or unnecessary permissions. It is fully open-source and provides customizable colors.
+
 Lihat rangkaian lengkap Alat Sederhana di sini:
 https://www.simplemobiletools.com
 
