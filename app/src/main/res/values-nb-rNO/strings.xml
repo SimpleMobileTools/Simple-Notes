@@ -26,7 +26,7 @@
     <string name="unlock_note">Lås opp notat</string>
     <string name="note_content_locked">Notatinnholdet er låst.</string>
     <string name="show_content">Vis innhold</string>
-    <string name="locking_warning">Advarsel: Hvis du glemmer notatpassordet vil du ikke kunne gjenopprette det eller innholdet.</string>
+    <string name="locking_warning">ADVARSEL: Hvis du glemmer passordet til notatene, kan du ikke gjenopprette det eller få tilgang til notatenes innhold lenger.</string>
     <string name="new_text_note">Ny tekstnotat</string>
     <string name="new_checklist">Ny sjekkliste</string>
     <!-- File notes -->
@@ -39,7 +39,7 @@
 \n(notatet slettes hvis filen slettes, eller banen endres)</string>
     <string name="delete_file_itself">Slett også fil \"%s\"</string>
     <string name="note_saved_successfully">Notatet \"%s\" er lagret</string>
-    <string name="note_exported_successfully">Eksporterte «%s»-notatet</string>
+    <string name="note_exported_successfully">Notat «%s»-eksporteres</string>
     <string name="only_export_file_content">Eksporter bare gjeldende filinnhold
 \n(hvis du endrer notatet, påvirkes ikke filen)</string>
     <!-- Settings -->

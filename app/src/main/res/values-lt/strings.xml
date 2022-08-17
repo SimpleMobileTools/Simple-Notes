@@ -24,9 +24,9 @@
     <string name="text_note">Tekstinis užrašas</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="note_content_locked">Pastabų turinys yra užrakintas.</string>
     <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="locking_warning">ĮSPĖJIMAS: jei pamiršite užrašų slaptažodį, nebegalėsite jo atkurti ar pasiekti užrašų turinio.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
     <!-- File notes -->
@@ -39,7 +39,7 @@
 \n(Įrašas ištrinamas, jei ištrinamas failas ar pakeičiama įrašymo vieta)</string>
     <string name="delete_file_itself">Taip pat ištrinti failą \"%s\"</string>
     <string name="note_saved_successfully">Įrašas \"%s\" sėkmingai išsaugotas</string>
-    <string name="note_exported_successfully">"Sėkmingai sukurta įrašo \"%s kopija "</string>
+    <string name="note_exported_successfully">Pastaba \"%s sėkmingai eksportuota</string>
     <string name="only_export_file_content">Only export the current file content
 \n(changing the note will not affect the file)</string>
     <!-- Settings -->
@@ -75,7 +75,7 @@
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Import notes (Pro)</string>
     <!-- FAQ -->
-    <string name="faq_1_title">How can I change the widgets color\?</string>
+    <string name="faq_1_title">Kaip pakeisti valdiklių spalvą\?</string>
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
     <!--
         Haven't found some strings? There's more at

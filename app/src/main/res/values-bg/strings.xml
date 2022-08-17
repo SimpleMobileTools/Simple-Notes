@@ -7,76 +7,76 @@
     <string name="cannot_share_empty_text">Не може да се споделя празен текст</string>
     <string name="simple_note">Обикновени Бележки</string>
     <string name="new_note">Добави нова бележка</string>
-    <string name="no_title">Please name your note</string>
-    <string name="title_taken">A note with that title already exists</string>
-    <string name="open_note">Open note</string>
-    <string name="delete_note">Delete note</string>
-    <string name="delete_note_prompt_message">Are you sure you want to delete note \"%s\"\?</string>
-    <string name="pick_a_note">Pick a note</string>
-    <string name="rename_note">Rename note</string>
-    <string name="general_note">General note</string>
-    <string name="create_new_note">Create a new note</string>
-    <string name="add_to_note">Add to note</string>
-    <string name="unsaved_changes_warning">You have some unsaved changes. What do you want to do with them\?</string>
+    <string name="no_title">Моля, наречете бележката си</string>
+    <string name="title_taken">Бележка с това заглавие вече съществува</string>
+    <string name="open_note">Отворена бележка</string>
+    <string name="delete_note">Изтриване на бележка</string>
+    <string name="delete_note_prompt_message">Сигурни ли сте, че искате да изтриете бележка \"%s\"\?</string>
+    <string name="pick_a_note">Избери бележка</string>
+    <string name="rename_note">Преименуване на бележка</string>
+    <string name="general_note">Обща бележка</string>
+    <string name="create_new_note">Създаване на нова бележка</string>
+    <string name="add_to_note">Добавяне на бележка</string>
+    <string name="unsaved_changes_warning">Имате някои незаписани промени. Какво искате да направите с тях\?</string>
     <string name="note_shown_widget">Бележка, показана в приспособлението:</string>
-    <string name="show_note_title">Show note title</string>
-    <string name="new_note_type">New note type:</string>
-    <string name="text_note">Text note</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="show_note_title">Покажете заглавието на бележката</string>
+    <string name="new_note_type">Нов тип бележка:</string>
+    <string name="text_note">Текстова бележка</string>
+    <string name="lock_note">Бележка за заключване</string>
+    <string name="unlock_note">Бележка за отключване</string>
+    <string name="note_content_locked">Съдържанието на бележките е заключено.</string>
+    <string name="show_content">Покажи съдържанието</string>
+    <string name="locking_warning">ПРЕДУПРЕЖДЕНИЕ: Ако забравите паролата на бележките, вече няма да можете да я възстановите или да получите достъп до съдържанието на бележките.</string>
+    <string name="new_text_note">Нова текстова бележка</string>
+    <string name="new_checklist">Нов контролен списък</string>
     <!-- File notes -->
     <string name="open_file">Отвори файл</string>
-    <string name="export_as_file">Export as file</string>
-    <string name="file_too_large">File too large, the limit is 1MB</string>
-    <string name="only_import_file_content">Only import the file content
-\n(changing the file will not affect the note)</string>
-    <string name="update_file_at_note">Update the file itself at updating the note
-\n(note gets deleted if file gets deleted, or path changes)</string>
-    <string name="delete_file_itself">Also delete file \"%s\"</string>
-    <string name="note_saved_successfully">Note \"%s\" saved successfully</string>
-    <string name="note_exported_successfully">Note \"%s\" exported successfully</string>
-    <string name="only_export_file_content">Only export the current file content
-\n(changing the note will not affect the file)</string>
+    <string name="export_as_file">Експортиране като файл</string>
+    <string name="file_too_large">Файлът е твърде голям, ограничението е 1MB</string>
+    <string name="only_import_file_content">Импортиране само на съдържанието на файла
+\n(промяната на файла няма да се отрази на бележката</string>
+    <string name="update_file_at_note">Актуализиране на самия файл при актуализиране на бележката
+\n(бележката се изтрива, ако файлът се изтрие или пътят се промени)</string>
+    <string name="delete_file_itself">Също така изтрийте файла \"%s\"</string>
+    <string name="note_saved_successfully">Забележка: \"%s\" записани успешно</string>
+    <string name="note_exported_successfully">Забележка: \"%s\" експортира успешно</string>
+    <string name="only_export_file_content">Експортирайте само текущото съдържание на файла
+\n(промяната на бележката няма да се отрази на файла)</string>
     <!-- Settings -->
-    <string name="display_success_message">Display save success messages</string>
-    <string name="links_and_emails_clickable">Make links and emails clickable</string>
-    <string name="place_cursor_end">Place cursor to the end of note</string>
-    <string name="monospaced_font">Use monospaced font</string>
-    <string name="show_keyboard">Show keyboard on startup</string>
-    <string name="show_word_count">Show word count</string>
-    <string name="show_character_count">Show character count</string>
-    <string name="alignment">Alignment</string>
-    <string name="left">Left</string>
-    <string name="center">Center</string>
-    <string name="right">Right</string>
+    <string name="display_success_message">Показване на съобщения за успешно записване</string>
+    <string name="links_and_emails_clickable">Направете връзките и имейлите кликаеми</string>
+    <string name="place_cursor_end">Поставете курсора до края на бележката</string>
+    <string name="monospaced_font">Използване на монопространствен шрифт</string>
+    <string name="show_keyboard">Показване на клавиатурата при стартиране</string>
+    <string name="show_word_count">Показване на броя думи</string>
+    <string name="show_character_count">Покажете броя на символите</string>
+    <string name="alignment">Подравняване</string>
+    <string name="left">Ляво</string>
+    <string name="center">Център</string>
+    <string name="right">Дясно</string>
     <string name="widget_note">Бележка използвана в приспособлението</string>
-    <string name="show_note_picker">Show a note picker on startup</string>
-    <string name="autosave_notes">Autosave notes</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
-    <string name="use_incognito_mode">Use Incognito mode of keyboards</string>
-    <string name="move_done_checklist_items">Move done checklist items to the bottom</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="show_note_picker">Показване на избирач на бележки при стартиране</string>
+    <string name="autosave_notes">Автоматично запазване на бележки</string>
+    <string name="enable_line_wrap">Разрешаване на обтичане на линии</string>
+    <string name="use_incognito_mode">Използване на режим \"Инкогнито\" на клавиатурите</string>
+    <string name="move_done_checklist_items">Преместване на готовите елементи от контролния списък в долната част</string>
+    <string name="add_new_checklist_items_top">Добавяне на нови елементи от контролния списък в горната част</string>
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="checklists">Checklists</string>
-    <string name="add_new_checklist_item">Add a new checklist item</string>
-    <string name="add_new_checklist_items">Add new checklist items</string>
-    <string name="checklist_is_empty">The checklist is empty</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="checklist">Контролен списък</string>
+    <string name="checklists">Контролни списъци</string>
+    <string name="add_new_checklist_item">Добавяне на нов елемент от контролния списък</string>
+    <string name="add_new_checklist_items">Добавяне на нови елементи към контролен списък</string>
+    <string name="checklist_is_empty">Контролният списък е празен</string>
+    <string name="remove_done_items">Премахване на готови елементи</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Export all notes as files</string>
-    <string name="import_folder">Import folder</string>
-    <string name="export_notes">Export all notes</string>
-    <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="export_all_notes">Експортиране на всички бележки като файлове</string>
+    <string name="import_folder">Папка за импортиране</string>
+    <string name="export_notes">Експортиране на всички бележки</string>
+    <string name="import_notes">Бележки за внос</string>
+    <string name="import_notes_pro">Бележки за внос (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Как мога да променя цвета на приспособлението\?</string>
-    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+    <string name="faq_1_text">В случай че имате само 1 активна джаджа, можете да я създадете отново или да използвате бутона в настройките на приложението за персонализирането ѝ. Ако имате няколко активни уиджета, бутонът в настройките на приложението няма да бъде достъпен. Тъй като приложението поддържа персонализиране на цвета за всяка джаджа, ще трябва да пресъздадете джаджата, която искате да персонализирате.</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res

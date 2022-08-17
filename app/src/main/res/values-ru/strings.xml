@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Простые заметки</string>
+    <string name="app_name">Заметки</string>
     <string name="app_launcher_name">Заметки</string>
     <string name="widget_config">Благодарим вас за использование Simple Notes.
 \nБольше простых приложений вы можете найти на SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Нельзя поделиться пустым текстом</string>
     <string name="simple_note">Простая заметка</string>
     <string name="new_note">Добавить новую заметку</string>
-    <string name="no_title">Пожалуйста, назовите свою заметку</string>
+    <string name="no_title">Пожалуйста, назовите заметку</string>
     <string name="title_taken">Заметка с таким названием уже существует</string>
     <string name="open_note">Открыть заметку</string>
     <string name="delete_note">Удалить заметку</string>
-    <string name="delete_note_prompt_message">Вы уверены, что хотите удалить заметку \"%s\"\?</string>
+    <string name="delete_note_prompt_message">Удалить заметку \"%s\"\?</string>
     <string name="pick_a_note">Выберите заметку</string>
     <string name="rename_note">Переименовать заметку</string>
     <string name="general_note">Общая заметка</string>
-    <string name="create_new_note">Создайте новую заметку</string>
+    <string name="create_new_note">Новая заметка</string>
     <string name="add_to_note">Добавить к заметке</string>
     <string name="unsaved_changes_warning">Есть несохранённые изменения. Что вы хотите с ними сделать\?</string>
     <string name="note_shown_widget">Заметка, показываемая в виджете:</string>
@@ -28,7 +28,7 @@
     <string name="show_content">Показывать содержание</string>
     <string name="locking_warning">ПРЕДУПРЕЖДЕНИЕ: если вы забудете пароль, то не сможете восстановить его или получить доступ к содержимому заметок.</string>
     <string name="new_text_note">Новая заметка</string>
-    <string name="new_checklist">Новый контрольный список</string>
+    <string name="new_checklist">Новый список</string>
     <!-- File notes -->
     <string name="open_file">Открыть файл</string>
     <string name="export_as_file">Экспортировать в файл</string>
@@ -38,13 +38,13 @@
     <string name="update_file_at_note">Обновлять содержимое файла при обновлении заметки
 \n(заметка удалится, если удалить файл или изменить путь к нему)</string>
     <string name="delete_file_itself">Также удалить файл \"%s\"</string>
-    <string name="note_saved_successfully">Заметка \"%s\" успешно сохранена</string>
-    <string name="note_exported_successfully">Заметка \"%s\" успешно экспортирована</string>
+    <string name="note_saved_successfully">Заметка \"%s\" сохранена</string>
+    <string name="note_exported_successfully">Заметка \"%s\" экспортирована</string>
     <string name="only_export_file_content">Экспортировать только текущее содержимое файла
 \n(изменение заметки не затронет файл)</string>
     <!-- Settings -->
     <string name="display_success_message">Уведомлять об успешном сохранении файла</string>
-    <string name="links_and_emails_clickable">Сделайте ссылки и электронные письма кликабельными</string>
+    <string name="links_and_emails_clickable">Активные ссылки и адреса электронной почты</string>
     <string name="place_cursor_end">Помещать курсор в конец заметки</string>
     <string name="monospaced_font">Использовать моноширинный шрифт</string>
     <string name="show_keyboard">Показывать клавиатуру при запуске</string>
@@ -52,9 +52,9 @@
     <string name="show_character_count">Показывать количество символов</string>
     <string name="alignment">Выравнивание</string>
     <string name="left">По левому краю</string>
-    <string name="center">Центр</string>
+    <string name="center">По центру</string>
     <string name="right">По правому краю</string>
-    <string name="widget_note">Примечание, используемое в виджете</string>
+    <string name="widget_note">Заметка, отображаемая в виджете</string>
     <string name="show_note_picker">Показывать список заметок при запуске</string>
     <string name="autosave_notes">Автосохранение заметок</string>
     <string name="enable_line_wrap">Переносить строки</string>
@@ -62,17 +62,17 @@
     <string name="move_done_checklist_items">Перемещать выполненные позиции в конец списка</string>
     <string name="add_new_checklist_items_top">Добавлять новые позиции в начало списка</string>
     <!-- Checklists -->
-    <string name="checklist">Контрольный список</string>
-    <string name="checklists">Контрольные списки</string>
-    <string name="add_new_checklist_item">Добавить новый пункт контрольного списка</string>
-    <string name="add_new_checklist_items">Добавление новых пунктов контрольного списка</string>
-    <string name="checklist_is_empty">Контрольный список пуст</string>
+    <string name="checklist">Список</string>
+    <string name="checklists">Списки</string>
+    <string name="add_new_checklist_item">Добавить позицию в список</string>
+    <string name="add_new_checklist_items">Добавить позиции в список</string>
+    <string name="checklist_is_empty">Список пуст</string>
     <string name="remove_done_items">Удалить выполненные позиции</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Экспортировать все заметки в файлы</string>
     <string name="import_folder">Импортировать папку</string>
     <string name="export_notes">Экспортировать все заметки</string>
-    <string name="import_notes">Импортные заметки</string>
+    <string name="import_notes">Импортировать заметки</string>
     <string name="import_notes_pro">Импортировать заметки (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Как я могу изменить цвет виджета\?</string>

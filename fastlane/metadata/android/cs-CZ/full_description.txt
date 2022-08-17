@@ -1,13 +1,25 @@
-Potřebujete si rychle poznačit něco na nákup, adresu, nebo nápad na startup? Pokud ano, tato apka je pro vás jako stvořená! Nepotřebuje žádná zdlouhavá nastavování, jen zapište, co chcete. Poznámky se ukládají automaticky, takže je ani náhodou neztratíte. Poskytuje možnost vytvoření vícera nezávislých poznámek.
+★ Potřebujete si rychle poznamenat nákupní seznam, připomenout adresu nebo nápad na spuštění? Pak už nemusíte hledat dál, protože toto je jednoduchý organizér, který jste hledali: Jednoduché poznámky: To-do list organizér a plánovač! Nejlepší aplikace pro psaní poznámek a samolepicích poznámek jsou pro mobilní telefony se systémem Android zdarma. Nejsou potřeba žádné složité kroky nastavení, stačí klepnout na obrazovku a zadat, pro co jste přišli, a vytvořit poznámky, rychlé seznamy, kontrolní seznam nebo zálohu pro jakýkoli nápad. S jednoduchým osobním zápisníkem si rychle zapamatujete cokoli! Nákupní seznam pro nákup potravin, seznam úkolů pro vaši denní agendu a snadnější zapisování poznámek, díky kterému bude sestavování schůzek procházkou růžovým sadem ★ 
 
-K poznámkám můžete rychle přistupovat přes upravitelný widget, který klepnutím otevře apku.
+Jednoduchý plánovač poznámek je rychlý, snadno použitelný organizér a pozoruhodný barevný widget pro psaní poznámek a poslouží jako neocenitelný nástroj, který vám pomůže zapamatovat si potřebné informace nebo nákupní seznam v obchodním centru!
 
-Neobsahuje žádné reklamy a nepotřebná oprávnění. Je opensource, poskytuje možnost změny barev.
+Náš nástroj pro plánování agendy s připomínkami vám umožní sledovat vaše povinnosti a vytvářet denní lepicí nápady a nákupní seznamy položek nebo nápadů s nebývalou jednoduchostí, poznámkovostí a bezkonkurenční hodnotou pro úsporu času. Spravujte svůj plán pomocí správných a dobrých poznámek - použijte některou z našich aplikací pro psaní poznámek - Simple Notes nebo Simple Notes Pro :)
 
-Check out the full suite of Simple Tools here:
-https://www.simplemobiletools.com
+Simple Notes Pro: Organizátor seznamů úkolů a nástroj pro plánování a připomínání poznámek jsou vybaveny automatickým ukládáním, takže se vám nestane, že byste své změny omylem zahodili. Podporuje také velmi rychlé vytváření více nezávislých prostých textových poznámek a seznamů.
 
-Standalone website of Simple Notes Pro:
+Můžete snadno přistupovat ke svým seznamům a organizovat svůj seznam úkolů poznámkový blok v žádném okamžiku pomocí přizpůsobitelného a měnitelného widgetu, který otevírá dobré aplikace pro organizaci poznámek na klepnutí.
+
+Je uživatelsky přívětivý a neobsahuje naprosto žádné reklamy ani zbytečná oprávnění - žádné závazky. Jedná se o widget good notes s plně otevřeným zdrojovým kódem a poskytuje přizpůsobitelné barvy, které lze upravit rychlým a rychlým laděním.
+
+Jednoduché poznámky: Poznámky: Organizátor a plánovač seznamů úkolů jsou nejlepší aplikace pro organizování položek a psaní poznámek, které můžete používat bez reklam. Pokud potřebujete vysoce kvalitní organizátor pro rychlé, spolehlivé a dobré poznámky, jednoduchý připomínač nákupního seznamu, který se opravdu snadno používá. Stáhněte si naše aplikace pro psaní poznámek právě teď :) Mějte každý den v kapse své vlastní osobní poznámkové aplikace a mějte záložní plán, abyste se nemuseli obávat, že zapomenete na důležitou schůzku nebo nákupní seznam :)
+
+Ve výchozím nastavení přichází s designem Material a tmavým motivem, který poskytuje skvělé uživatelské prostředí pro snadné používání. Díky absenci přístupu k internetu získáte více soukromí, bezpečnosti a stability než u jiných aplikací.
+
+Neobsahuje žádné reklamy ani zbytečná oprávnění. Je plně open-source a poskytuje přizpůsobitelné barvy.
+
+Kompletní sadu jednoduchých nástrojů si můžete prohlédnout zde:
+https://www.simplemobiletools.com.
+
+Samostatná webová stránka aplikace Simple Notes Pro:
 https://www.simplemobiletools.com/notes
 
 Facebook:
