@@ -1,1 +1,1 @@
-Jednostavno tekstno polje za brzo dodavanje bilješki, bez oglasa.
+Widget za popis zadataka s organizatorom za bilježnice, popis za kupovinu
