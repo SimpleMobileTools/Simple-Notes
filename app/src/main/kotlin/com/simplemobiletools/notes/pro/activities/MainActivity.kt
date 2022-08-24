@@ -158,13 +158,13 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.undo).apply {
                 isVisible = areButtonsVisible
                 isEnabled = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
-                icon.alpha = if (isEnabled) 255 else 127
+                icon?.alpha = if (isEnabled) 255 else 127
             }
 
             findItem(R.id.redo).apply {
                 isVisible = areButtonsVisible
                 isEnabled = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
-                icon.alpha = if (isEnabled) 255 else 127
+                icon?.alpha = if (isEnabled) 255 else 127
             }
         }
 
