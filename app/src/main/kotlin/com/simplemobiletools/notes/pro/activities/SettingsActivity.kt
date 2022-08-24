@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.commons.helpers.IS_CUSTOMIZING_COLORS
-import com.simplemobiletools.commons.helpers.NavigationIcon
-import com.simplemobiletools.commons.helpers.ensureBackgroundThread
-import com.simplemobiletools.commons.helpers.isOreoPlus
+import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
@@ -18,6 +15,7 @@ import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.activity_settings.*
 import java.util.*
+import kotlin.system.exitProcess
 
 class SettingsActivity : SimpleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +29,7 @@ class SettingsActivity : SimpleActivity() {
 
         setupCustomizeColors()
         setupUseEnglish()
+        setupLanguage()
         setupAutosaveNotes()
         setupDisplaySuccess()
         setupClickableLinks()
@@ -79,17 +78,25 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupUseEnglish() {
-        settings_use_english_holder.beVisibleIf(config.wasUseEnglishToggled || Locale.getDefault().language != "en")
+        settings_use_english_holder.beVisibleIf((config.wasUseEnglishToggled || Locale.getDefault().language != "en") && !isTiramisuPlus())
         settings_use_english.isChecked = config.useEnglish
-
-        if (settings_use_english_holder.isGone()) {
-            settings_font_size_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
-        }
-
         settings_use_english_holder.setOnClickListener {
             settings_use_english.toggle()
             config.useEnglish = settings_use_english.isChecked
-            System.exit(0)
+            exitProcess(0)
+        }
+    }
+
+    private fun setupLanguage() {
+        settings_language.text = Locale.getDefault().displayLanguage
+        settings_language_holder.beVisibleIf(isTiramisuPlus())
+
+        if (settings_use_english_holder.isGone() && settings_language_holder.isGone()) {
+            settings_font_size_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
+        }
+
+        settings_language_holder.setOnClickListener {
+            launchChangeAppLanguageIntent()
         }
     }
 
