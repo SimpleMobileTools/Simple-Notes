@@ -57,7 +57,7 @@
     <string name="widget_note">Notă utilizată în widget</string>
     <string name="show_note_picker">Afișați un selector de note la pornire</string>
     <string name="autosave_notes">Salvare automată a notelor</string>
-    <string name="enable_line_wrap">Enable line wrap</string>
+    <string name="enable_line_wrap">Activați înfășurarea liniilor</string>
     <string name="use_incognito_mode">Utilizați modul Incognito al tastaturilor</string>
     <string name="move_done_checklist_items">Mutați elementele realizate din lista de verificare în partea de jos</string>
     <string name="add_new_checklist_items_top">Adăugați noi elemente ale listei de verificare în partea de sus</string>
