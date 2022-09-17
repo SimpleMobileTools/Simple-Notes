@@ -53,7 +53,7 @@
     <string name="alignment">Joondumine</string>
     <string name="left">Vasakule</string>
     <string name="center">Keskele</string>
-    <string name="right">Right</string>
+    <string name="right">Õigus</string>
     <string name="widget_note">Märge on kasutusel rakenduse vidinas</string>
     <string name="show_note_picker">Rakenduse käivitamisel näita märkmete valijat</string>
     <string name="autosave_notes">Salvesta märkmed automaatselt</string>
@@ -72,7 +72,7 @@
     <string name="export_all_notes">Ekspordi kõik märkmed failidena</string>
     <string name="import_folder">Impordi kaust</string>
     <string name="export_notes">Ekspordi kõik märkmed</string>
-    <string name="import_notes">Import notes</string>
+    <string name="import_notes">Impordi märkmed</string>
     <string name="import_notes_pro">Impordi märkmed (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kuidas ma saan muuta vidinate värvi\?</string>
