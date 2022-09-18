@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
-    <string name="app_launcher_name">Muistikirja</string>
+    <string name="app_name">Yksinkertaiset muistiinpanot</string>
+    <string name="app_launcher_name">Muistiinpanot</string>
     <string name="widget_config">Kiitos Simple Notesin käyttämisestä.
 \nLisätietoja yksinkertaisimmista sovelluksista on osoitteessa SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Tyhjää tekstiä ei voi jakaa</string>
@@ -22,13 +22,13 @@
     <string name="show_note_title">Näytä muistiinpanon otsikko</string>
     <string name="new_note_type">Uusi muistiinpanotyyppi:</string>
     <string name="text_note">Tekstimuistiinpano</string>
-    <string name="lock_note">Lock note</string>
+    <string name="lock_note">Lukitse huomautus</string>
     <string name="unlock_note">Avaa muistiinpanon lukitus</string>
     <string name="note_content_locked">Muistiinpanon sisältö on lukittu.</string>
     <string name="show_content">Näytä sisältö</string>
     <string name="locking_warning">VAROITUS: Jos unohdat muistiinpanon salasanan, sitä ei ole mahdollista palauttaa etkä pääse enää käsiksi muistiinpanoon.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Uusi tekstimuistiinpano</string>
+    <string name="new_checklist">Uusi tarkistuslista</string>
     <!-- File notes -->
     <string name="open_file">Avaa tiedosto</string>
     <string name="export_as_file">Vie tiedostona</string>
@@ -46,11 +46,11 @@
     <string name="display_success_message">Näytä tallennus onnistunut viestit</string>
     <string name="links_and_emails_clickable">Tee linkit ja sähköpostit klikattavaksi</string>
     <string name="place_cursor_end">Aseta kohdistin muistiinpanon loppuun</string>
-    <string name="monospaced_font">Käytä kiinteävälistä kirjasinta</string>
+    <string name="monospaced_font">Käytä yksirivistä fonttia</string>
     <string name="show_keyboard">Näytä näppäimistö käynnistettäessä</string>
     <string name="show_word_count">Näytä sanamäärä</string>
     <string name="show_character_count">Näytä merkkien määrä</string>
-    <string name="alignment">Tasaus</string>
+    <string name="alignment">Kohdistus</string>
     <string name="left">Vasemmalle</string>
     <string name="center">Keskelle</string>
     <string name="right">Oikealle</string>
@@ -71,9 +71,9 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Vie kaikki muistiinpanot tiedostoina</string>
     <string name="import_folder">Tuo kansio</string>
-    <string name="export_notes">Export all notes</string>
-    <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="export_notes">Vie kaikki muistiinpanot</string>
+    <string name="import_notes">Tuo muistiinpanoja</string>
+    <string name="import_notes_pro">Tuo muistiinpanoja (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kuinka voin vaihtaa pienoissovelluksen väriä\?</string>
     <string name="faq_1_text">Jos sinulla on vain yksi aktiivinen pienoissovellus, voit joko luoda sen uudelleen tai mukauttaa sitä sovelluksen asetukset-painikkeella. Jos sinulla on useita aktiivisia pienoissovelluksia, sovelluksessa oleva asetukset-painike ei ole käytettävissä. Koska sovellus tukee värien mukauttamista pienoissovellusta kohti, sinun on luotava uudelleen pienoissovellus, jonka haluat muokata.</string>
