@@ -1,0 +1,1 @@
+Tehtäväluettelon widget, jossa on muistikirja, tarkistuslista ja ostoslista
