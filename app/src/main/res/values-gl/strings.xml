@@ -11,7 +11,7 @@
     <string name="title_taken">Xa existe unha nota con ese nome</string>
     <string name="open_note">Abrir nota</string>
     <string name="delete_note">Eliminar nota</string>
-    <string name="delete_note_prompt_message">Seguro que quere eliminar a nota \"%s\"\?</string>
+    <string name="delete_note_prompt_message">Atopaste seguro de querer eliminar a nota \"%s\"\?</string>
     <string name="pick_a_note">Escolle unha nota</string>
     <string name="rename_note">Cambia o nome da nota</string>
     <string name="general_note">Nota xeral</string>
@@ -19,33 +19,33 @@
     <string name="add_to_note">Engadir a Nota</string>
     <string name="unsaved_changes_warning">Non gardaches algúns cambios.Que queres facer con eles\?</string>
     <string name="note_shown_widget">Nota amosada no widget:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">Mostralo título da nota</string>
     <string name="new_note_type">Novo tipo de nota:</string>
     <string name="text_note">Nota de texto</string>
     <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Unlock note</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
-    <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="unlock_note">Desbloqueala nota</string>
+    <string name="note_content_locked">O contido das notas está bloqueado.</string>
+    <string name="show_content">Mostralo contido</string>
+    <string name="locking_warning">PERIGO: Se esqueces o contrasinal das notas, xa non poderás recuperalo nin acceder ao contido das notas.</string>
+    <string name="new_text_note">Nova nota de texto</string>
+    <string name="new_checklist">Nova lista de verificación</string>
     <!-- File notes -->
     <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
-    <string name="file_too_large">Ficheiro demasiado grande, o límite é 1MB</string>
+    <string name="file_too_large">O ficheiro é demasiado grande, o límite é de 1 MB</string>
     <string name="only_import_file_content">Só importa o contido do ficheiro
 \n(cambiar o ficheiro non afecta á nota)</string>
     <string name="update_file_at_note">Actualiza o propio ficheiro ao actualizar a nota
 \n(a nota elimínase se elimina o ficheiro, ou cambia a ruta)</string>
     <string name="delete_file_itself">Borra tamén ficheiro \"%s\"</string>
-    <string name="note_saved_successfully">Nota \"%s\" gardada correctamente</string>
-    <string name="note_exported_successfully">Nota \"%s\" exportada correctamente</string>
+    <string name="note_saved_successfully">Notas \"%s\" gardadas correctamente</string>
+    <string name="note_exported_successfully">A nota \"%s\" exportouse correctamente</string>
     <string name="only_export_file_content">Só exportar o contido do ficheiro actual
 \n(se cambias a nota, non afectará ao ficheiro)</string>
     <!-- Settings -->
     <string name="display_success_message">Mostra mensaxe de gardado correcto</string>
     <string name="links_and_emails_clickable">Fai que ligazóns e correo-e sexan premibles</string>
-    <string name="place_cursor_end">Colocar o cursor ao final da nota</string>
+    <string name="place_cursor_end">Coloca o cursor ao final da nota</string>
     <string name="monospaced_font">Usar a fonte de monoespaciado</string>
     <string name="show_keyboard">Mostrar teclado ao inicio</string>
     <string name="show_word_count">Mostrar conta de palabras</string>
@@ -60,22 +60,22 @@
     <string name="enable_line_wrap">Habilitar sangrado de liña</string>
     <string name="use_incognito_mode">Usar o modo incógnito dos teclados</string>
     <string name="move_done_checklist_items">Mover os elementos dunha lista de verificación non rematada a arriba</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="add_new_checklist_items_top">Engade novos elementos da lista de verificación na parte superior</string>
     <!-- Checklists -->
     <string name="checklist">Lista de verificación</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">Listas de verificación</string>
     <string name="add_new_checklist_item">Engadir un elemento a unha nova lista de verificación</string>
     <string name="add_new_checklist_items">Engadir elementos a unha nova lista de verificación</string>
     <string name="checklist_is_empty">A lista de verificación está baleira</string>
-    <string name="remove_done_items">Remove done items</string>
+    <string name="remove_done_items">Elimina os elementos feitos</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como ficheiros</string>
     <string name="import_folder">Importar cartafoles</string>
-    <string name="export_notes">Export all notes</string>
+    <string name="export_notes">Exportar todalas notas</string>
     <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="import_notes_pro">Importar notas (Pro)</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Como cambio a cor dos widgets\?</string>
+    <string name="faq_1_title">Como podo cambiala cor dos widgets\?</string>
     <string name="faq_1_text">No caso de que teñas só un widget activo, podes crealo de novo ou usar o botón nos axustes do app para personalizalo.</string>
     <!--
         Haven't found some strings? There's more at
