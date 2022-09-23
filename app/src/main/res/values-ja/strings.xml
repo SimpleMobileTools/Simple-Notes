@@ -19,7 +19,7 @@
     <string name="add_to_note">メモに追加</string>
     <string name="unsaved_changes_warning">未保存の変更があります。どのように対応しますか？</string>
     <string name="note_shown_widget">ウィジェットに表示中のメモ:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">メモのタイトルを表示</string>
     <string name="new_note_type">新しいメモの種類:</string>
     <string name="text_note">テキストメモ</string>
     <string name="lock_note">ノートをロック</string>
@@ -27,8 +27,8 @@
     <string name="note_content_locked">ノートの内容がロックされています。</string>
     <string name="show_content">内容を表示</string>
     <string name="locking_warning">警告：ノートのパスワードを忘れた場合、そのパスワードを復元したり、ノートの内容にアクセスしたりすることはできなくなります。</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">新しいテキストメモ</string>
+    <string name="new_checklist">新しいチェックリスト</string>
     <!-- File notes -->
     <string name="open_file">ファイルを開く</string>
     <string name="export_as_file">ファイルとしてエクスポート</string>
@@ -60,10 +60,10 @@
     <string name="enable_line_wrap">行の折り返しを有効にする</string>
     <string name="use_incognito_mode">キーボードのシークレットモードを使用する</string>
     <string name="move_done_checklist_items">チェックリストの未完了リストを上に移動</string>
-    <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
+    <string name="add_new_checklist_items_top">新しいチェックリスト項目を上部に追加</string>
     <!-- Checklists -->
     <string name="checklist">チェックリスト</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklists">チェックリスト</string>
     <string name="add_new_checklist_item">新しいチェックリスト項目を追加</string>
     <string name="add_new_checklist_items">新しいチェックリスト項目を追加</string>
     <string name="checklist_is_empty">チェックリストが空です</string>

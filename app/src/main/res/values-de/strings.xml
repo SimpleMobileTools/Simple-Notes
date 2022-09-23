@@ -11,7 +11,7 @@
     <string name="title_taken">Es existiert bereits eine Notiz mit diesem Namen</string>
     <string name="open_note">Notiz öffnen</string>
     <string name="delete_note">Notiz löschen</string>
-    <string name="delete_note_prompt_message">Sind Sie sicher, dass Sie die Notiz „%s“ löschen wollen\?</string>
+    <string name="delete_note_prompt_message">Bist du sicher, dass du die Notiz „%s“ löschen willst\?</string>
     <string name="pick_a_note">Notiz auswählen</string>
     <string name="rename_note">Notiz umbenennen</string>
     <string name="general_note">Hauptnotiz</string>
@@ -26,48 +26,48 @@
     <string name="unlock_note">Notiz entsperren</string>
     <string name="note_content_locked">Der Inhalt der Notizen ist gesperrt.</string>
     <string name="show_content">Inhalt anzeigen</string>
-    <string name="locking_warning">ACHTUNG: Wenn Sie das Kennwort für die Notizen vergessen, können Sie es nicht mehr wiederherstellen oder auf den Inhalt der Notizen zugreifen.</string>
+    <string name="locking_warning">ACHTUNG: Wenn du das Kennwort für die Notizen vergisst, kannst du sie nicht mehr wiederherstellen oder auf den Inhalt der Notizen zugreifen.</string>
     <string name="new_text_note">Neue Textnotiz</string>
     <string name="new_checklist">Neue Checkliste</string>
     <!-- File notes -->
     <string name="open_file">Datei öffnen</string>
     <string name="export_as_file">Als Datei exportieren</string>
     <string name="file_too_large">Die Datei ist zu groß, die Grenze liegt bei 1 MB</string>
-    <string name="only_import_file_content">Importiere nur den Dateiinhalt.
+    <string name="only_import_file_content">Nur den Dateiinhalt importieren.
 \n(Änderungen an der Datei haben keine Auswirkungen auf die Notiz.)</string>
-    <string name="update_file_at_note">Übernehme Änderungen an der Notiz in die Datei
+    <string name="update_file_at_note">Datei nach Änderungen der Notiz aktualisieren
 \n(Notiz wird gelöscht, wenn die Datei gelöscht wird oder sich der Pfad ändert.)</string>
-    <string name="delete_file_itself">Lösche Datei \"%s\"</string>
-    <string name="note_saved_successfully">Hinweis „%s“ erfolgreich gespeichert</string>
-    <string name="note_exported_successfully">Die Notiz „%s“ wurde erfolgreich exportiert</string>
+    <string name="delete_file_itself">Auch Datei „%s“ löschen</string>
+    <string name="note_saved_successfully">Notiz „%s“ erfolgreich gespeichert</string>
+    <string name="note_exported_successfully">Notiz „%s“ erfolgreich exportiert</string>
     <string name="only_export_file_content">Nur den aktuellen Dateiinhalt exportieren
 \n(Das Verändern der Notiz wird die Datei nicht beeinflussen)</string>
     <!-- Settings -->
-    <string name="display_success_message">Zeige Benachrichtigung bei erfolgreichem Speichern</string>
+    <string name="display_success_message">Bei erfolgreichem Speichern Benachrichtigung anzeigen</string>
     <string name="links_and_emails_clickable">Links und E-Mail-Adressen anklickbar</string>
     <string name="place_cursor_end">Cursor an das Ende der Notiz setzen</string>
     <string name="monospaced_font">Benutze Monospace Schrift</string>
-    <string name="show_keyboard">Zeige Tastatur beim Start</string>
-    <string name="show_word_count">Zeige Wortanzahl</string>
-    <string name="show_character_count">Zeige Zeichenanzahl</string>
+    <string name="show_keyboard">Beim Start Tastatur anzeigen</string>
+    <string name="show_word_count">Wortanzahl anzeigen</string>
+    <string name="show_character_count">Zeichenanzahl anzeigen</string>
     <string name="alignment">Ausrichtung</string>
     <string name="left">Linksbündig</string>
     <string name="center">Zentriert</string>
     <string name="right">Rechtsbündig</string>
     <string name="widget_note">Widget-Notiz</string>
-    <string name="show_note_picker">Zeige einen Notiz-Wähler beim Start</string>
+    <string name="show_note_picker">Beim Start einen Notiz-Wähler anzeigen</string>
     <string name="autosave_notes">Notizen automatisch speichern</string>
     <string name="enable_line_wrap">Zeilenumbruch aktivieren</string>
-    <string name="use_incognito_mode">Benutze den Inkognitomodus von Tastaturen</string>
-    <string name="move_done_checklist_items">Verschiebe erledigte Checklisteneinträge nach unten</string>
+    <string name="use_incognito_mode">Inkognitomodus von Tastaturen verwenden</string>
+    <string name="move_done_checklist_items">Erledigte Checklistenpunkte ans Ende verschieben</string>
     <string name="add_new_checklist_items_top">Neue Checklistenpunkte am Anfang hinzufügen</string>
     <!-- Checklists -->
     <string name="checklist">Checkliste</string>
     <string name="checklists">Checklisten</string>
-    <string name="add_new_checklist_item">Einen neuen Checklisteneintrag hinzufügen</string>
-    <string name="add_new_checklist_items">Neue Checklisteneinträge hinzufügen</string>
+    <string name="add_new_checklist_item">Einen neuen Checklistenpunkt hinzufügen</string>
+    <string name="add_new_checklist_items">Neue Checklistenpunkte hinzufügen</string>
     <string name="checklist_is_empty">Die Checkliste ist leer</string>
-    <string name="remove_done_items">Abgeschlossene Einträge entfernen</string>
+    <string name="remove_done_items">Erledigte Punkte entfernen</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Alle Notizen als Dateien exportieren</string>
     <string name="import_folder">Ordner importieren</string>
