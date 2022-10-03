@@ -72,7 +72,7 @@
     <string name="export_all_notes">Tüm notları dosya olarak dışa aktar</string>
     <string name="import_folder">Klasörü içe aktar</string>
     <string name="export_notes">Tüm notları dışa aktar</string>
-    <string name="import_notes">Import notes</string>
+    <string name="import_notes">Notları içe aktar</string>
     <string name="import_notes_pro">Notları içe aktar (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Widget rengini nasıl değiştirebilirim\?</string>
