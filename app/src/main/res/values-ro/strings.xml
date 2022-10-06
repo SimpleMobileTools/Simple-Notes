@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
-    <string name="app_launcher_name">Note</string>
-    <string name="widget_config">Vă mulțumim că ați folosit Simple Notes.
+    <string name="app_name">Notițe simple</string>
+    <string name="app_launcher_name">Notițe</string>
+    <string name="widget_config">Vă mulțumim că ați folosit Notițe simple.
 \nPentru mai multe aplicații simple, vă rugăm să vizitați SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Nu se poate distribui text gol</string>
-    <string name="simple_note">Notă simplă</string>
+    <string name="simple_note">Notiță simplă</string>
     <string name="new_note">Adăugați o nouă notă</string>
-    <string name="no_title">Vă rugăm să denumiți nota dumneavoastră</string>
-    <string name="title_taken">O notă cu acest titlu există deja</string>
-    <string name="open_note">Deschideţi nota</string>
-    <string name="delete_note">Ștergeți nota</string>
-    <string name="delete_note_prompt_message">Sunteți sigur că doriți să ștergeți nota \"%s\"\?</string>
-    <string name="pick_a_note">Alegeți o notă</string>
-    <string name="rename_note">Redenumiți nota</string>
-    <string name="general_note">Notă generală</string>
-    <string name="create_new_note">Creați o nouă notă</string>
-    <string name="add_to_note">Adăugați la notă</string>
+    <string name="no_title">Vă rugăm să denumiți notița dumneavoastră</string>
+    <string name="title_taken">O notiță cu acest titlu există deja</string>
+    <string name="open_note">Deschideţi notița</string>
+    <string name="delete_note">Ștergeți notița</string>
+    <string name="delete_note_prompt_message">Sunteți sigur că doriți să ștergeți notița \"%s\"\?</string>
+    <string name="pick_a_note">Alegeți o notiță</string>
+    <string name="rename_note">Redenumiți notița</string>
+    <string name="general_note">Notiță generală</string>
+    <string name="create_new_note">Creați o nouă notiță</string>
+    <string name="add_to_note">Adăugați la notiță</string>
     <string name="unsaved_changes_warning">Aveți unele modificări nesalvate. Ce doriți să faceți cu ele\?</string>
-    <string name="note_shown_widget">Notă afișată în widget:</string>
-    <string name="show_note_title">Arată titlul notei</string>
-    <string name="new_note_type">Un nou tip de notă:</string>
-    <string name="text_note">Notă text</string>
-    <string name="lock_note">Blocaţi nota</string>
-    <string name="unlock_note">Deblocaţi nota</string>
-    <string name="note_content_locked">Conținutul notei este blocat.</string>
+    <string name="note_shown_widget">Notiță afișată în widget:</string>
+    <string name="show_note_title">Arată titlul notiței</string>
+    <string name="new_note_type">Un nou tip de notiță:</string>
+    <string name="text_note">Notiță text</string>
+    <string name="lock_note">Blocaţi notița</string>
+    <string name="unlock_note">Deblocaţi notița</string>
+    <string name="note_content_locked">Conținutul notiței este blocat.</string>
     <string name="show_content">Afișați conținutul</string>
-    <string name="locking_warning">ATENȚIE: Dacă uitați parola notelor, nu o veți mai putea recupera și nici nu veți mai putea accesa conținutul notelor.</string>
-    <string name="new_text_note">Noua notă de text</string>
+    <string name="locking_warning">ATENȚIE: Dacă uitați parola notițelor, nu o veți mai putea recupera și nici nu veți mai putea accesa conținutul notițele.</string>
+    <string name="new_text_note">Noua notița de text</string>
     <string name="new_checklist">O nouă listă de verificare</string>
     <!-- File notes -->
     <string name="open_file">Deschideți fișierul</string>
     <string name="export_as_file">Exportați ca fișier</string>
     <string name="file_too_large">Fișier prea mare, limita este de 1MB</string>
     <string name="only_import_file_content">Importați numai conținutul fișierului
-\n(modificarea fișierului nu va afecta nota)</string>
+\n(modificarea fișierului nu va afecta notița)</string>
     <string name="update_file_at_note">Actualizarea fișierului în sine la actualizarea notei
-\n(nota este ștearsă dacă fișierul este șters sau dacă se schimbă calea de acces)</string>
+\n(notița este ștearsă dacă fișierul este șters sau dacă se schimbă calea de acces)</string>
     <string name="delete_file_itself">Ștergeți și fișierul \"%s\"</string>
-    <string name="note_saved_successfully">Nota \"%s\" salvată cu succes</string>
-    <string name="note_exported_successfully">Nota \"%s\" a fost exportată cu succes</string>
+    <string name="note_saved_successfully">Notița \"%s\" salvată cu succes</string>
+    <string name="note_exported_successfully">Notița \"%s\" a fost exportată cu succes</string>
     <string name="only_export_file_content">Exportați numai conținutul curent al fișierului
-\n(modificarea notei nu va afecta fișierul)</string>
+\n(modificarea notiței nu va afecta fișierul)</string>
     <!-- Settings -->
     <string name="display_success_message">Afișaţi mesajele de salvare cu succes</string>
     <string name="links_and_emails_clickable">Faceți link-urile și e-mailurile accesibile</string>
-    <string name="place_cursor_end">Așezați cursorul la sfârșitul notei</string>
+    <string name="place_cursor_end">Așezați cursorul la sfârșitul notiței</string>
     <string name="monospaced_font">Utilizați un font monospațiat</string>
     <string name="show_keyboard">Afișare tastatură la pornire</string>
     <string name="show_word_count">Arată numărul de cuvinte</string>
@@ -54,9 +54,9 @@
     <string name="left">Stânga</string>
     <string name="center">Centru</string>
     <string name="right">Dreapta</string>
-    <string name="widget_note">Notă utilizată în widget</string>
-    <string name="show_note_picker">Afișați un selector de note la pornire</string>
-    <string name="autosave_notes">Salvare automată a notelor</string>
+    <string name="widget_note">Notiță utilizată în widget</string>
+    <string name="show_note_picker">Afișați un selector de notițe la pornire</string>
+    <string name="autosave_notes">Salvare automată a notițelor</string>
     <string name="enable_line_wrap">Activați înfășurarea liniilor</string>
     <string name="use_incognito_mode">Utilizați modul Incognito al tastaturilor</string>
     <string name="move_done_checklist_items">Mutați elementele realizate din lista de verificare în partea de jos</string>
@@ -69,10 +69,10 @@
     <string name="checklist_is_empty">Lista de verificare este goală</string>
     <string name="remove_done_items">Elimină elementele realizate</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Exportați toate notele ca fișiere</string>
+    <string name="export_all_notes">Exportați toate notițele ca fișiere</string>
     <string name="import_folder">Importare dosar</string>
-    <string name="export_notes">Exportați toate notele</string>
-    <string name="import_notes">Importaţi note</string>
+    <string name="export_notes">Exportați toate notițele</string>
+    <string name="import_notes">Importaţi notițele</string>
     <string name="import_notes_pro">Importaţi note (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Cum pot schimba culoarea widget-urilor\?</string>
