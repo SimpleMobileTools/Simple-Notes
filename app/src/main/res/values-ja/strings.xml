@@ -22,11 +22,11 @@
     <string name="show_note_title">メモのタイトルを表示</string>
     <string name="new_note_type">新しいメモの種類:</string>
     <string name="text_note">テキストメモ</string>
-    <string name="lock_note">ノートをロック</string>
-    <string name="unlock_note">ノートのロックを解除</string>
-    <string name="note_content_locked">ノートの内容がロックされています。</string>
+    <string name="lock_note">メモをロック</string>
+    <string name="unlock_note">メモのロックを解除</string>
+    <string name="note_content_locked">メモの内容がロックされています。</string>
     <string name="show_content">内容を表示</string>
-    <string name="locking_warning">警告：ノートのパスワードを忘れた場合、そのパスワードを復元したり、ノートの内容にアクセスしたりすることはできなくなります。</string>
+    <string name="locking_warning">警告：メモのパスワードを忘れた場合、そのパスワードを復元したり、メモの内容にアクセスしたりすることはできなくなります。</string>
     <string name="new_text_note">新しいテキストメモ</string>
     <string name="new_checklist">新しいチェックリスト</string>
     <!-- File notes -->
@@ -71,9 +71,9 @@
     <!-- Import / Export -->
     <string name="export_all_notes">すべてのメモをファイルとしてエクスポート</string>
     <string name="import_folder">フォルダからインポート</string>
-    <string name="export_notes">ノートをすべてエクスポート</string>
-    <string name="import_notes">ノートをインポート</string>
-    <string name="import_notes_pro">ノートをインポート (Pro)</string>
+    <string name="export_notes">メモをすべてエクスポート</string>
+    <string name="import_notes">メモをインポート</string>
+    <string name="import_notes_pro">メモをインポート (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">ウィジェットの色はどうやって変更出来ますか？</string>
     <string name="faq_1_text">アクティブなウィジェットが一つしかない場合、ウィジェットを再作成するか、アプリ設定内のボタンを押してカスタマイズ出来ます。アクティブなウィジェットが複数ある場合、アプリ設定内のボタンは使用出来ません。アプリはウィジェットごとの色のカスタマイズをサポートしているので、カスタマイズしたいウィジェットは再作成する必要があります。</string>
