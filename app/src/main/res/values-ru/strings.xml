@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Заметки</string>
+    <string name="app_name">Простые заметки</string>
     <string name="app_launcher_name">Заметки</string>
     <string name="widget_config">Благодарим вас за использование Simple Notes.
 \nБольше простых приложений вы можете найти на SimpleMobileTools.com.</string>
