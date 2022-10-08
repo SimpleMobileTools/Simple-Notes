@@ -45,9 +45,9 @@ class TextFragment : NoteFragment() {
         noteId = requireArguments().getLong(NOTE_ID, 0L)
         retainInstance = true
 
-        val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
+        val layoutToInflate = if (config?.enableLineWrap == true) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
         inflater.inflate(layoutToInflate, view.notes_relative_layout, true)
-        if (config!!.clickableLinks) {
+        if (config?.clickableLinks == true) {
             view.text_note_view.apply {
                 linksClickable = true
                 autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES
@@ -75,7 +75,7 @@ class TextFragment : NoteFragment() {
 
     override fun onPause() {
         super.onPause()
-        if (config!!.autosaveNotes) {
+        if (config?.autosaveNotes == true) {
             saveText(false)
         }
 
@@ -117,9 +117,9 @@ class TextFragment : NoteFragment() {
         view.text_note_view.apply {
             typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
 
-            val fileContents = note!!.getNoteStoredValue(context)
+            val fileContents = note?.getNoteStoredValue(context)
             if (fileContents == null) {
-                (activity as MainActivity).deleteNote(false, note!!)
+                note?.let { (activity as MainActivity).deleteNote(false, it) }
                 return
             }
 
@@ -136,7 +136,7 @@ class TextFragment : NoteFragment() {
                     setTextWatcher()
                 }
                 skipTextUpdating = false
-                setSelection(if (config.placeCursorToEnd) text!!.length else 0)
+                (if (config.placeCursorToEnd) text?.length else 0)?.let { setSelection(it) }
             }
 
             if (config.showKeyboard && isMenuVisible && (!note!!.isLocked() || shouldShowLockedContent)) {
@@ -157,7 +157,7 @@ class TextFragment : NoteFragment() {
         }
 
         if (config.showWordCount) {
-            view.notes_counter.setTextColor(context!!.getProperTextColor())
+            view.notes_counter.setTextColor(requireActivity().getProperTextColor())
             setWordCounter(view.text_note_view.text.toString())
         }
 
@@ -180,7 +180,7 @@ class TextFragment : NoteFragment() {
         }
 
         view.apply {
-            notes_counter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && config!!.showWordCount)
+            notes_counter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && config?.showWordCount == true)
             notes_scrollview.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
             setupLockedViews(this, note!!)
         }
@@ -193,7 +193,7 @@ class TextFragment : NoteFragment() {
             return
         }
 
-        if (note!!.path.isNotEmpty() && !note!!.path.startsWith("content://") && !File(note!!.path).exists()) {
+        if (note?.path?.isNotEmpty() == true && !note!!.path.startsWith("content://") && !File(note!!.path).exists()) {
             return
         }
 
@@ -202,15 +202,15 @@ class TextFragment : NoteFragment() {
         }
 
         val newText = getCurrentNoteViewText()
-        val oldText = note!!.getNoteStoredValue(requireContext())
+        val oldText = note?.getNoteStoredValue(requireContext())
         if (newText != null && (newText != oldText || force)) {
-            note!!.value = newText
+            note?.value = newText
             saveNoteValue(note!!, newText)
             requireContext().updateWidgets()
         }
     }
 
-    fun hasUnsavedChanges() = note != null && getCurrentNoteViewText() != note!!.getNoteStoredValue(requireContext())
+    fun hasUnsavedChanges() = note != null && getCurrentNoteViewText() != note?.getNoteStoredValue(requireContext())
 
     fun focusEditText() {
         view.text_note_view.requestFocus()
@@ -294,7 +294,7 @@ class TextFragment : NoteFragment() {
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
             if (!isUndoOrRedo) {
                 afterChange = s.subSequence(start, start + count)
-                textHistory.add(TextHistoryItem(start, beforeChange!!, afterChange!!))
+                textHistory.add(TextHistoryItem(start, beforeChange ?: "", afterChange ?: ""))
             }
         }
 

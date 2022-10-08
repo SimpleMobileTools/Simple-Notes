@@ -52,8 +52,8 @@ abstract class NoteFragment : Fragment() {
         }
 
         activity?.performSecurityCheck(
-            protectionType = note!!.protectionType,
-            requiredHash = note!!.protectionHash,
+            protectionType = note?.protectionType ?: -1,
+            requiredHash = note?.protectionHash ?: "",
             successCallback = { _, _ ->
                 shouldShowLockedContent = true
                 checkLockState()

@@ -43,7 +43,7 @@ abstract class NotesDatabase : RoomDatabase() {
                             .addMigrations(MIGRATION_2_3)
                             .addMigrations(MIGRATION_3_4)
                             .build()
-                        db!!.openHelper.setWriteAheadLoggingEnabled(true)
+                        db?.openHelper?.setWriteAheadLoggingEnabled(true)
                     }
                 }
             }
@@ -58,7 +58,7 @@ abstract class NotesDatabase : RoomDatabase() {
             Executors.newSingleThreadScheduledExecutor().execute {
                 val generalNote = context.resources.getString(R.string.general_note)
                 val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
-                db!!.NotesDao().insertOrUpdate(note)
+                db?.NotesDao()?.insertOrUpdate(note)
             }
         }
 

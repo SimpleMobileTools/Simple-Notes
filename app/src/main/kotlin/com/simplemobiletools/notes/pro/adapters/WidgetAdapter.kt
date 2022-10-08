@@ -43,7 +43,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         }
 
         val textSize = context.getPercentageFontSize() / context.resources.displayMetrics.density
-        if (note!!.type == NoteType.TYPE_CHECKLIST.value) {
+        if (note?.type == NoteType.TYPE_CHECKLIST.value) {
             remoteView = RemoteViews(context.packageName, R.layout.item_checklist_widget).apply {
                 val checklistItem = checklistItems.getOrNull(position) ?: return@apply
                 val widgetNewTextColor = if (checklistItem.isDone) widgetTextColor.adjustAlpha(DONE_CHECKLIST_ITEM_ALPHA) else widgetTextColor
@@ -66,7 +66,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
             }
         } else {
             remoteView = RemoteViews(context.packageName, R.layout.widget_text_layout).apply {
-                val noteText = note!!.getNoteStoredValue(context) ?: ""
+                val noteText = note?.getNoteStoredValue(context) ?: ""
                 for (id in textIds) {
                     setText(id, noteText)
                     setTextColor(id, widgetTextColor)
@@ -125,7 +125,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         note = context.notesDB.getNoteWithId(noteId)
         if (note?.type == NoteType.TYPE_CHECKLIST.value) {
             val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-            checklistItems = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.getNoteStoredValue(context), checklistItemType) ?: ArrayList(1)
+            checklistItems = Gson().fromJson<ArrayList<ChecklistItem>>(note?.getNoteStoredValue(context), checklistItemType) ?: ArrayList(1)
 
             // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
             checklistItems = checklistItems.filter { it.title != null }.toMutableList() as ArrayList<ChecklistItem>

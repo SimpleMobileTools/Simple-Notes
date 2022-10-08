@@ -131,12 +131,12 @@ class WidgetConfigureActivity : SimpleActivity() {
     private fun showNoteSelector() {
         val items = ArrayList<RadioItem>()
         mNotes.forEach {
-            items.add(RadioItem(it.id!!.toInt(), it.title))
+            items.add(RadioItem(it.id?.toInt() ?: -1, it.title))
         }
 
         RadioGroupDialog(this, items, mCurrentNoteId.toInt()) {
             val selectedId = it as Int
-            val note = mNotes.firstOrNull { it.id!!.toInt() == selectedId } ?: return@RadioGroupDialog
+            val note = mNotes.firstOrNull { it.id?.toInt() == selectedId } ?: return@RadioGroupDialog
             if (note.protectionType == PROTECTION_NONE || note.shouldBeUnlocked(this)) {
                 updateCurrentNote(note)
             } else {
@@ -150,7 +150,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     }
 
     private fun updateCurrentNote(note: Note) {
-        mCurrentNoteId = note.id!!
+        mCurrentNoteId = note.id ?: -1
         notes_picker_value.text = note.title
         text_note_view_title.text = note.title
         if (note.type == NoteType.TYPE_CHECKLIST.value) {

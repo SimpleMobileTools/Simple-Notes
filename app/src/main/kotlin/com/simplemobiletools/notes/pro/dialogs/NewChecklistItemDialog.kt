@@ -41,7 +41,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
                     alertDialog.showKeyboard(titles.first())
                     alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
                         when {
-                            titles.all { it.text!!.isEmpty() } -> activity.toast(R.string.empty_name)
+                            titles.all { it.text?.isEmpty() == true } -> activity.toast(R.string.empty_name)
                             else -> {
                                 val titles = titles.map { it.text.toString() }.filter { it.isNotEmpty() }.toMutableList() as ArrayList<String>
                                 callback(titles)

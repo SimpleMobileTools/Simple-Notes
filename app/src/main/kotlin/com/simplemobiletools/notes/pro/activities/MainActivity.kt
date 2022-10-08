@@ -183,7 +183,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
 
             saveNoteButton = findItem(R.id.save_note)
-            saveNoteButton!!.isVisible =
+            saveNoteButton?.isVisible =
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT.value)
         }
 
@@ -270,17 +270,24 @@ class MainActivity : SimpleActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
-        if (requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK && resultData != null && resultData.data != null) {
-            importUri(resultData.data!!)
-        } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null && mNotes.isNotEmpty()) {
-            val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-            applicationContext.contentResolver.takePersistableUriPermission(resultData.data!!, takeFlags)
-            showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
-        } else if (requestCode == PICK_EXPORT_NOTES_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
-            val outputStream = contentResolver.openOutputStream(resultData.data!!)
-            exportNotesTo(outputStream)
-        } else if (requestCode == PICK_IMPORT_NOTES_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
-            importNotesFrom(resultData.data!!)
+        resultData?.data?.let {
+            when {
+                requestCode == PICK_OPEN_FILE_INTENT && resultCode == RESULT_OK -> {
+                    importUri(it)
+                }
+                requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && mNotes.isNotEmpty() -> {
+                    val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                    applicationContext.contentResolver.takePersistableUriPermission(it, takeFlags)
+                    showExportFilePickUpdateDialog(resultData.dataString ?: "", getCurrentNoteValue())
+                }
+                requestCode == PICK_EXPORT_NOTES_INTENT && resultCode == Activity.RESULT_OK -> {
+                    val outputStream = contentResolver.openOutputStream(it)
+                    exportNotesTo(outputStream)
+                }
+                requestCode == PICK_IMPORT_NOTES_INTENT && resultCode == Activity.RESULT_OK -> {
+                    importNotesFrom(it)
+                }
+            }
         }
     }
 
@@ -352,17 +359,22 @@ class MainActivity : SimpleActivity() {
                 val realPath = intent.getStringExtra(REAL_FILE_PATH)
                 val isFromHistory = intent.flags and Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY != 0
                 if (!isFromHistory) {
-                    if (realPath != null && hasPermission(PERMISSION_READ_STORAGE)) {
-                        val file = File(realPath)
-                        handleUri(Uri.fromFile(file))
-                    } else if (intent.getBooleanExtra(NEW_TEXT_NOTE, false)) {
-                        val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
-                        addNewNote(newTextNote)
-                    } else if (intent.getBooleanExtra(NEW_CHECKLIST, false)) {
-                        val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
-                        addNewNote(newChecklist)
-                    } else {
-                        handleUri(data!!)
+                    when {
+                        realPath != null && hasPermission(PERMISSION_READ_STORAGE) -> {
+                            val file = File(realPath)
+                            handleUri(Uri.fromFile(file))
+                        }
+                        intent.getBooleanExtra(NEW_TEXT_NOTE, false) -> {
+                            val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                            addNewNote(newTextNote)
+                        }
+                        intent.getBooleanExtra(NEW_CHECKLIST, false) -> {
+                            val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                            addNewNote(newChecklist)
+                        }
+                        else -> {
+                            handleUri(data!!)
+                        }
                     }
                 }
                 intent.removeCategory(Intent.CATEGORY_DEFAULT)
@@ -393,7 +405,7 @@ class MainActivity : SimpleActivity() {
                 if (it as Int == 0) {
                     displayNewNoteDialog(text)
                 } else {
-                    updateSelectedNote(notes[it - 1].id!!)
+                    updateSelectedNote(notes[it - 1].id ?: -1)
                     addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
                 }
             }
@@ -401,7 +413,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun handleUri(uri: Uri) {
-        NotesHelper(this).getNoteIdWithPath(uri.path!!) {
+        NotesHelper(this).getNoteIdWithPath(uri.path ?: "") {
             if (it != null && it > 0L) {
                 updateSelectedNote(it)
                 return@getNoteIdWithPath
@@ -425,11 +437,11 @@ class MainActivity : SimpleActivity() {
             view_pager.apply {
                 adapter = mAdapter
                 currentItem = getWantedNoteIndex(wantedNoteId)
-                config.currentNoteId = mCurrentNote.id!!
+                config.currentNoteId = mCurrentNote.id ?: -1
 
                 onPageChangeListener {
                     mCurrentNote = mNotes[it]
-                    config.currentNoteId = mCurrentNote.id!!
+                    config.currentNoteId = mCurrentNote.id ?: -1
                     refreshMenuItems()
                 }
             }
@@ -461,7 +473,7 @@ class MainActivity : SimpleActivity() {
         view_pager.onPageChangeListener {
             currentTextFragment?.removeTextWatcher()
             currentNotesView()?.let { noteView ->
-                noteView.text!!.clearBackgroundSpans()
+                noteView.text?.clearBackgroundSpans()
             }
 
             closeSearch()
@@ -481,7 +493,7 @@ class MainActivity : SimpleActivity() {
     private fun searchTextChanged(text: String) {
         currentNotesView()?.let { noteView ->
             currentTextFragment?.removeTextWatcher()
-            noteView.text!!.clearBackgroundSpans()
+            noteView.text?.clearBackgroundSpans()
 
             if (text.isNotBlank() && text.length > 1) {
                 searchMatches = noteView.value.searchMatches(text)
@@ -720,7 +732,7 @@ class MainActivity : SimpleActivity() {
 
     private fun importUri(uri: Uri) {
         when (uri.scheme) {
-            "file" -> openPath(uri.path!!)
+            "file" -> openPath(uri.path ?: "")
             "content" -> {
                 val realPath = getRealPathFromURI(uri)
                 if (hasPermission(PERMISSION_READ_STORAGE)) {
@@ -750,8 +762,8 @@ class MainActivity : SimpleActivity() {
         }
 
         val inputStream = contentResolver.openInputStream(uri)
-        val content = inputStream?.bufferedReader().use { it!!.readText() }
-        val checklistItems = content.parseChecklistItems()
+        val content = inputStream?.bufferedReader().use { it?.readText() }
+        val checklistItems = content?.parseChecklistItems()
 
         // if we got here by some other app invoking the file open intent, we have no permission for updating the original file itself
         // we can do it only after using "Export as file" or "Open file" from our app
@@ -769,7 +781,7 @@ class MainActivity : SimpleActivity() {
 
         val noteType = if (checklistItems != null) NoteType.TYPE_CHECKLIST.value else NoteType.TYPE_TEXT.value
         if (!canSyncNoteWithFile) {
-            val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
+            val note = Note(null, noteTitle, content ?: "", noteType, "", PROTECTION_NONE, "")
             displayNewNoteDialog(note.value, title = noteTitle, "")
         } else {
             val items = arrayListOf(
@@ -780,7 +792,7 @@ class MainActivity : SimpleActivity() {
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == IMPORT_FILE_SYNC
                 val path = if (syncFile) uri.toString() else ""
-                val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
+                val note = Note(null, noteTitle, content ?: "", noteType, "", PROTECTION_NONE, "")
                 displayNewNoteDialog(note.value, title = noteTitle, path)
             }
         }
@@ -942,7 +954,7 @@ class MainActivity : SimpleActivity() {
 
     private fun importNotesFrom(uri: Uri) {
         when (uri.scheme) {
-            "file" -> importNotes(uri.path!!, uri.path!!.getFilenameFromPath())
+            "file" -> importNotes(uri.path ?: "", uri.path?.getFilenameFromPath() ?: "")
             "content" -> {
                 val tempFile = getTempFile("messages", "backup.txt")
                 if (tempFile == null) {
@@ -954,7 +966,7 @@ class MainActivity : SimpleActivity() {
                     val filename = getFilenameFromUri(uri)
                     val inputStream = contentResolver.openInputStream(uri)
                     val out = FileOutputStream(tempFile)
-                    inputStream!!.copyTo(out)
+                    inputStream?.copyTo(out)
                     importNotes(tempFile.absolutePath, filename)
                 } catch (e: Exception) {
                     showErrorToast(e)
@@ -1077,14 +1089,16 @@ class MainActivity : SimpleActivity() {
                         getDocumentFile(path) ?: return@handleSAFDialog
                     } else {
                         val parent = getDocumentFile(File(path).parent) ?: return@handleSAFDialog
-                        parent.createFile("", path.getFilenameFromPath())!!
+                        parent.createFile("", path.getFilenameFromPath())
                     }
 
-                    contentResolver.openOutputStream(document.uri)!!.apply {
-                        val byteArray = content.toByteArray(Charset.forName("UTF-8"))
-                        write(byteArray, 0, byteArray.size)
-                        flush()
-                        close()
+                    document?.uri?.let { it1 ->
+                        contentResolver.openOutputStream(it1)?.apply {
+                            val byteArray = content.toByteArray(Charset.forName("UTF-8"))
+                            write(byteArray, 0, byteArray.size)
+                            flush()
+                            close()
+                        }
                     }
 
                     if (showSuccessToasts) {
@@ -1110,8 +1124,8 @@ class MainActivity : SimpleActivity() {
     private fun exportNoteValueToUri(uri: Uri, title: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
         try {
             val outputStream = contentResolver.openOutputStream(uri, "rwt")
-            outputStream!!.bufferedWriter().use { out ->
-                out.write(content)
+            outputStream?.bufferedWriter().use { out ->
+                out?.write(content)
             }
             if (showSuccessToasts) {
                 noteExportedSuccessfully(title)
@@ -1217,7 +1231,7 @@ class MainActivity : SimpleActivity() {
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
         ensureBackgroundThread {
             notesDB.deleteNote(note)
-            widgetsDB.deleteNoteWidgets(note.id!!)
+            widgetsDB.deleteNoteWidgets(note.id ?: -1)
             refreshNotes(note, deleteFile)
         }
     }
@@ -1226,9 +1240,9 @@ class MainActivity : SimpleActivity() {
         NotesHelper(this).getNotes {
             mNotes = it
             val firstNoteId = mNotes[0].id
-            updateSelectedNote(firstNoteId!!)
+            updateSelectedNote(firstNoteId ?: -1)
             if (config.widgetNoteId == note.id) {
-                config.widgetNoteId = mCurrentNote.id!!
+                config.widgetNoteId = mCurrentNote.id ?: -1
                 updateWidgets()
             }
 

@@ -60,11 +60,11 @@ class Config(context: Context) : BaseConfig(context) {
         set(enableLineWrap) = prefs.edit().putBoolean(ENABLE_LINE_WRAP, enableLineWrap).apply()
 
     var lastUsedExtension: String
-        get() = prefs.getString(LAST_USED_EXTENSION, "txt")!!
+        get() = prefs.getString(LAST_USED_EXTENSION, "txt") ?: ""
         set(lastUsedExtension) = prefs.edit().putString(LAST_USED_EXTENSION, lastUsedExtension).apply()
 
     var lastUsedSavePath: String
-        get() = prefs.getString(LAST_USED_SAVE_PATH, Environment.getExternalStorageDirectory().toString())!!
+        get() = prefs.getString(LAST_USED_SAVE_PATH, Environment.getExternalStorageDirectory().toString()) ?: ""
         set(lastUsedSavePath) = prefs.edit().putString(LAST_USED_SAVE_PATH, lastUsedSavePath).apply()
 
     var useIncognitoMode: Boolean

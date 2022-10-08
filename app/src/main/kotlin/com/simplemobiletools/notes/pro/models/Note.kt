@@ -27,7 +27,7 @@ data class Note(
             try {
                 if (path.startsWith("content://")) {
                     val inputStream = context.contentResolver.openInputStream(Uri.parse(path))
-                    inputStream?.bufferedReader().use { it!!.readText() }
+                    inputStream?.bufferedReader().use { it?.readText() }
                 } else {
                     File(path).readText()
                 }

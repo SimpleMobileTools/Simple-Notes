@@ -46,7 +46,7 @@ class ChecklistAdapter(
         initDrawables()
 
         touchHelper = ItemTouchHelper(ItemMoveCallback(this))
-        touchHelper!!.attachToRecyclerView(recyclerView)
+        touchHelper?.attachToRecyclerView(recyclerView)
 
         startReorderDragListener = object : StartReorderDragListener {
             override fun requestDrag(viewHolder: RecyclerView.ViewHolder) {
