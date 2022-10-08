@@ -2,9 +2,6 @@
 
 buildscript {
     ext.kotlin_version = '1.7.10'
-    ext.room_version = '2.4.3'
-    ext.documentfile_version = '1.0.1'
-    ext.constraintlayout_version = '2.1.4'
 
     repositories {
         google()
