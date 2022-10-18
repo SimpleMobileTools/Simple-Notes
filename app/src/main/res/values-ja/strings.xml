@@ -11,7 +11,7 @@
     <string name="title_taken">そのタイトルのメモはすでに存在します</string>
     <string name="open_note">メモを開く</string>
     <string name="delete_note">メモを削除</string>
-    <string name="delete_note_prompt_message">メモを削除してもよろしいですか\"%s\"\?</string>
+    <string name="delete_note_prompt_message">メモ \"%s\" を削除してもよろしいですか？</string>
     <string name="pick_a_note">メモを選択</string>
     <string name="rename_note">メモの名前を変更</string>
     <string name="general_note">全般メモ</string>
