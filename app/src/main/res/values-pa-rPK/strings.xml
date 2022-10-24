@@ -28,7 +28,7 @@
     <string name="locking_warning">چیتاونی: جےتسی نوٹ دا پاس‌ورڈ بھُل جاندے او، تاں فیر نوٹ دی سمگری لبھ نہیں سکدیاں۔</string>
     <string name="new_text_note">نواں لکھت دا نوٹ بݨاؤ</string>
     <string name="new_checklist">نویں چیک‌لِسٹ بݨاؤ</string>
-    <string name="open_file">Open file</string>
+    <string name="open_file">فائل کھُلھو</string>
     <string name="export_as_file">فائل ایکسپورٹ کرو</string>
     <string name="file_too_large">فائل بہت وڈی اے، سیمہ ۱ میگا‌بائیٹ اے</string>
     <string name="only_import_file_content">صرف فائل دا سمگری ہی ایمپورٹ کرو (جے فائل بدلی گئی نوٹ نوں بدلیا نہیں ہووےگا)</string>
