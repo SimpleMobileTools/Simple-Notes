@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_taken">Že obstajajo opombe identične</string>
     <string name="app_name">Enostavne opombe</string>
     <string name="app_launcher_name">Opombe</string>
-    <string name="note_saved_successfully">Opomba \"%s\" uspešno shranjena</string>
-    <string name="widget_config">Hvala za uporabo Enostavnih opomb.
-\nVeč enostavnih aplikacij najdete SimpleMobileTools.com.</string>
+    <string name="widget_config">Hvala za uporabo Enostavnih opomb.\nVeč enostavnih aplikacij najdete SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Prazno besedilo ni deljivo</string>
     <string name="simple_note">Enostavne opombe</string>
     <string name="new_note">Novo opombo dodajte</string>
     <string name="no_title">Poimenujte vašo opombo</string>
+    <string name="title_taken">Že obstajajo opombe identične</string>
     <string name="open_note">Opomba odprta</string>
     <string name="delete_note">Opombo izbrišite</string>
     <string name="delete_note_prompt_message">Res želite izbrisati opombo \"%s\"\?</string>
@@ -30,17 +28,17 @@
     <string name="locking_warning">OPOZORILO: Če pozabite geslo za opombe, ga ne bo moč več obnoviti in dostopati do njihove vsebine.</string>
     <string name="new_text_note">Nova opomba k besedilu</string>
     <string name="new_checklist">Nov seznam za preverjanje</string>
+    <!-- File notes -->
     <string name="open_file">Odprite datoteko</string>
     <string name="export_as_file">Izvozite kot datoteko</string>
     <string name="file_too_large">Prevelika datoteka, omejitev je 1MB</string>
-    <string name="only_import_file_content">Uvozite le vsebino datoteke
-\n(sprememba datoteke ne vpliva na opombo)</string>
-    <string name="update_file_at_note">Posodobite datoteko ob posodabljanju opombe
-\n(opomba se izbriše, če se datoteka izbriše ali spremeni pot)</string>
+    <string name="only_import_file_content">Uvozite le vsebino datoteke\n(sprememba datoteke ne vpliva na opombo)</string>
+    <string name="update_file_at_note">Posodobite datoteko ob posodabljanju opombe\n(opomba se izbriše, če se datoteka izbriše ali spremeni pot)</string>
     <string name="delete_file_itself">Izbrišite tudi datoteko \"%s\"</string>
+    <string name="note_saved_successfully">Opomba \"%s\" uspešno shranjena</string>
     <string name="note_exported_successfully">Opomba \"%s\" uspešno izvožena</string>
-    <string name="only_export_file_content">Izvozite le trenutno vsebino datoteke
-\n(sprememba opombe ne vpliva na datoteko)</string>
+    <string name="only_export_file_content">Izvozite le trenutno vsebino datoteke\n(sprememba opombe ne vpliva na datoteko)</string>
+    <!-- Settings -->
     <string name="display_success_message">Pokažite sporočila o uspešnem shranjevanju</string>
     <string name="links_and_emails_clickable">Poskrbite, da je moč klikniti povezave in e-poštna sporočila</string>
     <string name="place_cursor_end">Kazalec postavite na koncu opomb</string>
@@ -59,17 +57,20 @@
     <string name="use_incognito_mode">Uporabite način inkognito na tipkovnicah</string>
     <string name="move_done_checklist_items">Na dno premaknite postavke kontrolnega seznama</string>
     <string name="add_new_checklist_items_top">Dodajte nove elemente kontrolnega seznama na vrh</string>
+    <!-- Checklists -->
     <string name="checklist">Preverjanje</string>
     <string name="checklists">Preverjanje seznamov</string>
     <string name="add_new_checklist_item">Dodajte novo zadevo na seznam</string>
     <string name="add_new_checklist_items">Dodajte nove zadeve na seznam</string>
     <string name="checklist_is_empty">Seznam kontrolni je prazen</string>
     <string name="remove_done_items">Odstranite opravljene elemente</string>
+    <!-- Import / Export -->
     <string name="export_all_notes">Izvozite vse opombe kot datoteke</string>
     <string name="import_folder">Uvozite datoteko</string>
     <string name="export_notes">Izvozite vse opombe</string>
     <string name="import_notes">Uvozite opombe</string>
     <string name="import_notes_pro">Uvozite opombe (Pro)</string>
+    <!-- FAQ -->
     <string name="faq_1_title">Kako lahko spremenim barvo pripomočkov\?</string>
     <string name="faq_1_text">V primeru le enega aktivnega pripomočka, ga ponovno ustvarite ali uporabite gumb v nastavitvah aplikacije za njegovo prilagoditev. Če imate več aktivnih gradnikov, gumb v nastavitvah aplikacije ne bo na voljo. Ker aplikacija podpira prilagajanje barv za posamezen pripomoček, ga boste morali ponovno ustvariti, v primeru prilagoditve.</string>
 </resources>
