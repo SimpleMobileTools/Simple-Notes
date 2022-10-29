@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">سادے نوٹ</string>
+    <string name="app_launcher_name">نوٹ</string>
+    <string name="widget_config">تہاڈیاں اَیپ ورتوں لئی مہربانی۔ «SimpleMobileTools.com» تے ہور سادی اَیپاں دِکھیو۔</string>
+    <string name="cannot_share_empty_text">کوئی لکھت نہیں، سانجھی نہیں کیتی جا سکدی</string>
+    <string name="simple_note">سادہ نوٹ</string>
+    <string name="new_note">نواں نوٹ پایو</string>
+    <string name="no_title">نوٹ دا ناں پایو</string>
+    <string name="title_taken">ایہہ سرلیکھ ہور نوٹ پہلاں ہی ورتیا سی</string>
+    <string name="open_note">Open note</string>
+    <string name="delete_note">نوٹ مٹاؤ</string>
+    <string name="delete_note_prompt_message">پکے، «%s» مٹاؤ؟</string>
+    <string name="pick_a_note">اِک نوٹ چݨو</string>
+    <string name="rename_note">نوٹ لئی نواں ناں بݨاؤ</string>
+    <string name="general_note">عام نوٹ</string>
+    <string name="create_new_note">نواں نوٹ بݨاؤ</string>
+    <string name="add_to_note">نوٹ وچ جوڑو</string>
+    <string name="unsaved_changes_warning">کجھ تبدیکیاں نہیں سامبھیاں ہن۔ کیہ کرنا چاہندے او؟</string>
+    <string name="note_shown_widget">وِجٹ وچ نوٹ ویکھدا:</string>
+    <string name="show_note_title">نوٹ دا سرلیکھ ویکھو</string>
+    <string name="new_note_type">نویں نوٹ دی قسم:</string>
+    <string name="text_note">لکھت دا نوٹ</string>
+    <string name="lock_note">نوٹ تالؕا مارنا</string>
+    <string name="unlock_note">نوٹ اُگھیڑو</string>
+    <string name="note_content_locked">ایس نوٹ دی سمگاری تالؕا مارنی اے</string>
+    <string name="show_content">سمگری ویکھو</string>
+    <string name="locking_warning">چیتاونی: جےتسی نوٹ دا پاس‌ورڈ بھُل جاندے او، تاں فیر نوٹ دی سمگری لبھ نہیں سکدیاں۔</string>
+    <string name="new_text_note">نواں لکھت دا نوٹ بݨاؤ</string>
+    <string name="new_checklist">نویں چیک‌لِسٹ بݨاؤ</string>
+    <!-- File notes -->
+    <string name="open_file">فائل کھُلھو</string>
+    <string name="export_as_file">فائل ایکسپورٹ کرو</string>
+    <string name="file_too_large">فائل بہت وڈی اے، سیمہ ۱ میگا‌بائیٹ اے</string>
+    <string name="only_import_file_content">صرف فائل دا سمگری ہی ایمپورٹ کرو (جے فائل بدلی گئی نوٹ نوں بدلیا نہیں ہووےگا)</string>
+    <string name="update_file_at_note">جدوں نوٹ بدلیا فائل بدلو (جے فائل مٹی گئی یا پاتھ بدلیا گیا، تاں نوٹ مٹا دِتا جاندا اے)</string>
+    <string name="delete_file_itself">فائل «%s» نوں وی مٹاؤ</string>
+    <string name="note_saved_successfully">نوٹ «%s» سامبھیا گیا</string>
+    <string name="note_exported_successfully">نوٹ «%s» ایکسپورٹ کیتا گیا</string>
+    <string name="only_export_file_content">صرف ایس فائل دا سمگری ہی ایمپورٹ کرو (جے نوٹ بدلیا گیا فائل نوں بدلیا نہیں ہووےگا)</string>
+    <!-- Settings -->
+    <string name="display_success_message">سامبھݨ دے سنہے ویکھو</string>
+    <string name="links_and_emails_clickable">کڑیاں تے ای‌میل کھُلھݨ چالو کرو</string>
+    <string name="place_cursor_end">کرسر نوں نوٹ دے انت وچ رکھو</string>
+    <string name="monospaced_font">مونوسپیس والے فونٹ ورتو</string>
+    <string name="show_keyboard">شروع ہوݨ سمیں کیبورڈ ویکھو</string>
+    <string name="show_word_count">لفظاں دی گݨتی ویکھو</string>
+    <string name="show_character_count">اکھراں دی کھݨتی ویکھو</string>
+    <string name="alignment">Alignment</string>
+    <string name="left">Left</string>
+    <string name="center">Center</string>
+    <string name="right">Right</string>
+    <string name="widget_note">وِجٹ وچ نوٹ ورتدا جاندا</string>
+    <string name="show_note_picker">شروع ہوݨ سمیں نوٹ چوݨکار ویکھو</string>
+    <string name="autosave_notes">Autosave notes</string>
+    <string name="enable_line_wrap">لائین ریپ کرن چالو کرو</string>
+    <string name="use_incognito_mode">کیبورڈاں لئی اینکوگنیٹو سیٹنگ ورتو</string>
+    <string name="move_done_checklist_items">چیک‌لِسٹ دے پورن حصے نوں ہیٹھاں لے جاؤ</string>
+    <string name="add_new_checklist_items_top">سکھر تے چیک‌لِسٹ دے نویں حصے پایو</string>
+    <!-- Checklists -->
+    <string name="checklist">Checklist</string>
+    <string name="checklists">Checklists</string>
+    <string name="add_new_checklist_item">چیک‌لِسٹ وچ نواں حصہ پایو</string>
+    <string name="add_new_checklist_items">چیک‌لِسٹ وچ نویں حصے پایو</string>
+    <string name="checklist_is_empty">چیک‌لِسٹ وچ نوٹ کوئی نہیں</string>
+    <string name="remove_done_items">کیٹیاں ائیٹماں نوں ہٹاؤ</string>
+    <!-- Import / Export -->
+    <string name="export_all_notes">فائلاں نوں سارے نوٹ ایکسپورٹ کرو</string>
+    <string name="import_folder">فولڈر ایمپورٹ کرو</string>
+    <string name="export_notes">سارے نوٹ ایکسپورٹ کرو</string>
+    <string name="import_notes">نوٹ ایمپورٹ کرو</string>
+    <string name="import_notes_pro">نوٹ ایمپورٹ کرو (ماہر)</string>
+    <!-- FAQ -->
+    <string name="faq_1_title">میں وِجٹ دا رنگ کیویں بدل سکدا ہاں؟</string>
+    <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
+</resources>
