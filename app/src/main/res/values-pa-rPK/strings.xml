@@ -8,7 +8,7 @@
     <string name="new_note">نواں نوٹ پایو</string>
     <string name="no_title">نوٹ دا ناں پایو</string>
     <string name="title_taken">ایہہ سرلیکھ ہور نوٹ پہلاں ہی ورتیا سی</string>
-    <string name="open_note">Open note</string>
+    <string name="open_note">نوٹ کھُلھو</string>
     <string name="delete_note">نوٹ مٹاؤ</string>
     <string name="delete_note_prompt_message">پکے، «%s» مٹاؤ؟</string>
     <string name="pick_a_note">اِک نوٹ چݨو</string>
@@ -46,20 +46,20 @@
     <string name="show_keyboard">شروع ہوݨ سمیں کیبورڈ ویکھو</string>
     <string name="show_word_count">لفظاں دی گݨتی ویکھو</string>
     <string name="show_character_count">اکھراں دی کھݨتی ویکھو</string>
-    <string name="alignment">Alignment</string>
-    <string name="left">Left</string>
-    <string name="center">Center</string>
-    <string name="right">Right</string>
+    <string name="alignment">ایکسارتا</string>
+    <string name="left">کھبے</string>
+    <string name="center">کیندر</string>
+    <string name="right">سجے</string>
     <string name="widget_note">وِجٹ وچ نوٹ ورتدا جاندا</string>
     <string name="show_note_picker">شروع ہوݨ سمیں نوٹ چوݨکار ویکھو</string>
-    <string name="autosave_notes">Autosave notes</string>
+    <string name="autosave_notes">خود بخود نوٹ سامبھو</string>
     <string name="enable_line_wrap">لائین ریپ کرن چالو کرو</string>
     <string name="use_incognito_mode">کیبورڈاں لئی اینکوگنیٹو سیٹنگ ورتو</string>
     <string name="move_done_checklist_items">چیک‌لِسٹ دے پورن حصے نوں ہیٹھاں لے جاؤ</string>
     <string name="add_new_checklist_items_top">سکھر تے چیک‌لِسٹ دے نویں حصے پایو</string>
     <!-- Checklists -->
-    <string name="checklist">Checklist</string>
-    <string name="checklists">Checklists</string>
+    <string name="checklist">چیک‌لسٹ</string>
+    <string name="checklists">چیک‌لسٹاں</string>
     <string name="add_new_checklist_item">چیک‌لِسٹ وچ نواں حصہ پایو</string>
     <string name="add_new_checklist_items">چیک‌لِسٹ وچ نویں حصے پایو</string>
     <string name="checklist_is_empty">چیک‌لِسٹ وچ نوٹ کوئی نہیں</string>
