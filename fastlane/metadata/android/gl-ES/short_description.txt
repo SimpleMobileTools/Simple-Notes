@@ -1,1 +1,1 @@
-A beautiful quick note taking app without ads or weird permissions.
+Widget de lista de tarefas cun organizador de cadernos, lista de verificación, lista de compras sinxela
