@@ -1,1 +1,1 @@
-Widget de lista de tarefas cun organizador de cadernos, lista de verificación, lista de compras sinxela
+Widget de lista de tarefas un organizador de cuadernos, lista de verificación
