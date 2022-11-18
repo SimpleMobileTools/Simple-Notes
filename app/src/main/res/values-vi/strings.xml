@@ -2,82 +2,82 @@
 <resources>
     <string name="app_name">Ghi Chú Nhanh</string>
     <string name="app_launcher_name">Ghi Chú</string>
-    <string name="widget_config"> Cảm ơn bạn đã sử dụng Simple Notes. \nĐể có các ứng dụng đơn giản hơn, vui lòng truy cập SimpleMobileTools.com. </string>
-    <string name="cannot_share_empty_text"> Không thể chia sẻ văn bản trống </string>
-    <string name="simple_note"> Ghi chú Đơn giản </string>
-    <string name="new_note"> Thêm ghi chú mới </string>
-    <string name="no_title"> Vui lòng đặt tên cho ghi chú của bạn </string>
-    <string name="title_taken"> Một ghi chú với tiêu đề đó đã tồn tại </string>
-    <string name="open_note"> Ghi chú mở </string>
-    <string name="delete_note"> Xóa ghi chú </string>
-    <string name="delete_note_prompt_message"> Bạn có chắc chắn muốn xóa ghi chú \"%s\" không? </string>
-    <string name="pick_a_note"> Chọn một ghi chú </string>
-    <string name="rename_note"> Đổi tên ghi chú </string>
-    <string name="general_note"> Lưu ý chung </string>
-    <string name="create_new_note"> Tạo ghi chú mới </string>
-    <string name="add_to_note"> Thêm vào ghi chú </string>
-    <string name="unsaved_changes_warning"> Bạn có một số thay đổi chưa được lưu. Bạn muốn làm gì với chúng? </string>
-    <string name="note_shown_widget"> Ghi chú hiển thị trong tiện ích: </string>
-    <string name="show_note_title"> Hiển thị tiêu đề ghi chú </string>
-    <string name="new_note_type"> Loại ghi chú mới: </string>
-    <string name="text_note"> Ghi chú văn bản </string>
-    <string name="lock_note"> Khóa ghi chú </string>
-    <string name="unlock_note"> Mở khóa ghi chú </string>
-    <string name="note_content_locked"> Nội dung của ghi chú đã bị khóa. </string>
-    <string name="show_content"> Hiển thị nội dung </string>
+    <string name="widget_config">Cảm ơn bạn đã sử dụng Simple Notes. \nĐể có các ứng dụng đơn giản hơn, vui lòng truy cập SimpleMobileTools.com.</string>
+    <string name="cannot_share_empty_text">Không thể chia sẻ văn bản trống</string>
+    <string name="simple_note">Ghi chú Đơn giản</string>
+    <string name="new_note">Thêm ghi chú mới</string>
+    <string name="no_title">Vui lòng đặt tên cho ghi chú của bạn</string>
+    <string name="title_taken">Một ghi chú với tiêu đề đó đã tồn tại</string>
+    <string name="open_note">Ghi chú mở</string>
+    <string name="delete_note">Xóa ghi chú</string>
+    <string name="delete_note_prompt_message">Bạn có chắc chắn muốn xóa ghi chú \"%s\" không?</string>
+    <string name="pick_a_note">Chọn một ghi chú</string>
+    <string name="rename_note">Đổi tên ghi chú</string>
+    <string name="general_note">Lưu ý chung</string>
+    <string name="create_new_note">Tạo ghi chú mới</string>
+    <string name="add_to_note">Thêm vào ghi chú</string>
+    <string name="unsaved_changes_warning">Bạn có một số thay đổi chưa được lưu. Bạn muốn làm gì với chúng?</string>
+    <string name="note_shown_widget">Ghi chú hiển thị trong tiện ích:</string>
+    <string name="show_note_title">Hiển thị tiêu đề ghi chú</string>
+    <string name="new_note_type">Loại ghi chú mới:</string>
+    <string name="text_note">Ghi chú văn bản</string>
+    <string name="lock_note">Khóa ghi chú</string>
+    <string name="unlock_note">Mở khóa ghi chú</string>
+    <string name="note_content_locked">Nội dung của ghi chú đã bị khóa.</string>
+    <string name="show_content">Hiển thị nội dung</string>
     <string name="locking_warning">Cảnh Báo: Nếu bạn quên khi chú mật khẩu, bạn sẽ không thể nào lấy lại hay truy cập vào những ghi chú nữa</string>
-    <string name="new_text_note"> Ghi chú văn bản mới </string>
-    <string name="new_checklist"> Danh sách kiểm tra mới </string>
+    <string name="new_text_note">Ghi chú văn bản mới</string>
+    <string name="new_checklist">Danh sách kiểm tra mới</string>
 
     <!-- File notes -->
-    <string name="open_file"> Mở tệp </string>
-    <string name="export_as_file"> Xuất dưới dạng tệp </string>
-    <string name="file_too_large"> Tệp quá lớn, giới hạn là 1MB </string>
-    <string name="only_import_file_content"> Chỉ nhập nội dung tệp \n (việc thay đổi tệp sẽ không ảnh hưởng đến ghi chú) </string>
-    <string name="update_file_at_note"> Cập nhật chính tệp khi cập nhật ghi chú \n (ghi chú sẽ bị xóa nếu tệp bị xóa hoặc thay đổi đường dẫn) </string>
-    <string name="delete_file_itself"> Đồng thời xóa tệp \"%s\" </string>
+    <string name="open_file">Mở tệp</string>
+    <string name="export_as_file">Xuất dưới dạng tệp</string>
+    <string name="file_too_large">Tệp quá lớn, giới hạn là 1MB</string>
+    <string name="only_import_file_content">Chỉ nhập nội dung tệp \n (việc thay đổi tệp sẽ không ảnh hưởng đến ghi chú)</string>
+    <string name="update_file_at_note">Cập nhật chính tệp khi cập nhật ghi chú \n (ghi chú sẽ bị xóa nếu tệp bị xóa hoặc thay đổi đường dẫn)</string>
+    <string name="delete_file_itself">Đồng thời xóa tệp \"%s\"</string>
     <string name="note_saved_successfully">Ghi chú \"%s\" thành công</string>
     <string name="note_exported_successfully">Xuất ghi chú \"%s\" thành công</string>
-    <string name="only_export_file_content"> Chỉ xuất nội dung tệp hiện tại \n (việc thay đổi ghi chú sẽ không ảnh hưởng đến tệp) </string>
+    <string name="only_export_file_content">Chỉ xuất nội dung tệp hiện tại \n (việc thay đổi ghi chú sẽ không ảnh hưởng đến tệp)</string>
 
     <!-- Settings -->
-    <string name="display_success_message"> Hiển thị thông báo lưu thành công </string>
-    <string name="links_and_emails_clickable"> Làm cho các liên kết và email có thể nhấp được </string>
-    <string name="place_cursor_end"> Đặt con trỏ đến cuối ghi chú </string>
-    <string name="monospaced_font"> Sử dụng phông chữ monospaced </string>
-    <string name="show_keyboard"> Hiển thị bàn phím khi khởi động </string>
-    <string name="show_word_count"> Hiển thị số lượng từ </string>
-    <string name="show_character_count"> Hiển thị số lượng ký tự </string>
-    <string name="alignment"> Căn chỉnh </string>
-    <string name="left"> Left </string>
-    <string name="center"> Trung tâm </string>
-    <string name="right"> Đúng </string>
-    <string name="widget_note"> Ghi chú được sử dụng trong widget </string>
-    <string name="show_note_picker"> Hiển thị bộ chọn ghi chú khi khởi động </string>
-    <string name="autosave_notes"> Tự động lưu ghi chú </string>
-    <string name="enable_line_wrap"> Bật gói dòng </string>
-    <string name="use_incognito_mode"> Sử dụng chế độ Ẩn danh của bàn phím </string>
-    <string name="move_done_checklist_items"> Di chuyển các mục trong danh sách kiểm tra đã hoàn thành xuống dưới cùng </string>
-    <string name="add_new_checklist_items_top"> Thêm các mục mới trong danh sách kiểm tra ở trên cùng </string>
+    <string name="display_success_message">Hiển thị thông báo lưu thành công</string>
+    <string name="links_and_emails_clickable">Làm cho các liên kết và email có thể nhấp được</string>
+    <string name="place_cursor_end">Đặt con trỏ đến cuối ghi chú</string>
+    <string name="monospaced_font">Sử dụng phông chữ monospaced</string>
+    <string name="show_keyboard">Hiển thị bàn phím khi khởi động</string>
+    <string name="show_word_count">Hiển thị số lượng từ</string>
+    <string name="show_character_count">Hiển thị số lượng ký tự</string>
+    <string name="alignment">Căn chỉnh</string>
+    <string name="left">Left</string>
+    <string name="center">Trung tâm</string>
+    <string name="right">Đúng</string>
+    <string name="widget_note">Ghi chú được sử dụng trong widget</string>
+    <string name="show_note_picker">Hiển thị bộ chọn ghi chú khi khởi động</string>
+    <string name="autosave_notes">Tự động lưu ghi chú</string>
+    <string name="enable_line_wrap">Bật gói dòng</string>
+    <string name="use_incognito_mode">Sử dụng chế độ Ẩn danh của bàn phím</string>
+    <string name="move_done_checklist_items">Di chuyển các mục trong danh sách kiểm tra đã hoàn thành xuống dưới cùng</string>
+    <string name="add_new_checklist_items_top">Thêm các mục mới trong danh sách kiểm tra ở trên cùng</string>
 
     <!-- Checklists -->
-    <string name="checklist"> Danh sách kiểm tra </string>
-    <string name="checklists"> Danh sách kiểm tra </string>
-    <string name="add_new_checklist_item"> Thêm một mục mới trong danh sách kiểm tra </string>
-    <string name="add_new_checklist_items"> Thêm các mục mới trong danh sách kiểm tra </string>
-    <string name="checklist_is_empty"> Danh sách kiểm tra trống </string>
-    <string name="remove_done_items"> Xóa các mục đã hoàn thành </string>
+    <string name="checklist">Danh sách kiểm tra</string>
+    <string name="checklists">Danh sách kiểm tra</string>
+    <string name="add_new_checklist_item">Thêm một mục mới trong danh sách kiểm tra</string>
+    <string name="add_new_checklist_items">Thêm các mục mới trong danh sách kiểm tra</string>
+    <string name="checklist_is_empty">Danh sách kiểm tra trống</string>
+    <string name="remove_done_items">Xóa các mục đã hoàn thành</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes"> Xuất tất cả ghi chú dưới dạng tệp </string>
-    <string name="import_folder"> Nhập thư mục </string>
-    <string name="export_notes"> Xuất tất cả các ghi chú </string>
-    <string name="import_notes"> Nhập ghi chú </string>
-    <string name="import_notes_pro"> Nhập ghi chú (Bản trả phí) </string>
+    <string name="export_all_notes">Xuất tất cả ghi chú dưới dạng tệp</string>
+    <string name="import_folder">Nhập thư mục</string>
+    <string name="export_notes">Xuất tất cả các ghi chú</string>
+    <string name="import_notes">Nhập ghi chú</string>
+    <string name="import_notes_pro">Nhập ghi chú (Bản trả phí)</string>
 
     <!-- FAQ -->
-    <string name="faq_1_title"> Làm cách nào để thay đổi màu tiện ích? </string>
-    <string name="faq_1_text"> Trong trường hợp bạn chỉ có 1 tiện ích con đang hoạt động, bạn có thể tạo lại nó hoặc sử dụng nút trong cài đặt ứng dụng để tùy chỉnh nó. Nếu bạn có nhiều tiện ích con đang hoạt động, nút trong cài đặt ứng dụng sẽ không khả dụng. Vì ứng dụng hỗ trợ tùy chỉnh màu sắc cho mỗi tiện ích, bạn sẽ phải tạo lại tiện ích mà bạn muốn tùy chỉnh. </string>    <!--
+    <string name="faq_1_title">Làm cách nào để thay đổi màu tiện ích?</string>
+    <string name="faq_1_text">Trong trường hợp bạn chỉ có 1 tiện ích con đang hoạt động, bạn có thể tạo lại nó hoặc sử dụng nút trong cài đặt ứng dụng để tùy chỉnh nó. Nếu bạn có nhiều tiện ích con đang hoạt động, nút trong cài đặt ứng dụng sẽ không khả dụng. Vì ứng dụng hỗ trợ tùy chỉnh màu sắc cho mỗi tiện ích, bạn sẽ phải tạo lại tiện ích mà bạn muốn tùy chỉnh.</string>    <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
     -->
