@@ -34,6 +34,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         view = inflater.inflate(R.layout.fragment_checklist, container, false) as ViewGroup
         noteId = requireArguments().getLong(NOTE_ID, 0L)
+        setupFragmentColors()
         return view
     }
 
@@ -95,6 +96,12 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             return
         }
 
+        setupFragmentColors()
+        checkLockState()
+        setupAdapter()
+    }
+
+    private fun setupFragmentColors() {
         val adjustedPrimaryColor = requireActivity().getProperPrimaryColor()
         view.checklist_fab.apply {
             setColors(
@@ -117,9 +124,6 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 showNewItemDialog()
             }
         }
-
-        checkLockState()
-        setupAdapter()
     }
 
     override fun checkLockState() {
