@@ -1216,8 +1216,8 @@ class MainActivity : SimpleActivity() {
 
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
         ensureBackgroundThread {
-            val currentNodeIndex = mNotes.indexOf(note)
-            val noteToRefresh = mNotes[if (currentNodeIndex > 0) currentNodeIndex - 1 else currentNodeIndex + 1]
+            val currentNoteIndex = mNotes.indexOf(note)
+            val noteToRefresh = mNotes[if (currentNoteIndex > 0) currentNoteIndex - 1 else currentNoteIndex + 1]
 
             notesDB.deleteNote(note)
             widgetsDB.deleteNoteWidgets(note.id!!)
