@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">Простий Нотатник</string>
     <string name="app_launcher_name">Нотатник</string>
-    <string name="widget_config">Дякуємо, що користуєтесь Простим Нотатником.
-\nБільше простих додатків знайдете на SimpleMobileTools.com.</string>
+    <string name="widget_config">Дякуємо, що користуєтесь Простим Notes.
+\nБільше простих застосунків знайдете на SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Не можна поділитися пустою нотаткою</string>
     <string name="simple_note">Проста нотатка</string>
     <string name="new_note">Додати нову нотатку</string>
