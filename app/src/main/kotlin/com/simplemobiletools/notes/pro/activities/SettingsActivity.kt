@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
-import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.extensions.beVisibleIf
+import com.simplemobiletools.commons.extensions.getProperPrimaryColor
+import com.simplemobiletools.commons.extensions.updateTextColors
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
@@ -18,9 +20,14 @@ import java.util.*
 import kotlin.system.exitProcess
 
 class SettingsActivity : SimpleActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        isMaterialActivity = true
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+
+        updateMaterialActivityViews(settings_coordinator, settings_holder)
+        setupMaterialScrollListener(settings_nested_scrollview, settings_toolbar)
     }
 
     override fun onResume() {
@@ -46,23 +53,13 @@ class SettingsActivity : SimpleActivity() {
         updateTextColors(settings_nested_scrollview)
 
         arrayOf(
-            settings_color_customization_label,
+            settings_color_customization_section_label,
             settings_general_settings_label,
             settings_text_label,
             settings_startup_label,
             settings_saving_label
         ).forEach {
             it.setTextColor(getProperPrimaryColor())
-        }
-
-        arrayOf(
-            settings_color_customization_holder,
-            settings_general_settings_holder,
-            settings_text_holder,
-            settings_startup_holder,
-            settings_saving_holder
-        ).forEach {
-            it.background.applyColorFilter(getProperBackgroundColor().getContrastColor())
         }
     }
 
@@ -72,7 +69,7 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupCustomizeColors() {
-        settings_customize_colors_holder.setOnClickListener {
+        settings_color_customization_holder.setOnClickListener {
             startCustomizationActivity()
         }
     }
@@ -90,11 +87,6 @@ class SettingsActivity : SimpleActivity() {
     private fun setupLanguage() {
         settings_language.text = Locale.getDefault().displayLanguage
         settings_language_holder.beVisibleIf(isTiramisuPlus())
-
-        if (settings_use_english_holder.isGone() && settings_language_holder.isGone()) {
-            settings_font_size_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
-        }
-
         settings_language_holder.setOnClickListener {
             launchChangeAppLanguageIntent()
         }
@@ -144,10 +136,6 @@ class SettingsActivity : SimpleActivity() {
     private fun setupShowNotePicker() {
         NotesHelper(this).getNotes {
             settings_show_note_picker_holder.beVisibleIf(it.size > 1)
-
-            if (settings_show_note_picker_holder.isGone()) {
-                settings_show_keyboard_holder.background = resources.getDrawable(R.drawable.ripple_bottom_corners, theme)
-            }
         }
 
         settings_show_note_picker.isChecked = config.showNotePicker
@@ -236,7 +224,7 @@ class SettingsActivity : SimpleActivity() {
     private fun setupCustomizeWidgetColors() {
         var widgetToCustomize: Widget? = null
 
-        settings_customize_widget_colors_holder.setOnClickListener {
+        settings_widget_color_customization_holder.setOnClickListener {
             Intent(this, WidgetConfigureActivity::class.java).apply {
                 putExtra(IS_CUSTOMIZING_COLORS, true)
 
@@ -257,11 +245,6 @@ class SettingsActivity : SimpleActivity() {
             val widgets = widgetsDB.getWidgets().filter { it.widgetId != 0 }
             if (widgets.size == 1) {
                 widgetToCustomize = widgets.first()
-            } else if (widgets.size > 1) {
-                runOnUiThread {
-                    settings_customize_widget_colors_holder.beGone()
-                    settings_customize_colors_holder.background = resources.getDrawable(R.drawable.ripple_all_corners, theme)
-                }
             }
         }
     }
