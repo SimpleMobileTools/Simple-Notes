@@ -73,7 +73,6 @@ class WidgetConfigureActivity : SimpleActivity() {
     override fun onResume() {
         super.onResume()
         text_note_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
-        setupToolbar(config_toolbar)
     }
 
     private fun initVariables() {
@@ -85,6 +84,10 @@ class WidgetConfigureActivity : SimpleActivity() {
             mBgColor = extras?.getInt(CUSTOMIZED_WIDGET_BG_COLOR) ?: config.widgetBgColor
             mTextColor = extras?.getInt(CUSTOMIZED_WIDGET_TEXT_COLOR) ?: config.widgetTextColor
             mShowTitle = extras?.getBoolean(CUSTOMIZED_WIDGET_SHOW_TITLE) ?: false
+        }
+
+        if (mTextColor == resources.getColor(R.color.default_widget_text_color) && config.isUsingSystemTheme) {
+            mTextColor = resources.getColor(R.color.you_primary_color, theme)
         }
 
         mBgAlpha = Color.alpha(mBgColor) / 255.toFloat()
