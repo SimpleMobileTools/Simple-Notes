@@ -1216,17 +1216,21 @@ class MainActivity : SimpleActivity() {
 
     private fun doDeleteNote(note: Note, deleteFile: Boolean) {
         ensureBackgroundThread {
+            val currentNoteIndex = mNotes.indexOf(note)
+            val noteToRefresh = mNotes[if (currentNoteIndex > 0) currentNoteIndex - 1 else currentNoteIndex + 1]
+
             notesDB.deleteNote(note)
             widgetsDB.deleteNoteWidgets(note.id!!)
-            refreshNotes(note, deleteFile)
+
+            refreshNotes(noteToRefresh, deleteFile)
         }
     }
 
     private fun refreshNotes(note: Note, deleteFile: Boolean) {
         NotesHelper(this).getNotes {
             mNotes = it
-            val firstNoteId = mNotes[0].id
-            updateSelectedNote(firstNoteId!!)
+            val noteId = note.id
+            updateSelectedNote(noteId!!)
             if (config.widgetNoteId == note.id) {
                 config.widgetNoteId = mCurrentNote.id!!
                 updateWidgets()
