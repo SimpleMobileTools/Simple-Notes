@@ -83,11 +83,14 @@ class MainActivity : SimpleActivity() {
     private lateinit var searchClearBtn: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        isMaterialActivity = true
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         appLaunched(BuildConfig.APPLICATION_ID)
         setupOptionsMenu()
         refreshMenuItems()
+
+        updateMaterialActivityViews(main_coordinator, main_linear_layout)
 
         searchQueryET = findViewById(R.id.search_query)
         searchPrevBtn = findViewById(R.id.search_previous)
@@ -130,11 +133,13 @@ class MainActivity : SimpleActivity() {
 
         checkShortcuts()
 
-        search_wrapper.setBackgroundColor(getProperPrimaryColor())
+        search_wrapper.setBackgroundColor(getProperStatusBarColor())
         val contrastColor = getProperPrimaryColor().getContrastColor()
         arrayListOf(searchPrevBtn, searchNextBtn, searchClearBtn).forEach {
             it.applyColorFilter(contrastColor)
         }
+
+        updateTopBarColors(main_toolbar, getProperBackgroundColor())
     }
 
     override fun onPause() {
@@ -542,7 +547,8 @@ class MainActivity : SimpleActivity() {
 
     private fun openSearch() {
         isSearchActive = true
-        search_wrapper.beVisible()
+        search_wrapper.fadeIn()
+        animateTopBarColors(window.statusBarColor, getProperStatusBarColor(), main_toolbar)
         showKeyboard(searchQueryET)
 
         currentNotesView()?.let { noteView ->
@@ -558,7 +564,8 @@ class MainActivity : SimpleActivity() {
     private fun closeSearch() {
         searchQueryET.text?.clear()
         isSearchActive = false
-        search_wrapper.beGone()
+        search_wrapper.fadeOut()
+        animateTopBarColors(window.statusBarColor, getProperBackgroundColor(), main_toolbar)
     }
 
     private fun getWantedNoteIndex(wantedNoteId: Long?): Int {
