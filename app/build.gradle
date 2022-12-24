@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.simplemobiletools.notes.pro"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 33
         versionCode 99
         versionName "6.14.1"
@@ -63,7 +63,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:a1ecb048c0'
+    implementation 'com.github.SimpleMobileTools:Simple-Commons:6323be1fd7'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.documentfile:documentfile:1.0.1'
 
