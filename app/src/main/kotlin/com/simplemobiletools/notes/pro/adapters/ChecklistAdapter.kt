@@ -140,10 +140,10 @@ class ChecklistAdapter(
             }
         }
 
+        items.removeAll(removeItems.toSet())
         positions.sortDescending()
         removeSelectedItems(positions)
 
-        items.removeAll(removeItems)
         listener?.saveChecklist()
         if (items.isEmpty()) {
             listener?.refreshItems()
