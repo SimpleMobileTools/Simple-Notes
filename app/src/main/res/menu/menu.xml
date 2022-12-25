@@ -7,16 +7,6 @@
         android:title="@string/save"
         app:showAsAction="always" />
     <item
-        android:id="@+id/undo"
-        android:icon="@drawable/ic_undo_vector"
-        android:title="@string/undo"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/redo"
-        android:icon="@drawable/ic_redo_vector"
-        android:title="@string/redo"
-        app:showAsAction="always" />
-    <item
         android:id="@+id/open_search"
         android:icon="@drawable/ic_search_vector"
         android:title="@string/search"
@@ -30,6 +20,16 @@
         android:id="@+id/new_note"
         android:icon="@drawable/ic_plus_vector"
         android:title="@string/create_new_note"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/undo"
+        android:icon="@drawable/ic_undo_vector"
+        android:title="@string/undo"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/redo"
+        android:icon="@drawable/ic_redo_vector"
+        android:title="@string/redo"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/rename_note"
