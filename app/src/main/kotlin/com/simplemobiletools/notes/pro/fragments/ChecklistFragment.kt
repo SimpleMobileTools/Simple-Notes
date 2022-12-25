@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -50,6 +49,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
         if (menuVisible) {
             activity?.hideKeyboard()
+        } else if (::view.isInitialized) {
+            (view.checklist_list.adapter as? ChecklistAdapter)?.finishActMode()
         }
     }
 
@@ -117,7 +118,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 (view.checklist_list.adapter as? ChecklistAdapter)?.finishActMode()
             }
 
-            (layoutParams as CoordinatorLayout.LayoutParams).bottomMargin = (resources.getDimension(R.dimen.activity_margin) + context.navigationBarHeight).toInt()
+            val bottomMargin = (resources.getDimension(R.dimen.activity_margin) + context.navigationBarHeight).toInt()
+            (layoutParams as CoordinatorLayout.LayoutParams).bottomMargin = bottomMargin
         }
 
         view.checklist_list.setPadding(0, 0, 0, (resources.getDimension(R.dimen.secondary_fab_bottom_margin) + requireContext().navigationBarHeight).toInt())
