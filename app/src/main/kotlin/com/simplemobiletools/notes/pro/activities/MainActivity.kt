@@ -941,7 +941,7 @@ class MainActivity : SimpleActivity() {
                     when (it) {
                         NotesImporter.ImportResult.IMPORT_OK -> R.string.importing_successful
                         NotesImporter.ImportResult.IMPORT_PARTIAL -> R.string.importing_some_entries_failed
-                        else -> R.string.no_items_found
+                        else -> R.string.no_new_items
                     }
                 )
                 initViewPager()
