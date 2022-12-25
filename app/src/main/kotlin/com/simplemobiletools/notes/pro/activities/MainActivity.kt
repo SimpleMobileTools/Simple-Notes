@@ -90,7 +90,7 @@ class MainActivity : SimpleActivity() {
         setupOptionsMenu()
         refreshMenuItems()
 
-        updateMaterialActivityViews(main_coordinator, main_linear_layout)
+        updateMaterialActivityViews(main_coordinator, null)
 
         searchQueryET = findViewById(R.id.search_query)
         searchPrevBtn = findViewById(R.id.search_previous)

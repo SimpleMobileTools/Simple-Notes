@@ -15,6 +15,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.helpers.mydebug
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.MainActivity
 import com.simplemobiletools.notes.pro.extensions.config
@@ -163,6 +164,10 @@ class TextFragment : NoteFragment() {
 
         checkLockState()
         setTextWatcher()
+
+        view.text_note_view.apply {
+            setPadding(paddingLeft, paddingTop, paddingRight, (context.resources.getDimension(R.dimen.activity_margin) + context.navigationBarHeight).toInt())
+        }
     }
 
     fun setTextWatcher() {

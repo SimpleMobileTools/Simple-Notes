@@ -54,9 +54,8 @@
         <RelativeLayout
             android:id="@+id/notes_relative_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content" />
 
-        </RelativeLayout>
     </ScrollView>
 
     <com.simplemobiletools.commons.views.MyTextView
