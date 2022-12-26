@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.*
@@ -117,12 +116,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
                 showNewItemDialog()
                 (view.checklist_list.adapter as? ChecklistAdapter)?.finishActMode()
             }
-
-            val bottomMargin = (resources.getDimension(R.dimen.activity_margin) + context.navigationBarHeight).toInt()
-            (layoutParams as CoordinatorLayout.LayoutParams).bottomMargin = bottomMargin
         }
-
-        view.checklist_list.setPadding(0, 0, 0, (resources.getDimension(R.dimen.secondary_fab_bottom_margin) + requireContext().navigationBarHeight).toInt())
 
         view.fragment_placeholder.setTextColor(requireActivity().getProperTextColor())
         view.fragment_placeholder_2.apply {
