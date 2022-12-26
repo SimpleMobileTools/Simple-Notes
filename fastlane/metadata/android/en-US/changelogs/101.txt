@@ -1,0 +1,1 @@
+ * Fixed a note scrolling glitch
