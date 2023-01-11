@@ -228,21 +228,6 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/settings_add_checklist_top_holder"
-                style="@style/SettingsHolderCheckboxStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.simplemobiletools.commons.views.MyAppCompatCheckbox
-                    android:id="@+id/settings_add_checklist_top"
-                    style="@style/SettingsCheckboxStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/add_new_checklist_items_top" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
                 android:id="@+id/settings_gravity_holder"
                 style="@style/SettingsHolderTextViewStyle"
                 android:layout_width="match_parent"

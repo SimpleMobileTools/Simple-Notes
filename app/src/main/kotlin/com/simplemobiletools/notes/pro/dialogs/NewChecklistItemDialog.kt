@@ -9,8 +9,11 @@ import android.view.inputmethod.EditorInfo
 import androidx.appcompat.widget.AppCompatEditText
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.DARK_GREY
+import com.simplemobiletools.commons.helpers.SORT_BY_CUSTOM
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.extensions.config
 import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.*
+import kotlinx.android.synthetic.main.dialog_new_checklist_item.view.dialog_holder
 import kotlinx.android.synthetic.main.item_add_checklist.view.*
 
 class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayList<String>) -> Unit) {
@@ -31,6 +34,8 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
             add_item.setOnClickListener {
                 addNewEditText()
             }
+            settings_add_checklist_top.beVisibleIf(activity.config.sorting == SORT_BY_CUSTOM)
+            settings_add_checklist_top.isChecked = activity.config.addNewChecklistItemsTop
         }
 
         activity.getAlertDialogBuilder()
@@ -40,6 +45,7 @@ class NewChecklistItemDialog(val activity: Activity, callback: (titles: ArrayLis
                 activity.setupDialogStuff(view, this, R.string.add_new_checklist_items) { alertDialog ->
                     alertDialog.showKeyboard(titles.first())
                     alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
+                        activity.config.addNewChecklistItemsTop = view.settings_add_checklist_top.isChecked
                         when {
                             titles.all { it.text!!.isEmpty() } -> activity.toast(R.string.empty_name)
                             else -> {

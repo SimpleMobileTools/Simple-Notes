@@ -50,7 +50,6 @@ class SettingsActivity : SimpleActivity() {
         setupCursorPlacement()
         setupIncognitoMode()
         setupCustomizeWidgetColors()
-        setupAddNewChecklistItemsTop()
         updateTextColors(settings_nested_scrollview)
 
         arrayOf(
@@ -256,14 +255,6 @@ class SettingsActivity : SimpleActivity() {
         settings_use_incognito_mode_holder.setOnClickListener {
             settings_use_incognito_mode.toggle()
             config.useIncognitoMode = settings_use_incognito_mode.isChecked
-        }
-    }
-
-    private fun setupAddNewChecklistItemsTop() {
-        settings_add_checklist_top.isChecked = config.addNewChecklistItemsTop
-        settings_add_checklist_top_holder.setOnClickListener {
-            settings_add_checklist_top.toggle()
-            config.addNewChecklistItemsTop = settings_add_checklist_top.isChecked
         }
     }
 }
