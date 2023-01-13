@@ -30,7 +30,7 @@
     <string name="new_text_note">ملاحظة نصية جديدة</string>
     <string name="new_checklist">قائمة مرجعية جديدة</string>
     <!-- File notes -->
-    <string name="open_file">فتح ملف</string>
+    <string name="open_file">فتح الملف</string>
     <string name="export_as_file">تصدير كملف</string>
     <string name="file_too_large">ملف كبير جداً، الحد المسموح 1MB</string>
     <string name="only_import_file_content">استيراد محتوى الملف فقط
