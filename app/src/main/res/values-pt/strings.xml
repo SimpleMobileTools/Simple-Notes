@@ -5,10 +5,10 @@
     <string name="widget_config">Obrigado por usar Simple Notes.
 \nPara mais aplicações Simple, visite SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Não pode partilhar texto vazio</string>
-    <string name="simple_note">Nota Simples</string>
+    <string name="simple_note">Nota simples</string>
     <string name="new_note">Adicionar uma nota</string>
-    <string name="no_title">Queira dar um nome à sua nota</string>
-    <string name="title_taken">Já existe uma nota com este título</string>
+    <string name="no_title">Introduza o nome da nota</string>
+    <string name="title_taken">Já existe uma nota com este nome</string>
     <string name="open_note">Abrir nota</string>
     <string name="delete_note">Apagar nota</string>
     <string name="delete_note_prompt_message">Pretende mesmo apagar a nota \"%s\"\?</string>
@@ -27,8 +27,8 @@
     <string name="note_content_locked">O conteúdo da nota está bloqueado.</string>
     <string name="show_content">Mostrar conteúdo</string>
     <string name="locking_warning">AVISO: se esquecer a palavra-passe, não conseguirá aceder à nota nem recuperar o seu conteúdo.</string>
-    <string name="new_text_note">New text note</string>
-    <string name="new_checklist">New checklist</string>
+    <string name="new_text_note">Nova nota de texto</string>
+    <string name="new_checklist">Nova lista</string>
     <!-- File notes -->
     <string name="open_file">Abrir ficheiro</string>
     <string name="export_as_file">Exportar como ficheiro</string>
@@ -38,12 +38,12 @@
     <string name="update_file_at_note">Atualizar o ficheiro ao atualizar a nota
 \n(a nota será removida se apagar o ficheiro ou se mudar a sua localização)</string>
     <string name="delete_file_itself">Apagar também o ficheiro \"%s\"</string>
-    <string name="note_saved_successfully">Nota \"%s\" guardada com êxito</string>
-    <string name="note_exported_successfully">Nota \"%s\" exportada com êxito</string>
+    <string name="note_saved_successfully">Nota \"%s\" guardada com sucesso</string>
+    <string name="note_exported_successfully">Nota \"%s\" exportada com sucesso</string>
     <string name="only_export_file_content">Exportar apenas o conteúdo do ficheiro atual
 \n(a alteração da nota não afeta o ficheiro)</string>
     <!-- Settings -->
-    <string name="display_success_message">Mostrar mensagem de Guardada com êxito</string>
+    <string name="display_success_message">Mostrar mensagem de gravação com sucesso</string>
     <string name="links_and_emails_clickable">Ativar toque em ligações e endereços de e-mail</string>
     <string name="place_cursor_end">Colocar cursor no final da nota</string>
     <string name="monospaced_font">Usar letra mono-espaçada</string>
@@ -71,12 +71,12 @@
     <!-- Import / Export -->
     <string name="export_all_notes">Exportar todas as notas como ficheiros</string>
     <string name="import_folder">Importar pasta</string>
-    <string name="export_notes">Export all notes</string>
-    <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="export_notes">Exportar todas as notas</string>
+    <string name="import_notes">Importar notas</string>
+    <string name="import_notes_pro">Importar notas (Pro)</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Como posso alterar a cor do widget\?</string>
-    <string name="faq_1_text">Se apenas tiver um widget ativo, pode recriá-lo ou utilizar o botão nas definições o personalizar. Se tiver vários widgets, este botão não estará disponível. Como cada um dos widgets pode ser personalizado, terá que os recriar sempre que o quiser personalizar.</string>
+    <string name="faq_1_title">Posso alterar a cor do widget\?</string>
+    <string name="faq_1_text">Se apenas tiver um widget ativo, pode recriar ou utilizar o botão nas definições para o personalizar. Se tiver vários widgets, este botão não estará disponível. Como cada um dos widgets pode ser personalizado, terá que os recriar sempre que os quiser personalizar.</string>
     <!--
         Não encontrou todas as cadeias a traduzir? Existem mais algumas em:
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
