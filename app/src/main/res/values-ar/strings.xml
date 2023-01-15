@@ -30,7 +30,7 @@
     <string name="new_text_note">ملاحظة نصية جديدة</string>
     <string name="new_checklist">قائمة مرجعية جديدة</string>
     <!-- File notes -->
-    <string name="open_file">فتح ملف</string>
+    <string name="open_file">فتح الملف</string>
     <string name="export_as_file">تصدير كملف</string>
     <string name="file_too_large">ملف كبير جداً، الحد المسموح 1MB</string>
     <string name="only_import_file_content">استيراد محتوى الملف فقط
@@ -68,6 +68,7 @@
     <string name="add_new_checklist_items">إضافة عناصر قائمة تدقيق جديدة</string>
     <string name="checklist_is_empty">قائمة التدقيق فارغة</string>
     <string name="remove_done_items">إزالة العناصر التي تم إنجازها</string>
+    <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="export_all_notes">تصدير جميع الملاحظات كملفات</string>
     <string name="import_folder">مجلد الاستيراد</string>

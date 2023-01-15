@@ -68,6 +68,7 @@
     <string name="add_new_checklist_items">新しいチェックリスト項目を追加</string>
     <string name="checklist_is_empty">チェックリストが空です</string>
     <string name="remove_done_items">完了した項目を削除</string>
+    <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="export_all_notes">すべてのメモをファイルとしてエクスポート</string>
     <string name="import_folder">フォルダからインポート</string>

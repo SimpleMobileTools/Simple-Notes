@@ -64,6 +64,7 @@
     <string name="add_new_checklist_items">چیک‌لِسٹ وچ نویں حصے پایو</string>
     <string name="checklist_is_empty">چیک‌لِسٹ وچ نوٹ کوئی نہیں</string>
     <string name="remove_done_items">کیٹیاں ائیٹماں نوں ہٹاؤ</string>
+    <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="export_all_notes">فائلاں نوں سارے نوٹ ایکسپورٹ کرو</string>
     <string name="import_folder">فولڈر ایمپورٹ کرو</string>

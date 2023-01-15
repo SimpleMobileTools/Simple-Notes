@@ -68,6 +68,7 @@
     <string name="add_new_checklist_items">Дадаць пункты ў кантрольны спіс</string>
     <string name="checklist_is_empty">Кантрольны спіс пусты</string>
     <string name="remove_done_items">Выдаліць выкананыя пункты</string>
+    <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Экспартаваць усе нататкі ў выглядзе файлаў</string>
     <string name="import_folder">Імпартаваць папку</string>

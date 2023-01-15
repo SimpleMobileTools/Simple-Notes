@@ -68,6 +68,7 @@
     <string name="add_new_checklist_items">添加新的清单项目</string>
     <string name="checklist_is_empty">清单为空</string>
     <string name="remove_done_items">删除完成的项目</string>
+    <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="export_all_notes">以文件导出所有笔记</string>
     <string name="import_folder">导入文件夹</string>

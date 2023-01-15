@@ -68,6 +68,7 @@
     <string name="add_new_checklist_items">Afegeix elements nous de la llista de comprovació</string>
     <string name="checklist_is_empty">La llista de comprovació és buida</string>
     <string name="remove_done_items">Elimina els elements fets</string>
+    <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Exporta totes les notes com a fitxers</string>
     <string name="import_folder">Importa una carpeta</string>
