@@ -36,7 +36,7 @@
             android:id="@+id/settings_add_checklist_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add_new_checklist_items_top"
+            android:text="@string/add_to_the_top"
             android:visibility="gone" />
 
     </LinearLayout>
