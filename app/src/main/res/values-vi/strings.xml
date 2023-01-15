@@ -67,6 +67,7 @@
     <string name="add_new_checklist_items">Thêm các mục mới trong danh sách kiểm tra</string>
     <string name="checklist_is_empty">Danh sách kiểm tra trống</string>
     <string name="remove_done_items">Xóa các mục đã hoàn thành</string>
+    <string name="add_to_the_top">Add to the top</string>
 
     <!-- Import / Export -->
     <string name="export_all_notes">Xuất tất cả ghi chú dưới dạng tệp</string>

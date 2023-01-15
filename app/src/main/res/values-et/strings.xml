@@ -68,6 +68,7 @@
     <string name="add_new_checklist_items">Lisa tööde loendisse uued kirjed</string>
     <string name="checklist_is_empty">Tööde loend on tühi</string>
     <string name="remove_done_items">Kustuta tehtuks märgitud kirjed</string>
+    <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Ekspordi kõik märkmed failidena</string>
     <string name="import_folder">Impordi kaust</string>

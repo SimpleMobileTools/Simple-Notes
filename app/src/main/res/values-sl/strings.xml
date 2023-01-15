@@ -64,6 +64,7 @@
     <string name="add_new_checklist_items">Dodajte nove zadeve na seznam</string>
     <string name="checklist_is_empty">Seznam kontrolni je prazen</string>
     <string name="remove_done_items">Odstranite opravljene elemente</string>
+    <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Izvozite vse opombe kot datoteke</string>
     <string name="import_folder">Uvozite datoteko</string>
