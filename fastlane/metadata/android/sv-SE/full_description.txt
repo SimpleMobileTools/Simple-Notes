@@ -19,9 +19,6 @@ Innehåller inga annonser eller onödiga behörigheter. Det är helt opensource,
 Kolla in hela sviten av Simple Tools här:
 https://www.simplemobiletools.com
 
-Fristående webbplats för Simple Notes Pro:
-https://www.simplemobiletools.com/notes
-
 Facebook:
 https://www.facebook.com/simplemobiletools
 

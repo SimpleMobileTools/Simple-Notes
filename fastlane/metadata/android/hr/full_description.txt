@@ -19,9 +19,6 @@ Ne sadrži oglase ili nepotrebne dozvole. Potpuno je open-source i pruža prilag
 Ovdje pogledajte cijeli paket jednostavnih alata:
 https://www.simplemobiletools.com
 
-Samostalna web stranica Simple Notes Pro:
-https://www.simplemobiletools.com/notes
-
 Facebook:
 https://www.facebook.com/simplemobiletools
 
