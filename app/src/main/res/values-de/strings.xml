@@ -68,7 +68,7 @@
     <string name="add_new_checklist_items">Neue Checklistenpunkte hinzufügen</string>
     <string name="checklist_is_empty">Die Checkliste ist leer</string>
     <string name="remove_done_items">Erledigte Punkte entfernen</string>
-    <string name="add_to_the_top">Add to the top</string>
+    <string name="add_to_the_top">Zum Anfang hinzufügen</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Alle Notizen als Dateien exportieren</string>
     <string name="import_folder">Ordner importieren</string>
