@@ -100,7 +100,7 @@ class ChecklistAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
         holder.bindView(item, true, true) { itemView, layoutPosition ->
-            setupView(itemView, item, holder)
+            setupView(itemView, position, item, holder)
         }
         bindViewHolder(holder)
     }
@@ -180,7 +180,7 @@ class ChecklistAdapter(
 
     private fun getSelectedItems() = items.filter { selectedKeys.contains(it.id) } as ArrayList<ChecklistItem>
 
-    private fun setupView(view: View, checklistItem: ChecklistItem, holder: ViewHolder) {
+    private fun setupView(view: View, position: Int, checklistItem: ChecklistItem, holder: ViewHolder) {
         val isSelected = selectedKeys.contains(checklistItem.id)
         view.apply {
             checklist_title.apply {
@@ -196,6 +196,13 @@ class ChecklistAdapter(
                     paintFlags = paintFlags.removeBit(Paint.STRIKE_THRU_TEXT_FLAG)
                     alpha = 1f
                 }
+            }
+
+            checklist_order.apply {
+                visibility = View.VISIBLE
+                text = String.format("%d.", position + 1)
+                setTextColor(textColor)
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
             }
 
             checklist_image.setImageDrawable(if (checklistItem.isDone) checkDrawable else crossDrawable)
