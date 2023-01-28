@@ -1,0 +1,4 @@
+ * Allow adding new checklist items at the top at custom sorting
+ * Make horizontal swiping between notes more reliable
+ * Allow clicking on top note titles
+ * Added some stability, translation and UX improvements

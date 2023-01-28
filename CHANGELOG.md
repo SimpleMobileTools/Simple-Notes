@@ -1,6 +1,14 @@
 Changelog
 ==========
 
+Version 6.15.2 *(2023-01-28)*
+----------------------------
+
+ * Allow adding new checklist items at the top at custom sorting
+ * Make horizontal swiping between notes more reliable
+ * Allow clicking on top note titles
+ * Added some stability, translation and UX improvements
+
 Version 6.15.1 *(2022-12-26)*
 ----------------------------
 
