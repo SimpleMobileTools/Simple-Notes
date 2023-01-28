@@ -1,5 +1,6 @@
 package com.simplemobiletools.notes.pro.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Typeface
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.text.style.UnderlineSpan
 import android.text.util.Linkify
 import android.util.TypedValue
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
@@ -37,12 +39,15 @@ class TextFragment : NoteFragment() {
     private var isUndoOrRedo = false
     private var skipTextUpdating = false
     private var noteId = 0L
+    private var touchDownX = 0f
+    private var moveXThreshold = 0      // make sure swiping across notes works well, do not swallow the gestures
 
     lateinit var view: ViewGroup
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         view = inflater.inflate(R.layout.fragment_text, container, false) as ViewGroup
         noteId = requireArguments().getLong(NOTE_ID, 0L)
+        moveXThreshold = resources.getDimension(R.dimen.activity_margin).toInt()
         retainInstance = true
 
         val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
@@ -112,6 +117,7 @@ class TextFragment : NoteFragment() {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun setupFragment() {
         val config = config ?: return
         view.text_note_view.apply {
@@ -156,8 +162,21 @@ class TextFragment : NoteFragment() {
             }
         }
 
+        view.text_note_view.setOnTouchListener { v, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> touchDownX = event.x
+                MotionEvent.ACTION_MOVE -> {
+                    val diffX = Math.abs(event.x - touchDownX)
+                    if (diffX > moveXThreshold) {
+                        view.requestDisallowInterceptTouchEvent(false)
+                    }
+                }
+            }
+            false
+        }
+
         if (config.showWordCount) {
-            view.notes_counter.setTextColor(context!!.getProperTextColor())
+            view.notes_counter.setTextColor(requireContext().getProperTextColor())
             setWordCounter(view.text_note_view.text.toString())
         }
 
