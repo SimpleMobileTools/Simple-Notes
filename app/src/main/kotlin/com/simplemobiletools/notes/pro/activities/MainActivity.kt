@@ -98,9 +98,10 @@ class MainActivity : SimpleActivity() {
         searchClearBtn = findViewById(R.id.search_clear)
 
         initViewPager(intent.getLongExtra(OPEN_NOTE_ID, -1L))
-        pager_title_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
-        pager_title_strip.layoutParams.height =
-            (pager_title_strip.height + resources.getDimension(R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
+        pager_tab_strip.drawFullUnderline = false
+        pager_tab_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
+        pager_tab_strip.layoutParams.height =
+            (pager_tab_strip.height + resources.getDimension(R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
         checkWhatsNewDialog()
         checkIntents(intent)
 
@@ -129,11 +130,12 @@ class MainActivity : SimpleActivity() {
         }
 
         refreshMenuItems()
-        pager_title_strip.apply {
+        pager_tab_strip.apply {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
             setGravity(Gravity.CENTER_VERTICAL)
             setNonPrimaryAlpha(0.4f)
-            setTextColor(getProperTextColor())
+            setTextColor(getProperPrimaryColor())
+            tabIndicatorColor = getProperPrimaryColor()
         }
         updateTextColors(view_pager)
 
@@ -199,7 +201,7 @@ class MainActivity : SimpleActivity() {
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT.value)
         }
 
-        pager_title_strip.beVisibleIf(multipleNotesExist)
+        pager_tab_strip.beVisibleIf(multipleNotesExist)
     }
 
     private fun setupOptionsMenu() {

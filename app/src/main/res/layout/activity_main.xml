@@ -29,11 +29,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.viewpager.widget.PagerTitleStrip
-                android:id="@+id/pager_title_strip"
+            <androidx.viewpager.widget.PagerTabStrip
+                android:id="@+id/pager_tab_strip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
+                android:background="@null"
                 android:paddingStart="@dimen/activity_margin"
                 android:paddingEnd="@dimen/activity_margin" />
 
