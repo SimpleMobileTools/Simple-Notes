@@ -90,7 +90,7 @@ class MainActivity : SimpleActivity() {
         setupOptionsMenu()
         refreshMenuItems()
 
-        updateMaterialActivityViews(main_coordinator, null, false)
+        updateMaterialActivityViews(main_coordinator, null, useTransparentNavigation = false, useTopSearchMenu = false)
 
         searchQueryET = findViewById(R.id.search_query)
         searchPrevBtn = findViewById(R.id.search_previous)
@@ -548,7 +548,7 @@ class MainActivity : SimpleActivity() {
     private fun openSearch() {
         isSearchActive = true
         search_wrapper.fadeIn()
-        animateTopBarColors(window.statusBarColor, getProperStatusBarColor(), main_toolbar)
+        animateTopBarColors(window.statusBarColor, getProperStatusBarColor())
         showKeyboard(searchQueryET)
 
         currentNotesView()?.let { noteView ->
@@ -565,7 +565,7 @@ class MainActivity : SimpleActivity() {
         searchQueryET.text?.clear()
         isSearchActive = false
         search_wrapper.fadeOut()
-        animateTopBarColors(window.statusBarColor, getProperBackgroundColor(), main_toolbar)
+        animateTopBarColors(window.statusBarColor, getProperBackgroundColor())
     }
 
     private fun getWantedNoteIndex(wantedNoteId: Long?): Int {
