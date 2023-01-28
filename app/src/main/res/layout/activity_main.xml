@@ -34,9 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:background="@null"
-                android:paddingStart="@dimen/activity_margin"
-                android:paddingEnd="@dimen/activity_margin" />
+                android:background="@null" />
 
         </com.simplemobiletools.commons.views.MyViewPager>
     </LinearLayout>
