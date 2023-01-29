@@ -306,6 +306,10 @@
 
             </RelativeLayout>
 
+            <include
+                android:id="@+id/settings_startup_divider"
+                layout="@layout/divider" />
+
             <TextView
                 android:id="@+id/settings_saving_label"
                 style="@style/SettingsSectionLabelStyle"

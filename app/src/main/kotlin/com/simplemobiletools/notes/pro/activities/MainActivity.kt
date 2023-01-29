@@ -179,9 +179,7 @@ class MainActivity : SimpleActivity() {
                 isEnabled = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
                 icon?.alpha = if (isEnabled) 255 else 127
             }
-        }
 
-        main_toolbar.menu.apply {
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.delete_note).isVisible = multipleNotesExist
@@ -556,7 +554,6 @@ class MainActivity : SimpleActivity() {
     private fun openSearch() {
         isSearchActive = true
         search_wrapper.fadeIn()
-        animateTopBarColors(window.statusBarColor, getProperStatusBarColor())
         showKeyboard(searchQueryET)
 
         currentNotesView()?.let { noteView ->
@@ -573,7 +570,6 @@ class MainActivity : SimpleActivity() {
         searchQueryET.text?.clear()
         isSearchActive = false
         search_wrapper.fadeOut()
-        animateTopBarColors(window.statusBarColor, getProperBackgroundColor())
     }
 
     private fun getWantedNoteIndex(wantedNoteId: Long?): Int {
