@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/widget_text_holder"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingVertical="@dimen/medium_margin"
+    android:paddingHorizontal="@dimen/activity_margin">
 
     <TextView
         android:id="@+id/widget_text_left"
@@ -10,7 +12,6 @@
         android:layout_height="match_parent"
         android:background="@null"
         android:gravity="start"
-        android:padding="@dimen/small_margin"
         android:visibility="gone" />
 
     <TextView
@@ -19,7 +20,6 @@
         android:layout_height="match_parent"
         android:background="@null"
         android:gravity="center_horizontal"
-        android:padding="@dimen/small_margin"
         android:visibility="gone" />
 
     <TextView
@@ -28,7 +28,6 @@
         android:layout_height="match_parent"
         android:background="@null"
         android:gravity="end"
-        android:padding="@dimen/small_margin"
         android:visibility="gone" />
 
     <TextView
@@ -38,7 +37,6 @@
         android:background="@null"
         android:gravity="start"
         android:fontFamily="monospace"
-        android:padding="@dimen/small_margin"
         android:visibility="gone" />
 
     <TextView
@@ -48,7 +46,6 @@
         android:background="@null"
         android:gravity="center_horizontal"
         android:fontFamily="monospace"
-        android:padding="@dimen/small_margin"
         android:visibility="gone" />
 
     <TextView
@@ -58,7 +55,6 @@
         android:background="@null"
         android:gravity="end"
         android:fontFamily="monospace"
-        android:padding="@dimen/small_margin"
         android:visibility="gone" />
 
 </RelativeLayout>
