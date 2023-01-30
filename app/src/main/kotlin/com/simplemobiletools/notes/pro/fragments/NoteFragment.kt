@@ -24,6 +24,7 @@ abstract class NoteFragment : Fragment() {
             note_locked_label.setTextColor(requireContext().getProperTextColor())
             note_locked_label.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
 
+            note_locked_show.underlineText()
             note_locked_show.setTextColor(requireContext().getProperPrimaryColor())
             note_locked_show.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
             note_locked_show.setOnClickListener {
