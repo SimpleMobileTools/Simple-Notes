@@ -183,8 +183,7 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.delete_note).isVisible = multipleNotesExist
-            findItem(R.id.export_all_notes).isVisible = multipleNotesExist && !isQPlus()
-            findItem(R.id.export_notes).isVisible = multipleNotesExist && isQPlus()
+            findItem(R.id.export_all_notes).isVisible = multipleNotesExist
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist
             findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
             findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
@@ -223,8 +222,7 @@ class MainActivity : SimpleActivity() {
                 R.id.open_file -> tryOpenFile()
                 R.id.import_folder -> openFolder()
                 R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
-                R.id.export_all_notes -> tryExportAllNotes()
-                R.id.export_notes -> tryExportNotes()
+                R.id.export_all_notes -> tryExportNotes()
                 R.id.import_notes -> tryImportNotes()
                 R.id.print -> fragment?.handleUnlocking { printText() }
                 R.id.delete_note -> fragment?.handleUnlocking { displayDeleteNotePrompt() }
@@ -889,20 +887,24 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun tryExportNotes() {
-        hideKeyboard()
-        val fileName = "${getString(R.string.notes)}_${getCurrentFormattedDateTime()}"
-        Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-            type = EXPORT_MIME_TYPE
-            putExtra(Intent.EXTRA_TITLE, fileName)
-            addCategory(Intent.CATEGORY_OPENABLE)
+        if (isQPlus()) {
+            hideKeyboard()
+            val fileName = "${getString(R.string.notes)}_${getCurrentFormattedDateTime()}"
+            Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
+                type = EXPORT_MIME_TYPE
+                putExtra(Intent.EXTRA_TITLE, fileName)
+                addCategory(Intent.CATEGORY_OPENABLE)
 
-            try {
-                startActivityForResult(this, PICK_EXPORT_NOTES_INTENT)
-            } catch (e: ActivityNotFoundException) {
-                toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
-            } catch (e: Exception) {
-                showErrorToast(e)
+                try {
+                    startActivityForResult(this, PICK_EXPORT_NOTES_INTENT)
+                } catch (e: ActivityNotFoundException) {
+                    toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                } catch (e: Exception) {
+                    showErrorToast(e)
+                }
             }
+        } else {
+            tryExportAllNotesBelowQ()
         }
     }
 
@@ -1002,17 +1004,17 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun tryExportAllNotes() {
+    private fun tryExportAllNotesBelowQ() {
         handlePermission(PERMISSION_WRITE_STORAGE) {
             if (it) {
-                exportAllNotes()
+                exportAllNotesBelowQ()
             } else {
                 toast(R.string.no_storage_permissions)
             }
         }
     }
 
-    private fun exportAllNotes() {
+    private fun exportAllNotesBelowQ() {
         ExportFilesDialog(this, mNotes) { parent, extension ->
             val items = arrayListOf(
                 RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),

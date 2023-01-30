@@ -76,10 +76,6 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/export_all_notes"
-        android:title="@string/export_all_notes"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/export_notes"
         android:title="@string/export_notes"
         app:showAsAction="never" />
     <item
