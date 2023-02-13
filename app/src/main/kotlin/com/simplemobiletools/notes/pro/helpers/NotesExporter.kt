@@ -45,6 +45,6 @@ class NotesExporter(private val context: Context) {
     }
 
     private fun getNoteToExport(note: Note): Note {
-        return Note(null, note.title, note.getNoteStoredValue(context) ?: "", note.type, "", PROTECTION_NONE, "")
+        return Note(null, note.title, note.getNoteStoredValue(context) ?: "", NUMBERED_LIST_NONE, note.type, "", PROTECTION_NONE, "")
     }
 }

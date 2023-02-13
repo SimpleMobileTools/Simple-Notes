@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Siirrä tekemättömät kohdat muistilistasta ylimmäksi</string>
     <string name="add_new_checklist_items_top">Lisää uusia merkattavia tehtäviä alkuun</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Muistilista</string>
     <string name="checklists">Merkattavat listat</string>
     <string name="add_new_checklist_item">Lisää uusi kohta muistilistaan</string>

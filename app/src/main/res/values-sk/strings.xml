@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Presunúť splnené položky zo zoznamu položiek na spodok</string>
     <string name="add_new_checklist_items_top">Pridávať nové položky do zoznamov na vrch</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Zoznam položiek</string>
     <string name="checklists">Zoznamy položiek</string>
     <string name="add_new_checklist_item">Pridať do zoznamu novú položku</string>

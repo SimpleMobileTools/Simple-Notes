@@ -61,6 +61,8 @@
     <string name="add_new_checklist_items_top">Thêm các mục mới trong danh sách kiểm tra ở trên cùng</string>
 
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Danh sách kiểm tra</string>
     <string name="checklists">Danh sách kiểm tra</string>
     <string name="add_new_checklist_item">Thêm một mục mới trong danh sách kiểm tra</string>

@@ -71,4 +71,12 @@ abstract class NoteFragment : Fragment() {
     }
 
     abstract fun checkLockState()
+
+    open fun showNumberedItems() {
+
+    }
+
+    open fun hideNumberedItems() {
+
+    }
 }

@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">ย้ายรายการตรวจสอบที่เรียบร้อยไปไว้ด้านล่าง</string>
     <string name="add_new_checklist_items_top">เพิ่มรายการตรวจสอบใหม่ไว้ด้านบน</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">รายการตรวจสอบ</string>
     <string name="checklists">รายการตรวจสอบ</string>
     <string name="add_new_checklist_item">เพิ่มรายการตรวจสอบใหม่</string>

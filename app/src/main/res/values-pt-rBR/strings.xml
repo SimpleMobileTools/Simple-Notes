@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Mover itens completos da lista de verificação para o final</string>
     <string name="add_new_checklist_items_top">Adicionar novos itens da lista de verificação na parte superior</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Lista de verificação</string>
     <string name="checklists">Listas de verificação</string>
     <string name="add_new_checklist_item">Adicionar novo item à lista de verificação</string>

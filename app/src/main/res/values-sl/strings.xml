@@ -58,6 +58,8 @@
     <string name="move_done_checklist_items">Na dno premaknite postavke kontrolnega seznama</string>
     <string name="add_new_checklist_items_top">Dodajte nove elemente kontrolnega seznama na vrh</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Preverjanje</string>
     <string name="checklists">Preverjanje seznamov</string>
     <string name="add_new_checklist_item">Dodajte novo zadevo na seznam</string>

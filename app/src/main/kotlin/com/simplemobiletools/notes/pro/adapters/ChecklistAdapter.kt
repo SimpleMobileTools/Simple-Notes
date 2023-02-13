@@ -32,7 +32,7 @@ import java.util.*
 
 class ChecklistAdapter(
     activity: BaseSimpleActivity, var items: ArrayList<ChecklistItem>, val listener: ChecklistItemsListener?,
-    recyclerView: MyRecyclerView, val showIcons: Boolean, itemClick: (Any) -> Unit
+    recyclerView: MyRecyclerView, val showIcons: Boolean, val numberedList: Int, itemClick: (Any) -> Unit
 ) :
     MyRecyclerViewAdapter(activity, recyclerView, itemClick), ItemTouchHelperContract {
 
@@ -198,8 +198,13 @@ class ChecklistAdapter(
                 }
             }
 
-            checklist_order.apply {
-                visibility = View.VISIBLE
+            checklist_numbered.apply {
+                visibility = if (numberedList > 0) {
+                    View.VISIBLE
+                } else {
+                    View.GONE
+                }
+
                 text = String.format("%d.", position + 1)
                 setTextColor(textColor)
                 setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())

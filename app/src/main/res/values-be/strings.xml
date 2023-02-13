@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Перамяшчаць выкананыя пункты ў канец кантрольнага спіса</string>
     <string name="add_new_checklist_items_top">Дадаваць новыя пункты ў пачатак кантрольнага спіса</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Кантрольны спіс</string>
     <string name="checklists">Кантрольныя спісы</string>
     <string name="add_new_checklist_item">Дадаць пункт у кантрольны спіс</string>

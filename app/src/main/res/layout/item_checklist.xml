@@ -12,7 +12,7 @@
     android:paddingEnd="@dimen/normal_margin">
 
     <com.simplemobiletools.commons.views.MyTextView
-        android:id="@+id/checklist_order"
+        android:id="@+id/checklist_numbered"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/activity_margin"
@@ -30,8 +30,8 @@
         android:paddingStart="@dimen/activity_margin"
         android:textSize="@dimen/bigger_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checklist_numbered"
         app:layout_constraintEnd_toStartOf="@+id/checklist_image"
-        app:layout_constraintStart_toEndOf="@+id/checklist_order"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Butter" />
 

@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Mover ítems completados al final de la lista</string>
     <string name="add_new_checklist_items_top">Añade nuevos elementos a la parte superior de la lista de control</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Lista</string>
     <string name="checklists">Listas de control</string>
     <string name="add_new_checklist_item">Añadir un nuevo ítem a la lista</string>

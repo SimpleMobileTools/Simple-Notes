@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Déplacer les éléments de liste de contrôle inachevés en-bas</string>
     <string name="add_new_checklist_items_top">Ajouter un élément de liste de contrôle en-haut</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Numéroter la liste</string>
+    <string name="hide_numbered_items">Enlever la numérotation</string>
     <string name="checklist">Liste de contrôle</string>
     <string name="checklists">Listes de contrôle</string>
     <string name="add_new_checklist_item">Ajouter un nouvel élément</string>

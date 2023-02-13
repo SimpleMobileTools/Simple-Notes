@@ -61,6 +61,8 @@
     <string name="move_done_checklist_items">Afgewerkte items naar onderen verplaatsen</string>
     <string name="add_new_checklist_items_top">Nieuwe items boven aan de lijst toevoegen</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Lijst</string>
     <string name="checklists">Lijsten</string>
     <string name="add_new_checklist_item">Item toevoegen</string>

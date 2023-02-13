@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Flytta färdiga checklistor till botten</string>
     <string name="add_new_checklist_items_top">Lägg nya kryssrutor överst</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Checklista</string>
     <string name="checklists">Checklistor</string>
     <string name="add_new_checklist_item">Lägg till ett nytt checklisteobjekt</string>

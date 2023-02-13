@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Tööde loendis liiguta täidetud ülesanded loendi lõppu</string>
     <string name="add_new_checklist_items_top">Lisa uued kirjed tööde loendi algusesse</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Tööde loend</string>
     <string name="checklists">Tööde loendid</string>
     <string name="add_new_checklist_item">Lisa tööde loendisse uus kirje</string>

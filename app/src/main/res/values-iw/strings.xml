@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">העבר את פריטי רשימת הבדיקה שבוצעו לתחתית</string>
     <string name="add_new_checklist_items_top">הוסף פריטים חדשים ברשימת הבדיקה בראש</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">רשימת תיוג</string>
     <string name="checklists">רשימות תיוגים</string>
     <string name="add_new_checklist_item">הוסף פריט רשימת תיוג חדש</string>

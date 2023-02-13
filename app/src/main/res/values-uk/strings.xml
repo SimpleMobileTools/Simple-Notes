@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Поміщати виконані позиції в кінець списку</string>
     <string name="add_new_checklist_items_top">Додавати нові елементи на початку списку</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Список</string>
     <string name="checklists">Списки</string>
     <string name="add_new_checklist_item">Додати нову позицію у списку</string>

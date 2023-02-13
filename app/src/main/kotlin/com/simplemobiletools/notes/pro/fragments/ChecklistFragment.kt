@@ -16,6 +16,8 @@ import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
+import com.simplemobiletools.notes.pro.helpers.NUMBERED_LIST_NONE
+import com.simplemobiletools.notes.pro.helpers.NUMBERED_LIST_NUMBER
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
@@ -172,6 +174,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             items = items,
             listener = this,
             recyclerView = view.checklist_list,
+            numberedList = note!!.numberedList,
             showIcons = true
         ) { item ->
             val clickedNote = item as ChecklistItem
@@ -236,5 +239,17 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     override fun refreshItems() {
         loadNoteById(noteId)
         setupAdapter()
+    }
+
+    override fun showNumberedItems() {
+        super.showNumberedItems()
+        note?.numberedList = NUMBERED_LIST_NUMBER
+        saveNote()
+    }
+
+    override fun hideNumberedItems() {
+        super.showNumberedItems()
+        note?.numberedList = NUMBERED_LIST_NONE
+        saveNote()
     }
 }

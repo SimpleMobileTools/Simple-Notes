@@ -58,6 +58,8 @@
     <string name="move_done_checklist_items">چیک‌لِسٹ دے پورن حصے نوں ہیٹھاں لے جاؤ</string>
     <string name="add_new_checklist_items_top">سکھر تے چیک‌لِسٹ دے نویں حصے پایو</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">چیک‌لسٹ</string>
     <string name="checklists">چیک‌لسٹاں</string>
     <string name="add_new_checklist_item">چیک‌لِسٹ وچ نواں حصہ پایو</string>

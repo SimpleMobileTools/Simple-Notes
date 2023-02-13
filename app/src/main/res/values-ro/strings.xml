@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Mutați elementele realizate din lista de verificare în partea de jos</string>
     <string name="add_new_checklist_items_top">Adăugați noi elemente ale listei de verificare în partea de sus</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Listă de verificare</string>
     <string name="checklists">Liste de verificare</string>
     <string name="add_new_checklist_item">Adăugați un nou element în lista de verificare</string>

@@ -32,6 +32,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
     )
     private var widgetTextColor = DEFAULT_WIDGET_TEXT_COLOR
     private var note: Note? = null
+    private var isNumberedList: Int? = NUMBERED_LIST_NONE
     private var checklistItems = ArrayList<ChecklistItem>()
 
     override fun getViewAt(position: Int): RemoteViews {
@@ -50,7 +51,14 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
                 val paintFlags = if (checklistItem.isDone) Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG else Paint.ANTI_ALIAS_FLAG
 
                 for (id in checklistIds) {
-                    setText(id, checklistItem.title)
+                    if (isNumberedList != null) {
+                        when (isNumberedList!!) {
+                            NUMBERED_LIST_NONE -> setText(id, checklistItem.title)
+                            NUMBERED_LIST_NUMBER -> setText(id, String.format("%d. %s", position + 1, checklistItem.title))
+                        }
+                    } else {
+                        setText(id, checklistItem.title)
+                    }
                     setTextColor(id, widgetNewTextColor)
                     setTextSize(id, textSize)
                     setInt(id, "setPaintFlags", paintFlags)
@@ -123,6 +131,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         widgetTextColor = intent.getIntExtra(WIDGET_TEXT_COLOR, DEFAULT_WIDGET_TEXT_COLOR)
         val noteId = intent.getLongExtra(NOTE_ID, 0L)
         note = context.notesDB.getNoteWithId(noteId)
+        isNumberedList = note?.numberedList
         if (note?.type == NoteType.TYPE_CHECKLIST.value) {
             val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
             checklistItems = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.getNoteStoredValue(context), checklistItemType) ?: ArrayList(1)

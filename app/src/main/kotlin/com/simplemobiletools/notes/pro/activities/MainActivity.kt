@@ -184,6 +184,8 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
             findItem(R.id.import_folder).isVisible = !isQPlus()
             findItem(R.id.import_notes).isVisible = isQPlus()
+            findItem(R.id.show_numbered_items).isVisible = isCurrentItemChecklist && !isNumberedItems()
+            findItem(R.id.hide_numbered_items).isVisible = isCurrentItemChecklist && isNumberedItems()
             findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && !mCurrentNote.isLocked())
             findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
             findItem(R.id.more_apps_from_us).isVisible = !resources.getBoolean(R.bool.hide_google_relations)
@@ -227,6 +229,8 @@ class MainActivity : SimpleActivity() {
                 R.id.about -> launchAbout()
                 R.id.remove_done_items -> fragment?.handleUnlocking { removeDoneItems() }
                 R.id.sort_checklist -> fragment?.handleUnlocking { displaySortChecklistDialog() }
+                R.id.show_numbered_items -> changeNumberedList(true)
+                R.id.hide_numbered_items -> changeNumberedList(false)
                 else -> return@setOnMenuItemClickListener false
             }
             return@setOnMenuItemClickListener true
@@ -292,6 +296,10 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun isCurrentItemChecklist() = if (::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST.value else false
+
+    private fun isNumberedItems() : Boolean {
+        return mCurrentNote.numberedList > 0
+    }
 
     @SuppressLint("NewApi")
     private fun checkShortcuts() {
@@ -363,10 +371,10 @@ class MainActivity : SimpleActivity() {
                         val file = File(realPath)
                         handleUri(Uri.fromFile(file))
                     } else if (intent.getBooleanExtra(NEW_TEXT_NOTE, false)) {
-                        val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                        val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NUMBERED_LIST_NONE, NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
                         addNewNote(newTextNote)
                     } else if (intent.getBooleanExtra(NEW_CHECKLIST, false)) {
-                        val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                        val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NUMBERED_LIST_NONE, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
                         addNewNote(newChecklist)
                     } else {
                         handleUri(data!!)
@@ -674,7 +682,7 @@ class MainActivity : SimpleActivity() {
                     val checklistItems = fileText.parseChecklistItems()
                     if (checklistItems != null) {
                         val title = it.absolutePath.getFilenameFromPath().substringBeforeLast('.')
-                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST.value, NUMBERED_LIST_NONE, "", PROTECTION_NONE, "")
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
                                 displayNewNoteDialog(note.value, title = it.title, it.path, setChecklistAsDefault = true)
@@ -778,7 +786,7 @@ class MainActivity : SimpleActivity() {
 
         val noteType = if (checklistItems != null) NoteType.TYPE_CHECKLIST.value else NoteType.TYPE_TEXT.value
         if (!canSyncNoteWithFile) {
-            val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
+            val note = Note(null, noteTitle, content, noteType, NUMBERED_LIST_NONE, "", PROTECTION_NONE, "")
             displayNewNoteDialog(note.value, title = noteTitle, "")
         } else {
             val items = arrayListOf(
@@ -789,7 +797,7 @@ class MainActivity : SimpleActivity() {
             RadioGroupDialog(this, items) {
                 val syncFile = it as Int == IMPORT_FILE_SYNC
                 val path = if (syncFile) uri.toString() else ""
-                val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
+                val note = Note(null, noteTitle, content, noteType, NUMBERED_LIST_NONE, "", PROTECTION_NONE, "")
                 displayNewNoteDialog(note.value, title = noteTitle, path)
             }
         }
@@ -802,9 +810,9 @@ class MainActivity : SimpleActivity() {
                 val fileText = it.readText().trim()
                 val checklistItems = fileText.parseChecklistItems()
                 val note = if (checklistItems != null) {
-                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value, NUMBERED_LIST_NONE, "", PROTECTION_NONE, "")
                 } else {
-                    Note(null, title, "", NoteType.TYPE_TEXT.value, path, PROTECTION_NONE, "")
+                    Note(null, title, "", NoteType.TYPE_TEXT.value, NUMBERED_LIST_NONE, path, PROTECTION_NONE, "")
                 }
 
                 if (mNotes.any { it.title.equals(note.title, true) }) {
@@ -915,6 +923,15 @@ class MainActivity : SimpleActivity() {
                 toast(toastId)
             }
         }
+    }
+
+    private fun changeNumberedList(numbered: Boolean) {
+        val fragment = getCurrentFragment()
+        if (numbered) fragment?.showNumberedItems()
+        else fragment?.hideNumberedItems()
+
+        refreshNotes(mCurrentNote, false)
+        refreshMenuItems()
     }
 
     private fun tryImportNotes() {

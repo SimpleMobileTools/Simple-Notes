@@ -57,7 +57,7 @@ class NotesImporter(private val context: Context) {
 
                 inputStream.bufferedReader().use { reader ->
                     val text = reader.readText()
-                    val note = Note(null, filename, text, NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                    val note = Note(null, filename, text, NUMBERED_LIST_NONE, NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
                     var i = 1
                     if (context.notesDB.getNoteIdWithTitle(note.title) != null) {
                         while (true) {

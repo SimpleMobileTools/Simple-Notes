@@ -45,6 +45,14 @@
         android:icon="@drawable/ic_sort_vector"
         android:title="@string/sort_by"
         app:showAsAction="ifRoom" />
+    <item android:id="@+id/show_numbered_items"
+        android:icon="@drawable/ic_numbered_items"
+        android:title="@string/show_numbered_items"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/hide_numbered_items"
+        android:icon="@drawable/ic_numbered_items"
+        android:title="@string/hide_numbered_items"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/share"
         android:icon="@drawable/ic_share_vector"

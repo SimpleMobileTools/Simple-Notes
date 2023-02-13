@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">نقل عناصر قائمة التحقق المنجزة إلى الأسفل</string>
     <string name="add_new_checklist_items_top">إضافة عناصر قائمة اختيار جديدة في الأعلى</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">قائمة تدقيق</string>
     <string name="checklists">قوائم</string>
     <string name="add_new_checklist_item">إضافة عنصر قائمة تدقيق جديد</string>

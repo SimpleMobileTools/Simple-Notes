@@ -8,6 +8,7 @@ import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
+import com.simplemobiletools.notes.pro.helpers.NUMBERED_LIST_NONE
 import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_new_note.view.*
@@ -46,7 +47,7 @@ class NewNoteDialog(val activity: Activity, title: String? = null, val setCheckl
                                     }
 
                                     activity.config.lastCreatedNoteType = type
-                                    val newNote = Note(null, newTitle, "", type, "", PROTECTION_NONE, "")
+                                    val newNote = Note(null, newTitle, "", NUMBERED_LIST_NONE, type, "", PROTECTION_NONE, "")
                                     callback(newNote)
                                     alertDialog.dismiss()
                                 }

@@ -58,6 +58,8 @@
     <string name="move_done_checklist_items">Померите готове ставке контролне листе на дно</string>
     <string name="add_new_checklist_items_top">Додајте нове ставке контролне листе на врх</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Контролна листа</string>
     <string name="checklists">Контролне листе</string>
     <string name="add_new_checklist_item">Додајте нову ставку контролне листе</string>

@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">Sposta gli elementi non spuntati in cima</string>
     <string name="add_new_checklist_items_top">Aggiungi nuove voci della lista di controllo in alto</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Scaletta</string>
     <string name="checklists">Liste di controllo</string>
     <string name="add_new_checklist_item">Aggiungi un nuovo elemento</string>

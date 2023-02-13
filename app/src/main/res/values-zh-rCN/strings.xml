@@ -62,6 +62,8 @@
     <string name="move_done_checklist_items">移动未完成的清单至顶端</string>
     <string name="add_new_checklist_items_top">在顶部添加新的清单项目</string>
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">清单</string>
     <string name="checklists">清单</string>
     <string name="add_new_checklist_item">添加一个新的清单项目</string>

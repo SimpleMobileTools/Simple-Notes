@@ -61,6 +61,8 @@
     <string name="add_new_checklist_items_top">Add new checklist items at the top</string>
 
     <!-- Checklists -->
+    <string name="show_numbered_items">Show items position</string>
+    <string name="hide_numbered_items">Hide items position</string>
     <string name="checklist">Checklist</string>
     <string name="checklists">Checklists</string>
     <string name="add_new_checklist_item">Add a new checklist item</string>

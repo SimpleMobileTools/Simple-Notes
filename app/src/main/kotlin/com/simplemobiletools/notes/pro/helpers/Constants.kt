@@ -61,3 +61,7 @@ const val FONT_SIZE_175_PERCENT = 175
 const val FONT_SIZE_200_PERCENT = 200
 const val FONT_SIZE_250_PERCENT = 250
 const val FONT_SIZE_300_PERCENT = 300
+
+// numbered list types
+const val NUMBERED_LIST_NONE = 0
+const val NUMBERED_LIST_NUMBER = 1
