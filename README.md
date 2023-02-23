@@ -22,9 +22,6 @@ Contains no ads or unnecessary permissions. It is fully opensource, provides cus
 Check out the full suite of Simple Tools here:  
 https://www.simplemobiletools.com
 
-Standalone website of Simple Notes Pro:  
-https://www.simplemobiletools.com/notes
-
 Facebook:  
 https://www.facebook.com/simplemobiletools
 
