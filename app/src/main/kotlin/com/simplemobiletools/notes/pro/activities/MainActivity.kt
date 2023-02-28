@@ -1169,7 +1169,11 @@ class MainActivity : SimpleActivity() {
         val printAdapter = webView.createPrintDocumentAdapter(jobName)
 
         (getSystemService(Context.PRINT_SERVICE) as? PrintManager)?.apply {
-            print(jobName, printAdapter, PrintAttributes.Builder().build())
+            try {
+                print(jobName, printAdapter, PrintAttributes.Builder().build())
+            } catch (e: IllegalStateException) {
+                showErrorToast(e)
+            }
         }
     }
 
