@@ -60,7 +60,7 @@
     <string name="enable_line_wrap">Aktivera radbrytning</string>
     <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
     <string name="move_done_checklist_items">Flytta färdiga checklistor till botten</string>
-    <string name="add_new_checklist_items_top">Lägg nya kryssrutor överst</string>
+    <string name="add_new_checklist_items_top">Lägg till nya checklisteobjekt överst</string>
     <!-- Checklists -->
     <string name="checklist">Checklista</string>
     <string name="checklists">Checklistor</string>
@@ -68,7 +68,7 @@
     <string name="add_new_checklist_items">Lägg till nya checklisteobjekt</string>
     <string name="checklist_is_empty">Checklistan är tom</string>
     <string name="remove_done_items">Ta bort slutförda</string>
-    <string name="add_to_the_top">Add to the top</string>
+    <string name="add_to_the_top">Lägg till överst</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Exportera alla anteckningar som filer</string>
     <string name="import_folder">Importera mapp</string>
