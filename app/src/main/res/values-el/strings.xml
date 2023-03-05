@@ -68,7 +68,7 @@
     <string name="add_new_checklist_items">Προσθήκη νέων στοιχείων λίστας ελέγχου</string>
     <string name="checklist_is_empty">Η λίστα ελέγχου είναι κενή</string>
     <string name="remove_done_items">Κατάργηση ολοκληρωμένων στοιχείων</string>
-    <string name="add_to_the_top">Add to the top</string>
+    <string name="add_to_the_top">Προσθήκη στην κορυφή</string>
     <!-- Import / Export -->
     <string name="export_all_notes">Εξαγωγή όλων των σημειώσεων ως αρχεία</string>
     <string name="import_folder">Εισαγωγή φακέλου</string>
