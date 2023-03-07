@@ -115,10 +115,9 @@ class MainActivity : SimpleActivity() {
         checkAppOnSDCard()
         setupSearchButtons()
 
-        if (!config.wasUpgradedFromFreeShown && isPackageInstalled("com.simplemobiletools.notes")) {
+        if (isPackageInstalled("com.simplemobiletools.notes")) {
             val dialogText = getString(R.string.upgraded_to_pro_notes)
             ConfirmationDialog(this, dialogText, 0, R.string.ok, 0, false) {}
-            config.wasUpgradedFromFreeShown = true
         }
     }
 
