@@ -24,6 +24,8 @@
     <string name="text_note">یادداشت متنی</string>
     <string name="lock_note">قفل کردن یادداشت</string>
     <string name="unlock_note">باز کردن قفل یادداشت</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
     <string name="note_content_locked">محتویات یادداشت، قفل است</string>
     <string name="show_content">نمایش محتویات</string>
     <string name="locking_warning">هشدار: اگر گذرواژهٔ یادداشت را فراموش کنید، دیگر قادر به بازیابی آن یا دسترسی به محتویات یادداشت نیستید.</string>

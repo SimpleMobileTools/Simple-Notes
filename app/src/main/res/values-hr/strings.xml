@@ -24,6 +24,8 @@
     <string name="text_note">Tekstualna bilješka</string>
     <string name="lock_note">Zaključaj bilješku</string>
     <string name="unlock_note">Otključaj bilješku</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
     <string name="note_content_locked">Sadržaj bilješke je zaključan.</string>
     <string name="show_content">Prikaži sadržaj</string>
     <string name="locking_warning">UPOZORENJE: Ako zaboraviš lozinku bilješke, više je nećeš moći obnoviti niti pristupiti njenom sadržaju.</string>

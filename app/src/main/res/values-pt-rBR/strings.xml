@@ -24,6 +24,8 @@
     <string name="text_note">Anotações</string>
     <string name="lock_note">Bloquear anotação</string>
     <string name="unlock_note">Desbloquear anotação</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
     <string name="note_content_locked">O conteúdo da nota está bloqueado.</string>
     <string name="show_content">Mostrar conteúdo</string>
     <string name="locking_warning">AVISO: Caso você esqueça a senha, não conseguirá recuperá-la ou acessar o conteúdo da nota.</string>

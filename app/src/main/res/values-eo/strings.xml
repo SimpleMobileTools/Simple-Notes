@@ -24,6 +24,8 @@
     <string name="text_note">Teksta noto</string>
     <string name="lock_note">Ŝlosi noton</string>
     <string name="unlock_note">Malŝlosi noton</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
     <string name="note_content_locked">The notes\' content is locked.</string>
     <string name="show_content">Montri enhavon</string>
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>

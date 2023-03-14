@@ -24,6 +24,8 @@
     <string name="text_note">โน็ตข้อความ</string>
     <string name="lock_note">ล็อกโน็ต</string>
     <string name="unlock_note">ปลดล็อกโน็ต</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
     <string name="note_content_locked">ข้อมูลในโน็ตถูกล็อก</string>
     <string name="show_content">แสดงข้อมูล</string>
     <string name="locking_warning">คำเตือน: ถ้าคุณลืมรหัสผ่านของโน็ต คุณจะไม่สามารถกู้คืนหรือเข้าถึงโน็ตตัวนั้นได้อีกต่อไป</string>

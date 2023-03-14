@@ -23,6 +23,8 @@
     <string name="text_note">Текст напомене</string>
     <string name="lock_note">Закључај белешку</string>
     <string name="unlock_note">Откључај белешку</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
     <string name="note_content_locked">Садржај белешки је закључан.</string>
     <string name="show_content">Прикажи садржај</string>
     <string name="locking_warning">УПОЗОРЕЊЕ: Ако заборавите лозинку за белешке, више нећете моћи да је повратите нити да приступите садржају белешки.</string>

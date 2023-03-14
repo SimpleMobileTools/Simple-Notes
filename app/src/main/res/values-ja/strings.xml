@@ -24,6 +24,8 @@
     <string name="text_note">テキストメモ</string>
     <string name="lock_note">メモをロック</string>
     <string name="unlock_note">メモのロックを解除</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
     <string name="note_content_locked">メモの内容がロックされています。</string>
     <string name="show_content">内容を表示</string>
     <string name="locking_warning">警告：メモのパスワードを忘れた場合、そのパスワードを復元したり、メモの内容にアクセスしたりすることはできなくなります。</string>
