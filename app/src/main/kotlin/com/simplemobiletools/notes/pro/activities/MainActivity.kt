@@ -907,24 +907,29 @@ class MainActivity : SimpleActivity() {
     private fun requestUnlockNotes(callback: (List<Long>) -> Unit) {
         val lockedNotes = mNotes.filter { it.isLocked() }
         if (lockedNotes.isNotEmpty()) {
-            UnlockNotesDialog(this, lockedNotes, callback)
+            runOnUiThread {
+                UnlockNotesDialog(this, lockedNotes, callback)
+            }
         } else {
             callback(emptyList())
         }
     }
 
     private fun exportNotesTo(outputStream: OutputStream?) {
-        requestUnlockNotes { unlockedIds ->
-            toast(R.string.exporting)
-            ensureBackgroundThread {
-                val notesExporter = NotesExporter(this)
-                notesExporter.exportNotes(outputStream, unlockedIds) {
-                    val toastId = when (it) {
-                        NotesExporter.ExportResult.EXPORT_OK -> R.string.exporting_successful
-                        else -> R.string.exporting_failed
-                    }
+        ensureBackgroundThread {
+            NotesHelper(this).getNotes {
+                mNotes = it
+                requestUnlockNotes { unlockedIds ->
+                    toast(R.string.exporting)
+                    val notesExporter = NotesExporter(this)
+                    notesExporter.exportNotes(mNotes, unlockedIds, outputStream) { result ->
+                        val toastId = when (result) {
+                            NotesExporter.ExportResult.EXPORT_OK -> R.string.exporting_successful
+                            else -> R.string.exporting_failed
+                        }
 
-                    toast(toastId)
+                        toast(toastId)
+                    }
                 }
             }
         }
@@ -1022,50 +1027,52 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun exportAllNotesBelowQ() {
-        requestUnlockNotes { unlockedIds ->
-            ExportFilesDialog(this, mNotes) { parent, extension ->
-                val items = arrayListOf(
-                    RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-                    RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content))
-                )
+        ensureBackgroundThread {
+            NotesHelper(this).getNotes { notes ->
+                mNotes = notes
+                requestUnlockNotes { unlockedIds ->
+                    ExportFilesDialog(this, mNotes) { parent, extension ->
+                        val items = arrayListOf(
+                            RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
+                            RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content))
+                        )
 
-                RadioGroupDialog(this, items) { any ->
-                    val syncFile = any as Int == EXPORT_FILE_SYNC
-                    var failCount = 0
-                    NotesHelper(this).getNotes { notes ->
-                        mNotes = notes
-                        mNotes.filter { !it.isLocked() || it.id in unlockedIds }.forEachIndexed { index, note ->
-                            val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
-                            val file = File(parent, filename)
-                            if (!filename.isAValidFilename()) {
-                                toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
-                            } else {
-                                val noteStoredValue = note.getNoteStoredValue(this) ?: ""
-                                tryExportNoteValueToFile(file.absolutePath, mCurrentNote.title, note.value, false) { exportedSuccessfully ->
-                                    if (exportedSuccessfully) {
-                                        if (syncFile) {
-                                            note.path = file.absolutePath
-                                            note.value = ""
-                                        } else {
-                                            note.path = ""
-                                            note.value = noteStoredValue
+                        RadioGroupDialog(this, items) { any ->
+                            val syncFile = any as Int == EXPORT_FILE_SYNC
+                            var failCount = 0
+                            mNotes.filter { !it.isLocked() || it.id in unlockedIds }.forEachIndexed { index, note ->
+                                val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
+                                val file = File(parent, filename)
+                                if (!filename.isAValidFilename()) {
+                                    toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
+                                } else {
+                                    val noteStoredValue = note.getNoteStoredValue(this) ?: ""
+                                    tryExportNoteValueToFile(file.absolutePath, mCurrentNote.title, note.value, false) { exportedSuccessfully ->
+                                        if (exportedSuccessfully) {
+                                            if (syncFile) {
+                                                note.path = file.absolutePath
+                                                note.value = ""
+                                            } else {
+                                                note.path = ""
+                                                note.value = noteStoredValue
+                                            }
+
+                                            NotesHelper(this).insertOrUpdateNote(note)
                                         }
 
-                                        NotesHelper(this).insertOrUpdateNote(note)
-                                    }
+                                        if (mCurrentNote.id == note.id) {
+                                            mCurrentNote.value = note.value
+                                            mCurrentNote.path = note.path
+                                            getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
+                                        }
 
-                                    if (mCurrentNote.id == note.id) {
-                                        mCurrentNote.value = note.value
-                                        mCurrentNote.path = note.path
-                                        getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
-                                    }
+                                        if (!exportedSuccessfully) {
+                                            failCount++
+                                        }
 
-                                    if (!exportedSuccessfully) {
-                                        failCount++
-                                    }
-
-                                    if (index == mNotes.size - 1) {
-                                        toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
+                                        if (index == mNotes.size - 1) {
+                                            toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
+                                        }
                                     }
                                 }
                             }
