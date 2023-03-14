@@ -16,7 +16,7 @@ class NotesExporter(private val context: Context) {
 
     private val gson = Gson()
 
-    fun exportNotes(outputStream: OutputStream?, callback: (result: ExportResult) -> Unit) {
+    fun exportNotes(outputStream: OutputStream?, unlockedNoteIds: List<Long>, callback: (result: ExportResult) -> Unit) {
         ensureBackgroundThread {
             if (outputStream == null) {
                 callback.invoke(ExportResult.EXPORT_FAIL)
@@ -29,7 +29,7 @@ class NotesExporter(private val context: Context) {
                     writer.beginArray()
                     val notes = context.notesDB.getNotes() as ArrayList<Note>
                     for (note in notes) {
-                        if (note.protectionType == PROTECTION_NONE) {
+                        if (!note.isLocked() || note.id in unlockedNoteIds) {
                             val noteToSave = getNoteToExport(note)
                             writer.jsonValue(gson.toJson(noteToSave))
                             written++
