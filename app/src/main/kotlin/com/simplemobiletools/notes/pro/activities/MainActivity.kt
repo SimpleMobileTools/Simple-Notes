@@ -906,7 +906,11 @@ class MainActivity : SimpleActivity() {
 
     private fun requestUnlockNotes(callback: (List<Long>) -> Unit) {
         val lockedNotes = mNotes.filter { it.isLocked() }
-        UnlockNotesDialog(this, lockedNotes, callback)
+        if (lockedNotes.isNotEmpty()) {
+            UnlockNotesDialog(this, lockedNotes, callback)
+        } else {
+            callback(emptyList())
+        }
     }
 
     private fun exportNotesTo(outputStream: OutputStream?) {
