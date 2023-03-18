@@ -904,7 +904,7 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun requestUnlockNotes(callback: (List<Long>) -> Unit) {
+    private fun requestUnlockNotes(callback: (unlockedNoteIds: List<Long>) -> Unit) {
         val lockedNotes = mNotes.filter { it.isLocked() }
         if (lockedNotes.isNotEmpty()) {
             runOnUiThread {
@@ -919,10 +919,10 @@ class MainActivity : SimpleActivity() {
         ensureBackgroundThread {
             NotesHelper(this).getNotes {
                 mNotes = it
-                requestUnlockNotes { unlockedIds ->
+                requestUnlockNotes { unlockedNoteIds ->
                     toast(R.string.exporting)
                     val notesExporter = NotesExporter(this)
-                    notesExporter.exportNotes(mNotes, unlockedIds, outputStream) { result ->
+                    notesExporter.exportNotes(mNotes, unlockedNoteIds, outputStream) { result ->
                         val toastId = when (result) {
                             NotesExporter.ExportResult.EXPORT_OK -> R.string.exporting_successful
                             else -> R.string.exporting_failed
@@ -1030,7 +1030,7 @@ class MainActivity : SimpleActivity() {
         ensureBackgroundThread {
             NotesHelper(this).getNotes { notes ->
                 mNotes = notes
-                requestUnlockNotes { unlockedIds ->
+                requestUnlockNotes { unlockedNoteIds ->
                     ExportFilesDialog(this, mNotes) { parent, extension ->
                         val items = arrayListOf(
                             RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
@@ -1040,7 +1040,7 @@ class MainActivity : SimpleActivity() {
                         RadioGroupDialog(this, items) { any ->
                             val syncFile = any as Int == EXPORT_FILE_SYNC
                             var failCount = 0
-                            mNotes.filter { !it.isLocked() || it.id in unlockedIds }.forEachIndexed { index, note ->
+                            mNotes.filter { !it.isLocked() || it.id in unlockedNoteIds }.forEachIndexed { index, note ->
                                 val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
                                 val file = File(parent, filename)
                                 if (!filename.isAValidFilename()) {
