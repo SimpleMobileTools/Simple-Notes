@@ -2,6 +2,7 @@ package com.simplemobiletools.notes.pro.dialogs
 
 import android.content.DialogInterface
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
@@ -9,7 +10,8 @@ import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_unlock_notes.view.*
 import kotlinx.android.synthetic.main.item_locked_note.view.*
 
-class UnlockNotesDialog(val activity: BaseSimpleActivity, notes: List<Note>, callback: (unlockedNoteIds: List<Long>) -> Unit) {
+class UnlockNotesDialog(val activity: BaseSimpleActivity, val notes: List<Note>, callback: (unlockedNoteIds: List<Long>) -> Unit) {
+    private var dialog: AlertDialog? = null
     private val view = activity.layoutInflater.inflate(R.layout.dialog_unlock_notes, null) as ViewGroup
     private val redColor = activity.getColor(R.color.md_red)
     private val greenColor = activity.getColor(R.color.md_green)
@@ -20,10 +22,11 @@ class UnlockNotesDialog(val activity: BaseSimpleActivity, notes: List<Note>, cal
             addLockedNoteView(note)
         }
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok, null)
+            .setPositiveButton(R.string.skip, null)
             .setNegativeButton(R.string.cancel, null)
             .apply {
                 activity.setupDialogStuff(view, this, R.string.unlock_notes, cancelOnTouchOutside = false) { alertDialog ->
+                    dialog = alertDialog
                     alertDialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
                         callback(unlockedNoteIds)
                         alertDialog.dismiss()
@@ -49,6 +52,7 @@ class UnlockNotesDialog(val activity: BaseSimpleActivity, notes: List<Note>, cal
                                 setImageResource(R.drawable.ic_lock_open_vector)
                                 applyColorFilter(greenColor)
                             }
+                            updatePositiveButton()
                         }
                     )
                 } else {
@@ -57,8 +61,17 @@ class UnlockNotesDialog(val activity: BaseSimpleActivity, notes: List<Note>, cal
                         setImageResource(R.drawable.ic_lock_vector)
                         applyColorFilter(redColor)
                     }
+                    updatePositiveButton()
                 }
             }
+        }
+    }
+
+    private fun updatePositiveButton() {
+        dialog?.getButton(DialogInterface.BUTTON_POSITIVE)?.text = if (unlockedNoteIds.isNotEmpty()) {
+            activity.getString(R.string.ok)
+        } else {
+            activity.getString(R.string.skip)
         }
     }
 }
