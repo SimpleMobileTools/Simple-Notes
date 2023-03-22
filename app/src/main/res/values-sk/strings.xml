@@ -25,7 +25,7 @@
     <string name="lock_note">Uzamknúť poznámku</string>
     <string name="unlock_note">Odomknúť poznámku</string>
     <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Obsah poznámky je uzamknutý.</string>
     <string name="show_content">Zobraziť obsah</string>
     <string name="locking_warning">UPOZORNENIE: Ak zabudnete heslo poznámky, nebudete ho môcť obnoviť, ani sa už dostať k obsahu poznámky.</string>

@@ -25,7 +25,7 @@
     <string name="lock_note">Κλείδωμα Σημείωσης</string>
     <string name="unlock_note">Ξεκλείδωμα Σημείωσης</string>
     <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Το περιεχόμενο των σημειώσεων είναι κλειδωμένο.</string>
     <string name="show_content">Εμφάνιση περιεχομένου</string>
     <string name="locking_warning">ΠΡΟΣΟΧΗ: Εάν ξεχάσετε τον κωδικό των σημειώσεων, δεν θα μπορείτε πλέον να τον ανακτήσετε ή να αποκτήσετε πρόσβαση στο περιεχόμενό τους.</string>

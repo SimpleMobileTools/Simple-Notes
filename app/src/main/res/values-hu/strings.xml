@@ -25,7 +25,7 @@
     <string name="lock_note">Jegyzet zárolása</string>
     <string name="unlock_note">Jegyzet feloldása</string>
     <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">A jegyzet tartalma zárolva van.</string>
     <string name="show_content">Tartalom megjelenítése</string>
     <string name="locking_warning">FIGYELMEZTETÉS: Ha elfelejti a jegyzetek jelszavát, akkor többé nem fogja tudni helyreállítani vagy elérni a jegyzetek tartalmát.</string>

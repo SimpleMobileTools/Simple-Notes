@@ -25,7 +25,7 @@
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Unlock note</string>
     <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Pastabų turinys yra užrakintas.</string>
     <string name="show_content">Show content</string>
     <string name="locking_warning">ĮSPĖJIMAS: jei pamiršite užrašų slaptažodį, nebegalėsite jo atkurti ar pasiekti užrašų turinio.</string>

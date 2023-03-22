@@ -25,7 +25,7 @@
     <string name="lock_note">נעל פתק</string>
     <string name="unlock_note">בטל נעילת פתק</string>
     <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">תוכן הפתקים נעול.</string>
     <string name="show_content">הראה תוכן</string>
     <string name="locking_warning">אזהרה: אם תשכח את הסיסמה של הפתקים, לא תוכל לשחזר אותה או לגשת לתוכן הפתקים יותר.</string>

@@ -25,7 +25,7 @@
     <string name="lock_note">Lås notat</string>
     <string name="unlock_note">Lås opp notat</string>
     <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Notatinnholdet er låst.</string>
     <string name="show_content">Vis innhold</string>
     <string name="locking_warning">ADVARSEL: Hvis du glemmer passordet til notatene, kan du ikke gjenopprette det eller få tilgang til notatenes innhold lenger.</string>

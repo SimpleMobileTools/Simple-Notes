@@ -25,7 +25,7 @@
     <string name="lock_note">锁定笔记</string>
     <string name="unlock_note">解锁笔记</string>
     <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">笔记的内容被锁定。</string>
     <string name="show_content">显示内容</string>
     <string name="locking_warning">警告：如果您忘记了笔记的密码，您将无法恢复或访问笔记的内容。</string>

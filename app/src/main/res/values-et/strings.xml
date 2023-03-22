@@ -25,7 +25,7 @@
     <string name="lock_note">Lukusta märge</string>
     <string name="unlock_note">Eemalda märkme lukustus</string>
     <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Märkme sisu on lukustatud.</string>
     <string name="show_content">Näita sisu</string>
     <string name="locking_warning">HOIATUS: Kui sa unustad märkme salasõna, siis sa ei saa seda märget avada ega tema sisu lugeda.</string>

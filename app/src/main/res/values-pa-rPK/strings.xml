@@ -24,7 +24,7 @@
     <string name="lock_note">نوٹ تالؕا مارنا</string>
     <string name="unlock_note">نوٹ اُگھیڑو</string>
     <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or tap \"OK\" to skip exporting locked notes.</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">ایس نوٹ دی سمگاری تالؕا مارنی اے</string>
     <string name="show_content">سمگری ویکھو</string>
     <string name="locking_warning">چیتاونی: جےتسی نوٹ دا پاس‌ورڈ بھُل جاندے او، تاں فیر نوٹ دی سمگری لبھ نہیں سکدیاں۔</string>
