@@ -21,6 +21,7 @@ class UnlockNotesDialog(val activity: BaseSimpleActivity, val notes: List<Note>,
         for (note in notes) {
             addLockedNoteView(note)
         }
+
         activity.getAlertDialogBuilder()
             .setPositiveButton(R.string.skip, null)
             .setNegativeButton(R.string.cancel, null)
