@@ -24,8 +24,8 @@
     <string name="text_note">Metin notu</string>
     <string name="lock_note">Notu kilitle</string>
     <string name="unlock_note">Notun kilidini aç</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
+    <string name="unlock_notes">Notların kilidini aç</string>
+    <string name="found_locked_notes_info">Aşağıdaki notlar kilitli. Bunların kilidini tek tek açabilir veya dışa aktarmayı atlayabilirsiniz.</string>
     <string name="note_content_locked">Notların içeriği kilitlendi.</string>
     <string name="show_content">İçeriği göster</string>
     <string name="locking_warning">UYARI: Notların parolasını unutursanız, onu kurtaramaz veya notların içeriğine artık erişemezsiniz.</string>
