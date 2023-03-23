@@ -5,5 +5,5 @@
             <solid android:color="@color/color_primary"/>
         </shape>
     </item>
-    <item android:bottom="@dimen/medium_margin" android:drawable="@drawable/ic_article_vector" android:left="@dimen/medium_margin" android:right="@dimen/medium_margin" android:top="@dimen/medium_margin" />
+    <item android:bottom="@dimen/medium_margin" android:drawable="@drawable/ic_shortcut_icon" android:left="@dimen/medium_margin" android:right="@dimen/medium_margin" android:top="@dimen/medium_margin" />
 </layer-list>
