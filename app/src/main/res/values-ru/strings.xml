@@ -24,6 +24,8 @@
     <string name="text_note">Текстовая заметка</string>
     <string name="lock_note">Блокировать заметку</string>
     <string name="unlock_note">Разблокировать заметку</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Содержимое заметки заблокировано.</string>
     <string name="show_content">Показывать содержание</string>
     <string name="locking_warning">ПРЕДУПРЕЖДЕНИЕ: если вы забудете пароль, то не сможете восстановить его или получить доступ к содержимому заметок.</string>

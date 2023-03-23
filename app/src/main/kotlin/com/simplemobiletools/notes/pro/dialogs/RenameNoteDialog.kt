@@ -18,16 +18,16 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val current
 
     init {
         val view = activity.layoutInflater.inflate(R.layout.dialog_rename_note, null)
-        view.note_title.setText(note.title)
+        view.locked_note_title.setText(note.title)
 
         activity.getAlertDialogBuilder()
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
             .apply {
                 activity.setupDialogStuff(view, this, R.string.rename_note) { alertDialog ->
-                    alertDialog.showKeyboard(view.note_title)
+                    alertDialog.showKeyboard(view.locked_note_title)
                     alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
-                        val title = view.note_title.value
+                        val title = view.locked_note_title.value
                         ensureBackgroundThread {
                             newTitleConfirmed(title, alertDialog)
                         }

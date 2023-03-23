@@ -24,16 +24,16 @@ class NewNoteDialog(val activity: Activity, title: String? = null, val setCheckl
             new_note_type.check(defaultType)
         }
 
-        view.note_title.setText(title)
+        view.locked_note_title.setText(title)
 
         activity.getAlertDialogBuilder()
             .setPositiveButton(R.string.ok, null)
             .setNegativeButton(R.string.cancel, null)
             .apply {
                 activity.setupDialogStuff(view, this, R.string.new_note) { alertDialog ->
-                    alertDialog.showKeyboard(view.note_title)
+                    alertDialog.showKeyboard(view.locked_note_title)
                     alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
-                        val newTitle = view.note_title.value
+                        val newTitle = view.locked_note_title.value
                         ensureBackgroundThread {
                             when {
                                 newTitle.isEmpty() -> activity.toast(R.string.no_title)

@@ -23,6 +23,8 @@
     <string name="text_note">Opomba k besedilu</string>
     <string name="lock_note">Opomba glede zaklepanja</string>
     <string name="unlock_note">Opomba o odklepanju</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Zaklenjena vsebina opomb.</string>
     <string name="show_content">Prikaži vsebino</string>
     <string name="locking_warning">OPOZORILO: Če pozabite geslo za opombe, ga ne bo moč več obnoviti in dostopati do njihove vsebine.</string>

@@ -24,6 +24,8 @@
     <string name="text_note">Тэкставая нататка</string>
     <string name="lock_note">Блакаваць нататку</string>
     <string name="unlock_note">Разблакаваць нататку</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Змесціва нататкі заблакавана.</string>
     <string name="show_content">Паказаць змесціва</string>
     <string name="locking_warning">ПАПЯРЭДЖАННЕ: Калі вы забудзеце пароль, вы больш не зможаце аднавіць яго альбо атрымаць доступ да змесціва нататак.</string>

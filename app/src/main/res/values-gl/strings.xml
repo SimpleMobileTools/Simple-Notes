@@ -24,6 +24,8 @@
     <string name="text_note">Nota de texto</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Desbloqueala nota</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">O contido das notas está bloqueado.</string>
     <string name="show_content">Mostralo contido</string>
     <string name="locking_warning">PERIGO: Se esqueces o contrasinal das notas, xa non poderás recuperalo nin acceder ao contido das notas.</string>

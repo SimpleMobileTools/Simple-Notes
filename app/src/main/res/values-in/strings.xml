@@ -24,6 +24,8 @@
     <string name="text_note">Catatan teks</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Buka kunci kota</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">Konten catatan terkunci.</string>
     <string name="show_content">Tampilkan konten</string>
     <string name="locking_warning">PERINGATAN: Jika Anda lupa kata sandi catatan, Anda tidak akan dapat memulihkan atau mengakses konten catatan.</string>

@@ -24,6 +24,8 @@
     <string name="text_note">Text note</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Unlock note</string>
+    <string name="unlock_notes">Unlock notes</string>
+    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
     <string name="note_content_locked">The notes\' content is locked.</string>
     <string name="show_content">Show content</string>
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
