@@ -51,6 +51,10 @@
         android:title="@string/share"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/cab_create_shortcut"
+        android:title="@string/create_shortcut"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/lock_note"
         android:title="@string/lock_note"
         app:showAsAction="never" />

@@ -6,6 +6,7 @@ import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ShortcutInfo
+import android.content.pm.ShortcutManager
 import android.graphics.drawable.Icon
 import android.graphics.drawable.LayerDrawable
 import android.net.Uri
@@ -43,6 +44,7 @@ import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_checklist.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
@@ -213,6 +215,7 @@ class MainActivity : SimpleActivity() {
                 R.id.new_note -> displayNewNoteDialog()
                 R.id.rename_note -> fragment?.handleUnlocking { displayRenameDialog() }
                 R.id.share -> fragment?.handleUnlocking { shareText() }
+                R.id.cab_create_shortcut -> createShortcut()
                 R.id.lock_note -> lockNote()
                 R.id.unlock_note -> unlockNote()
                 R.id.open_file -> tryOpenFile()
@@ -1336,6 +1339,30 @@ class MainActivity : SimpleActivity() {
             putExtra(Intent.EXTRA_TEXT, text)
             type = "text/plain"
             startActivity(Intent.createChooser(this, shareTitle))
+        }
+    }
+
+    @SuppressLint("NewApi")
+    private fun createShortcut() {
+        val manager = getSystemService(ShortcutManager::class.java)
+        if (manager.isRequestPinShortcutSupported) {
+            val note = mCurrentNote
+            val drawable = resources.getDrawable(R.drawable.shortcut_note).mutate()
+            val appIconColor = baseConfig.appIconColor
+            (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background).applyColorFilter(appIconColor)
+
+            val intent = Intent(this, SplashActivity::class.java)
+            intent.action = Intent.ACTION_VIEW
+            intent.putExtra(OPEN_NOTE_ID, note.id)
+            intent.flags = intent.flags or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NO_HISTORY
+
+            val shortcut = ShortcutInfo.Builder(this, note.hashCode().toString())
+                .setShortLabel(mCurrentNote.title)
+                .setIcon(Icon.createWithBitmap(drawable.convertToBitmap()))
+                .setIntent(intent)
+                .build()
+
+            manager.requestPinShortcut(shortcut, null)
         }
     }
 
