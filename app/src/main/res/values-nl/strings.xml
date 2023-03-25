@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Eenvoudige Notities</string>
     <string name="app_launcher_name">Notities</string>
-    <string name="widget_config">Kijk op SimpleMobileTools.com voor meer eenvoudige apps.</string>
+    <string name="widget_config">Kijk op SimpleMobileTools.com voor meer eenvoudig te gebruiken apps.</string>
     <string name="cannot_share_empty_text">Kan geen lege notitie delen</string>
     <string name="simple_note">Eenvoudige Notitie</string>
     <string name="new_note">Nieuwe notitie</string>
@@ -23,8 +23,8 @@
     <string name="text_note">Tekst</string>
     <string name="lock_note">Notitie vergrendelen</string>
     <string name="unlock_note">Notitie ontgrendelen</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
+    <string name="unlock_notes">Notities ontgrendelen</string>
+    <string name="found_locked_notes_info">De volgende notities zijn vergrendeld. Ontgrendel ze een voor een of sla het exporteren van deze notities over.</string>
     <string name="note_content_locked">De inhoud van deze notitie is vergrendeld.</string>
     <string name="show_content">Inhoud weergeven</string>
     <string name="locking_warning">WAARSCHUWING: Zonder het wachtwoord kan de inhoud van de notitie niet meer worden hersteld.</string>
