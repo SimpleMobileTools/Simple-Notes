@@ -24,8 +24,8 @@
     <string name="text_note">Текст нотатки</string>
     <string name="lock_note">Заблокувати нотатку</string>
     <string name="unlock_note">Розблокувати нотатку</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
+    <string name="unlock_notes">Розблокувати нотатки</string>
+    <string name="found_locked_notes_info">Наступні нотатки заблоковано. Ви можете розблокувати їх по черзі або пропустити експорт.</string>
     <string name="note_content_locked">Вміст нотатки заблоковано.</string>
     <string name="show_content">Показати нотатку</string>
     <string name="locking_warning">ЗАСТЕРЕЖЕННЯ: Якщо ви забудете пароль, то більше не зможете його відновити або отримати доступ до вмісту нотаток.</string>
