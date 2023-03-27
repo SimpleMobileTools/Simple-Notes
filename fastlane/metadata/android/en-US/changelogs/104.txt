@@ -1,0 +1,3 @@
+ * Improve exporting of password protected notes
+ * Allow creating note shortcuts
+ * Added some stability, translation and UX improvements

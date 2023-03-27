@@ -1,6 +1,13 @@
 Changelog
 ==========
 
+Version 6.15.4 *(2023-03-27)*
+----------------------------
+
+ * Improve exporting of password protected notes
+ * Allow creating note shortcuts
+ * Added some stability, translation and UX improvements
+
 Version 6.15.3 *(2023-03-07)*
 ----------------------------
 
