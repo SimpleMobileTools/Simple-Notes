@@ -24,12 +24,12 @@
     <string name="text_note">Anteckning</string>
     <string name="lock_note">Lås</string>
     <string name="unlock_note">Lås upp</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
+    <string name="unlock_notes">Lås upp anteckningar</string>
+    <string name="found_locked_notes_info">Följande anteckningar är låsta. Du kan antingen låsa upp dem en i taget eller hoppa över att exportera dem.</string>
     <string name="note_content_locked">Anteckningens innehåll är låst.</string>
     <string name="show_content">Visa innehåll</string>
     <string name="locking_warning">VARNING: Om du glömmer anteckningens lösenord så finns ingen möjlighet att återställa detta och du kommer således förlora åtkomsten till anteckningens innehåll.</string>
-    <string name="new_text_note">Ny textnot</string>
+    <string name="new_text_note">Ny textanteckning</string>
     <string name="new_checklist">Ny checklista</string>
     <!-- File notes -->
     <string name="open_file">Öppna fil</string>
