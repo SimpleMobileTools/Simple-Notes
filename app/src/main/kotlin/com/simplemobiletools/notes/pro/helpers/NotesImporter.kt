@@ -19,8 +19,9 @@ class NotesImporter(private val context: Context) {
     private val gson = Gson()
     private var notesImported = 0
     private var notesFailed = 0
+    private var notesSkipped = 0
 
-    fun importNotes(path: String, filename: String, callback: (result: ImportResult) -> Unit) {
+    fun importNotes(path: String, filename: String, force: Boolean = false, callback: (result: ImportResult) -> Unit) {
         ensureBackgroundThread {
             try {
                 val inputStream = if (path.contains("/")) {
@@ -35,7 +36,7 @@ class NotesImporter(private val context: Context) {
                     val notes = gson.fromJson<List<Note>>(json, type)
                     val totalNotes = notes?.size ?: 0
                     if (totalNotes <= 0) {
-                        callback.invoke(ImportResult.IMPORT_NOTHING_NEW)
+                        callback.invoke(ImportResult.IMPORT_FAIL)
                         return@ensureBackgroundThread
                     }
 
@@ -44,10 +45,17 @@ class NotesImporter(private val context: Context) {
                         if (!exists) {
                             context.notesDB.insertOrUpdate(note)
                             notesImported++
+                        } else {
+                            notesSkipped++
                         }
                     }
                 }
             } catch (e: JsonSyntaxException) {
+                if (force) {
+                    callback(ImportResult.IMPORT_FAIL)
+                    return@ensureBackgroundThread
+                }
+
                 // Import notes expects a json with note name, content etc, but lets be more flexible and accept the basic files with note content only too
                 val inputStream = if (path.contains("/")) {
                     File(path).inputStream()
@@ -82,6 +90,7 @@ class NotesImporter(private val context: Context) {
 
             callback.invoke(
                 when {
+                    notesSkipped > 0 && notesImported == 0 -> ImportResult.IMPORT_NOTHING_NEW
                     notesImported == 0 -> ImportResult.IMPORT_FAIL
                     notesFailed > 0 -> ImportResult.IMPORT_PARTIAL
                     else -> ImportResult.IMPORT_OK
