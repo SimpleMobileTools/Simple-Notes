@@ -33,7 +33,7 @@ class NotesImporter(private val context: Context) {
                     val json = reader.readText()
                     val type = object : TypeToken<List<Note>>() {}.type
                     val notes = gson.fromJson<List<Note>>(json, type)
-                    val totalNotes = notes.size
+                    val totalNotes = notes?.size ?: 0
                     if (totalNotes <= 0) {
                         callback.invoke(ImportResult.IMPORT_NOTHING_NEW)
                         return@ensureBackgroundThread
