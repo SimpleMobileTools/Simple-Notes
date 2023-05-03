@@ -77,6 +77,7 @@
     <string name="export_notes">Exporta totes les notes</string>
     <string name="import_notes">Importa notes</string>
     <string name="import_notes_pro">Importa notes (Pro)</string>
+    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Com puc canviar el color dels ginys\?</string>
     <string name="faq_1_text">En cas que només tingueu 1 giny actiu, podeu tornar-lo a crear o utilitzar el botó de configuració de l\'aplicació per personalitzar-lo. Si teniu diversos ginys actius, el botó de configuració de l\'aplicació no estarà disponible. Com que l\'aplicació admet la personalització del color per giny, haureu de tornar a crear el giny que vulgueu personalitzar.</string>

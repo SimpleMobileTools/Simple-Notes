@@ -77,6 +77,7 @@
     <string name="export_notes">تصدير جميع الملاحظات</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">استيراد الملاحظات (Pro)</string>
+    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">كيف يمكنني تغيير لون القطع؟</string>
     <string name="faq_1_text">في حال كان لديك عنصر واجهة مستخدم نشط واحد فقط، يمكنك إما إعادة إنشائه، أو استخدام الزر في إعدادات التطبيق لتخصيصه. إذا كان لديك العديد من الحاجيات النشطة، لن يكون الزر الموجود في إعدادات التطبيق متاحا. بما أن التطبيق يدعم تخصيص الألوان لكل عنصر واجهة مستخدم ، سيكون عليك إعادة إنشاء القطعة التي تريد تخصيصها.</string>

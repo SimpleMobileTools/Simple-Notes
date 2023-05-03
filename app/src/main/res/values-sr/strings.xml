@@ -73,6 +73,7 @@
     <string name="export_notes">Извези све белешке</string>
     <string name="import_notes">Увезите белешке</string>
     <string name="import_notes_pro">Увезите белешке (Про)</string>
+    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Како могу да променим боју виџета\?</string>
     <string name="faq_1_text">У случају да имате само 1 активан виџет, можете га поново креирати или користити дугме у подешавањима апликације да бисте га прилагодили. Ако имате више активних виџета, дугме у подешавањима апликације неће бити доступно. Пошто апликација подржава прилагођавање боја по виџету, мораћете поново да креирате виџет који желите да прилагодите.</string>

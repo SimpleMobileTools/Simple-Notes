@@ -77,6 +77,7 @@
     <string name="export_notes">Exportar todas las notas</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Importar notas (Pro)</string>
+    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">¿Cómo puedo cambiar los colores del widget\?</string>
     <string name="faq_1_text">En caso de que solo tengas un widget activo, Puedes volverlo a crear, o usar el botón en los ajustes de la aplicación para personalziarlo. Si tienes múltiples widgets activos, el botón en los ajustes de la aplicación no estará disponible. Ya que la aplicación soporta personalización de color por widget, tendrás que volver a crear el widget tque quieres personalizar.</string>

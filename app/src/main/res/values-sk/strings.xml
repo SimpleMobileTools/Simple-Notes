@@ -77,6 +77,7 @@
     <string name="export_notes">Exportovať všetky poznámky</string>
     <string name="import_notes">Importovať poznámky</string>
     <string name="import_notes_pro">Importovať poznámky (Pro)</string>
+    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Ako viem zmeniť farby widgetu\?</string>
     <string name="faq_1_text">V prípade, že máte iba 1 aktívny widget, ho môžete buď znova vytvoriť, alebo použiť tlačidlo v nastaveniach apky na zmenu farby. Ak máte widgetov viacero, tlačidlo v nastaveniach apky zmizne. Keďže apka podporuje rôzne farby pre každý widget, budete musieť znovu vytvoriť ten widget, ktorého farby chcete zmeniť.</string>

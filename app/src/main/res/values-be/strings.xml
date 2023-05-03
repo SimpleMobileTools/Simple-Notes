@@ -77,6 +77,7 @@
     <string name="export_notes">Экспартаваць усе нататкі</string>
     <string name="import_notes">Імпартаваць нататкі</string>
     <string name="import_notes_pro">Імпартаваць нататкі (Pro)</string>
+    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Як змяніць колер віджэта\?</string>
     <string name="faq_1_text">Калі ў вас ёсць толькі 1 Актыўны віджэт, вы можаце альбо ўзнавіць яго зноўку, альбо выкарыстоўваць кнопку ў наладах прыкладання для яго Налады. Калі ў вас некалькі актыўных віджэтаў, кнопка ў наладах прыкладання будзе недаступная. Паколькі прыкладанне падтрымлівае наладу колеру для кожнага фішкі, вам прыйдзецца ўзнавіць віджэт, які вы хочаце наладзіць.</string>

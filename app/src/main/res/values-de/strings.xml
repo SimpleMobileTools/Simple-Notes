@@ -77,6 +77,7 @@
     <string name="export_notes">Alle Notizen exportieren</string>
     <string name="import_notes">Notizen importieren</string>
     <string name="import_notes_pro">Notizen importieren (Pro)</string>
+    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Wie kann ich die Farbe der Widgets ändern\?</string>
     <string name="faq_1_text">Wenn nur ein Widget aktiv ist, kann die Farbe über die Einstellungen unter dem Punkt Widgets angepasst werden, ansonsten muss es neu erstellt werden.</string>
