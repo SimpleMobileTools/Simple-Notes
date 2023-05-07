@@ -119,7 +119,7 @@ class MainActivity : SimpleActivity() {
         setupSearchButtons()
 
         if (isPackageInstalled("com.simplemobiletools.notes")) {
-            val dialogText = getString(R.string.upgraded_to_pro_notes)
+            val dialogText = getString(R.string.upgraded_from_free_notes)
             ConfirmationDialog(this, dialogText, 0, R.string.ok, 0, false) {}
         }
     }
