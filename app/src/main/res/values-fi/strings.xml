@@ -31,6 +31,7 @@
     <string name="locking_warning">VAROITUS: Jos unohdat muistiinpanon salasanan, sitä ei ole mahdollista palauttaa etkä pääse enää käsiksi muistiinpanoon.</string>
     <string name="new_text_note">Uusi tekstimuistiinpano</string>
     <string name="new_checklist">Uusi tarkistuslista</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Avaa tiedosto</string>
     <string name="export_as_file">Vie tiedostona</string>

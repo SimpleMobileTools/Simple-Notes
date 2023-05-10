@@ -30,6 +30,7 @@
     <string name="locking_warning">Cảnh Báo: Nếu bạn quên khi chú mật khẩu, bạn sẽ không thể nào lấy lại hay truy cập vào những ghi chú nữa</string>
     <string name="new_text_note">Ghi chú văn bản mới</string>
     <string name="new_checklist">Danh sách kiểm tra mới</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
 
     <!-- File notes -->
     <string name="open_file">Mở tệp</string>

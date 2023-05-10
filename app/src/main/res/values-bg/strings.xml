@@ -31,6 +31,7 @@
     <string name="locking_warning">ПРЕДУПРЕЖДЕНИЕ: Ако забравите паролата на бележките, вече няма да можете да я възстановите или да получите достъп до съдържанието на бележките.</string>
     <string name="new_text_note">Нова текстова бележка</string>
     <string name="new_checklist">Нов контролен списък</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Отвори файл</string>
     <string name="export_as_file">Експортиране като файл</string>

@@ -31,6 +31,7 @@
     <string name="locking_warning">AVERTISSEMENT : Si vous oubliez le mot de passe des notes, vous ne pourrez plus le récupérer ni accéder au contenu des notes.</string>
     <string name="new_text_note">Nouvelle note textuelle</string>
     <string name="new_checklist">Nouvelle liste de contrôle</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Ouvrir le fichier</string>
     <string name="export_as_file">Exporter dans un fichier</string>

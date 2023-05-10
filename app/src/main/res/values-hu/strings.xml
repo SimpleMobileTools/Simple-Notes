@@ -31,6 +31,7 @@
     <string name="locking_warning">FIGYELMEZTETÉS: Ha elfelejti a jegyzetek jelszavát, akkor többé nem fogja tudni helyreállítani vagy elérni a jegyzetek tartalmát.</string>
     <string name="new_text_note">Új szöveges jegyzet</string>
     <string name="new_checklist">Új ellenőrzőlista</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Fájl megnyitása</string>
     <string name="export_as_file">Exportálás fájlként</string>

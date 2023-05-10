@@ -31,6 +31,7 @@
     <string name="locking_warning">คำเตือน: ถ้าคุณลืมรหัสผ่านของโน็ต คุณจะไม่สามารถกู้คืนหรือเข้าถึงโน็ตตัวนั้นได้อีกต่อไป</string>
     <string name="new_text_note">เพิ่มโน็ตข้อความใหม่</string>
     <string name="new_checklist">เพิ่มรายการตรวจสอบใหม่</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">เปิดไฟล์</string>
     <string name="export_as_file">ส่งออกเป็นไฟล์</string>

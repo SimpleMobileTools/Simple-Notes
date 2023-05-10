@@ -31,6 +31,7 @@
     <string name="locking_warning">هشدار: اگر گذرواژهٔ یادداشت را فراموش کنید، دیگر قادر به بازیابی آن یا دسترسی به محتویات یادداشت نیستید.</string>
     <string name="new_text_note">New text note</string>
     <string name="new_checklist">New checklist</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">بازکردن پرونده</string>
     <string name="export_as_file">برون‌ریزی به عنوان پرونده</string>

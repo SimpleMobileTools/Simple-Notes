@@ -31,6 +31,7 @@
     <string name="locking_warning">UPOZORNĚNÍ: Pokud zapomenete heslo k poznámce, už ji nebudete schopni obnovit nebo získat přístup k jejímu obsahu.</string>
     <string name="new_text_note">Nová textová poznámka</string>
     <string name="new_checklist">Nový seznam položek</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Otevřít soubor</string>
     <string name="export_as_file">Exportovat jako soubor</string>

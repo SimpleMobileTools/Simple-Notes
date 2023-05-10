@@ -31,6 +31,7 @@
     <string name="locking_warning">ЗАСТЕРЕЖЕННЯ: Якщо ви забудете пароль, то більше не зможете його відновити або отримати доступ до вмісту нотаток.</string>
     <string name="new_text_note">Нова текстова нотатка</string>
     <string name="new_checklist">Новий список</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Відкрити файл</string>
     <string name="export_as_file">Експортувати як файл</string>
