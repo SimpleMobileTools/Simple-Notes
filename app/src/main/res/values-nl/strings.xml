@@ -30,7 +30,7 @@
     <string name="locking_warning">WAARSCHUWING: Zonder het wachtwoord kan de inhoud van de notitie niet meer worden hersteld.</string>
     <string name="new_text_note">Nieuwe notitie</string>
     <string name="new_checklist">Nieuwe lijst</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">Deze app kan geen bestanden laden via het internet</string>
     <!-- File notes -->
     <string name="open_file">Bestand openen</string>
     <string name="export_as_file">Als bestand exporteren</string>
