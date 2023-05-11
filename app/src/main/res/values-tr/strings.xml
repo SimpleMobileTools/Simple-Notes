@@ -31,7 +31,7 @@
     <string name="locking_warning">UYARI: Notların parolasını unutursanız, onu kurtaramaz veya notların içeriğine artık erişemezsiniz.</string>
     <string name="new_text_note">Yeni metin notu</string>
     <string name="new_checklist">Yeni yapılacak listesi</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">Uygulama internet üzerinden dosya yükleyemiyor</string>
     <!-- File notes -->
     <string name="open_file">Dosya aç</string>
     <string name="export_as_file">Dosya olarak aktar</string>
