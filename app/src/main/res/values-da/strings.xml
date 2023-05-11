@@ -31,6 +31,7 @@
     <string name="locking_warning">ADVARSEL: Hvis du glemmer noternes adgangskode, kan du ikke gendanne den eller få adgang til noternes indhold længere.</string>
     <string name="new_text_note">Ny tekstnote</string>
     <string name="new_checklist">Ny tjekliste</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Åbn fil</string>
     <string name="export_as_file">Eksporter som fil</string>

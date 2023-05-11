@@ -24,13 +24,14 @@
     <string name="text_note">Тэкставая нататка</string>
     <string name="lock_note">Блакаваць нататку</string>
     <string name="unlock_note">Разблакаваць нататку</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
+    <string name="unlock_notes">Разблакіраваць нататкі</string>
+    <string name="found_locked_notes_info">Наступныя нататкі заблакіраваны. Вы можаце альбо разблакіраваць іх адзін за адным, альбо прапусціць іх экспарт.</string>
     <string name="note_content_locked">Змесціва нататкі заблакавана.</string>
     <string name="show_content">Паказаць змесціва</string>
     <string name="locking_warning">ПАПЯРЭДЖАННЕ: Калі вы забудзеце пароль, вы больш не зможаце аднавіць яго альбо атрымаць доступ да змесціва нататак.</string>
     <string name="new_text_note">Новая тэкставая нататка</string>
     <string name="new_checklist">Новы кантрольны спіс</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Адкрыць файл</string>
     <string name="export_as_file">Экспарт у файл</string>

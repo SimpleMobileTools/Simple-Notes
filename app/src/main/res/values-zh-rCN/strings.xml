@@ -31,6 +31,7 @@
     <string name="locking_warning">警告：如果您忘记了笔记的密码，您将无法恢复或访问笔记的内容。</string>
     <string name="new_text_note">新建文本笔记</string>
     <string name="new_checklist">新建清单</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">打开文件</string>
     <string name="export_as_file">以文件的形式导出</string>

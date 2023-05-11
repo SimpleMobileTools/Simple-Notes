@@ -31,6 +31,7 @@
     <string name="locking_warning">אזהרה: אם תשכח את הסיסמה של הפתקים, לא תוכל לשחזר אותה או לגשת לתוכן הפתקים יותר.</string>
     <string name="new_text_note">פתק טקסט חדש</string>
     <string name="new_checklist">רשימת בדיקה חדשה</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Open file</string>
     <string name="export_as_file">ייצא כקובץ</string>

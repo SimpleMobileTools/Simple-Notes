@@ -31,6 +31,7 @@
     <string name="locking_warning">ATENȚIE: Dacă uitați parola notițelor, nu o veți mai putea recupera și nici nu veți mai putea accesa conținutul notițele.</string>
     <string name="new_text_note">Noua notița de text</string>
     <string name="new_checklist">O nouă listă de verificare</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Deschideți fișierul</string>
     <string name="export_as_file">Exportați ca fișier</string>

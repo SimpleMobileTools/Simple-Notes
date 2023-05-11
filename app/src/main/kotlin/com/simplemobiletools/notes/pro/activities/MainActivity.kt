@@ -43,6 +43,7 @@ import com.simplemobiletools.notes.pro.dialogs.*
 import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.*
+import com.simplemobiletools.notes.pro.helpers.NotesImporter.ImportResult
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_checklist.*
@@ -119,7 +120,7 @@ class MainActivity : SimpleActivity() {
         setupSearchButtons()
 
         if (isPackageInstalled("com.simplemobiletools.notes")) {
-            val dialogText = getString(R.string.upgraded_to_pro_notes)
+            val dialogText = getString(R.string.upgraded_from_free_notes)
             ConfirmationDialog(this, dialogText, 0, R.string.ok, 0, false) {}
         }
     }
@@ -291,7 +292,7 @@ class MainActivity : SimpleActivity() {
             val outputStream = contentResolver.openOutputStream(resultData.data!!)
             exportNotesTo(outputStream)
         } else if (requestCode == PICK_IMPORT_NOTES_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
-            importNotesFrom(resultData.data!!)
+            tryImportingAsJson(resultData.data!!)
         }
     }
 
@@ -730,23 +731,29 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun importUri(uri: Uri) {
-        when (uri.scheme) {
-            "file" -> openPath(uri.path!!)
-            "content" -> {
-                val realPath = getRealPathFromURI(uri)
-                if (hasPermission(PERMISSION_READ_STORAGE)) {
-                    if (realPath != null) {
-                        openPath(realPath)
+        tryImportingAsJson(uri, force = true, showToasts = false) { success ->
+            if (success) {
+                return@tryImportingAsJson
+            }
+
+            when (uri.scheme) {
+                "file" -> openPath(uri.path!!)
+                "content" -> {
+                    val realPath = getRealPathFromURI(uri)
+                    if (hasPermission(PERMISSION_READ_STORAGE)) {
+                        if (realPath != null) {
+                            openPath(realPath)
+                        } else {
+                            R.string.unknown_error_occurred
+                        }
+                    } else if (realPath != null && realPath != "") {
+                        checkFile(realPath, false) {
+                            addNoteFromUri(uri, realPath.getFilenameFromPath())
+                        }
                     } else {
-                        R.string.unknown_error_occurred
-                    }
-                } else if (realPath != null && realPath != "") {
-                    checkFile(realPath, false) {
-                        addNoteFromUri(uri, realPath.getFilenameFromPath())
-                    }
-                } else {
-                    checkUri(uri) {
-                        addNoteFromUri(uri)
+                        checkUri(uri) {
+                            addNoteFromUri(uri)
+                        }
                     }
                 }
             }
@@ -957,43 +964,66 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun importNotes(path: String, filename: String) {
-        toast(R.string.importing)
-        ensureBackgroundThread {
-            NotesImporter(this).importNotes(path, filename) {
-                toast(
-                    when (it) {
-                        NotesImporter.ImportResult.IMPORT_OK -> R.string.importing_successful
-                        NotesImporter.ImportResult.IMPORT_PARTIAL -> R.string.importing_some_entries_failed
-                        else -> R.string.no_new_items
-                    }
-                )
-                initViewPager()
-            }
-        }
-    }
-
-    private fun importNotesFrom(uri: Uri) {
+    private fun tryImportingAsJson(uri: Uri, force: Boolean = false, showToasts: Boolean = true, callback: ((success: Boolean) -> Unit)? = null) {
+        val path: String
+        val filename: String
         when (uri.scheme) {
-            "file" -> importNotes(uri.path!!, uri.path!!.getFilenameFromPath())
+            "file" -> {
+                path = uri.path!!
+                filename = path.getFilenameFromPath()
+            }
             "content" -> {
                 val tempFile = getTempFile("messages", "backup.txt")
                 if (tempFile == null) {
-                    toast(R.string.unknown_error_occurred)
+                    maybeToast(R.string.unknown_error_occurred, showToasts)
+                    callback?.invoke(false)
                     return
                 }
 
                 try {
-                    val filename = getFilenameFromUri(uri)
+                    filename = getFilenameFromUri(uri)
                     val inputStream = contentResolver.openInputStream(uri)
                     val out = FileOutputStream(tempFile)
                     inputStream!!.copyTo(out)
-                    importNotes(tempFile.absolutePath, filename)
+                    path = tempFile.absolutePath
                 } catch (e: Exception) {
                     showErrorToast(e)
+                    callback?.invoke(false)
+                    return
                 }
             }
-            else -> toast(R.string.invalid_file_format)
+            else -> {
+                maybeToast(R.string.invalid_file_format, showToasts)
+                callback?.invoke(false)
+                return
+            }
+        }
+
+        maybeToast(R.string.importing, showToasts)
+        ensureBackgroundThread {
+            NotesImporter(this).importNotes(path, filename, force) { importResult ->
+                if (importResult == ImportResult.IMPORT_FAIL) {
+                    maybeToast(R.string.no_new_items, showToasts)
+                    runOnUiThread { callback?.invoke(false) }
+                    return@importNotes
+                }
+
+                toast(
+                    when (importResult) {
+                        ImportResult.IMPORT_OK -> R.string.importing_successful
+                        ImportResult.IMPORT_PARTIAL -> R.string.importing_some_entries_failed
+                        else -> R.string.no_new_items
+                    }
+                )
+                initViewPager()
+                runOnUiThread { callback?.invoke(true) }
+            }
+        }
+    }
+
+    private fun maybeToast(id: Int, show: Boolean) {
+        if (show) {
+            toast(id)
         }
     }
 

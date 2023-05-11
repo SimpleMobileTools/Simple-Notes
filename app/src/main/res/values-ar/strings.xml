@@ -31,6 +31,7 @@
     <string name="locking_warning">تحذير: إذا نسيت كلمة مرور الملاحظات، فلن تتمكن من استعادتها أو الوصول إلى محتوى الملاحظات بعد الآن.</string>
     <string name="new_text_note">ملاحظة نصية جديدة</string>
     <string name="new_checklist">قائمة مرجعية جديدة</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">فتح الملف</string>
     <string name="export_as_file">تصدير كملف</string>

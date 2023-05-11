@@ -31,6 +31,7 @@
     <string name="locking_warning">VARNING: Om du glömmer anteckningens lösenord så finns ingen möjlighet att återställa detta och du kommer således förlora åtkomsten till anteckningens innehåll.</string>
     <string name="new_text_note">Ny textanteckning</string>
     <string name="new_checklist">Ny checklista</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Öppna fil</string>
     <string name="export_as_file">Exportera</string>

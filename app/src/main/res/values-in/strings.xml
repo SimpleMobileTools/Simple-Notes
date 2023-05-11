@@ -31,6 +31,7 @@
     <string name="locking_warning">PERINGATAN: Jika Anda lupa kata sandi catatan, Anda tidak akan dapat memulihkan atau mengakses konten catatan.</string>
     <string name="new_text_note">Catatan teks baru</string>
     <string name="new_checklist">Daftar periksa baru</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Buka berkas</string>
     <string name="export_as_file">Ekspor sebagai berkas</string>

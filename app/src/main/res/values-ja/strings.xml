@@ -31,6 +31,7 @@
     <string name="locking_warning">警告：メモのパスワードを忘れた場合、そのパスワードを復元したり、メモの内容にアクセスしたりすることはできなくなります。</string>
     <string name="new_text_note">新しいテキストメモ</string>
     <string name="new_checklist">新しいチェックリスト</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">ファイルを開く</string>
     <string name="export_as_file">ファイルとしてエクスポート</string>

@@ -31,6 +31,7 @@
     <string name="locking_warning">ACHTUNG: Wenn du das Kennwort für die Notizen vergisst, kannst du sie nicht mehr wiederherstellen oder auf den Inhalt der Notizen zugreifen.</string>
     <string name="new_text_note">Neue Textnotiz</string>
     <string name="new_checklist">Neue Checkliste</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Datei öffnen</string>
     <string name="export_as_file">Als Datei exportieren</string>

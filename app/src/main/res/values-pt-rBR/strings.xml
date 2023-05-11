@@ -31,6 +31,7 @@
     <string name="locking_warning">AVISO: Caso você esqueça a senha, não conseguirá recuperá-la ou acessar o conteúdo da nota.</string>
     <string name="new_text_note">Nova nota de texto</string>
     <string name="new_checklist">Nova lista</string>
+    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
     <string name="open_file">Abrir arquivo</string>
     <string name="export_as_file">Exportar como arquivo</string>
