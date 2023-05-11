@@ -78,7 +78,6 @@
     <string name="export_notes">Izvezi sve bilješke</string>
     <string name="import_notes">Uvezi bilješke</string>
     <string name="import_notes_pro">Uvezi bilješke (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kako mogu promijeniti boju widgeta\?</string>
     <string name="faq_1_text">U slučaju da imaš samo jedan aktivan widget, možeš ga ponovno izraditi ili upotrijebiti gumb u postavkama aplikacije za njegovu prilagođavanje. Ako imaš više aktivnih widgeta, gumb u postavkama aplikacije neće biti dostupan. Budući da aplikacija podržava prilagođavanje boja po widgetu, morat ćeš ponovo izraditi widget koji želiš prilagoditi.</string>

@@ -874,7 +874,7 @@ class MainActivity : SimpleActivity() {
                 } catch (e: ActivityNotFoundException) {
                     toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
                 } catch (e: NetworkErrorException) {
-                    toast(getString(R.string.cant_load_files_over_internet), Toast.LENGTH_LONG)
+                    toast(getString(R.string.cannot_load_over_internet), Toast.LENGTH_LONG)
                 } catch (e: Exception) {
                     showErrorToast(e)
                 }

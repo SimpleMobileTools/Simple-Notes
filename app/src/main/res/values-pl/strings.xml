@@ -78,7 +78,6 @@
     <string name="export_notes">Eksportuj wszystkie notatki</string>
     <string name="import_notes">Importuj notatki</string>
     <string name="import_notes_pro">Importuj notatki (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Jak mogę zmienić kolor widżetów\?</string>
     <string name="faq_1_text">Jeśli masz tylko 1 aktywny widżet, możesz go odtworzyć lub użyć przycisku w ustawieniach aplikacji, aby go dostosować. Jeśli masz wiele aktywnych widżetów, przycisk w ustawieniach aplikacji nie będzie dostępny. Ponieważ aplikacja obsługuje dostosowywanie kolorów dla poszczególnych widżetów, konieczne będzie ponowne utworzenie widżetu, który chcesz dostosować.</string>

@@ -78,7 +78,6 @@
     <string name="export_notes">メモをすべてエクスポート</string>
     <string name="import_notes">メモをインポート</string>
     <string name="import_notes_pro">メモをインポート (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">ウィジェットの色はどうやって変更出来ますか？</string>
     <string name="faq_1_text">アクティブなウィジェットが一つしかない場合、ウィジェットを再作成するか、アプリ設定内のボタンを押してカスタマイズ出来ます。アクティブなウィジェットが複数ある場合、アプリ設定内のボタンは使用出来ません。アプリはウィジェットごとの色のカスタマイズをサポートしているので、カスタマイズしたいウィジェットは再作成する必要があります。</string>

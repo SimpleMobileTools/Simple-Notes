@@ -78,7 +78,6 @@
     <string name="export_notes">ייצא את כל הפתקים</string>
     <string name="import_notes">ייבא פתקים</string>
     <string name="import_notes_pro">ייבא פתקים (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">כיצד אוכל לשנות את צבע הווידג\'טים\?</string>
     <string name="faq_1_text">במקרה שיש לך רק ווידג\'ט פעיל אחד, תוכל ליצור אותו מחדש או להשתמש בכפתור בהגדרות האפליקציה כדי להתאים אותו. אם יש לך מספר ווידג\'טים פעילים, הכפתור בהגדרות האפליקציה לא יהיה זמין. מכיוון שהאפליקציה תומכת בהתאמה אישית של צבע לכל ווידג\'ט, תצטרך ליצור מחדש את הווידג\'ט שברצונך להתאים אישית.</string>

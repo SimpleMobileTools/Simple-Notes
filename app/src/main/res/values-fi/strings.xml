@@ -78,7 +78,6 @@
     <string name="export_notes">Vie kaikki muistiinpanot</string>
     <string name="import_notes">Tuo muistiinpanoja</string>
     <string name="import_notes_pro">Tuo muistiinpanoja (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kuinka voin vaihtaa pienoissovelluksen väriä\?</string>
     <string name="faq_1_text">Jos sinulla on vain yksi aktiivinen pienoissovellus, voit joko luoda sen uudelleen tai mukauttaa sitä sovelluksen asetukset-painikkeella. Jos sinulla on useita aktiivisia pienoissovelluksia, sovelluksessa oleva asetukset-painike ei ole käytettävissä. Koska sovellus tukee värien mukauttamista pienoissovellusta kohti, sinun on luotava uudelleen pienoissovellus, jonka haluat muokata.</string>

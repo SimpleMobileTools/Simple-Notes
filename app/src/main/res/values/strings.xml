@@ -78,7 +78,6 @@
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Import notes (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
 
     <!-- FAQ -->
     <string name="faq_1_title">How can I change the widgets color?</string>

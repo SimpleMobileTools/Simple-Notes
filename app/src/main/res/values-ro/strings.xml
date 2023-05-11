@@ -78,7 +78,6 @@
     <string name="export_notes">Exportați toate notițele</string>
     <string name="import_notes">Importaţi notițele</string>
     <string name="import_notes_pro">Importaţi note (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Cum pot schimba culoarea widget-urilor\?</string>
     <string name="faq_1_text">În cazul în care aveți doar un singur widget activ, îl puteți fie recrea, fie puteți utiliza butonul din setările aplicației pentru a-l personaliza. În cazul în care aveți mai multe widgeturi active, butonul din setările aplicației nu va fi disponibil. Deoarece aplicația acceptă personalizarea culorilor pentru fiecare widget în parte, va trebui să recreați widgetul pe care doriți să îl personalizați.</string>

@@ -78,7 +78,6 @@
     <string name="export_notes">Eksporter alle noter</string>
     <string name="import_notes">Importer noter</string>
     <string name="import_notes_pro">Importer noter (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hvordan kan jeg ændre widget\'ens farve\?</string>
     <string name="faq_1_text">Hvis du kun har en aktiv widget, kan du enten genskabe den eller bruge knappen i appindstillingerne til at tilpasse den. Hvis du har flere aktive widgets, er knappen i appindstillingerne ikke tilgængelig. Da appen understøtter farvetilpasning pr. widget, skal du genskabe den widget, som du vil tilpasse.</string>

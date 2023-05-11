@@ -78,7 +78,6 @@
     <string name="export_notes">ส่งออกโน็ตทุกตัว</string>
     <string name="import_notes">นำเข้าโน็ตทุกตัว</string>
     <string name="import_notes_pro">นำเข้าโน็ต (โปร)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">เปลี่ยนสีวิดเจ็ตอย่างไร\?</string>
     <string name="faq_1_text">ในกรณีที่คุณมีวิดเจ็ตตัวเดียว คุณสามารถสร้างใหม่ได้ หรือ ใช้ปุ่มในการตั้งค่าของแอปเพื่อตกแต่งมัน ถ้าคุณมีวิดเจ็ตหลายตัว ปุ่มในการตั้งค่าของแอปจะไม่มีอยู่ เพราะว่าแอปสนับสนุนการตกแต่งสีในแต่ละวิดเจ็ต คุณจะต้องสร้างวิดเจ็ตที่ต้องการใหม่เพื่อตกแต่ง</string>

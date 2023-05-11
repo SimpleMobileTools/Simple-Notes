@@ -78,7 +78,6 @@
     <string name="export_notes">Eksportere alle notater</string>
     <string name="import_notes">Importere notater</string>
     <string name="import_notes_pro">Importere notater (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hvordan endrer jeg widgetfargen\?</string>
     <string name="faq_1_text">Hvis du bare har ett aktivt kontrollprogram, kan du enten opprette det på nytt eller bruke knappen i appinnstillingene for å tilpasse den. Hvis du har flere aktive kontrollprogrammer, vil ikke knappen i appinnstillingene være tilgjengelig. Siden appen støtter fargetilpasning per kontrollprogram, må du opprette kontrollprogrammet du vil tilpasse, på nytt.</string>

@@ -78,7 +78,6 @@
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Import notes (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">چگونه میتوانم رنگ ابزارک‌ها را تغییر دهم؟</string>
     <string name="faq_1_text">در این مثال شما فقط یک ابزارک فعال دارید، شما همچنین می‌توانید آن را دوباره بسازید، یا از دکمه درون تنظیمات آن را سفارشی‌سازی کنید. اگر شما چندین ابزارک فعال دارید، دکمه درون تنظیمات در دسترس نخواهد بود. همچنان برنامه از سفارشی‌سازی رنگ برای هر ابزارک پشتیبانی میکند، شما خواهید توانست با ساخت دوبارهٔ ابزارک آن را سفارشی‌سازی کنید.</string>

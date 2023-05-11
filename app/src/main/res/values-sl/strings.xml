@@ -74,7 +74,6 @@
     <string name="export_notes">Izvozite vse opombe</string>
     <string name="import_notes">Uvozite opombe</string>
     <string name="import_notes_pro">Uvozite opombe (Pro)</string>
-    <string name="cant_load_files_over_internet">Simple Notes can not load files over the internet</string>
     <!-- FAQ -->
     <string name="faq_1_title">Kako lahko spremenim barvo pripomočkov\?</string>
     <string name="faq_1_text">V primeru le enega aktivnega pripomočka, ga ponovno ustvarite ali uporabite gumb v nastavitvah aplikacije za njegovo prilagoditev. Če imate več aktivnih gradnikov, gumb v nastavitvah aplikacije ne bo na voljo. Ker aplikacija podpira prilagajanje barv za posamezen pripomoček, ga boste morali ponovno ustvariti, v primeru prilagoditve.</string>
