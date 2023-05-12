@@ -1,5 +1,6 @@
 package com.simplemobiletools.notes.pro.activities
 
+import android.accounts.NetworkErrorException
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ActivityNotFoundException
@@ -872,6 +873,8 @@ class MainActivity : SimpleActivity() {
                     startActivityForResult(this, PICK_EXPORT_FILE_INTENT)
                 } catch (e: ActivityNotFoundException) {
                     toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                } catch (e: NetworkErrorException) {
+                    toast(getString(R.string.cannot_load_over_internet), Toast.LENGTH_LONG)
                 } catch (e: Exception) {
                     showErrorToast(e)
                 }
