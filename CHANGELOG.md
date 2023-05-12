@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.15.5 *(2023-05-12)*
+----------------------------
+
+ * Improved the UX at importing files
+ * Added some stability and translation improvements
+
 Version 6.15.4 *(2023-03-27)*
 ----------------------------
 
