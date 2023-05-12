@@ -31,7 +31,7 @@
     <string name="locking_warning">AVÍS: Si oblideu la contrasenya de la nota, ja no podreu recuperar-la ni accedir al contingut de les notes.</string>
     <string name="new_text_note">Nota de text nova</string>
     <string name="new_checklist">Llista de comprovació nova</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">L\'aplicació no pot carregar fitxers per Internet</string>
     <!-- File notes -->
     <string name="open_file">Obre un fitxer</string>
     <string name="export_as_file">Exporta com a fitxer</string>
