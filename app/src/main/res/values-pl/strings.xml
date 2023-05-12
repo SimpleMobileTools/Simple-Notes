@@ -31,7 +31,7 @@
     <string name="locking_warning">OSTRZEŻENIE: Jeśli zapomnisz hasła do notatki, nie będziesz już mógł/mogła jej odzyskać ani uzyskać dostępu do treści notatki.</string>
     <string name="new_text_note">Nowa notatka tekstowa</string>
     <string name="new_checklist">Nowa lista kontrolna</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">Aplikacja nie może załadować plików przez Internet</string>
     <!-- File notes -->
     <string name="open_file">Otwórz plik</string>
     <string name="export_as_file">Eksportuj jako plik</string>
