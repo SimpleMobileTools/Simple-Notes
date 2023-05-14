@@ -31,7 +31,7 @@
     <string name="locking_warning">ΠΡΟΣΟΧΗ: Εάν ξεχάσετε τον κωδικό των σημειώσεων, δεν θα μπορείτε πλέον να τον ανακτήσετε ή να αποκτήσετε πρόσβαση στο περιεχόμενό τους.</string>
     <string name="new_text_note">Νέα σημείωση κειμένου</string>
     <string name="new_checklist">Νέα λίστα ελέγχου</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">Η εφαρμογή δεν μπορεί να φορτώσει αρχεία μέσω διαδικτύου</string>
     <!-- File notes -->
     <string name="open_file">Άνοιγμα αρχείου</string>
     <string name="export_as_file">Εξαγωγή ως αρχείο</string>
