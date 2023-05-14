@@ -1487,6 +1487,7 @@ class MainActivity : SimpleActivity() {
     private fun displaySortChecklistDialog() {
         SortChecklistDialog(this) {
             getPagerAdapter().refreshChecklist(view_pager.currentItem)
+            updateWidgets()
         }
     }
 }
