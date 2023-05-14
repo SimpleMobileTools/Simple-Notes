@@ -31,7 +31,7 @@
     <string name="locking_warning">VARNING: Om du glömmer anteckningens lösenord så finns ingen möjlighet att återställa detta och du kommer således förlora åtkomsten till anteckningens innehåll.</string>
     <string name="new_text_note">Ny textanteckning</string>
     <string name="new_checklist">Ny checklista</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">Appen kan inte läsa in filer på internet</string>
     <!-- File notes -->
     <string name="open_file">Öppna fil</string>
     <string name="export_as_file">Exportera</string>
@@ -62,7 +62,7 @@
     <string name="autosave_notes">Spara anteckningar automatiskt</string>
     <string name="enable_line_wrap">Aktivera radbrytning</string>
     <string name="use_incognito_mode">Använd tangentbordets inkognitoläge</string>
-    <string name="move_done_checklist_items">Flytta färdiga checklistor till botten</string>
+    <string name="move_done_checklist_items">Flytta slutförda checklisteobjekt längst ned</string>
     <string name="add_new_checklist_items_top">Lägg till nya checklisteobjekt överst</string>
     <!-- Checklists -->
     <string name="checklist">Checklista</string>
