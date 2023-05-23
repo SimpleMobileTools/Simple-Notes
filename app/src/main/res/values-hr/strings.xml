@@ -25,13 +25,13 @@
     <string name="lock_note">Zaključaj bilješku</string>
     <string name="unlock_note">Otključaj bilješku</string>
     <string name="unlock_notes">Otključaj bilješke</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
+    <string name="found_locked_notes_info">Sljedeće bilješke su zaključane. Možeš ih pojedinačno otključati ili preskočiti izvoz bilješki.</string>
     <string name="note_content_locked">Sadržaj bilješke je zaključan.</string>
     <string name="show_content">Prikaži sadržaj</string>
     <string name="locking_warning">UPOZORENJE: Ako zaboraviš lozinku bilješke, više je nećeš moći obnoviti niti pristupiti njenom sadržaju.</string>
     <string name="new_text_note">Nova tekstualna bilješka</string>
     <string name="new_checklist">Novi popis zadataka</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">Aplikacija ne može učitati datoteke putem interneta</string>
     <!-- File notes -->
     <string name="open_file">Otvori datoteku</string>
     <string name="export_as_file">Izvezi kao datoteku</string>
