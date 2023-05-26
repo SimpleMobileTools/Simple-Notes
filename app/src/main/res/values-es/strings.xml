@@ -31,7 +31,7 @@
     <string name="locking_warning">ADVERTENCIA: Si olvidas la contraseña de la nota, ya no podrás recuperarla o acceder a su contenido.</string>
     <string name="new_text_note">Nueva nota de texto</string>
     <string name="new_checklist">Nueva lista de tareas</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">La aplicación no puede cargar archivos a través de Internet</string>
     <!-- File notes -->
     <string name="open_file">Abrir archivo</string>
     <string name="export_as_file">Exportar como archivo</string>
