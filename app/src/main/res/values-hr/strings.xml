@@ -60,7 +60,7 @@
     <string name="widget_note">Bilješka korištena u widgetu</string>
     <string name="show_note_picker">Prikaži birač bilješki prilikom pokretanja</string>
     <string name="autosave_notes">Automatski spremi bilješke</string>
-    <string name="enable_line_wrap">Uključi prijelom teksta</string>
+    <string name="enable_line_wrap">Aktiviraj prijelom teksta</string>
     <string name="use_incognito_mode">Koristi anonimni način tipkovnica</string>
     <string name="move_done_checklist_items">Premjesti gotove stavke popisa na kraj</string>
     <string name="add_new_checklist_items_top">Dodaj nove stavke na vrh popisa</string>
