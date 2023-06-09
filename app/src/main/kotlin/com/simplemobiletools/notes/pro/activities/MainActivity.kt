@@ -27,6 +27,7 @@ import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.TooltipCompat
 import com.simplemobiletools.commons.dialogs.*
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
@@ -458,16 +459,28 @@ class MainActivity : SimpleActivity() {
             searchTextChanged(it)
         }
 
-        searchPrevBtn.setOnClickListener {
-            goToPrevSearchResult()
+        searchPrevBtn.run {
+            setOnClickListener {
+                goToPrevSearchResult()
+            }
+            contentDescription = getString(R.string.previous)
+            TooltipCompat.setTooltipText(this, getString(R.string.previous))
         }
 
-        searchNextBtn.setOnClickListener {
-            goToNextSearchResult()
+        searchNextBtn.run {
+            setOnClickListener {
+                goToNextSearchResult()
+            }
+            contentDescription = getString(R.string.next)
+            TooltipCompat.setTooltipText(this, getString(R.string.next))
         }
 
-        searchClearBtn.setOnClickListener {
-            closeSearch()
+        searchClearBtn.run {
+            setOnClickListener {
+                closeSearch()
+            }
+            contentDescription = getString(R.string.cancel)
+            TooltipCompat.setTooltipText(this, getString(R.string.cancel))
         }
 
         view_pager.onPageChangeListener {
