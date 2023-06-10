@@ -459,29 +459,20 @@ class MainActivity : SimpleActivity() {
             searchTextChanged(it)
         }
 
-        searchPrevBtn.run {
-            setOnClickListener {
-                goToPrevSearchResult()
-            }
-            contentDescription = getString(R.string.previous)
-            TooltipCompat.setTooltipText(this, getString(R.string.previous))
+        searchPrevBtn.setOnClickListener {
+            goToPrevSearchResult()
         }
+        TooltipCompat.setTooltipText(searchPrevBtn, getString(R.string.previous))
 
-        searchNextBtn.run {
-            setOnClickListener {
-                goToNextSearchResult()
-            }
-            contentDescription = getString(R.string.next)
-            TooltipCompat.setTooltipText(this, getString(R.string.next))
+        searchNextBtn.setOnClickListener {
+            goToNextSearchResult()
         }
+        TooltipCompat.setTooltipText(searchNextBtn, getString(R.string.next))
 
-        searchClearBtn.run {
-            setOnClickListener {
-                closeSearch()
-            }
-            contentDescription = getString(R.string.cancel)
-            TooltipCompat.setTooltipText(this, getString(R.string.cancel))
+        searchClearBtn.setOnClickListener {
+            closeSearch()
         }
+        TooltipCompat.setTooltipText(searchClearBtn, getString(R.string.cancel))
 
         view_pager.onPageChangeListener {
             currentTextFragment?.removeTextWatcher()
