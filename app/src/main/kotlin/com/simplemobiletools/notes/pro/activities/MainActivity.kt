@@ -569,6 +569,7 @@ class MainActivity : SimpleActivity() {
         searchQueryET.text?.clear()
         isSearchActive = false
         search_wrapper.fadeOut()
+        hideKeyboard()
     }
 
     private fun getWantedNoteIndex(wantedNoteId: Long?): Int {
