@@ -24,14 +24,14 @@
     <string name="text_note">Catatan teks</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Buka kunci kota</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
+    <string name="unlock_notes">Buka kunci catatan</string>
+    <string name="found_locked_notes_info">Catatan ini terkunci. Kamu dapat membukanya satu per satu atau mengabaikannya.</string>
     <string name="note_content_locked">Konten catatan terkunci.</string>
     <string name="show_content">Tampilkan konten</string>
     <string name="locking_warning">PERINGATAN: Jika Anda lupa kata sandi catatan, Anda tidak akan dapat memulihkan atau mengakses konten catatan.</string>
     <string name="new_text_note">Catatan teks baru</string>
     <string name="new_checklist">Daftar periksa baru</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">Aplikasi tidak dapat membuka berkas dari internet</string>
     <!-- File notes -->
     <string name="open_file">Buka berkas</string>
     <string name="export_as_file">Ekspor sebagai berkas</string>
