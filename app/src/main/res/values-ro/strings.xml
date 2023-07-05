@@ -73,7 +73,6 @@
     <string name="remove_done_items">Elimină elementele realizate</string>
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Exportați toate notițele ca fișiere</string>
     <string name="import_folder">Importare dosar</string>
     <string name="export_notes">Exportați toate notițele</string>
     <string name="import_notes">Importaţi notițele</string>

@@ -73,7 +73,6 @@
     <string name="remove_done_items">Kustuta tehtuks märgitud kirjed</string>
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Ekspordi kõik märkmed failidena</string>
     <string name="import_folder">Impordi kaust</string>
     <string name="export_notes">Ekspordi kõik märkmed</string>
     <string name="import_notes">Impordi märkmed</string>

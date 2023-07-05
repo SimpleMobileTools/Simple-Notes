@@ -73,7 +73,6 @@
     <string name="remove_done_items">完了した項目を削除</string>
     <string name="add_to_the_top">上部に追加</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">すべてのメモをファイルとしてエクスポート</string>
     <string name="import_folder">フォルダからインポート</string>
     <string name="export_notes">メモをすべてエクスポート</string>
     <string name="import_notes">メモをインポート</string>

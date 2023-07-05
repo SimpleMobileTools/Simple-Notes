@@ -73,7 +73,6 @@
     <string name="remove_done_items">Elimina els elements fets</string>
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Exporta totes les notes com a fitxers</string>
     <string name="import_folder">Importa una carpeta</string>
     <string name="export_notes">Exporta totes les notes</string>
     <string name="import_notes">Importa notes</string>

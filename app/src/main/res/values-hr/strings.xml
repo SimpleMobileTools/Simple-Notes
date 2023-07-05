@@ -73,7 +73,6 @@
     <string name="remove_done_items">Ukloni gotove stavke</string>
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Izvezi sve bilješke kao datoteke</string>
     <string name="import_folder">Uvezi mapu</string>
     <string name="export_notes">Izvezi sve bilješke</string>
     <string name="import_notes">Uvezi bilješke</string>

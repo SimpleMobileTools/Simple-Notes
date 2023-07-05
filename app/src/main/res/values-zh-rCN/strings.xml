@@ -73,7 +73,6 @@
     <string name="remove_done_items">删除完成的项目</string>
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">以文件导出所有笔记</string>
     <string name="import_folder">导入文件夹</string>
     <string name="export_notes">导出所有笔记</string>
     <string name="import_notes">导入笔记</string>

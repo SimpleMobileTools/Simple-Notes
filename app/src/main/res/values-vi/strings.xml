@@ -73,7 +73,6 @@
     <string name="add_to_the_top">Add to the top</string>
 
     <!-- Import / Export -->
-    <string name="export_all_notes">Xuất tất cả ghi chú dưới dạng tệp</string>
     <string name="import_folder">Nhập thư mục</string>
     <string name="export_notes">Xuất tất cả các ghi chú</string>
     <string name="import_notes">Nhập ghi chú</string>

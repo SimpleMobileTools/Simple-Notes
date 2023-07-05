@@ -73,7 +73,6 @@
     <string name="remove_done_items">Remove done items</string>
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">Allforio pob nodyn fel ffeil</string>
     <string name="import_folder">Mewnforio ffolder</string>
     <string name="export_notes">Export all notes</string>
     <string name="import_notes">Import notes</string>

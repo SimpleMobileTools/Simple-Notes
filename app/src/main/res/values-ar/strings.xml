@@ -73,7 +73,6 @@
     <string name="remove_done_items">إزالة العناصر التي تم إنجازها</string>
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
-    <string name="export_all_notes">تصدير جميع الملاحظات كملفات</string>
     <string name="import_folder">مجلد الاستيراد</string>
     <string name="export_notes">تصدير جميع الملاحظات</string>
     <string name="import_notes">Import notes</string>
