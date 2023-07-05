@@ -74,8 +74,8 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Mappa importálása</string>
-    <string name="export_notes">Összes jegyzet exportálása</string>
-    <string name="import_notes">Import notes</string>
+    <string name="export_notes">Jegyzetek exportálása</string>
+    <string name="import_notes">Jegyzetek importálása</string>
     <string name="import_notes_pro">Jegyzetek importálása (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Hogyan módosíthatom a modulok színét\?</string>

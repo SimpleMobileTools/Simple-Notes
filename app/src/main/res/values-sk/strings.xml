@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Pridať na vrch</string>
     <!-- Import / Export -->
     <string name="import_folder">Importovať priečinok</string>
-    <string name="export_notes">Exportovať všetky poznámky</string>
+    <string name="export_notes">Exportovať poznámky</string>
     <string name="import_notes">Importovať poznámky</string>
     <string name="import_notes_pro">Importovať poznámky (Pro)</string>
     <!-- FAQ -->
