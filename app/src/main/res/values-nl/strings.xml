@@ -73,7 +73,7 @@
     <string name="add_to_the_top">Bovenaan toevoegen</string>
     <!-- Import / Export -->
     <string name="import_folder">Map importeren</string>
-    <string name="export_notes">Alle notities exporteren</string>
+    <string name="export_notes">Notities exporteren</string>
     <string name="import_notes">Notities importeren</string>
     <string name="import_notes_pro">Notities importeren (Pro)</string>
     <!-- FAQ -->
