@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Importar carpeta</string>
-    <string name="export_notes">Exportar todas las notas</string>
+    <string name="export_notes">Exportar las notas</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Importar notas (Pro)</string>
     <!-- FAQ -->
