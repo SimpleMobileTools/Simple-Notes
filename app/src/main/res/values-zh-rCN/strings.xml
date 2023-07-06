@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">导入文件夹</string>
-    <string name="export_notes">导出所有笔记</string>
+    <string name="export_notes">导出笔记</string>
     <string name="import_notes">导入笔记</string>
     <string name="import_notes_pro">导入笔记 (Pro)</string>
     <!-- FAQ -->
