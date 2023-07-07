@@ -13,7 +13,7 @@ import com.simplemobiletools.notes.pro.models.Note
 import java.io.File
 
 class NotesHelper(val context: Context) {
-    fun getNotes(callback: (notes: ArrayList<Note>) -> Unit) {
+    fun getNotes(callback: (notes: List<Note>) -> Unit) {
         ensureBackgroundThread {
             // make sure the initial note has enough time to be precreated
             if (context.config.appRunCount <= 1) {
@@ -21,8 +21,8 @@ class NotesHelper(val context: Context) {
                 Thread.sleep(200)
             }
 
-            val notes = context.notesDB.getNotes() as ArrayList<Note>
-            val notesToDelete = ArrayList<Note>(notes.size)
+            val notes = context.notesDB.getNotes().toMutableList()
+            val notesToDelete = mutableListOf<Note>()
             notes.forEach {
                 if (it.path.isNotEmpty()) {
                     if (!it.path.startsWith("content://") && !File(it.path).exists()) {

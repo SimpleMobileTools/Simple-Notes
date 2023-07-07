@@ -67,7 +67,7 @@ class MainActivity : SimpleActivity() {
     private val PICK_EXPORT_NOTES_INTENT = 4
 
     private lateinit var mCurrentNote: Note
-    private var mNotes = ArrayList<Note>()
+    private var mNotes = listOf<Note>()
     private var mAdapter: NotesPagerAdapter? = null
     private var noteViewWithTextSelected: MyEditText? = null
     private var saveNoteButton: MenuItem? = null
