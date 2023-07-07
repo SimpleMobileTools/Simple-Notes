@@ -9,8 +9,10 @@ import androidx.room.PrimaryKey
 import com.simplemobiletools.commons.extensions.isBiometricIdAvailable
 import com.simplemobiletools.commons.helpers.PROTECTION_FINGERPRINT
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
+import kotlinx.serialization.Serializable
 import java.io.File
 
+@Serializable
 @Entity(tableName = "notes", indices = [(Index(value = ["id"], unique = true))])
 data class Note(
     @PrimaryKey(autoGenerate = true) var id: Long?,
