@@ -39,7 +39,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mCurrentNoteId = 0L
     private var mIsCustomizingColors = false
     private var mShowTitle = false
-    private var mNotes = ArrayList<Note>()
+    private var mNotes = listOf<Note>()
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         useDynamicTheme = false
