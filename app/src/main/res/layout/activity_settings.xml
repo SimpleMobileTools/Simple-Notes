@@ -346,6 +346,46 @@
                     android:text="@string/display_success_message" />
 
             </RelativeLayout>
+
+            <include
+                android:id="@+id/settings_general_settings_divider"
+                layout="@layout/divider" />
+
+            <TextView
+                android:id="@+id/settings_migrating_label"
+                style="@style/SettingsSectionLabelStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/migrating" />
+
+            <RelativeLayout
+                android:id="@+id/settings_export_notes_holder"
+                style="@style/SettingsHolderTextViewOneLinerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.simplemobiletools.commons.views.MyTextView
+                    android:id="@+id/settings_export_notes_label"
+                    style="@style/SettingsTextLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/export_notes" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/settings_import_notes_holder"
+                style="@style/SettingsHolderTextViewOneLinerStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/settings_import_notes_label"
+                style="@style/SettingsTextLabelStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/import_notes" />
+            </RelativeLayout>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
