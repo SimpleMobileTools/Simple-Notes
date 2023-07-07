@@ -1,9 +1,9 @@
 package com.simplemobiletools.notes.pro.helpers
 
 import android.content.Context
-import android.net.Uri
 import android.os.Handler
 import android.os.Looper
+import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
@@ -72,5 +72,59 @@ class NotesHelper(val context: Context) {
                 callback?.invoke(noteId)
             }
         }
+    }
+
+    fun insertOrUpdateNotes(notes: List<Note>, callback: ((newNoteIds: List<Long>) -> Unit)? = null) {
+        ensureBackgroundThread {
+            val noteIds = context.notesDB.insertOrUpdate(notes)
+            Handler(Looper.getMainLooper()).post {
+                callback?.invoke(noteIds)
+            }
+        }
+    }
+
+    fun importNotes(activity: BaseSimpleActivity, notes: List<Note>, callback: (ImportResult) -> Unit) {
+        ensureBackgroundThread {
+            val currentNotes = activity.notesDB.getNotes()
+            if (currentNotes.isEmpty()) {
+                insertOrUpdateNotes(notes) { savedNotes ->
+
+                    val newCurrentNotes = activity.notesDB.getNotes()
+
+                    val result = when {
+                        currentNotes.size == newCurrentNotes.size -> ImportResult.IMPORT_NOTHING_NEW
+                        notes.size == savedNotes.size -> ImportResult.IMPORT_OK
+                        savedNotes.isEmpty() -> ImportResult.IMPORT_FAIL
+                        else -> ImportResult.IMPORT_PARTIAL
+                    }
+                    callback(result)
+                }
+            } else {
+                var imported = 0
+                var skipped = 0
+
+                notes.forEach { note ->
+                    val exists = context.notesDB.getNoteIdWithTitle(note.title) != null
+                    if (!exists) {
+                        context.notesDB.insertOrUpdate(note)
+                        imported++
+                    } else {
+                        skipped++
+                    }
+                }
+
+                val result = when {
+                    skipped == notes.size -> ImportResult.IMPORT_NOTHING_NEW
+                    imported == notes.size -> ImportResult.IMPORT_OK
+                    imported == 0 -> ImportResult.IMPORT_FAIL
+                    else -> ImportResult.IMPORT_PARTIAL
+                }
+                callback(result)
+            }
+        }
+    }
+
+    enum class ImportResult {
+        IMPORT_FAIL, IMPORT_OK, IMPORT_PARTIAL, IMPORT_NOTHING_NEW
     }
 }
