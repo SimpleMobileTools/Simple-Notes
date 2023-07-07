@@ -10,7 +10,7 @@ import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_unlock_notes.view.*
 import kotlinx.android.synthetic.main.item_locked_note.view.*
 
-class UnlockNotesDialog(val activity: BaseSimpleActivity, val notes: List<Note>, callback: (unlockedNoteIds: List<Long>) -> Unit) {
+class UnlockNotesDialog(val activity: BaseSimpleActivity, val notes: List<Note>, callback: (unlockedNotes: List<Note>) -> Unit) {
     private var dialog: AlertDialog? = null
     private val view = activity.layoutInflater.inflate(R.layout.dialog_unlock_notes, null) as ViewGroup
     private val redColor = activity.getColor(R.color.md_red)
@@ -29,7 +29,7 @@ class UnlockNotesDialog(val activity: BaseSimpleActivity, val notes: List<Note>,
                 activity.setupDialogStuff(view, this, R.string.unlock_notes, cancelOnTouchOutside = false) { alertDialog ->
                     dialog = alertDialog
                     alertDialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
-                        callback(unlockedNoteIds)
+                        callback(unlockedNoteIds.mapNotNull { id -> notes.firstOrNull { it.id == id } })
                         alertDialog.dismiss()
                     }
                 }
