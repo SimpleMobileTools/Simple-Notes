@@ -43,12 +43,10 @@ import com.simplemobiletools.notes.pro.dialogs.*
 import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.*
-import com.simplemobiletools.notes.pro.helpers.NotesImporter.ImportResult
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_checklist.*
 import java.io.File
-import java.io.FileOutputStream
 import java.nio.charset.Charset
 import java.util.*
 
