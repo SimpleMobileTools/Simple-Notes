@@ -18,6 +18,7 @@ import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.activity_settings.*
+import kotlinx.android.synthetic.main.activity_settings.view.settings_migrating_label
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -87,7 +88,8 @@ class SettingsActivity : SimpleActivity() {
             settings_general_settings_label,
             settings_text_label,
             settings_startup_label,
-            settings_saving_label
+            settings_saving_label,
+            settings_migrating_label,
         ).forEach {
             it.setTextColor(getProperPrimaryColor())
         }
