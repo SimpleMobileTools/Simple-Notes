@@ -31,7 +31,7 @@
     <string name="locking_warning">ЗАСТЕРЕЖЕННЯ: Якщо ви забудете пароль, то більше не зможете його відновити або отримати доступ до вмісту нотаток.</string>
     <string name="new_text_note">Нова текстова нотатка</string>
     <string name="new_checklist">Новий список</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">Застосунок не може завантажувати файли через Інтернет</string>
     <!-- File notes -->
     <string name="open_file">Відкрити файл</string>
     <string name="export_as_file">Експортувати як файл</string>
@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Імпортувати теку</string>
-    <string name="export_notes">Експортувати всі нотатки</string>
+    <string name="export_notes">Експортувати нотатки</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Імпорт нотаток (Pro)</string>
     <!-- FAQ -->
