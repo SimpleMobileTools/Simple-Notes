@@ -3,7 +3,6 @@ package com.simplemobiletools.notes.pro.activities
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import androidx.activity.result.contract.ActivityResultContracts
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
@@ -313,7 +312,6 @@ class SettingsActivity : SimpleActivity() {
                 outputStream.use {
                     it.write(jsonString.toByteArray())
                 }
-                Log.e("EXPORTED", jsonString)
                 toast(R.string.exporting_successful)
             } catch (e: Exception) {
                 showErrorToast(e)
