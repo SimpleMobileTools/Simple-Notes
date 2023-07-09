@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Impor folder</string>
-    <string name="export_notes">Ekspor semua nota</string>
+    <string name="export_notes">Ekspor nota</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Impor catatan (Pro)</string>
     <!-- FAQ -->

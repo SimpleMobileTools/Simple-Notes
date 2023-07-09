@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">مجلد الاستيراد</string>
-    <string name="export_notes">تصدير جميع الملاحظات</string>
+    <string name="export_notes">تصدير الملاحظات</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">استيراد الملاحظات (Pro)</string>
     <!-- FAQ -->

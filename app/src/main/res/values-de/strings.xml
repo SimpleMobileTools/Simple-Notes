@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Zum Anfang hinzufügen</string>
     <!-- Import / Export -->
     <string name="import_folder">Ordner importieren</string>
-    <string name="export_notes">Alle Notizen exportieren</string>
+    <string name="export_notes">Notizen exportieren</string>
     <string name="import_notes">Notizen importieren</string>
     <string name="import_notes_pro">Notizen importieren (Pro)</string>
     <!-- FAQ -->
