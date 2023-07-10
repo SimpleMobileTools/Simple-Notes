@@ -17,6 +17,7 @@ import java.io.File
  */
 @Serializable
 @Entity(tableName = "notes", indices = [(Index(value = ["id"], unique = true))])
+@TypeConverters(NoteTypeConverter::class)
 data class Note(
     @PrimaryKey(autoGenerate = true) var id: Long?,
     @ColumnInfo(name = "title") var title: String,
