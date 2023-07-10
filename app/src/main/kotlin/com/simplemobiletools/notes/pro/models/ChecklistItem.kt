@@ -3,8 +3,16 @@ package com.simplemobiletools.notes.pro.models
 import com.simplemobiletools.commons.helpers.AlphanumericComparator
 import com.simplemobiletools.commons.helpers.SORT_BY_TITLE
 import com.simplemobiletools.commons.helpers.SORT_DESCENDING
+import kotlinx.serialization.Serializable
 
-data class ChecklistItem(val id: Int, val dateCreated: Long = 0L, var title: String, var isDone: Boolean) : Comparable<ChecklistItem> {
+@Serializable
+data class ChecklistItem(
+    val id: Int,
+    val dateCreated: Long = 0L,
+    var title: String,
+    var isDone: Boolean
+) : Comparable<ChecklistItem> {
+
     companion object {
         var sorting = 0
     }
