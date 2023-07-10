@@ -18,7 +18,6 @@ import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.activity_settings.*
-import kotlinx.android.synthetic.main.activity_settings.view.settings_migrating_label
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -27,28 +26,7 @@ import java.util.Locale
 import kotlin.system.exitProcess
 
 class SettingsActivity : SimpleActivity() {
-
     private val notesFileType = "application/json"
-
-    private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-        if (uri != null) {
-            toast(R.string.importing)
-            importNotes(uri)
-        }
-    }
-
-    private val saveDocument = registerForActivityResult(ActivityResultContracts.CreateDocument(notesFileType)) { uri ->
-        if (uri != null) {
-            toast(R.string.exporting)
-            NotesHelper(this).getNotes { notes ->
-                requestUnlockNotes(notes) { unlockedNotes ->
-                    val notLockedNotes = notes.filterNot { it.isLocked() }
-                    val notesToExport = unlockedNotes + notLockedNotes
-                    exportNotes(notesToExport, uri)
-                }
-            }
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
@@ -98,6 +76,26 @@ class SettingsActivity : SimpleActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         updateMenuItemColors(menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        if (uri != null) {
+            toast(R.string.importing)
+            importNotes(uri)
+        }
+    }
+
+    private val saveDocument = registerForActivityResult(ActivityResultContracts.CreateDocument(notesFileType)) { uri ->
+        if (uri != null) {
+            toast(R.string.exporting)
+            NotesHelper(this).getNotes { notes ->
+                requestUnlockNotes(notes) { unlockedNotes ->
+                    val notLockedNotes = notes.filterNot { it.isLocked() }
+                    val notesToExport = unlockedNotes + notLockedNotes
+                    exportNotes(notesToExport, uri)
+                }
+            }
+        }
     }
 
     private fun setupCustomizeColors() {
