@@ -335,6 +335,7 @@ class SettingsActivity : SimpleActivity() {
                 when (importResult) {
                     NotesHelper.ImportResult.IMPORT_OK -> toast(R.string.importing_successful)
                     NotesHelper.ImportResult.IMPORT_PARTIAL -> toast(R.string.importing_some_entries_failed)
+                    NotesHelper.ImportResult.IMPORT_NOTHING_NEW -> toast(R.string.no_new_items)
                     else -> toast(R.string.importing_failed)
                 }
             }

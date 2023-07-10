@@ -115,9 +115,8 @@ class NotesHelper(val context: Context) {
                 }
 
                 val result = when {
-                    skipped == notes.size -> ImportResult.IMPORT_NOTHING_NEW
+                     skipped == notes.size || imported == 0 -> ImportResult.IMPORT_NOTHING_NEW
                     imported == notes.size -> ImportResult.IMPORT_OK
-                    imported == 0 -> ImportResult.IMPORT_FAIL
                     else -> ImportResult.IMPORT_PARTIAL
                 }
                 callback(result)
