@@ -31,7 +31,7 @@ import kotlinx.android.synthetic.main.item_checklist.view.*
 import java.util.*
 
 class ChecklistAdapter(
-    activity: BaseSimpleActivity, var items: ArrayList<ChecklistItem>, val listener: ChecklistItemsListener?,
+    activity: BaseSimpleActivity, var items: MutableList<ChecklistItem>, val listener: ChecklistItemsListener?,
     recyclerView: MyRecyclerView, val showIcons: Boolean, itemClick: (Any) -> Unit
 ) :
     MyRecyclerViewAdapter(activity, recyclerView, itemClick), ItemTouchHelperContract {

@@ -30,6 +30,8 @@ import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
 import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.widget_config.*
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 
 class WidgetConfigureActivity : SimpleActivity() {
     private var mBgAlpha = 0f
