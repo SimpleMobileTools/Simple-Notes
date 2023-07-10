@@ -127,6 +127,12 @@ class MainActivity : SimpleActivity() {
             initViewPager()
         }
 
+        NotesHelper(this).getNotes { lastestNotes ->
+            if (mNotes.size != lastestNotes.size) {
+                initViewPager()
+            }
+        }
+
         refreshMenuItems()
         pager_tab_strip.apply {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
