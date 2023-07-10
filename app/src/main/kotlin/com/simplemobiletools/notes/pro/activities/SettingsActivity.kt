@@ -1,25 +1,33 @@
 package com.simplemobiletools.notes.pro.activities
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
+import androidx.activity.result.contract.ActivityResultContracts
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
-import com.simplemobiletools.commons.extensions.beVisibleIf
-import com.simplemobiletools.commons.extensions.getProperPrimaryColor
-import com.simplemobiletools.commons.extensions.updateTextColors
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.dialogs.ExportNotesDialog
 import com.simplemobiletools.notes.pro.extensions.config
+import com.simplemobiletools.notes.pro.extensions.requestUnlockNotes
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.helpers.*
+import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.activity_settings.*
-import java.util.*
+import kotlinx.serialization.SerializationException
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
+import java.util.Locale
 import kotlin.system.exitProcess
 
 class SettingsActivity : SimpleActivity() {
+    private val notesFileType = "application/json"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
@@ -50,6 +58,8 @@ class SettingsActivity : SimpleActivity() {
         setupCursorPlacement()
         setupIncognitoMode()
         setupCustomizeWidgetColors()
+        setupNotesExport()
+        setupNotesImport()
         updateTextColors(settings_nested_scrollview)
 
         arrayOf(
@@ -57,7 +67,8 @@ class SettingsActivity : SimpleActivity() {
             settings_general_settings_label,
             settings_text_label,
             settings_startup_label,
-            settings_saving_label
+            settings_saving_label,
+            settings_migrating_label,
         ).forEach {
             it.setTextColor(getProperPrimaryColor())
         }
@@ -66,6 +77,26 @@ class SettingsActivity : SimpleActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         updateMenuItemColors(menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        if (uri != null) {
+            toast(R.string.importing)
+            importNotes(uri)
+        }
+    }
+
+    private val saveDocument = registerForActivityResult(ActivityResultContracts.CreateDocument(notesFileType)) { uri ->
+        if (uri != null) {
+            toast(R.string.exporting)
+            NotesHelper(this).getNotes { notes ->
+                requestUnlockNotes(notes) { unlockedNotes ->
+                    val notLockedNotes = notes.filterNot { it.isLocked() }
+                    val notesToExport = unlockedNotes + notLockedNotes
+                    exportNotes(notesToExport, uri)
+                }
+            }
+        }
     }
 
     private fun setupCustomizeColors() {
@@ -255,6 +286,65 @@ class SettingsActivity : SimpleActivity() {
         settings_use_incognito_mode_holder.setOnClickListener {
             settings_use_incognito_mode.toggle()
             config.useIncognitoMode = settings_use_incognito_mode.isChecked
+        }
+    }
+
+    private fun setupNotesExport() {
+        settings_export_notes_holder.setOnClickListener {
+            ExportNotesDialog(this) { filename ->
+                saveDocument.launch(filename)
+            }
+        }
+    }
+
+    private fun setupNotesImport() {
+        settings_import_notes_holder.setOnClickListener {
+            getContent.launch(notesFileType)
+        }
+    }
+
+    private fun exportNotes(notes: List<Note>, uri: Uri) {
+        if (notes.isEmpty()) {
+            toast(R.string.no_entries_for_exporting)
+        } else {
+            try {
+                val outputStream = contentResolver.openOutputStream(uri)!!
+
+                val jsonString = Json.encodeToString(notes)
+                outputStream.use {
+                    it.write(jsonString.toByteArray())
+                }
+                toast(R.string.exporting_successful)
+            } catch (e: Exception) {
+                showErrorToast(e)
+            }
+        }
+    }
+
+    private fun importNotes(uri: Uri) {
+        try {
+            val jsonString = contentResolver.openInputStream(uri)!!.use { inputStream ->
+                inputStream.bufferedReader().readText()
+            }
+            val objects = Json.decodeFromString<List<Note>>(jsonString)
+            if (objects.isEmpty()) {
+                toast(R.string.no_entries_for_importing)
+                return
+            }
+            NotesHelper(this).importNotes(this, objects) { importResult ->
+                when (importResult) {
+                    NotesHelper.ImportResult.IMPORT_OK -> toast(R.string.importing_successful)
+                    NotesHelper.ImportResult.IMPORT_PARTIAL -> toast(R.string.importing_some_entries_failed)
+                    NotesHelper.ImportResult.IMPORT_NOTHING_NEW -> toast(R.string.no_new_items)
+                    else -> toast(R.string.importing_failed)
+                }
+            }
+        } catch (_: SerializationException) {
+            toast(R.string.invalid_file_format)
+        } catch (_: IllegalArgumentException) {
+            toast(R.string.invalid_file_format)
+        } catch (e: Exception) {
+            showErrorToast(e)
         }
     }
 }

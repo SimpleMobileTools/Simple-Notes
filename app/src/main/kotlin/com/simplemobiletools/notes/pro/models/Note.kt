@@ -2,21 +2,27 @@ package com.simplemobiletools.notes.pro.models
 
 import android.content.Context
 import android.net.Uri
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.Index
-import androidx.room.PrimaryKey
+import androidx.room.*
 import com.simplemobiletools.commons.extensions.isBiometricIdAvailable
 import com.simplemobiletools.commons.helpers.PROTECTION_FINGERPRINT
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
+import kotlinx.serialization.Serializable
 import java.io.File
 
+/**
+ * Represents a note.
+ *
+ * @property value The content of the note. Could be plain text or [ChecklistItem]
+ * @property type The type of the note. Should be one of the [NoteType] enum entries.
+ */
+@Serializable
 @Entity(tableName = "notes", indices = [(Index(value = ["id"], unique = true))])
+@TypeConverters(NoteTypeConverter::class)
 data class Note(
     @PrimaryKey(autoGenerate = true) var id: Long?,
     @ColumnInfo(name = "title") var title: String,
     @ColumnInfo(name = "value") var value: String,
-    @ColumnInfo(name = "type") var type: Int,
+    @ColumnInfo(name = "type") var type: NoteType,
     @ColumnInfo(name = "path") var path: String,
     @ColumnInfo(name = "protection_type") var protectionType: Int,
     @ColumnInfo(name = "protection_hash") var protectionHash: String

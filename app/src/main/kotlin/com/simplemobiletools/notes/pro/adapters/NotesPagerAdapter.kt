@@ -10,8 +10,8 @@ import com.simplemobiletools.notes.pro.fragments.ChecklistFragment
 import com.simplemobiletools.notes.pro.fragments.NoteFragment
 import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.NOTE_ID
-import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.NoteType
 
 class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity: Activity) : FragmentStatePagerAdapter(fm) {
     private var fragments: HashMap<Int, NoteFragment> = LinkedHashMap()
@@ -30,7 +30,7 @@ class NotesPagerAdapter(fm: FragmentManager, val notes: List<Note>, val activity
             return fragments[position]!!
         }
 
-        val fragment = if (note.type == NoteType.TYPE_TEXT.value) TextFragment() else ChecklistFragment()
+        val fragment = if (note.type == NoteType.TYPE_TEXT) TextFragment() else ChecklistFragment()
         fragment.arguments = bundle
         fragments[position] = fragment
         return fragment

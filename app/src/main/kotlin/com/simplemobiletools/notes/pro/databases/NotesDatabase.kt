@@ -9,10 +9,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.helpers.DEFAULT_WIDGET_TEXT_COLOR
-import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.interfaces.NotesDao
 import com.simplemobiletools.notes.pro.interfaces.WidgetsDao
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.NoteType
 import com.simplemobiletools.notes.pro.models.Widget
 import java.util.concurrent.Executors
 
@@ -57,7 +57,7 @@ abstract class NotesDatabase : RoomDatabase() {
         private fun insertFirstNote(context: Context) {
             Executors.newSingleThreadScheduledExecutor().execute {
                 val generalNote = context.resources.getString(R.string.general_note)
-                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT, "", PROTECTION_NONE, "")
                 db!!.NotesDao().insertOrUpdate(note)
             }
         }

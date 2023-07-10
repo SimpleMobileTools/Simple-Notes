@@ -31,7 +31,7 @@ class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long, new
         }
     }
 
-    private fun initDialog(notes: ArrayList<Note>, view: View) {
+    private fun initDialog(notes: List<Note>, view: View) {
         val textColor = activity.getProperTextColor()
         notes.forEach {
             activity.layoutInflater.inflate(R.layout.open_note_item, null).apply {

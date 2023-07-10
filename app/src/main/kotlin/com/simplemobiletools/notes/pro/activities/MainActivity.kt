@@ -43,13 +43,11 @@ import com.simplemobiletools.notes.pro.dialogs.*
 import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.*
-import com.simplemobiletools.notes.pro.helpers.NotesImporter.ImportResult
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.NoteType
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_checklist.*
 import java.io.File
-import java.io.FileOutputStream
-import java.io.OutputStream
 import java.nio.charset.Charset
 import java.util.*
 
@@ -63,11 +61,8 @@ class MainActivity : SimpleActivity() {
     private val PICK_OPEN_FILE_INTENT = 1
     private val PICK_EXPORT_FILE_INTENT = 2
 
-    private val PICK_IMPORT_NOTES_INTENT = 3
-    private val PICK_EXPORT_NOTES_INTENT = 4
-
     private lateinit var mCurrentNote: Note
-    private var mNotes = ArrayList<Note>()
+    private var mNotes = listOf<Note>()
     private var mAdapter: NotesPagerAdapter? = null
     private var noteViewWithTextSelected: MyEditText? = null
     private var saveNoteButton: MenuItem? = null
@@ -132,6 +127,12 @@ class MainActivity : SimpleActivity() {
             initViewPager()
         }
 
+        NotesHelper(this).getNotes { lastestNotes ->
+            if (mNotes.size != lastestNotes.size) {
+                initViewPager()
+            }
+        }
+
         refreshMenuItems()
         pager_tab_strip.apply {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
@@ -171,31 +172,29 @@ class MainActivity : SimpleActivity() {
 
         main_toolbar.menu.apply {
             findItem(R.id.undo).apply {
-                isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+                isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 
             findItem(R.id.redo).apply {
-                isVisible = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+                isVisible = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 
             findItem(R.id.rename_note).isVisible = multipleNotesExist
             findItem(R.id.open_note).isVisible = multipleNotesExist
             findItem(R.id.delete_note).isVisible = multipleNotesExist
-            findItem(R.id.export_all_notes).isVisible = multipleNotesExist
             findItem(R.id.open_search).isVisible = !isCurrentItemChecklist
             findItem(R.id.remove_done_items).isVisible = isCurrentItemChecklist
             findItem(R.id.sort_checklist).isVisible = isCurrentItemChecklist
             findItem(R.id.import_folder).isVisible = !isQPlus()
-            findItem(R.id.import_notes).isVisible = isQPlus()
             findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && !mCurrentNote.isLocked())
             findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
             findItem(R.id.more_apps_from_us).isVisible = !resources.getBoolean(R.bool.hide_google_relations)
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
-                !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT.value)
+                !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
         }
 
         pager_tab_strip.beVisibleIf(multipleNotesExist)
@@ -223,8 +222,6 @@ class MainActivity : SimpleActivity() {
                 R.id.open_file -> tryOpenFile()
                 R.id.import_folder -> openFolder()
                 R.id.export_as_file -> fragment?.handleUnlocking { tryExportAsFile() }
-                R.id.export_all_notes -> tryExportNotes()
-                R.id.import_notes -> tryImportNotes()
                 R.id.print -> fragment?.handleUnlocking { printText() }
                 R.id.delete_note -> fragment?.handleUnlocking { displayDeleteNotePrompt() }
                 R.id.more_apps_from_us -> launchMoreAppsFromUsIntent()
@@ -288,15 +285,10 @@ class MainActivity : SimpleActivity() {
             val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
             applicationContext.contentResolver.takePersistableUriPermission(resultData.data!!, takeFlags)
             showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
-        } else if (requestCode == PICK_EXPORT_NOTES_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
-            val outputStream = contentResolver.openOutputStream(resultData.data!!)
-            exportNotesTo(outputStream)
-        } else if (requestCode == PICK_IMPORT_NOTES_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null) {
-            tryImportingAsJson(resultData.data!!)
         }
     }
 
-    private fun isCurrentItemChecklist() = if (::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST.value else false
+    private fun isCurrentItemChecklist() = if (::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST else false
 
     @SuppressLint("NewApi")
     private fun checkShortcuts() {
@@ -368,10 +360,10 @@ class MainActivity : SimpleActivity() {
                         val file = File(realPath)
                         handleUri(Uri.fromFile(file))
                     } else if (intent.getBooleanExtra(NEW_TEXT_NOTE, false)) {
-                        val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                        val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT, "", PROTECTION_NONE, "")
                         addNewNote(newTextNote)
                     } else if (intent.getBooleanExtra(NEW_CHECKLIST, false)) {
-                        val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                        val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
                         addNewNote(newChecklist)
                     } else {
                         handleUri(data!!)
@@ -446,7 +438,7 @@ class MainActivity : SimpleActivity() {
                 }
             }
 
-            if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
+            if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
                 hideKeyboard()
             }
             refreshMenuItems()
@@ -678,7 +670,7 @@ class MainActivity : SimpleActivity() {
                     val checklistItems = fileText.parseChecklistItems()
                     if (checklistItems != null) {
                         val title = it.absolutePath.getFilenameFromPath().substringBeforeLast('.')
-                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
                                 displayNewNoteDialog(note.value, title = it.title, it.path, setChecklistAsDefault = true)
@@ -732,29 +724,23 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun importUri(uri: Uri) {
-        tryImportingAsJson(uri, force = true, showToasts = false) { success ->
-            if (success) {
-                return@tryImportingAsJson
-            }
-
-            when (uri.scheme) {
-                "file" -> openPath(uri.path!!)
-                "content" -> {
-                    val realPath = getRealPathFromURI(uri)
-                    if (hasPermission(PERMISSION_READ_STORAGE)) {
-                        if (realPath != null) {
-                            openPath(realPath)
-                        } else {
-                            R.string.unknown_error_occurred
-                        }
-                    } else if (realPath != null && realPath != "") {
-                        checkFile(realPath, false) {
-                            addNoteFromUri(uri, realPath.getFilenameFromPath())
-                        }
+        when (uri.scheme) {
+            "file" -> openPath(uri.path!!)
+            "content" -> {
+                val realPath = getRealPathFromURI(uri)
+                if (hasPermission(PERMISSION_READ_STORAGE)) {
+                    if (realPath != null) {
+                        openPath(realPath)
                     } else {
-                        checkUri(uri) {
-                            addNoteFromUri(uri)
-                        }
+                        R.string.unknown_error_occurred
+                    }
+                } else if (realPath != null && realPath != "") {
+                    checkFile(realPath, false) {
+                        addNoteFromUri(uri, realPath.getFilenameFromPath())
+                    }
+                } else {
+                    checkUri(uri) {
+                        addNoteFromUri(uri)
                     }
                 }
             }
@@ -786,7 +772,7 @@ class MainActivity : SimpleActivity() {
             }
         }
 
-        val noteType = if (checklistItems != null) NoteType.TYPE_CHECKLIST.value else NoteType.TYPE_TEXT.value
+        val noteType = if (checklistItems != null) NoteType.TYPE_CHECKLIST else NoteType.TYPE_TEXT
         if (!canSyncNoteWithFile) {
             val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
             displayNewNoteDialog(note.value, title = noteTitle, "")
@@ -812,9 +798,9 @@ class MainActivity : SimpleActivity() {
                 val fileText = it.readText().trim()
                 val checklistItems = fileText.parseChecklistItems()
                 val note = if (checklistItems != null) {
-                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
                 } else {
-                    Note(null, title, "", NoteType.TYPE_TEXT.value, path, PROTECTION_NONE, "")
+                    Note(null, title, "", NoteType.TYPE_TEXT, path, PROTECTION_NONE, "")
                 }
 
                 if (mNotes.any { it.title.equals(note.title, true) }) {
@@ -885,146 +871,14 @@ class MainActivity : SimpleActivity() {
 
     private fun exportAsFile() {
         ExportFileDialog(this, mCurrentNote) {
-            val textToExport = if (mCurrentNote.type == NoteType.TYPE_TEXT.value) getCurrentNoteText() else mCurrentNote.value
+            val textToExport = if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
             if (textToExport == null || textToExport.isEmpty()) {
                 toast(R.string.unknown_error_occurred)
-            } else if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
+            } else if (mCurrentNote.type == NoteType.TYPE_TEXT) {
                 showExportFilePickUpdateDialog(it, textToExport)
             } else {
                 tryExportNoteValueToFile(it, mCurrentNote.title, textToExport, true)
             }
-        }
-    }
-
-    private fun tryExportNotes() {
-        if (isQPlus()) {
-            hideKeyboard()
-            val fileName = "${getString(R.string.notes)}_${getCurrentFormattedDateTime()}"
-            Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-                type = EXPORT_MIME_TYPE
-                putExtra(Intent.EXTRA_TITLE, fileName)
-                addCategory(Intent.CATEGORY_OPENABLE)
-
-                try {
-                    startActivityForResult(this, PICK_EXPORT_NOTES_INTENT)
-                } catch (e: ActivityNotFoundException) {
-                    toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
-                } catch (e: Exception) {
-                    showErrorToast(e)
-                }
-            }
-        } else {
-            tryExportAllNotesBelowQ()
-        }
-    }
-
-    private fun requestUnlockNotes(callback: (unlockedNoteIds: List<Long>) -> Unit) {
-        val lockedNotes = mNotes.filter { it.isLocked() }
-        if (lockedNotes.isNotEmpty()) {
-            runOnUiThread {
-                UnlockNotesDialog(this, lockedNotes, callback)
-            }
-        } else {
-            callback(emptyList())
-        }
-    }
-
-    private fun exportNotesTo(outputStream: OutputStream?) {
-        ensureBackgroundThread {
-            NotesHelper(this).getNotes {
-                mNotes = it
-                requestUnlockNotes { unlockedNoteIds ->
-                    toast(R.string.exporting)
-                    val notesExporter = NotesExporter(this)
-                    notesExporter.exportNotes(mNotes, unlockedNoteIds, outputStream) { result ->
-                        val toastId = when (result) {
-                            NotesExporter.ExportResult.EXPORT_OK -> R.string.exporting_successful
-                            else -> R.string.exporting_failed
-                        }
-
-                        toast(toastId)
-                    }
-                }
-            }
-        }
-    }
-
-    private fun tryImportNotes() {
-        hideKeyboard()
-        Intent(Intent.ACTION_GET_CONTENT).apply {
-            addCategory(Intent.CATEGORY_OPENABLE)
-            type = EXPORT_MIME_TYPE
-
-            try {
-                startActivityForResult(this, PICK_IMPORT_NOTES_INTENT)
-            } catch (e: ActivityNotFoundException) {
-                toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
-            } catch (e: Exception) {
-                showErrorToast(e)
-            }
-        }
-    }
-
-    private fun tryImportingAsJson(uri: Uri, force: Boolean = false, showToasts: Boolean = true, callback: ((success: Boolean) -> Unit)? = null) {
-        val path: String
-        val filename: String
-        when (uri.scheme) {
-            "file" -> {
-                path = uri.path!!
-                filename = path.getFilenameFromPath()
-            }
-            "content" -> {
-                val tempFile = getTempFile("messages", "backup.txt")
-                if (tempFile == null) {
-                    maybeToast(R.string.unknown_error_occurred, showToasts)
-                    callback?.invoke(false)
-                    return
-                }
-
-                try {
-                    filename = getFilenameFromUri(uri)
-                    val inputStream = contentResolver.openInputStream(uri)
-                    val out = FileOutputStream(tempFile)
-                    inputStream!!.copyTo(out)
-                    path = tempFile.absolutePath
-                } catch (e: Exception) {
-                    showErrorToast(e)
-                    callback?.invoke(false)
-                    return
-                }
-            }
-            else -> {
-                maybeToast(R.string.invalid_file_format, showToasts)
-                callback?.invoke(false)
-                return
-            }
-        }
-
-        maybeToast(R.string.importing, showToasts)
-        ensureBackgroundThread {
-            NotesImporter(this).importNotes(path, filename, force) { importResult ->
-                if (importResult == ImportResult.IMPORT_FAIL) {
-                    maybeToast(R.string.no_new_items, showToasts)
-                    runOnUiThread { callback?.invoke(false) }
-                    return@importNotes
-                }
-
-                toast(
-                    when (importResult) {
-                        ImportResult.IMPORT_OK -> R.string.importing_successful
-                        ImportResult.IMPORT_PARTIAL -> R.string.importing_some_entries_failed
-                        else -> R.string.no_new_items
-                    }
-                )
-                initViewPager()
-                runOnUiThread { callback?.invoke(true) }
-            }
-        }
-    }
-
-    private fun maybeToast(id: Int, show: Boolean) {
-        if (show) {
-            toast(id)
         }
     }
 
@@ -1048,73 +902,6 @@ class MainActivity : SimpleActivity() {
 
                     getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
                     NotesHelper(this).insertOrUpdateNote(mCurrentNote)
-                }
-            }
-        }
-    }
-
-    private fun tryExportAllNotesBelowQ() {
-        handlePermission(PERMISSION_WRITE_STORAGE) {
-            if (it) {
-                exportAllNotesBelowQ()
-            } else {
-                toast(R.string.no_storage_permissions)
-            }
-        }
-    }
-
-    private fun exportAllNotesBelowQ() {
-        ensureBackgroundThread {
-            NotesHelper(this).getNotes { notes ->
-                mNotes = notes
-                requestUnlockNotes { unlockedNoteIds ->
-                    ExportFilesDialog(this, mNotes) { parent, extension ->
-                        val items = arrayListOf(
-                            RadioItem(EXPORT_FILE_SYNC, getString(R.string.update_file_at_note)),
-                            RadioItem(EXPORT_FILE_NO_SYNC, getString(R.string.only_export_file_content))
-                        )
-
-                        RadioGroupDialog(this, items) { any ->
-                            val syncFile = any as Int == EXPORT_FILE_SYNC
-                            var failCount = 0
-                            mNotes.filter { !it.isLocked() || it.id in unlockedNoteIds }.forEachIndexed { index, note ->
-                                val filename = if (extension.isEmpty()) note.title else "${note.title}.$extension"
-                                val file = File(parent, filename)
-                                if (!filename.isAValidFilename()) {
-                                    toast(String.format(getString(R.string.filename_invalid_characters_placeholder, filename)))
-                                } else {
-                                    val noteStoredValue = note.getNoteStoredValue(this) ?: ""
-                                    tryExportNoteValueToFile(file.absolutePath, mCurrentNote.title, note.value, false) { exportedSuccessfully ->
-                                        if (exportedSuccessfully) {
-                                            if (syncFile) {
-                                                note.path = file.absolutePath
-                                                note.value = ""
-                                            } else {
-                                                note.path = ""
-                                                note.value = noteStoredValue
-                                            }
-
-                                            NotesHelper(this).insertOrUpdateNote(note)
-                                        }
-
-                                        if (mCurrentNote.id == note.id) {
-                                            mCurrentNote.value = note.value
-                                            mCurrentNote.path = note.path
-                                            getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
-                                        }
-
-                                        if (!exportedSuccessfully) {
-                                            failCount++
-                                        }
-
-                                        if (index == mNotes.size - 1) {
-                                            toast(if (failCount == 0) R.string.exporting_successful else R.string.exporting_some_entries_failed)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -1238,7 +1025,7 @@ class MainActivity : SimpleActivity() {
     private fun getCurrentNoteText() = getPagerAdapter().getCurrentNoteViewText(view_pager.currentItem)
 
     private fun getCurrentNoteValue(): String {
-        return if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
+        return if (mCurrentNote.type == NoteType.TYPE_TEXT) {
             getCurrentNoteText() ?: ""
         } else {
             getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
@@ -1246,7 +1033,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun getPrintableText(): String {
-        return if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
+        return if (mCurrentNote.type == NoteType.TYPE_TEXT) {
             getCurrentNoteText() ?: ""
         } else {
             var printableText = ""
@@ -1261,7 +1048,7 @@ class MainActivity : SimpleActivity() {
 
     private fun saveCurrentNote(force: Boolean) {
         getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
-        if (mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
+        if (mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
             mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
         }
     }
@@ -1359,8 +1146,8 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun shareText() {
-        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT.value) getCurrentNoteText() else mCurrentNote.value
-        if (text == null || text.isEmpty()) {
+        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+        if (text.isNullOrEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
         }

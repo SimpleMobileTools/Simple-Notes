@@ -1,19 +1,20 @@
 package com.simplemobiletools.notes.pro.helpers
 
 import android.content.Context
-import android.net.Uri
 import android.os.Handler
 import android.os.Looper
+import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.NoteType
 import java.io.File
 
 class NotesHelper(val context: Context) {
-    fun getNotes(callback: (notes: ArrayList<Note>) -> Unit) {
+    fun getNotes(callback: (notes: List<Note>) -> Unit) {
         ensureBackgroundThread {
             // make sure the initial note has enough time to be precreated
             if (context.config.appRunCount <= 1) {
@@ -21,8 +22,8 @@ class NotesHelper(val context: Context) {
                 Thread.sleep(200)
             }
 
-            val notes = context.notesDB.getNotes() as ArrayList<Note>
-            val notesToDelete = ArrayList<Note>(notes.size)
+            val notes = context.notesDB.getNotes().toMutableList()
+            val notesToDelete = mutableListOf<Note>()
             notes.forEach {
                 if (it.path.isNotEmpty()) {
                     if (!it.path.startsWith("content://") && !File(it.path).exists()) {
@@ -36,7 +37,7 @@ class NotesHelper(val context: Context) {
 
             if (notes.isEmpty()) {
                 val generalNote = context.resources.getString(R.string.general_note)
-                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT, "", PROTECTION_NONE, "")
                 context.notesDB.insertOrUpdate(note)
                 notes.add(note)
             }
@@ -72,5 +73,58 @@ class NotesHelper(val context: Context) {
                 callback?.invoke(noteId)
             }
         }
+    }
+
+    fun insertOrUpdateNotes(notes: List<Note>, callback: ((newNoteIds: List<Long>) -> Unit)? = null) {
+        ensureBackgroundThread {
+            val noteIds = context.notesDB.insertOrUpdate(notes)
+            Handler(Looper.getMainLooper()).post {
+                callback?.invoke(noteIds)
+            }
+        }
+    }
+
+    fun importNotes(activity: BaseSimpleActivity, notes: List<Note>, callback: (ImportResult) -> Unit) {
+        ensureBackgroundThread {
+            val currentNotes = activity.notesDB.getNotes()
+            if (currentNotes.isEmpty()) {
+                insertOrUpdateNotes(notes) { savedNotes ->
+
+                    val newCurrentNotes = activity.notesDB.getNotes()
+
+                    val result = when {
+                        currentNotes.size == newCurrentNotes.size -> ImportResult.IMPORT_NOTHING_NEW
+                        notes.size == savedNotes.size -> ImportResult.IMPORT_OK
+                        savedNotes.isEmpty() -> ImportResult.IMPORT_FAIL
+                        else -> ImportResult.IMPORT_PARTIAL
+                    }
+                    callback(result)
+                }
+            } else {
+                var imported = 0
+                var skipped = 0
+
+                notes.forEach { note ->
+                    val exists = context.notesDB.getNoteIdWithTitle(note.title) != null
+                    if (!exists) {
+                        context.notesDB.insertOrUpdate(note)
+                        imported++
+                    } else {
+                        skipped++
+                    }
+                }
+
+                val result = when {
+                    skipped == notes.size || imported == 0 -> ImportResult.IMPORT_NOTHING_NEW
+                    imported == notes.size -> ImportResult.IMPORT_OK
+                    else -> ImportResult.IMPORT_PARTIAL
+                }
+                callback(result)
+            }
+        }
+    }
+
+    enum class ImportResult {
+        IMPORT_FAIL, IMPORT_OK, IMPORT_PARTIAL, IMPORT_NOTHING_NEW
     }
 }

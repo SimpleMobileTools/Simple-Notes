@@ -20,6 +20,9 @@ import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.NoteType
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 
 class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsService.RemoteViewsFactory {
     private val textIds = arrayOf(
@@ -32,7 +35,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
     )
     private var widgetTextColor = DEFAULT_WIDGET_TEXT_COLOR
     private var note: Note? = null
-    private var checklistItems = ArrayList<ChecklistItem>()
+    private var checklistItems = mutableListOf<ChecklistItem>()
 
     override fun getViewAt(position: Int): RemoteViews {
         val noteId = intent.getLongExtra(NOTE_ID, 0L)
@@ -43,7 +46,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         }
 
         val textSize = context.getPercentageFontSize() / context.resources.displayMetrics.density
-        if (note!!.type == NoteType.TYPE_CHECKLIST.value) {
+        if (note!!.type == NoteType.TYPE_CHECKLIST) {
             remoteView = RemoteViews(context.packageName, R.layout.item_checklist_widget).apply {
                 val checklistItem = checklistItems.getOrNull(position) ?: return@apply
                 val widgetNewTextColor = if (checklistItem.isDone) widgetTextColor.adjustAlpha(DONE_CHECKLIST_ITEM_ALPHA) else widgetTextColor
@@ -123,9 +126,8 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         widgetTextColor = intent.getIntExtra(WIDGET_TEXT_COLOR, DEFAULT_WIDGET_TEXT_COLOR)
         val noteId = intent.getLongExtra(NOTE_ID, 0L)
         note = context.notesDB.getNoteWithId(noteId)
-        if (note?.type == NoteType.TYPE_CHECKLIST.value) {
-            val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
-            checklistItems = Gson().fromJson<ArrayList<ChecklistItem>>(note!!.getNoteStoredValue(context), checklistItemType) ?: ArrayList(1)
+        if (note?.type == NoteType.TYPE_CHECKLIST) {
+            checklistItems = note!!.getNoteStoredValue(context)?.let { Json.decodeFromString(it) } ?: mutableListOf()
 
             // checklist title can be null only because of the glitch in upgrade to 6.6.0, remove this check in the future
             checklistItems = checklistItems.filter { it.title != null }.toMutableList() as ArrayList<ChecklistItem>
@@ -135,7 +137,7 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
     override fun hasStableIds() = true
 
     override fun getCount(): Int {
-        return if (note?.type == NoteType.TYPE_CHECKLIST.value) {
+        return if (note?.type == NoteType.TYPE_CHECKLIST) {
             checklistItems.size
         } else {
             1

@@ -9,10 +9,11 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.extensions.parseChecklistItems
-import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.dialog_import_folder.view.*
+import com.simplemobiletools.notes.pro.models.NoteType
+import kotlinx.android.synthetic.main.dialog_import_folder.view.open_file_filename
+import kotlinx.android.synthetic.main.dialog_import_folder.view.open_file_type
 import java.io.File
 
 class ImportFolderDialog(val activity: SimpleActivity, val path: String, val callback: () -> Unit) : AlertDialog.Builder(activity) {
@@ -50,21 +51,21 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
                 activity.notesDB.getNoteIdWithTitle(filename) != null -> false
                 else -> true
             }
-        }.forEach {
+        }?.forEach {
             val storePath = if (updateFilesOnEdit) it.absolutePath else ""
             val title = it.absolutePath.getFilenameFromPath()
             val value = if (updateFilesOnEdit) "" else it.readText()
             val fileText = it.readText().trim()
             val checklistItems = fileText.parseChecklistItems()
             if (checklistItems != null) {
-                saveNote(title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value, "")
+                saveNote(title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST, "")
             } else {
                 if (updateFilesOnEdit) {
                     activity.handleSAFDialog(path) {
-                        saveNote(title, value, NoteType.TYPE_TEXT.value, storePath)
+                        saveNote(title, value, NoteType.TYPE_TEXT, storePath)
                     }
                 } else {
-                    saveNote(title, value, NoteType.TYPE_TEXT.value, storePath)
+                    saveNote(title, value, NoteType.TYPE_TEXT, storePath)
                 }
             }
         }
@@ -75,7 +76,7 @@ class ImportFolderDialog(val activity: SimpleActivity, val path: String, val cal
         }
     }
 
-    private fun saveNote(title: String, value: String, type: Int, path: String) {
+    private fun saveNote(title: String, value: String, type: NoteType, path: String) {
         val note = Note(null, title, value, type, path, PROTECTION_NONE, "")
         NotesHelper(activity).insertOrUpdateNote(note)
     }
