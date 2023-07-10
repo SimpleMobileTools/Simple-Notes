@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Lägg till överst</string>
     <!-- Import / Export -->
     <string name="import_folder">Importera mapp</string>
-    <string name="export_notes">Exportera allt</string>
+    <string name="export_notes">Exportera anteckningar</string>
     <string name="import_notes">Importera</string>
     <string name="import_notes_pro">Importera (Pro)</string>
     <!-- FAQ -->
