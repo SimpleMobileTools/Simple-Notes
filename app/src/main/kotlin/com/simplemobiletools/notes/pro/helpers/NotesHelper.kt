@@ -10,6 +10,7 @@ import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.NoteType
 import java.io.File
 
 class NotesHelper(val context: Context) {
@@ -36,7 +37,7 @@ class NotesHelper(val context: Context) {
 
             if (notes.isEmpty()) {
                 val generalNote = context.resources.getString(R.string.general_note)
-                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                val note = Note(null, generalNote, "", NoteType.TYPE_TEXT, "", PROTECTION_NONE, "")
                 context.notesDB.insertOrUpdate(note)
                 notes.add(note)
             }

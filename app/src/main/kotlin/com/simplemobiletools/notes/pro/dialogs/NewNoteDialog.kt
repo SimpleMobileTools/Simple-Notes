@@ -8,8 +8,8 @@ import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
-import com.simplemobiletools.notes.pro.helpers.NoteType
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.NoteType
 import kotlinx.android.synthetic.main.dialog_new_note.view.*
 
 class NewNoteDialog(val activity: Activity, title: String? = null, val setChecklistAsDefault: Boolean, callback: (note: Note) -> Unit) {
@@ -40,12 +40,12 @@ class NewNoteDialog(val activity: Activity, title: String? = null, val setCheckl
                                 activity.notesDB.getNoteIdWithTitle(newTitle) != null -> activity.toast(R.string.title_taken)
                                 else -> {
                                     val type = if (view.new_note_type.checkedRadioButtonId == view.type_checklist.id) {
-                                        NoteType.TYPE_CHECKLIST.value
+                                        NoteType.TYPE_CHECKLIST
                                     } else {
-                                        NoteType.TYPE_TEXT.value
+                                        NoteType.TYPE_TEXT
                                     }
 
-                                    activity.config.lastCreatedNoteType = type
+                                    activity.config.lastCreatedNoteType = type.value
                                     val newNote = Note(null, newTitle, "", type, "", PROTECTION_NONE, "")
                                     callback(newNote)
                                     alertDialog.dismiss()

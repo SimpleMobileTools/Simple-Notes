@@ -27,6 +27,7 @@ import com.simplemobiletools.notes.pro.extensions.widgetsDB
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.NoteType
 import com.simplemobiletools.notes.pro.models.Widget
 import kotlinx.android.synthetic.main.widget_config.*
 
@@ -156,7 +157,7 @@ class WidgetConfigureActivity : SimpleActivity() {
         mCurrentNoteId = note.id!!
         notes_picker_value.text = note.title
         text_note_view_title.text = note.title
-        if (note.type == NoteType.TYPE_CHECKLIST.value) {
+        if (note.type == NoteType.TYPE_CHECKLIST) {
             val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
             val items = Gson().fromJson<ArrayList<ChecklistItem>>(note.value, checklistItemType) ?: ArrayList(1)
             items.apply {

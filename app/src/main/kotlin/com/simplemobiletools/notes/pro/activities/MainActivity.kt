@@ -44,6 +44,7 @@ import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
+import com.simplemobiletools.notes.pro.models.NoteType
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_checklist.*
 import java.io.File
@@ -165,12 +166,12 @@ class MainActivity : SimpleActivity() {
 
         main_toolbar.menu.apply {
             findItem(R.id.undo).apply {
-                isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+                isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 
             findItem(R.id.redo).apply {
-                isVisible = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT.value
+                isVisible = showRedoButton && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
             }
 
@@ -187,7 +188,7 @@ class MainActivity : SimpleActivity() {
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
-                !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT.value)
+                !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
         }
 
         pager_tab_strip.beVisibleIf(multipleNotesExist)
@@ -281,7 +282,7 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun isCurrentItemChecklist() = if (::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST.value else false
+    private fun isCurrentItemChecklist() = if (::mCurrentNote.isInitialized) mCurrentNote.type == NoteType.TYPE_CHECKLIST else false
 
     @SuppressLint("NewApi")
     private fun checkShortcuts() {
@@ -353,10 +354,10 @@ class MainActivity : SimpleActivity() {
                         val file = File(realPath)
                         handleUri(Uri.fromFile(file))
                     } else if (intent.getBooleanExtra(NEW_TEXT_NOTE, false)) {
-                        val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT.value, "", PROTECTION_NONE, "")
+                        val newTextNote = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_TEXT, "", PROTECTION_NONE, "")
                         addNewNote(newTextNote)
                     } else if (intent.getBooleanExtra(NEW_CHECKLIST, false)) {
-                        val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                        val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
                         addNewNote(newChecklist)
                     } else {
                         handleUri(data!!)
@@ -431,7 +432,7 @@ class MainActivity : SimpleActivity() {
                 }
             }
 
-            if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
+            if (!config.showKeyboard || mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
                 hideKeyboard()
             }
             refreshMenuItems()
@@ -663,7 +664,7 @@ class MainActivity : SimpleActivity() {
                     val checklistItems = fileText.parseChecklistItems()
                     if (checklistItems != null) {
                         val title = it.absolutePath.getFilenameFromPath().substringBeforeLast('.')
-                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                        val note = Note(null, title, fileText, NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
                         runOnUiThread {
                             OpenFileDialog(this, it.path) {
                                 displayNewNoteDialog(note.value, title = it.title, it.path, setChecklistAsDefault = true)
@@ -765,7 +766,7 @@ class MainActivity : SimpleActivity() {
             }
         }
 
-        val noteType = if (checklistItems != null) NoteType.TYPE_CHECKLIST.value else NoteType.TYPE_TEXT.value
+        val noteType = if (checklistItems != null) NoteType.TYPE_CHECKLIST else NoteType.TYPE_TEXT
         if (!canSyncNoteWithFile) {
             val note = Note(null, noteTitle, content, noteType, "", PROTECTION_NONE, "")
             displayNewNoteDialog(note.value, title = noteTitle, "")
@@ -791,9 +792,9 @@ class MainActivity : SimpleActivity() {
                 val fileText = it.readText().trim()
                 val checklistItems = fileText.parseChecklistItems()
                 val note = if (checklistItems != null) {
-                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST.value, "", PROTECTION_NONE, "")
+                    Note(null, title.substringBeforeLast('.'), fileText, NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
                 } else {
-                    Note(null, title, "", NoteType.TYPE_TEXT.value, path, PROTECTION_NONE, "")
+                    Note(null, title, "", NoteType.TYPE_TEXT, path, PROTECTION_NONE, "")
                 }
 
                 if (mNotes.any { it.title.equals(note.title, true) }) {
@@ -864,10 +865,10 @@ class MainActivity : SimpleActivity() {
 
     private fun exportAsFile() {
         ExportFileDialog(this, mCurrentNote) {
-            val textToExport = if (mCurrentNote.type == NoteType.TYPE_TEXT.value) getCurrentNoteText() else mCurrentNote.value
+            val textToExport = if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
             if (textToExport == null || textToExport.isEmpty()) {
                 toast(R.string.unknown_error_occurred)
-            } else if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
+            } else if (mCurrentNote.type == NoteType.TYPE_TEXT) {
                 showExportFilePickUpdateDialog(it, textToExport)
             } else {
                 tryExportNoteValueToFile(it, mCurrentNote.title, textToExport, true)
@@ -1018,7 +1019,7 @@ class MainActivity : SimpleActivity() {
     private fun getCurrentNoteText() = getPagerAdapter().getCurrentNoteViewText(view_pager.currentItem)
 
     private fun getCurrentNoteValue(): String {
-        return if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
+        return if (mCurrentNote.type == NoteType.TYPE_TEXT) {
             getCurrentNoteText() ?: ""
         } else {
             getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
@@ -1026,7 +1027,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun getPrintableText(): String {
-        return if (mCurrentNote.type == NoteType.TYPE_TEXT.value) {
+        return if (mCurrentNote.type == NoteType.TYPE_TEXT) {
             getCurrentNoteText() ?: ""
         } else {
             var printableText = ""
@@ -1041,7 +1042,7 @@ class MainActivity : SimpleActivity() {
 
     private fun saveCurrentNote(force: Boolean) {
         getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
-        if (mCurrentNote.type == NoteType.TYPE_CHECKLIST.value) {
+        if (mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
             mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
         }
     }
@@ -1139,8 +1140,8 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun shareText() {
-        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT.value) getCurrentNoteText() else mCurrentNote.value
-        if (text == null || text.isEmpty()) {
+        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+        if (text.isNullOrEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
         }
