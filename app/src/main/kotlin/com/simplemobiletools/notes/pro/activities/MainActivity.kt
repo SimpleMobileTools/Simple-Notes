@@ -240,7 +240,7 @@ class MainActivity : SimpleActivity() {
         super.onActionModeStarted(mode)
         if (wasInit) {
             currentNotesView()?.apply {
-                if (config.clickableLinks || movementMethod is LinkMovementMethod) {
+                if (config.clickableLinks || movementMethod is LinkMovementMethod || movementMethod is MyMovementMethod) {
                     movementMethod = ArrowKeyMovementMethod.getInstance()
                     noteViewWithTextSelected = this
                 }
@@ -251,7 +251,7 @@ class MainActivity : SimpleActivity() {
     override fun onActionModeFinished(mode: ActionMode?) {
         super.onActionModeFinished(mode)
         if (config.clickableLinks) {
-            noteViewWithTextSelected?.movementMethod = LinkMovementMethod.getInstance()
+            noteViewWithTextSelected?.movementMethod = MyMovementMethod.getInstance()
         }
     }
 
