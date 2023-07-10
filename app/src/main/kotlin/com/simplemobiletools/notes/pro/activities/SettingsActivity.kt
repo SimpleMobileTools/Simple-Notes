@@ -10,6 +10,7 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.dialogs.ExportNotesDialog
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.requestUnlockNotes
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
@@ -290,8 +291,9 @@ class SettingsActivity : SimpleActivity() {
 
     private fun setupNotesExport() {
         settings_export_notes_holder.setOnClickListener {
-            val fileName = "${getString(R.string.notes)}_${getCurrentFormattedDateTime()}"
-            saveDocument.launch(fileName)
+            ExportNotesDialog(this) { filename ->
+                saveDocument.launch(filename)
+            }
         }
     }
 
