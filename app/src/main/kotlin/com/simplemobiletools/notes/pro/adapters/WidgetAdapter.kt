@@ -6,8 +6,6 @@ import android.graphics.Paint
 import android.view.View
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.adjustAlpha
 import com.simplemobiletools.commons.extensions.setText
 import com.simplemobiletools.commons.extensions.setTextSize
@@ -95,8 +93,8 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         return when {
             gravity == GRAVITY_CENTER && isMonospaced -> R.id.widget_text_center_monospace
             gravity == GRAVITY_CENTER -> R.id.widget_text_center
-            gravity == GRAVITY_RIGHT && isMonospaced -> R.id.widget_text_right_monospace
-            gravity == GRAVITY_RIGHT -> R.id.widget_text_right
+            gravity == GRAVITY_END && isMonospaced -> R.id.widget_text_right_monospace
+            gravity == GRAVITY_END -> R.id.widget_text_right
             isMonospaced -> R.id.widget_text_left_monospace
             else -> R.id.widget_text_left
         }
@@ -109,8 +107,8 @@ class WidgetAdapter(val context: Context, val intent: Intent) : RemoteViewsServi
         return when {
             gravity == GRAVITY_CENTER && isMonospaced -> R.id.checklist_text_center_monospace
             gravity == GRAVITY_CENTER -> R.id.checklist_text_center
-            gravity == GRAVITY_RIGHT && isMonospaced -> R.id.checklist_text_right_monospace
-            gravity == GRAVITY_RIGHT -> R.id.checklist_text_right
+            gravity == GRAVITY_END && isMonospaced -> R.id.checklist_text_right_monospace
+            gravity == GRAVITY_END -> R.id.checklist_text_right
             isMonospaced -> R.id.checklist_text_left_monospace
             else -> R.id.checklist_text_left
         }

@@ -5,6 +5,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.text.TextUtilsCompat
+import androidx.core.view.ViewCompat
 import com.simplemobiletools.commons.dialogs.RadioGroupDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
@@ -222,13 +224,8 @@ class SettingsActivity : SimpleActivity() {
     private fun setupGravity() {
         settings_gravity.text = getGravityText()
         settings_gravity_holder.setOnClickListener {
-            val items = arrayListOf(
-                RadioItem(GRAVITY_LEFT, getString(R.string.left)),
-                RadioItem(GRAVITY_CENTER, getString(R.string.center)),
-                RadioItem(GRAVITY_RIGHT, getString(R.string.right))
-            )
-
-            RadioGroupDialog(this@SettingsActivity, items, config.gravity) {
+            val items = listOf(GRAVITY_START, GRAVITY_CENTER, GRAVITY_END).map { RadioItem(it, getGravityOptionLabel(it)) }
+            RadioGroupDialog(this@SettingsActivity, ArrayList(items), config.gravity) {
                 config.gravity = it as Int
                 settings_gravity.text = getGravityText()
                 updateWidgets()
@@ -236,13 +233,24 @@ class SettingsActivity : SimpleActivity() {
         }
     }
 
-    private fun getGravityText() = getString(
-        when (config.gravity) {
-            GRAVITY_LEFT -> R.string.left
-            GRAVITY_CENTER -> R.string.center
-            else -> R.string.right
+    private fun getGravityOptionLabel(gravity: Int): String {
+        val leftToRightDirection = TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_LTR
+        val leftRightLabels = listOf(R.string.left, R.string.right)
+        val startEndLabels = if (leftToRightDirection) {
+            leftRightLabels
+        } else {
+            leftRightLabels.reversed()
         }
-    )
+        return getString(
+            when (gravity) {
+                GRAVITY_START -> startEndLabels.first()
+                GRAVITY_CENTER -> R.string.center
+                else -> startEndLabels.last()
+            }
+        )
+    }
+
+    private fun getGravityText() = getGravityOptionLabel(config.gravity)
 
     private fun setupCursorPlacement() {
         settings_cursor_placement.isChecked = config.placeCursorToEnd

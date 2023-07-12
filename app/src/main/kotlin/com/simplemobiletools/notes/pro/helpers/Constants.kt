@@ -40,9 +40,9 @@ const val EXPORT_MIME_TYPE = "text/plain"
 const val ADD_NEW_CHECKLIST_ITEMS_TOP = "add_new_checklist_items_top"
 
 // gravity
-const val GRAVITY_LEFT = 0
+const val GRAVITY_START = 0
 const val GRAVITY_CENTER = 1
-const val GRAVITY_RIGHT = 2
+const val GRAVITY_END = 2
 
 // mime types
 const val MIME_TEXT_PLAIN = "text/plain"
