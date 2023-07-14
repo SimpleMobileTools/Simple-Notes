@@ -24,14 +24,14 @@
     <string name="text_note">Текстова бележка</string>
     <string name="lock_note">Бележка за заключване</string>
     <string name="unlock_note">Бележка за отключване</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
+    <string name="unlock_notes">Отключи бележките</string>
+    <string name="found_locked_notes_info">Следните бележки са заключени. Можете да ги отключите една по една или да пропуснете експортирането им.</string>
     <string name="note_content_locked">Съдържанието на бележките е заключено.</string>
     <string name="show_content">Покажи съдържанието</string>
     <string name="locking_warning">ПРЕДУПРЕЖДЕНИЕ: Ако забравите паролата на бележките, вече няма да можете да я възстановите или да получите достъп до съдържанието на бележките.</string>
     <string name="new_text_note">Нова текстова бележка</string>
     <string name="new_checklist">Нов контролен списък</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">Приложението не може да зарежда файлове през интернет</string>
     <!-- File notes -->
     <string name="open_file">Отвори файл</string>
     <string name="export_as_file">Експортиране като файл</string>
@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Папка за импортиране</string>
-    <string name="export_notes">Експортиране на всички бележки</string>
+    <string name="export_notes">Експортиране на бележките</string>
     <string name="import_notes">Бележки за внос</string>
     <string name="import_notes_pro">Бележки за внос (Pro)</string>
     <!-- FAQ -->
