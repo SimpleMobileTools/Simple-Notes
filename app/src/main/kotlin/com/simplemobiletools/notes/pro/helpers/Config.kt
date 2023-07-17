@@ -1,6 +1,5 @@
 package com.simplemobiletools.notes.pro.helpers
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Environment
 import android.view.Gravity
@@ -41,7 +40,7 @@ class Config(context: Context) : BaseConfig(context) {
         set(showWordCount) = prefs.edit().putBoolean(SHOW_WORD_COUNT, showWordCount).apply()
 
     var gravity: Int
-        get() = prefs.getInt(GRAVITY, GRAVITY_LEFT)
+        get() = prefs.getInt(GRAVITY, GRAVITY_START)
         set(size) = prefs.edit().putInt(GRAVITY, size).apply()
 
     var currentNoteId: Long
@@ -80,11 +79,10 @@ class Config(context: Context) : BaseConfig(context) {
         get() = prefs.getBoolean(MOVE_DONE_CHECKLIST_ITEMS, false)
         set(moveDoneChecklistItems) = prefs.edit().putBoolean(MOVE_DONE_CHECKLIST_ITEMS, moveDoneChecklistItems).apply()
 
-    @SuppressLint("RtlHardcoded")
     fun getTextGravity() = when (gravity) {
         GRAVITY_CENTER -> Gravity.CENTER_HORIZONTAL
-        GRAVITY_RIGHT -> Gravity.RIGHT
-        else -> Gravity.LEFT
+        GRAVITY_END -> Gravity.END
+        else -> Gravity.START
     }
 
     var fontSizePercentage: Int
