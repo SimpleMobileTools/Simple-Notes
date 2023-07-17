@@ -1,0 +1,2 @@
+ * Moved note exporting and importing to app settings
+ * Added some stability and translation improvements

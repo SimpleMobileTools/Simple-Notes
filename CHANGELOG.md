@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.15.6 *(2023-07-17)*
+----------------------------
+
+ * Moved note exporting and importing to app settings
+ * Added some stability and translation improvements
+
 Version 6.15.5 *(2023-05-12)*
 ----------------------------
 
