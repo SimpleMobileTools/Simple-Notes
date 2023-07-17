@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Добавить в начало</string>
     <!-- Import / Export -->
     <string name="import_folder">Импортировать папку</string>
-    <string name="export_notes">Экспортировать все заметки</string>
+    <string name="export_notes">Экспортировать заметки</string>
     <string name="import_notes">Импортировать заметки</string>
     <string name="import_notes_pro">Импортировать заметки (Pro)</string>
     <!-- FAQ -->

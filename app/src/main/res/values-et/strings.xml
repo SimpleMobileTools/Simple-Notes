@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Impordi kaust</string>
-    <string name="export_notes">Ekspordi kõik märkmed</string>
+    <string name="export_notes">Ekspordi märkmed</string>
     <string name="import_notes">Impordi märkmed</string>
     <string name="import_notes_pro">Impordi märkmed (Pro)</string>
     <!-- FAQ -->

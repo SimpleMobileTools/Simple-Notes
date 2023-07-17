@@ -26,9 +26,9 @@
     <string name="unlock_note">解鎖筆記</string>
     <string name="unlock_notes">Unlock notes</string>
     <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
-    <string name="note_content_locked">The notes\' content is locked.</string>
+    <string name="note_content_locked">筆記的內容已被鎖定。</string>
     <string name="show_content">Show content</string>
-    <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
+    <string name="locking_warning">警告：如果您遺忘了筆記的密碼，您將無法找回它或再次存取筆記的內容。</string>
     <string name="new_text_note">新文字筆記</string>
     <string name="new_checklist">New checklist</string>
     <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">匯入資料夾</string>
-    <string name="export_notes">匯出所有筆記</string>
+    <string name="export_notes">匯出筆記</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Import notes (Pro)</string>
     <!-- FAQ -->
