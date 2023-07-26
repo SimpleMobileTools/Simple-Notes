@@ -1,6 +1,7 @@
 package com.simplemobiletools.notes.pro.adapters
 
 import android.content.Context
+import android.graphics.Color
 import android.text.SpannableString
 import android.text.style.StrikethroughSpan
 import android.view.Menu
@@ -11,7 +12,8 @@ import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
-import com.simplemobiletools.commons.helpers.MEDIUM_ALPHA_INT
+import com.simplemobiletools.commons.extensions.isBlackAndWhiteTheme
+import com.simplemobiletools.commons.helpers.LOWER_ALPHA_INT
 import com.simplemobiletools.commons.helpers.SORT_BY_CUSTOM
 import com.simplemobiletools.commons.views.MyRecyclerView
 import com.simplemobiletools.notes.pro.R
@@ -60,8 +62,17 @@ class OpenNoteAdapter(
 
     private fun setupView(view: View, note: Note) {
         view.apply {
-            open_note_item_holder.background =
-                activity.resources.getColoredDrawableWithColor(R.drawable.black_dialog_background, backgroundColor, MEDIUM_ALPHA_INT)
+            if (context.isBlackAndWhiteTheme()) {
+                open_note_item_holder.setBackgroundResource(R.drawable.black_dialog_background)
+            } else {
+                val cardBackgroundColor = if (backgroundColor == Color.BLACK) {
+                    Color.WHITE
+                } else {
+                    Color.BLACK
+                }
+                open_note_item_holder.background =
+                    activity.resources.getColoredDrawableWithColor(R.drawable.dialog_you_background, cardBackgroundColor, LOWER_ALPHA_INT)
+            }
             open_note_item_title.apply {
                 text = note.title
                 setTextColor(properPrimaryColor)
