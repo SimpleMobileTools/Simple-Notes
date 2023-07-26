@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/open_note_item_holder"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingStart="@dimen/normal_margin"
-    android:paddingEnd="@dimen/normal_margin">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/medium_margin"
+    android:background="@drawable/widget_round_background"
+    android:orientation="vertical"
+    android:padding="@dimen/normal_margin">
 
-    <com.simplemobiletools.commons.views.MyCompatRadioButton
-        android:id="@+id/open_note_item_radio_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/open_note_item_icon" />
-
-    <ImageView
-        android:id="@+id/open_note_item_icon"
+    <com.simplemobiletools.commons.views.MyTextView
+        android:id="@+id/open_note_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/small_margin"
-        android:padding="@dimen/small_margin"
-        android:src="@drawable/ic_attach_file_vector" />
+        android:ellipsize="end"
+        android:lines="1"
+        android:textSize="@dimen/big_text_size"
+        android:textStyle="bold"
+        tools:text="Title" />
 
-</RelativeLayout>
+    <com.simplemobiletools.commons.views.MyTextView
+        android:id="@+id/open_note_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:ellipsize="end"
+        android:maxHeight="@dimen/grid_note_item_max_height"
+        tools:text="text" />
+
+</LinearLayout>

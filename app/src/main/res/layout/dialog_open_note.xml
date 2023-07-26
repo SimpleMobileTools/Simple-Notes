@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/dialog_open_note_holder"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:id="@+id/dialog_open_note_wrapper"
+    <com.simplemobiletools.commons.views.MyRecyclerView
+        android:id="@+id/dialog_open_note_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/dialog_open_note_divider"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        tools:itemCount="2"
+        tools:listitem="@layout/open_note_item" />
 
-        <LinearLayout
-            android:id="@+id/dialog_open_note_linear"
+    <ImageView
+        android:id="@+id/dialog_open_note_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@+id/dialog_open_note_create_new"
+        android:background="@color/divider_grey"
+        android:importantForAccessibility="no" />
+
+    <RadioGroup
+        android:id="@+id/dialog_open_note_create_new"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingStart="@dimen/normal_margin"
+        android:paddingTop="@dimen/small_margin"
+        android:paddingEnd="@dimen/normal_margin"
+        android:paddingBottom="@dimen/small_margin">
+
+        <com.simplemobiletools.commons.views.MyCompatRadioButton
+            android:id="@+id/dialog_open_note_new_radio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:orientation="vertical" />
+            android:text="@string/create_new_note" />
 
-        <ImageView
-            android:id="@+id/dialog_open_note_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_below="@+id/dialog_open_note_linear"
-            android:background="@color/divider_grey"
-            android:importantForAccessibility="no" />
-
-        <RadioGroup
-            android:id="@+id/dialog_open_note_create_new"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/dialog_open_note_divider"
-            android:paddingStart="@dimen/normal_margin"
-            android:paddingTop="@dimen/small_margin"
-            android:paddingEnd="@dimen/normal_margin"
-            android:paddingBottom="@dimen/small_margin">
-
-            <com.simplemobiletools.commons.views.MyCompatRadioButton
-                android:id="@+id/dialog_open_note_new_radio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/create_new_note" />
-
-        </RadioGroup>
-    </RelativeLayout>
-</ScrollView>
+    </RadioGroup>
+</RelativeLayout>
