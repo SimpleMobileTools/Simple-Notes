@@ -56,7 +56,7 @@
     <string name="alignment">Joondumine</string>
     <string name="left">Vasakule</string>
     <string name="center">Keskele</string>
-    <string name="right">Õigus</string>
+    <string name="right">Paremale</string>
     <string name="widget_note">Märge on kasutusel rakenduse vidinas</string>
     <string name="show_note_picker">Rakenduse käivitamisel näita märkmete valijat</string>
     <string name="autosave_notes">Salvesta märkmed automaatselt</string>
@@ -71,7 +71,7 @@
     <string name="add_new_checklist_items">Lisa tööde loendisse uued kirjed</string>
     <string name="checklist_is_empty">Tööde loend on tühi</string>
     <string name="remove_done_items">Kustuta tehtuks märgitud kirjed</string>
-    <string name="add_to_the_top">Add to the top</string>
+    <string name="add_to_the_top">Lisa ülaossa</string>
     <!-- Import / Export -->
     <string name="import_folder">Impordi kaust</string>
     <string name="export_notes">Ekspordi märkmed</string>
