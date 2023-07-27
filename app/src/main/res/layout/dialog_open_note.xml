@@ -23,13 +23,4 @@
             tools:itemCount="10"
             tools:listitem="@layout/open_note_item" />
     </androidx.core.widget.NestedScrollView>
-
-    <ImageView
-        android:id="@+id/dialog_open_note_divider"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@color/divider_grey"
-        android:importantForAccessibility="no" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
