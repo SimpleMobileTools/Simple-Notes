@@ -33,7 +33,6 @@ class OpenNoteDialog(val activity: BaseSimpleActivity, val callback: (checkedId:
                 callback(it.id!!, null)
                 dialog?.dismiss()
             } else {
-                // New note
                 NewNoteDialog(activity, setChecklistAsDefault = false) {
                     callback(0, it)
                     dialog?.dismiss()
