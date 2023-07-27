@@ -11,7 +11,10 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
-import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.extensions.applyColorFilter
+import com.simplemobiletools.commons.extensions.beGoneIf
+import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
+import com.simplemobiletools.commons.extensions.isBlackAndWhiteTheme
 import com.simplemobiletools.commons.helpers.LOWER_ALPHA_INT
 import com.simplemobiletools.commons.helpers.SORT_BY_CUSTOM
 import com.simplemobiletools.commons.views.MyRecyclerView
@@ -20,6 +23,9 @@ import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
+import kotlinx.android.synthetic.main.open_new_note_item.view.open_new_note_icon
+import kotlinx.android.synthetic.main.open_new_note_item.view.open_new_note_item_holder
+import kotlinx.android.synthetic.main.open_new_note_item.view.open_new_note_item_title
 import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_holder
 import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_text
 import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_title
@@ -30,6 +36,8 @@ class OpenNoteAdapter(
 ) : MyRecyclerViewAdapter(activity, recyclerView, itemClick) {
     private companion object {
         const val NEW_NOTE_ID = -1
+        const val VIEW_TYPE_NOTE = 0
+        const val VIEW_TYPE_NEW_NOTE = 1
     }
 
     override fun getActionMenuId() = 0
@@ -54,7 +62,20 @@ class OpenNoteAdapter(
 
     override fun prepareActionMode(menu: Menu) {}
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = createViewHolder(R.layout.open_note_item, parent)
+    override fun getItemViewType(position: Int): Int = if (position == items.size) {
+        VIEW_TYPE_NEW_NOTE
+    } else {
+        VIEW_TYPE_NOTE
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val layout = if (viewType == VIEW_TYPE_NEW_NOTE) {
+            R.layout.open_new_note_item
+        } else {
+            R.layout.open_note_item
+        }
+        return createViewHolder(layout, parent)
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (position == items.size) {
@@ -74,7 +95,7 @@ class OpenNoteAdapter(
 
     private fun setupView(view: View, note: Note) {
         view.apply {
-            setupCard()
+            setupCard(open_note_item_holder)
             open_note_item_title.apply {
                 text = note.title
                 setTextColor(properPrimaryColor)
@@ -90,18 +111,18 @@ class OpenNoteAdapter(
 
     private fun setupNewNoteView(view: View) {
         view.apply {
-            setupCard()
-            open_note_item_title.apply {
+            setupCard(open_new_note_item_holder)
+            open_new_note_item_title.apply {
                 setText(R.string.create_new_note)
                 setTextColor(properPrimaryColor)
             }
-            open_note_item_text.beGone()
+            open_new_note_icon.applyColorFilter(properPrimaryColor)
         }
     }
 
-    private fun View.setupCard() {
+    private fun View.setupCard(holder: View) {
         if (context.isBlackAndWhiteTheme()) {
-            open_note_item_holder.setBackgroundResource(R.drawable.black_dialog_background)
+            holder.setBackgroundResource(R.drawable.black_dialog_background)
         } else {
             val cardBackgroundColor = if (backgroundColor == Color.BLACK) {
                 Color.WHITE
@@ -113,7 +134,7 @@ class OpenNoteAdapter(
             } else {
                 R.drawable.dialog_bg
             }
-            open_note_item_holder.background =
+            holder.background =
                 activity.resources.getColoredDrawableWithColor(cardBackground, cardBackgroundColor, LOWER_ALPHA_INT)
         }
     }
