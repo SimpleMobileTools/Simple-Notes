@@ -70,8 +70,13 @@ class OpenNoteAdapter(
                 } else {
                     Color.BLACK
                 }
+                val cardBackground = if (context.config.isUsingSystemTheme) {
+                    R.drawable.dialog_you_background
+                } else {
+                    R.drawable.dialog_bg
+                }
                 open_note_item_holder.background =
-                    activity.resources.getColoredDrawableWithColor(R.drawable.dialog_you_background, cardBackgroundColor, LOWER_ALPHA_INT)
+                    activity.resources.getColoredDrawableWithColor(cardBackground, cardBackgroundColor, LOWER_ALPHA_INT)
             }
             open_note_item_title.apply {
                 text = note.title
