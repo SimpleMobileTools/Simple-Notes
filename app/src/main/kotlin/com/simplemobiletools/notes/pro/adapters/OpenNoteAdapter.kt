@@ -11,10 +11,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
-import com.simplemobiletools.commons.extensions.beGone
-import com.simplemobiletools.commons.extensions.beVisible
-import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
-import com.simplemobiletools.commons.extensions.isBlackAndWhiteTheme
+import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.LOWER_ALPHA_INT
 import com.simplemobiletools.commons.helpers.SORT_BY_CUSTOM
 import com.simplemobiletools.commons.views.MyRecyclerView
@@ -82,9 +79,10 @@ class OpenNoteAdapter(
                 text = note.title
                 setTextColor(properPrimaryColor)
             }
-            open_note_item_text.beVisible()
+            val formattedText = note.getFormattedValue(context)
+            open_note_item_text.beGoneIf(formattedText.isNullOrBlank())
             open_note_item_text.apply {
-                text = note.getFormattedValue(context)
+                text = formattedText
                 setTextColor(textColor)
             }
         }
