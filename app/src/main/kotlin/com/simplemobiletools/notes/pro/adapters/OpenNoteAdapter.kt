@@ -11,6 +11,8 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
+import com.simplemobiletools.commons.extensions.beGone
+import com.simplemobiletools.commons.extensions.beVisible
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
 import com.simplemobiletools.commons.extensions.isBlackAndWhiteTheme
 import com.simplemobiletools.commons.helpers.LOWER_ALPHA_INT
@@ -29,18 +31,25 @@ class OpenNoteAdapter(
     activity: BaseSimpleActivity, var items: List<Note>,
     recyclerView: MyRecyclerView, itemClick: (Any) -> Unit
 ) : MyRecyclerViewAdapter(activity, recyclerView, itemClick) {
+    private companion object {
+        const val NEW_NOTE_ID = -1
+    }
 
     override fun getActionMenuId() = 0
 
     override fun actionItemPressed(id: Int) {}
 
-    override fun getSelectableItemCount() = items.size
+    override fun getSelectableItemCount() = itemCount
 
     override fun getIsItemSelectable(position: Int) = false
 
-    override fun getItemSelectionKey(position: Int) = items.getOrNull(position)?.id?.toInt()
+    override fun getItemSelectionKey(position: Int) = items.getOrNull(position)?.id?.toInt() ?: NEW_NOTE_ID
 
-    override fun getItemKeyPosition(key: Int) = items.indexOfFirst { it.id?.toInt() == key }
+    override fun getItemKeyPosition(key: Int) = if (key == NEW_NOTE_ID) {
+        items.size
+    } else {
+        items.indexOfFirst { it.id?.toInt() == key }
+    }
 
     override fun onActionModeCreated() {}
 
@@ -51,41 +60,63 @@ class OpenNoteAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = createViewHolder(R.layout.open_note_item, parent)
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = items[position]
-        holder.bindView(item, true, false) { itemView, layoutPosition ->
-            setupView(itemView, item)
+        if (position == items.size) {
+            holder.bindView(NEW_NOTE_ID, true, false) { itemView, layoutPosition ->
+                setupNewNoteView(itemView)
+            }
+        } else {
+            val item = items[position]
+            holder.bindView(item, true, false) { itemView, layoutPosition ->
+                setupView(itemView, item)
+            }
         }
         bindViewHolder(holder)
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = items.size + 1
 
     private fun setupView(view: View, note: Note) {
         view.apply {
-            if (context.isBlackAndWhiteTheme()) {
-                open_note_item_holder.setBackgroundResource(R.drawable.black_dialog_background)
-            } else {
-                val cardBackgroundColor = if (backgroundColor == Color.BLACK) {
-                    Color.WHITE
-                } else {
-                    Color.BLACK
-                }
-                val cardBackground = if (context.config.isUsingSystemTheme) {
-                    R.drawable.dialog_you_background
-                } else {
-                    R.drawable.dialog_bg
-                }
-                open_note_item_holder.background =
-                    activity.resources.getColoredDrawableWithColor(cardBackground, cardBackgroundColor, LOWER_ALPHA_INT)
-            }
+            setupCard()
             open_note_item_title.apply {
                 text = note.title
                 setTextColor(properPrimaryColor)
             }
+            open_note_item_text.beVisible()
             open_note_item_text.apply {
                 text = note.getFormattedValue(context)
                 setTextColor(textColor)
             }
+        }
+    }
+
+    private fun setupNewNoteView(view: View) {
+        view.apply {
+            setupCard()
+            open_note_item_title.apply {
+                setText(R.string.create_new_note)
+                setTextColor(properPrimaryColor)
+            }
+            open_note_item_text.beGone()
+        }
+    }
+
+    private fun View.setupCard() {
+        if (context.isBlackAndWhiteTheme()) {
+            open_note_item_holder.setBackgroundResource(R.drawable.black_dialog_background)
+        } else {
+            val cardBackgroundColor = if (backgroundColor == Color.BLACK) {
+                Color.WHITE
+            } else {
+                Color.BLACK
+            }
+            val cardBackground = if (context.config.isUsingSystemTheme) {
+                R.drawable.dialog_you_background
+            } else {
+                R.drawable.dialog_bg
+            }
+            open_note_item_holder.background =
+                activity.resources.getColoredDrawableWithColor(cardBackground, cardBackgroundColor, LOWER_ALPHA_INT)
         }
     }
 
