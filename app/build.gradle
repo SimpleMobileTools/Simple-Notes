@@ -13,12 +13,12 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.simplemobiletools.notes.pro"
         minSdkVersion 23
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 107
         versionName "6.15.6"
         setProperty("archivesBaseName", "notes")
