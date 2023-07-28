@@ -1,6 +1,7 @@
 package com.simplemobiletools.notes.pro.helpers
 
 import android.graphics.Color
+import org.joda.time.DateTime
 
 const val NOTE_ID = "note_id"
 const val OPEN_NOTE_ID = "open_note_id"
@@ -38,6 +39,26 @@ const val MOVE_DONE_CHECKLIST_ITEMS = "move_undone_checklist_items"     // it ha
 const val FONT_SIZE_PERCENTAGE = "font_size_percentage"
 const val EXPORT_MIME_TYPE = "text/plain"
 const val ADD_NEW_CHECKLIST_ITEMS_TOP = "add_new_checklist_items_top"
+
+// auto backups
+const val AUTOMATIC_BACKUP_REQUEST_CODE = 10001
+const val AUTO_BACKUP_INTERVAL_IN_DAYS = 1
+
+// 6 am is the hardcoded automatic backup time, intervals shorter than 1 day are not yet supported.
+fun getNextAutoBackupTime(): DateTime {
+    val now = DateTime.now()
+    val sixHour = now.withHourOfDay(6)
+    return if (now.millis < sixHour.millis) {
+        sixHour
+    } else {
+        sixHour.plusDays(AUTO_BACKUP_INTERVAL_IN_DAYS)
+    }
+}
+
+fun getPreviousAutoBackupTime(): DateTime {
+    val nextBackupTime = getNextAutoBackupTime()
+    return nextBackupTime.minusDays(AUTO_BACKUP_INTERVAL_IN_DAYS)
+}
 
 // gravity
 const val GRAVITY_START = 0
