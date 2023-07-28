@@ -71,6 +71,7 @@ class SettingsActivity : SimpleActivity() {
             settings_startup_label,
             settings_saving_label,
             settings_migrating_label,
+            settings_backups_label,
         ).forEach {
             it.setTextColor(getProperPrimaryColor())
         }
