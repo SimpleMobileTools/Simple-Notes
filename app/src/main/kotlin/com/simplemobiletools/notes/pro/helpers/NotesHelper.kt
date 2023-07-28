@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
+import com.simplemobiletools.commons.helpers.ExportResult
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
@@ -11,7 +12,10 @@ import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import java.io.File
+import java.io.OutputStream
 
 class NotesHelper(val context: Context) {
     fun getNotes(callback: (notes: List<Note>) -> Unit) {
@@ -121,6 +125,18 @@ class NotesHelper(val context: Context) {
                 }
                 callback(result)
             }
+        }
+    }
+
+    fun exportNotes(notesToBackup: List<Note>, outputStream: OutputStream): ExportResult {
+        return try {
+            val jsonString = Json.encodeToString(notesToBackup)
+            outputStream.use {
+                it.write(jsonString.toByteArray())
+            }
+            ExportResult.EXPORT_OK
+        } catch (_: Error) {
+            ExportResult.EXPORT_FAIL
         }
     }
 
