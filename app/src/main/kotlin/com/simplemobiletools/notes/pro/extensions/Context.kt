@@ -152,9 +152,8 @@ fun Context.backupNotes() {
                 showErrorToast(e)
             }
 
-            when (exportResult) {
-                ExportResult.EXPORT_OK -> toast(R.string.exporting_successful)
-                else -> toast(R.string.exporting_failed)
+            if (exportResult == ExportResult.EXPORT_FAIL) {
+                toast(R.string.exporting_failed)
             }
 
             config.lastAutoBackupTime = DateTime.now().millis
