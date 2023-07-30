@@ -13,10 +13,8 @@ import com.simplemobiletools.commons.helpers.*
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.dialogs.ExportNotesDialog
-import com.simplemobiletools.notes.pro.extensions.config
-import com.simplemobiletools.notes.pro.extensions.requestUnlockNotes
-import com.simplemobiletools.notes.pro.extensions.updateWidgets
-import com.simplemobiletools.notes.pro.extensions.widgetsDB
+import com.simplemobiletools.notes.pro.dialogs.ManageAutoBackupsDialog
+import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.Widget
@@ -62,6 +60,8 @@ class SettingsActivity : SimpleActivity() {
         setupCustomizeWidgetColors()
         setupNotesExport()
         setupNotesImport()
+        setupEnableAutomaticBackups()
+        setupManageAutomaticBackups()
         updateTextColors(settings_nested_scrollview)
 
         arrayOf(
@@ -71,6 +71,7 @@ class SettingsActivity : SimpleActivity() {
             settings_startup_label,
             settings_saving_label,
             settings_migrating_label,
+            settings_backups_label,
         ).forEach {
             it.setTextColor(getProperPrimaryColor())
         }
@@ -354,5 +355,44 @@ class SettingsActivity : SimpleActivity() {
         } catch (e: Exception) {
             showErrorToast(e)
         }
+    }
+
+    private fun setupEnableAutomaticBackups() {
+        settings_backups_label.beVisibleIf(isRPlus())
+        settings_enable_automatic_backups_holder.beVisibleIf(isRPlus())
+        settings_enable_automatic_backups.isChecked = config.autoBackup
+        settings_enable_automatic_backups_holder.setOnClickListener {
+            val wasBackupDisabled = !config.autoBackup
+            if (wasBackupDisabled) {
+                ManageAutoBackupsDialog(
+                    activity = this,
+                    onSuccess = {
+                        enableOrDisableAutomaticBackups(true)
+                        scheduleNextAutomaticBackup()
+                    }
+                )
+            } else {
+                cancelScheduledAutomaticBackup()
+                enableOrDisableAutomaticBackups(false)
+            }
+        }
+    }
+
+    private fun setupManageAutomaticBackups() {
+        settings_manage_automatic_backups_holder.beVisibleIf(isRPlus() && config.autoBackup)
+        settings_manage_automatic_backups_holder.setOnClickListener {
+            ManageAutoBackupsDialog(
+                activity = this,
+                onSuccess = {
+                    scheduleNextAutomaticBackup()
+                }
+            )
+        }
+    }
+
+    private fun enableOrDisableAutomaticBackups(enable: Boolean) {
+        config.autoBackup = enable
+        settings_enable_automatic_backups.isChecked = enable
+        settings_manage_automatic_backups_holder.beVisibleIf(enable)
     }
 }
