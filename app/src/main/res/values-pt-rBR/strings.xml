@@ -24,14 +24,14 @@
     <string name="text_note">Anotações</string>
     <string name="lock_note">Bloquear anotação</string>
     <string name="unlock_note">Desbloquear anotação</string>
-    <string name="unlock_notes">Unlock notes</string>
-    <string name="found_locked_notes_info">The following notes are locked. You can either unlock them one by one or skip exporting them.</string>
+    <string name="unlock_notes">Desbloquear notas</string>
+    <string name="found_locked_notes_info">As notas a seguir estão bloqueadas. Você pode desbloqueá-las uma a uma ou pular a exportação.</string>
     <string name="note_content_locked">O conteúdo da nota está bloqueado.</string>
     <string name="show_content">Mostrar conteúdo</string>
     <string name="locking_warning">AVISO: Caso você esqueça a senha, não conseguirá recuperá-la ou acessar o conteúdo da nota.</string>
     <string name="new_text_note">Nova nota de texto</string>
     <string name="new_checklist">Nova lista</string>
-    <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
+    <string name="cannot_load_over_internet">O aplicativo não pode carregar arquivos pela Internet</string>
     <!-- File notes -->
     <string name="open_file">Abrir arquivo</string>
     <string name="export_as_file">Exportar como arquivo</string>
@@ -74,9 +74,9 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Importar pasta</string>
-    <string name="export_notes">Exportar todas as notas</string>
+    <string name="export_notes">Exportar notas</string>
     <string name="import_notes">Import notes</string>
-    <string name="import_notes_pro">Import notes (Pro)</string>
+    <string name="import_notes_pro">Importar notas (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Como mudar a cor dos widgets\?</string>
     <string name="faq_1_text">Caso você possua apenas 1 widget ativo, você poderá recriá-lo, ou usar o botão nas configurações do aplicativo para personalizá-lo. Caso você possua vários widgets ativos, o botão nas configurações do aplicativo não estará disponível. Como o aplicativo suporta personalização de cores por widget, você terá que recriar o widget que deseja personalizar.</string>
