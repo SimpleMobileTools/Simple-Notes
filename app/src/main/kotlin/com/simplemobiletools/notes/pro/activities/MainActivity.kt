@@ -649,9 +649,11 @@ class MainActivity : SimpleActivity() {
         } else {
             Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
                 addCategory(Intent.CATEGORY_OPENABLE)
-                type = "text/*"
+                type = "*/*"
 
                 try {
+                    val mimetypes = arrayOf("text/*", "application/json")
+                    putExtra(Intent.EXTRA_MIME_TYPES, mimetypes)
                     startActivityForResult(this, PICK_OPEN_FILE_INTENT)
                 } catch (e: ActivityNotFoundException) {
                     toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
