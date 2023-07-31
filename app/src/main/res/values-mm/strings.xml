@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ရိုးရှင်း မှတ်စု</string>
+    <string name="app_launcher_name">မှတ်စုများ</string>
+    <string name="widget_config">ရိုးရှင်း မှတ်စုများကိုအသုံးပြုတဲ့အတွက်​ကျေးဇူးတင်ပါတယ်။\nအခြား​သော ရိုးရှင်း အက်ပ်များအတွက် SimpleMobileTools.com</string>
+    <string name="cannot_share_empty_text">မှတ်စုအလွတ်ကို မမျှ​ဝေနိုင်ပါ</string>
+    <string name="simple_note">ရိုးရှင်း မှတ်စု</string>
+    <string name="new_note">မှတ်စုအသစ်</string>
+    <string name="no_title">ကျေးဇူးပြု၍မှတ်စုအသစ်​ခေါင်းစဥ် ပေးပါ</string>
+    <string name="title_taken">ပေးထား​​သော​ခေါင်းစဥ်ဖြင့် မှတ်စုတစ်ခုရှိပြီးသား</string>
+    <string name="open_note">မှတ်စုကိုဖွင့်</string>
+    <string name="delete_note">မှတ်စုကိုဖျက်</string>
+    <string name="delete_note_prompt_message">ဒီမှတ်စုကိုဖျက်ရန်ကျိန်း​သေပြီလား။ \"%s\"?</string>
+    <string name="pick_a_note">မှတ်စုတစ်ခုကို​ရွေး</string>
+    <string name="rename_note">မှတ်စုကို ခေါင်းစဥ်​ပြောင်း</string>
+    <string name="general_note">အ​ထွေထွေ မှတ်စု</string>
+    <string name="create_new_note">မှတ်စုအသစ်တစ်ခု ဖန်တီးမည်</string>
+    <string name="add_to_note">မှတ်စုထဲသို့ ထည့်ပါ</string>
+    <string name="unsaved_changes_warning">သင်မသိမ်းဆည်းရ​သေး​​သော​ ပြောင်းလဲမှုအချို့ ကိုဘာလုပ် ချင်ပါသလဲ</string>
+    <string name="note_shown_widget">ဝစ်ဂျစ်တ်တွင် ပြ​သော မှတ်စု</string>
+    <string name="show_note_title">မှတ်စု​ခေါင်းစဥ်ကို ပြပါ</string>
+    <string name="new_note_type">မှတ်စု ပုံစံအသစ်</string>
+    <string name="text_note">စာသားမှတ်စု</string>
+    <string name="lock_note">မှတ်စုကို​လော့ခ် ခတ်</string>
+    <string name="unlock_note">မှတ်စုကို လော့ခ်ဖြည်</string>
+    <string name="unlock_notes">မှတ်စုများကို လော့ခ်ဖြည်</string>
+    <string name="found_locked_notes_info">ဖော်ပြပါ မှတ်စုများသည် လော့ခ်ခတ်ထားသည်။သင်တစ်ခုချင်းစီ လော့ခ်ဖြည်တာ ဒါမှမဟုတ် ယင်းမှတ်စုများကို ကျော်သွားနိုင်ပါတယ်။</string>
+    <string name="note_content_locked">မှတ်စု\' ပါအ​ကြောင်းအရာများ​လော့ခ်ခတ်ထားသည်</string>
+    <string name="show_content">အ​ကြောင်းအရာကိုပြပါ</string>
+    <string name="locking_warning">သတိ​ပေးခြင်း အကယ်၍သင် မှတ်စု\'စကားဝှက်များကိုမေ့သွားပါက သင့်မှတ်စုပါ အ​ကြောင်းအရာများကိုပြန်မယူနိုင်ပါ</string>
+    <string name="new_text_note">စာသားမှတ်စုအသစ်</string>
+    <string name="new_checklist">အမှတ်ခြစ်စာရင်း အသစ်</string>
+    <string name="cannot_load_over_internet">အက်ပ်သည် အင်တာနက်​ပေါ်ရှိဖိုင်​မျာကို မရယူနိုင်ပါ</string>
+
+    <!-- File notes -->
+    <string name="open_file">ဖိုင်
+ဖွင့်</string>
+    <string name="export_as_file">ဖိုင်အဖြစ်ထုတ်မည်</string>
+    <string name="file_too_large">ဖိုင်ဆိုဒ်ကြီးလွန်းသည်။၁ အမ်ဘီ အထိသာကန့်သတ်ထားသည်။</string>
+    <string name="only_import_file_content">ဖိုင်ကိုသာ သွင်းပါ\n(ဖိုင်​ပြောင်းလဲခြင်းသည် မှတ်စုများကိုသက်​ရောက်မည်မဟုတ်ပါ)</string>
+    <string name="update_file_at_note">မှတ်စုကို ပြောင်းလဲခြင်းဖြင့် ဖိုင်လည်း​ပြောင်းလဲပါမည်\n(ဖိုင်လမ်း​ကြောင်း​ပြောင်းသွား​သောအခါ ဒါမှမဟုတ် ဖိုင်ဖျက်​သောအခါ မှတ်စုများလည်းပျက်သွားပါမည်)</string>
+    <string name="delete_file_itself">Also delete file \"%s\"</string>
+    <string name="note_saved_successfully">မှတ်စုကို \"%s\" အောင်မြင်စွာသိမ်းဆည်းပြီး</string>
+    <string name="note_exported_successfully">မှတ်စုကို \"%s\" အောင်မြင်စွာထုတ်ပြီး</string>
+    <string name="only_export_file_content">လက်ရှိဖိုင်ပါအ​ကြောင်းအရာကိုသာ ထုတ်ပါ\n(မှတ်စုကို​ပြောင်းလဲခြင်းသည်ဖိုင်ကိုမသက်​ရောက်နိုင်ပါ)</string>
+
+    <!-- Settings -->
+    <string name="display_success_message">အောင်မြင်စွာ သိမ်းဆည်းပြီး​​ကြောင်း ကိုပြပါ</string>
+    <string name="links_and_emails_clickable">လင့်များ နှင့် အီး​မေးလ်း များကိုနှိပ်နိုင်​အောင်လုပ်ပါ</string>
+    <string name="place_cursor_end">စာရိုက်မှတ်ကို မှတ်စုအဆုံးတွင်​​နေရာချပါ</string>
+    <string name="monospaced_font">ကွဲပြား​သောဖောင့် သုံးပါ</string>
+    <string name="show_keyboard">အက်ပ်စဖွင့်​သောအခါကီးဘုတ်ကိုပြပါ</string>
+    <string name="show_word_count">စကားလုံး အရေအတွက်ကိုပြပါ</string>
+    <string name="show_character_count">စာလုံး အ​ရေအတွက်ကိုပြပါ</string>
+    <string name="alignment">နေရာချ</string>
+    <string name="left">ဘယ်</string>
+    <string name="center">အလယ်</string>
+    <string name="right">ညာ</string>
+    <string name="widget_note">ဝစ်ဂျစ်တ်တွင်ပြထား​သောမှတ်စု</string>
+    <string name="show_note_picker">အက်ပ်စဖွင့်သောအခါ မှတ်စု​ရွေးရန်ပြပါ</string>
+    <string name="autosave_notes">မှတ်စုများ အလိုအ​လျောက်သိမ်းဆည်းခြင်း</string>
+    <string name="enable_line_wrap">Enable line wrap</string>
+    <string name="use_incognito_mode">လုံခြုံ​သော ကီးဘုတ်လုပ်​ဆောင်ချက်ကိုသုံးမည်</string>
+    <string name="move_done_checklist_items">အမှန်ခြစ်ပြီး​သောစာရင်းများကို​အောက်သို့​ရွှေ့ပါ</string>
+    <string name="add_new_checklist_items_top">အမှန်ခြစ် စာရင်းအသစ်များကို အ​ပေါ်မှာ ထည့်ပါ</string>
+
+    <!-- Checklists -->
+    <string name="checklist">အမှန်ခြစ် စာရင်း</string>
+    <string name="checklists">အမှန်ခြစ် စာရင်းများ</string>
+    <string name="add_new_checklist_item">အမှန်ခြစ် စာရင်းအသစ်</string>
+    <string name="add_new_checklist_items">အမှတ်ခြစ် စာရင်းအသစ်များ</string>
+    <string name="checklist_is_empty">အမှန်ခြစ် စာရင်း မှာဘာမှမရှိပါ</string>
+    <string name="remove_done_items">ပြီးသွား​သောအရာများကို ဖယ်ရှားပါ</string>
+    <string name="add_to_the_top">အ​ပေါ်ဆုံးကို ပို့ပါ</string>
+
+    <!-- Import / Export -->
+    <string name="import_folder">ဖိုဒါကို သွင်းမည်</string>
+    <string name="export_notes">မှတ်စုများကိုထုတ်မည်</string>
+    <string name="import_notes">မှတ်စုများကို သွင်းမည်</string>
+    <string name="import_notes_pro">မှတ်စုများကို သွင်းမည်(ပရိုဗားရှင်း)</string>
+
+    <!-- FAQ -->
+    <string name="faq_1_title">ဝစ်ဂျစ်တ်အ​ရောင်ဘယ်လို ချိန်းနိုင်မလဲ</string>
+    <string name="faq_1_text">သင့်မှာ ဝစ်ဂျစ်တ်တစ်ခုတည်းသာ ဖန်တီးထားလျှင် အသစ်ပြန်ဖန်တီးတာဖြစ်​စေ အက်ပ်ဆက်တင်ထဲက​နေဖြစ်​စေ ပြောင်းလဲနိုင်ပါတယ်။သင်မှာဝစ်ဂျစ်တ် အများအပြားရှိရင်​တော့ အက်ပ်ဆက်တင်ထဲ က​နေ​​ပြောင်းလဲလို့မရနိုင်ပါ။သင်​ပြောင်းလဲလိုတဲ့ ဝစ်ဂျစ်တ်တစ်ခုချင်းစီကို ပြန်ဖန်တီးဖို့လိုပါတယ်။</string>
+    <!--
+        Haven't found some strings? There's more at
+        https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
+    -->
+</resources>
