@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Імпартаваць папку</string>
-    <string name="export_notes">Экспартаваць усе нататкі</string>
+    <string name="export_notes">Экспартаваць нататкі</string>
     <string name="import_notes">Імпартаваць нататкі</string>
     <string name="import_notes_pro">Імпартаваць нататкі (Pro)</string>
     <!-- FAQ -->
