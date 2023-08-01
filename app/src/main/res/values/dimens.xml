@@ -2,4 +2,6 @@
     <dimen name="checklist_image_size">56dp</dimen>
     <dimen name="grid_note_item_width">150dp</dimen>
     <dimen name="grid_note_item_max_height">300dp</dimen>
+    <dimen name="max_open_note_popup_height">500dp</dimen>
+    <dimen name="min_open_note_popup_height">200dp</dimen>
 </resources>

@@ -12,6 +12,7 @@ import com.simplemobiletools.notes.pro.adapters.OpenNoteAdapter
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
 import kotlinx.android.synthetic.main.dialog_open_note.view.dialog_open_note_list
+import kotlinx.android.synthetic.main.dialog_open_note.view.new_note_fab
 
 class OpenNoteDialog(val activity: BaseSimpleActivity, val callback: (checkedId: Long, newNote: Note?) -> Unit) {
     private var dialog: AlertDialog? = null
@@ -29,14 +30,15 @@ class OpenNoteDialog(val activity: BaseSimpleActivity, val callback: (checkedId:
 
     private fun initDialog(notes: List<Note>, view: View) {
         view.dialog_open_note_list.adapter = OpenNoteAdapter(activity, notes, view.dialog_open_note_list) {
-            if (it is Note) {
-                callback(it.id!!, null)
+            it as Note
+            callback(it.id!!, null)
+            dialog?.dismiss()
+        }
+
+        view.new_note_fab.setOnClickListener {
+            NewNoteDialog(activity, setChecklistAsDefault = false) {
+                callback(0, it)
                 dialog?.dismiss()
-            } else {
-                NewNoteDialog(activity, setChecklistAsDefault = false) {
-                    callback(0, it)
-                    dialog?.dismiss()
-                }
             }
         }
 

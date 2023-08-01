@@ -11,7 +11,6 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
-import com.simplemobiletools.commons.extensions.applyColorFilter
 import com.simplemobiletools.commons.extensions.beGoneIf
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
 import com.simplemobiletools.commons.extensions.isBlackAndWhiteTheme
@@ -23,9 +22,6 @@ import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
-import kotlinx.android.synthetic.main.open_new_note_item.view.open_new_note_icon
-import kotlinx.android.synthetic.main.open_new_note_item.view.open_new_note_item_holder
-import kotlinx.android.synthetic.main.open_new_note_item.view.open_new_note_item_title
 import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_holder
 import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_text
 import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_title
@@ -34,12 +30,6 @@ class OpenNoteAdapter(
     activity: BaseSimpleActivity, var items: List<Note>,
     recyclerView: MyRecyclerView, itemClick: (Any) -> Unit
 ) : MyRecyclerViewAdapter(activity, recyclerView, itemClick) {
-    private companion object {
-        const val NEW_NOTE_ID = -1
-        const val VIEW_TYPE_NOTE = 0
-        const val VIEW_TYPE_NEW_NOTE = 1
-    }
-
     override fun getActionMenuId() = 0
 
     override fun actionItemPressed(id: Int) {}
@@ -48,13 +38,9 @@ class OpenNoteAdapter(
 
     override fun getIsItemSelectable(position: Int) = false
 
-    override fun getItemSelectionKey(position: Int) = items.getOrNull(position)?.id?.toInt() ?: NEW_NOTE_ID
+    override fun getItemSelectionKey(position: Int) = items.getOrNull(position)?.id?.toInt()
 
-    override fun getItemKeyPosition(key: Int) = if (key == NEW_NOTE_ID) {
-        items.size
-    } else {
-        items.indexOfFirst { it.id?.toInt() == key }
-    }
+    override fun getItemKeyPosition(key: Int) = items.indexOfFirst { it.id?.toInt() == key }
 
     override fun onActionModeCreated() {}
 
@@ -62,36 +48,19 @@ class OpenNoteAdapter(
 
     override fun prepareActionMode(menu: Menu) {}
 
-    override fun getItemViewType(position: Int): Int = if (position == items.size) {
-        VIEW_TYPE_NEW_NOTE
-    } else {
-        VIEW_TYPE_NOTE
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layout = if (viewType == VIEW_TYPE_NEW_NOTE) {
-            R.layout.open_new_note_item
-        } else {
-            R.layout.open_note_item
-        }
-        return createViewHolder(layout, parent)
+        return createViewHolder(R.layout.open_note_item, parent)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (position == items.size) {
-            holder.bindView(NEW_NOTE_ID, true, false) { itemView, layoutPosition ->
-                setupNewNoteView(itemView)
-            }
-        } else {
-            val item = items[position]
-            holder.bindView(item, true, false) { itemView, layoutPosition ->
-                setupView(itemView, item)
-            }
+        val item = items[position]
+        holder.bindView(item, true, false) { itemView, layoutPosition ->
+            setupView(itemView, item)
         }
         bindViewHolder(holder)
     }
 
-    override fun getItemCount() = items.size + 1
+    override fun getItemCount() = items.size
 
     private fun setupView(view: View, note: Note) {
         view.apply {
@@ -106,17 +75,6 @@ class OpenNoteAdapter(
                 text = formattedText
                 setTextColor(textColor)
             }
-        }
-    }
-
-    private fun setupNewNoteView(view: View) {
-        view.apply {
-            setupCard(open_new_note_item_holder)
-            open_new_note_item_title.apply {
-                setText(R.string.create_new_note)
-                setTextColor(properPrimaryColor)
-            }
-            open_new_note_icon.applyColorFilter(properPrimaryColor)
         }
     }
 
