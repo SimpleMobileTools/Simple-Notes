@@ -7,7 +7,7 @@ import java.text.Collator
  *
  * Adapted from AlphanumericComparator to support numerical collation.
  */
-class CollatorBasedComparator: Comparator<String> {
+class CollatorBasedComparator : Comparator<String> {
     override fun compare(string1: String, string2: String): Int {
         val collator = getCollator()
 
@@ -64,10 +64,12 @@ class CollatorBasedComparator: Comparator<String> {
             chunk.append(c)
             current++
         }
+
         return chunk.toString()
     }
 
     private fun isDigit(ch: Char) = ch in '0'..'9'
+
     private fun coerceResult(compareToResult: Int) = compareToResult.coerceIn(-1, 1)
 
     private fun getCollator(): Collator {

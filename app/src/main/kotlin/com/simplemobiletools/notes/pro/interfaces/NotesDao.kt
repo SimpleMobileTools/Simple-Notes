@@ -5,7 +5,7 @@ import com.simplemobiletools.notes.pro.models.Note
 
 @Dao
 interface NotesDao {
-    @Query("SELECT * FROM notes ORDER BY title COLLATE NOCASE ASC")
+    @Query("SELECT * FROM notes ORDER BY title COLLATE UNICODE ASC ")
     fun getNotes(): List<Note>
 
     @Query("SELECT * FROM notes WHERE id = :id")
