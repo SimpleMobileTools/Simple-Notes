@@ -1,6 +1,15 @@
 Changelog
 ==========
 
+Version 6.16.0 *(2023-08-02)*
+----------------------------
+
+ * Properly handle importing both txt and json files
+ * Redesigned the Open Note dialog
+ * Fix sorting of checklist items and notes with accents
+ * Add support for periodic automatic backups
+ * Added some UI, stability and translation improvements
+
 Version 6.15.6 *(2023-07-17)*
 ----------------------------
 
