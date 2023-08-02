@@ -5,7 +5,7 @@ import java.text.Collator
 /**
  * Collator-based string comparator
  *
- * Adapted from AlphanumericComparator to support numerical collation.
+ * Adapted from AlphanumericComparator to support numerical collation. It sorts accents properly too.
  */
 class CollatorBasedComparator : Comparator<String> {
     override fun compare(string1: String, string2: String): Int {
