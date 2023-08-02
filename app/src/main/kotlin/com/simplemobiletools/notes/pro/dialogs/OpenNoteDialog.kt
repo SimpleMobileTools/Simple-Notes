@@ -1,66 +1,53 @@
 package com.simplemobiletools.notes.pro.dialogs
 
-import android.app.Activity
 import android.view.View
-import android.view.ViewGroup
-import android.widget.RadioGroup
 import androidx.appcompat.app.AlertDialog
-import com.simplemobiletools.commons.extensions.*
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.simplemobiletools.commons.activities.BaseSimpleActivity
+import com.simplemobiletools.commons.extensions.getAlertDialogBuilder
+import com.simplemobiletools.commons.extensions.setupDialogStuff
+import com.simplemobiletools.commons.views.AutoStaggeredGridLayoutManager
 import com.simplemobiletools.notes.pro.R
-import com.simplemobiletools.notes.pro.extensions.config
+import com.simplemobiletools.notes.pro.adapters.OpenNoteAdapter
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.dialog_open_note.view.*
-import kotlinx.android.synthetic.main.open_note_item.view.*
+import kotlinx.android.synthetic.main.dialog_open_note.view.dialog_open_note_list
+import kotlinx.android.synthetic.main.dialog_open_note.view.new_note_fab
 
-class OpenNoteDialog(val activity: Activity, val callback: (checkedId: Long, newNote: Note?) -> Unit) {
+class OpenNoteDialog(val activity: BaseSimpleActivity, val callback: (checkedId: Long, newNote: Note?) -> Unit) {
     private var dialog: AlertDialog? = null
 
     init {
         val view = activity.layoutInflater.inflate(R.layout.dialog_open_note, null)
+
+        val noteItemWidth = activity.resources.getDimensionPixelSize(R.dimen.grid_note_item_width)
+        view.dialog_open_note_list.layoutManager = AutoStaggeredGridLayoutManager(noteItemWidth, StaggeredGridLayoutManager.VERTICAL)
+
         NotesHelper(activity).getNotes {
             initDialog(it, view)
         }
+    }
 
-        view.dialog_open_note_new_radio.setOnClickListener {
-            view.dialog_open_note_new_radio.isChecked = false
+    private fun initDialog(notes: List<Note>, view: View) {
+        view.dialog_open_note_list.adapter = OpenNoteAdapter(activity, notes, view.dialog_open_note_list) {
+            it as Note
+            callback(it.id!!, null)
+            dialog?.dismiss()
+        }
+
+        view.new_note_fab.setOnClickListener {
             NewNoteDialog(activity, setChecklistAsDefault = false) {
                 callback(0, it)
                 dialog?.dismiss()
             }
         }
-    }
 
-    private fun initDialog(notes: List<Note>, view: View) {
-        val textColor = activity.getProperTextColor()
-        notes.forEach {
-            activity.layoutInflater.inflate(R.layout.open_note_item, null).apply {
-                val note = it
-                open_note_item_radio_button.apply {
-                    text = note.title
-                    isChecked = note.id == activity.config.currentNoteId
-                    id = note.id!!.toInt()
-
-                    setOnClickListener {
-                        callback(note.id!!, null)
-                        dialog?.dismiss()
-                    }
+        activity.getAlertDialogBuilder()
+            .setNegativeButton(R.string.cancel, null)
+            .apply {
+                activity.setupDialogStuff(view, this, R.string.open_note) { alertDialog ->
+                    dialog = alertDialog
                 }
-                open_note_item_icon.apply {
-                    beVisibleIf(note.path.isNotEmpty())
-                    applyColorFilter(textColor)
-                    setOnClickListener {
-                        activity.toast(note.path)
-                    }
-                }
-                view.dialog_open_note_linear.addView(this, RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT))
             }
-        }
-
-        activity.getAlertDialogBuilder().apply {
-            activity.setupDialogStuff(view, this, R.string.open_note) { alertDialog ->
-                dialog = alertDialog
-            }
-        }
     }
 }
