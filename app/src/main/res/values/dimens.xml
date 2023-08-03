@@ -5,4 +5,5 @@
     <dimen name="max_open_note_popup_height">500dp</dimen>
     <dimen name="min_open_note_popup_height">200dp</dimen>
     <dimen name="open_note_popup_bottom_extra_padding">76dp</dimen>
+    <dimen name="open_note_popup_lock_size">56dp</dimen>
 </resources>

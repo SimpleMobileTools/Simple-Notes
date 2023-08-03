@@ -12,6 +12,7 @@ import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.activities.BaseSimpleActivity
 import com.simplemobiletools.commons.adapters.MyRecyclerViewAdapter
 import com.simplemobiletools.commons.extensions.beGoneIf
+import com.simplemobiletools.commons.extensions.beVisibleIf
 import com.simplemobiletools.commons.extensions.getColoredDrawableWithColor
 import com.simplemobiletools.commons.extensions.isBlackAndWhiteTheme
 import com.simplemobiletools.commons.helpers.LOWER_ALPHA_INT
@@ -22,6 +23,7 @@ import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
+import kotlinx.android.synthetic.main.open_note_item.view.icon_lock
 import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_holder
 import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_text
 import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_title
@@ -70,7 +72,9 @@ class OpenNoteAdapter(
                 setTextColor(properPrimaryColor)
             }
             val formattedText = note.getFormattedValue(context)
-            open_note_item_text.beGoneIf(formattedText.isNullOrBlank())
+            open_note_item_text.beGoneIf(formattedText.isNullOrBlank() || note.isLocked())
+            icon_lock.beVisibleIf(note.isLocked())
+            icon_lock.setImageDrawable(activity.resources.getColoredDrawableWithColor(R.drawable.ic_lock_vector, properPrimaryColor))
             open_note_item_text.apply {
                 text = formattedText
                 setTextColor(textColor)
