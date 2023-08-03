@@ -74,6 +74,7 @@ class OpenNoteAdapter(
             val formattedText = note.getFormattedValue(context)
             open_note_item_text.beGoneIf(formattedText.isNullOrBlank() || note.isLocked())
             icon_lock.beVisibleIf(note.isLocked())
+            icon_lock.setImageDrawable(activity.resources.getColoredDrawableWithColor(R.drawable.ic_lock_vector, properPrimaryColor))
             open_note_item_text.apply {
                 text = formattedText
                 setTextColor(textColor)

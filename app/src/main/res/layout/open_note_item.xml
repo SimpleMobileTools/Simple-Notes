@@ -14,9 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/open_note_popup_lock_size"
         android:layout_below="@+id/open_note_item_title"
-        android:alpha="0.5"
         android:importantForAccessibility="no"
-        android:scaleType="centerInside"
+        android:padding="@dimen/small_margin"
         android:src="@drawable/ic_lock_vector"
         android:visibility="gone" />
 
