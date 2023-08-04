@@ -10,7 +10,7 @@ class DateTimePatternInfoDialog(activity: BaseSimpleActivity) {
     init {
         val view = activity.layoutInflater.inflate(R.layout.datetime_pattern_info_layout, null)
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok) { _, _ -> { } }
+            .setPositiveButton(com.simplemobiletools.commons.R.string.ok) { _, _ -> { } }
             .apply {
                 activity.setupDialogStuff(view, this)
             }

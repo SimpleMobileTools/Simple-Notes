@@ -1,0 +1,47 @@
+[versions]
+#jetbrains
+kotlin = "1.9.0"
+#KSP
+kotlinxSerializationJson = "1.5.1"
+ksp = "1.9.0-1.0.12"
+#AndroidX
+androidx-constraintlayout = "2.1.4"
+androidx-documentfile = "1.0.1"
+#Room
+room = "2.6.0-alpha02"
+#Simple tools
+simple-commons = "c5a32fb1f3"
+#Gradle
+gradlePlugins-agp = "8.1.0"
+#build
+app-build-compileSDKVersion = "34"
+app-build-targetSDK = "34"
+app-build-minimumSDK = "23"
+app-build-javaVersion = "VERSION_17"
+app-build-kotlinJVMTarget = "17"
+#versioning
+app-version-appId = "com.simplemobiletools.notes.pro"
+app-version-versionCode = "108"
+app-version-versionName = "6.16.0"
+[libraries]
+#AndroidX
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-documentfile = { module = "androidx.documentfile:documentfile", version.ref = "androidx-documentfile" }
+#Room
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+#Simple Mobile Tools
+simple-tools-commons = { module = "com.github.SimpleMobileTools:Simple-Commons", version.ref = "simple-commons" }
+#Kotlin
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+[bundles]
+room = [
+    "androidx-room-ktx",
+    "androidx-room-runtime",
+]
+[plugins]
+android = { id = "com.android.application", version.ref = "gradlePlugins-agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

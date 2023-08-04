@@ -3,25 +3,24 @@ package com.simplemobiletools.notes.pro.dialogs
 import android.app.Activity
 import android.content.DialogInterface.BUTTON_POSITIVE
 import com.simplemobiletools.commons.extensions.*
-import com.simplemobiletools.notes.pro.R
-import kotlinx.android.synthetic.main.dialog_rename_checklist_item.view.*
+import com.simplemobiletools.notes.pro.databinding.DialogRenameChecklistItemBinding
 
 class RenameChecklistItemDialog(val activity: Activity, val oldTitle: String, callback: (newTitle: String) -> Unit) {
     init {
-        val view = activity.layoutInflater.inflate(R.layout.dialog_rename_checklist_item, null).apply {
-            checklist_item_title.setText(oldTitle)
+        val binding = DialogRenameChecklistItemBinding.inflate(activity.layoutInflater).apply {
+            checklistItemTitle.setText(oldTitle)
         }
 
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok, null)
-            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(com.simplemobiletools.commons.R.string.ok, null)
+            .setNegativeButton(com.simplemobiletools.commons.R.string.cancel, null)
             .apply {
-                activity.setupDialogStuff(view, this) { alertDialog ->
-                    alertDialog.showKeyboard(view.checklist_item_title)
+                activity.setupDialogStuff(binding.root, this) { alertDialog ->
+                    alertDialog.showKeyboard(binding.checklistItemTitle)
                     alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
-                        val newTitle = view.checklist_item_title.value
+                        val newTitle = binding.checklistItemTitle.value
                         when {
-                            newTitle.isEmpty() -> activity.toast(R.string.empty_name)
+                            newTitle.isEmpty() -> activity.toast(com.simplemobiletools.commons.R.string.empty_name)
                             else -> {
                                 callback(newTitle)
                                 alertDialog.dismiss()

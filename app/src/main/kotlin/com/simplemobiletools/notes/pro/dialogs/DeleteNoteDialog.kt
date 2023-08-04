@@ -6,30 +6,30 @@ import com.simplemobiletools.commons.extensions.getAlertDialogBuilder
 import com.simplemobiletools.commons.extensions.setupDialogStuff
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
+import com.simplemobiletools.notes.pro.databinding.DialogDeleteNoteBinding
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.dialog_delete_note.view.*
 
 class DeleteNoteDialog(val activity: SimpleActivity, val note: Note, val callback: (deleteFile: Boolean) -> Unit) {
     var dialog: AlertDialog? = null
 
     init {
         val message = String.format(activity.getString(R.string.delete_note_prompt_message), note.title)
-        val view = activity.layoutInflater.inflate(R.layout.dialog_delete_note, null).apply {
+        val binding = DialogDeleteNoteBinding.inflate(activity.layoutInflater).apply{
             if (note.path.isNotEmpty()) {
-                delete_note_checkbox.text = String.format(activity.getString(R.string.delete_file_itself), note.path)
-                delete_note_checkbox_holder.beVisible()
-                delete_note_checkbox_holder.setOnClickListener {
-                    delete_note_checkbox.toggle()
+                deleteNoteCheckbox.text = String.format(activity.getString(R.string.delete_file_itself), note.path)
+                deleteNoteCheckboxHolder.beVisible()
+                deleteNoteCheckboxHolder.setOnClickListener {
+                    deleteNoteCheckbox.toggle()
                 }
             }
-            delete_note_description.text = message
+            deleteNoteDescription.text = message
         }
 
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.delete) { dialog, which -> dialogConfirmed(view.delete_note_checkbox.isChecked) }
-            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(com.simplemobiletools.commons.R.string.delete) { dialog, which -> dialogConfirmed(binding.deleteNoteCheckbox.isChecked) }
+            .setNegativeButton(com.simplemobiletools.commons.R.string.cancel, null)
             .apply {
-                activity.setupDialogStuff(view, this)
+                activity.setupDialogStuff(binding.root, this)
             }
     }
 

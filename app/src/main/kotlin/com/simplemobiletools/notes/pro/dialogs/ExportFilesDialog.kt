@@ -5,34 +5,34 @@ import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
+import com.simplemobiletools.notes.pro.databinding.DialogExportFilesBinding
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.dialog_export_files.view.*
 
 class ExportFilesDialog(val activity: SimpleActivity, val notes: ArrayList<Note>, val callback: (parent: String, extension: String) -> Unit) {
     init {
         var realPath = activity.config.lastUsedSavePath
-        val view = activity.layoutInflater.inflate(R.layout.dialog_export_files, null).apply {
-            folder_path.setText(activity.humanizePath(realPath))
+        val binding = DialogExportFilesBinding.inflate(activity.layoutInflater).apply {
+            folderPath.setText(activity.humanizePath(realPath))
 
             extension.setText(activity.config.lastUsedExtension)
-            folder_path.setOnClickListener {
+            folderPath.setOnClickListener {
                 FilePickerDialog(activity, realPath, false, false, true, true) {
-                    folder_path.setText(activity.humanizePath(it))
+                    folderPath.setText(activity.humanizePath(it))
                     realPath = it
                 }
             }
         }
 
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok, null)
-            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(com.simplemobiletools.commons.R.string.ok, null)
+            .setNegativeButton(com.simplemobiletools.commons.R.string.cancel, null)
             .apply {
-                activity.setupDialogStuff(view, this, R.string.export_as_file) { alertDialog ->
-                    alertDialog.showKeyboard(view.extension)
+                activity.setupDialogStuff(binding.root, this, R.string.export_as_file) { alertDialog ->
+                    alertDialog.showKeyboard(binding.extension)
                     alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
                         activity.handleSAFDialog(realPath) {
-                            val extension = view.extension.value
+                            val extension = binding.extension.value
                             activity.config.lastUsedExtension = extension
                             activity.config.lastUsedSavePath = realPath
                             callback(realPath, extension)

@@ -39,14 +39,13 @@ import com.simplemobiletools.notes.pro.BuildConfig
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.adapters.NotesPagerAdapter
 import com.simplemobiletools.notes.pro.databases.NotesDatabase
+import com.simplemobiletools.notes.pro.databinding.ActivityMainBinding
 import com.simplemobiletools.notes.pro.dialogs.*
 import com.simplemobiletools.notes.pro.extensions.*
 import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.item_checklist.*
 import java.io.File
 import java.nio.charset.Charset
 import java.util.*
@@ -81,26 +80,29 @@ class MainActivity : SimpleActivity() {
     private lateinit var searchNextBtn: ImageView
     private lateinit var searchClearBtn: ImageView
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         appLaunched(BuildConfig.APPLICATION_ID)
         setupOptionsMenu()
         refreshMenuItems()
 
-        updateMaterialActivityViews(main_coordinator, null, useTransparentNavigation = false, useTopSearchMenu = false)
+        updateMaterialActivityViews(binding.mainCoordinator, null, useTransparentNavigation = false, useTopSearchMenu = false)
 
-        searchQueryET = findViewById(R.id.search_query)
-        searchPrevBtn = findViewById(R.id.search_previous)
-        searchNextBtn = findViewById(R.id.search_next)
-        searchClearBtn = findViewById(R.id.search_clear)
+        searchQueryET = findViewById(com.simplemobiletools.commons.R.id.search_query)
+        searchPrevBtn = findViewById(com.simplemobiletools.commons.R.id.search_previous)
+        searchNextBtn = findViewById(com.simplemobiletools.commons.R.id.search_next)
+        searchClearBtn = findViewById(com.simplemobiletools.commons.R.id.search_clear)
 
         initViewPager(intent.getLongExtra(OPEN_NOTE_ID, -1L))
-        pager_tab_strip.drawFullUnderline = false
-        pager_tab_strip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
-        pager_tab_strip.layoutParams.height =
-            (pager_tab_strip.height + resources.getDimension(R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
+        binding.pagerTabStrip.drawFullUnderline = false
+        binding.pagerTabStrip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
+        binding.pagerTabStrip.layoutParams.height =
+            (binding.pagerTabStrip.height + resources.getDimension(com.simplemobiletools.commons.R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
         checkWhatsNewDialog()
         checkIntents(intent)
 
@@ -115,14 +117,14 @@ class MainActivity : SimpleActivity() {
         setupSearchButtons()
 
         if (isPackageInstalled("com.simplemobiletools.notes")) {
-            val dialogText = getString(R.string.upgraded_from_free_notes)
-            ConfirmationDialog(this, dialogText, 0, R.string.ok, 0, false) {}
+            val dialogText = getString(com.simplemobiletools.commons.R.string.upgraded_from_free_notes)
+            ConfirmationDialog(this, dialogText, 0, com.simplemobiletools.commons.R.string.ok, 0, false) {}
         }
     }
 
     override fun onResume() {
         super.onResume()
-        setupToolbar(main_toolbar)
+        setupToolbar(binding.mainToolbar)
         if (storedEnableLineWrap != config.enableLineWrap) {
             initViewPager()
         }
@@ -134,24 +136,24 @@ class MainActivity : SimpleActivity() {
         }
 
         refreshMenuItems()
-        pager_tab_strip.apply {
+        binding.pagerTabStrip.apply {
             setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
             setGravity(Gravity.CENTER_VERTICAL)
             setNonPrimaryAlpha(0.4f)
             setTextColor(getProperPrimaryColor())
             tabIndicatorColor = getProperPrimaryColor()
         }
-        updateTextColors(view_pager)
+        updateTextColors(binding.viewPager)
 
         checkShortcuts()
 
-        search_wrapper.setBackgroundColor(getProperStatusBarColor())
+        binding.searchWrapper.setBackgroundColor(getProperStatusBarColor())
         val contrastColor = getProperPrimaryColor().getContrastColor()
         arrayListOf(searchPrevBtn, searchNextBtn, searchClearBtn).forEach {
             it.applyColorFilter(contrastColor)
         }
 
-        updateTopBarColors(main_toolbar, getProperBackgroundColor())
+        updateTopBarColors(binding.mainToolbar, getProperBackgroundColor())
     }
 
     override fun onPause() {
@@ -170,7 +172,7 @@ class MainActivity : SimpleActivity() {
         val multipleNotesExist = mNotes.size > 1
         val isCurrentItemChecklist = isCurrentItemChecklist()
 
-        main_toolbar.menu.apply {
+        binding.mainToolbar.menu.apply {
             findItem(R.id.undo).apply {
                 isVisible = showUndoButton && mCurrentNote.type == NoteType.TYPE_TEXT
                 icon?.alpha = if (isEnabled) 255 else 127
@@ -190,18 +192,18 @@ class MainActivity : SimpleActivity() {
             findItem(R.id.import_folder).isVisible = !isQPlus()
             findItem(R.id.lock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && !mCurrentNote.isLocked())
             findItem(R.id.unlock_note).isVisible = mNotes.isNotEmpty() && (::mCurrentNote.isInitialized && mCurrentNote.isLocked())
-            findItem(R.id.more_apps_from_us).isVisible = !resources.getBoolean(R.bool.hide_google_relations)
+            findItem(R.id.more_apps_from_us).isVisible = !resources.getBoolean(com.simplemobiletools.commons.R.bool.hide_google_relations)
 
             saveNoteButton = findItem(R.id.save_note)
             saveNoteButton!!.isVisible =
                 !config.autosaveNotes && showSaveButton && (::mCurrentNote.isInitialized && mCurrentNote.type == NoteType.TYPE_TEXT)
         }
 
-        pager_tab_strip.beVisibleIf(multipleNotesExist)
+        binding.pagerTabStrip.beVisibleIf(multipleNotesExist)
     }
 
     private fun setupOptionsMenu() {
-        main_toolbar.setOnMenuItemClickListener { menuItem ->
+        binding.mainToolbar.setOnMenuItemClickListener { menuItem ->
             if (config.autosaveNotes && menuItem.itemId != R.id.undo && menuItem.itemId != R.id.redo) {
                 saveCurrentNote(false)
             }
@@ -257,7 +259,7 @@ class MainActivity : SimpleActivity() {
 
     override fun onBackPressed() {
         if (!config.autosaveNotes && mAdapter?.anyHasUnsavedChanges() == true) {
-            ConfirmationAdvancedDialog(this, "", R.string.unsaved_changes_warning, R.string.save, R.string.discard) {
+            ConfirmationAdvancedDialog(this, "", R.string.unsaved_changes_warning, com.simplemobiletools.commons.R.string.save, com.simplemobiletools.commons.R.string.discard) {
                 if (it) {
                     mAdapter?.saveAllFragmentTexts()
                 }
@@ -273,7 +275,7 @@ class MainActivity : SimpleActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         val wantedNoteId = intent.getLongExtra(OPEN_NOTE_ID, -1L)
-        view_pager.currentItem = getWantedNoteIndex(wantedNoteId)
+        binding.viewPager.currentItem = getWantedNoteIndex(wantedNoteId)
         checkIntents(intent)
     }
 
@@ -309,7 +311,7 @@ class MainActivity : SimpleActivity() {
     private fun getNewTextNoteShortcut(appIconColor: Int): ShortcutInfo {
         val shortLabel = getString(R.string.text_note)
         val longLabel = getString(R.string.new_text_note)
-        val drawable = resources.getDrawable(R.drawable.shortcut_plus)
+        val drawable = resources.getDrawable(com.simplemobiletools.commons.R.drawable.shortcut_plus)
         (drawable as LayerDrawable).findDrawableByLayerId(R.id.shortcut_plus_background).applyColorFilter(appIconColor)
         val bmp = drawable.convertToBitmap()
 
@@ -426,7 +428,7 @@ class MainActivity : SimpleActivity() {
             mNotes = notes
             mCurrentNote = mNotes[0]
             mAdapter = NotesPagerAdapter(supportFragmentManager, mNotes, this)
-            view_pager.apply {
+            binding.viewPager.apply {
                 adapter = mAdapter
                 currentItem = getWantedNoteIndex(wantedNoteId)
                 config.currentNoteId = mCurrentNote.id!!
@@ -462,7 +464,7 @@ class MainActivity : SimpleActivity() {
             closeSearch()
         }
 
-        view_pager.onPageChangeListener {
+        binding.viewPager.onPageChangeListener {
             currentTextFragment?.removeTextWatcher()
             currentNotesView()?.let { noteView ->
                 noteView.text!!.clearBackgroundSpans()
@@ -529,9 +531,9 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun getCurrentFragment() = mAdapter?.getFragment(view_pager.currentItem)
+    private fun getCurrentFragment() = mAdapter?.getFragment(binding.viewPager.currentItem)
 
-    private val currentTextFragment: TextFragment? get() = mAdapter?.textFragment(view_pager.currentItem)
+    private val currentTextFragment: TextFragment? get() = mAdapter?.textFragment(binding.viewPager.currentItem)
 
     private fun selectSearchMatch(editText: MyEditText) {
         if (searchMatches.isNotEmpty()) {
@@ -544,7 +546,7 @@ class MainActivity : SimpleActivity() {
 
     private fun openSearch() {
         isSearchActive = true
-        search_wrapper.fadeIn()
+        binding.searchWrapper.fadeIn()
         showKeyboard(searchQueryET)
 
         currentNotesView()?.let { noteView ->
@@ -560,7 +562,7 @@ class MainActivity : SimpleActivity() {
     private fun closeSearch() {
         searchQueryET.text?.clear()
         isSearchActive = false
-        search_wrapper.fadeOut()
+        binding.searchWrapper.fadeOut()
         hideKeyboard()
     }
 
@@ -570,10 +572,10 @@ class MainActivity : SimpleActivity() {
         return getNoteIndexWithId(noteIdToOpen)
     }
 
-    private fun currentNotesView() = if (view_pager == null) {
+    private fun currentNotesView() = if (binding.viewPager == null) {
         null
     } else {
-        mAdapter?.getCurrentNotesView(view_pager.currentItem)
+        mAdapter?.getCurrentNotesView(binding.viewPager.currentItem)
     }
 
     private fun displayRenameDialog() {
@@ -592,7 +594,7 @@ class MainActivity : SimpleActivity() {
             }
         } else {
             val index = getNoteIndexWithId(id)
-            view_pager.currentItem = index
+            binding.viewPager.currentItem = index
             mCurrentNote = mNotes[index]
         }
     }
@@ -613,7 +615,7 @@ class MainActivity : SimpleActivity() {
             showRedoButton = false
             initViewPager(newNoteId)
             updateSelectedNote(newNoteId)
-            view_pager.onGlobalLayout {
+            binding.viewPager.onGlobalLayout {
                 mAdapter?.focusEditText(getNoteIndexWithId(newNoteId))
             }
         }
@@ -628,15 +630,15 @@ class MainActivity : SimpleActivity() {
         val licenses = LICENSE_RTL
 
         val faqItems = arrayListOf(
-            FAQItem(R.string.faq_1_title_commons, R.string.faq_1_text_commons),
+            FAQItem(com.simplemobiletools.commons.R.string.faq_1_title_commons, com.simplemobiletools.commons.R.string.faq_1_text_commons),
             FAQItem(R.string.faq_1_title, R.string.faq_1_text)
         )
 
-        if (!resources.getBoolean(R.bool.hide_google_relations)) {
-            faqItems.add(FAQItem(R.string.faq_2_title_commons, R.string.faq_2_text_commons))
-            faqItems.add(FAQItem(R.string.faq_6_title_commons, R.string.faq_6_text_commons))
-            faqItems.add(FAQItem(R.string.faq_7_title_commons, R.string.faq_7_text_commons))
-            faqItems.add(FAQItem(R.string.faq_10_title_commons, R.string.faq_10_text_commons))
+        if (!resources.getBoolean(com.simplemobiletools.commons.R.bool.hide_google_relations)) {
+            faqItems.add(FAQItem(com.simplemobiletools.commons.R.string.faq_2_title_commons, com.simplemobiletools.commons.R.string.faq_2_text_commons))
+            faqItems.add(FAQItem(com.simplemobiletools.commons.R.string.faq_6_title_commons, com.simplemobiletools.commons.R.string.faq_6_text_commons))
+            faqItems.add(FAQItem(com.simplemobiletools.commons.R.string.faq_7_title_commons, com.simplemobiletools.commons.R.string.faq_7_text_commons))
+            faqItems.add(FAQItem(com.simplemobiletools.commons.R.string.faq_10_title_commons, com.simplemobiletools.commons.R.string.faq_10_text_commons))
         }
 
         startAboutActivity(R.string.app_name, licenses, BuildConfig.VERSION_NAME, faqItems, true)
@@ -656,7 +658,7 @@ class MainActivity : SimpleActivity() {
                     putExtra(Intent.EXTRA_MIME_TYPES, mimetypes)
                     startActivityForResult(this, PICK_OPEN_FILE_INTENT)
                 } catch (e: ActivityNotFoundException) {
-                    toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                    toast(com.simplemobiletools.commons.R.string.system_service_disabled, Toast.LENGTH_LONG)
                 } catch (e: Exception) {
                     showErrorToast(e)
                 }
@@ -693,7 +695,7 @@ class MainActivity : SimpleActivity() {
     private fun checkFile(path: String, checkTitle: Boolean, onChecksPassed: (file: File) -> Unit) {
         val file = File(path)
         if (path.isMediaFile()) {
-            toast(R.string.invalid_file_format)
+            toast(com.simplemobiletools.commons.R.string.invalid_file_format)
         } else if (file.length() > 1000 * 1000) {
             toast(R.string.file_too_large)
         } else if (checkTitle && mNotes.any { it.title.equals(path.getFilenameFromPath(), true) }) {
@@ -734,7 +736,7 @@ class MainActivity : SimpleActivity() {
                     if (realPath != null) {
                         openPath(realPath)
                     } else {
-                        R.string.unknown_error_occurred
+                        com.simplemobiletools.commons.R.string.unknown_error_occurred
                     }
                 } else if (realPath != null && realPath != "") {
                     checkFile(realPath, false) {
@@ -831,7 +833,7 @@ class MainActivity : SimpleActivity() {
                     }
                 }
             } else {
-                toast(R.string.no_storage_permissions)
+                toast(com.simplemobiletools.commons.R.string.no_storage_permissions)
             }
         }
     }
@@ -861,7 +863,7 @@ class MainActivity : SimpleActivity() {
                 try {
                     startActivityForResult(this, PICK_EXPORT_FILE_INTENT)
                 } catch (e: ActivityNotFoundException) {
-                    toast(R.string.system_service_disabled, Toast.LENGTH_LONG)
+                    toast(com.simplemobiletools.commons.R.string.system_service_disabled, Toast.LENGTH_LONG)
                 } catch (e: NetworkErrorException) {
                     toast(getString(R.string.cannot_load_over_internet), Toast.LENGTH_LONG)
                 } catch (e: Exception) {
@@ -875,7 +877,7 @@ class MainActivity : SimpleActivity() {
         ExportFileDialog(this, mCurrentNote) {
             val textToExport = if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
             if (textToExport == null || textToExport.isEmpty()) {
-                toast(R.string.unknown_error_occurred)
+                toast(com.simplemobiletools.commons.R.string.unknown_error_occurred)
             } else if (mCurrentNote.type == NoteType.TYPE_TEXT) {
                 showExportFilePickUpdateDialog(it, textToExport)
             } else {
@@ -902,7 +904,7 @@ class MainActivity : SimpleActivity() {
                         mCurrentNote.value = textToExport
                     }
 
-                    getPagerAdapter().updateCurrentNoteData(view_pager.currentItem, mCurrentNote.path, mCurrentNote.value)
+                    getPagerAdapter().updateCurrentNoteData(binding.viewPager.currentItem, mCurrentNote.path, mCurrentNote.value)
                     NotesHelper(this).insertOrUpdateNote(mCurrentNote)
                 }
             }
@@ -924,7 +926,7 @@ class MainActivity : SimpleActivity() {
     private fun exportNoteValueToFile(path: String, content: String, showSuccessToasts: Boolean, callback: ((success: Boolean) -> Unit)? = null) {
         try {
             if (File(path).isDirectory) {
-                toast(R.string.name_taken)
+                toast(com.simplemobiletools.commons.R.string.name_taken)
                 return
             }
 
@@ -1022,15 +1024,15 @@ class MainActivity : SimpleActivity() {
         }
     }
 
-    private fun getPagerAdapter() = view_pager.adapter as NotesPagerAdapter
+    private fun getPagerAdapter() = binding.viewPager.adapter as NotesPagerAdapter
 
-    private fun getCurrentNoteText() = getPagerAdapter().getCurrentNoteViewText(view_pager.currentItem)
+    private fun getCurrentNoteText() = getPagerAdapter().getCurrentNoteViewText(binding.viewPager.currentItem)
 
     private fun getCurrentNoteValue(): String {
         return if (mCurrentNote.type == NoteType.TYPE_TEXT) {
             getCurrentNoteText() ?: ""
         } else {
-            getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
+            getPagerAdapter().getNoteChecklistItems(binding.viewPager.currentItem) ?: ""
         }
     }
 
@@ -1039,19 +1041,19 @@ class MainActivity : SimpleActivity() {
             getCurrentNoteText() ?: ""
         } else {
             var printableText = ""
-            getPagerAdapter().getNoteChecklistRawItems(view_pager.currentItem)?.forEach {
+            getPagerAdapter().getNoteChecklistRawItems(binding.viewPager.currentItem)?.forEach {
                 printableText += "${it.title}\n\n"
             }
             printableText
         }
     }
 
-    private fun addTextToCurrentNote(text: String) = getPagerAdapter().appendText(view_pager.currentItem, text)
+    private fun addTextToCurrentNote(text: String) = getPagerAdapter().appendText(binding.viewPager.currentItem, text)
 
     private fun saveCurrentNote(force: Boolean) {
-        getPagerAdapter().saveCurrentNote(view_pager.currentItem, force)
+        getPagerAdapter().saveCurrentNote(binding.viewPager.currentItem, force)
         if (mCurrentNote.type == NoteType.TYPE_CHECKLIST) {
-            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(view_pager.currentItem) ?: ""
+            mCurrentNote.value = getPagerAdapter().getNoteChecklistItems(binding.viewPager.currentItem) ?: ""
         }
     }
 
@@ -1102,7 +1104,7 @@ class MainActivity : SimpleActivity() {
             if (deleteFile) {
                 deleteFile(FileDirItem(note.path, note.title)) {
                     if (!it) {
-                        toast(R.string.unknown_error_occurred)
+                        toast(com.simplemobiletools.commons.R.string.unknown_error_occurred)
                     }
                 }
             }
@@ -1130,11 +1132,11 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun undo() {
-        mAdapter?.undo(view_pager.currentItem)
+        mAdapter?.undo(binding.viewPager.currentItem)
     }
 
     private fun redo() {
-        mAdapter?.redo(view_pager.currentItem)
+        mAdapter?.redo(binding.viewPager.currentItem)
     }
 
     private fun getNoteIndexWithId(id: Long): Int {
@@ -1155,7 +1157,7 @@ class MainActivity : SimpleActivity() {
         }
 
         val res = resources
-        val shareTitle = res.getString(R.string.share_via)
+        val shareTitle = res.getString(com.simplemobiletools.commons.R.string.share_via)
         Intent().apply {
             action = Intent.ACTION_SEND
             putExtra(Intent.EXTRA_SUBJECT, mCurrentNote.title)
@@ -1190,7 +1192,7 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun lockNote() {
-        ConfirmationDialog(this, "", R.string.locking_warning, R.string.ok, R.string.cancel) {
+        ConfirmationDialog(this, "", R.string.locking_warning, com.simplemobiletools.commons.R.string.ok, com.simplemobiletools.commons.R.string.cancel) {
             SecurityDialog(this, "", SHOW_ALL_TABS) { hash, type, success ->
                 if (success) {
                     mCurrentNote.protectionHash = hash
@@ -1271,12 +1273,12 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun removeDoneItems() {
-        getPagerAdapter().removeDoneCheckListItems(view_pager.currentItem)
+        getPagerAdapter().removeDoneCheckListItems(binding.viewPager.currentItem)
     }
 
     private fun displaySortChecklistDialog() {
         SortChecklistDialog(this) {
-            getPagerAdapter().refreshChecklist(view_pager.currentItem)
+            getPagerAdapter().refreshChecklist(binding.viewPager.currentItem)
             updateWidgets()
         }
     }
