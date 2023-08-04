@@ -66,7 +66,7 @@ class SettingsActivity : SimpleActivity() {
         updateTextColors(binding.settingsNestedScrollview)
 
         arrayOf(
-            binding.settingsColorCustomizationLabel,
+            binding.settingsColorCustomizationSectionLabel,
             binding.settingsGeneralSettingsLabel,
             binding.settingsTextLabel,
             binding.settingsStartupLabel,
