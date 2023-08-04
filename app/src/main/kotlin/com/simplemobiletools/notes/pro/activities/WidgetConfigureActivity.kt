@@ -21,6 +21,7 @@ import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.commons.models.RadioItem
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
+import com.simplemobiletools.notes.pro.databinding.WidgetConfigBinding
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
 import com.simplemobiletools.notes.pro.extensions.widgetsDB
@@ -29,9 +30,6 @@ import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
 import com.simplemobiletools.notes.pro.models.Widget
-import kotlinx.android.synthetic.main.widget_config.*
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
 
 class WidgetConfigureActivity : SimpleActivity() {
     private var mBgAlpha = 0f
@@ -43,12 +41,14 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mIsCustomizingColors = false
     private var mShowTitle = false
     private var mNotes = listOf<Note>()
+    private lateinit var binding: WidgetConfigBinding
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         useDynamicTheme = false
         super.onCreate(savedInstanceState)
         setResult(RESULT_CANCELED)
-        setContentView(R.layout.widget_config)
+        binding = WidgetConfigBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initVariables()
 
         mWidgetId = intent.extras?.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID) ?: AppWidgetManager.INVALID_APPWIDGET_ID
@@ -57,25 +57,25 @@ class WidgetConfigureActivity : SimpleActivity() {
             finish()
         }
 
-        updateTextColors(notes_picker_holder)
-        config_save.setOnClickListener { saveConfig() }
-        config_bg_color.setOnClickListener { pickBackgroundColor() }
-        config_text_color.setOnClickListener { pickTextColor() }
-        notes_picker_value.setOnClickListener { showNoteSelector() }
+        updateTextColors(binding.notesPickerHolder)
+        binding.configSave.setOnClickListener { saveConfig() }
+        binding.configBgColor.setOnClickListener { pickBackgroundColor() }
+        binding.configTextColor.setOnClickListener { pickTextColor() }
+        binding.notesPickerValue.setOnClickListener { showNoteSelector() }
 
         val primaryColor = getProperPrimaryColor()
-        config_bg_seekbar.setColors(mTextColor, primaryColor, primaryColor)
-        notes_picker_holder.background = ColorDrawable(getProperBackgroundColor())
+        binding.configBgSeekbar.setColors(mTextColor, primaryColor, primaryColor)
+        binding.notesPickerHolder.background = ColorDrawable(getProperBackgroundColor())
 
-        show_note_title_holder.setOnClickListener {
-            show_note_title.toggle()
+        binding.showNoteTitleHolder.setOnClickListener {
+            binding.showNoteTitle.toggle()
             handleNoteTitleDisplay()
         }
     }
 
     override fun onResume() {
         super.onResume()
-        text_note_view.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
+        binding.textNoteView.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
     }
 
     private fun initVariables() {
@@ -89,14 +89,14 @@ class WidgetConfigureActivity : SimpleActivity() {
             mShowTitle = extras?.getBoolean(CUSTOMIZED_WIDGET_SHOW_TITLE) ?: false
         }
 
-        if (mTextColor == resources.getColor(R.color.default_widget_text_color) && config.isUsingSystemTheme) {
-            mTextColor = resources.getColor(R.color.you_primary_color, theme)
+        if (mTextColor == resources.getColor(com.simplemobiletools.commons.R.color.default_widget_text_color) && config.isUsingSystemTheme) {
+            mTextColor = resources.getColor(com.simplemobiletools.commons.R.color.you_primary_color, theme)
         }
 
         mBgAlpha = Color.alpha(mBgColor) / 255.toFloat()
 
         mBgColorWithoutTransparency = Color.rgb(Color.red(mBgColor), Color.green(mBgColor), Color.blue(mBgColor))
-        config_bg_seekbar.apply {
+        binding.configBgSeekbar.apply {
             progress = (mBgAlpha * 100).toInt()
 
             onSeekBarChangeListener {
@@ -108,12 +108,12 @@ class WidgetConfigureActivity : SimpleActivity() {
 
         updateTextColor()
         mIsCustomizingColors = extras?.getBoolean(IS_CUSTOMIZING_COLORS) ?: false
-        notes_picker_holder.beVisibleIf(!mIsCustomizingColors)
-        text_note_view_title.beGoneIf(!mShowTitle)
+        binding.notesPickerHolder.beVisibleIf(!mIsCustomizingColors)
+        binding.textNoteViewTitle.beGoneIf(!mShowTitle)
 
         NotesHelper(this).getNotes {
             mNotes = it
-            notes_picker_holder.beVisibleIf(mNotes.size > 1 && !mIsCustomizingColors)
+            binding.notesPickerHolder.beVisibleIf(mNotes.size > 1 && !mIsCustomizingColors)
             var note = mNotes.firstOrNull { !it.isLocked() }
 
             if (mNotes.size == 1 && note == null) {
@@ -157,8 +157,8 @@ class WidgetConfigureActivity : SimpleActivity() {
 
     private fun updateCurrentNote(note: Note) {
         mCurrentNoteId = note.id!!
-        notes_picker_value.text = note.title
-        text_note_view_title.text = note.title
+        binding.notesPickerValue.text = note.title
+        binding.textNoteViewTitle.text = note.title
         if (note.type == NoteType.TYPE_CHECKLIST) {
             val checklistItemType = object : TypeToken<List<ChecklistItem>>() {}.type
             val items = Gson().fromJson<ArrayList<ChecklistItem>>(note.value, checklistItemType) ?: ArrayList(1)
@@ -172,18 +172,18 @@ class WidgetConfigureActivity : SimpleActivity() {
                 }
             }
 
-            ChecklistAdapter(this, items, null, checklist_note_view, false) {}.apply {
+            ChecklistAdapter(this, items, null, binding.checklistNoteView, false) {}.apply {
                 updateTextColor(mTextColor)
-                checklist_note_view.adapter = this
+                binding.checklistNoteView.adapter = this
             }
-            text_note_view.beGone()
-            checklist_note_view.beVisible()
+            binding.textNoteView.beGone()
+            binding.checklistNoteView.beVisible()
         } else {
             val sampleValue = if (note.value.isEmpty() || mIsCustomizingColors) getString(R.string.widget_config) else note.value
-            text_note_view.text = sampleValue
-            text_note_view.typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
-            text_note_view.beVisible()
-            checklist_note_view.beGone()
+            binding.textNoteView.text = sampleValue
+            binding.textNoteView.typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
+            binding.textNoteView.beVisible()
+            binding.checklistNoteView.beGone()
         }
     }
 
@@ -233,19 +233,19 @@ class WidgetConfigureActivity : SimpleActivity() {
 
     private fun updateBackgroundColor() {
         mBgColor = mBgColorWithoutTransparency.adjustAlpha(mBgAlpha)
-        text_note_view.setBackgroundColor(mBgColor)
-        checklist_note_view.setBackgroundColor(mBgColor)
-        text_note_view_title.setBackgroundColor(mBgColor)
-        config_bg_color.setFillWithStroke(mBgColor, mBgColor)
-        config_save.backgroundTintList = ColorStateList.valueOf(getProperPrimaryColor())
+        binding.textNoteView.setBackgroundColor(mBgColor)
+        binding.checklistNoteView.setBackgroundColor(mBgColor)
+        binding.textNoteViewTitle.setBackgroundColor(mBgColor)
+        binding.configBgColor.setFillWithStroke(mBgColor, mBgColor)
+        binding.configSave.backgroundTintList = ColorStateList.valueOf(getProperPrimaryColor())
     }
 
     private fun updateTextColor() {
-        text_note_view.setTextColor(mTextColor)
-        text_note_view_title.setTextColor(mTextColor)
-        (checklist_note_view.adapter as? ChecklistAdapter)?.updateTextColor(mTextColor)
-        config_text_color.setFillWithStroke(mTextColor, mTextColor)
-        config_save.setTextColor(getProperPrimaryColor().getContrastColor())
+        binding.textNoteView.setTextColor(mTextColor)
+        binding.textNoteViewTitle.setTextColor(mTextColor)
+        (binding.checklistNoteView.adapter as? ChecklistAdapter)?.updateTextColor(mTextColor)
+        binding.configTextColor.setFillWithStroke(mTextColor, mTextColor)
+        binding.configSave.setTextColor(getProperPrimaryColor().getContrastColor())
     }
 
     private fun pickBackgroundColor() {
@@ -267,8 +267,8 @@ class WidgetConfigureActivity : SimpleActivity() {
     }
 
     private fun handleNoteTitleDisplay() {
-        val showTitle = show_note_title.isChecked
-        text_note_view_title.beGoneIf(!showTitle)
+        val showTitle = binding.showNoteTitle.isChecked
+        binding.textNoteViewTitle.beGoneIf(!showTitle)
         mShowTitle = showTitle
     }
 }

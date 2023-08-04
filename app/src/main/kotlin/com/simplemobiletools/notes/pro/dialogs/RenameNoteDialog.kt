@@ -6,28 +6,29 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
+import com.simplemobiletools.notes.pro.databinding.DialogRenameNoteBinding
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.dialog_new_note.view.*
 import java.io.File
 
 class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val currentNoteText: String?, val callback: (note: Note) -> Unit) {
 
     init {
-        val view = activity.layoutInflater.inflate(R.layout.dialog_rename_note, null)
-        view.locked_note_title.setText(note.title)
+        val binding = DialogRenameNoteBinding.inflate(activity.layoutInflater)
+        val view = binding.root
+        binding.lockedNoteTitle.setText(note.title)
 
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok, null)
-            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(com.simplemobiletools.commons.R.string.ok, null)
+            .setNegativeButton(com.simplemobiletools.commons.R.string.cancel, null)
             .apply {
                 activity.setupDialogStuff(view, this, R.string.rename_note) { alertDialog ->
-                    alertDialog.showKeyboard(view.locked_note_title)
+                    alertDialog.showKeyboard(binding.lockedNoteTitle)
                     alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
-                        val title = view.locked_note_title.value
+                        val title = binding.lockedNoteTitle.value
                         ensureBackgroundThread {
                             newTitleConfirmed(title, alertDialog)
                         }
@@ -55,14 +56,14 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val current
                     }
                 } else {
                     if (title.isEmpty()) {
-                        activity.toast(R.string.filename_cannot_be_empty)
+                        activity.toast(com.simplemobiletools.commons.R.string.filename_cannot_be_empty)
                         return
                     }
 
                     val file = File(path)
                     val newFile = File(file.parent, title)
                     if (!newFile.name.isAValidFilename()) {
-                        activity.toast(R.string.invalid_name)
+                        activity.toast(com.simplemobiletools.commons.R.string.invalid_name)
                         return
                     }
 
@@ -74,7 +75,7 @@ class RenameNoteDialog(val activity: SimpleActivity, val note: Note, val current
                                 callback(note)
                             }
                         } else {
-                            activity.toast(R.string.rename_file_error)
+                            activity.toast(com.simplemobiletools.commons.R.string.rename_file_error)
                             return@renameFile
                         }
                     }

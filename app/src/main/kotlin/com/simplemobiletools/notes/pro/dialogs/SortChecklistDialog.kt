@@ -9,11 +9,12 @@ import com.simplemobiletools.commons.helpers.SORT_BY_TITLE
 import com.simplemobiletools.commons.helpers.SORT_DESCENDING
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
+import com.simplemobiletools.notes.pro.databinding.DialogSortChecklistBinding
 import com.simplemobiletools.notes.pro.extensions.config
-import kotlinx.android.synthetic.main.dialog_sort_checklist.view.*
 
 class SortChecklistDialog(private val activity: SimpleActivity, private val callback: () -> Unit) {
-    private val view = activity.layoutInflater.inflate(R.layout.dialog_sort_checklist, null)
+    private val binding = DialogSortChecklistBinding.inflate(activity.layoutInflater)
+    private val view = binding.root
     private val config = activity.config
     private var currSorting = config.sorting
 
@@ -23,56 +24,55 @@ class SortChecklistDialog(private val activity: SimpleActivity, private val call
         setupMoveUndoneChecklistItems()
 
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok) { _, _ -> dialogConfirmed() }
-            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(com.simplemobiletools.commons.R.string.ok) { _, _ -> dialogConfirmed() }
+            .setNegativeButton(com.simplemobiletools.commons.R.string.cancel, null)
             .apply {
-                activity.setupDialogStuff(view, this, R.string.sort_by)
+                activity.setupDialogStuff(view, this, com.simplemobiletools.commons.R.string.sort_by)
             }
     }
 
     private fun setupSortRadio() {
-        val fieldRadio = view.sorting_dialog_radio_sorting
+        val fieldRadio = binding.sortingDialogRadioSorting
         fieldRadio.setOnCheckedChangeListener { group, checkedId ->
-            val isCustomSorting = checkedId == fieldRadio.sorting_dialog_radio_custom.id
-            view.sorting_dialog_radio_order.beGoneIf(isCustomSorting)
-            view.sorting_dialog_order_divider.beGoneIf(isCustomSorting)
-            view.move_undone_checklist_items_divider.beGoneIf(isCustomSorting)
-            view.settings_move_undone_checklist_items_holder.beGoneIf(isCustomSorting)
+            val isCustomSorting = checkedId == binding.sortingDialogRadioCustom.id
+            binding.sortingDialogRadioOrder.beGoneIf(isCustomSorting)
+            binding.sortingDialogOrderDivider.beGoneIf(isCustomSorting)
+            binding.moveUndoneChecklistItemsDivider.beGoneIf(isCustomSorting)
+            binding.settingsMoveUndoneChecklistItemsHolder.beGoneIf(isCustomSorting)
         }
 
-        var fieldBtn = fieldRadio.sorting_dialog_radio_title
+        var fieldBtn = binding.sortingDialogRadioTitle
 
         if (currSorting and SORT_BY_DATE_CREATED != 0) {
-            fieldBtn = fieldRadio.sorting_dialog_radio_date_created
+            fieldBtn = binding.sortingDialogRadioDateCreated
         }
 
         if (currSorting and SORT_BY_CUSTOM != 0) {
-            fieldBtn = fieldRadio.sorting_dialog_radio_custom
+            fieldBtn = binding.sortingDialogRadioCustom
         }
 
         fieldBtn.isChecked = true
     }
 
     private fun setupOrderRadio() {
-        val orderRadio = view.sorting_dialog_radio_order
-        var orderBtn = orderRadio.sorting_dialog_radio_ascending
+        var orderBtn = binding.sortingDialogRadioAscending
 
         if (currSorting and SORT_DESCENDING != 0) {
-            orderBtn = orderRadio.sorting_dialog_radio_descending
+            orderBtn = binding.sortingDialogRadioDescending
         }
 
         orderBtn.isChecked = true
     }
 
     private fun setupMoveUndoneChecklistItems() {
-        view.settings_move_undone_checklist_items.isChecked = config.moveDoneChecklistItems
-        view.settings_move_undone_checklist_items_holder.setOnClickListener {
-            view.settings_move_undone_checklist_items.toggle()
+        binding.settingsMoveUndoneChecklistItems.isChecked = config.moveDoneChecklistItems
+        binding.settingsMoveUndoneChecklistItemsHolder.setOnClickListener {
+            binding.settingsMoveUndoneChecklistItems.toggle()
         }
     }
 
     private fun dialogConfirmed() {
-        val sortingRadio = view.sorting_dialog_radio_sorting
+        val sortingRadio = binding.sortingDialogRadioSorting
         var sorting = when (sortingRadio.checkedRadioButtonId) {
             R.id.sorting_dialog_radio_date_created -> SORT_BY_DATE_CREATED
             R.id.sorting_dialog_radio_custom -> SORT_BY_CUSTOM
@@ -80,7 +80,7 @@ class SortChecklistDialog(private val activity: SimpleActivity, private val call
         }
 
         if (sortingRadio.checkedRadioButtonId != R.id.sorting_dialog_radio_custom
-            && view.sorting_dialog_radio_order.checkedRadioButtonId == R.id.sorting_dialog_radio_descending
+            && binding.sortingDialogRadioOrder.checkedRadioButtonId == R.id.sorting_dialog_radio_descending
         ) {
             sorting = sorting or SORT_DESCENDING
         }
@@ -89,7 +89,7 @@ class SortChecklistDialog(private val activity: SimpleActivity, private val call
             config.sorting = sorting
         }
 
-        config.moveDoneChecklistItems = view.settings_move_undone_checklist_items.isChecked
+        config.moveDoneChecklistItems = binding.settingsMoveUndoneChecklistItems.isChecked
         callback()
     }
 }

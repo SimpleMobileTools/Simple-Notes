@@ -18,15 +18,11 @@ import com.simplemobiletools.commons.extensions.isBlackAndWhiteTheme
 import com.simplemobiletools.commons.helpers.LOWER_ALPHA_INT
 import com.simplemobiletools.commons.helpers.SORT_BY_CUSTOM
 import com.simplemobiletools.commons.views.MyRecyclerView
-import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.databinding.OpenNoteItemBinding
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
-import kotlinx.android.synthetic.main.open_note_item.view.icon_lock
-import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_holder
-import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_text
-import kotlinx.android.synthetic.main.open_note_item.view.open_note_item_title
 
 class OpenNoteAdapter(
     activity: BaseSimpleActivity, var items: List<Note>,
@@ -51,7 +47,7 @@ class OpenNoteAdapter(
     override fun prepareActionMode(menu: Menu) {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return createViewHolder(R.layout.open_note_item, parent)
+        return createViewHolder(OpenNoteItemBinding.inflate(layoutInflater, parent, false).root)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -65,26 +61,26 @@ class OpenNoteAdapter(
     override fun getItemCount() = items.size
 
     private fun setupView(view: View, note: Note) {
-        view.apply {
-            setupCard(open_note_item_holder)
-            open_note_item_title.apply {
+        OpenNoteItemBinding.bind(view).apply {
+            root.setupCard()
+            openNoteItemTitle.apply {
                 text = note.title
                 setTextColor(properPrimaryColor)
             }
-            val formattedText = note.getFormattedValue(context)
-            open_note_item_text.beGoneIf(formattedText.isNullOrBlank() || note.isLocked())
-            icon_lock.beVisibleIf(note.isLocked())
-            icon_lock.setImageDrawable(activity.resources.getColoredDrawableWithColor(R.drawable.ic_lock_vector, properPrimaryColor))
-            open_note_item_text.apply {
+            val formattedText = note.getFormattedValue(root.context)
+            openNoteItemText.beGoneIf(formattedText.isNullOrBlank() || note.isLocked())
+            iconLock.beVisibleIf(note.isLocked())
+            iconLock.setImageDrawable(activity.resources.getColoredDrawableWithColor(com.simplemobiletools.commons.R.drawable.ic_lock_vector, properPrimaryColor))
+            openNoteItemText.apply {
                 text = formattedText
                 setTextColor(textColor)
             }
         }
     }
 
-    private fun View.setupCard(holder: View) {
+    private fun View.setupCard() {
         if (context.isBlackAndWhiteTheme()) {
-            holder.setBackgroundResource(R.drawable.black_dialog_background)
+            setBackgroundResource(com.simplemobiletools.commons.R.drawable.black_dialog_background)
         } else {
             val cardBackgroundColor = if (backgroundColor == Color.BLACK) {
                 Color.WHITE
@@ -92,11 +88,11 @@ class OpenNoteAdapter(
                 Color.BLACK
             }
             val cardBackground = if (context.config.isUsingSystemTheme) {
-                R.drawable.dialog_you_background
+                com.simplemobiletools.commons.R.drawable.dialog_you_background
             } else {
-                R.drawable.dialog_bg
+                com.simplemobiletools.commons.R.drawable.dialog_bg
             }
-            holder.background =
+            background =
                 activity.resources.getColoredDrawableWithColor(cardBackground, cardBackgroundColor, LOWER_ALPHA_INT)
         }
     }

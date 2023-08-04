@@ -4,14 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.SORT_BY_CUSTOM
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
-import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
 import com.simplemobiletools.notes.pro.adapters.ChecklistAdapter
+import com.simplemobiletools.notes.pro.databinding.FragmentChecklistBinding
 import com.simplemobiletools.notes.pro.dialogs.NewChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
@@ -20,22 +22,21 @@ import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.fragment_checklist.view.*
 import java.io.File
 
 class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private var noteId = 0L
 
-    lateinit var view: ViewGroup
+    lateinit var binding: FragmentChecklistBinding
 
     var items = mutableListOf<ChecklistItem>()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        view = inflater.inflate(R.layout.fragment_checklist, container, false) as ViewGroup
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentChecklistBinding.inflate(inflater, container, false)
         noteId = requireArguments().getLong(NOTE_ID, 0L)
         setupFragmentColors()
-        return view
+        return binding.root
     }
 
     override fun onResume() {
@@ -48,8 +49,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
         if (menuVisible) {
             activity?.hideKeyboard()
-        } else if (::view.isInitialized) {
-            (view.checklist_list.adapter as? ChecklistAdapter)?.finishActMode()
+        } else if (::binding.isInitialized) {
+            (binding.checklistList.adapter as? ChecklistAdapter)?.finishActMode()
         }
     }
 
@@ -105,7 +106,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private fun setupFragmentColors() {
         val adjustedPrimaryColor = requireActivity().getProperPrimaryColor()
-        view.checklist_fab.apply {
+        binding.checklistFab.apply {
             setColors(
                 requireActivity().getProperTextColor(),
                 adjustedPrimaryColor,
@@ -114,12 +115,12 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
             setOnClickListener {
                 showNewItemDialog()
-                (view.checklist_list.adapter as? ChecklistAdapter)?.finishActMode()
+                (binding.checklistList.adapter as? ChecklistAdapter)?.finishActMode()
             }
         }
 
-        view.fragment_placeholder.setTextColor(requireActivity().getProperTextColor())
-        view.fragment_placeholder_2.apply {
+        binding.fragmentPlaceholder.setTextColor(requireActivity().getProperTextColor())
+        binding.fragmentPlaceholder2.apply {
             setTextColor(adjustedPrimaryColor)
             underlineText()
             setOnClickListener {
@@ -133,10 +134,10 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             return
         }
 
-        view.apply {
-            checklist_content_holder.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
-            checklist_fab.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
-            setupLockedViews(this, note!!)
+        binding.apply {
+            checklistContentHolder.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
+            checklistFab.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
+            setupLockedViews(this.toCommonBinding(), note!!)
         }
     }
 
@@ -176,7 +177,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             activity = activity as SimpleActivity,
             items = items,
             listener = this,
-            recyclerView = view.checklist_list,
+            recyclerView = binding.checklistList,
             showIcons = true
         ) { item ->
             val clickedNote = item as ChecklistItem
@@ -185,7 +186,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             saveNote(items.indexOfFirst { it.id == clickedNote.id })
             context?.updateWidgets()
         }.apply {
-            view.checklist_list.adapter = this
+            binding.checklistList.adapter = this
         }
     }
 
@@ -204,8 +205,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
         if (note != null) {
             if (refreshIndex != -1) {
-                view.checklist_list.post {
-                    view.checklist_list.adapter?.notifyItemChanged(refreshIndex)
+                binding.checklistList.post {
+                    binding.checklistList.adapter?.notifyItemChanged(refreshIndex)
                 }
             }
 
@@ -225,10 +226,10 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     }
 
     private fun updateUIVisibility() {
-        view.apply {
-            fragment_placeholder.beVisibleIf(items.isEmpty())
-            fragment_placeholder_2.beVisibleIf(items.isEmpty())
-            checklist_list.beVisibleIf(items.isNotEmpty())
+        binding.apply {
+            fragmentPlaceholder.beVisibleIf(items.isEmpty())
+            fragmentPlaceholder2.beVisibleIf(items.isEmpty())
+            checklistList.beVisibleIf(items.isNotEmpty())
         }
     }
 
@@ -241,5 +242,15 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
     override fun refreshItems() {
         loadNoteById(noteId)
         setupAdapter()
+    }
+
+    private fun FragmentChecklistBinding.toCommonBinding(): CommonNoteBinding = this.let {
+        object : CommonNoteBinding {
+            override val root: View = it.root
+            override val noteLockedLayout: View = it.noteLockedLayout
+            override val noteLockedImage: ImageView = it.noteLockedImage
+            override val noteLockedLabel: TextView = it.noteLockedLabel
+            override val noteLockedShow: TextView = it.noteLockedShow
+        }
     }
 }

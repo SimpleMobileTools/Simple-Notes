@@ -1,58 +1,55 @@
 package com.simplemobiletools.notes.pro.dialogs
 
-import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
-import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
+import com.simplemobiletools.notes.pro.databinding.DialogManageAutomaticBackupsBinding
 import com.simplemobiletools.notes.pro.extensions.config
-import kotlinx.android.synthetic.main.dialog_manage_automatic_backups.view.backup_notes_filename
-import kotlinx.android.synthetic.main.dialog_manage_automatic_backups.view.backup_notes_filename_hint
-import kotlinx.android.synthetic.main.dialog_manage_automatic_backups.view.backup_notes_folder
 import java.io.File
 
 class ManageAutoBackupsDialog(private val activity: SimpleActivity, onSuccess: () -> Unit) {
-    private val view = (activity.layoutInflater.inflate(R.layout.dialog_manage_automatic_backups, null) as ViewGroup)
+    private val binding = DialogManageAutomaticBackupsBinding.inflate(activity.layoutInflater)
+    private val view = binding.root
     private val config = activity.config
     private var backupFolder = config.autoBackupFolder
 
     init {
-        view.apply {
-            backup_notes_folder.setText(activity.humanizePath(backupFolder))
+        binding.apply {
+            backupNotesFolder.setText(activity.humanizePath(backupFolder))
             val filename = config.autoBackupFilename.ifEmpty {
-                "${activity.getString(R.string.notes)}_%Y%M%D_%h%m%s"
+                "${activity.getString(com.simplemobiletools.commons.R.string.notes)}_%Y%M%D_%h%m%s"
             }
 
-            backup_notes_filename.setText(filename)
-            backup_notes_filename_hint.setEndIconOnClickListener {
+            backupNotesFilename.setText(filename)
+            backupNotesFilenameHint.setEndIconOnClickListener {
                 DateTimePatternInfoDialog(activity)
             }
 
-            backup_notes_filename_hint.setEndIconOnLongClickListener {
+            backupNotesFilenameHint.setEndIconOnLongClickListener {
                 DateTimePatternInfoDialog(activity)
                 true
             }
 
-            backup_notes_folder.setOnClickListener {
+            backupNotesFolder.setOnClickListener {
                 selectBackupFolder()
             }
         }
 
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok, null)
-            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(com.simplemobiletools.commons.R.string.ok, null)
+            .setNegativeButton(com.simplemobiletools.commons.R.string.cancel, null)
             .apply {
-                activity.setupDialogStuff(view, this, R.string.manage_automatic_backups) { dialog ->
+                activity.setupDialogStuff(view, this, com.simplemobiletools.commons.R.string.manage_automatic_backups) { dialog ->
                     dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                        val filename = view.backup_notes_filename.value
+                        val filename = binding.backupNotesFilename.value
                         when {
-                            filename.isEmpty() -> activity.toast(R.string.empty_name)
+                            filename.isEmpty() -> activity.toast(com.simplemobiletools.commons.R.string.empty_name)
                             filename.isAValidFilename() -> {
                                 val file = File(backupFolder, "$filename.json")
                                 if (file.exists() && !file.canWrite()) {
-                                    activity.toast(R.string.name_taken)
+                                    activity.toast(com.simplemobiletools.commons.R.string.name_taken)
                                     return@setOnClickListener
                                 }
 
@@ -70,7 +67,7 @@ class ManageAutoBackupsDialog(private val activity: SimpleActivity, onSuccess: (
                                 }
                             }
 
-                            else -> activity.toast(R.string.invalid_name)
+                            else -> activity.toast(com.simplemobiletools.commons.R.string.invalid_name)
                         }
                     }
                 }
@@ -78,7 +75,7 @@ class ManageAutoBackupsDialog(private val activity: SimpleActivity, onSuccess: (
     }
 
     private fun selectBackupFolder() {
-        activity.hideKeyboard(view.backup_notes_filename)
+        activity.hideKeyboard(binding.backupNotesFilename)
         FilePickerDialog(activity, backupFolder, false, showFAB = true) { path ->
             activity.handleSAFDialog(path) { grantedSAF ->
                 if (!grantedSAF) {
@@ -91,7 +88,7 @@ class ManageAutoBackupsDialog(private val activity: SimpleActivity, onSuccess: (
                     }
 
                     backupFolder = path
-                    view.backup_notes_folder.setText(activity.humanizePath(path))
+                    binding.backupNotesFolder.setText(activity.humanizePath(path))
                 }
             }
         }

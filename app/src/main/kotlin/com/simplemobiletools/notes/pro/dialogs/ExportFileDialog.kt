@@ -5,46 +5,46 @@ import com.simplemobiletools.commons.dialogs.FilePickerDialog
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.SimpleActivity
+import com.simplemobiletools.notes.pro.databinding.DialogExportFileBinding
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.dialog_export_file.view.*
 import java.io.File
 
 class ExportFileDialog(val activity: SimpleActivity, val note: Note, val callback: (exportPath: String) -> Unit) {
 
     init {
         var realPath = File(note.path).parent ?: activity.config.lastUsedSavePath
-        val view = activity.layoutInflater.inflate(R.layout.dialog_export_file, null).apply {
-            file_path.setText(activity.humanizePath(realPath))
+        val binding = DialogExportFileBinding.inflate(activity.layoutInflater).apply {
+            filePath.setText(activity.humanizePath(realPath))
 
-            file_name.setText(note.title)
+            fileName.setText(note.title)
             extension.setText(activity.config.lastUsedExtension)
-            file_path.setOnClickListener {
+            filePath.setOnClickListener {
                 FilePickerDialog(activity, realPath, false, false, true, true) {
-                    file_path.setText(activity.humanizePath(it))
+                    filePath.setText(activity.humanizePath(it))
                     realPath = it
                 }
             }
         }
 
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok, null)
-            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(com.simplemobiletools.commons.R.string.ok, null)
+            .setNegativeButton(com.simplemobiletools.commons.R.string.cancel, null)
             .apply {
-                activity.setupDialogStuff(view, this, R.string.export_as_file) { alertDialog ->
-                    alertDialog.showKeyboard(view.file_name)
+                activity.setupDialogStuff(binding.root, this, R.string.export_as_file) { alertDialog ->
+                    alertDialog.showKeyboard(binding.fileName)
                     alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
-                        val filename = view.file_name.value
-                        val extension = view.extension.value
+                        val filename = binding.fileName.value
+                        val extension = binding.extension.value
 
                         if (filename.isEmpty()) {
-                            activity.toast(R.string.filename_cannot_be_empty)
+                            activity.toast(com.simplemobiletools.commons.R.string.filename_cannot_be_empty)
                             return@setOnClickListener
                         }
 
                         val fullFilename = if (extension.isEmpty()) filename else "$filename.$extension"
                         if (!fullFilename.isAValidFilename()) {
-                            activity.toast(String.format(activity.getString(R.string.filename_invalid_characters_placeholder, fullFilename)))
+                            activity.toast(String.format(activity.getString(com.simplemobiletools.commons.R.string.filename_invalid_characters_placeholder, fullFilename)))
                             return@setOnClickListener
                         }
 

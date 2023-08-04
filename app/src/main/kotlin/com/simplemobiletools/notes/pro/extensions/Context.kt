@@ -41,7 +41,7 @@ fun Context.updateWidgets() {
     }
 }
 
-fun Context.getPercentageFontSize() = resources.getDimension(R.dimen.middle_text_size) * (config.fontSizePercentage / 100f)
+fun Context.getPercentageFontSize() = resources.getDimension(com.simplemobiletools.commons.R.dimen.middle_text_size) * (config.fontSizePercentage / 100f)
 
 fun BaseSimpleActivity.requestUnlockNotes(notes: List<Note>, callback: (unlockedNotes: List<Note>) -> Unit) {
     val lockedNotes = notes.filter { it.isLocked() }
@@ -95,7 +95,7 @@ fun Context.backupNotes() {
         val config = config
         NotesHelper(this).getNotes { notesToBackup ->
             if (notesToBackup.isEmpty()) {
-                toast(R.string.no_entries_for_exporting)
+                toast(com.simplemobiletools.commons.R.string.no_entries_for_exporting)
                 config.lastAutoBackupTime = DateTime.now().millis
                 scheduleNextAutomaticBackup()
                 return@getNotes
@@ -153,7 +153,7 @@ fun Context.backupNotes() {
             }
 
             if (exportResult == ExportResult.EXPORT_FAIL) {
-                toast(R.string.exporting_failed)
+                toast(com.simplemobiletools.commons.R.string.exporting_failed)
             }
 
             config.lastAutoBackupTime = DateTime.now().millis

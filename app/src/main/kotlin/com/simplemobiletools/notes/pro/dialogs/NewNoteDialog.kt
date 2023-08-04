@@ -6,40 +6,40 @@ import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
 import com.simplemobiletools.commons.helpers.ensureBackgroundThread
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.databinding.DialogNewNoteBinding
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.notesDB
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
-import kotlinx.android.synthetic.main.dialog_new_note.view.*
 
 class NewNoteDialog(val activity: Activity, title: String? = null, val setChecklistAsDefault: Boolean, callback: (note: Note) -> Unit) {
     init {
-        val view = activity.layoutInflater.inflate(R.layout.dialog_new_note, null).apply {
+        val binding = DialogNewNoteBinding.inflate(activity.layoutInflater).apply {
             val defaultType = when {
-                setChecklistAsDefault -> type_checklist.id
-                activity.config.lastCreatedNoteType == NoteType.TYPE_TEXT.value -> type_text_note.id
-                else -> type_checklist.id
+                setChecklistAsDefault -> typeChecklist.id
+                activity.config.lastCreatedNoteType == NoteType.TYPE_TEXT.value -> typeTextNote.id
+                else -> typeChecklist.id
             }
 
-            new_note_type.check(defaultType)
+            newNoteType.check(defaultType)
         }
 
-        view.locked_note_title.setText(title)
+        binding.lockedNoteTitle.setText(title)
 
         activity.getAlertDialogBuilder()
-            .setPositiveButton(R.string.ok, null)
-            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(com.simplemobiletools.commons.R.string.ok, null)
+            .setNegativeButton(com.simplemobiletools.commons.R.string.cancel, null)
             .apply {
-                activity.setupDialogStuff(view, this, R.string.new_note) { alertDialog ->
-                    alertDialog.showKeyboard(view.locked_note_title)
+                activity.setupDialogStuff(binding.root, this, R.string.new_note) { alertDialog ->
+                    alertDialog.showKeyboard(binding.lockedNoteTitle)
                     alertDialog.getButton(BUTTON_POSITIVE).setOnClickListener {
-                        val newTitle = view.locked_note_title.value
+                        val newTitle = binding.lockedNoteTitle.value
                         ensureBackgroundThread {
                             when {
                                 newTitle.isEmpty() -> activity.toast(R.string.no_title)
                                 activity.notesDB.getNoteIdWithTitle(newTitle) != null -> activity.toast(R.string.title_taken)
                                 else -> {
-                                    val type = if (view.new_note_type.checkedRadioButtonId == view.type_checklist.id) {
+                                    val type = if (binding.newNoteType.checkedRadioButtonId == binding.typeChecklist.id) {
                                         NoteType.TYPE_CHECKLIST
                                     } else {
                                         NoteType.TYPE_TEXT

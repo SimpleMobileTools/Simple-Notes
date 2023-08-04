@@ -16,9 +16,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.viewbinding.ViewBinding
 import com.simplemobiletools.commons.extensions.*
+import com.simplemobiletools.commons.views.MyEditText
+import com.simplemobiletools.commons.views.MyTextView
 import com.simplemobiletools.notes.pro.R
 import com.simplemobiletools.notes.pro.activities.MainActivity
+import com.simplemobiletools.notes.pro.databinding.FragmentTextBinding
+import com.simplemobiletools.notes.pro.databinding.NoteViewHorizScrollableBinding
+import com.simplemobiletools.notes.pro.databinding.NoteViewStaticBinding
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
 import com.simplemobiletools.notes.pro.extensions.updateWidgets
@@ -27,8 +35,6 @@ import com.simplemobiletools.notes.pro.helpers.NOTE_ID
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.TextHistory
 import com.simplemobiletools.notes.pro.models.TextHistoryItem
-import kotlinx.android.synthetic.main.fragment_text.view.*
-import kotlinx.android.synthetic.main.note_view_horiz_scrollable.view.*
 import java.io.File
 
 // text history handling taken from https://gist.github.com/zeleven/0cfa738c1e8b65b23ff7df1fc30c9f7e
@@ -42,29 +48,41 @@ class TextFragment : NoteFragment() {
     private var touchDownX = 0f
     private var moveXThreshold = 0      // make sure swiping across notes works well, do not swallow the gestures
 
-    lateinit var view: ViewGroup
+    private lateinit var binding: FragmentTextBinding
+    private lateinit var innerBinding: ViewBinding
+    private lateinit var noteEditText: MyEditText
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        view = inflater.inflate(R.layout.fragment_text, container, false) as ViewGroup
+        binding = FragmentTextBinding.inflate(inflater, container, false)
         noteId = requireArguments().getLong(NOTE_ID, 0L)
-        moveXThreshold = resources.getDimension(R.dimen.activity_margin).toInt()
+        moveXThreshold = resources.getDimension(com.simplemobiletools.commons.R.dimen.activity_margin).toInt()
         retainInstance = true
 
-        val layoutToInflate = if (config!!.enableLineWrap) R.layout.note_view_static else R.layout.note_view_horiz_scrollable
-        inflater.inflate(layoutToInflate, view.notes_relative_layout, true)
+        innerBinding = if (config!!.enableLineWrap) {
+            NoteViewStaticBinding.inflate(inflater, binding.notesRelativeLayout, true).apply {
+                noteEditText = textNoteView
+            }
+        } else {
+            NoteViewHorizScrollableBinding.inflate(inflater, binding.notesRelativeLayout, true).apply {
+                noteEditText = textNoteView
+            }
+        }
         if (config!!.clickableLinks) {
-            view.text_note_view.apply {
+            noteEditText.apply {
                 linksClickable = true
                 autoLinkMask = Linkify.WEB_URLS or Linkify.EMAIL_ADDRESSES
                 movementMethod = MyMovementMethod.getInstance()
             }
         }
 
-        view.notes_horizontal_scrollview?.onGlobalLayout {
-            view.text_note_view.minWidth = view.notes_horizontal_scrollview.width
+        if (innerBinding is NoteViewHorizScrollableBinding) {
+            val casted = innerBinding as NoteViewHorizScrollableBinding
+            casted.notesHorizontalScrollview.onGlobalLayout {
+                casted.textNoteView.minWidth = casted.notesHorizontalScrollview.width
+            }
         }
 
-        return view
+        return binding.root
     }
 
     override fun onResume() {
@@ -113,14 +131,14 @@ class TextFragment : NoteFragment() {
         if (savedInstanceState != null && note != null && savedInstanceState.containsKey(TEXT)) {
             skipTextUpdating = true
             val newText = savedInstanceState.getString(TEXT) ?: ""
-            view.text_note_view.setText(newText)
+            innerBinding.root.findViewById<MyTextView>(R.id.text_note_view).text = newText
         }
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private fun setupFragment() {
         val config = config ?: return
-        view.text_note_view.apply {
+        noteEditText.apply {
             typeface = if (config.monospacedFont) Typeface.MONOSPACE else Typeface.DEFAULT
 
             val fileContents = note!!.getNoteStoredValue(context)
@@ -162,13 +180,13 @@ class TextFragment : NoteFragment() {
             }
         }
 
-        view.text_note_view.setOnTouchListener { v, event ->
+        noteEditText.setOnTouchListener { v, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> touchDownX = event.x
                 MotionEvent.ACTION_MOVE -> {
                     val diffX = Math.abs(event.x - touchDownX)
                     if (diffX > moveXThreshold) {
-                        view.requestDisallowInterceptTouchEvent(false)
+                        binding.root.requestDisallowInterceptTouchEvent(false)
                     }
                 }
             }
@@ -176,8 +194,8 @@ class TextFragment : NoteFragment() {
         }
 
         if (config.showWordCount) {
-            view.notes_counter.setTextColor(requireContext().getProperTextColor())
-            setWordCounter(view.text_note_view.text.toString())
+            binding.notesCounter.setTextColor(requireContext().getProperTextColor())
+            setWordCounter(noteEditText.text.toString())
         }
 
         checkLockState()
@@ -185,27 +203,27 @@ class TextFragment : NoteFragment() {
     }
 
     fun setTextWatcher() {
-        view.text_note_view.apply {
+        noteEditText.apply {
             removeTextChangedListener(textWatcher)
             addTextChangedListener(textWatcher)
         }
     }
 
-    fun removeTextWatcher() = view.text_note_view.removeTextChangedListener(textWatcher)
+    fun removeTextWatcher() = noteEditText.removeTextChangedListener(textWatcher)
 
     override fun checkLockState() {
         if (note == null) {
             return
         }
 
-        view.apply {
-            notes_counter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && config!!.showWordCount)
-            notes_scrollview.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
-            setupLockedViews(this, note!!)
+        binding.apply {
+            notesCounter.beVisibleIf((!note!!.isLocked() || shouldShowLockedContent) && config!!.showWordCount)
+            notesScrollview.beVisibleIf(!note!!.isLocked() || shouldShowLockedContent)
+            setupLockedViews(this.toCommonBinding(), note!!)
         }
     }
 
-    fun getNotesView() = view.text_note_view
+    fun getNotesView() = noteEditText
 
     fun saveText(force: Boolean) {
         if (note == null) {
@@ -232,20 +250,20 @@ class TextFragment : NoteFragment() {
     fun hasUnsavedChanges() = note != null && getCurrentNoteViewText() != note!!.getNoteStoredValue(requireContext())
 
     fun focusEditText() {
-        view.text_note_view.requestFocus()
+        noteEditText.requestFocus()
     }
 
-    fun getCurrentNoteViewText() = view.text_note_view?.text?.toString()
+    fun getCurrentNoteViewText() = noteEditText.text?.toString()
 
     private fun setWordCounter(text: String) {
         val words = text.replace("\n", " ").split(" ")
-        view.notes_counter.text = words.count { it.isNotEmpty() }.toString()
+        binding.notesCounter.text = words.count { it.isNotEmpty() }.toString()
     }
 
     fun undo() {
         val edit = textHistory.getPrevious() ?: return
 
-        val text = view.text_note_view.editableText
+        val text = noteEditText.editableText
         val start = edit.start
         val end = start + if (edit.after != null) edit.after.length else 0
 
@@ -275,7 +293,7 @@ class TextFragment : NoteFragment() {
     fun redo() {
         val edit = textHistory.getNext() ?: return
 
-        val text = view.text_note_view.editableText
+        val text = noteEditText.editableText
         val start = edit.start
         val end = start + if (edit.before != null) edit.before.length else 0
 
@@ -321,6 +339,16 @@ class TextFragment : NoteFragment() {
             val text = editable.toString()
             setWordCounter(text)
             (activity as MainActivity).currentNoteTextChanged(text, isUndoAvailable(), isRedoAvailable())
+        }
+    }
+
+    private fun FragmentTextBinding.toCommonBinding(): CommonNoteBinding = this.let {
+        object : CommonNoteBinding {
+            override val root: View = it.root
+            override val noteLockedLayout: View = it.noteLockedLayout
+            override val noteLockedImage: ImageView = it.noteLockedImage
+            override val noteLockedLabel: TextView = it.noteLockedLabel
+            override val noteLockedShow: TextView = it.noteLockedShow
         }
     }
 }

@@ -1,7 +1,9 @@
 package com.simplemobiletools.notes.pro.fragments
 
 import android.util.TypedValue
-import android.view.ViewGroup
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.PROTECTION_NONE
@@ -10,24 +12,23 @@ import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
 import com.simplemobiletools.notes.pro.helpers.NotesHelper
 import com.simplemobiletools.notes.pro.models.Note
-import kotlinx.android.synthetic.main.fragment_checklist.view.*
 
 abstract class NoteFragment : Fragment() {
     protected var note: Note? = null
     var shouldShowLockedContent = false
 
-    protected fun setupLockedViews(view: ViewGroup, note: Note) {
-        view.apply {
-            note_locked_layout.beVisibleIf(note.isLocked() && !shouldShowLockedContent)
-            note_locked_image.applyColorFilter(requireContext().getProperTextColor())
+    protected fun setupLockedViews(binding: CommonNoteBinding, note: Note) {
+        binding.apply {
+            noteLockedLayout.beVisibleIf(note.isLocked() && !shouldShowLockedContent)
+            noteLockedImage.applyColorFilter(requireContext().getProperTextColor())
 
-            note_locked_label.setTextColor(requireContext().getProperTextColor())
-            note_locked_label.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
+            noteLockedLabel.setTextColor(requireContext().getProperTextColor())
+            noteLockedLabel.setTextSize(TypedValue.COMPLEX_UNIT_PX, binding.root.context.getPercentageFontSize())
 
-            note_locked_show.underlineText()
-            note_locked_show.setTextColor(requireContext().getProperPrimaryColor())
-            note_locked_show.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
-            note_locked_show.setOnClickListener {
+            noteLockedShow.underlineText()
+            noteLockedShow.setTextColor(requireContext().getProperPrimaryColor())
+            noteLockedShow.setTextSize(TypedValue.COMPLEX_UNIT_PX, binding.root.context.getPercentageFontSize())
+            noteLockedShow.setOnClickListener {
                 handleUnlocking()
             }
         }
@@ -72,4 +73,12 @@ abstract class NoteFragment : Fragment() {
     }
 
     abstract fun checkLockState()
+
+    interface CommonNoteBinding {
+        val root: View
+        val noteLockedLayout: View
+        val noteLockedImage: ImageView
+        val noteLockedLabel: TextView
+        val noteLockedShow: TextView
+    }
 }

@@ -348,7 +348,7 @@
             </RelativeLayout>
 
             <include
-                android:id="@+id/settings_general_settings_divider"
+                android:id="@+id/settings_saving_divider"
                 layout="@layout/divider" />
 
             <TextView

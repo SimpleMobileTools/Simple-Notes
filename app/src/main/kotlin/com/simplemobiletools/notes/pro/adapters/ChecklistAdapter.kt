@@ -21,14 +21,14 @@ import com.simplemobiletools.commons.interfaces.ItemTouchHelperContract
 import com.simplemobiletools.commons.interfaces.StartReorderDragListener
 import com.simplemobiletools.commons.views.MyRecyclerView
 import com.simplemobiletools.notes.pro.R
+import com.simplemobiletools.notes.pro.databinding.ItemChecklistBinding
 import com.simplemobiletools.notes.pro.dialogs.RenameChecklistItemDialog
 import com.simplemobiletools.notes.pro.extensions.config
 import com.simplemobiletools.notes.pro.extensions.getPercentageFontSize
 import com.simplemobiletools.notes.pro.helpers.DONE_CHECKLIST_ITEM_ALPHA
 import com.simplemobiletools.notes.pro.interfaces.ChecklistItemsListener
 import com.simplemobiletools.notes.pro.models.ChecklistItem
-import kotlinx.android.synthetic.main.item_checklist.view.*
-import java.util.*
+import java.util.Collections
 
 class ChecklistAdapter(
     activity: BaseSimpleActivity, var items: MutableList<ChecklistItem>, val listener: ChecklistItemsListener?,
@@ -95,7 +95,9 @@ class ChecklistAdapter(
         menu.findItem(R.id.cab_rename).isVisible = isOneItemSelected()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = createViewHolder(R.layout.item_checklist, parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return createViewHolder(ItemChecklistBinding.inflate(layoutInflater, parent, false).root)
+    }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
@@ -109,8 +111,14 @@ class ChecklistAdapter(
 
     private fun initDrawables() {
         val res = activity.resources
-        crossDrawable = res.getColoredDrawableWithColor(R.drawable.ic_cross_vector, res.getColor(R.color.md_red_700))
-        checkDrawable = res.getColoredDrawableWithColor(R.drawable.ic_check_vector, res.getColor(R.color.md_green_700))
+        crossDrawable = res.getColoredDrawableWithColor(
+            com.simplemobiletools.commons.R.drawable.ic_cross_vector,
+            res.getColor(com.simplemobiletools.commons.R.color.md_red_700)
+        )
+        checkDrawable = res.getColoredDrawableWithColor(
+            com.simplemobiletools.commons.R.drawable.ic_check_vector,
+            res.getColor(com.simplemobiletools.commons.R.color.md_green_700)
+        )
     }
 
     private fun renameChecklistItem() {
@@ -182,8 +190,8 @@ class ChecklistAdapter(
 
     private fun setupView(view: View, checklistItem: ChecklistItem, holder: ViewHolder) {
         val isSelected = selectedKeys.contains(checklistItem.id)
-        view.apply {
-            checklist_title.apply {
+        ItemChecklistBinding.bind(view).apply {
+            checklistTitle.apply {
                 text = checklistItem.title
                 setTextColor(textColor)
                 setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getPercentageFontSize())
@@ -198,13 +206,13 @@ class ChecklistAdapter(
                 }
             }
 
-            checklist_image.setImageDrawable(if (checklistItem.isDone) checkDrawable else crossDrawable)
-            checklist_image.beVisibleIf(showIcons && selectedKeys.isEmpty())
-            checklist_holder.isSelected = isSelected
+            checklistImage.setImageDrawable(if (checklistItem.isDone) checkDrawable else crossDrawable)
+            checklistImage.beVisibleIf(showIcons && selectedKeys.isEmpty())
+            checklistHolder.isSelected = isSelected
 
-            checklist_drag_handle.beVisibleIf(selectedKeys.isNotEmpty())
-            checklist_drag_handle.applyColorFilter(textColor)
-            checklist_drag_handle.setOnTouchListener { v, event ->
+            checklistDragHandle.beVisibleIf(selectedKeys.isNotEmpty())
+            checklistDragHandle.applyColorFilter(textColor)
+            checklistDragHandle.setOnTouchListener { v, event ->
                 if (event.action == MotionEvent.ACTION_DOWN) {
                     startReorderDragListener.requestDrag(holder)
                 }
