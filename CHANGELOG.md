@@ -1,6 +1,11 @@
 Changelog
 ==========
 
+Version 6.16.1 *(2023-08-03)*
+----------------------------
+
+ * Avoid showing locked note contents at the Open Note dialog
+
 Version 6.16.0 *(2023-08-02)*
 ----------------------------
 
