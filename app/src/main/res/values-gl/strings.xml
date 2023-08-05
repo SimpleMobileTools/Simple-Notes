@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Simple Notes</string>
+    <string name="app_name">Simple Notes: Notas</string>
     <string name="app_launcher_name">Notas</string>
     <string name="widget_config">Grazas por utilizar Simple Notes.
-\nPara máis aplicativos simples visite SimpleMobileTools.com.</string>
+\nPara máis aplicacións simples visite SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Non pode compartir un texto baleiro</string>
     <string name="simple_note">Simple Note</string>
     <string name="new_note">Engadir unha nova nota</string>
@@ -24,7 +24,7 @@
     <string name="text_note">Nota de texto</string>
     <string name="lock_note">Lock note</string>
     <string name="unlock_note">Desbloqueala nota</string>
-    <string name="unlock_notes">Desbloquealas notas</string>
+    <string name="unlock_notes">Desbloquear as notas</string>
     <string name="found_locked_notes_info">As seguintes notas atopanse bloqueadas. Podes desbloquealas unha por unha ou non exportalas.</string>
     <string name="note_content_locked">O contido das notas está bloqueado.</string>
     <string name="show_content">Mostralo contido</string>
@@ -74,7 +74,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Importar cartafoles</string>
-    <string name="export_notes">Exportar todalas notas</string>
+    <string name="export_notes">Exportar notas</string>
     <string name="import_notes">Import notes</string>
     <string name="import_notes_pro">Importar notas (Pro)</string>
     <!-- FAQ -->
