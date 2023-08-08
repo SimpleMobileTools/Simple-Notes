@@ -70,7 +70,7 @@
     <string name="add_to_the_top">Add to the top</string>
     <!-- Import / Export -->
     <string name="import_folder">Uvozite datoteko</string>
-    <string name="export_notes">Izvozite vse opombe</string>
+    <string name="export_notes">Izvozite opombe</string>
     <string name="import_notes">Uvozite opombe</string>
     <string name="import_notes_pro">Uvozite opombe (Pro)</string>
     <!-- FAQ -->
