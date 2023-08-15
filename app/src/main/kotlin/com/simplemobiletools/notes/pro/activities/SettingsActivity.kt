@@ -27,12 +27,11 @@ import kotlin.system.exitProcess
 
 class SettingsActivity : SimpleActivity() {
     private val notesFileType = "application/json"
-    private lateinit var binding: ActivitySettingsBinding
+    private val binding: ActivitySettingsBinding by viewBinding(ActivitySettingsBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
         super.onCreate(savedInstanceState)
-        binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         updateMaterialActivityViews(binding.settingsCoordinator, binding.settingsHolder, useTransparentNavigation = true, useTopSearchMenu = false)

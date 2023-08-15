@@ -27,6 +27,7 @@ import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.viewpager.widget.ViewPager
 import com.simplemobiletools.commons.dialogs.*
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
@@ -80,12 +81,11 @@ class MainActivity : SimpleActivity() {
     private lateinit var searchNextBtn: ImageView
     private lateinit var searchClearBtn: ImageView
 
-    private lateinit var binding: ActivityMainBinding
+    private val binding: ActivityMainBinding by viewBinding(ActivityMainBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         appLaunched(BuildConfig.APPLICATION_ID)
         setupOptionsMenu()
@@ -103,6 +103,7 @@ class MainActivity : SimpleActivity() {
         binding.pagerTabStrip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
         binding.pagerTabStrip.layoutParams.height =
             (binding.pagerTabStrip.height + resources.getDimension(com.simplemobiletools.commons.R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
+        (binding.pagerTabStrip.layoutParams as ViewPager.LayoutParams).isDecor = true
         checkWhatsNewDialog()
         checkIntents(intent)
 
