@@ -28,7 +28,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     private var noteId = 0L
 
-    lateinit var binding: FragmentChecklistBinding
+    private lateinit var binding: FragmentChecklistBinding
 
     var items = mutableListOf<ChecklistItem>()
 

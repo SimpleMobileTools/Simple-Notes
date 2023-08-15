@@ -41,13 +41,12 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mIsCustomizingColors = false
     private var mShowTitle = false
     private var mNotes = listOf<Note>()
-    private lateinit var binding: WidgetConfigBinding
+    private val binding: WidgetConfigBinding by viewBinding(WidgetConfigBinding::inflate)
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         useDynamicTheme = false
         super.onCreate(savedInstanceState)
         setResult(RESULT_CANCELED)
-        binding = WidgetConfigBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initVariables()
 
