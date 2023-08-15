@@ -27,6 +27,7 @@ import android.webkit.WebViewClient
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.viewpager.widget.ViewPager
 import com.simplemobiletools.commons.dialogs.*
 import com.simplemobiletools.commons.extensions.*
 import com.simplemobiletools.commons.helpers.*
@@ -102,6 +103,7 @@ class MainActivity : SimpleActivity() {
         binding.pagerTabStrip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
         binding.pagerTabStrip.layoutParams.height =
             (binding.pagerTabStrip.height + resources.getDimension(com.simplemobiletools.commons.R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
+        (binding.pagerTabStrip.layoutParams as ViewPager.LayoutParams).isDecor = true
         checkWhatsNewDialog()
         checkIntents(intent)
 
