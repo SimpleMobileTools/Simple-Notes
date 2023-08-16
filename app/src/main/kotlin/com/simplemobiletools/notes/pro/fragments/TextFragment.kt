@@ -131,7 +131,7 @@ class TextFragment : NoteFragment() {
         if (savedInstanceState != null && note != null && savedInstanceState.containsKey(TEXT)) {
             skipTextUpdating = true
             val newText = savedInstanceState.getString(TEXT) ?: ""
-            innerBinding.root.findViewById<MyTextView>(R.id.text_note_view).text = newText
+            innerBinding.root.findViewById<TextView>(R.id.text_note_view).text = newText
         }
     }
 
