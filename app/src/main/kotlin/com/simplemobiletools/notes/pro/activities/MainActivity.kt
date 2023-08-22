@@ -100,9 +100,10 @@ class MainActivity : SimpleActivity() {
 
         initViewPager(intent.getLongExtra(OPEN_NOTE_ID, -1L))
         binding.pagerTabStrip.drawFullUnderline = false
-        binding.pagerTabStrip.setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
+        val textSize = getPercentageFontSize()
+        binding.pagerTabStrip.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
         binding.pagerTabStrip.layoutParams.height =
-            (binding.pagerTabStrip.height + resources.getDimension(com.simplemobiletools.commons.R.dimen.activity_margin) * 2 * (config.fontSizePercentage / 100f)).toInt()
+            (textSize + resources.getDimension(com.simplemobiletools.commons.R.dimen.medium_margin) * 2).toInt()
         (binding.pagerTabStrip.layoutParams as ViewPager.LayoutParams).isDecor = true
         checkWhatsNewDialog()
         checkIntents(intent)
@@ -138,7 +139,10 @@ class MainActivity : SimpleActivity() {
 
         refreshMenuItems()
         binding.pagerTabStrip.apply {
-            setTextSize(TypedValue.COMPLEX_UNIT_PX, getPercentageFontSize())
+            val textSize = getPercentageFontSize()
+            setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
+            layoutParams.height =
+                (textSize + resources.getDimension(com.simplemobiletools.commons.R.dimen.medium_margin) * 2).toInt()
             setGravity(Gravity.CENTER_VERTICAL)
             setNonPrimaryAlpha(0.4f)
             setTextColor(getProperPrimaryColor())
