@@ -41,7 +41,7 @@ class WidgetConfigureActivity : SimpleActivity() {
     private var mIsCustomizingColors = false
     private var mShowTitle = false
     private var mNotes = listOf<Note>()
-    private val binding: WidgetConfigBinding by viewBinding(WidgetConfigBinding::inflate)
+    private val binding by viewBinding(WidgetConfigBinding::inflate)
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         useDynamicTheme = false

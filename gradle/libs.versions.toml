@@ -10,7 +10,7 @@ androidx-documentfile = "1.0.1"
 #Room
 room = "2.6.0-alpha02"
 #Simple tools
-simple-commons = "d1629c7f1a"
+simple-commons = "7c1e5b5777"
 #Gradle
 gradlePlugins-agp = "8.1.0"
 #build

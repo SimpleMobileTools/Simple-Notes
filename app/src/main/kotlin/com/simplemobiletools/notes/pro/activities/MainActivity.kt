@@ -81,7 +81,7 @@ class MainActivity : SimpleActivity() {
     private lateinit var searchNextBtn: ImageView
     private lateinit var searchClearBtn: ImageView
 
-    private val binding: ActivityMainBinding by viewBinding(ActivityMainBinding::inflate)
+    private val binding by viewBinding(ActivityMainBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
@@ -268,7 +268,13 @@ class MainActivity : SimpleActivity() {
 
     override fun onBackPressed() {
         if (!config.autosaveNotes && mAdapter?.anyHasUnsavedChanges() == true) {
-            ConfirmationAdvancedDialog(this, "", R.string.unsaved_changes_warning, com.simplemobiletools.commons.R.string.save, com.simplemobiletools.commons.R.string.discard) {
+            ConfirmationAdvancedDialog(
+                this,
+                "",
+                R.string.unsaved_changes_warning,
+                com.simplemobiletools.commons.R.string.save,
+                com.simplemobiletools.commons.R.string.discard
+            ) {
                 if (it) {
                     mAdapter?.saveAllFragmentTexts()
                 }

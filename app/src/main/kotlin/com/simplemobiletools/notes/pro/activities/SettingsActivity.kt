@@ -27,7 +27,7 @@ import kotlin.system.exitProcess
 
 class SettingsActivity : SimpleActivity() {
     private val notesFileType = "application/json"
-    private val binding: ActivitySettingsBinding by viewBinding(ActivitySettingsBinding::inflate)
+    private val binding by viewBinding(ActivitySettingsBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         isMaterialActivity = true
