@@ -21,8 +21,8 @@ app-build-javaVersion = "VERSION_17"
 app-build-kotlinJVMTarget = "17"
 #versioning
 app-version-appId = "com.simplemobiletools.notes.pro"
-app-version-versionCode = "112"
-app-version-versionName = "6.16.4"
+app-version-versionCode = "113"
+app-version-versionName = "6.16.5"
 [libraries]
 #AndroidX
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
