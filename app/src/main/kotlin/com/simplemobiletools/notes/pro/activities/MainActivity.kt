@@ -98,18 +98,22 @@ class MainActivity : SimpleActivity() {
         searchNextBtn = findViewById(com.simplemobiletools.commons.R.id.search_next)
         searchClearBtn = findViewById(com.simplemobiletools.commons.R.id.search_clear)
 
-        initViewPager(intent.getLongExtra(OPEN_NOTE_ID, -1L))
+        val noteToOpen = intent.getLongExtra(OPEN_NOTE_ID, -1L)
+        initViewPager(noteToOpen)
         binding.pagerTabStrip.drawFullUnderline = false
         val textSize = getPercentageFontSize()
         binding.pagerTabStrip.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
         binding.pagerTabStrip.layoutParams.height =
             (textSize + resources.getDimension(com.simplemobiletools.commons.R.dimen.medium_margin) * 2).toInt()
         (binding.pagerTabStrip.layoutParams as ViewPager.LayoutParams).isDecor = true
+
+        val hasNoIntent = intent.action.isNullOrEmpty() && noteToOpen == -1L
+
         checkWhatsNewDialog()
         checkIntents(intent)
 
         storeStateVariables()
-        if (config.showNotePicker && savedInstanceState == null) {
+        if (config.showNotePicker && savedInstanceState == null && hasNoIntent) {
             displayOpenNoteDialog()
         }
 
