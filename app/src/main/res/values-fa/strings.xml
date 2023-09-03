@@ -19,7 +19,7 @@
     <string name="add_to_note">افزودن به یادداشت</string>
     <string name="unsaved_changes_warning">شما مقداری تغییرات ذخیره نشده دارید. می‌خواهید با آنها چکار کنید؟</string>
     <string name="note_shown_widget">یادداشتی که در ابزارک نمایش داده می‌شود:</string>
-    <string name="show_note_title">Show note title</string>
+    <string name="show_note_title">نمایش عنوان یادداشت</string>
     <string name="new_note_type">نوع یادداشت جدید:</string>
     <string name="text_note">یادداشت متنی</string>
     <string name="lock_note">قفل کردن یادداشت</string>
@@ -33,9 +33,9 @@
     <string name="new_checklist">New checklist</string>
     <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
-    <string name="open_file">Open file</string>
+    <string name="open_file">بازکردن پرونده</string>
     <string name="export_as_file">برون‌ریزی به عنوان پرونده</string>
-    <string name="file_too_large">پرونده بسیاد بزرگ است، محدودیت ۱ مگابایت است</string>
+    <string name="file_too_large">پرونده بسیار بزرگ است، محدودیت ۱ مگابایت است</string>
     <string name="only_import_file_content">فقط محتویات پرونده درون‌ریزی شد
 \n(تغییر دادن پرونده تاثیری بر یادداشت نخواهد گذاشت)</string>
     <string name="update_file_at_note">هنگام به‌روز رسانی یادداشت، خود پرونده نیز به‌روز شود
