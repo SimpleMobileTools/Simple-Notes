@@ -33,7 +33,7 @@
     <string name="new_checklist">New checklist</string>
     <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <!-- File notes -->
-    <string name="open_file">بازکردن پرونده</string>
+    <string name="open_file">Open file</string>
     <string name="export_as_file">برون‌ریزی به عنوان پرونده</string>
     <string name="file_too_large">پرونده بسیاد بزرگ است، محدودیت ۱ مگابایت است</string>
     <string name="only_import_file_content">فقط محتویات پرونده درون‌ریزی شد
