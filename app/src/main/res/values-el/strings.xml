@@ -47,7 +47,7 @@
 \n(η αλλαγή της σημείωσης δεν θα επηρεάσει το αρχείο)</string>
     <!-- Settings -->
     <string name="display_success_message">Εμφάνιση μηνυμάτων επιτυχούς αποθήκευσης</string>
-    <string name="links_and_emails_clickable">Δυνατότητα επιλογής συνδέσεων και μηνυμάτων ηλεκτρονικού ταχυδρομείου</string>
+    <string name="links_and_emails_clickable">Δυνατότητα επιλογής συνδέσμων και email</string>
     <string name="place_cursor_end">Τοποθέτηση δρομέα στο τέλος της σημείωσης</string>
     <string name="monospaced_font">Χρήση μονοδιάστατης γραμματοσειράς</string>
     <string name="show_keyboard">Εμφάνιση πληκτρολογίου κατά την εκκίνηση</string>
