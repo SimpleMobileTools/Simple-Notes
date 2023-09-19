@@ -71,11 +71,11 @@
     <string name="add_new_checklist_items">Додати нові позиції у списку</string>
     <string name="checklist_is_empty">Список порожній</string>
     <string name="remove_done_items">Вилучати виконані позиції</string>
-    <string name="add_to_the_top">Add to the top</string>
+    <string name="add_to_the_top">Додати вгорі</string>
     <!-- Import / Export -->
     <string name="import_folder">Імпортувати теку</string>
     <string name="export_notes">Експортувати нотатки</string>
-    <string name="import_notes">Import notes</string>
+    <string name="import_notes">Імпортувати нотатки</string>
     <string name="import_notes_pro">Імпорт нотаток (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Як я можу змінити колір віджетів\?</string>
