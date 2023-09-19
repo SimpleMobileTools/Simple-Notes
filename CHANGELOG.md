@@ -1,6 +1,12 @@
 Changelog
 ==========
 
+Version 6.17.0 *(2023-09-19)*
+----------------------------
+
+ * Show smaller preview of notes at Open Note dialog
+ * Added some stability translation improvements
+
 Version 6.16.5 *(2023-08-30)*
 ----------------------------
 
