@@ -78,13 +78,9 @@ class ChecklistAdapter(
 
     override fun getItemKeyPosition(key: Int) = items.indexOfFirst { it.id == key }
 
-    override fun onActionModeCreated() {
-        notifyDataSetChanged()
-    }
+    override fun onActionModeCreated() {}
 
-    override fun onActionModeDestroyed() {
-        notifyDataSetChanged()
-    }
+    override fun onActionModeDestroyed() {}
 
     override fun prepareActionMode(menu: Menu) {
         val selectedItems = getSelectedItems()
@@ -161,27 +157,35 @@ class ChecklistAdapter(
 
     private fun moveSelectedItemsToTop() {
         activity.config.sorting = SORT_BY_CUSTOM
+        val movedPositions = mutableListOf<Int>()
         selectedKeys.reversed().forEach { checklistId ->
             val position = items.indexOfFirst { it.id == checklistId }
             val tempItem = items[position]
             items.removeAt(position)
+            movedPositions.add(position)
             items.add(0, tempItem)
         }
 
-        notifyDataSetChanged()
+        movedPositions.forEach {
+            notifyItemMoved(it, 0)
+        }
         listener?.saveChecklist()
     }
 
     private fun moveSelectedItemsToBottom() {
         activity.config.sorting = SORT_BY_CUSTOM
+        val movedPositions = mutableListOf<Int>()
         selectedKeys.forEach { checklistId ->
             val position = items.indexOfFirst { it.id == checklistId }
             val tempItem = items[position]
             items.removeAt(position)
+            movedPositions.add(position)
             items.add(items.size, tempItem)
         }
 
-        notifyDataSetChanged()
+        movedPositions.forEach {
+            notifyItemMoved(it, items.size - 1)
+        }
         listener?.saveChecklist()
     }
 
