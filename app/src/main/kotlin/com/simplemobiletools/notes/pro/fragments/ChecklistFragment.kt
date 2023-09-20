@@ -190,7 +190,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
         }
     }
 
-    private fun saveNote(refreshIndex: Int = -1) {
+    private fun saveNote(refreshIndex: Int = -1, callback: () -> Unit = {}) {
         if (note == null) {
             return
         }
@@ -215,6 +215,7 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
             ensureBackgroundThread {
                 saveNoteValue(note!!, note!!.value)
                 context?.updateWidgets()
+                activity?.runOnUiThread(callback)
             }
         }
     }
@@ -235,8 +236,8 @@ class ChecklistFragment : NoteFragment(), ChecklistItemsListener {
 
     fun getChecklistItems() = Gson().toJson(items)
 
-    override fun saveChecklist() {
-        saveNote()
+    override fun saveChecklist(callback: () -> Unit) {
+        saveNote(callback = callback)
     }
 
     override fun refreshItems() {
