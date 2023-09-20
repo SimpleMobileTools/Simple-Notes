@@ -35,7 +35,7 @@
     <string name="new_note_type">New note type:</string>
     <string name="faq_1_text">In case you have only 1 active widget, you can either recreate it, or use the button in the app settings for customizing it. If you have multiple active widgets, the button in the app settings will not be available. As the app supports color customization per-widget, you will have to recreate the widget that you want to customize.</string>
     <string name="enable_line_wrap">Enable line wrap</string>
-    <string name="app_launcher_name">Notes</string>
+    <string name="app_launcher_name">ᱠᱷᱟᱪᱚ ᱚᱞ</string>
     <string name="locking_warning">WARNING: If you forget the notes\' password, you won\'t be able to recover it or access the notes\' content anymore.</string>
     <string name="unlock_note">Unlock note</string>
     <string name="widget_note">Note used in widget</string>
@@ -61,7 +61,7 @@
     <string name="cannot_load_over_internet">The app cannot load files over the internet</string>
     <string name="export_notes">Export notes</string>
     <string name="simple_note">Simple Note</string>
-    <string name="app_name">Simple Notes</string>
+    <string name="app_name">ᱥᱟᱫᱷᱟᱨᱚᱬ ᱠᱷᱟᱴᱚ ᱚᱞ</string>
     <string name="widget_config">Thank you for using Simple Notes.
 \nFor more simple apps please visit SimpleMobileTools.com.</string>
     <string name="remove_done_items">Remove done items</string>
