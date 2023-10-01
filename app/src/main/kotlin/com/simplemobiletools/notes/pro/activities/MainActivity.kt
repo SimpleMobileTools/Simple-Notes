@@ -47,6 +47,7 @@ import com.simplemobiletools.notes.pro.fragments.TextFragment
 import com.simplemobiletools.notes.pro.helpers.*
 import com.simplemobiletools.notes.pro.models.Note
 import com.simplemobiletools.notes.pro.models.NoteType
+import org.json.JSONArray
 import java.io.File
 import java.nio.charset.Charset
 import java.util.*
@@ -1165,7 +1166,11 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun shareText() {
-        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT) getCurrentNoteText() else mCurrentNote.value
+        val text = if (mCurrentNote.type == NoteType.TYPE_TEXT) {
+            getCurrentNoteText()
+        } else {
+            getTitlesFromCheckList(mCurrentNote.value)
+        }
         if (text.isNullOrEmpty()) {
             toast(R.string.cannot_share_empty_text)
             return
@@ -1180,6 +1185,31 @@ class MainActivity : SimpleActivity() {
             type = "text/plain"
             startActivity(Intent.createChooser(this, shareTitle))
         }
+    }
+
+    private fun getTitlesFromCheckList(jsonStr: String): String {
+
+        val jsonArray = JSONArray(jsonStr)
+
+        val stringBuilder = StringBuilder()
+
+        for (i in 0 until jsonArray.length()) {
+            val jsonObject = jsonArray.getJSONObject(i)
+            val title = jsonObject.getString("title")
+            val isDone = jsonObject.getBoolean("isDone")
+
+            // Append a checkmark based on the "isDone" value
+            val checkmark = if (isDone) "✔" else "✘"
+
+            stringBuilder.append("$checkmark $title")
+
+            // Add a newline separator if it's not the last item
+            if (i < jsonArray.length() - 1) {
+                stringBuilder.append("\n")
+            }
+        }
+
+        return stringBuilder.toString()
     }
 
     @SuppressLint("NewApi")
