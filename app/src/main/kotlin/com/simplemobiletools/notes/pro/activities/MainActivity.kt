@@ -1198,12 +1198,10 @@ class MainActivity : SimpleActivity() {
             val title = jsonObject.getString("title")
             val isDone = jsonObject.getBoolean("isDone")
 
-            // Append a checkmark based on the "isDone" value
             val checkmark = if (isDone) "✔" else "✘"
 
             stringBuilder.append("$checkmark $title")
 
-            // Add a newline separator if it's not the last item
             if (i < jsonArray.length() - 1) {
                 stringBuilder.append("\n")
             }
