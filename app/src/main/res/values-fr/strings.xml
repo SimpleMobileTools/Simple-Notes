@@ -41,12 +41,12 @@
     <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note
 \n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
     <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
-    <string name="note_saved_successfully">La note « %s » a été sauvegardée avec succès</string>
-    <string name="note_exported_successfully">La note « %s » a été exportée avec succès</string>
+    <string name="note_saved_successfully">Sauvegarde de la note « %s » réussie</string>
+    <string name="note_exported_successfully">Exportation de la note « %s » réussie</string>
     <string name="only_export_file_content">Exporter seulement le contenu du fichier
 \n(changer le fichier n\'affectera pas la note)</string>
     <!-- Settings -->
-    <string name="display_success_message">Afficher les messages de succès de sauvegarde</string>
+    <string name="display_success_message">Afficher les messages des sauvegardes réussies</string>
     <string name="links_and_emails_clickable">Rendre les liens et les courriels cliquables</string>
     <string name="place_cursor_end">Placez le curseur à la fin de la note</string>
     <string name="monospaced_font">Utiliser une police monospace</string>
