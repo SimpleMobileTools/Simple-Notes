@@ -2,13 +2,13 @@
 <resources>
     <string name="app_name">Notes simples</string>
     <string name="app_launcher_name">Notes</string>
-    <string name="widget_config">Merci d\'utiliser Notes simples.
-\nPour plus d\'applications simples, merci de visiter SimpleMobileTools.com.</string>
-    <string name="cannot_share_empty_text">Impossible de partager un texte vide</string>
+    <string name="widget_config">Merci d\'utiliser « Notes simples ».
+\nPour plus d\'applications simples, veuillez visiter « SimpleMobileTools.com ».</string>
+    <string name="cannot_share_empty_text">Il est impossible de partager un texte vide</string>
     <string name="simple_note">Note simple</string>
     <string name="new_note">Ajouter une nouvelle note</string>
     <string name="no_title">Veuillez nommer votre note</string>
-    <string name="title_taken">Une note avec le même titre existe déjà</string>
+    <string name="title_taken">Une note portant ce titre existe déjà</string>
     <string name="open_note">Ouvrir la note</string>
     <string name="delete_note">Supprimer la note</string>
     <string name="delete_note_prompt_message">Voulez-vous vraiment supprimer la note « %s » \?</string>
@@ -17,39 +17,39 @@
     <string name="general_note">Note générale</string>
     <string name="create_new_note">Créer une nouvelle note</string>
     <string name="add_to_note">Ajouter à la note</string>
-    <string name="unsaved_changes_warning">Vous avez des changements non sauvegardés. Que voulez-vous faire avec \?</string>
-    <string name="note_shown_widget">Note affichée dans le widget :</string>
+    <string name="unsaved_changes_warning">Des modifications ne sont pas enregistrées. Que voulez-vous en faire \?</string>
+    <string name="note_shown_widget">Note affichée dans le widget :</string>
     <string name="show_note_title">Afficher le titre de la note</string>
-    <string name="new_note_type">Type de la note :</string>
-    <string name="text_note">Texte</string>
+    <string name="new_note_type">Nouveau type de note :</string>
+    <string name="text_note">Note texte</string>
     <string name="lock_note">Verrouiller la note</string>
     <string name="unlock_note">Déverrouiller la note</string>
     <string name="unlock_notes">Déverrouiller les notes</string>
-    <string name="found_locked_notes_info">Les notes suivantes sont verrouillées. Vous pouvez les déverrouiller une par une ou ne pas les exporter.</string>
+    <string name="found_locked_notes_info">Les notes suivantes sont verrouillées. Vous pouvez soit les déverrouiller une par une, soit éviter leur exportation.</string>
     <string name="note_content_locked">Le contenu des notes est verrouillé.</string>
-    <string name="show_content">Montrer le contenu</string>
+    <string name="show_content">Afficher le contenu</string>
     <string name="locking_warning">AVERTISSEMENT : Si vous oubliez le mot de passe des notes, vous ne pourrez plus le récupérer ni accéder au contenu des notes.</string>
-    <string name="new_text_note">Nouvelle note textuelle</string>
+    <string name="new_text_note">Nouvelle note texte</string>
     <string name="new_checklist">Nouvelle liste de contrôle</string>
-    <string name="cannot_load_over_internet">L\'application ne peut pas charger de fichiers depuis internet</string>
+    <string name="cannot_load_over_internet">L\'application ne peut pas charger des fichiers depuis internet</string>
     <!-- File notes -->
     <string name="open_file">Ouvrir un fichier</string>
-    <string name="export_as_file">Exporter dans un fichier</string>
-    <string name="file_too_large">Fichier trop volumineux, la limite est de 1 Mo</string>
-    <string name="only_import_file_content">Importer seulement le contenu du fichier
-\n(changer le fichier n\'affectera pas la note)</string>
+    <string name="export_as_file">Exporter sous forme de fichier</string>
+    <string name="file_too_large">Le fichier est trop volumineux. La limite est de 1 Mo</string>
+    <string name="only_import_file_content">Importer uniquement le contenu du fichier
+\n(modifier le fichier n\'affectera pas la note)</string>
     <string name="update_file_at_note">Mettre à jour le fichier lui-même lors de la mise à jour de la note
-\n(la note est supprimée si le fichier est supprimé, ou si le chemin change)</string>
+\n(la note est supprimée si le fichier est supprimé ou si le chemin d\'accès change)</string>
     <string name="delete_file_itself">Supprimer également le fichier « %s »</string>
-    <string name="note_saved_successfully">Sauvegarde de la note « %s » réussie</string>
+    <string name="note_saved_successfully">Enregistrement de la note « %s » réussi</string>
     <string name="note_exported_successfully">Exportation de la note « %s » réussie</string>
-    <string name="only_export_file_content">Exporter seulement le contenu du fichier
-\n(changer le fichier n\'affectera pas la note)</string>
+    <string name="only_export_file_content">Exporter uniquement le contenu du fichier
+\n(modifier la note n\'affectera pas le fichier)</string>
     <!-- Settings -->
-    <string name="display_success_message">Afficher les messages des sauvegardes réussies</string>
-    <string name="links_and_emails_clickable">Rendre les liens et les courriels cliquables</string>
-    <string name="place_cursor_end">Placez le curseur à la fin de la note</string>
-    <string name="monospaced_font">Utiliser une police monospace</string>
+    <string name="display_success_message">Afficher les messages d\'enregistrements réussis</string>
+    <string name="links_and_emails_clickable">Rendre les liens et courriels cliquables</string>
+    <string name="place_cursor_end">Placer le curseur à la fin de la note</string>
+    <string name="monospaced_font">Utiliser une police à espacement fixe</string>
     <string name="show_keyboard">Afficher le clavier au démarrage</string>
     <string name="show_word_count">Afficher le nombre de mots</string>
     <string name="show_character_count">Afficher le nombre de caractères</string>
@@ -58,28 +58,28 @@
     <string name="center">Centre</string>
     <string name="right">Droite</string>
     <string name="widget_note">Note utilisée dans le widget</string>
-    <string name="show_note_picker">Choisir une note au démarrage</string>
-    <string name="autosave_notes">Sauvegarder automatiquement les notes</string>
+    <string name="show_note_picker">Afficher un sélecteur de notes au démarrage</string>
+    <string name="autosave_notes">Enregistrement automatique des notes</string>
     <string name="enable_line_wrap">Activer le retour à la ligne</string>
-    <string name="use_incognito_mode">Utiliser le mode incognito du claviers</string>
-    <string name="move_done_checklist_items">Déplacer les éléments de liste de contrôle inachevés en-bas</string>
-    <string name="add_new_checklist_items_top">Ajouter un élément de liste de contrôle en-haut</string>
+    <string name="use_incognito_mode">Utiliser le mode navigation privée des claviers</string>
+    <string name="move_done_checklist_items">Déplacer les éléments de la liste de contrôle terminés vers le bas</string>
+    <string name="add_new_checklist_items_top">Ajouter de nouveaux éléments de liste de contrôle en haut</string>
     <!-- Checklists -->
     <string name="checklist">Liste de contrôle</string>
     <string name="checklists">Listes de contrôle</string>
-    <string name="add_new_checklist_item">Ajouter un nouvel élément</string>
-    <string name="add_new_checklist_items">Ajouter de nouveaux éléments</string>
+    <string name="add_new_checklist_item">Ajouter un nouvel élément de liste de contrôle</string>
+    <string name="add_new_checklist_items">Ajouter de nouveaux éléments de liste de contrôle</string>
     <string name="checklist_is_empty">La liste de contrôle est vide</string>
-    <string name="remove_done_items">Supprimer les éléments cochés</string>
+    <string name="remove_done_items">Supprimer les éléments terminés</string>
     <string name="add_to_the_top">Ajouter en haut de la liste</string>
     <!-- Import / Export -->
-    <string name="import_folder">Importer depuis un dossier</string>
+    <string name="import_folder">Dossier d\'importation</string>
     <string name="export_notes">Exporter les notes</string>
     <string name="import_notes">Importer des notes</string>
-    <string name="import_notes_pro">Importer des notes (Pro)</string>
+    <string name="import_notes_pro">Importer des notes (version « Pro »)</string>
     <!-- FAQ -->
-    <string name="faq_1_title">Comment puis-je changer la couleur des widgets \?</string>
-    <string name="faq_1_text">Si vous avez seulement un widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres pour le personnaliser. Si vous avez plusieurs widgets actifs, le bouton dans les paramètres ne sera pas disponible. Comme l\'application supporte la personnalisation de la couleur par widget, vous devrez recréer le widget que vous voulez personnaliser.</string>
+    <string name="faq_1_title">Comment puis-je modifier la couleur des widgets \?</string>
+    <string name="faq_1_text">Si vous n\'avez qu\'un seul widget actif, vous pouvez soit le recréer, soit utiliser le bouton dans les paramètres de l\'application pour le personnaliser. Si vous avez plusieurs widgets actifs, le bouton dans les paramètres de l\'application ne sera pas disponible. Comme l\'application prend en charge la personnalisation des couleurs par widget, vous devrez recréer le widget que vous souhaitez personnaliser.</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
