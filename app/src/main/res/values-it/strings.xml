@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Note Semplici</string>
+    <string name="app_name">Semplici Note</string>
     <string name="app_launcher_name">Note</string>
-    <string name="widget_config">Grazie per avere scelto Semplice Note.
-\nPer altre semplici app visita SimpleMobileTools.com.</string>
+    <string name="widget_config">Grazie per avere scelto Semplici Note.\nPer altre semplici app visita SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">Impossibile condividere un testo vuoto</string>
     <string name="simple_note">Nota semplice</string>
     <string name="new_note">Aggiungi una nuova nota</string>
     <string name="no_title">Inserisci il nome della nota</string>
-    <string name="title_taken">Una nota con lo stesso titolo è già esistente</string>
+    <string name="title_taken">Una nota con lo stesso titolo esiste già</string>
     <string name="open_note">Apri nota</string>
     <string name="delete_note">Elimina nota</string>
-    <string name="delete_note_prompt_message">Sei sicuro/a di voler eliminare la nota «%s»\?</string>
+    <string name="delete_note_prompt_message">Vuoi davvero eliminare la nota \"%s\"?</string>
     <string name="pick_a_note">Scegli una nota</string>
     <string name="rename_note">Rinomina una nota</string>
     <string name="general_note">Nota generale</string>
     <string name="create_new_note">Crea una nuova nota</string>
     <string name="add_to_note">Aggiunta alla nota</string>
-    <string name="unsaved_changes_warning">Ci sono delle modifiche non salvate. Cosa fare\?</string>
+    <string name="unsaved_changes_warning">Ci sono delle modifiche non salvate. Cosa vuoi fare?</string>
     <string name="note_shown_widget">Nota mostrata nel widget:</string>
     <string name="show_note_title">Mostra il titolo della nota</string>
     <string name="new_note_type">Nuovo tipo di nota:</string>
     <string name="text_note">Nota di testo</string>
-    <string name="lock_note">Lock note</string>
-    <string name="unlock_note">Sblocca la nota</string>
+    <string name="lock_note">Blocca nota</string>
+    <string name="unlock_note">Sblocca nota</string>
     <string name="unlock_notes">Sblocca note</string>
     <string name="found_locked_notes_info">Le seguenti note sono bloccate. È possibile sbloccarle una per una o saltare l\'esportazione.</string>
     <string name="note_content_locked">Il contenuto delle note è bloccato.</string>
@@ -31,28 +30,27 @@
     <string name="locking_warning">ATTENZIONE: Se dimentichi la password delle note, non sarai più in grado di recuperarla o di accedere al contenuto delle note.</string>
     <string name="new_text_note">Nuova nota di testo</string>
     <string name="new_checklist">Nuova lista di controllo</string>
-    <string name="cannot_load_over_internet">L\'applicazione non riesce a caricare i file su Internet</string>
+    <string name="cannot_load_over_internet">L\'app non può caricare file su internet</string>
+    
     <!-- File notes -->
     <string name="open_file">Apri file</string>
     <string name="export_as_file">Esporta come file</string>
     <string name="file_too_large">File troppo grande, il limite è 1 MB</string>
-    <string name="only_import_file_content">Importa solo il contenuto del file
-\n(modificare il file non influenzerà la nota)</string>
-    <string name="update_file_at_note">Aggiorna il file quando si aggiorna una nota
-\n(la nota viene eliminata se il file viene eliminato, oppure cambia il percorso)</string>
+    <string name="only_import_file_content">Importa solo il contenuto del file\n(modificare il file non influenzerà la nota)</string>
+    <string name="update_file_at_note">Aggiorna il file quando si aggiorna una nota\n(la nota viene eliminata se il file viene eliminato, oppure cambia il percorso)</string>
     <string name="delete_file_itself">Elimina anche il file \"%s\"</string>
-    <string name="note_saved_successfully">Nota «%s» salvata con successo</string>
-    <string name="note_exported_successfully">Nota «%s» esportato con successo</string>
-    <string name="only_export_file_content">Esporta solamente il contenuto attuale del file
-\n(modificando la nota non influenzerà il file)</string>
+    <string name="note_saved_successfully">Nota \"%s\" salvata correttamente</string>
+    <string name="note_exported_successfully">Nota \"%s\" esportata correttamente</string>
+    <string name="only_export_file_content">Esporta solo il contenuto attuale del file\n(modificare la nota non influenzerà il file)</string>
+    
     <!-- Settings -->
     <string name="display_success_message">Mostra i messaggi di salvataggio riusciti</string>
     <string name="links_and_emails_clickable">Rendi i collegamenti e le e-mail cliccabili</string>
     <string name="place_cursor_end">Posiziona il cursore alla fine della nota</string>
-    <string name="monospaced_font">Usa un font monospace</string>
+    <string name="monospaced_font">Usa caratteri monospace</string>
     <string name="show_keyboard">Mostra la tastiera all\'avvio</string>
     <string name="show_word_count">Mostra il numero delle parole</string>
-    <string name="show_character_count">Mostra il conteggio dei caratteri</string>
+    <string name="show_character_count">Mostra il numero dei caratteri</string>
     <string name="alignment">Allineamento</string>
     <string name="left">A sinistra</string>
     <string name="center">Centrato</string>
@@ -60,25 +58,28 @@
     <string name="widget_note">Nota usata nel widget</string>
     <string name="show_note_picker">Mostra il selettore delle note all\'avvio</string>
     <string name="autosave_notes">Salva automaticamente le note</string>
-    <string name="enable_line_wrap">Abilita a capo automatico</string>
+    <string name="enable_line_wrap">Attiva a capo automatico</string>
     <string name="use_incognito_mode">Usa la modalità incognito per le tastiere</string>
-    <string name="move_done_checklist_items">Sposta gli elementi non spuntati in cima</string>
-    <string name="add_new_checklist_items_top">Aggiungi nuove voci della lista di controllo in alto</string>
+    <string name="move_done_checklist_items">Sposta gli elementi spuntati in fondo</string>
+    <string name="add_new_checklist_items_top">Aggiungi nuove voci della lista di controllo in cima</string>
+    
     <!-- Checklists -->
-    <string name="checklist">Scaletta</string>
+    <string name="checklist">Lista di controllo</string>
     <string name="checklists">Liste di controllo</string>
-    <string name="add_new_checklist_item">Aggiungi un nuovo elemento</string>
-    <string name="add_new_checklist_items">Aggiungi nuovi elementi</string>
-    <string name="checklist_is_empty">La scaletta è vuota</string>
-    <string name="remove_done_items">Rimuovi gli elementi finiti</string>
-    <string name="add_to_the_top">Add to the top</string>
+    <string name="add_new_checklist_item">Aggiungi una nuova voce</string>
+    <string name="add_new_checklist_items">Aggiungi nuove voci</string>
+    <string name="checklist_is_empty">La lista è vuota</string>
+    <string name="remove_done_items">Rimuovi gli elementi spuntati</string>
+    <string name="add_to_the_top">Aggiungi in cima</string>
+    
     <!-- Import / Export -->
     <string name="import_folder">Importa cartella</string>
     <string name="export_notes">Esporta note</string>
     <string name="import_notes">Importa note</string>
     <string name="import_notes_pro">Importa note (Pro)</string>
+    
     <!-- FAQ -->
-    <string name="faq_1_title">Come posso cambiare il colore dei widget\?</string>
+    <string name="faq_1_title">Come posso cambiare il colore dei widget?</string>
     <string name="faq_1_text">Se hai un solo widget attivo, puoi ricrearlo oppure usare il pulsante nelle impostazioni dell\'app per personalizzaro. Se hai più di un widget, il pulsante nelle impostazioni dell\'app non sarà disponibile. Dato che l\'app supporta la personalizzazione dei colori per ogni widget, dovrai ricreare il widget che vuoi personalizzare.</string>
     <!--
         Haven't found some strings? There's more at
