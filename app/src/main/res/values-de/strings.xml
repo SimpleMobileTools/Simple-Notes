@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Schlichte Notizen</string>
+    <string name="app_name">Einfache Notizen</string>
     <string name="app_launcher_name">Notizen</string>
     <string name="widget_config">Vielen Dank, dass du Simple Notes benutzt.
 \nWeitere einfache Apps findest du auf SimpleMobileTools.com.</string>
