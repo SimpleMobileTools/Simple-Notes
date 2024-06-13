@@ -8,14 +8,18 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
+import android.graphics.Typeface
 import android.graphics.drawable.Icon
 import android.graphics.drawable.LayerDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
+import android.text.Spannable
 import android.text.method.ArrowKeyMovementMethod
 import android.text.method.LinkMovementMethod
+import android.text.style.BackgroundColorSpan
+import android.text.style.StyleSpan
 import android.util.TypedValue
 import android.view.ActionMode
 import android.view.Gravity
@@ -24,9 +28,11 @@ import android.view.inputmethod.EditorInfo
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.graphics.ColorUtils
 import androidx.viewpager.widget.ViewPager
 import com.simplemobiletools.commons.dialogs.*
 import com.simplemobiletools.commons.extensions.*
@@ -51,6 +57,7 @@ import java.io.File
 import java.nio.charset.Charset
 import java.util.*
 
+
 class MainActivity : SimpleActivity() {
     private val EXPORT_FILE_SYNC = 1
     private val EXPORT_FILE_NO_SYNC = 2
@@ -74,6 +81,7 @@ class MainActivity : SimpleActivity() {
     private var showRedoButton = false
     private var searchIndex = 0
     private var searchMatches = emptyList<Int>()
+    private var searchText = ""
     private var isSearchActive = false
 
     private lateinit var searchQueryET: MyEditText
@@ -501,19 +509,18 @@ class MainActivity : SimpleActivity() {
 
     private fun searchTextChanged(text: String) {
         currentNotesView()?.let { noteView ->
+            searchText = text
             currentTextFragment?.removeTextWatcher()
             noteView.text!!.clearBackgroundSpans()
 
             if (text.isNotBlank() && text.length > 1) {
                 searchMatches = noteView.value.searchMatches(text)
-                noteView.highlightText(text, getProperPrimaryColor())
             }
 
             currentTextFragment?.setTextWatcher()
 
             if (searchMatches.isNotEmpty()) {
-                noteView.requestFocus()
-                noteView.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
+                selectSearchMatch(noteView)
             }
 
             searchQueryET.postDelayed({
@@ -553,7 +560,13 @@ class MainActivity : SimpleActivity() {
     private fun selectSearchMatch(editText: MyEditText) {
         if (searchMatches.isNotEmpty()) {
             editText.requestFocus()
-            editText.setSelection(searchMatches.getOrNull(searchIndex) ?: 0)
+            editText.setSelection(searchMatches.getOrNull(searchIndex)?: 0)
+
+            // highlight the search text
+            val boldSpan = BackgroundColorSpan(ColorUtils.setAlphaComponent(getProperPrimaryColor(), 128))
+            val start = editText.selectionStart
+            val end = editText.selectionEnd + searchText.length
+            editText.text!!.setSpan(boldSpan, start, end, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
         } else {
             hideKeyboard()
         }
@@ -575,6 +588,9 @@ class MainActivity : SimpleActivity() {
     }
 
     private fun closeSearch() {
+        // clear the text highlights
+        currentNotesView()?.text!!.clearSpans()
+
         searchQueryET.text?.clear()
         isSearchActive = false
         binding.searchWrapper.fadeOut()
