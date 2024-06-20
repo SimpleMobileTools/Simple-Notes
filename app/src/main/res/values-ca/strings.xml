@@ -3,7 +3,7 @@
     <string name="app_name">Simple Notes</string>
     <string name="app_launcher_name">Notes</string>
     <string name="widget_config">Gràcies per utilitzar Simple Notes.
-\nPer obtenir més aplicacions Simples, visiteu SimpleMobileTools.com.</string>
+\nPer a obtenir més aplicacions Simples, visiteu SimpleMobileTools.com.</string>
     <string name="cannot_share_empty_text">No es pot compartir un text buit</string>
     <string name="simple_note">Nota senzilla</string>
     <string name="new_note">Afegeix una nota nova</string>
@@ -71,7 +71,7 @@
     <string name="add_new_checklist_items">Afegeix elements nous de la llista de comprovació</string>
     <string name="checklist_is_empty">La llista de comprovació és buida</string>
     <string name="remove_done_items">Elimina els elements fets</string>
-    <string name="add_to_the_top">Add to the top</string>
+    <string name="add_to_the_top">Afegeix a la part superior</string>
     <!-- Import / Export -->
     <string name="import_folder">Importa una carpeta</string>
     <string name="export_notes">Exporta notes</string>
@@ -79,7 +79,7 @@
     <string name="import_notes_pro">Importa notes (Pro)</string>
     <!-- FAQ -->
     <string name="faq_1_title">Com puc canviar el color dels ginys\?</string>
-    <string name="faq_1_text">En cas que només tingueu 1 giny actiu, podeu tornar-lo a crear o utilitzar el botó de configuració de l\'aplicació per personalitzar-lo. Si teniu diversos ginys actius, el botó de configuració de l\'aplicació no estarà disponible. Com que l\'aplicació admet la personalització del color per giny, haureu de tornar a crear el giny que vulgueu personalitzar.</string>
+    <string name="faq_1_text">En cas que només tingueu 1 giny actiu, podeu tornar-lo a crear o utilitzar el botó de configuració de l\'aplicació per a personalitzar-lo. Si teniu diversos ginys actius, el botó de configuració de l\'aplicació no estarà disponible. Com que l\'aplicació admet la personalització del color per giny, haureu de tornar a crear el giny que vulgueu personalitzar.</string>
     <!--
         Haven't found some strings? There's more at
         https://github.com/SimpleMobileTools/Simple-Commons/tree/master/commons/src/main/res
