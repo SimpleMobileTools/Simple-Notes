@@ -36,3 +36,23 @@ Tether: 0x250f9cC32863E59b87037a14955Ed64F879653F0
 <img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/2_en-US.jpeg" width="30%">
 <img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/3_en-US.jpeg" width="30%">
 </div>
+
+## Build & Run (Android)
+
+### Requirements
+- Android Studio Hedgehog or newer
+- Android SDK 30+
+- Gradle (bundled with Android Studio)
+
+### Steps
+1. Clone the repository
+2. Open the project in Android Studio
+3. Allow Gradle sync to complete
+4. Select the `appDebug` build variant
+5. Run the app on:
+   - Emulator (API 30+ recommended), or
+   - Physical device with USB debugging enabled
+
+### Notes
+- First Gradle sync may take a few minutes
+- If sync fails, try **Invalidate Caches & Restart**
