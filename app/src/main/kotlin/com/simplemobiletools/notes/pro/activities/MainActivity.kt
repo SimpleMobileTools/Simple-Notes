@@ -301,7 +301,7 @@ class MainActivity : SimpleActivity() {
         } else if (requestCode == PICK_EXPORT_FILE_INTENT && resultCode == Activity.RESULT_OK && resultData != null && resultData.data != null && mNotes.isNotEmpty()) {
             val takeFlags = Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
             applicationContext.contentResolver.takePersistableUriPermission(resultData.data!!, takeFlags)
-            showExportFilePickUpdateDialog(resultData.dataString!!, getCurrentNoteValue())
+            resultData.dataString?.let { showExportFilePickUpdateDialog(it, getCurrentNoteValue()) }
         }
     }
 
