@@ -383,7 +383,7 @@ class MainActivity : SimpleActivity() {
                         val newChecklist = Note(null, getCurrentFormattedDateTime(), "", NoteType.TYPE_CHECKLIST, "", PROTECTION_NONE, "")
                         addNewNote(newChecklist)
                     } else {
-                        handleUri(data!!)
+                        data?.let { handleUri(it) }
                     }
                 }
                 intent.removeCategory(Intent.CATEGORY_DEFAULT)
