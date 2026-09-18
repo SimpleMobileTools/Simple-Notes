@@ -414,7 +414,7 @@ class MainActivity : SimpleActivity() {
                 if (it as Int == 0) {
                     displayNewNoteDialog(text)
                 } else {
-                    updateSelectedNote(notes[it - 1].id!!)
+                    notes[it - 1].id?.let { id -> updateSelectedNote(id) }
                     addTextToCurrentNote(if (mCurrentNote.value.isEmpty()) text else "\n$text")
                 }
             }
